@@ -2,14 +2,14 @@
   "id": "MVN_SWE_L2_ARCPAD",
   "title": "DERIVED FROM: MAVEN SWEA (Solar Wind Electron Analyzer) Archive Pitch Angle Distribution - David L. Mitchell (mitchell@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
   "info": {
-    "startDate": "2014-10-18T11:07:36.000Z",
-    "stopDate": "2024-11-14T23:59:58.000Z",
-    "sampleStartDate": "2024-11-13T00:00:01.000Z",
-    "sampleStopDate": "2024-11-13T23:59:59.000Z",
+    "startDate": "2014-10-18T11:07:36Z",
+    "stopDate": "2024-11-14T23:59:58Z",
+    "sampleStartDate": "2024-11-13T00:00:01Z",
+    "sampleStopDate": "2024-11-13T23:59:59Z",
     "cadence": "PT2.000001S",
     "x_cadence_fraction": 0.2868895501487835,
-    "x_cadence_note": "Cadence based on variable 'epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/maven/swea/l2/arcpad/2014/10/mvn_swe_l2_arcpad_20141018_v04_r01.cdf. This most common cadence occurred for 28.6890% of the 1639 timesteps. Cadence = 2000001216 [ns] = PT2.000001S.",
-    "maxRequestDuration": "PT4319900S",
+    "x_cadence_note": "Counts based on variable 'epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/maven/swea/l2/arcpad/2014/10/mvn_swe_l2_arcpad_20141018_v04_r01.cdf. The most common cadence occurred for 28.6890% of the 1639 timesteps. Cadence = 2000001216 [ns] = PT2.000001S.",
+    "maxRequestDuration": "P49DT23H58M20S",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SWE_L2_ARCPAD",
     "contact": "David L. Mitchell (mitchell@ssl.berkeley.edu) @ UC Berkeley Space Sciences Laboratory",
     "parameters": [
@@ -30,13 +30,12 @@
         "description": "Raw Instrument Counts (energy vs pitch angle index)",
         "fill": "-1e+31",
         "units": null,
-        "x_label": "Counts",
         "x_format": ".1f",
         "x_fractionDigits": "1",
         "x_cdf_FORMAT": "F15.1",
         "x_cdf_FIELDNAM": "Counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>82>x=energy, y=pindex_alt,z=counts",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -64,7 +63,6 @@
               14,
               15
             ],
-            "x_label": "Angle Index",
             "units": null
           },
           {
@@ -136,7 +134,6 @@
               3.37076,
               3.0
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -145,10 +142,9 @@
         "name": "counts_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Counts (movie: energy vs pitch angle index). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['counts']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Counts (movie: energy vs pitch angle index). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['counts']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": null,
-        "x_label": "Counts",
         "x_format": ".1f",
         "x_fractionDigits": "1",
         "x_cdf_FORMAT": "F15.1",
@@ -158,7 +154,7 @@
         "x_cdf_COMPONENTS": [
           "counts"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>82>x=energy, y=pindex_alt,z=counts",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -186,7 +182,6 @@
               14,
               15
             ],
-            "x_label": "Angle Index",
             "units": null
           },
           {
@@ -258,7 +253,6 @@
               3.37076,
               3.0
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -270,8 +264,7 @@
         "description": "Calibrated differential energy flux (energy vs pitch angles for 158eV)",
         "fill": "-1e+31",
         "units": "eV/[eV cm^2 sr s]",
-        "x_label": "Cal Diff EFlux",
-        "x_labelComponents": [
+        "x_label": [
           [
             "P0",
             "P1",
@@ -362,7 +355,7 @@
         "x_cdf_FORMAT": "E15.7",
         "x_cdf_FIELDNAM": "Cal Diff Energy Flux",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>82>x=energy, y=pa_E31,z=diff_en_fluxes",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -376,8 +369,7 @@
         "description": "Variance of differential energy flux (unavailable before 2014/11/16)",
         "fill": "-1e+31",
         "units": "(eV/[eV cm^2 sr s])^2",
-        "x_label": "variance",
-        "x_labelComponents": [
+        "x_label": [
           [
             "P0",
             "P1",
@@ -468,7 +460,7 @@
         "x_cdf_FORMAT": "E15.7",
         "x_cdf_FIELDNAM": "variance",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -496,7 +488,6 @@
               14,
               15
             ],
-            "x_label": "Angle Index",
             "units": null
           },
           {
@@ -568,7 +559,6 @@
               3.37076,
               3.0
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -580,8 +570,7 @@
         "description": "Secondary electron contamination (unavailable before 2014/11/16)",
         "fill": "-1e+31",
         "units": "eV/[eV cm^2 sr s]",
-        "x_label": "secondary",
-        "x_labelComponents": [
+        "x_label": [
           [
             "P0",
             "P1",
@@ -672,7 +661,7 @@
         "x_cdf_FORMAT": "E15.7",
         "x_cdf_FIELDNAM": "secondary",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -700,7 +689,6 @@
               14,
               15
             ],
-            "x_label": "Angle Index",
             "units": null
           },
           {
@@ -772,7 +760,6 @@
               3.37076,
               3.0
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -781,10 +768,9 @@
         "name": "diff_en_fluxes_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Flux (movie: energy vs  pitch angles for 158eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Flux (movie: energy vs  pitch angles for 158eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "eV/[eV cm^2 sr s]",
-        "x_label": "Cal Diff EFlux",
         "x_format": ".7e",
         "x_fractionDigits": "7",
         "x_cdf_FORMAT": "E15.7",
@@ -794,7 +780,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>82>x=energy, y=pa_E31,z=diff_en_fluxes_movie",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -805,11 +791,10 @@
         "name": "diff_en_fluxes_byPA_atE01",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Flux (spectrogram in PA at 4630 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Flux (spectrogram in PA at 4630 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "eV/[eV cm^2 sr s]",
-        "x_label": "Cal Diff EFlux @ 4630 eV",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Flux @ AngIndx 0",
             "Flux @ AngIndx 1",
@@ -904,7 +889,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=pa_E01, z=diff_en_fluxes_byPA_atE01(*,1)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -915,11 +900,10 @@
         "name": "diff_en_fluxes_byPA_atE11",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Flux (spectrogram in PA at 1620 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Flux (spectrogram in PA at 1620 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "eV/[eV cm^2 sr s]",
-        "x_label": "Cal Diff EFlux @ 1620 eV",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Flux @ AngIndx 0",
             "Flux @ AngIndx 1",
@@ -1014,7 +998,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=pa_E11, z=diff_en_fluxes_byPA_atE11(*,11)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1025,11 +1009,10 @@
         "name": "diff_en_fluxes_byPA_atE21",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Flux (spectrogram in PA at 506 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Flux (spectrogram in PA at 506 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "eV/[eV cm^2 sr s]",
-        "x_label": "Cal Diff EFlux @ 506 eV",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Flux @ AngIndx 0",
             "Flux @ AngIndx 1",
@@ -1124,7 +1107,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=pa_E21, z=diff_en_fluxes_byPA_atE21(*,21)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1135,11 +1118,10 @@
         "name": "diff_en_fluxes_byPA_atE31",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Flux (spectrogram in PA at 158 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Flux (spectrogram in PA at 158 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "eV/[eV cm^2 sr s]",
-        "x_label": "Cal Diff EFlux @ 158 eV",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Flux @ AngIndx 0",
             "Flux @ AngIndx 1",
@@ -1234,7 +1216,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=pa_E31, z=diff_en_fluxes_byPA_atE31(*,31)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1245,11 +1227,10 @@
         "name": "diff_en_fluxes_byPA_atE41",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Flux (spectrogram in PA at 49 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Flux (spectrogram in PA at 49 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "eV/[eV cm^2 sr s]",
-        "x_label": "Cal Diff EFlux @ 49 eV",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Flux @ AngIndx 0",
             "Flux @ AngIndx 1",
@@ -1344,7 +1325,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=pa_E41, z=diff_en_fluxes_byPA_atE41(*,41)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1355,11 +1336,10 @@
         "name": "diff_en_fluxes_byPA_atE51",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Flux (spectrogram in PA at 15 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Flux (spectrogram in PA at 15 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "eV/[eV cm^2 sr s]",
-        "x_label": "Cal Diff EFlux @ 15 eV",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Flux @ AngIndx 0",
             "Flux @ AngIndx 1",
@@ -1454,7 +1434,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=pa_E51, z=diff_en_fluxes_byPA_atE51(*,51)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1465,11 +1445,10 @@
         "name": "diff_en_fluxes_byPA_atE61",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Flux (spectrogram in PA at 5 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Flux (spectrogram in PA at 5 eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "eV/[eV cm^2 sr s]",
-        "x_label": "Cal Diff EFlux @ 5 eV",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Flux @ AngIndx 0",
             "Flux @ AngIndx 1",
@@ -1564,7 +1543,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=pa_E61, z=diff_en_fluxes_byPA_atE61(*,61)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1578,13 +1557,12 @@
         "description": "Pitch Angles (energy vs angle index)",
         "fill": "-1e+31",
         "units": "degrees",
-        "x_label": "Pitch angles",
         "x_format": ".7f",
         "x_fractionDigits": "7",
         "x_cdf_FORMAT": "F15.7",
         "x_cdf_FIELDNAM": "Pitch Angles",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>82>x=energy, y=pindex_alt,z=pa",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1612,7 +1590,6 @@
               14,
               15
             ],
-            "x_label": "Angle Index",
             "units": null
           },
           {
@@ -1684,7 +1661,6 @@
               3.37076,
               3.0
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -1693,10 +1669,9 @@
         "name": "pa_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Pitch Angles (movie: energy vs angle index). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['pa']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Pitch Angles (movie: energy vs angle index). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['pa']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "degrees",
-        "x_label": "Pitch angles",
         "x_format": ".7f",
         "x_fractionDigits": "7",
         "x_cdf_FORMAT": "F15.7",
@@ -1706,7 +1681,7 @@
         "x_cdf_COMPONENTS": [
           "pa"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>82>x=energy, y=pindex_alt,z=pa",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1734,7 +1709,6 @@
               14,
               15
             ],
-            "x_label": "Angle Index",
             "units": null
           },
           {
@@ -1806,7 +1780,6 @@
               3.37076,
               3.0
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -1815,10 +1788,9 @@
         "name": "pa_E31",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Median Pitch Angles (values at 158 eV). This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['pa']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Median Pitch Angles (values at 158 eV). This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['pa']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "degrees",
-        "x_label": "Median Pitch Angle (158 eV)",
         "x_format": ".7f",
         "x_fractionDigits": "7",
         "x_cdf_FORMAT": "F15.7",
@@ -1828,7 +1800,7 @@
         "x_cdf_COMPONENTS": [
           "pa"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=pindex_alt,z=pa_E31",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16
@@ -1855,7 +1827,6 @@
               14,
               15
             ],
-            "x_label": "Angle Index",
             "units": null
           }
         ]
@@ -1867,13 +1838,12 @@
         "description": "Magnetic field azimuth in instrument coordiantes",
         "fill": "-1e+31",
         "units": "degrees",
-        "x_label": "B Azimuth (IC)",
         "x_format": ".7f",
         "x_fractionDigits": "7",
         "x_cdf_FORMAT": "F15.7",
         "x_cdf_FIELDNAM": "B Azimuth (IC)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "epoch"
       },
       {
@@ -1883,13 +1853,12 @@
         "description": "Magnetic field elevation in instrument coordiantes",
         "fill": "-1e+31",
         "units": "degrees",
-        "x_label": "B Elevation (IC)",
         "x_format": ".7f",
         "x_fractionDigits": "7",
         "x_cdf_FORMAT": "F15.7",
         "x_cdf_FIELDNAM": "B Elevation (IC)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "epoch"
       },
       {
@@ -1899,11 +1868,10 @@
         "description": "Energy binning factor: 1 = 64 energies, 2 = 32 energies, 4 = 16 energies",
         "fill": "255",
         "units": null,
-        "x_label": "binning",
         "x_cdf_FORMAT": "I7",
         "x_cdf_FIELDNAM": "binning",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "epoch"
       }
     ]

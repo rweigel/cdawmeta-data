@@ -2,13 +2,13 @@
   "id": "PO_K1_VIS",
   "title": "Polar Visible Imaging System Earth Camera Key Parameter - Louis A. Frank (The University of Iowa)",
   "info": {
-    "startDate": "1996-04-30T00:00:26.000Z",
-    "stopDate": "2008-04-28T00:00:00.000Z",
-    "sampleStartDate": "2008-04-27T00:00:00.000Z",
-    "sampleStopDate": "2008-04-27T00:00:00.000Z",
-    "cadence": "PT267.5S",
+    "startDate": "1996-04-30T00:00:26Z",
+    "stopDate": "2008-04-28T00:00:00Z",
+    "sampleStartDate": "2008-04-27T00:00:00Z",
+    "sampleStopDate": "2008-04-27T00:00:00Z",
+    "cadence": "PT4M27.5S",
     "x_cadence_fraction": 0.09578544061302682,
-    "x_cadence_note": "Cadence based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/polar/vis/vis_k1/1996/po_k1_vis_19960430_v03.cdf. This most common cadence occurred for 9.5785% of the 25 timesteps. Cadence = 267500 [ms] = PT267.5S.",
+    "x_cadence_note": "Counts based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/polar/vis/vis_k1/1996/po_k1_vis_19960430_v03.cdf. The most common cadence occurred for 9.5785% of the 25 timesteps. Cadence = 267500 [ms] = PT4M27.5S.",
     "maxRequestDuration": "P0D",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K1_VIS",
     "contact": "Louis A. Frank @ The University of Iowa",
@@ -30,7 +30,6 @@
         "description": "Presumed altitude of emissions (also quickly shows times when images are available)",
         "fill": "-1e+31",
         "units": "Kilometers",
-        "x_label": "Alt",
         "x_format": ".2f",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "F6.2",
@@ -45,11 +44,10 @@
         "description": "Earth Camera UV Images (quasi-log cnts), small format display with click-expand (~4 min. res.)",
         "fill": "255",
         "units": "Counts",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -317,7 +315,6 @@
               255,
               256
             ],
-            "x_label": "Image Col",
             "units": "Column number"
           },
           {
@@ -581,7 +578,6 @@
               255,
               256
             ],
-            "x_label": "Image Row",
             "units": "Row number"
           }
         ]
@@ -590,10 +586,9 @@
         "name": "Image_CountsF",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> Larger format display with click-expand, no geographic registration . This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> Larger format display with click-expand, no geographic registration. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "Counts",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts (large format)",
         "x_cdf_VIRTUAL": true,
@@ -601,7 +596,7 @@
         "x_cdf_COMPONENTS": [
           "Image_Counts"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -869,7 +864,6 @@
               255,
               256
             ],
-            "x_label": "Image Col",
             "units": "Column number"
           },
           {
@@ -1133,7 +1127,6 @@
               255,
               256
             ],
-            "x_label": "Image Row",
             "units": "Row number"
           }
         ]
@@ -1142,10 +1135,9 @@
         "name": "Mapped_ImageO",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> (USE SHORT TIME SPANS) With geographic grid overlay. This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) With geographic grid overlay. This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "Counts",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts Overlay",
         "x_cdf_VIRTUAL": true,
@@ -1155,7 +1147,7 @@
           "Geo_Lat",
           "Geo_Lon"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>FIXED_IMAGE>x=Geo_Lat,y=Geo_Lon",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -1166,10 +1158,9 @@
         "name": "Mapped_Image",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> [DO NOT USE: UNDER-DEVELOPMENT] Test Display. This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> [DO NOT USE: UNDER-DEVELOPMENT] Test Display. This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "Counts",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts",
         "x_cdf_VIRTUAL": true,
@@ -1179,7 +1170,7 @@
           "Geo_Lat",
           "Geo_Lon"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>TERMINATOR>x=Geo_Lat,y=Geo_Lon",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -1190,10 +1181,9 @@
         "name": "Mapped_ImageP",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> (USE SHORT TIME SPANS) Azimuthal projection to geographic (fixed sun orientation). This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to geographic (fixed sun orientation). This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "Counts",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts",
         "x_cdf_VIRTUAL": true,
@@ -1204,7 +1194,7 @@
           "Geo_Lon",
           "Intens_Table"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>CENTERPOLE>SUN>TERMINATOR>x=Geo_Lat,y=Geo_Lon",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -1215,10 +1205,9 @@
         "name": "Mapped_ImageM",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> (USE SHORT TIME SPANS) Azimuthal projection to magnetic LT and invariant lat. This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to magnetic LT and invariant lat. This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "Counts",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts MLT VV",
         "x_cdf_VIRTUAL": true,
@@ -1228,7 +1217,7 @@
           "Geo_Lat",
           "Geo_Lon"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>CENTERPOLE>MLT_IMAGE>x=Geo_Lat,y=Geo_Lon",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -1239,10 +1228,9 @@
         "name": "Movie_Image",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> (USE SHORT TIME SPANS) Movie display of images, no geographic registration. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) Movie display of images, no geographic registration. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "Counts",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts (movie)",
         "x_cdf_VIRTUAL": true,
@@ -1250,7 +1238,7 @@
         "x_cdf_COMPONENTS": [
           "Image_Counts"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -1518,7 +1506,6 @@
               255,
               256
             ],
-            "x_label": "Image Col",
             "units": "Column number"
           },
           {
@@ -1782,7 +1769,6 @@
               255,
               256
             ],
-            "x_label": "Image Row",
             "units": "Row number"
           }
         ]
@@ -1791,10 +1777,9 @@
         "name": "Mapped_MovieO",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> (USE SHORT TIME SPANS) Movie, with geographic grid overlay. This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) Movie, with geographic grid overlay. This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "Counts",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts Overlay (movie)",
         "x_cdf_VIRTUAL": true,
@@ -1804,7 +1789,7 @@
           "Geo_Lat",
           "Geo_Lon"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartFIXED_IMAGE>x=Geo_Lat,y=Geo_Lon",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -1815,10 +1800,9 @@
         "name": "Mapped_MovieP",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> (USE SHORT TIME SPANS) Movie, azimuthal projection to geographic (fixed sun orientation). This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) Movie, azimuthal projection to geographic (fixed sun orientation). This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "Counts",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts (movie)",
         "x_cdf_VIRTUAL": true,
@@ -1829,7 +1813,7 @@
           "Geo_Lon",
           "Intens_Table"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartCENTERPOLE>SUN>TERMINATOR>x=Geo_Lat,y=Geo_Lon",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -1840,10 +1824,9 @@
         "name": "Mapped_MovieM",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> (USE SHORT TIME SPANS) Movie, azimuthal projection to magnetic LT and invariant lat. This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) Movie, azimuthal projection to magnetic LT and invariant lat. This variable is a 'virtual' variable that is computed using the function create_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "Counts",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts MLT VV (movie)",
         "x_cdf_VIRTUAL": true,
@@ -1853,7 +1836,7 @@
           "Geo_Lat",
           "Geo_Lon"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartCENTERPOLE>MLT_IMAGE>x=Geo_Lat,y=Geo_Lon",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -1864,10 +1847,9 @@
         "name": "IImage_Counts",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Earth Camera UV Images (kRay), small format display with click-expand (~4 min. res.). This variable is a 'virtual' variable that is computed using the function create_plain_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Intens_Table']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Earth Camera UV Images (kRay), small format display with click-expand (~4 min. res.). This variable is a 'virtual' variable that is computed using the function create_plain_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Intens_Table']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "KiloRayleighs",
-        "x_label": "Pixel Counts",
         "x_format": ".7g",
         "x_fractionDigits": "7",
         "x_cdf_FORMAT": "I3",
@@ -1878,7 +1860,7 @@
           "Image_Counts",
           "Intens_Table"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -2146,7 +2128,6 @@
               255,
               256
             ],
-            "x_label": "Image Col",
             "units": "Column number"
           },
           {
@@ -2410,7 +2391,6 @@
               255,
               256
             ],
-            "x_label": "Image Row",
             "units": "Row number"
           }
         ]
@@ -2419,10 +2399,9 @@
         "name": "IImage_CountsF",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": " --> Larger format display with click-expand, no geographic registration. This variable is a 'virtual' variable that is computed using the function create_plain_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Intens_Table']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> Larger format display with click-expand, no geographic registration. This variable is a 'virtual' variable that is computed using the function create_plain_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Intens_Table']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "KiloRayleighs",
-        "x_label": "Pixel Counts",
         "x_format": ".7g",
         "x_fractionDigits": "7",
         "x_cdf_FORMAT": "I3",
@@ -2433,7 +2412,7 @@
           "Image_Counts",
           "Intens_Table"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -2701,7 +2680,6 @@
               255,
               256
             ],
-            "x_label": "Image Col",
             "units": "Column number"
           },
           {
@@ -2965,7 +2943,6 @@
               255,
               256
             ],
-            "x_label": "Image Row",
             "units": "Row number"
           }
         ]
@@ -2974,10 +2951,9 @@
         "name": "Mapped_IImageO",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> (USE SHORT TIME SPANS) With geographic grid overlay. This variable is a 'virtual' variable that is computed using the function create_plmap_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) With geographic grid overlay. This variable is a 'virtual' variable that is computed using the function create_plmap_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "KiloRayleighs",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts in KiloRayleighs ",
         "x_cdf_VIRTUAL": true,
@@ -2988,7 +2964,7 @@
           "Geo_Lon",
           "Intens_Table"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>FIXED_IMAGE>x=Geo_Lat,y=Geo_Lon",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -2999,10 +2975,9 @@
         "name": "Mapped_IImageP",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> (USE SHORT TIME SPANS) Azimuthal projection to geographic (fixed sun orientation). This variable is a 'virtual' variable that is computed using the function create_plmap_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to geographic (fixed sun orientation). This variable is a 'virtual' variable that is computed using the function create_plmap_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "KiloRayleighs",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts in KiloRayleighs",
         "x_cdf_VIRTUAL": true,
@@ -3013,7 +2988,7 @@
           "Geo_Lon",
           "Intens_Table"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>CENTERPOLE>SUN>TERMINATOR>x=Geo_Lat,y=Geo_Lon",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -3024,10 +2999,9 @@
         "name": "Mapped_IImageM",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> (USE SHORT TIME SPANS) Azimuthal projection to magnetic LT and invariant lat. This variable is a 'virtual' variable that is computed using the function create_plmap_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to magnetic LT and invariant lat. This variable is a 'virtual' variable that is computed using the function create_plmap_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "KiloRayleighs",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts in KiloRayleighs MLT",
         "x_cdf_VIRTUAL": true,
@@ -3038,7 +3012,7 @@
           "Geo_Lon",
           "Intens_Table"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>CENTERPOLE>MLT_IMAGE>x=Geo_Lat,y=Geo_Lon",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -3049,10 +3023,9 @@
         "name": "Movie_IImage",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": " --> (USE SHORT TIME SPANS) Movie display of images, no geographic registration. This variable is a 'virtual' variable that is computed using the function create_plain_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Intens_Table']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) Movie display of images, no geographic registration. This variable is a 'virtual' variable that is computed using the function create_plain_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Intens_Table']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "KiloRayleighs",
-        "x_label": "Pixel Counts",
         "x_format": ".7g",
         "x_fractionDigits": "7",
         "x_cdf_FORMAT": "I3",
@@ -3063,7 +3036,7 @@
           "Image_Counts",
           "Intens_Table"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -3331,7 +3304,6 @@
               255,
               256
             ],
-            "x_label": "Image Col",
             "units": "Column number"
           },
           {
@@ -3595,7 +3567,6 @@
               255,
               256
             ],
-            "x_label": "Image Row",
             "units": "Row number"
           }
         ]
@@ -3604,10 +3575,9 @@
         "name": "Mapped_IMovieO",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> (USE SHORT TIME SPANS) Movie, with geographic grid overlay. This variable is a 'virtual' variable that is computed using the function create_plmap_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) Movie, with geographic grid overlay. This variable is a 'virtual' variable that is computed using the function create_plmap_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "KiloRayleighs",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts in KiloRayleighs ",
         "x_cdf_VIRTUAL": true,
@@ -3618,7 +3588,7 @@
           "Geo_Lon",
           "Intens_Table"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartFIXED_IMAGE>x=Geo_Lat,y=Geo_Lon",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -3629,10 +3599,9 @@
         "name": "Mapped_IMovieP",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> (USE SHORT TIME SPANS) Movie, azimuthal projection to geographic (fixed sun orientation). This variable is a 'virtual' variable that is computed using the function create_plmap_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) Movie, azimuthal projection to geographic (fixed sun orientation). This variable is a 'virtual' variable that is computed using the function create_plmap_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "KiloRayleighs",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts in KiloRayleighs",
         "x_cdf_VIRTUAL": true,
@@ -3643,7 +3612,7 @@
           "Geo_Lon",
           "Intens_Table"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartCENTERPOLE>SUN>TERMINATOR>x=Geo_Lat,y=Geo_Lon",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -3654,10 +3623,9 @@
         "name": "Mapped_IMovieM",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT1",
-        "description": " --> (USE SHORT TIME SPANS) Movie, azimuthal projection to magnetic LT and invariant lat. This variable is a 'virtual' variable that is computed using the function create_plmap_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "--> (USE SHORT TIME SPANS) Movie, azimuthal projection to magnetic LT and invariant lat. This variable is a 'virtual' variable that is computed using the function create_plmap_vis (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Image_Counts', 'Geo_Lat', 'Geo_Lon', 'Intens_Table']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "255",
         "units": "KiloRayleighs",
-        "x_label": "Pixel Counts",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Image Pixel Counts in KiloRayleighs MLT",
         "x_cdf_VIRTUAL": true,
@@ -3668,7 +3636,7 @@
           "Geo_Lon",
           "Intens_Table"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartCENTERPOLE>MLT_IMAGE>x=Geo_Lat,y=Geo_Lon",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           256,
@@ -3682,7 +3650,6 @@
         "description": "Platform pointing angle from nadir",
         "fill": "-2147483648",
         "units": "Degrees*10",
-        "x_label": "Platform Pitch",
         "x_cdf_FORMAT": "I5",
         "x_cdf_FIELDNAM": "Platform Pitch Angle",
         "x_cdf_VIRTUAL": false,
@@ -3761,7 +3728,6 @@
         "description": "Image header bytes",
         "fill": "255",
         "units": null,
-        "x_label": "Image headers",
         "x_cdf_FORMAT": "I4",
         "x_cdf_FIELDNAM": "Image headers",
         "x_cdf_VIRTUAL": false,

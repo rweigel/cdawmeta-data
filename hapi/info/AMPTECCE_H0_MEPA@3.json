@@ -2,14 +2,14 @@
   "id": "AMPTECCE_H0_MEPA@3",
   "title": "AMPTE CCE MEPA High Time Resolution Energetic Particles - D. McEntire (JHU/APL)",
   "info": {
-    "startDate": "1984-08-29T22:50:32.000Z",
-    "stopDate": "1989-01-11T00:00:09.000Z",
-    "sampleStartDate": "1988-12-22T00:00:49.000Z",
-    "sampleStopDate": "1988-12-22T16:18:51.000Z",
+    "startDate": "1984-08-29T22:50:32Z",
+    "stopDate": "1989-01-11T00:00:09Z",
+    "sampleStartDate": "1988-12-22T00:00:49Z",
+    "sampleStopDate": "1988-12-22T16:18:51Z",
     "cadence": "PT0.184858S",
     "x_cadence_fraction": 0.5147049482309598,
-    "x_cadence_note": "Cadence based on variable 'Epoch_3' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/ampte/h0/1984/amptecce_h0_mepa_19840829_v01.cdf. This most common cadence occurred for 51.4705% of the 8103 timesteps. Cadence = 184857845 [ns] = PT0.184858S.",
-    "maxRequestDuration": "PT2934100S",
+    "x_cadence_note": "Counts based on variable 'Epoch_3' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/ampte/h0/1984/amptecce_h0_mepa_19840829_v01.cdf. The most common cadence occurred for 51.4705% of the 8103 timesteps. Cadence = 184857845 [ns] = PT0.184858S.",
+    "maxRequestDuration": "P33DT23H1M40S",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AMPTECCE_H0_MEPA",
     "contact": "D. McEntire @ JHU/APL",
     "parameters": [
@@ -30,13 +30,12 @@
         "description": "SpinPeriod_3",
         "fill": "-1.0",
         "units": "seconds",
-        "x_label": "SpinPeriod_3",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "SpinPeriod_3",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch_3"
       },
       {
@@ -46,13 +45,12 @@
         "description": "SECTOR_3",
         "fill": "-1.0",
         "units": "sector",
-        "x_label": "Sector_3",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Sector_3",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch_3"
       },
       {
@@ -62,28 +60,24 @@
         "description": "Gain_3",
         "fill": "-1.0",
         "units": "unitless",
-        "x_label": "Gain_3",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Gain_3",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch_3"
       },
       {
         "name": "HIRES_ION_protons_COUNTS_stack",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "HIRES_ION_protons: counts for every sector in every spin (stack_plot); ION records only; the time given is the midpoint of SECTOR_3. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HIRES_ION_protons_COUNTS']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "HIRES_ION_protons: counts for every sector in every spin (stack_plot); ION records only; the time given is the midpoint of SECTOR_3. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HIRES_ION_protons_COUNTS']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+38",
         "units": "counts",
-        "x_label": "HIRES_ION_protons",
-        "x_labelComponents": [
-          [
-            "HIRES_ION_0_P_COUNTS",
-            "HIRES_ION_2_P_COUNTS"
-          ]
+        "x_label": [
+          "HIRES_ION_0_P_COUNTS",
+          "HIRES_ION_2_P_COUNTS"
         ],
         "x_format": ".5e",
         "x_fractionDigits": "5",
@@ -94,7 +88,7 @@
         "x_cdf_COMPONENTS": [
           "HIRES_ION_protons_COUNTS"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartNOBAR",
         "x_cdf_DEPEND_0": "Epoch_3",
         "size": [
           2
@@ -107,7 +101,6 @@
               29.15,
               64.42
             ],
-            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -118,15 +111,12 @@
         "name": "HIRES_ION_protons_CPS_stack",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> HIRES_ION_protons: counts per second for every sector in every spin (stack_plot). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HIRES_ION_protons_CPS']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> HIRES_ION_protons: counts per second for every sector in every spin (stack_plot). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HIRES_ION_protons_CPS']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+38",
         "units": "counts/sec",
-        "x_label": "HIRES_ION_protons",
-        "x_labelComponents": [
-          [
-            "HIRES_ION_0_P_CPS",
-            "HIRES_ION_2_P_CPS"
-          ]
+        "x_label": [
+          "HIRES_ION_0_P_CPS",
+          "HIRES_ION_2_P_CPS"
         ],
         "x_format": ".5e",
         "x_fractionDigits": "5",
@@ -137,7 +127,7 @@
         "x_cdf_COMPONENTS": [
           "HIRES_ION_protons_CPS"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartNOBAR",
         "x_cdf_DEPEND_0": "Epoch_3",
         "size": [
           2
@@ -150,7 +140,6 @@
               29.15,
               64.42
             ],
-            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -161,15 +150,12 @@
         "name": "HIRES_ION_protons_INTEN_stack",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> HIRES_ION_protons: differential intensity for every sector in every spin (stack_plot). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HIRES_ION_protons_INTEN']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> HIRES_ION_protons: differential intensity for every sector in every spin (stack_plot). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HIRES_ION_protons_INTEN']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+38",
         "units": "1/(sec ster cm^2 keV)",
-        "x_label": "HIRES_ION_protons_DiffInt",
-        "x_labelComponents": [
-          [
-            "HIRES_ION_0_P_INTEN",
-            "HIRES_ION_2_P_INTEN"
-          ]
+        "x_label": [
+          "HIRES_ION_0_P_INTEN",
+          "HIRES_ION_2_P_INTEN"
         ],
         "x_format": ".5e",
         "x_fractionDigits": "5",
@@ -180,7 +166,7 @@
         "x_cdf_COMPONENTS": [
           "HIRES_ION_protons_INTEN"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartNOBAR",
         "x_cdf_DEPEND_0": "Epoch_3",
         "size": [
           2
@@ -193,7 +179,6 @@
               29.15,
               64.42
             ],
-            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -209,13 +194,12 @@
         "units": "keV",
         "unitsSchema": "VOUnits1.1",
         "x_unitsOriginal": "keV",
-        "x_label": "HIRES_ION_protons_Edrift",
         "x_format": ".1f",
         "x_fractionDigits": "1",
         "x_cdf_FORMAT": "F6.1",
         "x_cdf_FIELDNAM": "HIRES_ION_protons_Edrift",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch_3",
         "size": [
           2

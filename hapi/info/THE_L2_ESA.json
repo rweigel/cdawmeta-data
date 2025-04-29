@@ -3,10 +3,10 @@
     "id": "THE_L2_ESA@0",
     "title": "THEMIS-E (P4): Electrostatic Analyzer (ESA): Electron/Ion Ground-Calculated Energy Fluxes (ions: 5 eV to 25 keV) electrons: 6 eV to 30 keV) and Moments (density, velocity, pressure, and temperature). Includes FULL, REDUCED and BURST modes. FULL: high angular resolution, low (few min) time resolution. REDUCED: degraded angular resolution, high (approx. 3 sec) time resolution. BURST: high angular resolution, high time resolution; only short bursts of data. Note that angular resolution affects moments since they are obtained integrating over the mode-specific angular distribution. - V. Angelopoulos, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
-      "startDate": "2007-03-07T00:00:00.000Z",
-      "stopDate": "2025-03-12T00:00:00.000Z",
-      "sampleStartDate": "2025-03-10T00:00:00.000Z",
-      "sampleStopDate": "2025-03-11T00:00:00.000Z",
+      "startDate": "2007-03-07T00:00:00Z",
+      "stopDate": "2025-04-25T00:00:00Z",
+      "sampleStartDate": "2025-04-23T00:00:00Z",
+      "sampleStopDate": "2025-04-24T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THE_L2_ESA",
       "contact": "V. Angelopoulos, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -28,21 +28,19 @@
           "description": "ESA Full Mode Ion Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.) ",
           "fill": "-2147483648",
           "units": null,
-          "x_label": "Data_Quality_Flag_ion Full ESA-E",
           "x_cdf_FORMAT": "i2",
           "x_cdf_FIELDNAM": "Data_Quality_Flag_ion Full ESA-E",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch"
         },
         {
           "name": "the_peif_densityQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "(Good data only) ESA Full (High Angular Resolution, few minute time res.) Mode, Ion Density . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_density', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "(Good data only) ESA Full (High Angular Resolution, few minute time res.) Mode, Ion Density. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_density', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "cm^-3",
-          "x_label": "N_ion Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -53,17 +51,16 @@
             "the_peif_density",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch"
         },
         {
           "name": "the_peif_avgtempQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Average Temperature . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_avgtemp', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Average Temperature. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_avgtemp', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
-          "x_label": "T_ion Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -74,17 +71,16 @@
             "the_peif_avgtemp",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch"
         },
         {
           "name": "the_peif_vthermalQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Thermal Velocity . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_vthermal', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Thermal Velocity. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_vthermal', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
-          "x_label": "Vth_ion Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -95,17 +91,16 @@
             "the_peif_vthermal",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch"
         },
         {
           "name": "the_peif_sc_potQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----SC Potential (Same time array as Full Ion ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_sc_pot', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----SC Potential (Same time array as Full Ion ESA data). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_sc_pot', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "V",
-          "x_label": "Scpot_ion Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -116,17 +111,16 @@
             "the_peif_sc_pot",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch"
         },
         {
           "name": "the_peif_en_efluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Energy Flux spectrogram w/ . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_en_eflux', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Energy Flux spectrogram w/. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_en_eflux', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV)",
-          "x_label": "Eflux_ion Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -137,7 +131,7 @@
             "the_peif_en_eflux",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             32
@@ -147,7 +141,7 @@
           "name": "the_peif_t3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_t3', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_t3', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -165,7 +159,7 @@
             "the_peif_t3",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -192,7 +186,7 @@
           "name": "the_peif_magt3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_magt3', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_magt3', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -210,7 +204,7 @@
             "the_peif_magt3",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -237,7 +231,7 @@
           "name": "the_peif_ptensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Pressure Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_ptens', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Pressure Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_ptens', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -258,7 +252,7 @@
             "the_peif_ptens",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             6
@@ -291,7 +285,7 @@
           "name": "the_peif_mftensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Momentum Flux Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_mftens', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Momentum Flux Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_mftens', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -312,7 +306,7 @@
             "the_peif_mftens",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             6
@@ -345,7 +339,7 @@
           "name": "the_peif_fluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Particle Flux Vector /w Quality. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_flux', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Particle Flux Vector /w Quality. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_flux', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "#/(cm^2-s)",
           "x_label": [
@@ -363,7 +357,7 @@
             "the_peif_flux",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -390,7 +384,7 @@
           "name": "the_peif_symmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL)) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_symm', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL)). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_symm', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "None",
           "x_label": [
@@ -408,7 +402,7 @@
             "the_peif_symm",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -435,10 +429,9 @@
           "name": "the_peif_symm_angQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Symmetry Angle (between symmetry direction and B) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_symm_ang', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Symmetry Angle (between symmetry direction and B). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_symm_ang', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "degrees",
-          "x_label": "symm_ang_ion Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -449,14 +442,14 @@
             "the_peif_symm_ang",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch"
         },
         {
           "name": "the_peif_magfQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Magnetic Field Vector in DSL (Same time array as Full Ion ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_magf', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Magnetic Field Vector in DSL (Same time array as Full Ion ESA data). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_magf', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "nT",
           "x_label": [
@@ -474,7 +467,7 @@
             "the_peif_magf",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -501,7 +494,7 @@
           "name": "the_peif_velocity_dslQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in DSL . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_velocity_dsl', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in DSL. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_velocity_dsl', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -519,7 +512,7 @@
             "the_peif_velocity_dsl",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -546,7 +539,7 @@
           "name": "the_peif_velocity_gseQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in GSE . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_velocity_gse', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in GSE. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_velocity_gse', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -564,7 +557,7 @@
             "the_peif_velocity_gse",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -591,7 +584,7 @@
           "name": "the_peif_velocity_gsmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in GSM. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_velocity_gsm', 'the_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in GSM. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peif_velocity_gsm', 'the_peif_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -609,7 +602,7 @@
             "the_peif_velocity_gsm",
             "the_peif_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -639,13 +632,12 @@
           "description": "(All qualities data) ESA Full (High Angular Resolution, few minute time res.) Mode, Ion Density",
           "fill": "NaN",
           "units": "cm^-3 (All Qs)",
-          "x_label": "N_ion Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "N_ion Full ESA-E (all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch"
         },
         {
@@ -655,13 +647,12 @@
           "description": "-----Ion Average Temperature",
           "fill": "NaN",
           "units": "eV (All Qs)",
-          "x_label": "T_ion Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "T_ion Full ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch"
         },
         {
@@ -671,13 +662,12 @@
           "description": "-----Ion Thermal Velocity",
           "fill": "NaN",
           "units": "km/s (All Qs)",
-          "x_label": "Vth_ion Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Vth_ion Full ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch"
         },
         {
@@ -687,13 +677,12 @@
           "description": "-----SC Potential (Same time array as Full Ion ESA data)",
           "fill": "NaN",
           "units": "V (All Qs)",
-          "x_label": "Scpot_ion Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Scpot_ion Full ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch"
         },
         {
@@ -703,13 +692,12 @@
           "description": "-----Ion Energy Flux spectrogram",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV) (All Qs)",
-          "x_label": "Eflux_ion Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Eflux_ion Full ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             32
@@ -732,7 +720,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -772,7 +760,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -815,7 +803,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Pressure Tensor(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             6
@@ -864,7 +852,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Momentum Flux Tensor(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             6
@@ -910,7 +898,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Particle Flux Vector(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -950,7 +938,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -980,13 +968,12 @@
           "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
           "fill": "NaN",
           "units": "degrees (All Qs)",
-          "x_label": "symm_ang_ion Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "symm_ang_ion Full ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch"
         },
         {
@@ -1006,7 +993,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Full Ion ESA data)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -1046,7 +1033,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Velocity Vector in DSL(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -1086,7 +1073,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Velocity Vector in GSE(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -1126,7 +1113,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Velocity Vector in GSM(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peif_epoch",
           "size": [
             3
@@ -1156,10 +1143,10 @@
     "id": "THE_L2_ESA@1",
     "title": "THEMIS-E (P4): Electrostatic Analyzer (ESA): Electron/Ion Ground-Calculated Energy Fluxes (ions: 5 eV to 25 keV) electrons: 6 eV to 30 keV) and Moments (density, velocity, pressure, and temperature). Includes FULL, REDUCED and BURST modes. FULL: high angular resolution, low (few min) time resolution. REDUCED: degraded angular resolution, high (approx. 3 sec) time resolution. BURST: high angular resolution, high time resolution; only short bursts of data. Note that angular resolution affects moments since they are obtained integrating over the mode-specific angular distribution. - V. Angelopoulos, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
-      "startDate": "2007-03-07T00:00:00.000Z",
-      "stopDate": "2025-03-12T00:00:00.000Z",
-      "sampleStartDate": "2025-03-10T00:00:00.000Z",
-      "sampleStopDate": "2025-03-11T00:00:00.000Z",
+      "startDate": "2007-03-07T00:00:00Z",
+      "stopDate": "2025-04-25T00:00:00Z",
+      "sampleStartDate": "2025-04-23T00:00:00Z",
+      "sampleStopDate": "2025-04-24T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THE_L2_ESA",
       "contact": "V. Angelopoulos, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -1181,21 +1168,19 @@
           "description": "ESA Full Mode, Electron Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.) ",
           "fill": "-2147483648",
           "units": null,
-          "x_label": "Data_Quality_Flag_elec Full ESA-E",
           "x_cdf_FORMAT": "i2",
           "x_cdf_FIELDNAM": "Data_Quality_Flag_elec Full ESA-E",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch"
         },
         {
           "name": "the_peef_densityQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "(Good data only) ESA Full (High Angular Resolution, few minute time res.) Mode, Electron Density. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_density', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "(Good data only) ESA Full (High Angular Resolution, few minute time res.) Mode, Electron Density. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_density', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "cm^-3",
-          "x_label": "N_elec Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -1206,17 +1191,16 @@
             "the_peef_density",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch"
         },
         {
           "name": "the_peef_avgtempQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Average Temperature. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_avgtemp', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Average Temperature. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_avgtemp', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
-          "x_label": "T_elec Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -1227,17 +1211,16 @@
             "the_peef_avgtemp",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch"
         },
         {
           "name": "the_peef_vthermalQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Thermal Velocity . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_vthermal', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Thermal Velocity. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_vthermal', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
-          "x_label": "Vth_elec Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -1248,17 +1231,16 @@
             "the_peef_vthermal",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch"
         },
         {
           "name": "the_peef_sc_potQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----SC Potential (Same time array as Full Electron ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_sc_pot', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----SC Potential (Same time array as Full Electron ESA data). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_sc_pot', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "V",
-          "x_label": "Scpot_elec Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -1269,17 +1251,16 @@
             "the_peef_sc_pot",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch"
         },
         {
           "name": "the_peef_en_efluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Energy Flux spectrogram . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_en_eflux', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Energy Flux spectrogram. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_en_eflux', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV)",
-          "x_label": "Eflux_elec Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -1290,7 +1271,7 @@
             "the_peef_en_eflux",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             32
@@ -1300,7 +1281,7 @@
           "name": "the_peef_t3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_t3', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_t3', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -1318,7 +1299,7 @@
             "the_peef_t3",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -1345,7 +1326,7 @@
           "name": "the_peef_magt3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_magt3', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_magt3', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -1363,7 +1344,7 @@
             "the_peef_magt3",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -1390,7 +1371,7 @@
           "name": "the_peef_ptensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Pressure Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_ptens', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Pressure Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_ptens', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -1411,7 +1392,7 @@
             "the_peef_ptens",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             6
@@ -1444,7 +1425,7 @@
           "name": "the_peef_mftensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Momentum Flux Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_mftens', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Momentum Flux Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_mftens', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -1465,7 +1446,7 @@
             "the_peef_mftens",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             6
@@ -1498,7 +1479,7 @@
           "name": "the_peef_fluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Particle Flux Vector . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_flux', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Particle Flux Vector. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_flux', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "#/(cm^2-s)",
           "x_label": [
@@ -1516,7 +1497,7 @@
             "the_peef_flux",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -1543,7 +1524,7 @@
           "name": "the_peef_symmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL)) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_symm', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL)). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_symm', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "None",
           "x_label": [
@@ -1561,7 +1542,7 @@
             "the_peef_symm",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -1588,10 +1569,9 @@
           "name": "the_peef_symm_angQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Symmetry Angle (between symmetry direction and B) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_symm_ang', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Symmetry Angle (between symmetry direction and B). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_symm_ang', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "degrees",
-          "x_label": "symm_ang_elec Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -1602,14 +1582,14 @@
             "the_peef_symm_ang",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch"
         },
         {
           "name": "the_peef_magfQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Magnetic Field Vector in DSL (Same time array as Full Electron ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_magf', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Magnetic Field Vector in DSL (Same time array as Full Electron ESA data). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_magf', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "nT",
           "x_label": [
@@ -1627,7 +1607,7 @@
             "the_peef_magf",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -1654,7 +1634,7 @@
           "name": "the_peef_velocity_dslQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Velocity Vector in DSL . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_velocity_dsl', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Velocity Vector in DSL. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_velocity_dsl', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -1672,7 +1652,7 @@
             "the_peef_velocity_dsl",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -1699,7 +1679,7 @@
           "name": "the_peef_velocity_gseQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Velocity Vector in GSE . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_velocity_gse', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Velocity Vector in GSE. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_velocity_gse', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -1717,7 +1697,7 @@
             "the_peef_velocity_gse",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -1744,7 +1724,7 @@
           "name": "the_peef_velocity_gsmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Velocity Vector in GSM . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_velocity_gsm', 'the_peef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Velocity Vector in GSM. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peef_velocity_gsm', 'the_peef_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -1762,7 +1742,7 @@
             "the_peef_velocity_gsm",
             "the_peef_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -1792,13 +1772,12 @@
           "description": "(All qualities data) ESA Full (High Angular Resolution, few minute time res.) Mode, Electron Density",
           "fill": "NaN",
           "units": "cm^-3 (All Qs)",
-          "x_label": "N_elec Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "N_elec Full ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch"
         },
         {
@@ -1808,13 +1787,12 @@
           "description": "-----Electron Average Temperature",
           "fill": "NaN",
           "units": "eV (All Qs)",
-          "x_label": "T_elec Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "T_elec Full ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch"
         },
         {
@@ -1824,13 +1802,12 @@
           "description": "-----Electron Thermal Velocity",
           "fill": "NaN",
           "units": "km/s (All Qs)",
-          "x_label": "Vth_elec Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Vth_elec Full ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch"
         },
         {
@@ -1840,13 +1817,12 @@
           "description": "-----SC Potential (Same time array as Full Electron ESA data)",
           "fill": "NaN",
           "units": "V (All Qs)",
-          "x_label": "Scpot_elec Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Scpot_elec Full ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch"
         },
         {
@@ -1856,13 +1832,12 @@
           "description": "-----Electron Energy Flux spectrogram",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV) (All Qs)",
-          "x_label": "Eflux_elec Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Eflux_elec Full ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             32
@@ -1885,7 +1860,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -1925,7 +1900,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -1968,7 +1943,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Pressure Tensor(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             6
@@ -2017,7 +1992,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Momentum Flux Tensor(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             6
@@ -2063,7 +2038,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Particle Flux Vector(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -2103,7 +2078,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))(all qualities) ",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -2133,13 +2108,12 @@
           "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
           "fill": "NaN",
           "units": "degrees (All Qs)",
-          "x_label": "symm_ang_elec Full ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "symm_ang_elec Full ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch"
         },
         {
@@ -2159,7 +2133,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Full Electron ESA data)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -2199,7 +2173,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Velocity Vector in DSL(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -2239,7 +2213,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Velocity Vector in GSE(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -2279,7 +2253,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Velocity Vector in GSM(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peef_epoch",
           "size": [
             3
@@ -2309,10 +2283,10 @@
     "id": "THE_L2_ESA@2",
     "title": "THEMIS-E (P4): Electrostatic Analyzer (ESA): Electron/Ion Ground-Calculated Energy Fluxes (ions: 5 eV to 25 keV) electrons: 6 eV to 30 keV) and Moments (density, velocity, pressure, and temperature). Includes FULL, REDUCED and BURST modes. FULL: high angular resolution, low (few min) time resolution. REDUCED: degraded angular resolution, high (approx. 3 sec) time resolution. BURST: high angular resolution, high time resolution; only short bursts of data. Note that angular resolution affects moments since they are obtained integrating over the mode-specific angular distribution. - V. Angelopoulos, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
-      "startDate": "2007-03-07T00:00:00.000Z",
-      "stopDate": "2025-03-12T00:00:00.000Z",
-      "sampleStartDate": "2025-03-10T00:00:00.000Z",
-      "sampleStopDate": "2025-03-11T00:00:00.000Z",
+      "startDate": "2007-03-07T00:00:00Z",
+      "stopDate": "2025-04-25T00:00:00Z",
+      "sampleStartDate": "2025-04-23T00:00:00Z",
+      "sampleStopDate": "2025-04-24T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THE_L2_ESA",
       "contact": "V. Angelopoulos, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -2334,21 +2308,19 @@
           "description": "ESA Reduced Mode, Ion Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.) ",
           "fill": "-2147483648",
           "units": null,
-          "x_label": "Data_Quality_Flag_ion Rdcd ESA-E",
           "x_cdf_FORMAT": "i2",
           "x_cdf_FIELDNAM": "Data_Quality_Flag_ion Rdcd ESA-E",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch"
         },
         {
           "name": "the_peir_densityQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "(Good data only) ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Ion Density. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_density', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "(Good data only) ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Ion Density. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_density', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "cm^-3",
-          "x_label": "N_ion Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -2359,17 +2331,16 @@
             "the_peir_density",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch"
         },
         {
           "name": "the_peir_avgtempQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Average Temperature . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_avgtemp', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Average Temperature. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_avgtemp', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
-          "x_label": "T_ion Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -2380,17 +2351,16 @@
             "the_peir_avgtemp",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch"
         },
         {
           "name": "the_peir_vthermalQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Thermal Velocity . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_vthermal', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Thermal Velocity. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_vthermal', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
-          "x_label": "Vth_ion Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -2401,17 +2371,16 @@
             "the_peir_vthermal",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch"
         },
         {
           "name": "the_peir_sc_potQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----SC Potential (Same time array as Reduced Ion ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_sc_pot', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----SC Potential (Same time array as Reduced Ion ESA data). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_sc_pot', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "V",
-          "x_label": "Scpot_ion Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -2422,17 +2391,16 @@
             "the_peir_sc_pot",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch"
         },
         {
           "name": "the_peir_en_efluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Energy Flux spectrogram . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_en_eflux', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Energy Flux spectrogram. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_en_eflux', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV)",
-          "x_label": "Eflux_ion Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -2443,7 +2411,7 @@
             "the_peir_en_eflux",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             32
@@ -2453,7 +2421,7 @@
           "name": "the_peir_t3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_t3', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_t3', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -2471,7 +2439,7 @@
             "the_peir_t3",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -2498,7 +2466,7 @@
           "name": "the_peir_magt3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_magt3', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_magt3', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -2516,7 +2484,7 @@
             "the_peir_magt3",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -2543,7 +2511,7 @@
           "name": "the_peir_ptensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Pressure Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_ptens', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Pressure Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_ptens', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -2564,7 +2532,7 @@
             "the_peir_ptens",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             6
@@ -2597,7 +2565,7 @@
           "name": "the_peir_mftensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Momentum Flux Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_mftens', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Momentum Flux Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_mftens', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -2618,7 +2586,7 @@
             "the_peir_mftens",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             6
@@ -2651,7 +2619,7 @@
           "name": "the_peir_fluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Particle Flux Vector . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_flux', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Particle Flux Vector. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_flux', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "#/(cm^2-s)",
           "x_label": [
@@ -2669,7 +2637,7 @@
             "the_peir_flux",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -2696,7 +2664,7 @@
           "name": "the_peir_symmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL)) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_symm', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL)). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_symm', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "None",
           "x_label": [
@@ -2714,7 +2682,7 @@
             "the_peir_symm",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -2741,10 +2709,9 @@
           "name": "the_peir_symm_angQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Symmetry Angle (between symmetry direction and B) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_symm_ang', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Symmetry Angle (between symmetry direction and B). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_symm_ang', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "degrees",
-          "x_label": "symm_ang_ion Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -2755,14 +2722,14 @@
             "the_peir_symm_ang",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch"
         },
         {
           "name": "the_peir_magfQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced Ion ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_magf', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced Ion ESA data). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_magf', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "nT",
           "x_label": [
@@ -2780,7 +2747,7 @@
             "the_peir_magf",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -2807,7 +2774,7 @@
           "name": "the_peir_velocity_dslQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in DSL. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_velocity_dsl', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in DSL. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_velocity_dsl', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -2825,7 +2792,7 @@
             "the_peir_velocity_dsl",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -2852,7 +2819,7 @@
           "name": "the_peir_velocity_gseQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in GSE . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_velocity_gse', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in GSE. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_velocity_gse', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -2870,7 +2837,7 @@
             "the_peir_velocity_gse",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -2897,7 +2864,7 @@
           "name": "the_peir_velocity_gsmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in GSM . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_velocity_gsm', 'the_peir_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in GSM. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peir_velocity_gsm', 'the_peir_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -2915,7 +2882,7 @@
             "the_peir_velocity_gsm",
             "the_peir_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -2945,13 +2912,12 @@
           "description": "(All qualities data) ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Ion Density",
           "fill": "NaN",
           "units": "cm^-3 (All Qs)",
-          "x_label": "N_ion Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "N_ion Rdcd ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch"
         },
         {
@@ -2961,13 +2927,12 @@
           "description": "-----Ion Average Temperature",
           "fill": "NaN",
           "units": "eV (All Qs)",
-          "x_label": "T_ion Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "T_ion Rdcd ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch"
         },
         {
@@ -2977,13 +2942,12 @@
           "description": "-----Ion Thermal Velocity",
           "fill": "NaN",
           "units": "km/s (All Qs)",
-          "x_label": "Vth_ion Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Vth_ion Rdcd ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch"
         },
         {
@@ -2993,13 +2957,12 @@
           "description": "-----SC Potential (Same time array as Reduced Ion ESA data)",
           "fill": "NaN",
           "units": "V (All Qs)",
-          "x_label": "Scpot_ion Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Scpot_ion Rdcd ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch"
         },
         {
@@ -3009,13 +2972,12 @@
           "description": "-----Ion Energy Flux spectrogram",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV) (All Qs)",
-          "x_label": "Eflux_ion Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Eflux_ion Rdcd ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             32
@@ -3038,7 +3000,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -3078,7 +3040,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -3121,7 +3083,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Pressure Tensor(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             6
@@ -3170,7 +3132,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Momentum Flux Tensor(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             6
@@ -3216,7 +3178,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Particle Flux Vector(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -3256,7 +3218,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))(all qualities) ",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -3286,13 +3248,12 @@
           "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
           "fill": "NaN",
           "units": "degrees (All Qs)",
-          "x_label": "symm_ang_ion Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "symm_ang_ion Rdcd ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch"
         },
         {
@@ -3312,7 +3273,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Reduced Ion ESA data)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -3352,7 +3313,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Velocity Vector in DSL(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -3392,7 +3353,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Velocity Vector in GSE(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -3432,7 +3393,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Velocity Vector in GSM(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peir_epoch",
           "size": [
             3
@@ -3462,10 +3423,10 @@
     "id": "THE_L2_ESA@3",
     "title": "THEMIS-E (P4): Electrostatic Analyzer (ESA): Electron/Ion Ground-Calculated Energy Fluxes (ions: 5 eV to 25 keV) electrons: 6 eV to 30 keV) and Moments (density, velocity, pressure, and temperature). Includes FULL, REDUCED and BURST modes. FULL: high angular resolution, low (few min) time resolution. REDUCED: degraded angular resolution, high (approx. 3 sec) time resolution. BURST: high angular resolution, high time resolution; only short bursts of data. Note that angular resolution affects moments since they are obtained integrating over the mode-specific angular distribution. - V. Angelopoulos, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
-      "startDate": "2007-03-07T00:00:00.000Z",
-      "stopDate": "2025-03-12T00:00:00.000Z",
-      "sampleStartDate": "2025-03-10T00:00:00.000Z",
-      "sampleStopDate": "2025-03-11T00:00:00.000Z",
+      "startDate": "2007-03-07T00:00:00Z",
+      "stopDate": "2025-04-25T00:00:00Z",
+      "sampleStartDate": "2025-04-23T00:00:00Z",
+      "sampleStopDate": "2025-04-24T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THE_L2_ESA",
       "contact": "V. Angelopoulos, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -3487,21 +3448,19 @@
           "description": "ESA Reduced Mode, Electron Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.) ",
           "fill": "-2147483648",
           "units": null,
-          "x_label": "Data_Quality_Flag_elec Rdcd ESA-E",
           "x_cdf_FORMAT": "i2",
           "x_cdf_FIELDNAM": "Data_Quality_Flag_elec Rdcd ESA-E",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch"
         },
         {
           "name": "the_peer_densityQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "(Good data only) ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Electron Density. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_density', 'the_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "(Good data only) ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Electron Density. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_density', 'the_peer_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "cm^-3",
-          "x_label": "N_elec Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -3512,17 +3471,16 @@
             "the_peer_density",
             "the_peer_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch"
         },
         {
           "name": "the_peer_avgtempQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Average Temperature  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_avgtemp', 'the_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Average Temperature. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_avgtemp', 'the_peer_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
-          "x_label": "T_elec Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -3533,17 +3491,16 @@
             "the_peer_avgtemp",
             "the_peer_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch"
         },
         {
           "name": "the_peer_vthermalQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Thermal Velocity  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_vthermal', 'the_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Thermal Velocity. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_vthermal', 'the_peer_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
-          "x_label": "Vth_elec Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -3554,17 +3511,16 @@
             "the_peer_vthermal",
             "the_peer_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch"
         },
         {
           "name": "the_peer_sc_potQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----SC Potential (Same time array as Reduced Electron ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_sc_pot', 'the_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----SC Potential (Same time array as Reduced Electron ESA data). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_sc_pot', 'the_peer_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "V",
-          "x_label": "Scpot_elec Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -3575,17 +3531,16 @@
             "the_peer_sc_pot",
             "the_peer_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch"
         },
         {
           "name": "the_peer_en_efluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Energy Flux spectrogram . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_en_eflux', 'the_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Energy Flux spectrogram. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_en_eflux', 'the_peer_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV)",
-          "x_label": "Eflux_elec Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -3596,7 +3551,7 @@
             "the_peer_en_eflux",
             "the_peer_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             32
@@ -3606,7 +3561,7 @@
           "name": "the_peer_t3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_t3', 'the_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_t3', 'the_peer_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -3624,7 +3579,7 @@
             "the_peer_t3",
             "the_peer_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -3651,7 +3606,7 @@
           "name": "the_peer_magt3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_magt3', 'the_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_magt3', 'the_peer_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -3669,7 +3624,7 @@
             "the_peer_magt3",
             "the_peer_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -3696,7 +3651,7 @@
           "name": "the_peer_ptensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Pressure Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_ptens', 'the_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Pressure Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_ptens', 'the_peer_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -3717,7 +3672,7 @@
             "the_peer_ptens",
             "the_peer_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             6
@@ -3750,7 +3705,7 @@
           "name": "the_peer_mftensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Momentum Flux Tensor  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_mftens', 'the_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Momentum Flux Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_mftens', 'the_peer_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -3771,7 +3726,7 @@
             "the_peer_mftens",
             "the_peer_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             6
@@ -3804,7 +3759,7 @@
           "name": "the_peer_fluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Particle Flux Vector  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_flux', 'the_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Particle Flux Vector. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_flux', 'the_peer_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "#/(cm^2-s)",
           "x_label": [
@@ -3822,7 +3777,7 @@
             "the_peer_flux",
             "the_peer_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -3849,7 +3804,7 @@
           "name": "the_peer_symmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL)) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_symm', 'the_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL)). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peer_symm', 'the_peer_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "None",
           "x_label": [
@@ -3867,7 +3822,7 @@
             "the_peer_symm",
             "the_peer_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -3897,13 +3852,12 @@
           "description": "-----Electron Symmetry Angle (between symmetry direction and B) ",
           "fill": "NaN",
           "units": "degrees",
-          "x_label": "symm_ang_elec Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Symmetry Angle (between symmetry direction and B)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch"
         },
         {
@@ -3923,7 +3877,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Reduced Electron ESA data)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -3963,7 +3917,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Velocity Vector in DSL",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -4003,7 +3957,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Velocity Vector in GSE",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -4043,7 +3997,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Velocity Vector in GSM",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -4073,13 +4027,12 @@
           "description": "(All qualities data) ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Electron Density",
           "fill": "NaN",
           "units": "cm^-3 (All Qs)",
-          "x_label": "N_elec Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Electron Density(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch"
         },
         {
@@ -4089,13 +4042,12 @@
           "description": "-----Electron Average Temperature",
           "fill": "NaN",
           "units": "eV (All Qs)",
-          "x_label": "T_elec Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "T_elec Rdcd ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch"
         },
         {
@@ -4105,13 +4057,12 @@
           "description": "-----Electron Thermal Velocity",
           "fill": "NaN",
           "units": "km/s (All Qs)",
-          "x_label": "Vth_elec Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Vth_elec Rdcd ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch"
         },
         {
@@ -4121,13 +4072,12 @@
           "description": "-----SC Potential (Same time array as Reduced Electron ESA data)",
           "fill": "NaN",
           "units": "V (All Qs)",
-          "x_label": "Scpot_elec Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Scpot_elec Rdcd ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch"
         },
         {
@@ -4137,13 +4087,12 @@
           "description": "-----Electron Energy Flux spectrogram",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV) (All Qs)",
-          "x_label": "Eflux_elec Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Eflux_elec Rdcd ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             32
@@ -4166,7 +4115,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -4206,7 +4155,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -4249,7 +4198,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Pressure Tensor(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             6
@@ -4298,7 +4247,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Momentum Flux Tensor(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             6
@@ -4344,7 +4293,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Particle Flux Vector(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -4384,7 +4333,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))(all qualities) ",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -4414,13 +4363,12 @@
           "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
           "fill": "NaN",
           "units": "degrees (All Qs)",
-          "x_label": "symm_ang_elec Rdcd ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "symm_ang_elec Rdcd ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch"
         },
         {
@@ -4440,7 +4388,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Reduced Electron ESA data)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -4480,7 +4428,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Velocity Vector in DSL(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -4520,7 +4468,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Velocity Vector in GSE(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -4560,7 +4508,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Velocity Vector in GSM(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peer_epoch",
           "size": [
             3
@@ -4590,10 +4538,10 @@
     "id": "THE_L2_ESA@4",
     "title": "THEMIS-E (P4): Electrostatic Analyzer (ESA): Electron/Ion Ground-Calculated Energy Fluxes (ions: 5 eV to 25 keV) electrons: 6 eV to 30 keV) and Moments (density, velocity, pressure, and temperature). Includes FULL, REDUCED and BURST modes. FULL: high angular resolution, low (few min) time resolution. REDUCED: degraded angular resolution, high (approx. 3 sec) time resolution. BURST: high angular resolution, high time resolution; only short bursts of data. Note that angular resolution affects moments since they are obtained integrating over the mode-specific angular distribution. - V. Angelopoulos, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
-      "startDate": "2007-03-07T00:00:00.000Z",
-      "stopDate": "2025-03-12T00:00:00.000Z",
-      "sampleStartDate": "2025-03-10T00:00:00.000Z",
-      "sampleStopDate": "2025-03-11T00:00:00.000Z",
+      "startDate": "2007-03-07T00:00:00Z",
+      "stopDate": "2025-04-25T00:00:00Z",
+      "sampleStartDate": "2025-04-23T00:00:00Z",
+      "sampleStopDate": "2025-04-24T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THE_L2_ESA",
       "contact": "V. Angelopoulos, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -4615,21 +4563,19 @@
           "description": "ESA Burst Mode, Ion Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.) ",
           "fill": "-2147483648",
           "units": null,
-          "x_label": "Data_Quality_Flag_ion Brst ESA-E",
           "x_cdf_FORMAT": "i2",
           "x_cdf_FIELDNAM": "Data_Quality_Flag_ion Brst ESA-E",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch"
         },
         {
           "name": "the_peib_densityQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "(Good data only) ESA Burst (High Time and Angular Resolution) Mode, Ion Density. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_density', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "(Good data only) ESA Burst (High Time and Angular Resolution) Mode, Ion Density. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_density', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "cm^-3",
-          "x_label": "N_ion Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -4640,17 +4586,16 @@
             "the_peib_density",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch"
         },
         {
           "name": "the_peib_avgtempQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Average Temperature . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_avgtemp', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Average Temperature. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_avgtemp', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
-          "x_label": "T_ion Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -4661,17 +4606,16 @@
             "the_peib_avgtemp",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch"
         },
         {
           "name": "the_peib_vthermalQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Thermal Velocity . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_vthermal', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Thermal Velocity. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_vthermal', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
-          "x_label": "Vth_ion Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -4682,17 +4626,16 @@
             "the_peib_vthermal",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch"
         },
         {
           "name": "the_peib_sc_potW",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----SC Potential (Same time array as Burst Ion ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_sc_pot', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----SC Potential (Same time array as Burst Ion ESA data). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_sc_pot', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "V",
-          "x_label": "Scpot_ion Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -4703,17 +4646,16 @@
             "the_peib_sc_pot",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch"
         },
         {
           "name": "the_peib_en_efluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Energy Flux spectrogram  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_en_eflux', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Energy Flux spectrogram. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_en_eflux', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV)",
-          "x_label": "Eflux_ion Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -4724,7 +4666,7 @@
             "the_peib_en_eflux",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             32
@@ -4734,7 +4676,7 @@
           "name": "the_peib_t3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_t3', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_t3', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -4752,7 +4694,7 @@
             "the_peib_t3",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -4779,7 +4721,7 @@
           "name": "the_peib_magt3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_magt3', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_magt3', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -4797,7 +4739,7 @@
             "the_peib_magt3",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -4824,7 +4766,7 @@
           "name": "the_peib_ptensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Pressure Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_ptens', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Pressure Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_ptens', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -4845,7 +4787,7 @@
             "the_peib_ptens",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             6
@@ -4878,7 +4820,7 @@
           "name": "the_peib_mftensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Momentum Flux Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_mftens', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Momentum Flux Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_mftens', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -4899,7 +4841,7 @@
             "the_peib_mftens",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             6
@@ -4932,7 +4874,7 @@
           "name": "the_peib_fluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Particle Flux Vector . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_flux', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Particle Flux Vector. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_flux', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "#/(cm^2-s)",
           "x_label": [
@@ -4950,7 +4892,7 @@
             "the_peib_flux",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -4977,7 +4919,7 @@
           "name": "the_peib_symmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_symm', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL)). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_symm', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "None",
           "x_label": [
@@ -4995,7 +4937,7 @@
             "the_peib_symm",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -5022,10 +4964,9 @@
           "name": "the_peib_symm_angQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Symmetry Angle (between symmetry direction and B) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_symm_ang', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Symmetry Angle (between symmetry direction and B). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_symm_ang', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "degrees",
-          "x_label": "symm_ang_ion Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -5036,14 +4977,14 @@
             "the_peib_symm_ang",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch"
         },
         {
           "name": "the_peib_magfQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Ion ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_magf', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Ion ESA data). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_magf', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "nT",
           "x_label": [
@@ -5061,7 +5002,7 @@
             "the_peib_magf",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -5088,7 +5029,7 @@
           "name": "the_peib_velocity_dslQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in DSL  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_velocity_dsl', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in DSL. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_velocity_dsl', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -5106,7 +5047,7 @@
             "the_peib_velocity_dsl",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -5133,7 +5074,7 @@
           "name": "the_peib_velocity_gseQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in GSE  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_velocity_gse', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in GSE. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_velocity_gse', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -5151,7 +5092,7 @@
             "the_peib_velocity_gse",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -5178,7 +5119,7 @@
           "name": "the_peib_velocity_gsmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in GSM. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_velocity_gsm', 'the_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in GSM. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peib_velocity_gsm', 'the_peib_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -5196,7 +5137,7 @@
             "the_peib_velocity_gsm",
             "the_peib_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -5226,13 +5167,12 @@
           "description": "(All qualities data) ESA Burst (High Time and Angular Resolution) Mode, Ion Density",
           "fill": "NaN",
           "units": "cm^-3 (All Qs)",
-          "x_label": "N_ion Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "N_ion Brst ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch"
         },
         {
@@ -5242,13 +5182,12 @@
           "description": "-----Ion Average Temperature",
           "fill": "NaN",
           "units": "eV (All Qs)",
-          "x_label": "T_ion Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "T_ion Brst ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch"
         },
         {
@@ -5258,13 +5197,12 @@
           "description": "-----Ion Thermal Velocity",
           "fill": "NaN",
           "units": "km/s (All Qs)",
-          "x_label": "Vth_ion Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Vth_ion Brst ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch"
         },
         {
@@ -5274,13 +5212,12 @@
           "description": "-----SC Potential (Same time array as Burst Ion ESA data)",
           "fill": "NaN",
           "units": "V (All Qs)",
-          "x_label": "Scpot_ion Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Scpot_ion Brst ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch"
         },
         {
@@ -5290,13 +5227,12 @@
           "description": "-----Ion Energy Flux spectrogram",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV) (All Qs)",
-          "x_label": "Eflux_ion Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Eflux_ion Brst ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             32
@@ -5319,7 +5255,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -5359,7 +5295,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -5402,7 +5338,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Pressure Tensor(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             6
@@ -5451,7 +5387,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Momentum Flux Tensor(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             6
@@ -5497,7 +5433,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Particle Flux Vector(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -5537,7 +5473,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))(all qualities) ",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -5567,13 +5503,12 @@
           "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
           "fill": "NaN",
           "units": "degrees (All Qs)",
-          "x_label": "symm_ang_ion Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "symm_ang_ion Brst ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch"
         },
         {
@@ -5593,7 +5528,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Burst Ion ESA data)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -5633,7 +5568,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Velocity Vector in DSL(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -5673,7 +5608,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Velocity Vector in GSE(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -5713,7 +5648,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Ion Velocity Vector in GSM(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peib_epoch",
           "size": [
             3
@@ -5743,10 +5678,10 @@
     "id": "THE_L2_ESA@5",
     "title": "THEMIS-E (P4): Electrostatic Analyzer (ESA): Electron/Ion Ground-Calculated Energy Fluxes (ions: 5 eV to 25 keV) electrons: 6 eV to 30 keV) and Moments (density, velocity, pressure, and temperature). Includes FULL, REDUCED and BURST modes. FULL: high angular resolution, low (few min) time resolution. REDUCED: degraded angular resolution, high (approx. 3 sec) time resolution. BURST: high angular resolution, high time resolution; only short bursts of data. Note that angular resolution affects moments since they are obtained integrating over the mode-specific angular distribution. - V. Angelopoulos, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
-      "startDate": "2007-03-07T00:00:00.000Z",
-      "stopDate": "2025-03-12T00:00:00.000Z",
-      "sampleStartDate": "2025-03-10T00:00:00.000Z",
-      "sampleStopDate": "2025-03-11T00:00:00.000Z",
+      "startDate": "2007-03-07T00:00:00Z",
+      "stopDate": "2025-04-25T00:00:00Z",
+      "sampleStartDate": "2025-04-23T00:00:00Z",
+      "sampleStopDate": "2025-04-24T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THE_L2_ESA",
       "contact": "V. Angelopoulos, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -5768,21 +5703,19 @@
           "description": "ESA Burst Mode, Electron Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.) ",
           "fill": "-2147483648",
           "units": null,
-          "x_label": "Data_Quality_Flag_elec Brst ESA-E",
           "x_cdf_FORMAT": "i2",
           "x_cdf_FIELDNAM": "Data_Quality_Flag_elec Brst ESA-E",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch"
         },
         {
           "name": "the_peeb_densityQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "(Good data only) ESA Burst (High Time and Angular Resolution) Mode, Electron Density. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_density', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "(Good data only) ESA Burst (High Time and Angular Resolution) Mode, Electron Density. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_density', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "cm^-3",
-          "x_label": "N_elec Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -5793,17 +5726,16 @@
             "the_peeb_density",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch"
         },
         {
           "name": "the_peeb_avgtempQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Average Temperature  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_avgtemp', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Average Temperature. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_avgtemp', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
-          "x_label": "T_elec Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -5814,17 +5746,16 @@
             "the_peeb_avgtemp",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch"
         },
         {
           "name": "the_peeb_vthermalQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Thermal Velocity  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_vthermal', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Thermal Velocity. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_vthermal', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
-          "x_label": "Vth_elec Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -5835,17 +5766,16 @@
             "the_peeb_vthermal",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch"
         },
         {
           "name": "the_peeb_sc_potQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----SC Potential (Same time array as Burst Electron ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_sc_pot', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----SC Potential (Same time array as Burst Electron ESA data). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_sc_pot', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "V",
-          "x_label": "Scpot_elec Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -5856,17 +5786,16 @@
             "the_peeb_sc_pot",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch"
         },
         {
           "name": "the_peeb_en_efluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Energy Flux spectrogram . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_en_eflux', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Energy Flux spectrogram. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_en_eflux', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV)",
-          "x_label": "Eflux_elec Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -5877,7 +5806,7 @@
             "the_peeb_en_eflux",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             32
@@ -5887,7 +5816,7 @@
           "name": "the_peeb_t3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_t3', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_t3', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -5905,7 +5834,7 @@
             "the_peeb_t3",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -5932,7 +5861,7 @@
           "name": "the_peeb_magt3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_magt3', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_magt3', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -5950,7 +5879,7 @@
             "the_peeb_magt3",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -5977,7 +5906,7 @@
           "name": "the_peeb_ptensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Pressure Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_ptens', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Pressure Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_ptens', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -5998,7 +5927,7 @@
             "the_peeb_ptens",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             6
@@ -6031,7 +5960,7 @@
           "name": "the_peeb_mftensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Momentum Flux Tensor  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_mftens', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Momentum Flux Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_mftens', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -6052,7 +5981,7 @@
             "the_peeb_mftens",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             6
@@ -6085,7 +6014,7 @@
           "name": "the_peeb_fluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Particle Flux Vector  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_flux', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Particle Flux Vector. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_flux', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "#/(cm^2-s)",
           "x_label": [
@@ -6103,7 +6032,7 @@
             "the_peeb_flux",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6130,7 +6059,7 @@
           "name": "the_peeb_symmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL)) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_symm', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL)). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_symm', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "None",
           "x_label": [
@@ -6148,7 +6077,7 @@
             "the_peeb_symm",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6175,10 +6104,9 @@
           "name": "the_peeb_symm_angQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Symmetry Angle (between symmetry direction and B) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_symm_ang', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Symmetry Angle (between symmetry direction and B). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_symm_ang', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "degrees",
-          "x_label": "symm_ang_elec Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
@@ -6189,14 +6117,14 @@
             "the_peeb_symm_ang",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch"
         },
         {
           "name": "the_peeb_magfQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Electron ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_magf', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Electron ESA data). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_magf', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "nT",
           "x_label": [
@@ -6214,7 +6142,7 @@
             "the_peeb_magf",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6241,7 +6169,7 @@
           "name": "the_peeb_velocity_dslQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Velocity Vector in DSL . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_velocity_dsl', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Velocity Vector in DSL. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_velocity_dsl', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -6259,7 +6187,7 @@
             "the_peeb_velocity_dsl",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6286,7 +6214,7 @@
           "name": "the_peeb_velocity_gseQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Velocity Vector in GSE . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_velocity_gse', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Velocity Vector in GSE. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_velocity_gse', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -6304,7 +6232,7 @@
             "the_peeb_velocity_gse",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6331,7 +6259,7 @@
           "name": "the_peeb_velocity_gsmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Electron Velocity Vector in GSM . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_velocity_gsm', 'the_peeb_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Electron Velocity Vector in GSM. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peeb_velocity_gsm', 'the_peeb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -6349,7 +6277,7 @@
             "the_peeb_velocity_gsm",
             "the_peeb_data_quality"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6379,13 +6307,12 @@
           "description": "(All qualities data) ESA Burst (High Time and Angular Resolution) Mode, Electron Density",
           "fill": "NaN",
           "units": "cm^-3 (All Qs)",
-          "x_label": "N_elec Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "N_elec Brst ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch"
         },
         {
@@ -6395,13 +6322,12 @@
           "description": "-----Electron Average Temperature",
           "fill": "NaN",
           "units": "eV (All Qs)",
-          "x_label": "T_elec Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "T_elec Brst ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch"
         },
         {
@@ -6411,13 +6337,12 @@
           "description": "-----Electron Thermal Velocity",
           "fill": "NaN",
           "units": "km/s (All Qs)",
-          "x_label": "Vth_elec Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Vth_elec Brst ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch"
         },
         {
@@ -6427,13 +6352,12 @@
           "description": "-----SC Potential (Same time array as Burst Electron ESA data)",
           "fill": "NaN",
           "units": "V (All Qs)",
-          "x_label": "Scpot_elec Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Scpot_elec Brst ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch"
         },
         {
@@ -6443,13 +6367,12 @@
           "description": "-----Electron Energy Flux spectrogram",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV) (All Qs)",
-          "x_label": "Eflux_elec Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Eflux_elec Brst ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             32
@@ -6472,7 +6395,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6512,7 +6435,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6555,7 +6478,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Pressure Tensor(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             6
@@ -6604,7 +6527,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Momentum Flux Tensor(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             6
@@ -6650,7 +6573,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Particle Flux Vector(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6690,7 +6613,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6720,13 +6643,12 @@
           "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
           "fill": "NaN",
           "units": "degrees (All Qs)",
-          "x_label": "symm_ang_elec Brst ESA-E",
           "x_format": ".6e",
           "x_fractionDigits": "6",
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "symm_ang_elec Brst ESA-E(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch"
         },
         {
@@ -6746,7 +6668,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Burst Electron ESA data)(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6786,7 +6708,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Velocity Vector in DSL(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6826,7 +6748,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Velocity Vector in GSE(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6866,7 +6788,7 @@
           "x_cdf_FORMAT": "E13.6",
           "x_cdf_FIELDNAM": "Electron Velocity Vector in GSM(all qualities)",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_peeb_epoch",
           "size": [
             3
@@ -6896,10 +6818,10 @@
     "id": "THE_L2_ESA@6",
     "title": "THEMIS-E (P4): Electrostatic Analyzer (ESA): Electron/Ion Ground-Calculated Energy Fluxes (ions: 5 eV to 25 keV) electrons: 6 eV to 30 keV) and Moments (density, velocity, pressure, and temperature). Includes FULL, REDUCED and BURST modes. FULL: high angular resolution, low (few min) time resolution. REDUCED: degraded angular resolution, high (approx. 3 sec) time resolution. BURST: high angular resolution, high time resolution; only short bursts of data. Note that angular resolution affects moments since they are obtained integrating over the mode-specific angular distribution. - V. Angelopoulos, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
-      "startDate": "2007-03-07T00:00:00.000Z",
-      "stopDate": "2025-03-12T00:00:00.000Z",
-      "sampleStartDate": "2025-03-10T00:00:00.000Z",
-      "sampleStopDate": "2025-03-11T00:00:00.000Z",
+      "startDate": "2007-03-07T00:00:00Z",
+      "stopDate": "2025-04-25T00:00:00Z",
+      "sampleStartDate": "2025-04-23T00:00:00Z",
+      "sampleStopDate": "2025-04-24T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THE_L2_ESA",
       "contact": "V. Angelopoulos, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -6921,11 +6843,10 @@
           "description": "ESA electron solar wind mode flag; 0: Not in Solar Wind mode, 1: in Solar Wind mode",
           "fill": "255",
           "units": "adc",
-          "x_label": "eesa_solarwind_flag",
           "x_cdf_FORMAT": "I5",
           "x_cdf_FIELDNAM": "the_eesa_solarwind_flag",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_eesa_solarwind_flag_epoch"
         }
       ]
@@ -6935,10 +6856,10 @@
     "id": "THE_L2_ESA@7",
     "title": "THEMIS-E (P4): Electrostatic Analyzer (ESA): Electron/Ion Ground-Calculated Energy Fluxes (ions: 5 eV to 25 keV) electrons: 6 eV to 30 keV) and Moments (density, velocity, pressure, and temperature). Includes FULL, REDUCED and BURST modes. FULL: high angular resolution, low (few min) time resolution. REDUCED: degraded angular resolution, high (approx. 3 sec) time resolution. BURST: high angular resolution, high time resolution; only short bursts of data. Note that angular resolution affects moments since they are obtained integrating over the mode-specific angular distribution. - V. Angelopoulos, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
-      "startDate": "2007-03-07T00:00:00.000Z",
-      "stopDate": "2025-03-12T00:00:00.000Z",
-      "sampleStartDate": "2025-03-10T00:00:00.000Z",
-      "sampleStopDate": "2025-03-11T00:00:00.000Z",
+      "startDate": "2007-03-07T00:00:00Z",
+      "stopDate": "2025-04-25T00:00:00Z",
+      "sampleStartDate": "2025-04-23T00:00:00Z",
+      "sampleStopDate": "2025-04-24T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THE_L2_ESA",
       "contact": "V. Angelopoulos, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -6960,11 +6881,10 @@
           "description": "ESA ion solar wind mode flag; 0: Not in Solar Wind mode, 1: in Solar Wind mode",
           "fill": "255",
           "units": "adc",
-          "x_label": "iesa_solarwind_flag",
           "x_cdf_FORMAT": "I5",
           "x_cdf_FIELDNAM": "the_iesa_solarwind_flag",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "the_iesa_solarwind_flag_epoch"
         }
       ]

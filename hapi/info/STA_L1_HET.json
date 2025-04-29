@@ -2,14 +2,14 @@
   "id": "STA_L1_HET",
   "title": "STEREO Ahead IMPACT/HET Level 1 Data. - J. Luhmann (UCB/SSL)",
   "info": {
-    "startDate": "2006-12-01T00:00:53.000Z",
-    "stopDate": "2024-11-30T23:59:06.000Z",
-    "sampleStartDate": "2024-11-29T00:00:06.000Z",
-    "sampleStopDate": "2024-11-29T23:59:06.000Z",
+    "startDate": "2006-12-01T00:00:53Z",
+    "stopDate": "2025-02-28T23:59:05Z",
+    "sampleStartDate": "2025-02-27T00:00:05Z",
+    "sampleStopDate": "2025-02-27T23:59:05Z",
     "cadence": "PT1M",
     "x_cadence_fraction": 0.9993050729673384,
-    "x_cadence_note": "Cadence based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/stereo/ahead/l1/impact/het/2006/sta_l1_het_20061201_v01.cdf. This most common cadence occurred for 99.9305% of the 1438 timesteps. Cadence = 60000 [ms] = PT1M.",
-    "maxRequestDuration": "PT71950M",
+    "x_cadence_note": "Counts based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/stereo/ahead/l1/impact/het/2006/sta_l1_het_20061201_v01.cdf. The most common cadence occurred for 99.9305% of the 1438 timesteps. Cadence = 60000 [ms] = PT1M.",
+    "maxRequestDuration": "P49DT23H10M",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#STA_L1_HET",
     "contact": "J. Luhmann @ UCB/SSL",
     "parameters": [
@@ -30,20 +30,17 @@
         "description": "Electron flux measured by HET in 3 energy bins (time series: good with plot overlay option, above)",
         "fill": "-1e+31",
         "units": "#/(cm2-sr-s-MeV/n) ",
-        "x_label": "Electron Flux",
-        "x_labelComponents": [
-          [
-            "E 0.7 - 1.4 MeV",
-            "E 1.4 - 2.8 MeV",
-            "E 2.8 - 4.0 MeV"
-          ]
+        "x_label": [
+          "E 0.7 - 1.4 MeV",
+          "E 1.4 - 2.8 MeV",
+          "E 2.8 - 4.0 MeV"
         ],
         "x_format": ".2e",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "E12.2",
         "x_cdf_FIELDNAM": "Electron Flux",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartscatter",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -57,7 +54,6 @@
               2.1,
               3.4
             ],
-            "x_label": "Electron Flux energies",
             "units": "MeV"
           }
         ]
@@ -66,16 +62,13 @@
         "name": "Electron_Flux_stack",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Electron flux measured by HET in 3 energy bins (stacked plot). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Electron_Flux']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Electron flux measured by HET in 3 energy bins (stacked plot). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Electron_Flux']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "#/(cm2-sr-s-MeV/n) ",
-        "x_label": "Electron Flux",
-        "x_labelComponents": [
-          [
-            "E 0.7 - 1.4 MeV",
-            "E 1.4 - 2.8 MeV",
-            "E 2.8 - 4.0 MeV"
-          ]
+        "x_label": [
+          "E 0.7 - 1.4 MeV",
+          "E 1.4 - 2.8 MeV",
+          "E 2.8 - 4.0 MeV"
         ],
         "x_format": ".2e",
         "x_fractionDigits": "2",
@@ -86,7 +79,7 @@
         "x_cdf_COMPONENTS": [
           "Electron_Flux"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartscatter>nobar>use_labl",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -100,7 +93,6 @@
               2.1,
               3.4
             ],
-            "x_label": "Electron Flux energies",
             "units": "MeV"
           }
         ]
@@ -112,28 +104,25 @@
         "description": "Proton flux measured by the HET instrument in 11 energy bins (time series: good with plot overlay option, above)",
         "fill": "-1e+31",
         "units": "#/(cm2-sr-s-MeV/n) ",
-        "x_label": "Proton Flux",
-        "x_labelComponents": [
-          [
-            "P 13.6 - 15.1 MeV",
-            "P 15.0 - 17.1 MeV",
-            "P 17.0 - 19.3 MeV",
-            "P 20.8 - 23.8 MeV",
-            "P 23.8 - 26.4 MeV",
-            "P 26.3 - 29.7 MeV",
-            "P 29.6 - 33. 4 MeV",
-            "P 33.4 - 35.8 MeV",
-            "P 35.6 - 40.5 MeV",
-            "P 40 - 60 MeV",
-            "P 60 - 100 MeV"
-          ]
+        "x_label": [
+          "P 13.6 - 15.1 MeV",
+          "P 15.0 - 17.1 MeV",
+          "P 17.0 - 19.3 MeV",
+          "P 20.8 - 23.8 MeV",
+          "P 23.8 - 26.4 MeV",
+          "P 26.3 - 29.7 MeV",
+          "P 29.6 - 33. 4 MeV",
+          "P 33.4 - 35.8 MeV",
+          "P 35.6 - 40.5 MeV",
+          "P 40 - 60 MeV",
+          "P 60 - 100 MeV"
         ],
         "x_format": ".2e",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "E12.2",
         "x_cdf_FIELDNAM": "Proton Flux",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartscatter",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11
@@ -155,7 +144,6 @@
               50.0,
               80.0
             ],
-            "x_label": "Proton Flux energies",
             "units": "MeV"
           }
         ]
@@ -164,24 +152,21 @@
         "name": "Proton_Flux_stack",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Proton flux measured by the HET instrument in 11 energy bins (stacked). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Proton_Flux']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Proton flux measured by the HET instrument in 11 energy bins (stacked). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Proton_Flux']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "#/(cm2-sr-s-MeV/n) ",
-        "x_label": "Proton Flux",
-        "x_labelComponents": [
-          [
-            "P 13.6 - 15.1 MeV",
-            "P 15.0 - 17.1 MeV",
-            "P 17.0 - 19.3 MeV",
-            "P 20.8 - 23.8 MeV",
-            "P 23.8 - 26.4 MeV",
-            "P 26.3 - 29.7 MeV",
-            "P 29.6 - 33. 4 MeV",
-            "P 33.4 - 35.8 MeV",
-            "P 35.6 - 40.5 MeV",
-            "P 40 - 60 MeV",
-            "P 60 - 100 MeV"
-          ]
+        "x_label": [
+          "P 13.6 - 15.1 MeV",
+          "P 15.0 - 17.1 MeV",
+          "P 17.0 - 19.3 MeV",
+          "P 20.8 - 23.8 MeV",
+          "P 23.8 - 26.4 MeV",
+          "P 26.3 - 29.7 MeV",
+          "P 29.6 - 33. 4 MeV",
+          "P 33.4 - 35.8 MeV",
+          "P 35.6 - 40.5 MeV",
+          "P 40 - 60 MeV",
+          "P 60 - 100 MeV"
         ],
         "x_format": ".2e",
         "x_fractionDigits": "2",
@@ -192,7 +177,7 @@
         "x_cdf_COMPONENTS": [
           "Proton_Flux"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartscatter>nobar>use_labl",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11
@@ -214,7 +199,6 @@
               50.0,
               80.0
             ],
-            "x_label": "Proton Flux energies",
             "units": "MeV"
           }
         ]
@@ -226,20 +210,17 @@
         "description": "Electron flux sigma uncertainty based on counting statistics",
         "fill": "-1e+31",
         "units": "#/(cm2-sr-s-MeV/n) ",
-        "x_label": "Electron Sigma",
-        "x_labelComponents": [
-          [
-            "E 0.7 - 1.4 MeV",
-            "E 1.4 - 2.8 MeV",
-            "E 2.8 - 4.0 MeV"
-          ]
+        "x_label": [
+          "E 0.7 - 1.4 MeV",
+          "E 1.4 - 2.8 MeV",
+          "E 2.8 - 4.0 MeV"
         ],
         "x_format": ".2e",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "E12.2",
         "x_cdf_FIELDNAM": "Electron_Sigma",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -253,7 +234,6 @@
               2.1,
               3.4
             ],
-            "x_label": "Electron Flux energies",
             "units": "MeV"
           }
         ]
@@ -265,28 +245,25 @@
         "description": "Proton flux sigma uncertainty based on counting statistics",
         "fill": "-1e+31",
         "units": "#/(cm2-sr-s-MeV/n) ",
-        "x_label": "Proton Sigma",
-        "x_labelComponents": [
-          [
-            "P 13.6 - 15.1 MeV",
-            "P 15.0 - 17.1 MeV",
-            "P 17.0 - 19.3 MeV",
-            "P 20.8 - 23.8 MeV",
-            "P 23.8 - 26.4 MeV",
-            "P 26.3 - 29.7 MeV",
-            "P 29.6 - 33. 4 MeV",
-            "P 33.4 - 35.8 MeV",
-            "P 35.6 - 40.5 MeV",
-            "P 40 - 60 MeV",
-            "P 60 - 100 MeV"
-          ]
+        "x_label": [
+          "P 13.6 - 15.1 MeV",
+          "P 15.0 - 17.1 MeV",
+          "P 17.0 - 19.3 MeV",
+          "P 20.8 - 23.8 MeV",
+          "P 23.8 - 26.4 MeV",
+          "P 26.3 - 29.7 MeV",
+          "P 29.6 - 33. 4 MeV",
+          "P 33.4 - 35.8 MeV",
+          "P 35.6 - 40.5 MeV",
+          "P 40 - 60 MeV",
+          "P 60 - 100 MeV"
         ],
         "x_format": ".2e",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "E12.2",
         "x_cdf_FIELDNAM": "Proton_Sigma",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11
@@ -308,7 +285,6 @@
               50.0,
               80.0
             ],
-            "x_label": "Proton Flux energies",
             "units": "MeV"
           }
         ]

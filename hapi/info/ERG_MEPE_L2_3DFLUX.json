@@ -3,14 +3,14 @@
     "id": "ERG_MEPE_L2_3DFLUX@0",
     "title": "Exploration of Energization and Radiation in Geospace (ERG) Medium-Energy Particle experiments - electron analyzer (MEP-e) Level 2 3D electron flux data - Satoshi Kasahara (The University of Tokyo)",
     "info": {
-      "startDate": "2017-03-23T00:31:13.000Z",
-      "stopDate": "2023-12-31T23:59:55.000Z",
-      "sampleStartDate": "2023-12-30T00:00:11.000Z",
-      "sampleStopDate": "2023-12-31T00:00:00.000Z",
+      "startDate": "2017-03-23T00:31:13Z",
+      "stopDate": "2023-12-31T23:59:55Z",
+      "sampleStartDate": "2023-12-30T00:00:11Z",
+      "sampleStopDate": "2023-12-31T00:00:00Z",
       "cadence": "PT7.98447S",
       "x_cadence_fraction": 0.2850605105257805,
-      "x_cadence_note": "Cadence based on variable 'epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/erg/mepe/l2/3dflux/2017/erg_mepe_l2_3dflux_20170323_v01_01.cdf. This most common cadence occurred for 28.5061% of the 2803 timesteps. Cadence = 7984470000 [ns] = PT7.98447S.",
-      "maxRequestDuration": "PT4319450S",
+      "x_cadence_note": "Counts based on variable 'epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/erg/mepe/l2/3dflux/2017/erg_mepe_l2_3dflux_20170323_v01_01.cdf. The most common cadence occurred for 28.5061% of the 2803 timesteps. Cadence = 7984470000 [ns] = PT7.98447S.",
+      "maxRequestDuration": "P49DT23H50M50S",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ERG_MEPE_L2_3DFLUX",
       "contact": "Satoshi Kasahara @ The University of Tokyo",
       "parameters": [
@@ -31,8 +31,7 @@
           "description": "[WILL NOT PLOT] Unidirectional Differential Electron Flux",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV",
-          "x_label": "FEDU",
-          "x_labelComponents": [
+          "x_label": [
             [
               "0 1 2 3 4 5 6 7 8 9 1",
               "1",
@@ -91,114 +90,21 @@
           "x_cdf_FORMAT": "E31.4",
           "x_cdf_FIELDNAM": "FEDU",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
             16,
             16
-          ],
-          "bins": [
-            {
-              "name": "FEDU_Sector",
-              "description": "Spin sector number",
-              "centers": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16,
-                17,
-                18,
-                19,
-                20,
-                21,
-                22,
-                23,
-                24,
-                25,
-                26,
-                27,
-                28,
-                29,
-                30,
-                31
-              ],
-              "x_label": "Sector",
-              "units": "Index_No"
-            },
-            {
-              "name": "FEDU_Energy",
-              "description": "Energy for FEDU",
-              "centers": [
-                87.505,
-                87.505,
-                72.649,
-                60.432,
-                50.335,
-                41.965,
-                35.025,
-                29.259,
-                24.466,
-                20.458,
-                17.116,
-                14.326,
-                11.999,
-                10.047,
-                8.4053,
-                7.0311
-              ],
-              "x_label": "Energy",
-              "units": "keV",
-              "unitsSchema": "VOUnits1.1",
-              "x_unitsOriginal": "keV"
-            },
-            {
-              "name": "FEDU_APDno",
-              "description": "APD number",
-              "centers": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15
-              ],
-              "x_label": "APD",
-              "units": "Index_No"
-            }
           ]
         },
         {
           "name": "FEDU_e2",
           "type": "double",
           "x_cdf_DataType": "CDF_REAL4",
-          "description": "---> 73 keV Unidirectional differential electron flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> 73 keV Unidirectional differential electron flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV/q",
-          "x_label": "FEDU @ 73 keV",
           "x_format": ".3e",
           "x_fractionDigits": "3",
           "x_cdf_FORMAT": "E10.3",
@@ -208,7 +114,7 @@
           "x_cdf_COMPONENTS": [
             "FEDU"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>180>xsz=2.5,ysz=3>x=FEDU_Sector,y=FEDU_APDno,z=FEDU_e2",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
@@ -252,7 +158,6 @@
                 30,
                 31
               ],
-              "x_label": "Sector",
               "units": "Index_No"
             },
             {
@@ -276,7 +181,6 @@
                 14,
                 15
               ],
-              "x_label": "APD",
               "units": "Index_No"
             }
           ]
@@ -285,10 +189,9 @@
           "name": "FEDU_e6",
           "type": "double",
           "x_cdf_DataType": "CDF_REAL4",
-          "description": "---> 35 keV Unidirectional differential electron flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> 35 keV Unidirectional differential electron flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV/q",
-          "x_label": "FEDU @ 35 keV",
           "x_format": ".3e",
           "x_fractionDigits": "3",
           "x_cdf_FORMAT": "E10.3",
@@ -298,7 +201,7 @@
           "x_cdf_COMPONENTS": [
             "FEDU"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>180>xsz=2.5,ysz=3>x=FEDU_Sector,y=FEDU_APDno,z=FEDU_e6",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
@@ -342,7 +245,6 @@
                 30,
                 31
               ],
-              "x_label": "Sector",
               "units": "Index_No"
             },
             {
@@ -366,7 +268,6 @@
                 14,
                 15
               ],
-              "x_label": "APD",
               "units": "Index_No"
             }
           ]
@@ -375,10 +276,9 @@
           "name": "FEDU_e10",
           "type": "double",
           "x_cdf_DataType": "CDF_REAL4",
-          "description": "---> 17 keV Unidirectional differential electron flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> 17 keV Unidirectional differential electron flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV/q",
-          "x_label": "FEDU @ 17 keV",
           "x_format": ".3e",
           "x_fractionDigits": "3",
           "x_cdf_FORMAT": "E10.3",
@@ -388,7 +288,7 @@
           "x_cdf_COMPONENTS": [
             "FEDU"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>180>xsz=2.5,ysz=3>x=FEDU_Sector,y=FEDU_APDno,z=FEDU_e10",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
@@ -432,7 +332,6 @@
                 30,
                 31
               ],
-              "x_label": "Sector",
               "units": "Index_No"
             },
             {
@@ -456,7 +355,6 @@
                 14,
                 15
               ],
-              "x_label": "APD",
               "units": "Index_No"
             }
           ]
@@ -465,10 +363,9 @@
           "name": "FEDU_e14",
           "type": "double",
           "x_cdf_DataType": "CDF_REAL4",
-          "description": "---> 8.4 keV Unidirectional differential electron flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> 8.4 keV Unidirectional differential electron flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV/q",
-          "x_label": "FEDU @ 8.4 keV",
           "x_format": ".3e",
           "x_fractionDigits": "3",
           "x_cdf_FORMAT": "E10.3",
@@ -478,7 +375,7 @@
           "x_cdf_COMPONENTS": [
             "FEDU"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>180>xsz=2.5,ysz=3>x=FEDU_Sector,y=FEDU_APDno,z=FEDU_e14",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
@@ -522,7 +419,6 @@
                 30,
                 31
               ],
-              "x_label": "Sector",
               "units": "Index_No"
             },
             {
@@ -546,7 +442,6 @@
                 14,
                 15
               ],
-              "x_label": "APD",
               "units": "Index_No"
             }
           ]
@@ -558,8 +453,7 @@
           "description": "[WILL NOT PLOT] Unidirectional Differential Electron Flux (before noise correction)",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV",
-          "x_label": "FEDU_n",
-          "x_labelComponents": [
+          "x_label": [
             [
               "0 1 2 3 4 5 6 7 8 9 1",
               "1",
@@ -618,114 +512,21 @@
           "x_cdf_FORMAT": "E31.4",
           "x_cdf_FIELDNAM": "FEDU with noise",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
             16,
             16
-          ],
-          "bins": [
-            {
-              "name": "FEDU_Sector",
-              "description": "Spin sector number",
-              "centers": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16,
-                17,
-                18,
-                19,
-                20,
-                21,
-                22,
-                23,
-                24,
-                25,
-                26,
-                27,
-                28,
-                29,
-                30,
-                31
-              ],
-              "x_label": "Sector",
-              "units": "Index_No"
-            },
-            {
-              "name": "FEDU_Energy",
-              "description": "Energy for FEDU",
-              "centers": [
-                87.505,
-                87.505,
-                72.649,
-                60.432,
-                50.335,
-                41.965,
-                35.025,
-                29.259,
-                24.466,
-                20.458,
-                17.116,
-                14.326,
-                11.999,
-                10.047,
-                8.4053,
-                7.0311
-              ],
-              "x_label": "Energy",
-              "units": "keV",
-              "unitsSchema": "VOUnits1.1",
-              "x_unitsOriginal": "keV"
-            },
-            {
-              "name": "FEDU_APDno",
-              "description": "APD number",
-              "centers": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15
-              ],
-              "x_label": "APD",
-              "units": "Index_No"
-            }
           ]
         },
         {
           "name": "FEDU_n_e2",
           "type": "double",
           "x_cdf_DataType": "CDF_REAL4",
-          "description": "---> 73 keV Unidirectional differential electron flux (before noise correction). This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU_n']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> 73 keV Unidirectional differential electron flux (before noise correction). This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU_n']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV/q",
-          "x_label": "FEDU_n @ 73 keV",
           "x_format": ".3e",
           "x_fractionDigits": "3",
           "x_cdf_FORMAT": "E10.3",
@@ -735,7 +536,7 @@
           "x_cdf_COMPONENTS": [
             "FEDU_n"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>180>xsz=2.5,ysz=3>x=FEDU_Sector,y=FEDU_APDno,z=FEDU_n_e2",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
@@ -779,7 +580,6 @@
                 30,
                 31
               ],
-              "x_label": "Sector",
               "units": "Index_No"
             },
             {
@@ -803,7 +603,6 @@
                 14,
                 15
               ],
-              "x_label": "APD",
               "units": "Index_No"
             }
           ]
@@ -812,10 +611,9 @@
           "name": "FEDU_n_e6",
           "type": "double",
           "x_cdf_DataType": "CDF_REAL4",
-          "description": "---> 35 keV Unidirectional differential electron flux (before noise correction). This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU_n']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> 35 keV Unidirectional differential electron flux (before noise correction). This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU_n']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV/q",
-          "x_label": "FEDU_n @ 35 keV",
           "x_format": ".3e",
           "x_fractionDigits": "3",
           "x_cdf_FORMAT": "E10.3",
@@ -825,7 +623,7 @@
           "x_cdf_COMPONENTS": [
             "FEDU_n"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>180>xsz=2.5,ysz=3>x=FEDU_Sector,y=FEDU_APDno,z=FEDU_n_e6",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
@@ -869,7 +667,6 @@
                 30,
                 31
               ],
-              "x_label": "Sector",
               "units": "Index_No"
             },
             {
@@ -893,7 +690,6 @@
                 14,
                 15
               ],
-              "x_label": "APD",
               "units": "Index_No"
             }
           ]
@@ -902,10 +698,9 @@
           "name": "FEDU_n_e10",
           "type": "double",
           "x_cdf_DataType": "CDF_REAL4",
-          "description": "---> 17 keV Unidirectional differential electron flux (before noise correction). This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU_n']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> 17 keV Unidirectional differential electron flux (before noise correction). This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU_n']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV/q",
-          "x_label": "FEDU_n @ 17 keV",
           "x_format": ".3e",
           "x_fractionDigits": "3",
           "x_cdf_FORMAT": "E10.3",
@@ -915,7 +710,7 @@
           "x_cdf_COMPONENTS": [
             "FEDU_n"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>180>xsz=2.5,ysz=3>x=FEDU_Sector,y=FEDU_APDno,z=FEDU_n_e10",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
@@ -959,7 +754,6 @@
                 30,
                 31
               ],
-              "x_label": "Sector",
               "units": "Index_No"
             },
             {
@@ -983,7 +777,6 @@
                 14,
                 15
               ],
-              "x_label": "APD",
               "units": "Index_No"
             }
           ]
@@ -992,10 +785,9 @@
           "name": "FEDU_n_e14",
           "type": "double",
           "x_cdf_DataType": "CDF_REAL4",
-          "description": "---> 8.4 keV Unidirectional differential electron flux (before noise correction). This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU_n']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> 8.4 keV Unidirectional differential electron flux (before noise correction). This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDU_n']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV/q",
-          "x_label": "FEDU_n @ 8.4 keV",
           "x_format": ".3e",
           "x_fractionDigits": "3",
           "x_cdf_FORMAT": "E10.3",
@@ -1005,7 +797,7 @@
           "x_cdf_COMPONENTS": [
             "FEDU_n"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>180>xsz=2.5,ysz=3>x=FEDU_Sector,y=FEDU_APDno,z=FEDU_n_e14",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
@@ -1049,7 +841,6 @@
                 30,
                 31
               ],
-              "x_label": "Sector",
               "units": "Index_No"
             },
             {
@@ -1073,7 +864,6 @@
                 14,
                 15
               ],
-              "x_label": "APD",
               "units": "Index_No"
             }
           ]
@@ -1085,8 +875,7 @@
           "description": "[WILL NOT PLOT] Unidirectional Differential Electron Energy Flux",
           "fill": "-1e+31",
           "units": "keV/s-cm2-sr-keV",
-          "x_label": "FEEDU",
-          "x_labelComponents": [
+          "x_label": [
             [
               "0 1 2 3 4 5 6 7 8 9 1",
               "1",
@@ -1145,114 +934,21 @@
           "x_cdf_FORMAT": "E31.4",
           "x_cdf_FIELDNAM": "FEEDU",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
             16,
             16
-          ],
-          "bins": [
-            {
-              "name": "FEDU_Sector",
-              "description": "Spin sector number",
-              "centers": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16,
-                17,
-                18,
-                19,
-                20,
-                21,
-                22,
-                23,
-                24,
-                25,
-                26,
-                27,
-                28,
-                29,
-                30,
-                31
-              ],
-              "x_label": "Sector",
-              "units": "Index_No"
-            },
-            {
-              "name": "FEDU_Energy",
-              "description": "Energy for FEDU",
-              "centers": [
-                87.505,
-                87.505,
-                72.649,
-                60.432,
-                50.335,
-                41.965,
-                35.025,
-                29.259,
-                24.466,
-                20.458,
-                17.116,
-                14.326,
-                11.999,
-                10.047,
-                8.4053,
-                7.0311
-              ],
-              "x_label": "Energy",
-              "units": "keV",
-              "unitsSchema": "VOUnits1.1",
-              "x_unitsOriginal": "keV"
-            },
-            {
-              "name": "FEDU_APDno",
-              "description": "APD number",
-              "centers": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15
-              ],
-              "x_label": "APD",
-              "units": "Index_No"
-            }
           ]
         },
         {
           "name": "FEEDU_e2",
           "type": "double",
           "x_cdf_DataType": "CDF_REAL4",
-          "description": "---> 73 keV Unidirectional differential electron energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> 73 keV Unidirectional differential electron energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEEDU']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV/q",
-          "x_label": "FEEDU @ 73 keV",
           "x_format": ".3e",
           "x_fractionDigits": "3",
           "x_cdf_FORMAT": "E10.3",
@@ -1262,7 +958,7 @@
           "x_cdf_COMPONENTS": [
             "FEEDU"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>180>xsz=2.5,ysz=3>x=FEDU_Sector,y=FEDU_APDno,z=FEEDU_e2",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
@@ -1306,7 +1002,6 @@
                 30,
                 31
               ],
-              "x_label": "Sector",
               "units": "Index_No"
             },
             {
@@ -1330,7 +1025,6 @@
                 14,
                 15
               ],
-              "x_label": "APD",
               "units": "Index_No"
             }
           ]
@@ -1339,10 +1033,9 @@
           "name": "FEEDU_e6",
           "type": "double",
           "x_cdf_DataType": "CDF_REAL4",
-          "description": "---> 35 keV Unidirectional differential electron energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> 35 keV Unidirectional differential electron energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEEDU']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV/q",
-          "x_label": "FEEDU @ 35 keV",
           "x_format": ".3e",
           "x_fractionDigits": "3",
           "x_cdf_FORMAT": "E10.3",
@@ -1352,7 +1045,7 @@
           "x_cdf_COMPONENTS": [
             "FEEDU"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>180>xsz=2.5,ysz=3>x=FEDU_Sector,y=FEDU_APDno,z=FEEDU_e6",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
@@ -1396,7 +1089,6 @@
                 30,
                 31
               ],
-              "x_label": "Sector",
               "units": "Index_No"
             },
             {
@@ -1420,7 +1112,6 @@
                 14,
                 15
               ],
-              "x_label": "APD",
               "units": "Index_No"
             }
           ]
@@ -1429,10 +1120,9 @@
           "name": "FEEDU_e10",
           "type": "double",
           "x_cdf_DataType": "CDF_REAL4",
-          "description": "---> 17 keV Unidirectional differential electron energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> 17 keV Unidirectional differential electron energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEEDU']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV/q",
-          "x_label": "FEEDU @ 17 keV",
           "x_format": ".3e",
           "x_fractionDigits": "3",
           "x_cdf_FORMAT": "E10.3",
@@ -1442,7 +1132,7 @@
           "x_cdf_COMPONENTS": [
             "FEEDU"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>180>xsz=2.5,ysz=3>x=FEDU_Sector,y=FEDU_APDno,z=FEEDU_e10",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
@@ -1486,7 +1176,6 @@
                 30,
                 31
               ],
-              "x_label": "Sector",
               "units": "Index_No"
             },
             {
@@ -1510,7 +1199,6 @@
                 14,
                 15
               ],
-              "x_label": "APD",
               "units": "Index_No"
             }
           ]
@@ -1519,10 +1207,9 @@
           "name": "FEEDU_e14",
           "type": "double",
           "x_cdf_DataType": "CDF_REAL4",
-          "description": "---> 8.4 keV Unidirectional differential electron energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> 8.4 keV Unidirectional differential electron energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEEDU']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "#/s-cm2-sr-keV/q",
-          "x_label": "FEEDU @ 8.4 keV",
           "x_format": ".3e",
           "x_fractionDigits": "3",
           "x_cdf_FORMAT": "E10.3",
@@ -1532,7 +1219,7 @@
           "x_cdf_COMPONENTS": [
             "FEEDU"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>180>xsz=2.5,ysz=3>x=FEDU_Sector,y=FEDU_APDno,z=FEEDU_e14",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
@@ -1576,7 +1263,6 @@
                 30,
                 31
               ],
-              "x_label": "Sector",
               "units": "Index_No"
             },
             {
@@ -1600,7 +1286,6 @@
                 14,
                 15
               ],
-              "x_label": "APD",
               "units": "Index_No"
             }
           ]
@@ -1612,8 +1297,7 @@
           "description": "[WILL NOT PLOT] Directional electron count (Noise contained)",
           "fill": "65535",
           "units": "counts/sample",
-          "x_label": "count raw",
-          "x_labelComponents": [
+          "x_label": [
             [
               "0 1 2 3 4 5 6 7 8 9 1",
               "1",
@@ -1670,104 +1354,12 @@
           "x_cdf_FORMAT": "I10",
           "x_cdf_FIELDNAM": "Raw count",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "epoch",
           "size": [
             32,
             16,
             16
-          ],
-          "bins": [
-            {
-              "name": "FEDU_Sector",
-              "description": "Spin sector number",
-              "centers": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16,
-                17,
-                18,
-                19,
-                20,
-                21,
-                22,
-                23,
-                24,
-                25,
-                26,
-                27,
-                28,
-                29,
-                30,
-                31
-              ],
-              "x_label": "Sector",
-              "units": "Index_No"
-            },
-            {
-              "name": "FEDU_Energy",
-              "description": "Energy for FEDU",
-              "centers": [
-                87.505,
-                87.505,
-                72.649,
-                60.432,
-                50.335,
-                41.965,
-                35.025,
-                29.259,
-                24.466,
-                20.458,
-                17.116,
-                14.326,
-                11.999,
-                10.047,
-                8.4053,
-                7.0311
-              ],
-              "x_label": "Energy",
-              "units": "keV",
-              "unitsSchema": "VOUnits1.1",
-              "x_unitsOriginal": "keV"
-            },
-            {
-              "name": "FEDU_APDno",
-              "description": "APD number",
-              "centers": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15
-              ],
-              "x_label": "APD",
-              "units": "Index_No"
-            }
           ]
         }
       ]
@@ -1777,14 +1369,14 @@
     "id": "ERG_MEPE_L2_3DFLUX@1",
     "title": "Exploration of Energization and Radiation in Geospace (ERG) Medium-Energy Particle experiments - electron analyzer (MEP-e) Level 2 3D electron flux data - Satoshi Kasahara (The University of Tokyo)",
     "info": {
-      "startDate": "2017-03-23T00:31:13.000Z",
-      "stopDate": "2023-12-31T23:59:55.000Z",
-      "sampleStartDate": "2023-12-30T00:00:11.000Z",
-      "sampleStopDate": "2023-12-31T00:00:00.000Z",
+      "startDate": "2017-03-23T00:31:13Z",
+      "stopDate": "2023-12-31T23:59:55Z",
+      "sampleStartDate": "2023-12-30T00:00:11Z",
+      "sampleStopDate": "2023-12-31T00:00:00Z",
       "cadence": "PT0.25S",
       "x_cadence_fraction": 0.5963640061394337,
-      "x_cadence_note": "Cadence based on variable 'epoch_sp' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/erg/mepe/l2/3dflux/2017/erg_mepe_l2_3dflux_20170323_v01_01.cdf. This most common cadence occurred for 59.6364% of the 187668 timesteps. Cadence = 250000000 [ns] = PT0.25S.",
-      "maxRequestDuration": "PT4319450S",
+      "x_cadence_note": "Counts based on variable 'epoch_sp' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/erg/mepe/l2/3dflux/2017/erg_mepe_l2_3dflux_20170323_v01_01.cdf. The most common cadence occurred for 59.6364% of the 187668 timesteps. Cadence = 250000000 [ns] = PT0.25S.",
+      "maxRequestDuration": "P49DT23H50M50S",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ERG_MEPE_L2_3DFLUX",
       "contact": "Satoshi Kasahara @ The University of Tokyo",
       "parameters": [
@@ -1805,11 +1397,10 @@
           "description": "Spin phase number",
           "fill": "-128",
           "units": null,
-          "x_label": "Spin phase",
           "x_cdf_FORMAT": "I5",
           "x_cdf_FIELDNAM": "Spin phase",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "bar_chart",
           "x_cdf_DEPEND_0": "epoch_sp"
         }
       ]

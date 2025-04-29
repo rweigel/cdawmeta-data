@@ -2,14 +2,14 @@
   "id": "MUNIN_M1_MDSI",
   "title": "Ion Fluxes 1eV to 12 keV, from the MEDUSA instrument on the MUNIN nanosat - David Winningham (Southwest Research Institute)",
   "info": {
-    "startDate": "2000-12-09T11:46:12.000Z",
-    "stopDate": "2001-02-11T15:22:33.000Z",
-    "sampleStartDate": "2001-02-11T07:52:20.000Z",
-    "sampleStopDate": "2001-02-11T07:56:49.000Z",
+    "startDate": "2000-12-09T11:46:12Z",
+    "stopDate": "2001-02-11T15:22:33Z",
+    "sampleStartDate": "2001-02-11T07:52:20Z",
+    "sampleStopDate": "2001-02-11T07:56:49Z",
     "cadence": "PT0.5S",
     "x_cadence_fraction": 0.9754464285714286,
-    "x_cadence_note": "Cadence based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/munin/cdfs/m1/mdsi/2000/munin_m1_mdsi_20001209114612_v01.cdf. This most common cadence occurred for 97.5446% of the 437 timesteps. Cadence = 500000000 [ns] = PT0.5S.",
-    "maxRequestDuration": "PT13450S",
+    "x_cadence_note": "Counts based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/munin/cdfs/m1/mdsi/2000/munin_m1_mdsi_20001209114612_v01.cdf. The most common cadence occurred for 97.5446% of the 437 timesteps. Cadence = 500000000 [ns] = PT0.5S.",
+    "maxRequestDuration": "PT3H44M10S",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MUNIN_M1_MDSI",
     "contact": "David Winningham @ Southwest Research Institute",
     "parameters": [
@@ -30,8 +30,7 @@
         "description": "Science data in units of Telemetry (Dimensionless)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "Telemetry",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion Tlm Sens 0    (56.25 deg)",
             "Ion Tlm Sens 1    (33.75 deg)",
@@ -90,7 +89,7 @@
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "MEDUSA_Ion_Telemetry_Data",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>xsz=4,ysz=7>x=Sensor_Index,y=Center_Scan,z=MEDUSA_Ion_1_Telemetry_Dimensionless",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -118,7 +117,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -158,7 +156,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -167,11 +164,10 @@
         "name": "MEDUSA_Ion_1_Telemetry_D_atScan",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of Telemetry (Dimensionless). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_1_Telemetry_Dimensionless']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of Telemetry (Dimensionless). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_1_Telemetry_Dimensionless']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "Unitless",
-        "x_label": "Telemetry",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion Tlm Sens 0    (56.25 deg)",
             "Ion Tlm Sens 1    (33.75 deg)",
@@ -234,7 +230,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_1_Telemetry_Dimensionless"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Center_Scan, z=MEDUSA_Ion_1_Telemetry_D_atScan(1,*), z=MEDUSA_Ion_1_Telemetry_D_atScan(4,*), z=MEDUSA_Ion_1_Telemetry_D_atScan(7,*), z=MEDUSA_Ion_1_Telemetry_D_atScan(10,*), z=MEDUSA_Ion_1_Telemetry_D_atScan(13,*), z=MEDUSA_Ion_1_Telemetry_D_atScan(15,*) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -262,7 +258,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -302,7 +297,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -311,11 +305,10 @@
         "name": "MEDUSA_Ion_1_Telemetry_D_atSensor",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of Telemetry (Dimensionless). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_1_Telemetry_Dimensionless']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of Telemetry (Dimensionless). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_1_Telemetry_Dimensionless']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "Unitless",
-        "x_label": "Telemetry",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion Tlm Sens 0    (56.25 deg)",
             "Ion Tlm Sens 1    (33.75 deg)",
@@ -378,7 +371,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_1_Telemetry_Dimensionless"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Sensor_Index, z=MEDUSA_Ion_1_Telemetry_D_atSensor(*,1), z=MEDUSA_Ion_1_Telemetry_D_atSensor(*,5), z=MEDUSA_Ion_1_Telemetry_D_atSensor(*,9), z=MEDUSA_Ion_1_Telemetry_D_atSensor(*,13), z=MEDUSA_Ion_1_Telemetry_D_atSensor(*,17), z=MEDUSA_Ion_1_Telemetry_D_atSensor(*,21), z=MEDUSA_Ion_1_Telemetry_D_atSensor(*,25), z=MEDUSA_Ion_1_Telemetry_D_atSensor(*,29) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -406,7 +399,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -446,7 +438,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -458,8 +449,7 @@
         "description": "Science data in units of >c/acc",
         "fill": "-3.4e+38",
         "units": ">c/acc",
-        "x_label": ">c/acc",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion gtCntRt Sens 0    (56.25 deg)",
             "Ion gtCntRt Sens 1    (33.75 deg)",
@@ -518,7 +508,7 @@
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "MEDUSA_Ion_>cnts/accum_Data",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>xsz=4,ysz=7>x=Sensor_Index,y=Center_Scan,z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -546,7 +536,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -586,7 +575,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -595,11 +583,10 @@
         "name": "MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atScan",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of >c/acc. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of >c/acc. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": ">c/acc",
-        "x_label": ">c/acc",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion gtCntRt Sens 0    (56.25 deg)",
             "Ion gtCntRt Sens 1    (33.75 deg)",
@@ -662,7 +649,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Center_Scan, z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atScan(1,*), z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atScan(4,*), z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atScan(7,*), z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atScan(10,*), z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atScan(13,*), z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atScan(15,*) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -690,7 +677,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -730,7 +716,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -739,11 +724,10 @@
         "name": "MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atSensor",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of >c/acc. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of >c/acc. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": ">c/acc",
-        "x_label": ">c/acc",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion gtCntRt Sens 0    (56.25 deg)",
             "Ion gtCntRt Sens 1    (33.75 deg)",
@@ -806,7 +790,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Sensor_Index, z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atSensor(*,1), z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atSensor(*,5), z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atSensor(*,9), z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atSensor(*,13), z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atSensor(*,17), z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atSensor(*,21), z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atSensor(*,25), z=MEDUSA_Ion_2_gt_c_acc_gt_c_per_acc-atSensor(*,29) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -834,7 +818,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -874,7 +857,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -886,8 +868,7 @@
         "description": "Science data in units of c/acc",
         "fill": "-3.4e+38",
         "units": "c/acc",
-        "x_label": "c/acc",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion CntRt Sens 0    (56.25 deg)",
             "Ion CntRt Sens 1    (33.75 deg)",
@@ -946,7 +927,7 @@
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "MEDUSA_Ion_cnts/accum_Data",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>xsz=4,ysz=7>x=Sensor_Index,y=Center_Scan,z=MEDUSA_Ion_3_c_acc_c_per_acc",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -974,7 +955,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -1014,7 +994,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -1023,11 +1002,10 @@
         "name": "MEDUSA_Ion_3_c_acc_c_per_acc-atScan",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of c/acc. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_3_c_acc_c_per_acc']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of c/acc. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_3_c_acc_c_per_acc']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "c/acc",
-        "x_label": "c/acc",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion CntRt Sens 0    (56.25 deg)",
             "Ion CntRt Sens 1    (33.75 deg)",
@@ -1090,7 +1068,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_3_c_acc_c_per_acc"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Center_Scan, z=MEDUSA_Ion_3_c_acc_c_per_acc-atScan(1,*), z=MEDUSA_Ion_3_c_acc_c_per_acc-atScan(4,*), z=MEDUSA_Ion_3_c_acc_c_per_acc-atScan(7,*), z=MEDUSA_Ion_3_c_acc_c_per_acc-atScan(10,*), z=MEDUSA_Ion_3_c_acc_c_per_acc-atScan(13,*), z=MEDUSA_Ion_3_c_acc_c_per_acc-atScan(15,*) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -1118,7 +1096,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -1158,7 +1135,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -1167,11 +1143,10 @@
         "name": "MEDUSA_Ion_3_c_acc_c_per_acc-atSensor",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of c/acc. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_3_c_acc_c_per_acc']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of c/acc. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_3_c_acc_c_per_acc']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "c/acc",
-        "x_label": "c/acc",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion CntRt Sens 0    (56.25 deg)",
             "Ion CntRt Sens 1    (33.75 deg)",
@@ -1234,7 +1209,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_3_c_acc_c_per_acc"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Sensor_Index, z=MEDUSA_Ion_3_c_acc_c_per_acc-atSensor(*,1), z=MEDUSA_Ion_3_c_acc_c_per_acc-atSensor(*,5), z=MEDUSA_Ion_3_c_acc_c_per_acc-atSensor(*,9), z=MEDUSA_Ion_3_c_acc_c_per_acc-atSensor(*,13), z=MEDUSA_Ion_3_c_acc_c_per_acc-atSensor(*,17), z=MEDUSA_Ion_3_c_acc_c_per_acc-atSensor(*,21), z=MEDUSA_Ion_3_c_acc_c_per_acc-atSensor(*,25), z=MEDUSA_Ion_3_c_acc_c_per_acc-atSensor(*,29) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -1262,7 +1237,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -1302,7 +1276,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -1314,8 +1287,7 @@
         "description": "Science data in units of #/sec (cnts/sec)",
         "fill": "-3.4e+38",
         "units": "cnts/sec",
-        "x_label": "#/sec",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion CntRt Sens 0    (56.25 deg)",
             "Ion CntRt Sens 1    (33.75 deg)",
@@ -1374,7 +1346,7 @@
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "MEDUSA_Ion_cnts/sec_Data",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>xsz=4,ysz=7>x=Sensor_Index,y=Center_Scan,z=MEDUSA_Ion_4_num_sec_cnts_per_sec",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -1402,7 +1374,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -1442,7 +1413,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -1451,11 +1421,10 @@
         "name": "MEDUSA_Ion_4_num_sec_cnts_per_sec-atScan",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of #/sec (cnts/sec). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_4_num_sec_cnts_per_sec']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of #/sec (cnts/sec). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_4_num_sec_cnts_per_sec']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "cnts/sec",
-        "x_label": "#/sec",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion CntRt Sens 0    (56.25 deg)",
             "Ion CntRt Sens 1    (33.75 deg)",
@@ -1518,7 +1487,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_4_num_sec_cnts_per_sec"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Center_Scan, z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atScan(1,*), z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atScan(4,*), z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atScan(7,*), z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atScan(10,*), z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atScan(13,*), z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atScan(15,*) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -1546,7 +1515,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -1586,7 +1554,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -1595,11 +1562,10 @@
         "name": "MEDUSA_Ion_4_num_sec_cnts_per_sec-atSensor",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of #/sec (cnts/sec). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_4_num_sec_cnts_per_sec']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of #/sec (cnts/sec). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_4_num_sec_cnts_per_sec']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "cnts/sec",
-        "x_label": "#/sec",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion CntRt Sens 0    (56.25 deg)",
             "Ion CntRt Sens 1    (33.75 deg)",
@@ -1662,7 +1628,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_4_num_sec_cnts_per_sec"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Sensor_Index, z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atSensor(*,1), z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atSensor(*,5), z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atSensor(*,9), z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atSensor(*,13), z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atSensor(*,17), z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atSensor(*,21), z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atSensor(*,25), z=MEDUSA_Ion_4_num_sec_cnts_per_sec-atSensor(*,29) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -1690,7 +1656,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -1730,7 +1695,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -1742,8 +1706,7 @@
         "description": "Science data in units of #/sec (cor cnts/sec)",
         "fill": "-3.4e+38",
         "units": "cor cnts/sec",
-        "x_label": "#/sec",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion CorrCntRt Sens 0    (56.25 deg)",
             "Ion CorrCntRt Sens 1    (33.75 deg)",
@@ -1802,7 +1765,7 @@
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "MEDUSA_Ion_corrected cnts/sec",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>xsz=4,ysz=7>x=Sensor_Index,y=Center_Scan,z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -1830,7 +1793,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -1870,7 +1832,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -1879,11 +1840,10 @@
         "name": "MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atScan",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of #/sec (cor cnts/sec). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_5_num_sec_cor_cnts_per_sec']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of #/sec (cor cnts/sec). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_5_num_sec_cor_cnts_per_sec']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "cor cnts/sec",
-        "x_label": "#/sec",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion CorrCntRt Sens 0    (56.25 deg)",
             "Ion CorrCntRt Sens 1    (33.75 deg)",
@@ -1946,7 +1906,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_5_num_sec_cor_cnts_per_sec"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Center_Scan, z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atScan(1,*), z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atScan(4,*), z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atScan(7,*), z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atScan(10,*), z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atScan(13,*), z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atScan(15,*) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -1974,7 +1934,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -2014,7 +1973,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -2023,11 +1981,10 @@
         "name": "MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atSensor",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of #/sec (cor cnts/sec). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_5_num_sec_cor_cnts_per_sec']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of #/sec (cor cnts/sec). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_5_num_sec_cor_cnts_per_sec']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "cor cnts/sec",
-        "x_label": "#/sec",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion CorrCntRt Sens 0    (56.25 deg)",
             "Ion CorrCntRt Sens 1    (33.75 deg)",
@@ -2090,7 +2047,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_5_num_sec_cor_cnts_per_sec"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Sensor_Index, z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atSensor(*,1), z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atSensor(*,5), z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atSensor(*,9), z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atSensor(*,13), z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atSensor(*,17), z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atSensor(*,21), z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atSensor(*,25), z=MEDUSA_Ion_5_num_sec_cor_cnts_per_sec-atSensor(*,29) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -2118,7 +2075,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -2158,7 +2114,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -2170,8 +2125,7 @@
         "description": "Science data in units of NFLUX (cnts/(cm**2 sr s))",
         "fill": "-3.4e+38",
         "units": "cnts/(cm**2 sr s)",
-        "x_label": "NFLUX",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion NFLUX Sens 0    (56.25 deg)",
             "Ion NFLUX Sens 1    (33.75 deg)",
@@ -2230,7 +2184,7 @@
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "MEDUSA_Ion_Number Flux",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>xsz=4,ysz=7>x=Sensor_Index,y=Center_Scan,z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -2258,7 +2212,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -2298,7 +2251,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -2307,11 +2259,10 @@
         "name": "MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atScan",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of NFLUX (cnts/(cm**2 sr s)). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of NFLUX (cnts/(cm**2 sr s)). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "cnts/(cm**2 sr s)",
-        "x_label": "NFLUX",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion NFLUX Sens 0    (56.25 deg)",
             "Ion NFLUX Sens 1    (33.75 deg)",
@@ -2374,7 +2325,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Center_Scan, z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atScan(1,*), z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atScan(4,*), z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atScan(7,*), z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atScan(10,*), z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atScan(13,*), z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atScan(15,*) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -2402,7 +2353,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -2442,7 +2392,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -2451,11 +2400,10 @@
         "name": "MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atSensor",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of NFLUX (cnts/(cm**2 sr s)). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of NFLUX (cnts/(cm**2 sr s)). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "cnts/(cm**2 sr s)",
-        "x_label": "NFLUX",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion NFLUX Sens 0    (56.25 deg)",
             "Ion NFLUX Sens 1    (33.75 deg)",
@@ -2518,7 +2466,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Sensor_Index, z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atSensor(*,1), z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atSensor(*,5), z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atSensor(*,9), z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atSensor(*,13), z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atSensor(*,17), z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atSensor(*,21), z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atSensor(*,25), z=MEDUSA_Ion_6_NFLUX_cnts_per_cm_2_sr_s-atSensor(*,29) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -2546,7 +2494,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -2586,7 +2533,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -2598,8 +2544,7 @@
         "description": "Science data in units of dNFLUX (cnts/(cm**2 sr s eV))",
         "fill": "-3.4e+38",
         "units": "cnts/(cm**2 sr s eV)",
-        "x_label": "dNFLUX",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion dNFLUX Sens 0    (56.25 deg)",
             "Ion dNFLUX Sens 1    (33.75 deg)",
@@ -2658,7 +2603,7 @@
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "MEDUSA_Ion_Diff Number Flux",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>xsz=4,ysz=7>x=Sensor_Index,y=Center_Scan,z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -2686,7 +2631,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -2726,7 +2670,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -2735,11 +2678,10 @@
         "name": "MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atScan",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of dNFLUX (cnts/(cm**2 sr s eV)). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of dNFLUX (cnts/(cm**2 sr s eV)). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "cnts/(cm**2 sr s eV)",
-        "x_label": "dNFLUX",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion dNFLUX Sens 0    (56.25 deg)",
             "Ion dNFLUX Sens 1    (33.75 deg)",
@@ -2802,7 +2744,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Center_Scan, z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atScan(1,*), z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atScan(4,*), z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atScan(7,*), z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atScan(10,*), z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atScan(13,*), z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atScan(15,*) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -2830,7 +2772,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -2870,7 +2811,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -2879,11 +2819,10 @@
         "name": "MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atSensor",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of dNFLUX (cnts/(cm**2 sr s eV)). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of dNFLUX (cnts/(cm**2 sr s eV)). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "cnts/(cm**2 sr s eV)",
-        "x_label": "dNFLUX",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion dNFLUX Sens 0    (56.25 deg)",
             "Ion dNFLUX Sens 1    (33.75 deg)",
@@ -2946,7 +2885,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Sensor_Index, z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atSensor(*,1), z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atSensor(*,5), z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atSensor(*,9), z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atSensor(*,13), z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atSensor(*,17), z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atSensor(*,21), z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atSensor(*,25), z=MEDUSA_Ion_7_dNFLUX_cnts_per_cm_2_sr_s_eV-atSensor(*,29) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -2974,7 +2913,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -3014,7 +2952,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -3026,8 +2963,7 @@
         "description": "Science data in units of dEFLUX (ergs/(cm**2 str s eV)",
         "fill": "-3.4e+38",
         "units": "ergs/(cm**2 str s eV",
-        "x_label": "dEFLUX",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion dEFLUX Sens 0    (56.25 deg)",
             "Ion dEFLUX Sens 1    (33.75 deg)",
@@ -3086,7 +3022,7 @@
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "MEDUSA_Ion_Diff Energy Flux",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>xsz=4,ysz=7>x=Sensor_Index,y=Center_Scan,z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -3114,7 +3050,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -3154,7 +3089,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -3163,11 +3097,10 @@
         "name": "MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atScan",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of dEFLUX (ergs/(cm**2 str s eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of dEFLUX (ergs/(cm**2 str s eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "ergs/(cm**2 str s eV",
-        "x_label": "dEFLUX",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion dEFLUX Sens 0    (56.25 deg)",
             "Ion dEFLUX Sens 1    (33.75 deg)",
@@ -3230,7 +3163,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Center_Scan, z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atScan(1,*), z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atScan(4,*), z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atScan(7,*), z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atScan(10,*), z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atScan(13,*), z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atScan(15,*) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -3258,7 +3191,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -3298,7 +3230,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -3307,11 +3238,10 @@
         "name": "MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atSensor",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of dEFLUX (ergs/(cm**2 str s eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of dEFLUX (ergs/(cm**2 str s eV). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "ergs/(cm**2 str s eV",
-        "x_label": "dEFLUX",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion dEFLUX Sens 0    (56.25 deg)",
             "Ion dEFLUX Sens 1    (33.75 deg)",
@@ -3374,7 +3304,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Sensor_Index, z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atSensor(*,1), z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atSensor(*,5), z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atSensor(*,9), z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atSensor(*,13), z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atSensor(*,17), z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atSensor(*,21), z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atSensor(*,25), z=MEDUSA_Ion_8_dEFLUX_ergs_per_cm_2_str_s_eV-atSensor(*,29) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -3402,7 +3332,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -3442,7 +3371,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -3454,8 +3382,7 @@
         "description": "Science data in units of DF (sec**3/km**6)",
         "fill": "-3.4e+38",
         "units": "sec**3/km**6",
-        "x_label": "DF",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion DistFn Sens 0    (56.25 deg)",
             "Ion DistFn Sens 1    (33.75 deg)",
@@ -3514,7 +3441,7 @@
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "MEDUSA_Ion_Distribution Function",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>xsz=4,ysz=7>x=Sensor_Index,y=Center_Scan,z=MEDUSA_Ion_9_DF_sec_3_per_km_6",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -3542,7 +3469,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -3582,7 +3508,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -3591,11 +3516,10 @@
         "name": "MEDUSA_Ion_9_DF_sec_3_per_km_6-atScan",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of DF (sec**3/km**6). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_9_DF_sec_3_per_km_6']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of DF (sec**3/km**6). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_9_DF_sec_3_per_km_6']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "sec**3/km**6",
-        "x_label": "DF",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion DistFn Sens 0    (56.25 deg)",
             "Ion DistFn Sens 1    (33.75 deg)",
@@ -3658,7 +3582,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_9_DF_sec_3_per_km_6"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Center_Scan, z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atScan(1,*), z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atScan(4,*), z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atScan(7,*), z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atScan(10,*), z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atScan(13,*), z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atScan(15,*) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -3686,7 +3610,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -3726,7 +3649,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -3735,11 +3657,10 @@
         "name": "MEDUSA_Ion_9_DF_sec_3_per_km_6-atSensor",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of DF (sec**3/km**6). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_9_DF_sec_3_per_km_6']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of DF (sec**3/km**6). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_9_DF_sec_3_per_km_6']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "sec**3/km**6",
-        "x_label": "DF",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion DistFn Sens 0    (56.25 deg)",
             "Ion DistFn Sens 1    (33.75 deg)",
@@ -3802,7 +3723,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_9_DF_sec_3_per_km_6"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Sensor_Index, z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atSensor(*,1), z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atSensor(*,5), z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atSensor(*,9), z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atSensor(*,13), z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atSensor(*,17), z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atSensor(*,21), z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atSensor(*,25), z=MEDUSA_Ion_9_DF_sec_3_per_km_6-atSensor(*,29) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -3830,7 +3751,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -3870,7 +3790,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -3882,8 +3801,7 @@
         "description": "Science data in units of DF (sec**3/m**6)",
         "fill": "-3.4e+38",
         "units": "sec**3/m**6",
-        "x_label": "DF",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion DistFn Sens 0    (56.25 deg)",
             "Ion DistFn Sens 1    (33.75 deg)",
@@ -3942,7 +3860,7 @@
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "MEDUSA_Ion_Distribution Function",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>xsz=4,ysz=7>x=Sensor_Index,y=Center_Scan,z=MEDUSA_Ion_10_DF_sec_3_per_m_6",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -3970,7 +3888,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -4010,7 +3927,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -4019,11 +3935,10 @@
         "name": "MEDUSA_Ion_10_DF_sec_3_per_m_6-atScan",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of DF (sec**3/m**6). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_10_DF_sec_3_per_m_6']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of DF (sec**3/m**6). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_10_DF_sec_3_per_m_6']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "sec**3/m**6",
-        "x_label": "DF",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion DistFn Sens 0    (56.25 deg)",
             "Ion DistFn Sens 1    (33.75 deg)",
@@ -4086,7 +4001,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_10_DF_sec_3_per_m_6"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Center_Scan, z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atScan(1,*), z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atScan(4,*), z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atScan(7,*), z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atScan(10,*), z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atScan(13,*), z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atScan(15,*) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -4114,7 +4029,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -4154,7 +4068,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -4163,11 +4076,10 @@
         "name": "MEDUSA_Ion_10_DF_sec_3_per_m_6-atSensor",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of DF (sec**3/m**6). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_10_DF_sec_3_per_m_6']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of DF (sec**3/m**6). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_10_DF_sec_3_per_m_6']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "sec**3/m**6",
-        "x_label": "DF",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion DistFn Sens 0    (56.25 deg)",
             "Ion DistFn Sens 1    (33.75 deg)",
@@ -4230,7 +4142,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_10_DF_sec_3_per_m_6"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Sensor_Index, z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atSensor(*,1), z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atSensor(*,5), z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atSensor(*,9), z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atSensor(*,13), z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atSensor(*,17), z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atSensor(*,21), z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atSensor(*,25), z=MEDUSA_Ion_10_DF_sec_3_per_m_6-atSensor(*,29) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -4258,7 +4170,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -4298,7 +4209,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -4310,8 +4220,7 @@
         "description": "Science data in units of DF (sec**3/cm**6)",
         "fill": "-3.4e+38",
         "units": "sec**3/cm**6",
-        "x_label": "DF",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion DistFn Sens 0    (56.25 deg)",
             "Ion DistFn Sens 1    (33.75 deg)",
@@ -4370,7 +4279,7 @@
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "MEDUSA_Ion_Distribution Function",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>166>xsz=4,ysz=7>x=Sensor_Index,y=Center_Scan,z=MEDUSA_Ion_11_DF_sec_3_per_cm_6",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -4398,7 +4307,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -4438,7 +4346,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -4447,11 +4354,10 @@
         "name": "MEDUSA_Ion_11_DF_sec_3_per_cm_6-atScan",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of DF (sec**3/cm**6). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_11_DF_sec_3_per_cm_6']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Scan at sample Sensors - Science data in units of DF (sec**3/cm**6). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_11_DF_sec_3_per_cm_6']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "sec**3/cm**6",
-        "x_label": "DF",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion DistFn Sens 0    (56.25 deg)",
             "Ion DistFn Sens 1    (33.75 deg)",
@@ -4514,7 +4420,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_11_DF_sec_3_per_cm_6"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Center_Scan, z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atScan(1,*), z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atScan(4,*), z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atScan(7,*), z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atScan(10,*), z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atScan(13,*), z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atScan(15,*) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -4542,7 +4448,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -4582,7 +4487,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -4591,11 +4495,10 @@
         "name": "MEDUSA_Ion_11_DF_sec_3_per_cm_6-atSensor",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of DF (sec**3/cm**6). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_11_DF_sec_3_per_cm_6']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms by Sensor at sample Scans - Science data in units of DF (sec**3/cm**6). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['MEDUSA_Ion_11_DF_sec_3_per_cm_6']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-3.4e+38",
         "units": "sec**3/cm**6",
-        "x_label": "DF",
-        "x_labelComponents": [
+        "x_label": [
           [
             "Ion DistFn Sens 0    (56.25 deg)",
             "Ion DistFn Sens 1    (33.75 deg)",
@@ -4658,7 +4561,7 @@
         "x_cdf_COMPONENTS": [
           "MEDUSA_Ion_11_DF_sec_3_per_cm_6"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Sensor_Index, z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atSensor(*,1), z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atSensor(*,5), z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atSensor(*,9), z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atSensor(*,13), z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atSensor(*,17), z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atSensor(*,21), z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atSensor(*,25), z=MEDUSA_Ion_11_DF_sec_3_per_cm_6-atSensor(*,29) ",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           16,
@@ -4686,7 +4589,6 @@
               14,
               15
             ],
-            "x_label": "sensor index",
             "units": null
           },
           {
@@ -4726,7 +4628,6 @@
               3.0,
               1.0
             ],
-            "x_label": "Center Scan",
             "units": "eV"
           }
         ]
@@ -4738,13 +4639,12 @@
         "description": "Data quality Ion Sensor 3 (11.25 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 3 (11.25 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 3 (11.25 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4754,13 +4654,12 @@
         "description": "Data quality Ion Sensor 1 (33.75 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 1 (33.75 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 1 (33.75 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4770,13 +4669,12 @@
         "description": "Data quality Ion Sensor 0 (56.25 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 0 (56.25 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 0 (56.25 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4786,13 +4684,12 @@
         "description": "Data quality Ion Sensor 2 (78.75 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 2 (78.75 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 2 (78.75 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4802,13 +4699,12 @@
         "description": "Data quality Ion Sensor 4 (101.25 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 4 (101.25 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 4 (101.25 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4818,13 +4714,12 @@
         "description": "Data quality Ion Sensor 6 (123.75 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 6 (123.75 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 6 (123.75 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4834,13 +4729,12 @@
         "description": "Data quality Ion Sensor 8 (146.25 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 8 (146.25 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 8 (146.25 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4850,13 +4744,12 @@
         "description": "Data quality Ion Sensor 10 (168.75 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 10 (168.75 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 10 (168.75 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4866,13 +4759,12 @@
         "description": "Data quality Ion Sensor 5 (-11.25 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 5 (-11.25 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 5 (-11.25 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4882,13 +4774,12 @@
         "description": "Data quality Ion Sensor 7 (-33.75 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 7 (-33.75 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 7 (-33.75 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4898,13 +4789,12 @@
         "description": "Data quality Ion Sensor 9 (-56.25 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 9 (-56.25 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 9 (-56.25 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4914,13 +4804,12 @@
         "description": "Data quality Ion Sensor 11 (78.75 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 11 (78.75 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 11 (78.75 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4930,13 +4819,12 @@
         "description": "Data quality Ion Sensor 13 (-101.25 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 13 (-101.25 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 13 (-101.25 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4946,13 +4834,12 @@
         "description": "Data quality Ion Sensor 15 (-123.75 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 15 (-123.75 deg)3",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 15 (-123.75 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4962,13 +4849,12 @@
         "description": "Data quality Ion Sensor 14 (-146.25 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "DQ Ion Sens 14 (-146.25 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 14 (-146.25 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -4978,13 +4864,12 @@
         "description": "Data quality Ion Sensor 12 (168.75 deg)",
         "fill": "-3.4e+38",
         "units": "(0=OK)",
-        "x_label": "Ion DQ Sens 12 (168.75 deg)",
         "x_format": ".6e",
         "x_fractionDigits": "6",
         "x_cdf_FORMAT": "E13.6",
         "x_cdf_FIELDNAM": "DQ Ion Sens 12 (168.75 deg)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chart",
         "x_cdf_DEPEND_0": "Epoch"
       }
     ]

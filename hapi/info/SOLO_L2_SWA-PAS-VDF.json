@@ -2,14 +2,14 @@
   "id": "SOLO_L2_SWA-PAS-VDF",
   "title": "Solar Orbiter Level 2 Phase Spase Distribution Function from Solar Wind Analyser (SWA) Proton-Alpha Sensor (PAS) - C.J. Owen (MSSL-UCL, University College London, UK)",
   "info": {
-    "startDate": "2020-07-07T16:43:06.000Z",
-    "stopDate": "2024-11-29T23:59:55.000Z",
-    "sampleStartDate": "2024-11-27T23:59:59.000Z",
-    "sampleStopDate": "2024-11-28T23:59:55.000Z",
+    "startDate": "2020-07-07T16:43:06Z",
+    "stopDate": "2024-12-31T23:59:58Z",
+    "sampleStartDate": "2024-12-29T23:59:59Z",
+    "sampleStopDate": "2024-12-30T23:59:59Z",
     "cadence": "PT4.000007S",
     "x_cadence_fraction": 0.4894519026950641,
-    "x_cadence_note": "Cadence based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/solar-orbiter/swa/science/l2/pas-vdf/2020/solo_l2_swa-pas-vdf_20200707_v02.cdf. This most common cadence occurred for 48.9452% of the 4849 timesteps. Cadence = 4000007000 [ns] = PT4.000007S.",
-    "maxRequestDuration": "PT4319800S",
+    "x_cadence_note": "Counts based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/solar-orbiter/swa/science/l2/pas-vdf/2020/solo_l2_swa-pas-vdf_20200707_v02.cdf. The most common cadence occurred for 48.9452% of the 4849 timesteps. Cadence = 4000007000 [ns] = PT4.000007S.",
+    "maxRequestDuration": "P50D",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-PAS-VDF",
     "contact": "C.J. Owen @ MSSL-UCL, University College London, UK",
     "parameters": [
@@ -30,7 +30,6 @@
         "description": "Total counter of unrecovered bins",
         "fill": "-1e+31",
         "units": null,
-        "x_label": "Unrecovered count",
         "x_format": ".2e",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "E12.2",
@@ -45,7 +44,6 @@
         "description": "Total count",
         "fill": "-1e+31",
         "units": null,
-        "x_label": "Total count",
         "x_format": ".2e",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "E12.2",
@@ -60,7 +58,6 @@
         "description": "Quality factor",
         "fill": "-1e+31",
         "units": null,
-        "x_label": "Quality factor",
         "x_format": ".2e",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "E12.2",
@@ -72,24 +69,21 @@
         "name": "vdf_mv",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 1",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -100,7 +94,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartxsz=4>x=Azimuth,y=Energy,z=vdf_mv(*,1,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -124,7 +118,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -141,7 +134,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -245,7 +237,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -254,24 +245,21 @@
         "name": "vdf_spec",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 1",
-        "x_labelComponents": [
-          [
-            "elev1, azim -21.67",
-            "elev1, azim -14.56",
-            "elev1, azim -8.61",
-            "elev1, azim -2.70",
-            "elev1, azim  3.14",
-            "elev1, azim  9.02",
-            "elev1, azim  14.91",
-            "elev1, azim  20.66",
-            "elev1, azim  27.38",
-            "elev1, azim  33.32",
-            "elev1, azim  39.10"
-          ]
+        "x_label": [
+          "elev1, azim -21.67",
+          "elev1, azim -14.56",
+          "elev1, azim -8.61",
+          "elev1, azim -2.70",
+          "elev1, azim  3.14",
+          "elev1, azim  9.02",
+          "elev1, azim  14.91",
+          "elev1, azim  20.66",
+          "elev1, azim  27.38",
+          "elev1, azim  33.32",
+          "elev1, azim  39.10"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -282,7 +270,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Energy,z=vdf_spec(1,1,*),z=vdf_spec(3,1,*),z=vdf_spec(5,1,*),z=vdf_spec(7,1,*),z=vdf_spec(9,1,*),z=vdf_spec(11,1,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -306,7 +294,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -323,7 +310,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -427,7 +413,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -436,24 +421,21 @@
         "name": "vdf2",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Distribution function: [Azimuth vs Energy] at elevation 2. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Distribution function: [Azimuth vs Energy] at elevation 2. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 2",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -464,7 +446,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>60>xsz=4>x=Azimuth,y=Energy,z=vdf2(*,2,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -488,7 +470,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -505,7 +486,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -609,7 +589,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -618,24 +597,21 @@
         "name": "vdf2_mv",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 2",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -646,7 +622,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartxsz=4>x=Azimuth,y=Energy,z=vdf2_mv(*,2,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -670,7 +646,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -687,7 +662,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -791,7 +765,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -800,24 +773,21 @@
         "name": "vdf2_spec",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 2",
-        "x_labelComponents": [
-          [
-            "elev2, azim -21.67",
-            "elev2, azim -14.56",
-            "elev2, azim -8.61",
-            "elev2, azim -2.70",
-            "elev2, azim  3.14",
-            "elev2, azim  9.02",
-            "elev2, azim  14.91",
-            "elev2, azim  20.66",
-            "elev2, azim  27.38",
-            "elev2, azim  33.32",
-            "elev2, azim  39.10"
-          ]
+        "x_label": [
+          "elev2, azim -21.67",
+          "elev2, azim -14.56",
+          "elev2, azim -8.61",
+          "elev2, azim -2.70",
+          "elev2, azim  3.14",
+          "elev2, azim  9.02",
+          "elev2, azim  14.91",
+          "elev2, azim  20.66",
+          "elev2, azim  27.38",
+          "elev2, azim  33.32",
+          "elev2, azim  39.10"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -828,7 +798,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Energy,z=vdf2_spec(1,2,*),z=vdf2_spec(3,2,*),z=vdf2_spec(5,2,*),z=vdf2_spec(7,2,*),z=vdf2_spec(9,2,*),z=vdf2_spec(11,2,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -852,7 +822,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -869,7 +838,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -973,7 +941,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -982,24 +949,21 @@
         "name": "vdf3",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Distribution function: [Azimuth vs Energy] at elevation 3. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Distribution function: [Azimuth vs Energy] at elevation 3. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 3",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -1010,7 +974,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>60>xsz=4>x=Azimuth,y=Energy,z=vdf3(*,3,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -1034,7 +998,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -1051,7 +1014,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -1155,7 +1117,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -1164,24 +1125,21 @@
         "name": "vdf3_mv",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 3",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -1192,7 +1150,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartxsz=4>x=Azimuth,y=Energy,z=vdf3_mv(*,3,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -1216,7 +1174,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -1233,7 +1190,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -1337,7 +1293,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -1346,24 +1301,21 @@
         "name": "vdf3_spec",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 3",
-        "x_labelComponents": [
-          [
-            "elev3, azim -21.67",
-            "elev3, azim -14.56",
-            "elev3, azim -8.61",
-            "elev3, azim -2.70",
-            "elev3, azim  3.14",
-            "elev3, azim  9.02",
-            "elev3, azim  14.91",
-            "elev3, azim  20.66",
-            "elev3, azim  27.38",
-            "elev3, azim  33.32",
-            "elev3, azim  39.10"
-          ]
+        "x_label": [
+          "elev3, azim -21.67",
+          "elev3, azim -14.56",
+          "elev3, azim -8.61",
+          "elev3, azim -2.70",
+          "elev3, azim  3.14",
+          "elev3, azim  9.02",
+          "elev3, azim  14.91",
+          "elev3, azim  20.66",
+          "elev3, azim  27.38",
+          "elev3, azim  33.32",
+          "elev3, azim  39.10"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -1374,7 +1326,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Energy,z=vdf3_spec(1,3,*),z=vdf3_spec(3,3,*),z=vdf3_spec(5,3,*),z=vdf3_spec(7,3,*),z=vdf3_spec(9,3,*),z=vdf3_spec(11,3,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -1398,7 +1350,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -1415,7 +1366,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -1519,7 +1469,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -1528,24 +1477,21 @@
         "name": "vdf4",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Distribution function: [Azimuth vs Energy] at elevation 4. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Distribution function: [Azimuth vs Energy] at elevation 4. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 4",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -1556,7 +1502,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>60>xsz=4>x=Azimuth,y=Energy,z=vdf4(*,4,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -1580,7 +1526,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -1597,7 +1542,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -1701,7 +1645,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -1710,24 +1653,21 @@
         "name": "vdf4_mv",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 4",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -1738,7 +1678,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartxsz=4>x=Azimuth,y=Energy,z=vdf4_mv(*,4,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -1762,7 +1702,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -1779,7 +1718,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -1883,7 +1821,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -1892,24 +1829,21 @@
         "name": "vdf4_spec",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 4",
-        "x_labelComponents": [
-          [
-            "elev4, azim -21.67",
-            "elev4, azim -14.56",
-            "elev4, azim -8.61",
-            "elev4, azim -2.70",
-            "elev4, azim  3.14",
-            "elev4, azim  9.02",
-            "elev4, azim  14.91",
-            "elev4, azim  20.66",
-            "elev4, azim  27.38",
-            "elev4, azim  33.32",
-            "elev4, azim  39.10"
-          ]
+        "x_label": [
+          "elev4, azim -21.67",
+          "elev4, azim -14.56",
+          "elev4, azim -8.61",
+          "elev4, azim -2.70",
+          "elev4, azim  3.14",
+          "elev4, azim  9.02",
+          "elev4, azim  14.91",
+          "elev4, azim  20.66",
+          "elev4, azim  27.38",
+          "elev4, azim  33.32",
+          "elev4, azim  39.10"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -1920,7 +1854,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Energy,z=vdf4_spec(1,4,*),z=vdf4_spec(3,4,*),z=vdf4_spec(5,4,*),z=vdf4_spec(7,4,*),z=vdf4_spec(9,4,*),z=vdf4_spec(11,4,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -1944,7 +1878,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -1961,7 +1894,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -2065,7 +1997,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -2074,24 +2005,21 @@
         "name": "vdf5",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Distribution function: [Azimuth vs Energy] at elevation 5. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Distribution function: [Azimuth vs Energy] at elevation 5. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 5",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -2102,7 +2030,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>60>xsz=4>x=Azimuth,y=Energy,z=vdf5(*,5,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -2126,7 +2054,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -2143,7 +2070,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -2247,7 +2173,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -2256,24 +2181,21 @@
         "name": "vdf5_mv",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 5",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -2284,7 +2206,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartxsz=4>x=Azimuth,y=Energy,z=vdf5_mv(*,5,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -2308,7 +2230,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -2325,7 +2246,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -2429,7 +2349,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -2438,24 +2357,21 @@
         "name": "vdf5_spec",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 5",
-        "x_labelComponents": [
-          [
-            "elev5, azim -21.67",
-            "elev5, azim -14.56",
-            "elev5, azim -8.61",
-            "elev5, azim -2.70",
-            "elev5, azim  3.14",
-            "elev5, azim  9.02",
-            "elev5, azim  14.91",
-            "elev5, azim  20.66",
-            "elev5, azim  27.38",
-            "elev5, azim  33.32",
-            "elev5, azim  39.10"
-          ]
+        "x_label": [
+          "elev5, azim -21.67",
+          "elev5, azim -14.56",
+          "elev5, azim -8.61",
+          "elev5, azim -2.70",
+          "elev5, azim  3.14",
+          "elev5, azim  9.02",
+          "elev5, azim  14.91",
+          "elev5, azim  20.66",
+          "elev5, azim  27.38",
+          "elev5, azim  33.32",
+          "elev5, azim  39.10"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -2466,7 +2382,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Energy,z=vdf5_spec(1,5,*),z=vdf5_spec(3,5,*),z=vdf5_spec(5,5,*),z=vdf5_spec(7,5,*),z=vdf5_spec(9,5,*),z=vdf5_spec(11,5,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -2490,7 +2406,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -2507,7 +2422,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -2611,7 +2525,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -2620,24 +2533,21 @@
         "name": "vdf6",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Distribution function: [Azimuth vs Energy] at elevation 6. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Distribution function: [Azimuth vs Energy] at elevation 6. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 6",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -2648,7 +2558,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>60>xsz=4>x=Azimuth,y=Energy,z=vdf6(*,6,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -2672,7 +2582,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -2689,7 +2598,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -2793,7 +2701,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -2802,24 +2709,21 @@
         "name": "vdf6_mv",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 6",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -2830,7 +2734,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartxsz=4>x=Azimuth,y=Energy,z=vdf6_mv(*,6,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -2854,7 +2758,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -2871,7 +2774,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -2975,7 +2877,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -2984,24 +2885,21 @@
         "name": "vdf6_spec",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 6",
-        "x_labelComponents": [
-          [
-            "elev6, azim -21.67",
-            "elev6, azim -14.56",
-            "elev6, azim -8.61",
-            "elev6, azim -2.70",
-            "elev6, azim  3.14",
-            "elev6, azim  9.02",
-            "elev6, azim  14.91",
-            "elev6, azim  20.66",
-            "elev6, azim  27.38",
-            "elev6, azim  33.32",
-            "elev6, azim  39.10"
-          ]
+        "x_label": [
+          "elev6, azim -21.67",
+          "elev6, azim -14.56",
+          "elev6, azim -8.61",
+          "elev6, azim -2.70",
+          "elev6, azim  3.14",
+          "elev6, azim  9.02",
+          "elev6, azim  14.91",
+          "elev6, azim  20.66",
+          "elev6, azim  27.38",
+          "elev6, azim  33.32",
+          "elev6, azim  39.10"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -3012,7 +2910,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Energy,z=vdf6_spec(1,6,*),z=vdf6_spec(3,6,*),z=vdf6_spec(5,6,*),z=vdf6_spec(7,6,*),z=vdf6_spec(9,6,*),z=vdf6_spec(11,6,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -3036,7 +2934,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -3053,7 +2950,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -3157,7 +3053,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -3166,24 +3061,21 @@
         "name": "vdf7",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Distribution function: [Azimuth vs Energy] at elevation 7. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Distribution function: [Azimuth vs Energy] at elevation 7. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 7",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -3194,7 +3086,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>60>xsz=4>x=Azimuth,y=Energy,z=vdf7(*,7,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -3218,7 +3110,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -3235,7 +3126,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -3339,7 +3229,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -3348,24 +3237,21 @@
         "name": "vdf7_mv",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 7",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -3376,7 +3262,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartxsz=4>x=Azimuth,y=Energy,z=vdf7_mv(*,7,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -3400,7 +3286,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -3417,7 +3302,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -3521,7 +3405,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -3530,24 +3413,21 @@
         "name": "vdf7_spec",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 7",
-        "x_labelComponents": [
-          [
-            "elev7, azim -21.67",
-            "elev7, azim -14.56",
-            "elev7, azim -8.61",
-            "elev7, azim -2.70",
-            "elev7, azim  3.14",
-            "elev7, azim  9.02",
-            "elev7, azim  14.91",
-            "elev7, azim  20.66",
-            "elev7, azim  27.38",
-            "elev7, azim  33.32",
-            "elev7, azim  39.10"
-          ]
+        "x_label": [
+          "elev7, azim -21.67",
+          "elev7, azim -14.56",
+          "elev7, azim -8.61",
+          "elev7, azim -2.70",
+          "elev7, azim  3.14",
+          "elev7, azim  9.02",
+          "elev7, azim  14.91",
+          "elev7, azim  20.66",
+          "elev7, azim  27.38",
+          "elev7, azim  33.32",
+          "elev7, azim  39.10"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -3558,7 +3438,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Energy,z=vdf7_spec(1,7,*),z=vdf7_spec(3,7,*),z=vdf7_spec(5,7,*),z=vdf7_spec(7,7,*),z=vdf7_spec(9,7,*),z=vdf7_spec(11,7,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -3582,7 +3462,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -3599,7 +3478,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -3703,7 +3581,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -3712,24 +3589,21 @@
         "name": "vdf8",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Distribution function: [Azimuth vs Energy] at elevation 8. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Distribution function: [Azimuth vs Energy] at elevation 8. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 8",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -3740,7 +3614,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>60>xsz=4>x=Azimuth,y=Energy,z=vdf8(*,8,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -3764,7 +3638,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -3781,7 +3654,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -3885,7 +3757,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -3894,24 +3765,21 @@
         "name": "vdf8_mv",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 8",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -3922,7 +3790,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartxsz=4>x=Azimuth,y=Energy,z=vdf8_mv(*,8,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -3946,7 +3814,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -3963,7 +3830,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -4067,7 +3933,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -4076,24 +3941,21 @@
         "name": "vdf8_spec",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 8",
-        "x_labelComponents": [
-          [
-            "elev8, azim -21.67",
-            "elev8, azim -14.56",
-            "elev8, azim -8.61",
-            "elev8, azim -2.70",
-            "elev8, azim  3.14",
-            "elev8, azim  9.02",
-            "elev8, azim  14.91",
-            "elev8, azim  20.66",
-            "elev8, azim  27.38",
-            "elev8, azim  33.32",
-            "elev8, azim  39.10"
-          ]
+        "x_label": [
+          "elev8, azim -21.67",
+          "elev8, azim -14.56",
+          "elev8, azim -8.61",
+          "elev8, azim -2.70",
+          "elev8, azim  3.14",
+          "elev8, azim  9.02",
+          "elev8, azim  14.91",
+          "elev8, azim  20.66",
+          "elev8, azim  27.38",
+          "elev8, azim  33.32",
+          "elev8, azim  39.10"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -4104,7 +3966,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Energy,z=vdf8_spec(1,8,*),z=vdf8_spec(3,8,*),z=vdf8_spec(5,8,*),z=vdf8_spec(7,8,*),z=vdf8_spec(9,8,*),z=vdf8_spec(11,8,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -4128,7 +3990,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -4145,7 +4006,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -4249,7 +4109,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -4258,24 +4117,21 @@
         "name": "vdf9",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Distribution function: [Azimuth vs Energy] at elevation 9. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Distribution function: [Azimuth vs Energy] at elevation 9. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 9",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -4286,7 +4142,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>60>xsz=4>x=Azimuth,y=Energy,z=vdf9(*,9,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -4310,7 +4166,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -4327,7 +4182,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -4431,7 +4285,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -4440,24 +4293,21 @@
         "name": "vdf9_mv",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie of above. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 9",
-        "x_labelComponents": [
-          [
-            "-2.17e+01 azimuth",
-            "-1.46e+01 azimuth",
-            "-8.61e+00 azimuth",
-            "-2.70e+00 azimuth",
-            "3.14e+00 azimuth",
-            "9.02e+00 azimuth",
-            "1.49e+01 azimuth",
-            "2.07e+01 azimuth",
-            "2.74e+01 azimuth",
-            "3.33e+01 azimuth",
-            "3.91e+01 azimuth"
-          ]
+        "x_label": [
+          "-2.17e+01 azimuth",
+          "-1.46e+01 azimuth",
+          "-8.61e+00 azimuth",
+          "-2.70e+00 azimuth",
+          "3.14e+00 azimuth",
+          "9.02e+00 azimuth",
+          "1.49e+01 azimuth",
+          "2.07e+01 azimuth",
+          "2.74e+01 azimuth",
+          "3.33e+01 azimuth",
+          "3.91e+01 azimuth"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -4468,7 +4318,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartxsz=4>x=Azimuth,y=Energy,z=vdf9_mv(*,9,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -4492,7 +4342,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -4509,7 +4358,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -4613,7 +4461,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]
@@ -4622,24 +4469,21 @@
         "name": "vdf9_spec",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vdf']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "s^3 m^-6",
-        "x_label": "VDF @ elevation 9",
-        "x_labelComponents": [
-          [
-            "elev9, azim -21.67",
-            "elev9, azim -14.56",
-            "elev9, azim -8.61",
-            "elev9, azim -2.70",
-            "elev9, azim  3.14",
-            "elev9, azim  9.02",
-            "elev9, azim  14.91",
-            "elev9, azim  20.66",
-            "elev9, azim  27.38",
-            "elev9, azim  33.32",
-            "elev9, azim  39.10"
-          ]
+        "x_label": [
+          "elev9, azim -21.67",
+          "elev9, azim -14.56",
+          "elev9, azim -8.61",
+          "elev9, azim -2.70",
+          "elev9, azim  3.14",
+          "elev9, azim  9.02",
+          "elev9, azim  14.91",
+          "elev9, azim  20.66",
+          "elev9, azim  27.38",
+          "elev9, azim  33.32",
+          "elev9, azim  39.10"
         ],
         "x_format": ".7g",
         "x_fractionDigits": "7",
@@ -4650,7 +4494,7 @@
         "x_cdf_COMPONENTS": [
           "vdf"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=Energy,z=vdf9_spec(1,9,*),z=vdf9_spec(3,9,*),z=vdf9_spec(5,9,*),z=vdf9_spec(7,9,*),z=vdf9_spec(9,9,*),z=vdf9_spec(11,9,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           11,
@@ -4674,7 +4518,6 @@
               33.3,
               39.1
             ],
-            "x_label": "Azimuth (CEM)",
             "units": "deg"
           },
           {
@@ -4691,7 +4534,6 @@
               15.2,
               19.9
             ],
-            "x_label": "Elevation",
             "units": "deg"
           },
           {
@@ -4795,7 +4637,6 @@
               74.2,
               69.9
             ],
-            "x_label": "Energy",
             "units": "eV"
           }
         ]

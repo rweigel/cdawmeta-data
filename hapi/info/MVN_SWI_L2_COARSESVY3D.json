@@ -2,14 +2,14 @@
   "id": "MVN_SWI_L2_COARSESVY3D",
   "title": "MAVEN SWIA (Solar Wind Ion Analyzer) Level 2 Coarse 3D Distributions Survey Telemetry  - J.S. Halekas (U Iowa)",
   "info": {
-    "startDate": "2014-03-19T14:20:27.000Z",
-    "stopDate": "2024-11-14T23:59:55.000Z",
-    "sampleStartDate": "2024-11-13T00:00:05.000Z",
-    "sampleStopDate": "2024-11-13T23:59:56.000Z",
-    "cadence": "PT64.000084S",
+    "startDate": "2014-03-19T14:20:27Z",
+    "stopDate": "2024-11-14T23:59:55Z",
+    "sampleStartDate": "2024-11-13T00:00:05Z",
+    "sampleStopDate": "2024-11-13T23:59:56Z",
+    "cadence": "PT1M4.000084S",
     "x_cadence_fraction": 0.07734806629834254,
-    "x_cadence_note": "Cadence based on variable 'epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/maven/swia/l2/coarsesvy3d/2014/03/mvn_swi_l2_coarsesvy3d_20140319_v02_r00.cdf. This most common cadence occurred for 7.7348% of the 42 timesteps. Cadence = 64000084160 [ns] = PT64.000084S.",
-    "maxRequestDuration": "PT4319550S",
+    "x_cadence_note": "Counts based on variable 'epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/maven/swia/l2/coarsesvy3d/2014/03/mvn_swi_l2_coarsesvy3d_20140319_v02_r00.cdf. The most common cadence occurred for 7.7348% of the 42 timesteps. Cadence = 64000084160 [ns] = PT1M4.000084S.",
+    "maxRequestDuration": "P49DT23H52M30S",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SWI_L2_COARSESVY3D",
     "contact": "J.S. Halekas @ U Iowa",
     "parameters": [
@@ -30,8 +30,7 @@
         "description": "Calibrated Differential Energy Flux [vary with time, energy, deflection index and anode angle] at 1st deflection index[Thumbnails, select a few hours]",
         "fill": "-1e+31",
         "units": "ev/[eV cm^2 sr s]",
-        "x_label": "Differential energy flux: 1st deflection index",
-        "x_labelComponents": [
+        "x_label": [
           [
             "A1",
             "A2",
@@ -112,7 +111,7 @@
         "x_cdf_FORMAT": "F20.7",
         "x_cdf_FIELDNAM": "diff_en_fluxes",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>60>xsz=1.5>x=phi_coarse,y=energy_coarse,z=diff_en_fluxes(*,1,*)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -141,7 +140,6 @@
               168.75,
               191.25
             ],
-            "x_label": "phi_coarse",
             "units": "degrees"
           },
           {
@@ -153,7 +151,6 @@
               2,
               3
             ],
-            "x_label": "dindex",
             "units": null
           },
           {
@@ -209,7 +206,6 @@
               29.9740009,
               25.9375
             ],
-            "x_label": "energy_coarse",
             "units": "eV"
           }
         ]
@@ -218,11 +214,10 @@
         "name": "diff_en_fluxes_mv",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Movie of above [flux vs. energy and anode angle]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie of above [flux vs. energy and anode angle]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "ev/[eV cm^2 sr s]",
-        "x_label": "Differential energy flux: 1st deflection index",
-        "x_labelComponents": [
+        "x_label": [
           [
             "A1",
             "A2",
@@ -307,7 +302,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartxsz=4>x=phi_coarse,y=energy_coarse,z=diff_en_fluxes_mv(*,1,*)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -336,7 +331,6 @@
               168.75,
               191.25
             ],
-            "x_label": "phi_coarse",
             "units": "degrees"
           },
           {
@@ -348,7 +342,6 @@
               2,
               3
             ],
-            "x_label": "dindex",
             "units": null
           },
           {
@@ -404,7 +397,6 @@
               29.9740009,
               25.9375
             ],
-            "x_label": "energy_coarse",
             "units": "eV"
           }
         ]
@@ -413,29 +405,26 @@
         "name": "diff_en_fluxes_spec1",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrogram at selected Azimuth Angle bins 1,4,7,10,13,16. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrogram at selected Azimuth Angle bins 1,4,7,10,13,16. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "ev/[eV cm^2 sr s]",
-        "x_label": "Energy @ 1st deflection index",
-        "x_labelComponents": [
-          [
-            "De",
-            "De",
-            "De",
-            "De",
-            "De",
-            "De",
-            "De",
-            "De",
-            "De",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def"
-          ]
+        "x_label": [
+          "De",
+          "De",
+          "De",
+          "De",
+          "De",
+          "De",
+          "De",
+          "De",
+          "De",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def"
         ],
         "x_format": ".7f",
         "x_fractionDigits": "7",
@@ -446,7 +435,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=energy_coarse,z=diff_en_fluxes_spec1(1,1,*),z=diff_en_fluxes_spec1(4,1,*),z=diff_en_fluxes_spec1(7,1,*),z=diff_en_fluxes_spec1(10,1,*),z=diff_en_fluxes_spec1(13,1,*),z=diff_en_fluxes_spec1(16,1,*)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -475,7 +464,6 @@
               168.75,
               191.25
             ],
-            "x_label": "phi_coarse",
             "units": "degrees"
           },
           {
@@ -487,7 +475,6 @@
               2,
               3
             ],
-            "x_label": "dindex",
             "units": null
           },
           {
@@ -543,7 +530,6 @@
               29.9740009,
               25.9375
             ],
-            "x_label": "energy_coarse",
             "units": "eV"
           }
         ]
@@ -552,11 +538,10 @@
         "name": "diff_en_fluxes_2",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "Calibrated Differential Energy Flux [vary with time, energy, deflection index and anode angle] at 2nd deflection index[Thumbnails, select a few hours]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Calibrated Differential Energy Flux [vary with time, energy, deflection index and anode angle] at 2nd deflection index[Thumbnails, select a few hours]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "ev/[eV cm^2 sr s]",
-        "x_label": "Differential energy flux: 2nd deflection index",
-        "x_labelComponents": [
+        "x_label": [
           [
             "A1",
             "A2",
@@ -641,7 +626,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>60>xsz=1.5>x=phi_coarse,y=energy_coarse,z=diff_en_fluxes_2(*,2,*)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -670,7 +655,6 @@
               168.75,
               191.25
             ],
-            "x_label": "phi_coarse",
             "units": "degrees"
           },
           {
@@ -682,7 +666,6 @@
               2,
               3
             ],
-            "x_label": "dindex",
             "units": null
           },
           {
@@ -738,7 +721,6 @@
               29.9740009,
               25.9375
             ],
-            "x_label": "energy_coarse",
             "units": "eV"
           }
         ]
@@ -747,11 +729,10 @@
         "name": "diff_en_fluxes_2mv",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Movie of above [flux vs. energy and anode angle]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie of above [flux vs. energy and anode angle]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "ev/[eV cm^2 sr s]",
-        "x_label": "Differential energy flux: 2nd deflection index",
-        "x_labelComponents": [
+        "x_label": [
           [
             "A1",
             "A2",
@@ -836,7 +817,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartxsz=4>x=phi_coarse,y=energy_coarse,z=diff_en_fluxes_2mv(*,2,*)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -865,7 +846,6 @@
               168.75,
               191.25
             ],
-            "x_label": "phi_coarse",
             "units": "degrees"
           },
           {
@@ -877,7 +857,6 @@
               2,
               3
             ],
-            "x_label": "dindex",
             "units": null
           },
           {
@@ -933,7 +912,6 @@
               29.9740009,
               25.9375
             ],
-            "x_label": "energy_coarse",
             "units": "eV"
           }
         ]
@@ -942,29 +920,26 @@
         "name": "diff_en_fluxes_spec2",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrogram at selected Azimuth Angle bins 1,4,7,10,13,16. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrogram at selected Azimuth Angle bins 1,4,7,10,13,16. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "ev/[eV cm^2 sr s]",
-        "x_label": "Energy @ 2nd deflection index",
-        "x_labelComponents": [
-          [
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def"
-          ]
+        "x_label": [
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def"
         ],
         "x_format": ".7f",
         "x_fractionDigits": "7",
@@ -975,7 +950,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=energy_coarse,z=diff_en_fluxes_spec2(1,2,*),z=diff_en_fluxes_spec2(4,2,*),z=diff_en_fluxes_spec2(7,2,*),z=diff_en_fluxes_spec2(10,2,*),z=diff_en_fluxes_spec2(13,2,*),z=diff_en_fluxes_spec2(16,2,*)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1004,7 +979,6 @@
               168.75,
               191.25
             ],
-            "x_label": "phi_coarse",
             "units": "degrees"
           },
           {
@@ -1016,7 +990,6 @@
               2,
               3
             ],
-            "x_label": "dindex",
             "units": null
           },
           {
@@ -1072,7 +1045,6 @@
               29.9740009,
               25.9375
             ],
-            "x_label": "energy_coarse",
             "units": "eV"
           }
         ]
@@ -1081,11 +1053,10 @@
         "name": "diff_en_fluxes_3",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "Calibrated Differential Energy Flux [vary with time, energy, deflection index and anode angle] at 3rd deflection index[Thumbnails, select a few hours]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Calibrated Differential Energy Flux [vary with time, energy, deflection index and anode angle] at 3rd deflection index[Thumbnails, select a few hours]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "ev/[eV cm^2 sr s]",
-        "x_label": "Differential energy flux: 3rd deflection index",
-        "x_labelComponents": [
+        "x_label": [
           [
             "A1",
             "A2",
@@ -1170,7 +1141,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>60>xsz=1.5>x=phi_coarse,y=energy_coarse,z=diff_en_fluxes_3(*,3,*)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1199,7 +1170,6 @@
               168.75,
               191.25
             ],
-            "x_label": "phi_coarse",
             "units": "degrees"
           },
           {
@@ -1211,7 +1181,6 @@
               2,
               3
             ],
-            "x_label": "dindex",
             "units": null
           },
           {
@@ -1267,7 +1236,6 @@
               29.9740009,
               25.9375
             ],
-            "x_label": "energy_coarse",
             "units": "eV"
           }
         ]
@@ -1276,11 +1244,10 @@
         "name": "diff_en_fluxes_3mv",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Movie of above [flux vs. energy and anode angle]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie of above [flux vs. energy and anode angle]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "ev/[eV cm^2 sr s]",
-        "x_label": "Differential energy flux: 3rd deflection index",
-        "x_labelComponents": [
+        "x_label": [
           [
             "A1",
             "A2",
@@ -1365,7 +1332,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartxsz=4>x=phi_coarse,y=energy_coarse,z=diff_en_fluxes_3mv(*,3,*)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1394,7 +1361,6 @@
               168.75,
               191.25
             ],
-            "x_label": "phi_coarse",
             "units": "degrees"
           },
           {
@@ -1406,7 +1372,6 @@
               2,
               3
             ],
-            "x_label": "dindex",
             "units": null
           },
           {
@@ -1462,7 +1427,6 @@
               29.9740009,
               25.9375
             ],
-            "x_label": "energy_coarse",
             "units": "eV"
           }
         ]
@@ -1471,29 +1435,26 @@
         "name": "diff_en_fluxes_spec3",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrogram at selected Azimuth Angle bins 1,4,7,10,13,16. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrogram at selected Azimuth Angle bins 1,4,7,10,13,16. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "ev/[eV cm^2 sr s]",
-        "x_label": "Energy @ 3rd deflection index",
-        "x_labelComponents": [
-          [
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def"
-          ]
+        "x_label": [
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def"
         ],
         "x_format": ".7f",
         "x_fractionDigits": "7",
@@ -1504,7 +1465,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=energy_coarse,z=diff_en_fluxes_spec3(1,3,*),z=diff_en_fluxes_spec3(4,3,*),z=diff_en_fluxes_spec3(7,3,*),z=diff_en_fluxes_spec3(10,3,*),z=diff_en_fluxes_spec3(13,3,*),z=diff_en_fluxes_spec3(16,3,*)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1533,7 +1494,6 @@
               168.75,
               191.25
             ],
-            "x_label": "phi_coarse",
             "units": "degrees"
           },
           {
@@ -1545,7 +1505,6 @@
               2,
               3
             ],
-            "x_label": "dindex",
             "units": null
           },
           {
@@ -1601,7 +1560,6 @@
               29.9740009,
               25.9375
             ],
-            "x_label": "energy_coarse",
             "units": "eV"
           }
         ]
@@ -1610,11 +1568,10 @@
         "name": "diff_en_fluxes_4",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "Calibrated Differential Energy Flux [vary with time, energy, deflection index and anode angle] at 4th deflection index[Thumbnails, select a few hours]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Calibrated Differential Energy Flux [vary with time, energy, deflection index and anode angle] at 4th deflection index[Thumbnails, select a few hours]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "ev/[eV cm^2 sr s]",
-        "x_label": "Differential energy flux: 4th deflection index",
-        "x_labelComponents": [
+        "x_label": [
           [
             "A1",
             "A2",
@@ -1699,7 +1656,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartTHUMBSIZE>60>xsz=1.5>x=phi_coarse,y=energy_coarse,z=diff_en_fluxes_4(*,4,*)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1728,7 +1685,6 @@
               168.75,
               191.25
             ],
-            "x_label": "phi_coarse",
             "units": "degrees"
           },
           {
@@ -1740,7 +1696,6 @@
               2,
               3
             ],
-            "x_label": "dindex",
             "units": null
           },
           {
@@ -1796,7 +1751,6 @@
               29.9740009,
               25.9375
             ],
-            "x_label": "energy_coarse",
             "units": "eV"
           }
         ]
@@ -1805,11 +1759,10 @@
         "name": "diff_en_fluxes_4mv",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Movie of above [flux vs. energy and anode angle]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie of above [flux vs. energy and anode angle]. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "ev/[eV cm^2 sr s]",
-        "x_label": "Differential energy flux: 4th deflection index",
-        "x_labelComponents": [
+        "x_label": [
           [
             "A1",
             "A2",
@@ -1894,7 +1847,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_chartxsz=4>x=phi_coarse,y=energy_coarse,z=diff_en_fluxes_4mv(*,4,*)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -1923,7 +1876,6 @@
               168.75,
               191.25
             ],
-            "x_label": "phi_coarse",
             "units": "degrees"
           },
           {
@@ -1935,7 +1887,6 @@
               2,
               3
             ],
-            "x_label": "dindex",
             "units": null
           },
           {
@@ -1991,7 +1942,6 @@
               29.9740009,
               25.9375
             ],
-            "x_label": "energy_coarse",
             "units": "eV"
           }
         ]
@@ -2000,29 +1950,26 @@
         "name": "diff_en_fluxes_spec4",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Spectrogram at selected Azimuth Angle bins 1,4,7,10,13,16. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrogram at selected Azimuth Angle bins 1,4,7,10,13,16. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['diff_en_fluxes']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "ev/[eV cm^2 sr s]",
-        "x_label": "Energy @ 4th deflection index",
-        "x_labelComponents": [
-          [
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def",
-            "Def"
-          ]
+        "x_label": [
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def",
+          "Def"
         ],
         "x_format": ".7f",
         "x_fractionDigits": "7",
@@ -2033,7 +1980,7 @@
         "x_cdf_COMPONENTS": [
           "diff_en_fluxes"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "bar_charty=energy_coarse,z=diff_en_fluxes_spec4(1,4,*),z=diff_en_fluxes_spec4(4,4,*),z=diff_en_fluxes_spec4(7,4,*),z=diff_en_fluxes_spec4(10,4,*),z=diff_en_fluxes_spec4(13,4,*),z=diff_en_fluxes_spec4(16,4,*)",
         "x_cdf_DEPEND_0": "epoch",
         "size": [
           16,
@@ -2062,7 +2009,6 @@
               168.75,
               191.25
             ],
-            "x_label": "phi_coarse",
             "units": "degrees"
           },
           {
@@ -2074,7 +2020,6 @@
               2,
               3
             ],
-            "x_label": "dindex",
             "units": null
           },
           {
@@ -2130,7 +2075,6 @@
               29.9740009,
               25.9375
             ],
-            "x_label": "energy_coarse",
             "units": "eV"
           }
         ]
