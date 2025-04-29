@@ -1,2 +1,2 @@
 # cdawmeta-data
-Output JSOn from cdawmeta
+Output JSON from cdawmeta
