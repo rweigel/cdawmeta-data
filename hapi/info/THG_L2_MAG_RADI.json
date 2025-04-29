@@ -1,0 +1,129 @@
+{
+  "id": "THG_L2_MAG_RADI",
+  "title": "Higher latitude chain (Lat 53.8, Long 282.4), Ground-based Vector Magnetic Field at Radisson, Quebec, Canada, 0.5 sec, AUTUMNX network, Canadian Space Agency GO program and Athabasca University - M. Connors and I. Schofield (Athabasca U)",
+  "info": {
+    "startDate": "2014-10-22T00:00:00.000Z",
+    "stopDate": "2024-06-08T00:00:00.000Z",
+    "sampleStartDate": "2024-06-06T00:00:00.000Z",
+    "sampleStopDate": "2024-06-07T00:00:00.000Z",
+    "maxRequestDuration": "P50D",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THG_L2_MAG_RADI",
+    "contact": "M. Connors and I. Schofield @ Athabasca U",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 24,
+        "fill": null,
+        "x_description": "thg_mag_radi_epoch",
+        "x_cdf_NAME": "thg_mag_radi_epoch",
+        "x_cdf_DataType": "CDF_EPOCH"
+      },
+      {
+        "name": "thg_mag_radi",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Magnetic field B in HDZ vector components",
+        "fill": "NaN",
+        "units": [
+          "nT",
+          "nT",
+          "nT"
+        ],
+        "x_label": [
+          "Magnetic North - H",
+          "Magnetic East - E",
+          "Vertical Down - Z"
+        ],
+        "x_format": ".1f",
+        "x_fractionDigits": "1",
+        "x_cdf_FORMAT": "f7.1",
+        "x_cdf_FIELDNAM": "B in HDZ Components",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thg_mag_radi_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thg_mag_radi_compno",
+            "description": "HDZ Component Number",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Magnetic North - H",
+              "Magnetic East - E",
+              "Vertical Down - Z"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thg_magh_radi",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> H - Local magnetic North component of B. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thg_mag_radi']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "nT",
+        "x_label": "Magnetic North - H",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f9.2",
+        "x_cdf_FIELDNAM": "H component of B",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "make_stack_array",
+        "x_cdf_COMPONENTS": [
+          "thg_mag_radi"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thg_mag_radi_epoch"
+      },
+      {
+        "name": "thg_magd_radi",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> E - Local magnetic East component of B. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thg_mag_radi']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "nT",
+        "x_label": "Magnetic East - E",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f9.2",
+        "x_cdf_FIELDNAM": "E component of B",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "make_stack_array",
+        "x_cdf_COMPONENTS": [
+          "thg_mag_radi"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thg_mag_radi_epoch"
+      },
+      {
+        "name": "thg_magz_radi",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> Z - Local vertical down component of B. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thg_mag_radi']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "nT",
+        "x_label": "Vertical Down - Z",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f9.2",
+        "x_cdf_FIELDNAM": "Z component of B",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "make_stack_array",
+        "x_cdf_COMPONENTS": [
+          "thg_mag_radi"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thg_mag_radi_epoch"
+      }
+    ]
+  }
+}

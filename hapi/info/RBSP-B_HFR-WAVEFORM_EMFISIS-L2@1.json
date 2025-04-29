@@ -1,0 +1,49 @@
+{
+  "id": "RBSP-B_HFR-WAVEFORM_EMFISIS-L2@1",
+  "title": "High Frequency Receiver (HFR) Field Waveform Samples in V/m (Selectable between the U, V and W Axes) - Craig Kletzing (University of Iowa)",
+  "info": {
+    "startDate": "2012-09-01T03:43:57.000Z",
+    "stopDate": "2019-07-16T05:38:06.000Z",
+    "sampleStartDate": "2019-07-16T04:01:00.000Z",
+    "sampleStopDate": "2019-07-16T04:59:56.000Z",
+    "maxRequestDuration": "PT176800S",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_HFR-WAVEFORM_EMFISIS-L2",
+    "contact": "Craig Kletzing @ University of Iowa",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 30,
+        "fill": null,
+        "x_description": "Expanded times",
+        "x_cdf_NAME": "Epoch_expanded",
+        "x_cdf_DataType": "CDF_TIME_TT2000"
+      },
+      {
+        "name": "HFRsamples_times",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "V/m displayed as very high resolution time-series. This variable is a 'virtual' variable that is computed using the function expand_wave_data (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HFRsamples', 'Epoch', 'timeOffsets']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "V/m",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "HFRsamples",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "expand_wave_data",
+        "x_cdf_COMPONENTS": [
+          "HFRsamples",
+          "Epoch",
+          "timeOffsets"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch_expanded",
+        "size": [
+          4096
+        ]
+      }
+    ]
+  }
+}

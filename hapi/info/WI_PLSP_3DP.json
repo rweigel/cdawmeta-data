@@ -1,0 +1,967 @@
+{
+  "id": "WI_PLSP_3DP",
+  "title": "Ion omnidirectional fluxes 0.4-3 keV and moments, often at ~24 second resolution, PESA Low, Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+  "info": {
+    "startDate": "1994-11-15T12:53:44.000Z",
+    "stopDate": "2025-02-18T23:59:26.000Z",
+    "sampleStartDate": "2025-02-17T00:00:16.000Z",
+    "sampleStopDate": "2025-02-17T23:59:39.000Z",
+    "maxRequestDuration": "PT4318150S",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_PLSP_3DP",
+    "contact": "R. Lin/S. Bale @ UC Berkeley",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 24,
+        "fill": null,
+        "x_description": "Time, Centered",
+        "x_cdf_NAME": "Epoch",
+        "x_cdf_DataType": "CDF_EPOCH"
+      },
+      {
+        "name": "FLUX",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[FLUX] Proton number flux, 15 energy channels populated approximately 0.4-3 keV [spectrogram]",
+        "fill": "NaN",
+        "units": "#/cm^2-ster-eV-sec",
+        "x_label": "Proton_No_Flux",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f12.2",
+        "x_cdf_FIELDNAM": "Proton_No_Flux",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          15
+        ]
+      },
+      {
+        "name": "FLUX_STACKED",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> As stacked plot. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FLUX']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "#/cm^2-ster-eV-sec",
+        "x_label": "Proton_No_Flux",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f12.2",
+        "x_cdf_FIELDNAM": "Proton_No_Flux",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "FLUX"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          15
+        ]
+      },
+      {
+        "name": "ENERGY",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> Time-variable energy in each of 15 channels",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "E_Channel_1",
+          "E_Channel_2",
+          "E_Channel_3",
+          "E_Channel_4",
+          "E_Channel_5",
+          "E_Channel_6",
+          "E_Channel_7",
+          "E_Channel_8",
+          "E_Channel_9",
+          "E_Channel_10",
+          "E_Channel_11",
+          "E_Channel_12",
+          "E_Channel_13",
+          "E_Channel_14",
+          "E_Channel_15"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f9.2",
+        "x_cdf_FIELDNAM": "Energy",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          15
+        ]
+      },
+      {
+        "name": "MOM.P.SC_CURRENT",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[P.SC_CURRENT?] Current contribution to the spacecraft from thermal protons",
+        "fill": "NaN",
+        "units": "#/cm2-sec",
+        "x_label": "S/C_Currnt_(proton)",
+        "x_format": ".2g",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "g13.2",
+        "x_cdf_FIELDNAM": "MOM.P.SC_CURRENT",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.P.MAGF",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.MAGF] magnetic field vector interpolated (linearly) to the time of the PESA Low distribution, in GSE cartesian components",
+        "fill": "NaN",
+        "units": "nT",
+        "x_label": [
+          "BX_GSE",
+          "BY_GSE",
+          "BZ_GSE"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f9.2",
+        "x_cdf_FIELDNAM": "Magnetic Field Vector, cartesian",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.P.DENSITY",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.DENSITY] Proton number density",
+        "fill": "NaN",
+        "units": "#/cm3",
+        "x_label": "Proton_No_Density",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f7.2",
+        "x_cdf_FIELDNAM": "Proton number density",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.P.AVGTEMP",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.AVGTEMP] Average proton temperature",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": "Tavg_Protons",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f7.2",
+        "x_cdf_FIELDNAM": "Average proton temperature",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.P.VTHERMAL",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.VTHERMAL] Proton most probable speed",
+        "fill": "NaN",
+        "units": "km/sec",
+        "x_label": "Most Probable Speed Protons",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f7.2",
+        "x_cdf_FIELDNAM": "Proton most probable speed",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.P.VELOCITY",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.VELOCITY] Proton Flow Velocity, GSE cartesian",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Proton_VX_GSE",
+          "Proton_VY_GSE",
+          "Proton_VZ_GSE"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Proton Bulk Flow Velocity, cartesian",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.P.FLUX",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.FLUX] Proton total number flux - cartesian GSE",
+        "fill": "NaN",
+        "units": "#/cm2-sec",
+        "x_label": [
+          "proton_No_flux_XGSE",
+          "proton_No_flux_YGSE",
+          "proton_No_flux_ZGSE"
+        ],
+        "x_format": ".2g",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "g13.2",
+        "x_cdf_FIELDNAM": "Proton total number flux",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.P.PTENS",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[P.PTENS] Proton Pressure Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "Proton_PTENS_XX",
+          "Proton_PTENS_YY",
+          "Proton_PTENS_ZZ",
+          "Proton_PTENS_XY",
+          "Proton_PTENS_XZ",
+          "Proton_PTENS_YZ"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Proton Pressure Tensor",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          6
+        ]
+      },
+      {
+        "name": "MOM.P.MFTENS",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.MFTENS] Proton Momentum Flux Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "proton_MFTEN_XX",
+          "proton_MFTEN_YY",
+          "proton_MFTEN_ZZ",
+          "proton_MFTEN_XY",
+          "proton_MFTEN_XZ",
+          "proton_MFTEN_ZZ"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f10.2",
+        "x_cdf_FIELDNAM": "Proton Momentum Flux Tensor",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          6
+        ]
+      },
+      {
+        "name": "MOM.P.EFLUX",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.EFLUX] Proton eflux ",
+        "fill": "NaN",
+        "units": null,
+        "x_label": [
+          "proton_eflux-X",
+          "proton_eflux-Y",
+          "proton_eflux-Z"
+        ],
+        "x_format": ".5e",
+        "x_fractionDigits": "5",
+        "x_cdf_FORMAT": "e14.5",
+        "x_cdf_FIELDNAM": "Proton eflux",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.P.T3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.T3] Proton Temperature eigenvalues after diagonalization of tensor, calculated in the GSE coordinate basis.  The elements correspond to:  XX, YY, ZZ",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "proton_Temp_Eigen-X",
+          "proton_Temp_Eigen-Y",
+          "proton_Temp_Eigen-Z"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Proton Temp Tensor diagonals",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.P.SYMM",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[P.SYMM] Symmetry direction of proton pressure tensor, calculated in the GSE coordinate basis.  The elements correspond to:  XX, YY, ZZ and are defined by the largest eigenvalue in .T3",
+        "fill": "NaN",
+        "units": null,
+        "x_label": [
+          "proton_SymDir_X",
+          "proton_SymDir_Y",
+          "proton_SymDir_Z"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f7.2",
+        "x_cdf_FIELDNAM": "Symmetry direction, proton pressure tensor",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.P.SYMM_THETA",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.SYMM_THETA] Proton symmetry direction, latitude",
+        "fill": "NaN",
+        "units": "Degrees",
+        "x_label": "proton_Sym_Lat",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Proton symmetry direction, latitude",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.P.SYMM_PHI",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.SYMM_PHI] Proton symmetry direction, longitude",
+        "fill": "NaN",
+        "units": "Degrees",
+        "x_label": "P_Sym_Long",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f7.2",
+        "x_cdf_FIELDNAM": "Proton symmetry direction, longitude",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.P.SYMM_ANG",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.SYMM_ANG] Angle between proton symmetry direction and the magnetic field vector",
+        "fill": "NaN",
+        "units": "Degrees",
+        "x_label": "Ang_proton_SymDir-B",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Angle of proton symmetry direction to B",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.P.MAGT3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.SYMM_MAGT3] Proton temperature tensor... rotated into a field-aligned coordinate basis and then taking the diagonal elements only",
+        "fill": "NaN",
+        "units": null,
+        "x_label": [
+          "proton_MagT3_X",
+          "proton_MagT3_Y",
+          "proton_MagT3_Z"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "MOM.P.SYMM_MAGT3",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.P.ERANGE",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[P.ERANGE] Proton energy range used to compute the moments",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "proton_Erange1",
+          "proton_Erange2"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f9.2",
+        "x_cdf_FIELDNAM": "Proton energy  range",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          2
+        ]
+      },
+      {
+        "name": "MOM.P.MASS",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.MASS] Proton mass of species",
+        "fill": "NaN",
+        "units": "eV/(km/s)^2",
+        "x_label": "proton_mass",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f7.2",
+        "x_cdf_FIELDNAM": "Proton mass of species",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.P.VALID",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT2",
+        "description": "---> [P.VALID] Proton Validity flag; 1=OK",
+        "fill": "-32768",
+        "units": "(1=OK)",
+        "x_label": "proton_Valid",
+        "x_cdf_FORMAT": "i3",
+        "x_cdf_FIELDNAM": "Proton validity flag; 1=OK",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.P.VEL_MAG",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[P.VEL_MAG] Proton flow speed",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": "proton_FlowVel",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Proton flow velocity; magnitude",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.P.VEL_TH",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.VEL_TH] Proton flow velocity; latitude/theta",
+        "fill": "NaN",
+        "units": "Degrees",
+        "x_label": "proton_FlowVel_Lat",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Proton flow velocity; latitude",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.P.VEL_PHI",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.VELPHI] Proton flow velocity; longitude/phi",
+        "fill": "NaN",
+        "units": "Degrees",
+        "x_label": "proton_FlowVel_Long",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Proton flow velocity; longitude",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.A.SC_CURRENT",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[A.SC_CURRENT]  Current contribution to the spacecraft from thermal alphas",
+        "fill": "NaN",
+        "units": "#/cm2-sec",
+        "x_label": "S/C_Currnt_(alpha)",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f10.2",
+        "x_cdf_FIELDNAM": "MOM.A.SC_CURRENT",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.A.MAGF",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.MAGF] magnetic field vector interpolated (linearly) to the time of the PESA Low distribution, in GSE cartesian components",
+        "fill": "NaN",
+        "units": "nT",
+        "x_label": [
+          "BX_GSE",
+          "BY_GSE",
+          "BZ_GSE"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f9.2",
+        "x_cdf_FIELDNAM": "Magnetic Field Vector, cartesian",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.A.DENSITY",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.DENSITY]  Alpha number density",
+        "fill": "NaN",
+        "units": "#/cm3",
+        "x_label": "Alpha_No_Density",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f7.2",
+        "x_cdf_FIELDNAM": "Alpha number density",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.A.AVGTEMP",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.AVGTEMP] Average alpha temperature",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": "Tavg_Alphas ",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Average alpha temperature",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.A.VTHERMAL",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.VTHERMAL] Alpha most probable speed",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": "Most Probable Speed Alphas",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Alpha most probable speed",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.A.VELOCITY",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.VELOCITY] Alpha Flow Velocity, GSE cartesian",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Alpha_VX_GSE",
+          "Alpha_VY_GSE",
+          "Alpha_VZ_GSE"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Alpha Bulk Flow Velocity, cartesian",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.A.FLUX",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [P.FLUX] Alpha total number flux - cartesian GSE",
+        "fill": "NaN",
+        "units": "#/cm2-sec",
+        "x_label": [
+          "Alpha_No_Flux_XGSE",
+          "Alpha_No_Flux_YGSE",
+          "Alpha_No_Flux_ZGSE"
+        ],
+        "x_format": ".2g",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "g13.2",
+        "x_cdf_FIELDNAM": "Alpha total number flux",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.A.PTENS",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[A.PTENS] Alpha Pressure Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "Alpha_PTENS_XX",
+          "Alpha_PTENS_YY",
+          "Alpha_PTENS_ZZ",
+          "Alpha_PTENS_XY",
+          "Alpha_PTENS_XZ",
+          "Alpha_PTENS_ZZ"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Alpha Pressure Tensor",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          6
+        ]
+      },
+      {
+        "name": "MOM.A.MFTENS",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.MFTENS] Alpha Momentum Flux Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "Alpha_MFlux_XX",
+          "Alpha_MFlux_YY",
+          "Alpha_MFlux_ZZ",
+          "Alpha_MFlux_XY",
+          "Alpha_MFlux_XZ",
+          "Alpha_MFlux_ZZ"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f10.2",
+        "x_cdf_FIELDNAM": "Alpha Momentum Flux Tensor",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          6
+        ]
+      },
+      {
+        "name": "MOM.A.EFLUX",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.EFLUX] Alpha eflux ",
+        "fill": "NaN",
+        "units": null,
+        "x_label": [
+          "Alpha_eflux-X",
+          "Alpha_eflux-Y",
+          "Alpha_eflux-Z"
+        ],
+        "x_format": ".5e",
+        "x_fractionDigits": "5",
+        "x_cdf_FORMAT": "e14.5",
+        "x_cdf_FIELDNAM": "Alpha eflux",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.A.T3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.T3] Alpha Temperature eigenvalues after diagonalization of tensor, calculated in the GSE coordinate basis.  The elements correspond to:  XX, YY, ZZ",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "Alpha_Temp_Eigen-X",
+          "Alpha_Temp_Eigen-Y",
+          "Alpha_Temp_Eigen-Z"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Alpha Temp Tensor diagonals",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.A.SYMM",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[A.SYMM] Symmetry direction of alpha pressure tensor, calculated in the GSE coordinate basis.  The elements correspond to:  XX, YY, ZZ and are defined by the largest eigenvalue in .T3",
+        "fill": "NaN",
+        "units": null,
+        "x_label": [
+          "Alpha_SymDir_X",
+          "Alpha_SymDir_Y",
+          "Alpha_SymDir_Z"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f7.2",
+        "x_cdf_FIELDNAM": "Symmetry direction, alpha pressure tensor",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.A.SYMM_THETA",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.SYMM_THETA] Alpha symmetry direction, latitude",
+        "fill": "NaN",
+        "units": "Degrees",
+        "x_label": "Alpha_Symm_Lat",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Alpha symmetry direction, latitude",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.A.SYMM_PHI",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.SYMM_PHI] Alpha symmetry direction, longitude",
+        "fill": "NaN",
+        "units": "Degrees",
+        "x_label": "Alpha_Symm_Long",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f7.2",
+        "x_cdf_FIELDNAM": "Alpha symmetry direction, longitude",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.A.SYMM_ANG",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.SYMM_ANG] Angle between alpha symmetry direction and magnetic field vector",
+        "fill": "NaN",
+        "units": "Degrees",
+        "x_label": "Alpha_SymDir-B",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f7.2",
+        "x_cdf_FIELDNAM": "Angle of alpha symmetry direction to B",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.A.MAGT3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.SYMM_MAGT3] Alpha temperature tensor... rotated into a field-aligned coordinate basis and then taking the diagonal elements only",
+        "fill": "NaN",
+        "units": null,
+        "x_label": [
+          "BX_GSE",
+          "BY_GSE",
+          "BZ_GSE"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "MOM.A.SYMM_MAGT3",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "MOM.A.ERANGE",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[A.ERANGE] Alpha energy range used to compute the moments",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "Alpha_Erange1",
+          "Alpha_Erange2"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f9.2",
+        "x_cdf_FIELDNAM": "Alpha energy range",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          2
+        ]
+      },
+      {
+        "name": "MOM.A.MASS",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.MASS] Alpha mass of species",
+        "fill": "NaN",
+        "units": "eV/(km/s)^2",
+        "x_label": "Alpha_mass",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f7.2",
+        "x_cdf_FIELDNAM": "Alpha mass of species",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.A.VALID",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT2",
+        "description": "---> [A.VALID] Alpha validity flag; 1=OK",
+        "fill": "-32768",
+        "units": "(1=OK)",
+        "x_label": "Alpha_Validity",
+        "x_cdf_FORMAT": "i3",
+        "x_cdf_FIELDNAM": "Alpha validity flag; 1=OK",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.A.VEL_MAG",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[A.VEL_MAG] Alpha flow speed",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": "Alpha_FlowVel",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Alpha flow velocity; magnitude",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.A.VEL_TH",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.VEL_TH] Alpha flow velocity, latitude",
+        "fill": "NaN",
+        "units": "Degrees",
+        "x_label": "Alpha_FlowVel_Lat",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f7.2",
+        "x_cdf_FIELDNAM": "Alpha flow velocity, latitude",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "MOM.A.VEL_PHI",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> [A.VEL_PHI] Alpha flow velocity, longitude",
+        "fill": "NaN",
+        "units": "Degrees",
+        "x_label": "Alpha_FlowVel_Long",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Alpha flow velocity, longitude",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "TIME",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "UNIX time; seconds since January 1, 1970",
+        "fill": "NaN",
+        "units": "sec since 1-1-70",
+        "x_label": "Time",
+        "x_format": ".0g",
+        "x_fractionDigits": "0",
+        "x_cdf_FORMAT": "g12.0",
+        "x_cdf_FIELDNAM": "UNIX  time",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DEPEND_0": "Epoch"
+      }
+    ]
+  }
+}

@@ -1,0 +1,868 @@
+{
+  "id": "RBSPB_REL03_ECT-REPT-SCI-L3@1",
+  "title": "RBSP/ECT REPT Pitch Angle Resolved Electron and Proton Fluxes. Electron energies: 2 - 59.45 MeV. Proton energies: 21.25 - 0 MeV - D. Baker (University of Colorado at Boulder)",
+  "info": {
+    "startDate": "2012-09-02T14:17:46.000Z",
+    "stopDate": "2019-07-16T16:37:58.000Z",
+    "sampleStartDate": "2019-07-15T00:00:10.000Z",
+    "sampleStopDate": "2019-07-15T23:58:36.000Z",
+    "cadence": "PT18.425S",
+    "x_cadence_fraction": 0.1781183932346723,
+    "x_cadence_note": "Cadence based on variable 'Epoch_prot' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/rbsp/rbspb/l3/ect/rept/sectors/rel03/2012/rbspb_rel03_ect-rept-sci-l3_20120902_v5.0.1.cdf. This most common cadence occurred for 17.8118% of the 337 timesteps. Cadence = 18425 [ms] = PT18.425S.",
+    "maxRequestDuration": "PT4315300S",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_REL03_ECT-REPT-SCI-L3",
+    "contact": "D. Baker @ University of Colorado at Boulder",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 24,
+        "fill": null,
+        "x_description": "Time since 0 AD",
+        "x_cdf_NAME": "Epoch_prot",
+        "x_cdf_DataType": "CDF_EPOCH"
+      },
+      {
+        "name": "FPDU",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "FPDU - Unidirectional Differential Proton Flux",
+        "fill": "-1e+31",
+        "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_label": "FPDU: Proton Flux",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FPDU",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch_prot",
+        "size": [
+          17,
+          8
+        ],
+        "bins": [
+          {
+            "name": "FPDU_Alpha",
+            "description": "Pitch angles for FPDU.",
+            "centers": [
+              5.294,
+              15.88,
+              26.47,
+              37.06,
+              47.65,
+              58.24,
+              68.82,
+              79.41,
+              90.0,
+              100.6,
+              111.2,
+              121.8,
+              132.4,
+              142.9,
+              153.5,
+              164.1,
+              174.7
+            ],
+            "x_label": "Pitch Angle",
+            "units": "degrees"
+          },
+          {
+            "name": "FPDU_Energy_FIXED",
+            "description": "---> Energy centroids for FPDU",
+            "centers": [
+              21.25,
+              27.6,
+              35.9,
+              46.7,
+              60.7,
+              78.9,
+              102.6,
+              208.0
+            ],
+            "x_label": "Energy",
+            "units": "MeV"
+          }
+        ]
+      },
+      {
+        "name": "FPDU_byE_atA",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "---> FPDU_byE_atA: Spectrograms by energy at sample pitch angles. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_label": [
+          [
+            "FPDU_Flux_5degPA",
+            "FPDU_Flux_16degPA",
+            "FPDU_Flux_26degPA",
+            "FPDU_Flux_37degPA",
+            "FPDU_Flux_48degPA",
+            "FPDU_Flux_58degPA",
+            "FPDU_Flux_69degPA",
+            "FPDU_Flux_79degPA",
+            "FPDU_Flux_90degPA",
+            "FPDU_Flux_106degPA",
+            "FPDU_Flux_111degPA",
+            "FPDU_Flux_122degPA",
+            "FPDU_Flux_132degPA",
+            "FPDU_Flux_143degPA",
+            "FPDU_Flux_154degPA",
+            "FPDU_Flux_164degPA",
+            "FPDU_Flux_175degPA"
+          ],
+          [
+            "FPDU_Flux_21.25MeV",
+            "FPDU_Flux_27.60MeV",
+            "FPDU_Flux_35.90MeV",
+            "FPDU_Flux_46.70MeV",
+            "FPDU_Flux_60.70MeV",
+            "FPDU_Flux_78.90MeV",
+            "FPDU_Flux_102.6MeV",
+            "FPDU_Flux_208MeV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "REPT FPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "FPDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch_prot",
+        "size": [
+          17,
+          8
+        ],
+        "bins": [
+          {
+            "name": "FPDU_Alpha",
+            "description": "Pitch angles for FPDU.",
+            "centers": [
+              5.294,
+              15.88,
+              26.47,
+              37.06,
+              47.65,
+              58.24,
+              68.82,
+              79.41,
+              90.0,
+              100.6,
+              111.2,
+              121.8,
+              132.4,
+              142.9,
+              153.5,
+              164.1,
+              174.7
+            ],
+            "x_label": "Pitch Angle",
+            "units": "degrees"
+          },
+          {
+            "name": "FPDU_Energy_FIXED",
+            "description": "---> Energy centroids for FPDU",
+            "centers": [
+              21.25,
+              27.6,
+              35.9,
+              46.7,
+              60.7,
+              78.9,
+              102.6,
+              208.0
+            ],
+            "x_label": "Energy",
+            "units": "MeV"
+          }
+        ]
+      },
+      {
+        "name": "FPDU_byA_atE",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "---> FPDU_byA_atE: Spectrograms by pitch angle at sample energies. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_label": [
+          [
+            "FPDU_Flux_5degPA",
+            "FPDU_Flux_16degPA",
+            "FPDU_Flux_26degPA",
+            "FPDU_Flux_37degPA",
+            "FPDU_Flux_48degPA",
+            "FPDU_Flux_58degPA",
+            "FPDU_Flux_69degPA",
+            "FPDU_Flux_79degPA",
+            "FPDU_Flux_90degPA",
+            "FPDU_Flux_106degPA",
+            "FPDU_Flux_111degPA",
+            "FPDU_Flux_122degPA",
+            "FPDU_Flux_132degPA",
+            "FPDU_Flux_143degPA",
+            "FPDU_Flux_154degPA",
+            "FPDU_Flux_164degPA",
+            "FPDU_Flux_175degPA"
+          ],
+          [
+            "FPDU_Flux_21.25MeV",
+            "FPDU_Flux_27.60MeV",
+            "FPDU_Flux_35.90MeV",
+            "FPDU_Flux_46.70MeV",
+            "FPDU_Flux_60.70MeV",
+            "FPDU_Flux_78.90MeV",
+            "FPDU_Flux_102.6MeV",
+            "FPDU_Flux_208MeV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "REPT FPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "FPDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch_prot",
+        "size": [
+          17,
+          8
+        ],
+        "bins": [
+          {
+            "name": "FPDU_Alpha",
+            "description": "Pitch angles for FPDU.",
+            "centers": [
+              5.294,
+              15.88,
+              26.47,
+              37.06,
+              47.65,
+              58.24,
+              68.82,
+              79.41,
+              90.0,
+              100.6,
+              111.2,
+              121.8,
+              132.4,
+              142.9,
+              153.5,
+              164.1,
+              174.7
+            ],
+            "x_label": "Pitch Angle",
+            "units": "degrees"
+          },
+          {
+            "name": "FPDU_Energy_FIXED",
+            "description": "---> Energy centroids for FPDU",
+            "centers": [
+              21.25,
+              27.6,
+              35.9,
+              46.7,
+              60.7,
+              78.9,
+              102.6,
+              208.0
+            ],
+            "x_label": "Energy",
+            "units": "MeV"
+          }
+        ]
+      },
+      {
+        "name": "FPDU_0to180",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "FPDU_0to180 - Unidirectional Differential Proton Flux",
+        "fill": "-1e+31",
+        "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_label": "FPDU 0to180: Proton Flux",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FPDU_0to180",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch_prot",
+        "size": [
+          17,
+          8
+        ],
+        "bins": [
+          {
+            "name": "FPDU_0to180_Alpha",
+            "description": "Pitch angles for FPDU_0to180.",
+            "centers": [
+              5.294,
+              15.88,
+              26.47,
+              37.06,
+              47.65,
+              58.24,
+              68.82,
+              79.41,
+              90.0,
+              100.6,
+              111.2,
+              121.8,
+              132.4,
+              142.9,
+              153.5,
+              164.1,
+              174.7
+            ],
+            "x_label": "Pitch Angle",
+            "units": "degrees"
+          },
+          {
+            "name": "FPDU_Energy_FIXED",
+            "description": "---> Energy centroids for FPDU",
+            "centers": [
+              21.25,
+              27.6,
+              35.9,
+              46.7,
+              60.7,
+              78.9,
+              102.6,
+              208.0
+            ],
+            "x_label": "Energy",
+            "units": "MeV"
+          }
+        ]
+      },
+      {
+        "name": "FPDU_0to180_byE_atA",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "---> Spectrograms by energy at sample pitch angles. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPDU_0to180']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_label": [
+          [
+            "FPDU_Flux_0to180_5degPA",
+            "FPDU_Flux_0to180_16degPA",
+            "FPDU_Flux_0to180_26degPA",
+            "FPDU_Flux_0to180_37degPA",
+            "FPDU_Flux_0to180_48degPA",
+            "FPDU_Flux_0to180_58degPA",
+            "FPDU_Flux_0to180_69degPA",
+            "FPDU_Flux_0to180_79degPA",
+            "FPDU_Flux_0to180_90degPA",
+            "FPDU_Flux_0to180_106degPA",
+            "FPDU_Flux_0to180_111degPA",
+            "FPDU_Flux_0to180_122degPA",
+            "FPDU_Flux_0to180_132degPA",
+            "FPDU_Flux_0to180_143degPA",
+            "FPDU_Flux_0to180_154degPA",
+            "FPDU_Flux_0to180_164degPA",
+            "FPDU_Flux_0to180_175degPA"
+          ],
+          [
+            "FPDU_Flux_0to180_21.25MeV",
+            "FPDU_Flux_0to180_27.60MeV",
+            "FPDU_Flux_0to180_35.90MeV",
+            "FPDU_Flux_0to180_46.70MeV",
+            "FPDU_Flux_0to180_60.70MeV",
+            "FPDU_Flux_0to180_78.90MeV",
+            "FPDU_Flux_0to180_102.6MeV",
+            "FPDU_Flux_0to180_208MeV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "REPT FPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "FPDU_0to180"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch_prot",
+        "size": [
+          17,
+          8
+        ],
+        "bins": [
+          {
+            "name": "FPDU_0to180_Alpha",
+            "description": "Pitch angles for FPDU_0to180.",
+            "centers": [
+              5.294,
+              15.88,
+              26.47,
+              37.06,
+              47.65,
+              58.24,
+              68.82,
+              79.41,
+              90.0,
+              100.6,
+              111.2,
+              121.8,
+              132.4,
+              142.9,
+              153.5,
+              164.1,
+              174.7
+            ],
+            "x_label": "Pitch Angle",
+            "units": "degrees"
+          },
+          {
+            "name": "FPDU_Energy_FIXED",
+            "description": "---> Energy centroids for FPDU",
+            "centers": [
+              21.25,
+              27.6,
+              35.9,
+              46.7,
+              60.7,
+              78.9,
+              102.6,
+              208.0
+            ],
+            "x_label": "Energy",
+            "units": "MeV"
+          }
+        ]
+      },
+      {
+        "name": "FPDU_0to180_byA_atE",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "---> Spectrograms by pitch angle at sample energies. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPDU_0to180']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_label": [
+          [
+            "FPDU_Flux_0to180_5degPA",
+            "FPDU_Flux_0to180_16degPA",
+            "FPDU_Flux_0to180_26degPA",
+            "FPDU_Flux_0to180_37degPA",
+            "FPDU_Flux_0to180_48degPA",
+            "FPDU_Flux_0to180_58degPA",
+            "FPDU_Flux_0to180_69degPA",
+            "FPDU_Flux_0to180_79degPA",
+            "FPDU_Flux_0to180_90degPA",
+            "FPDU_Flux_0to180_106degPA",
+            "FPDU_Flux_0to180_111degPA",
+            "FPDU_Flux_0to180_122degPA",
+            "FPDU_Flux_0to180_132degPA",
+            "FPDU_Flux_0to180_143degPA",
+            "FPDU_Flux_0to180_154degPA",
+            "FPDU_Flux_0to180_164degPA",
+            "FPDU_Flux_0to180_175degPA"
+          ],
+          [
+            "FPDU_Flux_0to180_21.25MeV",
+            "FPDU_Flux_0to180_27.60MeV",
+            "FPDU_Flux_0to180_35.90MeV",
+            "FPDU_Flux_0to180_46.70MeV",
+            "FPDU_Flux_0to180_60.70MeV",
+            "FPDU_Flux_0to180_78.90MeV",
+            "FPDU_Flux_0to180_102.6MeV",
+            "FPDU_Flux_0to180_208MeV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "REPT FPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "FPDU_0to180"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch_prot",
+        "size": [
+          17,
+          8
+        ],
+        "bins": [
+          {
+            "name": "FPDU_0to180_Alpha",
+            "description": "Pitch angles for FPDU_0to180.",
+            "centers": [
+              5.294,
+              15.88,
+              26.47,
+              37.06,
+              47.65,
+              58.24,
+              68.82,
+              79.41,
+              90.0,
+              100.6,
+              111.2,
+              121.8,
+              132.4,
+              142.9,
+              153.5,
+              164.1,
+              174.7
+            ],
+            "x_label": "Pitch Angle",
+            "units": "degrees"
+          },
+          {
+            "name": "FPDU_Energy_FIXED",
+            "description": "---> Energy centroids for FPDU",
+            "centers": [
+              21.25,
+              27.6,
+              35.9,
+              46.7,
+              60.7,
+              78.9,
+              102.6,
+              208.0
+            ],
+            "x_label": "Energy",
+            "units": "MeV"
+          }
+        ]
+      },
+      {
+        "name": "FPDU_180to360",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "FPDU_180to360 - Unidirectional Differential Proton Flux",
+        "fill": "-1e+31",
+        "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FPDU_180to360",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch_prot",
+        "size": [
+          17,
+          8
+        ],
+        "bins": [
+          {
+            "name": "FPDU_180to360_Alpha",
+            "description": "Pitch angles for FPDU_180to360.",
+            "centers": [
+              185.3,
+              195.9,
+              206.5,
+              217.1,
+              227.6,
+              238.2,
+              248.8,
+              259.4,
+              270.0,
+              280.6,
+              291.2,
+              301.8,
+              312.4,
+              322.9,
+              333.5,
+              344.1,
+              354.7
+            ],
+            "x_label": "Pitch Angle",
+            "units": "degrees"
+          },
+          {
+            "name": "FPDU_Energy_FIXED",
+            "description": "---> Energy centroids for FPDU",
+            "centers": [
+              21.25,
+              27.6,
+              35.9,
+              46.7,
+              60.7,
+              78.9,
+              102.6,
+              208.0
+            ],
+            "x_label": "Energy",
+            "units": "MeV"
+          }
+        ]
+      },
+      {
+        "name": "FPDU_180to360_byE_atA",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "---> Spectrograms by energy at sample pitch angles. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPDU_180to360']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_label": "FPDU 180to360: Proton Flux",
+        "x_labelComponents": [
+          [
+            "FPDU_Flux_180to360_185degPA",
+            "FPDU_Flux_180to360_196degPA",
+            "FPDU_Flux_180to360_206degPA",
+            "FPDU_Flux_180to360_217degPA",
+            "FPDU_Flux_180to360_228degPA",
+            "FPDU_Flux_180to360_238degPA",
+            "FPDU_Flux_180to360_249degPA",
+            "FPDU_Flux_180to360_259degPA",
+            "FPDU_Flux_180to360_270degPA",
+            "FPDU_Flux_180to360_281degPA",
+            "FPDU_Flux_180to360_291degPA",
+            "FPDU_Flux_180to360_302degPA",
+            "FPDU_Flux_180to360_312degPA",
+            "FPDU_Flux_180to360_323degPA",
+            "FPDU_Flux_180to360_334degPA",
+            "FPDU_Flux_180to360_344degPA",
+            "FPDU_Flux_180to360_355degPA"
+          ],
+          [
+            "FPDU_Flux_180to360_21.25MeV",
+            "FPDU_Flux_180to360_27.60MeV",
+            "FPDU_Flux_180to360_35.90MeV",
+            "FPDU_Flux_180to360_46.70MeV",
+            "FPDU_Flux_180to360_60.70MeV",
+            "FPDU_Flux_180to360_78.90MeV",
+            "FPDU_Flux_180to360_102.6MeV",
+            "FPDU_Flux_180to360_208MeV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "REPT FPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "FPDU_180to360"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch_prot",
+        "size": [
+          17,
+          8
+        ],
+        "bins": [
+          {
+            "name": "FPDU_180to360_Alpha",
+            "description": "Pitch angles for FPDU_180to360.",
+            "centers": [
+              185.3,
+              195.9,
+              206.5,
+              217.1,
+              227.6,
+              238.2,
+              248.8,
+              259.4,
+              270.0,
+              280.6,
+              291.2,
+              301.8,
+              312.4,
+              322.9,
+              333.5,
+              344.1,
+              354.7
+            ],
+            "x_label": "Pitch Angle",
+            "units": "degrees"
+          },
+          {
+            "name": "FPDU_Energy_FIXED",
+            "description": "---> Energy centroids for FPDU",
+            "centers": [
+              21.25,
+              27.6,
+              35.9,
+              46.7,
+              60.7,
+              78.9,
+              102.6,
+              208.0
+            ],
+            "x_label": "Energy",
+            "units": "MeV"
+          }
+        ]
+      },
+      {
+        "name": "FPDU_180to360_byA_atE",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "---> Spectrograms by pitch angle at sample energies. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPDU_180to360']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_label": "FPDU 180to360: Proton Flux",
+        "x_labelComponents": [
+          [
+            "FPDU_Flux_180to360_185degPA",
+            "FPDU_Flux_180to360_196degPA",
+            "FPDU_Flux_180to360_206degPA",
+            "FPDU_Flux_180to360_217degPA",
+            "FPDU_Flux_180to360_228degPA",
+            "FPDU_Flux_180to360_238degPA",
+            "FPDU_Flux_180to360_249degPA",
+            "FPDU_Flux_180to360_259degPA",
+            "FPDU_Flux_180to360_270degPA",
+            "FPDU_Flux_180to360_281degPA",
+            "FPDU_Flux_180to360_291degPA",
+            "FPDU_Flux_180to360_302degPA",
+            "FPDU_Flux_180to360_312degPA",
+            "FPDU_Flux_180to360_323degPA",
+            "FPDU_Flux_180to360_334degPA",
+            "FPDU_Flux_180to360_344degPA",
+            "FPDU_Flux_180to360_355degPA"
+          ],
+          [
+            "FPDU_Flux_180to360_21.25MeV",
+            "FPDU_Flux_180to360_27.60MeV",
+            "FPDU_Flux_180to360_35.90MeV",
+            "FPDU_Flux_180to360_46.70MeV",
+            "FPDU_Flux_180to360_60.70MeV",
+            "FPDU_Flux_180to360_78.90MeV",
+            "FPDU_Flux_180to360_102.6MeV",
+            "FPDU_Flux_180to360_208MeV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "REPT FPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "FPDU_180to360"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch_prot",
+        "size": [
+          17,
+          8
+        ],
+        "bins": [
+          {
+            "name": "FPDU_180to360_Alpha",
+            "description": "Pitch angles for FPDU_180to360.",
+            "centers": [
+              185.3,
+              195.9,
+              206.5,
+              217.1,
+              227.6,
+              238.2,
+              248.8,
+              259.4,
+              270.0,
+              280.6,
+              291.2,
+              301.8,
+              312.4,
+              322.9,
+              333.5,
+              344.1,
+              354.7
+            ],
+            "x_label": "Pitch Angle",
+            "units": "degrees"
+          },
+          {
+            "name": "FPDU_Energy_FIXED",
+            "description": "---> Energy centroids for FPDU",
+            "centers": [
+              21.25,
+              27.6,
+              35.9,
+              46.7,
+              60.7,
+              78.9,
+              102.6,
+              208.0
+            ],
+            "x_label": "Energy",
+            "units": "MeV"
+          }
+        ]
+      },
+      {
+        "name": "FPDU_Unbinned_0to180",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "FPDU_Unbinned_0to180 - Unidirectional Differential Proton Flux (raw sector data).",
+        "fill": "-1e+31",
+        "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_label": "FPDU_UnBin_0to180",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "FPDU_Unbinned",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch_prot",
+        "size": [
+          36,
+          8
+        ]
+      },
+      {
+        "name": "FPDU_Unbinned_0to360",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "---> FPDU_Unbinned_0to360 - Unidirectional Differential Proton Flux (raw sector data).",
+        "fill": "-1e+31",
+        "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_label": "FPDU_UnBin_0to360",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "FPDU_Unbinned_0to360",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch_prot",
+        "size": [
+          36,
+          8
+        ]
+      },
+      {
+        "name": "FPDU_Unbinned_LightMask_0to360",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT4",
+        "description": "[NO PLOTS] FPDU_Unbinned_LightMask_0to360 - LightMask for FPDU_Unbinned_0to360 array.",
+        "fill": "0.0",
+        "units": "none",
+        "x_label": "FPDU_UnBin_LM_0to360",
+        "x_cdf_FIELDNAM": "FPDU_Unbinned_LightMask_0to360",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch_prot",
+        "size": [
+          36
+        ]
+      },
+      {
+        "name": "FPDU_Unbinned_Light_Flag",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT4",
+        "description": "---> FPDU_Unbinned_Light_Flag",
+        "fill": "0.0",
+        "units": "none",
+        "x_label": "FPDU_UnBin_LightFlag",
+        "x_cdf_FIELDNAM": "FPDU_Unbinned_Light_Flag",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DEPEND_0": "Epoch_prot"
+      }
+    ]
+  }
+}

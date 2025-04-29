@@ -1,0 +1,1541 @@
+[
+  {
+    "id": "THA_L2_FGM@0",
+    "title": "Spacecraft-collected fluxgate magnetometer, Decimated TeleMetry High, DSL, GSE and GSM coordinates - V. Angelopoulos, U. Auster & K.H. Glassmeier and W. Baumjohann (UCB, TUBS and IWF respectively, NASA NAS5-02099)",
+    "info": {
+      "startDate": "2007-02-23T00:00:00.000Z",
+      "stopDate": "2025-03-11T00:00:00.000Z",
+      "sampleStartDate": "2025-03-09T00:00:00.000Z",
+      "sampleStopDate": "2025-03-10T00:00:00.000Z",
+      "maxRequestDuration": "P50D",
+      "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THA_L2_FGM",
+      "contact": "V. Angelopoulos, U. Auster & K.H. Glassmeier and W. Baumjohann @ UCB, TUBS and IWF respectively, NASA NAS5-02099",
+      "parameters": [
+        {
+          "name": "Time",
+          "type": "isotime",
+          "units": "UTC",
+          "length": 24,
+          "fill": null,
+          "x_description": "tha_fgs_epoch",
+          "x_cdf_NAME": "tha_fgs_epoch",
+          "x_cdf_DataType": "CDF_EPOCH"
+        },
+        {
+          "name": "tha_fgm_fgs_quality",
+          "type": "integer",
+          "x_cdf_DataType": "CDF_INT4",
+          "description": "FGM-FGS Data Quality (0: Good data, 1:boom not deployed, 2:in shadow, 3:uncorrected shadow, 4:noisy waveforms)",
+          "fill": "-2147483648",
+          "units": null,
+          "x_label": "Data_Quality_Flag FGM-A fgs",
+          "x_cdf_FORMAT": "i2",
+          "x_cdf_FIELDNAM": "Data_Quality_Flag FGM-A fgs",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgs_epoch"
+        },
+        {
+          "name": "tha_fgs_btotalQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "(Good data only) FGS magnetic field B magnitude . This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgs_btotal', 'tha_fgm_fgs_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT",
+          "x_label": "FGS-D B_total",
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "FGS-D Magnetic Field, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgs_btotal",
+            "tha_fgm_fgs_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgs_epoch"
+        },
+        {
+          "name": "tha_fgs_gseQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGS (spin-resolution/~3 sec) magnetic  field B in XYZ GSE Coordinates. This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgs_gse', 'tha_fgm_fgs_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT GSE",
+          "x_label": [
+            "Bx FGS-D",
+            "By FGS-D",
+            "Bz FGS-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSE Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgs_gse",
+            "tha_fgm_fgs_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgs_epoch",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgs_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGS-D",
+                "By FGS-D",
+                "Bz FGS-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgs_gsmQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGS (spin-resolution/~3 sec) magnetic  field B in XYZ GSM Coordinates. This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgs_gsm', 'tha_fgm_fgs_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT GSM",
+          "x_label": [
+            "Bx FGS-D",
+            "By FGS-D",
+            "Bz FGS-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSM Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgs_gsm",
+            "tha_fgm_fgs_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgs_epoch",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgs_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGS-D",
+                "By FGS-D",
+                "Bz FGS-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgs_dslQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGS magnetic field B in DSL (Despun Spacecraft) Coordinates . This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgs_dsl', 'tha_fgm_fgs_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT DSL",
+          "x_label": [
+            "Bx FGS-D",
+            "By FGS-D",
+            "Bz FGS-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgs_dsl",
+            "tha_fgm_fgs_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgs_epoch",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgs_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGS-D",
+                "By FGS-D",
+                "Bz FGS-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgs_btotal",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "(All Qualities data) FGS magnetic field B magnitude ",
+          "fill": "-1e+30",
+          "units": "nT (All Qs)",
+          "x_label": "FGS-D B_total",
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "FGS-D Magnetic Field, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgs_epoch"
+        },
+        {
+          "name": "tha_fgs_gse",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGS (spin-resolution/~3 sec) magnetic  field B in XYZ GSE Coordinates",
+          "fill": "-1e+30",
+          "units": "nT GSE (All Qs)",
+          "x_label": [
+            "Bx FGS-D",
+            "By FGS-D",
+            "Bz FGS-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSE Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgs_epoch",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgs_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGS-D",
+                "By FGS-D",
+                "Bz FGS-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgs_gsm",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGS magnetic field B in XYZ GSM Coordinates",
+          "fill": "-1e+30",
+          "units": "nT GSM (All Qs)",
+          "x_label": [
+            "Bx FGS-D",
+            "By FGS-D",
+            "Bz FGS-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSM Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgs_epoch",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgs_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGS-D",
+                "By FGS-D",
+                "Bz FGS-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgs_dsl",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGS magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates ",
+          "fill": "-1e+30",
+          "units": "nT DSL (All Qs)",
+          "x_label": [
+            "Bx FGS-D",
+            "By FGS-D",
+            "Bz FGS-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgs_epoch",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgs_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGS-D",
+                "By FGS-D",
+                "Bz FGS-D"
+              ],
+              "units": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "THA_L2_FGM@1",
+    "title": "Spacecraft-collected fluxgate magnetometer, Decimated TeleMetry High, DSL, GSE and GSM coordinates - V. Angelopoulos, U. Auster & K.H. Glassmeier and W. Baumjohann (UCB, TUBS and IWF respectively, NASA NAS5-02099)",
+    "info": {
+      "startDate": "2007-02-23T00:00:00.000Z",
+      "stopDate": "2025-03-11T00:00:00.000Z",
+      "sampleStartDate": "2025-03-09T00:00:00.000Z",
+      "sampleStopDate": "2025-03-10T00:00:00.000Z",
+      "maxRequestDuration": "P50D",
+      "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THA_L2_FGM",
+      "contact": "V. Angelopoulos, U. Auster & K.H. Glassmeier and W. Baumjohann @ UCB, TUBS and IWF respectively, NASA NAS5-02099",
+      "parameters": [
+        {
+          "name": "Time",
+          "type": "isotime",
+          "units": "UTC",
+          "length": 33,
+          "fill": null,
+          "x_description": "tha_fgl_epoch16",
+          "x_cdf_NAME": "tha_fgl_epoch16",
+          "x_cdf_DataType": "CDF_EPOCH16"
+        },
+        {
+          "name": "tha_fgm_fgl_quality",
+          "type": "integer",
+          "x_cdf_DataType": "CDF_INT4",
+          "description": "FGM-FGL Data Quality (0: Good data, 1:boom not deployed, 2:in shadow, 3:uncorrected shadow, 4:noisy waveforms)",
+          "fill": "-2147483648",
+          "units": null,
+          "x_label": "Data_Quality_Flag FGM-A fgl",
+          "x_cdf_FORMAT": "i2",
+          "x_cdf_FIELDNAM": "Data_Quality_Flag FGM-A fgl",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgl_epoch16"
+        },
+        {
+          "name": "tha_fgl_btotalQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "(Good data only) FGL magnetic field B magnitude . This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgl_btotal', 'tha_fgm_fgl_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT",
+          "x_label": "FGL-D B_total",
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "FGL-D Magnetic Field, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgl_btotal",
+            "tha_fgm_fgl_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgl_epoch16"
+        },
+        {
+          "name": "tha_fgl_gseQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGL (low-resolution/~0.25 sec) magnetic field B in XYZ GSE Coordinates. This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgl_gse', 'tha_fgm_fgl_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT GSE",
+          "x_label": [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSE Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgl_gse",
+            "tha_fgm_fgl_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgl_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgl_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGL-D",
+                "By FGL-D",
+                "Bz FGL-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgl_gsmQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGL (low-resolution/~0.25 sec) magnetic field B in XYZ GSM Coordinates. This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgl_gsm', 'tha_fgm_fgl_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT GSM",
+          "x_label": [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSM Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgl_gsm",
+            "tha_fgm_fgl_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgl_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgl_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGL-D",
+                "By FGL-D",
+                "Bz FGL-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgl_dslQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGL magnetic field B in DSL (Despun Spacecraft) Coordinates . This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgl_dsl', 'tha_fgm_fgl_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT DSL",
+          "x_label": [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgl_dsl",
+            "tha_fgm_fgl_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgl_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgl_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGL-D",
+                "By FGL-D",
+                "Bz FGL-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgl_sslQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGL magnetic field B in SSL (Spinning Spacecraft) Coordinates . This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgl_ssl', 'tha_fgm_fgl_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT SSL",
+          "x_label": [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ Spinning Spacecraft Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgl_ssl",
+            "tha_fgm_fgl_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgl_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgl_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGL-D",
+                "By FGL-D",
+                "Bz FGL-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgl_btotal",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "(All Qualitities data) FGL magnetic field B magnitude ",
+          "fill": "-1e+30",
+          "units": "nT (All Q's)",
+          "x_label": "FGL-D B_total",
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "FGL-D Magnetic Field, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgl_epoch16"
+        },
+        {
+          "name": "tha_fgl_gse",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGL (low-resolution/~0.25 sec) field B in XYZ GSE Coordinates",
+          "fill": "-1e+30",
+          "units": "nT GSE (All Q's)",
+          "x_label": [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSE Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgl_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgl_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGL-D",
+                "By FGL-D",
+                "Bz FGL-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgl_gsm",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGL magnetic field B in XYZ GSM Coordinates",
+          "fill": "-1e+30",
+          "units": "nT GSM (All Q's)",
+          "x_label": [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSM Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgl_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgl_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGL-D",
+                "By FGL-D",
+                "Bz FGL-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgl_dsl",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGL magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates ",
+          "fill": "-1e+30",
+          "units": "nT DSL (All Q's)",
+          "x_label": [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgl_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgl_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGL-D",
+                "By FGL-D",
+                "Bz FGL-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgl_ssl",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGL magnetic field B in XYZ SSL (Spinning Spacecraft) Coordinates",
+          "fill": "-1e+30",
+          "units": "nT SSL (All Q's)",
+          "x_label": [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ Spinning Spacecraft Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgl_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgl_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGL-D",
+                "By FGL-D",
+                "Bz FGL-D"
+              ],
+              "units": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "THA_L2_FGM@2",
+    "title": "Spacecraft-collected fluxgate magnetometer, Decimated TeleMetry High, DSL, GSE and GSM coordinates - V. Angelopoulos, U. Auster & K.H. Glassmeier and W. Baumjohann (UCB, TUBS and IWF respectively, NASA NAS5-02099)",
+    "info": {
+      "startDate": "2007-02-23T00:00:00.000Z",
+      "stopDate": "2025-03-11T00:00:00.000Z",
+      "sampleStartDate": "2025-03-09T00:00:00.000Z",
+      "sampleStopDate": "2025-03-10T00:00:00.000Z",
+      "maxRequestDuration": "P50D",
+      "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THA_L2_FGM",
+      "contact": "V. Angelopoulos, U. Auster & K.H. Glassmeier and W. Baumjohann @ UCB, TUBS and IWF respectively, NASA NAS5-02099",
+      "parameters": [
+        {
+          "name": "Time",
+          "type": "isotime",
+          "units": "UTC",
+          "length": 33,
+          "fill": null,
+          "x_description": "tha_fgh_epoch16",
+          "x_cdf_NAME": "tha_fgh_epoch16",
+          "x_cdf_DataType": "CDF_EPOCH16"
+        },
+        {
+          "name": "tha_fgm_fgh_quality",
+          "type": "integer",
+          "x_cdf_DataType": "CDF_INT4",
+          "description": "FGM-FGH Data Quality (0: Good data, 1:boom not deployed, 2:in shadow, 3:uncorrected shadow, 4:noisy waveforms)",
+          "fill": "-2147483648",
+          "units": null,
+          "x_label": "Data_Quality_Flag FGM-A fgh",
+          "x_cdf_FORMAT": "i2",
+          "x_cdf_FIELDNAM": "Data_Quality_Flag FGM-A fgh",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgh_epoch16"
+        },
+        {
+          "name": "tha_fgh_btotalQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "(Good data only) FGH magnetic field B magnitude . This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgh_btotal', 'tha_fgm_fgh_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT",
+          "x_label": "FGH-D B_total",
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "FGH-D Magnetic Field, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgh_btotal",
+            "tha_fgm_fgh_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgh_epoch16"
+        },
+        {
+          "name": "tha_fgh_gseQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGH (high-resolution/~0.008 sec) magnetic field B in XYZ GSE Coordinates. This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgh_gse', 'tha_fgm_fgh_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT GSE",
+          "x_label": [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSE Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgh_gse",
+            "tha_fgm_fgh_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgh_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgh_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGH-D",
+                "By FGH-D",
+                "Bz FGH-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgh_gsmQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGH (high-resolution/~0.008 sec) magnetic field B in XYZ GSM Coordinates. This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgh_gsm', 'tha_fgm_fgh_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT GSM",
+          "x_label": [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSM Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgh_gsm",
+            "tha_fgm_fgh_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgh_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgh_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGH-D",
+                "By FGH-D",
+                "Bz FGH-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgh_dslQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGH magnetic field B in DSL (Despun Spacecraft) Coordinates . This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgh_dsl', 'tha_fgm_fgh_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT DSL",
+          "x_label": [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgh_dsl",
+            "tha_fgm_fgh_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgh_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgh_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGH-D",
+                "By FGH-D",
+                "Bz FGH-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgh_sslQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGH magnetic field B in SSL (Spinning Spacecraft) Coordinates . This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fgh_ssl', 'tha_fgm_fgh_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT SSL",
+          "x_label": [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ Spinning Spacecraft Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fgh_ssl",
+            "tha_fgm_fgh_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgh_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgh_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGH-D",
+                "By FGH-D",
+                "Bz FGH-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgh_btotal",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "(All Qualities) FGH magnetic field B magnitude ",
+          "fill": "-1e+30",
+          "units": "nT (All Qs)",
+          "x_label": "FGH-D B_total",
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "FGH-D Magnetic Field, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgh_epoch16"
+        },
+        {
+          "name": "tha_fgh_gse",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGH (high-resolution/~0.008 sec) magnetic field B in XYZ GSE Coordinates",
+          "fill": "-1e+30",
+          "units": "nT GSE (All Qs)",
+          "x_label": [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSE Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgh_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgh_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGH-D",
+                "By FGH-D",
+                "Bz FGH-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgh_gsm",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGH magnetic field B in XYZ GSM Coordinates",
+          "fill": "-1e+30",
+          "units": "nT GSM (All Qs)",
+          "x_label": [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSM Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgh_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgh_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGH-D",
+                "By FGH-D",
+                "Bz FGH-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgh_dsl",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGH magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates",
+          "fill": "-1e+30",
+          "units": "nT DSL (All Qs)",
+          "x_label": [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgh_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgh_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGH-D",
+                "By FGH-D",
+                "Bz FGH-D"
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fgh_ssl",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "----FGH magnetic field B in XYZ SSL (Spinning Spacecraft) Coordinates",
+          "fill": "-1e+30",
+          "units": "nT SSL (All Qs)",
+          "x_label": [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ Spinning Spacecraft Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fgh_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fgh_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "x_label": [
+                "Bx FGH-D",
+                "By FGH-D",
+                "Bz FGH-D"
+              ],
+              "units": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "THA_L2_FGM@3",
+    "title": "Spacecraft-collected fluxgate magnetometer, Decimated TeleMetry High, DSL, GSE and GSM coordinates - V. Angelopoulos, U. Auster & K.H. Glassmeier and W. Baumjohann (UCB, TUBS and IWF respectively, NASA NAS5-02099)",
+    "info": {
+      "startDate": "2007-02-23T00:00:00.000Z",
+      "stopDate": "2025-03-11T00:00:00.000Z",
+      "sampleStartDate": "2025-03-09T00:00:00.000Z",
+      "sampleStopDate": "2025-03-10T00:00:00.000Z",
+      "maxRequestDuration": "P50D",
+      "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THA_L2_FGM",
+      "contact": "V. Angelopoulos, U. Auster & K.H. Glassmeier and W. Baumjohann @ UCB, TUBS and IWF respectively, NASA NAS5-02099",
+      "parameters": [
+        {
+          "name": "Time",
+          "type": "isotime",
+          "units": "UTC",
+          "length": 33,
+          "fill": null,
+          "x_description": "tha_fge_epoch16",
+          "x_cdf_NAME": "tha_fge_epoch16",
+          "x_cdf_DataType": "CDF_EPOCH16"
+        },
+        {
+          "name": "tha_fgm_fge_quality",
+          "type": "integer",
+          "x_cdf_DataType": "CDF_INT4",
+          "description": "FGM-FGE Data Quality (0: Good data, 1:boom not deployed, 2:in shadow, 3:uncorrected shadow, 4:noisy waveforms)",
+          "fill": "-2147483648",
+          "units": null,
+          "x_label": "Data_Quality_Flag FGM-A fge",
+          "x_cdf_FORMAT": "i2",
+          "x_cdf_FIELDNAM": "Data_Quality_Flag FGM-A fge",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fge_epoch16"
+        },
+        {
+          "name": "tha_fge_btotalQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "(Good data only) FGE magnetic field B magnitude . This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fge_btotal', 'tha_fgm_fge_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT",
+          "x_label": "FGE-D B_total",
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "FGE-D Magnetic Field, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fge_btotal",
+            "tha_fgm_fge_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fge_epoch16"
+        },
+        {
+          "name": "tha_fge_gseQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGE (engineering mode) magnetic field B in XYZ GSE Coordinates. This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fge_gse', 'tha_fgm_fge_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT GSE",
+          "x_label": [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSE Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fge_gse",
+            "tha_fgm_fge_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fge_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fge_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fge_gsmQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGE (engineering mode) magnetic field B in XYZ GSM Coordinates. This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fge_gsm', 'tha_fgm_fge_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT GSM",
+          "x_label": [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSM Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fge_gsm",
+            "tha_fgm_fge_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fge_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fge_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fge_dslQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGE (engineering mode) magnetic field B in DSL Coordinates. This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fge_dsl', 'tha_fgm_fge_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT DSL",
+          "x_label": [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ DSL Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fge_dsl",
+            "tha_fgm_fge_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fge_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fge_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fge_sslQ",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGE (engineering mode) magnetic field B in SSL Coordinates. This variable is a 'virtual' variable that is computed using the function apply_fgm_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_fge_ssl', 'tha_fgm_fge_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "fill": "-1e+30",
+          "units": "nT SSL",
+          "x_label": [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ SSL Coordinate, nT units",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "apply_fgm_qflag",
+          "x_cdf_COMPONENTS": [
+            "tha_fge_ssl",
+            "tha_fgm_fge_quality"
+          ],
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fge_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fge_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fge_btotal",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "(All Qualities) FGE (engineering) magnetic field B magnitude ",
+          "fill": "-1e+30",
+          "units": "nT (All Qs)",
+          "x_label": "FGE-D B_total",
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "FGE-D Magnetic Field, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fge_epoch16"
+        },
+        {
+          "name": "tha_fge_gse",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGE (engineering mode) magnetic field B in XYZ GSE Coordinates",
+          "fill": "-1e+30",
+          "units": "nT GSE (All Qs)",
+          "x_label": [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSE Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fge_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fge_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fge_gsm",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGE magnetic field B in XYZ GSM Coordinates",
+          "fill": "-1e+30",
+          "units": "nT GSM (All Qs)",
+          "x_label": [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ GSM Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fge_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fge_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fge_dsl",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGE magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates ",
+          "fill": "-1e+30",
+          "units": "nT DSL (All Qs)",
+          "x_label": [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fge_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fge_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "units": null
+            }
+          ]
+        },
+        {
+          "name": "tha_fge_ssl",
+          "type": "double",
+          "x_cdf_DataType": "CDF_FLOAT",
+          "description": "---- FGE magnetic field B in XYZ SSL (Spinning Spacecraft) Coordinates ",
+          "fill": "-1e+30",
+          "units": "nT SSL (All Qs)",
+          "x_label": [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ],
+          "x_format": ".6e",
+          "x_fractionDigits": "6",
+          "x_cdf_FORMAT": "E13.6",
+          "x_cdf_FIELDNAM": "BXYZ Spinning Spacecraft Coordinate, nT units",
+          "x_cdf_VIRTUAL": false,
+          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DEPEND_0": "tha_fge_epoch16",
+          "size": [
+            3
+          ],
+          "bins": [
+            {
+              "name": "tha_fge_compno",
+              "description": "XYZ Component Number",
+              "centers": [
+                1,
+                2,
+                3
+              ],
+              "units": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

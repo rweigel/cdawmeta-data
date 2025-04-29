@@ -1,0 +1,1153 @@
+{
+  "id": "THA_L2_GMOM@1",
+  "title": "THEMIS-A:  Solid State Telescope (ESA+SST): Energy Flux spectrogram:  Data includes: Electron/Ion Ground-Calculated Fluxes (ions: 5 eV - 4 MeV,electrons: 6 eV - 700 keV) - V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
+  "info": {
+    "startDate": "2007-03-09T00:00:00.000Z",
+    "stopDate": "2025-03-10T00:00:00.000Z",
+    "sampleStartDate": "2025-03-08T00:00:00.000Z",
+    "sampleStopDate": "2025-03-09T00:00:00.000Z",
+    "maxRequestDuration": "P50D",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THA_L2_GMOM",
+    "contact": "V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 24,
+        "fill": null,
+        "x_description": "tha_pteff_epoch",
+        "x_cdf_NAME": "tha_pteff_epoch",
+        "x_cdf_DataType": "CDF_EPOCH"
+      },
+      {
+        "name": "tha_pteff_data_quality",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT4",
+        "description": "ESA+SST Full+Full Mode Elec Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/gmom_flag.shtml.) ",
+        "fill": "-2147483648",
+        "units": "(0=good)",
+        "x_label": "Data_Quality_Flag_elec Full ESA-SST-A",
+        "x_cdf_FORMAT": "i10",
+        "x_cdf_FIELDNAM": "Data_Quality_Flag_elec Full ESA-SST-A",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch"
+      },
+      {
+        "name": "tha_pteff_densityQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "(Good data only) ESA+SST Full+Full Mode, Elec Density . This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_density', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "cm^-3",
+        "x_label": "N_elec Full-Full ESA-SST-A",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "N_elec Full-Full ESA-SST-A",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_density",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch"
+      },
+      {
+        "name": "tha_pteff_avgtempQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----(Good Data Only)Elec Average Temperature . This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_avgtemp', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "eV",
+        "x_label": "T_elec Full ESA-SST-A",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "T_elec Full-Full ESA-SST-A",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_avgtemp",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch"
+      },
+      {
+        "name": "tha_pteff_vthermalQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----(Good Data Only)Elec Thermal Velocity. This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_vthermal', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "km/s",
+        "x_label": "Vth_elec Full ESA-SST-A",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Vth_elec Full ESA-SST-A(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_vthermal",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch"
+      },
+      {
+        "name": "tha_pteff_sc_potQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----SC Potential (Same time array as Full Elec ESA-SST data) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_sc_pot', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "V",
+        "x_label": "Scpot_elec Full ESA-SST-A",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Scpot_elec Full ESA-SST-A(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_sc_pot",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch"
+      },
+      {
+        "name": "tha_pteff_en_efluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Elec Energy Flux spectrogram(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_en_eflux', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "eV/(cm^2-s-sr-eV) ",
+        "x_label": "Eflux_elec Full ESA-SST-A",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Eflux_elec Full ESA-SST-A(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_en_eflux",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          32
+        ]
+      },
+      {
+        "name": "tha_pteff_t3Q",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Elec Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_t3', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "eV",
+        "x_label": [
+          "Tprp1_elec Full ESA-SST-A",
+          "Tprp2_elec Full ESA-SST-A",
+          "Tpar_elec Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Elec Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_t3",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_t3_compno",
+            "description": "tha_pteff_t3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_elec Full ESA-SST-A",
+              "Tprp2_elec Full ESA-SST-A",
+              "Tpar_elec Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_magt3Q",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_magt3', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "eV",
+        "x_label": [
+          "Tprp1_elec FA Full ESA-SST-A",
+          "Tprp2_elec FA Full ESA-SST-A",
+          "Tpar_elec FA Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_magt3",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_magt3_compno",
+            "description": "tha_pteff_magt3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_elec FA Full ESA-SST-A",
+              "Tprp2_elec FA Full ESA-SST-A",
+              "Tpar_elec FA Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_ptensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Elec Pressure Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_ptens', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "eV/cm^3",
+        "x_label": [
+          "Pxx_elec Full ESA-SST-A",
+          "Pyy_elec Full ESA-SST-A",
+          "Pzz_elec Full ESA-SST-A",
+          "Pxy_elec Full ESA-SST-A",
+          "Pxz_elec Full ESA-SST-A",
+          "Pyz_elec Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Elec Pressure Tensor(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_ptens",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_ptens_compno",
+            "description": "tha_pteff_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_elec Full ESA-SST-A",
+              "Pyy_elec Full ESA-SST-A",
+              "Pzz_elec Full ESA-SST-A",
+              "Pxy_elec Full ESA-SST-A",
+              "Pxz_elec Full ESA-SST-A",
+              "Pyz_elec Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_mftensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Elec Momentum Flux Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_mftens', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "eV/cm^3",
+        "x_label": [
+          "MFxx_elec Full ESA-SST-A",
+          "MFyy_elec Full ESA-SST-A",
+          "MFzz_elec Full ESA-SST-A",
+          "MFxy_elec Full ESA-SST-A",
+          "MFxz_elec Full ESA-SST-A",
+          "MFyz_elec Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Elec Momentum Flux Tensor(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_mftens",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_mftens_compno",
+            "description": "tha_pteff_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "MFxx_elec Full ESA-SST-A",
+              "MFyy_elec Full ESA-SST-A",
+              "MFzz_elec Full ESA-SST-A",
+              "MFxy_elec Full ESA-SST-A",
+              "MFxz_elec Full ESA-SST-A",
+              "MFyz_elec Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_fluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Elec Particle Flux Vector(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_flux', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "#/(cm^2-s)",
+        "x_label": [
+          "Fx_elec DSL Full ESA-SST-A",
+          "Fy_elec DSL Full ESA-SST-A",
+          "Fz_elec DSL Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Elec Particle Flux Vector(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_flux",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_flux_compno",
+            "description": "tha_pteff_flux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Fx_elec DSL Full ESA-SST-A",
+              "Fy_elec DSL Full ESA-SST-A",
+              "Fz_elec DSL Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_symmQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Elec Symmetry Vector (direction of pressure tensor symmetry (DSL)) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_symm', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "None",
+        "x_label": [
+          "Symm_xe Full ESA-SST-A",
+          "Symm_ye Full ESA-SST-A",
+          "Symm_ze Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Elec Symmetry Vector (direction of pressure tensor symmetry (DSL))(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_symm",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_symm_compno",
+            "description": "tha_pteff_symm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Symm_xe Full ESA-SST-A",
+              "Symm_ye Full ESA-SST-A",
+              "Symm_ze Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_symm_angQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Elec Symmetry Angle (between symmetry direction and B)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_symm_ang', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "degrees",
+        "x_label": "symm_ang_elec Full ESA-SST-A",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "symm_ang_elec Full ESA-SST-A(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_symm_ang",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch"
+      },
+      {
+        "name": "tha_pteff_magfQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Magnetic Field Vector in DSL (Same time array as Full Elec ESA-SST data) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_magf', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "nT",
+        "x_label": [
+          "Bx_elec DSL Full ESA-SST-A",
+          "By_elec DSL Full ESA-SST-A",
+          "Bz_elec DSL Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Full Elec ESA-SST data)(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_magf",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_magf_compno",
+            "description": "tha_pteff_magf_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Bx_elec DSL Full ESA-SST-A",
+              "By_elec DSL Full ESA-SST-A",
+              "Bz_elec DSL Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_velocity_dslQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Elec Velocity Vector in DSL(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_velocity_dsl', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "km/s",
+        "x_label": [
+          "Vx_elec DSL Full ESA-SST-A",
+          "Vy_elec DSL Full ESA-SST-A",
+          "Vz_elec DSL Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Elec Velocity Vector in DSL(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_velocity_dsl",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_velocity_dsl_compno",
+            "description": "tha_pteff_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec DSL Full ESA-SST-A",
+              "Vy_elec DSL Full ESA-SST-A",
+              "Vz_elec DSL Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_velocity_gseQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Elec Velocity Vector in GSE(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_velocity_gse', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "km/s",
+        "x_label": [
+          "Vx_elec GSE Full ESA-SST-A",
+          "Vy_elec GSE Full ESA-SST-A",
+          "Vz_elec GSE Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Elec Velocity Vector in GSE(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_velocity_gse",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_velocity_gse_compno",
+            "description": "tha_pteff_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec GSE Full ESA-SST-A",
+              "Vy_elec GSE Full ESA-SST-A",
+              "Vz_elec GSE Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_velocity_gsmQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Elec Velocity Vector in GSM(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['tha_pteff_velocity_gsm', 'tha_pteff_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+30",
+        "units": "km/s",
+        "x_label": [
+          "Vx_elec GSM Full ESA-SST-A",
+          "Vy_elec GSM Full ESA-SST-A",
+          "Vz_elec GSM Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Elec Velocity Vector in GSM(Good Data Only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_gmom_qflag",
+        "x_cdf_COMPONENTS": [
+          "tha_pteff_velocity_gsm",
+          "tha_pteff_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_velocity_gsm_compno",
+            "description": "tha_pteff_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec GSM Full ESA-SST-A",
+              "Vy_elec GSM Full ESA-SST-A",
+              "Vz_elec GSM Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_density",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "(All qualities data) ESA-SST Full (High Angular Resolution, few minute time res.) Mode, Electron Density",
+        "fill": "-1e+30",
+        "units": "cm^-3 (All Qs)",
+        "x_label": "N_elec Full ESA-SST-A",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "N_elec Full ESA-SST-A(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch"
+      },
+      {
+        "name": "tha_pteff_avgtemp",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Average Temperature",
+        "fill": "-1e+30",
+        "units": "eV (All Qs)",
+        "x_label": "T_elec Full ESA-SST-A",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "T_elec Full ESA-SST-A(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch"
+      },
+      {
+        "name": "tha_pteff_vthermal",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Thermal Velocity",
+        "fill": "-1e+30",
+        "units": "km/s (All Qs)",
+        "x_label": "Vth_elec Full ESA-SST-A",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Vth_elec Full ESA-SST-A(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch"
+      },
+      {
+        "name": "tha_pteff_sc_pot",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----SC Potential (Same time array as Full Electron ESA-SST data)",
+        "fill": "-1e+30",
+        "units": "V (All Qs)",
+        "x_label": "Scpot_elec Full ESA-SST-A",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Scpot_elec Full ESA-SST-A(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch"
+      },
+      {
+        "name": "tha_pteff_en_eflux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Energy Flux spectrogram",
+        "fill": "-1e+30",
+        "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+        "x_label": "Eflux_elec Full ESA-SST-A",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Eflux_elec Full ESA-SST-A(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          46
+        ]
+      },
+      {
+        "name": "tha_pteff_t3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+        "fill": "-1e+30",
+        "units": "eV (All Qs)",
+        "x_label": [
+          "Tprp1_elec Full ESA-SST-A",
+          "Tprp2_elec Full ESA-SST-A",
+          "Tpar_elec Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_t3_compno",
+            "description": "tha_pteff_t3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_elec Full ESA-SST-A",
+              "Tprp2_elec Full ESA-SST-A",
+              "Tpar_elec Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_magt3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+        "fill": "-1e+30",
+        "units": "eV (All Qs)",
+        "x_label": [
+          "Tprp1_elec FA Full ESA-SST-A",
+          "Tprp2_elec FA Full ESA-SST-A",
+          "Tpar_elec FA Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_magt3_compno",
+            "description": "tha_pteff_magt3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_elec FA Full ESA-SST-A",
+              "Tprp2_elec FA Full ESA-SST-A",
+              "Tpar_elec FA Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_ptens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Pressure Tensor",
+        "fill": "-1e+30",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "Pxx_elec Full ESA-SST-A",
+          "Pyy_elec Full ESA-SST-A",
+          "Pzz_elec Full ESA-SST-A",
+          "Pxy_elec Full ESA-SST-A",
+          "Pxz_elec Full ESA-SST-A",
+          "Pyz_elec Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Pressure Tensor(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_ptens_compno",
+            "description": "tha_pteff_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_elec Full ESA-SST-A",
+              "Pyy_elec Full ESA-SST-A",
+              "Pzz_elec Full ESA-SST-A",
+              "Pxy_elec Full ESA-SST-A",
+              "Pxz_elec Full ESA-SST-A",
+              "Pyz_elec Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_mftens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Momentum Flux Tensor",
+        "fill": "-1e+30",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "MFxx_elec Full ESA-SST-A",
+          "MFyy_elec Full ESA-SST-A",
+          "MFzz_elec Full ESA-SST-A",
+          "MFxy_elec Full ESA-SST-A",
+          "MFxz_elec Full ESA-SST-A",
+          "MFyz_elec Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Momentum Flux Tensor(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_mftens_compno",
+            "description": "tha_pteff_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "MFxx_elec Full ESA-SST-A",
+              "MFyy_elec Full ESA-SST-A",
+              "MFzz_elec Full ESA-SST-A",
+              "MFxy_elec Full ESA-SST-A",
+              "MFxz_elec Full ESA-SST-A",
+              "MFyz_elec Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_flux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Particle Flux Vector",
+        "fill": "-1e+30",
+        "units": "#/(cm^2-s) (All Qs)",
+        "x_label": [
+          "Fx_elec DSL Full ESA-SST-A",
+          "Fy_elec DSL Full ESA-SST-A",
+          "Fz_elec DSL Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Particle Flux Vector(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_flux_compno",
+            "description": "tha_pteff_flux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Fx_elec DSL Full ESA-SST-A",
+              "Fy_elec DSL Full ESA-SST-A",
+              "Fz_elec DSL Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_symm",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL)) ",
+        "fill": "-1e+30",
+        "units": "None (All Qs)",
+        "x_label": [
+          "Symm_xe Full ESA-SST-A",
+          "Symm_ye Full ESA-SST-A",
+          "Symm_ze Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))(all qualities) ",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_symm_compno",
+            "description": "tha_pteff_symm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Symm_xe Full ESA-SST-A",
+              "Symm_ye Full ESA-SST-A",
+              "Symm_ze Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_symm_ang",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
+        "fill": "-1e+30",
+        "units": "degrees (All Qs)",
+        "x_label": "symm_ang_elec Full ESA-SST-A",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "symm_ang_elec Full ESA-SST-A(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch"
+      },
+      {
+        "name": "tha_pteff_magf",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Magnetic Field Vector in DSL (Same time array as Full Electron ESA-SST data)",
+        "fill": "-1e+30",
+        "units": "nT (All Qs)",
+        "x_label": [
+          "Bx_elec DSL Full ESA-SST-A",
+          "By_elec DSL Full ESA-SST-A",
+          "Bz_elec DSL Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Full Electron ESA-SST data)(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_magf_compno",
+            "description": "tha_pteff_magf_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Bx_elec DSL Full ESA-SST-A",
+              "By_elec DSL Full ESA-SST-A",
+              "Bz_elec DSL Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_velocity_dsl",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in DSL",
+        "fill": "-1e+30",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_elec DSL Full ESA-SST-A",
+          "Vy_elec DSL Full ESA-SST-A",
+          "Vz_elec DSL Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in DSL(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_velocity_dsl_compno",
+            "description": "tha_pteff_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec DSL Full ESA-SST-A",
+              "Vy_elec DSL Full ESA-SST-A",
+              "Vz_elec DSL Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_velocity_gse",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in GSE",
+        "fill": "-1e+30",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_elec GSE Full ESA-SST-A",
+          "Vy_elec GSE Full ESA-SST-A",
+          "Vz_elec GSE Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in GSE(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_velocity_gse_compno",
+            "description": "tha_pteff_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec GSE Full ESA-SST-A",
+              "Vy_elec GSE Full ESA-SST-A",
+              "Vz_elec GSE Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "tha_pteff_velocity_gsm",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in GSM",
+        "fill": "-1e+30",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_elec GSM Full ESA-SST-A",
+          "Vy_elec GSM Full ESA-SST-A",
+          "Vz_elec GSM Full ESA-SST-A"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in GSM(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "tha_pteff_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "tha_pteff_velocity_gsm_compno",
+            "description": "tha_pteff_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec GSM Full ESA-SST-A",
+              "Vy_elec GSM Full ESA-SST-A",
+              "Vz_elec GSM Full ESA-SST-A"
+            ],
+            "units": null
+          }
+        ]
+      }
+    ]
+  }
+}

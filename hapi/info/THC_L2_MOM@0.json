@@ -1,0 +1,1102 @@
+{
+  "id": "THC_L2_MOM@0",
+  "title": "THEMIS-C (P2/ARTEMIS-P2):  On Board moments:  Electron/Ion moments density, flux, velocity, pressure and temperature. - V. Angelopoulos, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
+  "info": {
+    "startDate": "2007-08-10T00:00:00.000Z",
+    "stopDate": "2025-03-12T00:00:00.000Z",
+    "sampleStartDate": "2025-03-10T00:00:00.000Z",
+    "sampleStopDate": "2025-03-11T00:00:00.000Z",
+    "maxRequestDuration": "P50D",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THC_L2_MOM",
+    "contact": "V. Angelopoulos, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 24,
+        "fill": null,
+        "x_description": "thc_peim_epoch",
+        "x_cdf_NAME": "thc_peim_epoch",
+        "x_cdf_DataType": "CDF_EPOCH"
+      },
+      {
+        "name": "thc_peim_data_quality",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT4",
+        "description": "Ion Moment Data Quality (0: good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/mom_flag.shtml.) ",
+        "fill": "-2147483648",
+        "units": "0 = Good",
+        "x_label": "Data_Quality_Flag_ion MOM ESA-C",
+        "x_cdf_FORMAT": "i2",
+        "x_cdf_FIELDNAM": "Data_Quality_Flag_ion MOM ESA-C",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch"
+      },
+      {
+        "name": "thc_peim_densityQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "(Good data only) ESA On Board Moment (MOM) Ion Density, THEMIS-C. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thc_peim_density', 'thc_peim_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "cm^-3",
+        "x_label": "N_ion MOM ESA-C",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "ESA On Board Moment (MOM) Ion Density, THEMIS-C",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thc_peim_density",
+          "thc_peim_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch"
+      },
+      {
+        "name": "thc_peim_ptotQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Total Pressure. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thc_peim_ptot', 'thc_peim_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": "P_ion MOM ESA-C",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Total Pressure",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thc_peim_ptot",
+          "thc_peim_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch"
+      },
+      {
+        "name": "thc_peim_fluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Particle Flux Vector. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thc_peim_flux', 'thc_peim_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "#/(cm^2-s)",
+        "x_label": [
+          "Fx_ion MOM ESA-C",
+          "Fy_ion MOM ESA-C",
+          "Fz_ion MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Particle Flux Vector",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thc_peim_flux",
+          "thc_peim_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_flux_compno",
+            "description": "thc_peim_flux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Fx_ion MOM ESA-C",
+              "Fy_ion MOM ESA-C",
+              "Fz_ion MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_mftensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Momentum Flux Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thc_peim_mftens', 'thc_peim_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "MFxx_ion MOM ESA-C",
+          "MFyy_ion MOM ESA-C",
+          "MFzz_ion MOM ESA-C",
+          "MFxy_ion MOM ESA-C",
+          "MFxz_ion MOM ESA-C",
+          "MFyz_ion MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Momentum Flux Tensor",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thc_peim_mftens",
+          "thc_peim_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_mftens_compno",
+            "description": "thc_peim_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "MFxx_ion MOM ESA-C",
+              "MFyy_ion MOM ESA-C",
+              "MFzz_ion MOM ESA-C",
+              "MFxy_ion MOM ESA-C",
+              "MFxz_ion MOM ESA-C",
+              "MFyz_ion MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_efluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Energy Flux Vector. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thc_peim_eflux', 'thc_peim_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/(cm^2-s)",
+        "x_label": [
+          "Efx_ion MOM ESA-C",
+          "Efy_ion MOM ESA-C",
+          "Efz_ion MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Energy Flux Vector",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thc_peim_eflux",
+          "thc_peim_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_eflux_compno",
+            "description": "thc_peim_eflux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Efx_ion MOM ESA-C",
+              "Efy_ion MOM ESA-C",
+              "Efz_ion MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_velocity_dslQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in DSL. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thc_peim_velocity_dsl', 'thc_peim_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_ion DSL MOM ESA-C",
+          "Vy_ion DSL MOM ESA-C",
+          "Vz_ion DSL MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Velocity Vector in DSL",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thc_peim_velocity_dsl",
+          "thc_peim_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_velocity_dsl_compno",
+            "description": "thc_peim_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion DSL MOM ESA-C",
+              "Vy_ion DSL MOM ESA-C",
+              "Vz_ion DSL MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_velocity_gseQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in GSE. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thc_peim_velocity_gse', 'thc_peim_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_ion GSE MOM ESA-C",
+          "Vy_ion GSE MOM ESA-C",
+          "Vz_ion GSE MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Velocity Vector in GSE",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thc_peim_velocity_gse",
+          "thc_peim_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_velocity_gse_compno",
+            "description": "thc_peim_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion GSE MOM ESA-C",
+              "Vy_ion GSE MOM ESA-C",
+              "Vz_ion GSE MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_velocity_gsmQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in GSM. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thc_peim_velocity_gsm', 'thc_peim_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_ion GSM MOM ESA-C",
+          "Vy_ion GSM MOM ESA-C",
+          "Vz_ion GSM MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Velocity Vector in GSM",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thc_peim_velocity_gsm",
+          "thc_peim_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_velocity_gsm_compno",
+            "description": "thc_peim_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion GSM MOM ESA-C",
+              "Vy_ion GSM MOM ESA-C",
+              "Vz_ion GSM MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_ptensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Pressure Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thc_peim_ptens', 'thc_peim_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "Pxx_ion MOM ESA-C",
+          "Pyy_ion MOM ESA-C",
+          "Pzz_ion MOM ESA-C",
+          "Pxy_ion MOM ESA-C",
+          "Pxz_ion MOM ESA-C",
+          "Pyz_ion MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Pressure Tensor",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thc_peim_ptens",
+          "thc_peim_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_ptens_compno",
+            "description": "thc_peim_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_ion MOM ESA-C",
+              "Pyy_ion MOM ESA-C",
+              "Pzz_ion MOM ESA-C",
+              "Pxy_ion MOM ESA-C",
+              "Pxz_ion MOM ESA-C",
+              "Pyz_ion MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_magQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Magnetic Field Vector DSL (Same time array as MOM Ion ESA data). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thc_peim_mag', 'thc_peim_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "nT",
+        "x_label": [
+          "Bx_ion DSL MOM ESA-C",
+          "By_ion DSL MOM ESA-C",
+          "Bz_ion DSL MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Magnetic Field Vector DSL (Same time array as MOM Ion ESA data)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thc_peim_mag",
+          "thc_peim_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_mag_compno",
+            "description": "thc_peim_mag_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Bx_ion DSL MOM ESA-C",
+              "By_ion DSL MOM ESA-C",
+              "Bz_ion DSL MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_velocity_magQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector, Field Aligned. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thc_peim_velocity_mag', 'thc_peim_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_ion FA MOM ESA-C",
+          "Vy_ion FA MOM ESA-C",
+          "Vz_ion FA MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Velocity Vector, Field Aligned",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thc_peim_velocity_mag",
+          "thc_peim_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_velocity_mag_compno",
+            "description": "thc_peim_velocity_mag_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion FA MOM ESA-C",
+              "Vy_ion FA MOM ESA-C",
+              "Vz_ion FA MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_t3_magQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thc_peim_t3_mag', 'thc_peim_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "Tx_ion FA MOM ESA-C",
+          "Ty_ion FA MOM ESA-C",
+          "Tz_ion FA MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thc_peim_t3_mag",
+          "thc_peim_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_t3_mag_compno",
+            "description": "thc_peim_t3_mag_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tx_ion FA MOM ESA-C",
+              "Ty_ion FA MOM ESA-C",
+              "Tz_ion FA MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_ptens_magQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Pressure Tensor, Field Aligned. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thc_peim_ptens_mag', 'thc_peim_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "Pxx_ion FA MOM ESA-C",
+          "Pyy_ion FA MOM ESA-C",
+          "Pzz_ion FA MOM ESA-C",
+          "Pxy_ion FA MOM ESA-C",
+          "Pxz_ion FA MOM ESA-C",
+          "Pyz_ion FA MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Pressure Tensor, Field Aligned",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thc_peim_ptens_mag",
+          "thc_peim_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_ptens_mag_compno",
+            "description": "thc_peim_ptens_mag_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_ion FA MOM ESA-C",
+              "Pyy_ion FA MOM ESA-C",
+              "Pzz_ion FA MOM ESA-C",
+              "Pxy_ion FA MOM ESA-C",
+              "Pxz_ion FA MOM ESA-C",
+              "Pyz_ion FA MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_density",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "(All qualities data) ESA On Board Moment (MOM) Ion Density, THEMIS-C",
+        "fill": "NaN",
+        "units": "cm^-3 (All Qs)",
+        "x_label": "N_ion MOM ESA-C",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "ESA On Board Moment (MOM) Ion Density, THEMIS-C",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch"
+      },
+      {
+        "name": "thc_peim_ptot",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Total Pressure",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": "P_ion MOM ESA-C",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Total Pressure",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch"
+      },
+      {
+        "name": "thc_peim_flux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Particle Flux Vector",
+        "fill": "NaN",
+        "units": "#/(cm^2-s) (All Qs)",
+        "x_label": [
+          "Fx_ion MOM ESA-C",
+          "Fy_ion MOM ESA-C",
+          "Fz_ion MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Particle Flux Vector",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_flux_compno",
+            "description": "thc_peim_flux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Fx_ion MOM ESA-C",
+              "Fy_ion MOM ESA-C",
+              "Fz_ion MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_mftens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Momentum Flux Tensor",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "MFxx_ion MOM ESA-C",
+          "MFyy_ion MOM ESA-C",
+          "MFzz_ion MOM ESA-C",
+          "MFxy_ion MOM ESA-C",
+          "MFxz_ion MOM ESA-C",
+          "MFyz_ion MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Momentum Flux Tensor",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_mftens_compno",
+            "description": "thc_peim_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "MFxx_ion MOM ESA-C",
+              "MFyy_ion MOM ESA-C",
+              "MFzz_ion MOM ESA-C",
+              "MFxy_ion MOM ESA-C",
+              "MFxz_ion MOM ESA-C",
+              "MFyz_ion MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_eflux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Energy Flux Vector",
+        "fill": "NaN",
+        "units": "eV/(cm^2-s) (All Qs)",
+        "x_label": [
+          "Efx_ion MOM ESA-C",
+          "Efy_ion MOM ESA-C",
+          "Efz_ion MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Energy Flux Vector",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_eflux_compno",
+            "description": "thc_peim_eflux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Efx_ion MOM ESA-C",
+              "Efy_ion MOM ESA-C",
+              "Efz_ion MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_velocity_dsl",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in DSL",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_ion DSL MOM ESA-C",
+          "Vy_ion DSL MOM ESA-C",
+          "Vz_ion DSL MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Velocity Vector in DSL",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_velocity_dsl_compno",
+            "description": "thc_peim_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion DSL MOM ESA-C",
+              "Vy_ion DSL MOM ESA-C",
+              "Vz_ion DSL MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_velocity_gse",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in GSE",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_ion GSE MOM ESA-C",
+          "Vy_ion GSE MOM ESA-C",
+          "Vz_ion GSE MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Velocity Vector in GSE",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_velocity_gse_compno",
+            "description": "thc_peim_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion GSE MOM ESA-C",
+              "Vy_ion GSE MOM ESA-C",
+              "Vz_ion GSE MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_velocity_gsm",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in GSM",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_ion GSM MOM ESA-C",
+          "Vy_ion GSM MOM ESA-C",
+          "Vz_ion GSM MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Velocity Vector in GSM",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_velocity_gsm_compno",
+            "description": "thc_peim_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion GSM MOM ESA-C",
+              "Vy_ion GSM MOM ESA-C",
+              "Vz_ion GSM MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_ptens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Pressure Tensor",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "Pxx_ion MOM ESA-C",
+          "Pyy_ion MOM ESA-C",
+          "Pzz_ion MOM ESA-C",
+          "Pxy_ion MOM ESA-C",
+          "Pxz_ion MOM ESA-C",
+          "Pyz_ion MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Pressure Tensor",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_ptens_compno",
+            "description": "thc_peim_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_ion MOM ESA-C",
+              "Pyy_ion MOM ESA-C",
+              "Pzz_ion MOM ESA-C",
+              "Pxy_ion MOM ESA-C",
+              "Pxz_ion MOM ESA-C",
+              "Pyz_ion MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_mag",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Magnetic Field Vector DSL (Same time array as MOM Ion ESA data)",
+        "fill": "NaN",
+        "units": "nT (All Qs)",
+        "x_label": [
+          "Bx_ion DSL MOM ESA-C",
+          "By_ion DSL MOM ESA-C",
+          "Bz_ion DSL MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Magnetic Field Vector DSL (Same time array as MOM Ion ESA data)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_mag_compno",
+            "description": "thc_peim_mag_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Bx_ion DSL MOM ESA-C",
+              "By_ion DSL MOM ESA-C",
+              "Bz_ion DSL MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_velocity_mag",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector, Field Aligned",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_ion FA MOM ESA-C",
+          "Vy_ion FA MOM ESA-C",
+          "Vz_ion FA MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Velocity Vector, Field Aligned",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_velocity_mag_compno",
+            "description": "thc_peim_velocity_mag_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion FA MOM ESA-C",
+              "Vy_ion FA MOM ESA-C",
+              "Vz_ion FA MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_t3_mag",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": [
+          "Tx_ion FA MOM ESA-C",
+          "Ty_ion FA MOM ESA-C",
+          "Tz_ion FA MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_t3_mag_compno",
+            "description": "thc_peim_t3_mag_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tx_ion FA MOM ESA-C",
+              "Ty_ion FA MOM ESA-C",
+              "Tz_ion FA MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thc_peim_ptens_mag",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Pressure Tensor, Field Aligned",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "Pxx_ion FA MOM ESA-C",
+          "Pyy_ion FA MOM ESA-C",
+          "Pzz_ion FA MOM ESA-C",
+          "Pxy_ion FA MOM ESA-C",
+          "Pxz_ion FA MOM ESA-C",
+          "Pyz_ion FA MOM ESA-C"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Ion Pressure Tensor, Field Aligned",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thc_peim_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thc_peim_ptens_mag_compno",
+            "description": "thc_peim_ptens_mag_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_ion FA MOM ESA-C",
+              "Pyy_ion FA MOM ESA-C",
+              "Pzz_ion FA MOM ESA-C",
+              "Pxy_ion FA MOM ESA-C",
+              "Pxz_ion FA MOM ESA-C",
+              "Pyz_ion FA MOM ESA-C"
+            ],
+            "units": null
+          }
+        ]
+      }
+    ]
+  }
+}

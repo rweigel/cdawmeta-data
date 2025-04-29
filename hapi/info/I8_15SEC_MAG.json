@@ -1,0 +1,294 @@
+{
+  "id": "I8_15SEC_MAG",
+  "title": "IMP-8 Fluxgate Magnetometer, 15.36-Second Resolution Data - A. Szabo / R.P. Lepping (NASA GSFC)",
+  "info": {
+    "startDate": "1973-10-30T00:00:00.000Z",
+    "stopDate": "2000-06-10T23:59:44.000Z",
+    "sampleStartDate": "2000-06-09T00:00:00.000Z",
+    "sampleStopDate": "2000-06-09T23:59:44.000Z",
+    "cadence": "PT15.36S",
+    "x_cadence_fraction": 0.9925320056899004,
+    "x_cadence_note": "Cadence based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/imp/imp8/mag/mag_15sec_cdaweb/1973/i8_15sec_mag_19731030_v03.cdf. This most common cadence occurred for 99.2532% of the 5582 timesteps. Cadence = 15360 [ms] = PT15.36S.",
+    "maxRequestDuration": "PT4319200S",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I8_15SEC_MAG",
+    "contact": "A. Szabo / R.P. Lepping @ NASA GSFC",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 24,
+        "fill": null,
+        "x_description": "CDF time standard. Time of last data sequence in the 15.36-second average.",
+        "x_cdf_NAME": "Epoch",
+        "x_cdf_DataType": "CDF_EPOCH"
+      },
+      {
+        "name": "SourceFlag",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT2",
+        "description": "Data source flag =1 if based on 320ms data, = 2 if based  on old V2 15.36s data",
+        "fill": "9",
+        "units": null,
+        "x_label": "Data source flag",
+        "x_cdf_FORMAT": "I2",
+        "x_cdf_FIELDNAM": "Data source flag",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "N_of_points",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT2",
+        "description": "Number of points in 15.36 second average. Max. number is 48(12) for data source flag equal 1(2)",
+        "fill": "999",
+        "units": null,
+        "x_label": "Number of points",
+        "x_cdf_FORMAT": "I4",
+        "x_cdf_FIELDNAM": "Number of points",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "SC_Pos_GSE",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Spacecraft position, GSE coordinates (orbit plot)",
+        "fill": "999.99",
+        "units": "Earth Radii",
+        "x_label": [
+          "I8 X GSE",
+          "I8 Y GSE",
+          "I8 Z GSE"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "F7.2",
+        "x_cdf_FIELDNAM": "SC_Pos_GSE",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "SC_Pos_GSET",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Spacecraft position, GSE coordinates (time-series plot). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['SC_Pos_GSE']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "999.99",
+        "units": "Earth Radii",
+        "x_label": [
+          "I8 X GSE",
+          "I8 Y GSE",
+          "I8 Z GSE"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "F7.2",
+        "x_cdf_FIELDNAM": "SC_Pos_GSE",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "SC_Pos_GSE"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "SC_Pos_GSM",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Spacecraft position, GSM coordinates (orbit plot)",
+        "fill": "999.99",
+        "units": "Earth Radii",
+        "x_label": [
+          "I8 X GSM",
+          "I8 Y GSM",
+          "I8 Z GSM"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "F7.2",
+        "x_cdf_FIELDNAM": "SC_Pos_GSM",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "SC_Pos_GSMT",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Spacecraft position, GSM coordinates (time-series plot). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['SC_Pos_GSM']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "999.99",
+        "units": "Earth Radii",
+        "x_label": [
+          "I8 X GSM",
+          "I8 Y GSM",
+          "I8 Z GSM"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "F7.2",
+        "x_cdf_FIELDNAM": "SC_Pos_GSMT",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "SC_Pos_GSM"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "F1_Average_B_15s",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "B magnitude, <|B|>",
+        "fill": "9999.99",
+        "units": "nT",
+        "x_label": "B 15-s avg",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "F8.2",
+        "x_cdf_FIELDNAM": "B magnitude, <|B|>",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "B_Vector_GSE",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "B vector, GSE cartesian components",
+        "fill": "9999.99",
+        "units": "nT",
+        "x_label": [
+          "Bx GSE",
+          "By GSE",
+          "Bz GSE"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "F8.2",
+        "x_cdf_FIELDNAM": "B Vector, GSE",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "B_Vector_GSM",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "B vector, GSM cartesian components",
+        "fill": "9999.99",
+        "units": "nT",
+        "x_label": [
+          "Bx GSM",
+          "By GSM",
+          "Bz GSM"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "F8.2",
+        "x_cdf_FIELDNAM": "B Vector, GSM",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "B_jj_Variances",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Variances; diagonal elements Bxx, Byy, Bzz; GSE coordinates ",
+        "fill": "9999.99",
+        "units": "nT**2",
+        "x_label": [
+          "Bxx GSE Var",
+          "Byy GSE Var",
+          "Bzz GSE Var"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "F8.2",
+        "x_cdf_FIELDNAM": "B_J*J_Variances, diagonal elements",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "B_jk_Variances",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Variances; off-diagonal elements Byx, Bzx, Bzy; GSE coordinates ",
+        "fill": "9999.99",
+        "units": "nT**2",
+        "x_label": [
+          "Byx GSE Var",
+          "Bzx GSE Var",
+          "Bzy GSE Var"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "F8.2",
+        "x_cdf_FIELDNAM": "B_J*k_Variances, off-diagonal elements",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "TimeShift",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Difference between record time tag and start of average,Relevant to data source flag = 2 records only.",
+        "fill": "999.9",
+        "units": "seconds",
+        "x_label": "Time shift",
+        "x_format": ".1f",
+        "x_fractionDigits": "1",
+        "x_cdf_FORMAT": "F6.1",
+        "x_cdf_FIELDNAM": "Time shift",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "SW_flag",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT2",
+        "description": "Solar wind flag =0 if IMP in solar wind =1 otherwise ",
+        "fill": "9",
+        "units": null,
+        "x_label": "Solar wind flag",
+        "x_cdf_FORMAT": "I2",
+        "x_cdf_FIELDNAM": "Solar wind flag",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      }
+    ]
+  }
+}

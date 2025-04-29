@@ -1,0 +1,1047 @@
+{
+  "id": "GE_K0_EPI",
+  "title": "Geotail Energetic Particles & Ion Composition (EPIC), Key Parameters - D. Williams (APL/JHU)",
+  "info": {
+    "startDate": "1992-09-08T22:31:29.000Z",
+    "stopDate": "2022-06-27T12:22:28.000Z",
+    "sampleStartDate": "2022-06-26T00:01:39.000Z",
+    "sampleStopDate": "2022-06-26T23:56:51.000Z",
+    "maxRequestDuration": "PT1196H",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesG.html#GE_K0_EPI",
+    "contact": "D. Williams @ APL/JHU",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 24,
+        "fill": null,
+        "x_description": "Time, centered in NSSDC EPOCH format ",
+        "x_cdf_NAME": "Epoch",
+        "x_cdf_DataType": "CDF_EPOCH"
+      },
+      {
+        "name": "IDiffI_I",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Ion Diff. Intensity, at 12 energies 67-1361 keV (EPIC/ICS) - spectrogram",
+        "fill": "-1e+31",
+        "units": "1/[cm**2-s-sr-keV]",
+        "x_label": "dJ/dE",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E9.3",
+        "x_cdf_FIELDNAM": "Spin-avg Ion Diff Inten (EPIC/ICS)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          12
+        ]
+      },
+      {
+        "name": "IDiffI_I2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Ion Diff. Intensity, at 12 energies 67-1361 keV (EPIC/ICS) - stacked time series. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['IDiffI_I']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "1/[cm**2-s-sr-keV]",
+        "x_label": "dJ/dE",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E9.3",
+        "x_cdf_FIELDNAM": "Spin-avg Ion Diff Inten (EPIC/ICS)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "IDiffI_I"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          12
+        ]
+      },
+      {
+        "name": "IDiffI_I_Uncert",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Uncertainty, Ion Diff. Intensity, at 12 energies ",
+        "fill": "-1e+31",
+        "units": "1/[cm**2-s-sr-keV]",
+        "x_label": "Delta dJ/dE",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E9.3",
+        "x_cdf_FIELDNAM": "Uncertainty, Spin-avg Ion Diff Inten (EPIC/ICS)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          12
+        ]
+      },
+      {
+        "name": "PDiffI_S",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "H Diff. Intensity, at 2 energies 9 & 23  keV/e (EPIC/STICS)",
+        "fill": "-1e+31",
+        "units": "1/[cm**2-s-sr-keV/e]",
+        "x_label": [
+          "dJ/dE 9 keV/e",
+          "dJ/dE 23 keV/e"
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E9.3",
+        "x_cdf_FIELDNAM": "Spin-avg H Diff Inten (EPIC/STICS)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          2
+        ],
+        "bins": [
+          {
+            "name": "PDiffI_S_Energy",
+            "description": "H Energy, 2 energies 9 & 23  keV/e (EPIC/STICS) ",
+            "centers": [
+              9.4,
+              22.9
+            ],
+            "x_label": [
+              "H Energy 2",
+              "H Energy 10"
+            ],
+            "units": "keV/e"
+          }
+        ]
+      },
+      {
+        "name": "PDiffI_S_errorbars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "H Diff. Intensity, at 2 energies 9 & 23  keV/e (EPIC/STICS), with error bars. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['PDiffI_S']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "1/[cm**2-s-sr-keV/e]",
+        "x_label": [
+          "dJ/dE 9 keV/e",
+          "dJ/dE 23 keV/e"
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E9.3",
+        "x_cdf_FIELDNAM": "Spin-avg H Diff Inten (EPIC/STICS)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "PDiffI_S"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          2
+        ],
+        "bins": [
+          {
+            "name": "PDiffI_S_Energy",
+            "description": "H Energy, 2 energies 9 & 23  keV/e (EPIC/STICS) ",
+            "centers": [
+              9.4,
+              22.9
+            ],
+            "x_label": [
+              "H Energy 2",
+              "H Energy 10"
+            ],
+            "units": "keV/e"
+          }
+        ]
+      },
+      {
+        "name": "PDiffI_S_Uncert",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Uncertainty, H Differential Intensity, at 2 energies",
+        "fill": "-1e+31",
+        "units": "1/[cm**2-s-sr-keV/e]",
+        "x_label": [
+          "Del dJ/dE 9keV/e",
+          "Del dJ/dE 23keV/e"
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E9.3",
+        "x_cdf_FIELDNAM": "Uncertainty, Spin-avg H Diff Inten (EPIC/STICS)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          2
+        ],
+        "bins": [
+          {
+            "name": "PDiffI_S_Energy",
+            "description": "H Energy, 2 energies 9 & 23  keV/e (EPIC/STICS) ",
+            "centers": [
+              9.4,
+              22.9
+            ],
+            "x_label": [
+              "H Energy 2",
+              "H Energy 10"
+            ],
+            "units": "keV/e"
+          }
+        ]
+      },
+      {
+        "name": "EIntI_I",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Electron Integral Intensity, >38 keV (EPIC/ICS), scalar",
+        "fill": "-1e+31",
+        "units": "1/[cm**2-s-sr]",
+        "x_label": "J e- >38keV",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E9.3",
+        "x_cdf_FIELDNAM": "Spin-avg Electron Integral Inten (EPIC/ICS)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "EIntI_I_errorbars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Electron Integral Intensity, >38 keV (EPIC/ICS), scalar, with error bars. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['EIntI_I']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "1/[cm**2-s-sr]",
+        "x_label": "J e- >38keV",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E9.3",
+        "x_cdf_FIELDNAM": "Spin-avg Electron Integral Inten (EPIC/ICS)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "EIntI_I"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "EIntI_I_Uncert",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Uncertainty, Electron Integral Intensity",
+        "fill": "-1e+31",
+        "units": "1/[cm**2-s-sr]",
+        "x_label": "Delta J e->38keV",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E9.3",
+        "x_cdf_FIELDNAM": "Uncertainty, Spin-avg Electron Integral Inten (EPIC/ICS)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "EIntI_I_Energy",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Electron Energy,  time-varying lower bound (between 34-50 keV) on electron integral flux (EPIC/ICS), scalar ",
+        "fill": "-1e+31",
+        "units": "keV",
+        "unitsSchema": "VOUnits1.1",
+        "x_unitsOriginal": "keV",
+        "x_label": "ED1",
+        "x_format": ".1f",
+        "x_fractionDigits": "1",
+        "x_cdf_FORMAT": "F7.1",
+        "x_cdf_FIELDNAM": "Electron Energy (EPIC/ICS)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "HeHRatio_I",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "He/H Ratio, of (82keV He/67keV H) & (233keV He/67keV H) Diff.  Intens. (EPIC/ICS)",
+        "fill": "-1e+31",
+        "units": null,
+        "x_label": [
+          "He/H (82keV/67keV)",
+          "He/H (233keV/67keV)"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "e9.2",
+        "x_cdf_FIELDNAM": "Spin-avg He/H Diff Inten Ratio (EPIC/ICS) ",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          2
+        ]
+      },
+      {
+        "name": "HeHRatio_I_errorbars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "He/H Ratio, of (82keV He/67keV H) & (233keV He/67keV H) Diff.  Intens. (EPIC/ICS), with error bars. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HeHRatio_I']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": null,
+        "x_label": [
+          "He/H (82keV/67keV)",
+          "He/H (233keV/67keV)"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "e9.2",
+        "x_cdf_FIELDNAM": "Spin-avg He/H Diff Inten Ratio (EPIC/ICS) ",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "HeHRatio_I"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          2
+        ]
+      },
+      {
+        "name": "HeHRatio_I_Uncert",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Uncertainty, He/H Ratio, (2) Diff. Intens. (EPIC/ICS)",
+        "fill": "-1e+31",
+        "units": null,
+        "x_label": [
+          "Delta He/H (82keV/67keV)",
+          "Delta He/H (233keV/67keV)"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "e9.2",
+        "x_cdf_FIELDNAM": "Uncertainty, Spin-avg He/H Diff Inten Ratio (EPIC/ICS) ",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          2
+        ]
+      },
+      {
+        "name": "OHRatio_I",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "O/H Ratio, at (247keV O/67keV H) & (1244keV O/67keV H) Diff. Intens. (EPIC/ICS)",
+        "fill": "-1e+31",
+        "units": null,
+        "x_label": [
+          "O/H (247keV/67keV)",
+          "O/H (1244keV/67keV)"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "e9.2",
+        "x_cdf_FIELDNAM": "Spin-avg O/H Diff Inten Ratio (EPIC/ICS) ",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          2
+        ]
+      },
+      {
+        "name": "OHRatio_I_errorbars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "O/H Ratio, at (247keV O/67keV H) & (1244keV O/67keV H) Diff. Intens. (EPIC/ICS), with error bars. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['OHRatio_I']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": null,
+        "x_label": [
+          "O/H (247keV/67keV)",
+          "O/H (1244keV/67keV)"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "e9.2",
+        "x_cdf_FIELDNAM": "Spin-avg O/H Diff Inten Ratio (EPIC/ICS) ",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "OHRatio_I"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          2
+        ]
+      },
+      {
+        "name": "OHRatio_I_Uncert",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Uncertainty, O/H Ratio, (2) Diff. Intens. (EPIC/ICS)",
+        "fill": "-1e+31",
+        "units": null,
+        "x_label": [
+          "Delta O/H (247keV/67keV)",
+          "Delta O/H (1244keV/67keV)"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "e9.2",
+        "x_cdf_FIELDNAM": "Uncertainty,  Spin-avg O/H Diff Inten Ratio (EPIC/ICS) ",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          2
+        ]
+      },
+      {
+        "name": "HeHRatio_S",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "He++/H+ Ratio, of (9.4-212keV He++/67keV H+) Diff. Inten. (EPIC/STICS), scalar",
+        "fill": "-1e+31",
+        "units": null,
+        "x_label": "He++/H+ (9.4-212keV/67keV)",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "e9.2",
+        "x_cdf_FIELDNAM": "Spin-avg He++/H+ Diff Inten Ratio (EPIC/STICS) ",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "HeHRatio_S_errorbars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "He++/H+ Ratio, of (9.4-212keV He++/67keV H+) Diff. Inten. (EPIC/STICS), scalar, with error bars. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HeHRatio_S']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": null,
+        "x_label": "He++/H+ (9.4-212keV/67keV)",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "e9.2",
+        "x_cdf_FIELDNAM": "Spin-avg He++/H+ Diff Inten Ratio (EPIC/STICS) ",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "HeHRatio_S"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "HeHRatio_S_Uncert",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Uncertainty, He++/H+ Ratio, of Diff. Inten.",
+        "fill": "-1e+31",
+        "units": null,
+        "x_label": "Delta He++/H+",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "e9.2",
+        "x_cdf_FIELDNAM": "Uncertainty, Spin-avg He++/H+ Diff Inten Ratio (EPIC/STICS) ",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "OHRatio_S",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "O+/H+ Ratio, of (9.4-212keV O+/67keV H+) Diff. Inten. (EPIC/STICS), scalar",
+        "fill": "-1e+31",
+        "units": null,
+        "x_label": "O+/H+ (9.4-212keV/67keV)",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "e9.2",
+        "x_cdf_FIELDNAM": "Spin-avg O+/H+ Diff Inten Ratio (EPIC/STICS) ",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "OHRatio_S_errorbars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "O+/H+ Ratio, of (9.4-212keV O+/67keV H+) Diff. Inten. (EPIC/STICS), scalar, with error bars. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['OHRatio_S']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": null,
+        "x_label": "O+/H+ (9.4-212keV/67keV)",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "e9.2",
+        "x_cdf_FIELDNAM": "Spin-avg O+/H+ Diff Inten Ratio (EPIC/STICS) ",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "OHRatio_S"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "OHRatio_S_Uncert",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Uncertainty, O+/H+ Ratio of Diff. Inten.",
+        "fill": "-1e+31",
+        "units": null,
+        "x_label": "Delta O+/H+",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "e9.2",
+        "x_cdf_FIELDNAM": "Uncertainty, Spin-avg He++/H+ Diff Inten Ratio (EPIC/STICS) ",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "EAni_I",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": ">38keV Electron anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to elec. int. flux",
+        "fill": "-1e+31",
+        "units": [
+          "1/[cm**2-s-sr]",
+          "",
+          "",
+          "radians",
+          "radians"
+        ],
+        "x_label": [
+          "a0 >38keV e-",
+          "a1 >38keV e-",
+          "a2 >38keV e-",
+          "phi1 >38keV e-",
+          "phi2 >38keV e-"
+        ],
+        "x_format": [
+          ".3e",
+          ".3f",
+          ".3f",
+          ".3f",
+          ".3f"
+        ],
+        "x_fractionDigits": "",
+        "x_cdf_FORMAT": [
+          "E9.3",
+          "F6.3",
+          "F6.3",
+          "F6.3",
+          "F6.3"
+        ],
+        "x_cdf_FIELDNAM": ">38 keV Electron Anisotropy Params",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          5
+        ]
+      },
+      {
+        "name": "EAni_I_errorbars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": ">38keV Electron anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to elec. int. flux, with error bars. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['EAni_I']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "1/[cm**2-s-sr]",
+          "",
+          "",
+          "radians",
+          "radians"
+        ],
+        "x_label": [
+          "a0 >38keV e-",
+          "a1 >38keV e-",
+          "a2 >38keV e-",
+          "phi1 >38keV e-",
+          "phi2 >38keV e-"
+        ],
+        "x_format": [
+          ".3e",
+          ".3f",
+          ".3f",
+          ".3f",
+          ".3f"
+        ],
+        "x_fractionDigits": "",
+        "x_cdf_FORMAT": [
+          "E9.3",
+          "F6.3",
+          "F6.3",
+          "F6.3",
+          "F6.3"
+        ],
+        "x_cdf_FIELDNAM": ">38 keV Electron Anisotropy Params",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "EAni_I"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          5
+        ]
+      },
+      {
+        "name": "EAni_I_Uncert",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Uncertainty, >38keV Electron anisotropy parameters",
+        "fill": "-1e+31",
+        "units": [
+          "1/[cm**2-s-sr]",
+          "",
+          "",
+          "radians",
+          "radians"
+        ],
+        "x_label": [
+          "Delta a0 >38keV e-",
+          "Delta a1 >38keV e-",
+          "Delta a2 >38keV e-",
+          "Delta phi1 >38keV e-",
+          "Delta phi2 >38keV e-"
+        ],
+        "x_format": [
+          ".3e",
+          ".3f",
+          ".3f",
+          ".3f",
+          ".3f"
+        ],
+        "x_fractionDigits": "",
+        "x_cdf_FORMAT": [
+          "E9.3",
+          "F6.3",
+          "F6.3",
+          "F6.3",
+          "F6.3"
+        ],
+        "x_cdf_FIELDNAM": "Uncertainty>38 keV Electron Anisotropy Params",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          5
+        ]
+      },
+      {
+        "name": "PAni_S",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "9-212 keV/e H Anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to H flux , EPIC/STICS)",
+        "fill": "-1e+31",
+        "units": [
+          "1/[cm**2-s-sr/e]",
+          "",
+          "",
+          "radians",
+          "radians"
+        ],
+        "x_label": [
+          "a0 9-212keV H",
+          "a1 9-212keV H",
+          "a2 9-212keV H",
+          "phi1 9-212keV H",
+          "phi2 9-212keV H"
+        ],
+        "x_format": [
+          ".3e",
+          ".3f",
+          ".3f",
+          ".3f",
+          ".3f"
+        ],
+        "x_fractionDigits": "",
+        "x_cdf_FORMAT": [
+          "E9.3",
+          "F6.3",
+          "F6.3",
+          "F6.3",
+          "F6.3"
+        ],
+        "x_cdf_FIELDNAM": "9-212 keV/e H Anisotropy Params",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          5
+        ]
+      },
+      {
+        "name": "PAni_S_errorbars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "9-212 keV/e H Anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to H flux , EPIC/STICS), with error bars. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['PAni_S']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "1/[cm**2-s-sr/e]",
+          "",
+          "",
+          "radians",
+          "radians"
+        ],
+        "x_label": [
+          "a0 9-212keV H",
+          "a1 9-212keV H",
+          "a2 9-212keV H",
+          "phi1 9-212keV H",
+          "phi2 9-212keV H"
+        ],
+        "x_format": [
+          ".3e",
+          ".3f",
+          ".3f",
+          ".3f",
+          ".3f"
+        ],
+        "x_fractionDigits": "",
+        "x_cdf_FORMAT": [
+          "E9.3",
+          "F6.3",
+          "F6.3",
+          "F6.3",
+          "F6.3"
+        ],
+        "x_cdf_FIELDNAM": "9-212 keV/e H Anisotropy Params",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "PAni_S"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          5
+        ]
+      },
+      {
+        "name": "PAni_S_Uncert",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Uncertainty, 9-212 keV/e H Anisotropy ",
+        "fill": "-1e+31",
+        "units": [
+          "1/[cm**2-s-sr/e]",
+          "",
+          "",
+          "radians",
+          "radians"
+        ],
+        "x_label": [
+          "Delta a0 9-212keV H",
+          "Delta a1 9-212keV H",
+          "Delta a2 9-212keV H",
+          "Delta phi1 9-212keV H",
+          "Delta phi2 9-212keV H"
+        ],
+        "x_format": [
+          ".3e",
+          ".3f",
+          ".3f",
+          ".3f",
+          ".3f"
+        ],
+        "x_fractionDigits": "",
+        "x_cdf_FORMAT": [
+          "E9.3",
+          "F6.3",
+          "F6.3",
+          "F6.3",
+          "F6.3"
+        ],
+        "x_cdf_FIELDNAM": "Uncertainty, 9-212 keV/e H Anisotropy Params",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          5
+        ]
+      },
+      {
+        "name": "PAni67_I",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "67 keV H Anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to H flux , EPIC/ICS)",
+        "fill": "-1e+31",
+        "units": [
+          "1/[cm**2-s-sr/keV]",
+          "",
+          "",
+          "radians",
+          "radians"
+        ],
+        "x_label": [
+          "a0 67keV H",
+          "a1 67keV H",
+          "a2 67keV H",
+          "phi1 67keV H",
+          "phi2 67keV H"
+        ],
+        "x_format": [
+          ".3e",
+          ".3f",
+          ".3f",
+          ".3f",
+          ".3f"
+        ],
+        "x_fractionDigits": "",
+        "x_cdf_FORMAT": [
+          "E9.3",
+          "F6.3",
+          "F6.3",
+          "F6.3",
+          "F6.3"
+        ],
+        "x_cdf_FIELDNAM": "67 keV H Anisotropy Params",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          5
+        ]
+      },
+      {
+        "name": "PAni67_I_errorbars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "67 keV H Anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to H flux , EPIC/ICS), with error bars. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['PAni67_I']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "1/[cm**2-s-sr/keV]",
+          "",
+          "",
+          "radians",
+          "radians"
+        ],
+        "x_label": [
+          "a0 67keV H",
+          "a1 67keV H",
+          "a2 67keV H",
+          "phi1 67keV H",
+          "phi2 67keV H"
+        ],
+        "x_format": [
+          ".3e",
+          ".3f",
+          ".3f",
+          ".3f",
+          ".3f"
+        ],
+        "x_fractionDigits": "",
+        "x_cdf_FORMAT": [
+          "E9.3",
+          "F6.3",
+          "F6.3",
+          "F6.3",
+          "F6.3"
+        ],
+        "x_cdf_FIELDNAM": "67 keV H Anisotropy Params",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "PAni67_I"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          5
+        ]
+      },
+      {
+        "name": "PAni67_I_Uncert",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Uncertainty, 67 keV H Anisotropy ",
+        "fill": "-1e+31",
+        "units": [
+          "1/[cm**2-s-sr/keV]",
+          "",
+          "",
+          "radians",
+          "radians"
+        ],
+        "x_label": [
+          "Delta a0 67keV H",
+          "Delta a1 67keV H",
+          "Delta a2 67keV H",
+          "Delta phi1 67keV H",
+          "Delta phi2 67keV H"
+        ],
+        "x_format": [
+          ".3e",
+          ".3f",
+          ".3f",
+          ".3f",
+          ".3f"
+        ],
+        "x_fractionDigits": "",
+        "x_cdf_FORMAT": [
+          "E9.3",
+          "F6.3",
+          "F6.3",
+          "F6.3",
+          "F6.3"
+        ],
+        "x_cdf_FIELDNAM": "Uncertainty, 67 keV H Anisotropy Params",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          5
+        ]
+      },
+      {
+        "name": "PAni129_I",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "129 keV H Anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to H flux , EPIC/ICS)",
+        "fill": "-1e+31",
+        "units": [
+          "1/[cm**2-s-sr/keV]",
+          "",
+          "",
+          "radians",
+          "radians"
+        ],
+        "x_label": [
+          "a0 129keV H",
+          "a1 129keV H",
+          "a2 129keV H",
+          "phi1 129keV H",
+          "phi2 129keV H"
+        ],
+        "x_format": [
+          ".3e",
+          ".3f",
+          ".3f",
+          ".3f",
+          ".3f"
+        ],
+        "x_fractionDigits": "",
+        "x_cdf_FORMAT": [
+          "E9.3",
+          "F6.3",
+          "F6.3",
+          "F6.3",
+          "F6.3"
+        ],
+        "x_cdf_FIELDNAM": "129 keV H Anisotropy Params",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          5
+        ]
+      },
+      {
+        "name": "PAni129_I_errorbars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "129 keV H Anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to H flux , EPIC/ICS), with error bars. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['PAni129_I']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "1/[cm**2-s-sr/keV]",
+          "",
+          "",
+          "radians",
+          "radians"
+        ],
+        "x_label": [
+          "a0 129keV H",
+          "a1 129keV H",
+          "a2 129keV H",
+          "phi1 129keV H",
+          "phi2 129keV H"
+        ],
+        "x_format": [
+          ".3e",
+          ".3f",
+          ".3f",
+          ".3f",
+          ".3f"
+        ],
+        "x_fractionDigits": "",
+        "x_cdf_FORMAT": [
+          "E9.3",
+          "F6.3",
+          "F6.3",
+          "F6.3",
+          "F6.3"
+        ],
+        "x_cdf_FIELDNAM": "129 keV H Anisotropy Params",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "PAni129_I"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          5
+        ]
+      },
+      {
+        "name": "PAni129_I_Uncert",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Uncertainty, 129 keV H Anisotropy ",
+        "fill": "-1e+31",
+        "units": [
+          "1/[cm**2-s-sr/keV]",
+          "",
+          "",
+          "radians",
+          "radians"
+        ],
+        "x_label": [
+          "a0 >38keV e-",
+          "a1 >38keV e-",
+          "a2 >38keV e-",
+          "phi1 >38keV e-",
+          "phi2 >38keV e-"
+        ],
+        "x_format": [
+          ".3e",
+          ".3f",
+          ".3f",
+          ".3f",
+          ".3f"
+        ],
+        "x_fractionDigits": "",
+        "x_cdf_FORMAT": [
+          "E9.3",
+          "F6.3",
+          "F6.3",
+          "F6.3",
+          "F6.3"
+        ],
+        "x_cdf_FIELDNAM": "Uncertainty, 129 keV H Anisotropy Params",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          5
+        ]
+      }
+    ]
+  }
+}

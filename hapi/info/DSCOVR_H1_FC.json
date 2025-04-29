@@ -1,0 +1,205 @@
+{
+  "id": "DSCOVR_H1_FC",
+  "title": "Isotropic Maxwellian parameters for solar wind protons. - Justin C. Kasper (Smithonian Astrophysical Observatory)",
+  "info": {
+    "startDate": "2016-06-03T00:00:00.000Z",
+    "stopDate": "2019-06-27T23:58:59.000Z",
+    "sampleStartDate": "2019-06-26T00:00:00.000Z",
+    "sampleStopDate": "2019-06-26T23:58:59.000Z",
+    "cadence": "PT1M",
+    "x_cadence_fraction": 0.5559416261292565,
+    "x_cadence_note": "Cadence based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/dscovr/h1/faraday_cup/2016/dscovr_h1_fc_20160603_v02.cdf. This most common cadence occurred for 55.5942% of the 800 timesteps. Cadence = 60000000000 [ns] = PT1M.",
+    "maxRequestDuration": "PT4316950S",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DSCOVR_H1_FC",
+    "contact": "Justin C. Kasper @ Smithonian Astrophysical Observatory",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 30,
+        "fill": null,
+        "x_description": "One minute cadence time (UT).",
+        "x_cdf_NAME": "Epoch",
+        "x_cdf_DataType": "CDF_TIME_TT2000"
+      },
+      {
+        "name": "DQF",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_UINT4",
+        "description": "Data Quality Flag: 0=good; 1=bad",
+        "fill": "4294967295",
+        "units": "(Good=0)",
+        "x_label": "Data Quality flag",
+        "x_cdf_FORMAT": "I1",
+        "x_cdf_FIELDNAM": "Quality Flag: Data",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "V_GSE",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "proton velocity x,y,z-component (w/o error bars)",
+        "fill": "-1e+31",
+        "units": "km/s (w/o error bars)",
+        "x_label": "V_GSE",
+        "x_labelComponents": [
+          [
+            "VX (GSE)",
+            "VY (GSE)",
+            "VZ (GSE)"
+          ]
+        ],
+        "x_format": ".1f",
+        "x_fractionDigits": "1",
+        "x_cdf_FORMAT": "f8.1",
+        "x_cdf_FIELDNAM": "Solar Wind Velocity (GSE)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "V_GSE_ErrorBars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "proton velocity x,y,z-component (with error bars). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['V_GSE']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "km/s (with error bars)",
+        "x_label": "V_GSE",
+        "x_labelComponents": [
+          [
+            "VX (GSE)",
+            "VY (GSE)",
+            "VZ (GSE)"
+          ]
+        ],
+        "x_format": ".1f",
+        "x_fractionDigits": "1",
+        "x_cdf_FORMAT": "f8.1",
+        "x_cdf_FIELDNAM": "Solar Wind Velocity (GSE)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "V_GSE"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "THERMAL_SPD",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton solar winds' most probable thermal speed. (w/o error bars)",
+        "fill": "-1e+31",
+        "units": "km/s (w/o error bars)",
+        "x_label": "SW Vth",
+        "x_format": ".1f",
+        "x_fractionDigits": "1",
+        "x_cdf_FORMAT": "F6.1",
+        "x_cdf_FIELDNAM": "Proton thermal speed",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "THERMAL_SPD_ErrorBars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton solar winds' most probable thermal speed. (with error bars). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['THERMAL_SPD']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "km/s (with error bars)",
+        "x_label": "SW Vth",
+        "x_format": ".1f",
+        "x_fractionDigits": "1",
+        "x_cdf_FORMAT": "F6.1",
+        "x_cdf_FIELDNAM": "Proton thermal speed",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "THERMAL_SPD"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "Np",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Scalar solar wind density. (w/o error bars)",
+        "fill": "-1e+31",
+        "units": "#/cc (w/o error bars)",
+        "x_label": "Ion N",
+        "x_format": ".1f",
+        "x_fractionDigits": "1",
+        "x_cdf_FORMAT": "f7.1",
+        "x_cdf_FIELDNAM": "Proton denisty",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "Np_ErrorBars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Scalar solar wind density. (with error bars). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['Np']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/cc (with error bars)",
+        "x_label": "Ion N",
+        "x_format": ".1f",
+        "x_fractionDigits": "1",
+        "x_cdf_FORMAT": "f7.1",
+        "x_cdf_FIELDNAM": "Proton density",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "Np"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "THERMAL_TEMP",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Solar wind proton temperature (w/o error bars)",
+        "fill": "-1e+31",
+        "units": "K (w/o error bars)",
+        "x_label": "Temperature",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f11.2",
+        "x_cdf_FIELDNAM": "proton temperature",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "THERMAL_TEMP_ErrorBars",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Solar wind proton temperature (with error bars). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['THERMAL_TEMP']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "K (with error bars)",
+        "x_label": "Temperature",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f11.2",
+        "x_cdf_FIELDNAM": "proton temperature",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "THERMAL_TEMP"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      }
+    ]
+  }
+}

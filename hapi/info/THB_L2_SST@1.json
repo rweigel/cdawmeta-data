@@ -1,0 +1,1109 @@
+{
+  "id": "THB_L2_SST@1",
+  "title": "THEMIS-B:  Solid State Telescope (SST): Energy Flux spectrogram:  Data includes: Electron/Ion Ground-Calculated Fluxes (30 keV - 300 keV). - V. Angelopoulos, D. Larson & R.P. Lin (UCB, NASA NAS5-02099)",
+  "info": {
+    "startDate": "2007-03-09T00:00:00.000Z",
+    "stopDate": "2025-03-11T00:00:00.000Z",
+    "sampleStartDate": "2025-03-09T00:00:00.000Z",
+    "sampleStopDate": "2025-03-10T00:00:00.000Z",
+    "maxRequestDuration": "P50D",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THB_L2_SST",
+    "contact": "V. Angelopoulos, D. Larson & R.P. Lin @ UCB, NASA NAS5-02099",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 24,
+        "fill": null,
+        "x_description": "thb_psef_epoch",
+        "x_cdf_NAME": "thb_psef_epoch",
+        "x_cdf_DataType": "CDF_EPOCH"
+      },
+      {
+        "name": "thb_psef_data_quality",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT4",
+        "description": "SST Full Mode Electron Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/sst_flag.shtml.) ",
+        "fill": "-2147483648",
+        "units": "0=good",
+        "x_label": "Data_Quality_Flag_Elec Full SST-B",
+        "x_cdf_FORMAT": "i10",
+        "x_cdf_FIELDNAM": "Data_Quality_Flag_Elec Full SST-B",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch"
+      },
+      {
+        "name": "thb_psef_en_efluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST Electron energy spectrogram(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_en_eflux', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/(cm^2-s-sr-eV)",
+        "x_label": "Energy flux",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "SST Electron energy spectrogram(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_en_eflux",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          16
+        ]
+      },
+      {
+        "name": "thb_psef_densityQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode derived electron density(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_density', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "cm^-3",
+        "x_label": "N_elec Full SST-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "N_elec Full SST-B(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_density",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch"
+      },
+      {
+        "name": "thb_psef_avgtempQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode derived average electron temperature(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_avgtemp', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": "T_elec Full SST-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "T_elec Full SST-B(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_avgtemp",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch"
+      },
+      {
+        "name": "thb_psef_vthermalQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode derived average electron thermal velocity(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_vthermal', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": "Vth_elec Full SST-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Vth_elec Full SST-B(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_vthermal",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch"
+      },
+      {
+        "name": "thb_psef_sc_potQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "Spacecraft potential used in generation of thb_psef moments(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_sc_pot', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "V",
+        "x_label": "Scpot_elec Full SST-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Scpot_elec Full SST-B(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_sc_pot",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch"
+      },
+      {
+        "name": "thb_psef_t3Q",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode electron diagonalized temperature (Tprp1, Tprp2, Tpar)(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_t3', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": "thb_psef_t3",
+        "x_labelComponents": [
+          [
+            "Tprp1_elec Full SST-B",
+            "Tprp2_elec Full SST-B",
+            "Tpar_elec Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Diagonalized Temperature(Tprp1, Tprp2, Tpar)(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_t3",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_t3_compno",
+            "description": "thb_psef_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_magt3Q",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode electron temperature temperature magnetic field aligned. (Tprp1FA, Tprp2FA, TparFA)(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_magt3', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": "thb_psef_magt3",
+        "x_labelComponents": [
+          [
+            "Tprp1_elec FA Full SST-B",
+            "Tprp2_elec FA Full SST-B",
+            "Tpar_elec FA Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Temperature, Field Aligned(Tprp1FA, Tprp2FA, TparFA) (Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_magt3",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_magt3_compno",
+            "description": "thb_psef_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_ptensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full distribution derived electron pressure tensor(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_ptens', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "Pxx_elec Full SST-B",
+          "Pyy_elec Full SST-B",
+          "Pzz_elec Full SST-B",
+          "Pxy_elec Full SST-B",
+          "Pxz_elec Full SST-B",
+          "Pyz_elec Full SST-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Pressure Tensor(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_ptens",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_ptens_compno",
+            "description": "thb_psef_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_mftensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full distribution derived electron momentum flux tensor(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_mftens', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "MFxx_elec Full SST-B",
+          "MFyy_elec Full SST-B",
+          "MFzz_elec Full SST-B",
+          "MFxy_elec Full SST-B",
+          "MFxz_elec Full SST-B",
+          "MFyz_elec Full SST-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Momentum Flux Tensor(Good data only) ",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_mftens",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_mftens_compno",
+            "description": "thb_psef_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_fluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode electron particle flux vector(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_flux', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "#/(cm^2-s)",
+        "x_label": "thb_psef_flux",
+        "x_labelComponents": [
+          [
+            "Fx_elec DSL Full SST-B",
+            "Fy_elec DSL Full SST-B",
+            "Fz_elec DSL Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Particle Flux Vector(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_flux",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_flux_compno",
+            "description": "thb_psef_flux_compno",
+            "centers": [
+              3,
+              3,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_symmQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode electron direction of pressure tensor symmetry. In DSL Coordinates(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_symm', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "None",
+        "x_label": "thb_psef_symm",
+        "x_labelComponents": [
+          [
+            "Symm_xe Full SST-B",
+            "Symm_ye Full SST-B",
+            "Symm_ze Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Symmetry Vector (DSL)(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_symm",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_symm_compno",
+            "description": "thb_psef_symm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_symm_angQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full distribution derived electron symmetry angle (Angle between Symmetry Direction and Magnetic Field(B))(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_symm_ang', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "degrees",
+        "x_label": "symm_ang_elec_full SST-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "symm_ang_elec Full SST-B(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_symm_ang",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch"
+      },
+      {
+        "name": "thb_psef_magfQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "Magnetic field vector used for generation of psef moments in DSL coordinates(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_magf', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "nT",
+        "x_label": "thb_psef_magf",
+        "x_labelComponents": [
+          [
+            "Bx_elec DSL Full SST-B",
+            "By_elec DSL Full SST-B",
+            "Bz_elec DSL Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_magf",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_magf_compno",
+            "description": "thb_psef_magf_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_velocity_dslQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full distribution derived electron velocity vector in DSL coordinates(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_velocity_dsl', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": "thb_psef_velocity_dsl",
+        "x_labelComponents": [
+          [
+            "Vx_elec DSL Full SST-B",
+            "Vy_elec DSL Full SST-B",
+            "Vz_elec DSL Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in DSL(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_velocity_dsl",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_velocity_dsl_compno",
+            "description": "thb_psef_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_velocity_gseQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full distribution derived electron velocity vector in GSE coordinates(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_velocity_gse', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": "thb_psef_velocity_gse",
+        "x_labelComponents": [
+          [
+            "Vx_elec GSE Full SST-B",
+            "Vy_elec GSE Full SST-B",
+            "Vz_elec GSE Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in GSE(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_velocity_gse",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_velocity_gse_compno",
+            "description": "thb_psef_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_velocity_gsmQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full distribution derived electron velocity vector in GSM coordinates(Good data only). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_psef_velocity_gsm', 'thb_psef_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": "thb_psef_velocity_gsm",
+        "x_labelComponents": [
+          [
+            "Vx_elec GSM Full SST-B",
+            "Vy_elec GSM Full SST-B",
+            "Vz_elec GSM Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in GSM(Good data only)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_psef_velocity_gsm",
+          "thb_psef_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_velocity_gsm_compno",
+            "description": "thb_psef_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_en_eflux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST Electron energy spectrogram(Full Mode)(All qualities)",
+        "fill": "NaN",
+        "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+        "x_label": "Energy flux",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "SST Electron energy spectrogram(Full Mode)(All qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          16
+        ]
+      },
+      {
+        "name": "thb_psef_density",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode derived electron density(All qualities)",
+        "fill": "NaN",
+        "units": "cm^-3 (All Qs)",
+        "x_label": "N_elec Full SST-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "N_elec Full SST-B(All qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch"
+      },
+      {
+        "name": "thb_psef_avgtemp",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode derived average electron temperature(All qualities)",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": "T_elec Full SST-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "T_elec Full SST-B(All qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch"
+      },
+      {
+        "name": "thb_psef_vthermal",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode derived average electron thermal velocity(All qualities)",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": "Vth_elec Full SST-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Vth_elec Full SST-B(All qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch"
+      },
+      {
+        "name": "thb_psef_sc_pot",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "Spacecraft potential used in generation of thb_psef moments(All qualities)",
+        "fill": "NaN",
+        "units": "V (All Qs)",
+        "x_label": "Scpot_elec Full SST-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Scpot_elec Full SST-B(All qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch"
+      },
+      {
+        "name": "thb_psef_t3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode electron diagonalized temperature (Tprp1, Tprp2, Tpar)(All qualities)",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": "thb_psef_t3",
+        "x_labelComponents": [
+          [
+            "Tprp1_elec Full SST-B",
+            "Tprp2_elec Full SST-B",
+            "Tpar_elec Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Diagonalized Temperature(Tprp1, Tprp2, Tpar)(All qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_t3_compno",
+            "description": "thb_psef_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_magt3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode electron temperature temperature magnetic field aligned. (Tprp1FA, Tprp2FA, TparFA)(All qualities)",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": "thb_psef_magt3",
+        "x_labelComponents": [
+          [
+            "Tprp1_elec FA Full SST-B",
+            "Tprp2_elec FA Full SST-B",
+            "Tpar_elec FA Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Temperature, Field Aligned(Tprp1FA, Tprp2FA, TparFA)(All qualities",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_magt3_compno",
+            "description": "thb_psef_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_ptens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full distribution derived electron pressure tensor(All qualities)",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "Pxx_elec Full SST-B",
+          "Pyy_elec Full SST-B",
+          "Pzz_elec Full SST-B",
+          "Pxy_elec Full SST-B",
+          "Pxz_elec Full SST-B",
+          "Pyz_elec Full SST-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Pressure Tensor(All qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_ptens_compno",
+            "description": "thb_psef_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_mftens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full distribution derived electron momentum flux tensor(All qualities)",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "MFxx_elec Full SST-B",
+          "MFyy_elec Full SST-B",
+          "MFzz_elec Full SST-B",
+          "MFxy_elec Full SST-B",
+          "MFxz_elec Full SST-B",
+          "MFyz_elec Full SST-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Momentum Flux Tensor(All Qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_mftens_compno",
+            "description": "thb_psef_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_flux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode electron particle flux vector(All qualities)",
+        "fill": "NaN",
+        "units": "#/(cm^2-s) (All Qs)",
+        "x_label": "thb_psef_flux",
+        "x_labelComponents": [
+          [
+            "Fx_elec DSL Full SST-B",
+            "Fy_elec DSL Full SST-B",
+            "Fz_elec DSL Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Particle Flux Vector(All qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_flux_compno",
+            "description": "thb_psef_flux_compno",
+            "centers": [
+              3,
+              3,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_symm",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full mode electron direction of pressure tensor symmetry. In DSL Coordinates(All qualities)",
+        "fill": "NaN",
+        "units": "None (All Qs)",
+        "x_label": "thb_psef_symm",
+        "x_labelComponents": [
+          [
+            "Symm_xe Full SST-B",
+            "Symm_ye Full SST-B",
+            "Symm_ze Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Symmetry Vector (DSL)(All qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_symm_compno",
+            "description": "thb_psef_symm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_symm_ang",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full distribution derived electron symmetry angle (Angle between Symmetry Direction and Magnetic Field(B))(All qualities)",
+        "fill": "NaN",
+        "units": "degrees (All Qs)",
+        "x_label": "symm_ang_elec_full SST-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "symm_ang_elec Full SST-B(All qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch"
+      },
+      {
+        "name": "thb_psef_magf",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "Magnetic field vector used for generation of psef moments in DSL coordinates(All Qualities)",
+        "fill": "NaN",
+        "units": "nT (All Qs)",
+        "x_label": "thb_psef_magf",
+        "x_labelComponents": [
+          [
+            "Bx_elec DSL Full SST-B",
+            "By_elec DSL Full SST-B",
+            "Bz_elec DSL Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL(All Qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_magf_compno",
+            "description": "thb_psef_magf_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_velocity_dsl",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full distribution derived electron velocity vector in DSL coordinates(All Qualities)",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": "thb_psef_velocity_dsl",
+        "x_labelComponents": [
+          [
+            "Vx_elec DSL Full SST-B",
+            "Vy_elec DSL Full SST-B",
+            "Vz_elec DSL Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in DSL(All Qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_velocity_dsl_compno",
+            "description": "thb_psef_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_velocity_gse",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full distribution derived electron velocity vector in GSE coordinates(All Qualities)",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": "thb_psef_velocity_gse",
+        "x_labelComponents": [
+          [
+            "Vx_elec GSE Full SST-B",
+            "Vy_elec GSE Full SST-B",
+            "Vz_elec GSE Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in GSE(All Qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_velocity_gse_compno",
+            "description": "thb_psef_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_psef_velocity_gsm",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "SST full distribution derived electron velocity vector in GSM coordinates(All Qualities)",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": "thb_psef_velocity_gsm",
+        "x_labelComponents": [
+          [
+            "Vx_elec GSM Full SST-B",
+            "Vy_elec GSM Full SST-B",
+            "Vz_elec GSM Full SST-B"
+          ]
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in GSM(All Qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_psef_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_psef_velocity_gsm_compno",
+            "description": "thb_psef_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      }
+    ]
+  }
+}

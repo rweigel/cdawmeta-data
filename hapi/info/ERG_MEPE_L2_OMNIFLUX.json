@@ -1,0 +1,126 @@
+{
+  "id": "ERG_MEPE_L2_OMNIFLUX",
+  "title": "Medium Energy Particle experiments - electron analyzer (MEP-e) electron omni flux data, ARASE/ERG - Satoshi Kasahara (The University of Tokyo)",
+  "info": {
+    "startDate": "2017-03-23T00:31:13.000Z",
+    "stopDate": "2023-12-31T23:59:55.000Z",
+    "sampleStartDate": "2023-12-30T00:00:11.000Z",
+    "sampleStopDate": "2023-12-31T00:00:00.000Z",
+    "cadence": "PT7.98447S",
+    "x_cadence_fraction": 0.2156005288314858,
+    "x_cadence_note": "Cadence based on variable 'epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/erg/mepe/l2/omniflux/2017/erg_mepe_l2_omniflux_20170323_v01_02.cdf. This most common cadence occurred for 21.5601% of the 2120 timesteps. Cadence = 7984470016 [ns] = PT7.98447S.",
+    "maxRequestDuration": "PT4319450S",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ERG_MEPE_L2_OMNIFLUX",
+    "contact": "Satoshi Kasahara @ The University of Tokyo",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 30,
+        "fill": null,
+        "x_description": "Time, beginning of interval",
+        "x_cdf_NAME": "epoch",
+        "x_cdf_DataType": "CDF_TIME_TT2000"
+      },
+      {
+        "name": "FEDO",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "FEDO: Omni-directional Electron Flux",
+        "fill": "-1e+31",
+        "units": "cm^-2 s^-1 sr^-1 keV^-1",
+        "x_label": "FEDO",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FEDO",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16
+        ],
+        "bins": [
+          {
+            "name": "FEDO_Energy",
+            "description": "Minimum and maximum energy for FEDO",
+            "centers": [
+              87.505,
+              87.505,
+              72.649,
+              60.432,
+              50.335,
+              41.965,
+              35.025,
+              29.259,
+              24.466,
+              20.458,
+              17.116,
+              14.326,
+              11.999,
+              10.047,
+              8.4053,
+              7.0311
+            ],
+            "x_label": "Energy",
+            "units": "keV",
+            "unitsSchema": "VOUnits1.1",
+            "x_unitsOriginal": "keV"
+          }
+        ]
+      },
+      {
+        "name": "FEDO_T",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> FEDO as stacked time series. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDO']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "cm^-2 s^-1 sr^-1 keV^-1",
+        "x_label": "FEDO",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FEDO",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "FEDO"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16
+        ],
+        "bins": [
+          {
+            "name": "FEDO_Energy",
+            "description": "Minimum and maximum energy for FEDO",
+            "centers": [
+              87.505,
+              87.505,
+              72.649,
+              60.432,
+              50.335,
+              41.965,
+              35.025,
+              29.259,
+              24.466,
+              20.458,
+              17.116,
+              14.326,
+              11.999,
+              10.047,
+              8.4053,
+              7.0311
+            ],
+            "x_label": "Energy",
+            "units": "keV",
+            "unitsSchema": "VOUnits1.1",
+            "x_unitsOriginal": "keV"
+          }
+        ]
+      }
+    ]
+  }
+}

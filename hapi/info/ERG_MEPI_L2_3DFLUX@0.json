@@ -1,0 +1,6028 @@
+{
+  "id": "ERG_MEPI_L2_3DFLUX@0",
+  "title": "Exploration of Energization and Radiation in Geospace (ERG) Medium Energy Particle experiments - ion mass analyzer (MEP-i) Level-2 3D flux data - Shoichiro Yokota (Osaka University)",
+  "info": {
+    "startDate": "2017-03-24T04:04:51.000Z",
+    "stopDate": "2023-12-31T23:59:55.000Z",
+    "sampleStartDate": "2023-12-30T00:00:03.000Z",
+    "sampleStopDate": "2023-12-30T23:59:52.000Z",
+    "cadence": "PT15.98456S",
+    "x_cadence_fraction": 0.40645463049579045,
+    "x_cadence_note": "Cadence based on variable 'epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/erg/mepi/l2/3dflux/2017/erg_mepi_l2_3dflux_20170324_v01_03.cdf. This most common cadence occurred for 40.6455% of the 869 timesteps. Cadence = 15984560000 [ns] = PT15.98456S.",
+    "maxRequestDuration": "PT4319450S",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ERG_MEPI_L2_3DFLUX",
+    "contact": "Shoichiro Yokota @ Osaka University",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 30,
+        "fill": null,
+        "x_description": "Time, Middle of spin sector 16",
+        "x_cdf_NAME": "epoch",
+        "x_cdf_DataType": "CDF_TIME_TT2000"
+      },
+      {
+        "name": "Quality_flag",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_UINT2",
+        "description": "Index for data quality",
+        "fill": "65535",
+        "units": null,
+        "x_label": "Quality flag",
+        "x_cdf_FORMAT": "I5",
+        "x_cdf_FIELDNAM": "Quality flag",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ]
+      },
+      {
+        "name": "FPDU",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] Unidirectional differential proton flux",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FPDU",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FPDU",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FPDU_Energy",
+            "description": "Energy for FPDU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FPDU_e2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 88 keV/q Unidirectional differential proton flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FPDU @ 88 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FPDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FPDU_e6",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 36 keV/q Unidirectional differential proton flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FPDU @ 36 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FPDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FPDU_e10",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 15 keV/q Unidirectional differential proton flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FPDU @ 15 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FPDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FPDU_e14",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 6.3 keV/q Unidirectional differential proton flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FPDU @ 6.3 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FPDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FPEDU",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] Unidirectional differential proton energy flux",
+        "fill": "-1e+31",
+        "units": "keV/s-cm2-sr-keV",
+        "x_label": "FPEDU",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FPEDU",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FPDU_Energy",
+            "description": "Energy for FPDU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FPEDU_e2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 88 keV/q Unidirectional differential proton energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FPEDU @ 88 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FPEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FPEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FPEDU_e6",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 36 keV/q Unidirectional differential proton energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FPEDU @ 36 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FPEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FPEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FPEDU_e10",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 15 keV/q Unidirectional differential proton energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FPEDU @ 15 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FPEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FPEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FPEDU_e14",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 6.3 keV/q Unidirectional differential proton energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FPEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FPEDU @ 6.3 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FPEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FPEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "count_raw_P",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] Proton raw count",
+        "fill": "-1e+31",
+        "units": "counts/sample",
+        "x_label": "Proton count",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".4e",
+        "x_fractionDigits": "4",
+        "x_cdf_FORMAT": "E31.4",
+        "x_cdf_FIELDNAM": "Proton count",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FPDU_Energy",
+            "description": "Energy for FPDU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHE2DU",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] Unidirectional differential He++ flux",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHE2DU",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHE2DU",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FHE2DU_Energy",
+            "description": "Energy for FHE2DU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHE2DU_e2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 88 keV/q Unidirectional differential He++ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHE2DU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHE2DU @ 88 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHE2DU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHE2DU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHE2DU_e6",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 36 keV/q Unidirectional differential He++ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHE2DU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHE2DU @ 36 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHE2DU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHE2DU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHE2DU_e10",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 15 keV/q Unidirectional differential He++ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHE2DU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHE2DU @ 15 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHE2DU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHE2DU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHE2DU_e14",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 6.3 keV/q Unidirectional differential He++ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHE2DU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHE2DU @ 6.3 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHE2DU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHE2DU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHE2EDU",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] Unidirectional differential He++ energy flux",
+        "fill": "-1e+31",
+        "units": "keV/s-cm2-sr-keV/q",
+        "x_label": "FHE2EDU",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHE2EDU",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FHE2DU_Energy",
+            "description": "Energy for FHE2DU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHE2EDU_e2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 88 keV/q Unidirectional differential He++ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHE2DU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHE2EDU @ 88 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHE2EDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHE2DU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHE2EDU_e6",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 36 keV/q Unidirectional differential He++ energy  flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHE2EDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHE2EDU @ 36 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHE2EDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHE2EDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHE2EDU_e10",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 15 keV/q Unidirectional differential He++ energy  flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHE2EDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHE2EDU @ 15 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHE2EDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHE2EDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHE2EDU_e14",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 6.3 keV/q Unidirectional differential He++ energy  flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHE2EDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHE2EDU @ 6.3 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHE2EDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHE2EDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "count_raw_HE2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] He++ raw count",
+        "fill": "-1e+31",
+        "units": "counts/sample",
+        "x_label": "He++ count",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".4e",
+        "x_fractionDigits": "4",
+        "x_cdf_FORMAT": "E31.4",
+        "x_cdf_FIELDNAM": "He++ count",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FHE2DU_Energy",
+            "description": "Energy for FHE2DU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHEDU",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] Unidirectional differential He+ flux",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHEDU",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHEDU",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FHEDU_Energy",
+            "description": "Energy for FHEDU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHEDU_e2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 88 keV/q Unidirectional differential He+ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHEDU @ 88 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHEDU_e6",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 36 keV/q Unidirectional differential He+ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHEDU @ 36 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHEDU_e10",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 15 keV/q Unidirectional differential He+ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHEDU @ 15 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHEDU_e14",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 6.3 keV/q Unidirectional differential He+ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHEDU @ 6.3 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHEEDU",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] Unidirectional differential He+ energy flux",
+        "fill": "-1e+31",
+        "units": "keV/s-cm2-sr-keV/q",
+        "x_label": "FHEEDU",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHEEDU",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FHEDU_Energy",
+            "description": "Energy for FHEDU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHEEDU_e2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 88 keV/q Unidirectional differential He+ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHEEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHEEDU @ 88 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHEEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHEEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHEEDU_e6",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 36 keV/q Unidirectional differential He+ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHEEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHEEDU @ 36 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHEEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHEEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHEEDU_e10",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 15 keV/q Unidirectional differential He+ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHEEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHEEDU @ 15 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHEEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHEEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FHEEDU_e14",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 6.3 keV/q Unidirectional differential He+ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FHEEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FHEEDU @ 6.3 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FHEEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FHEEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "count_raw_HE",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] He+ raw count",
+        "fill": "-1e+31",
+        "units": "counts/sample",
+        "x_label": "He+ count",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".4e",
+        "x_fractionDigits": "4",
+        "x_cdf_FORMAT": "E31.4",
+        "x_cdf_FIELDNAM": "He+ count",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FHEDU_Energy",
+            "description": "Energy for FHEDU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOPPDU",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] Unidirectional differential O++ flux",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FOPPDU",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOPPDU",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FOPPDU_Energy",
+            "description": "Energy for FOPPDU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOPPDU_e2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 88 keV/q Unidirectional differential O++ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FOPPDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FOPPDU @ 88 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOPPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FOPPDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOPPDU_e6",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 36 keV/q Unidirectional differential O++ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FOPPDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FOPPDU @ 36 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOPPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FOPPDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOPPDU_e10",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 15 keV/q Unidirectional differential O++ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FOPPDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FOPPDU @ 15 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOPPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FOPPDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOPPDU_e14",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 6.3 keV/q Unidirectional differential O++ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FOPPDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FOPPDU @ 6.3 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOPPDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FOPPDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOPPEDU",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] Unidirectional differential O++ energy flux",
+        "fill": "-1e+31",
+        "units": "keV/s-cm2-sr-keV/q",
+        "x_label": "FOPPEDU",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOPPEDU",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FOPPDU_Energy",
+            "description": "Energy for FOPPDU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOPPEDU_e2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 88 keV/q Unidirectional differential O++ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FOPPEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FOPPEDU @ 88 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOPPEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FOPPEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOPPEDU_e6",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 36 keV/q Unidirectional differential O++ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FOPPEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FOPPEDU @ 36 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOPPEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FOPPEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOPPEDU_e10",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 15 keV/q Unidirectional differential O++ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FOPPEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FOPPEDU @ 15 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOPPEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FOPPEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOPPEDU_e14",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 6.3 keV/q Unidirectional differential O++ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FOPPEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FOPPEDU @ 6.3 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOPPEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FOPPEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "count_raw_OPP",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] O++ raw count",
+        "fill": "-1e+31",
+        "units": "counts/sample",
+        "x_label": "O++ count",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".4e",
+        "x_fractionDigits": "4",
+        "x_cdf_FORMAT": "E31.4",
+        "x_cdf_FIELDNAM": "O++ count",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FOPPDU_Energy",
+            "description": "Energy for FOPPDU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FODU",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] Unidirectional differential O+ flux",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FODU",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FODU",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FODU_Energy",
+            "description": "Energy for FODU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FODU_e2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 88 keV/q Unidirectional differential O+ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FODU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FODU @ 88 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FODU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FODU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FODU_e6",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 36 keV/q Unidirectional differential O+ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FODU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FODU @ 36 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FODU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FODU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FODU_e10",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 15 keV/q Unidirectional differential O+ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FODU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FODU @ 15 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FODU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FODU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FODU_e14",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 6.3 keV/q Unidirectional differential O+ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FODU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FODU @ 6.3 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FODU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FODU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOEDU",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] Unidirectional differential O+ energy flux",
+        "fill": "-1e+31",
+        "units": "keV/s-cm2-sr-keV/q",
+        "x_label": "FOEDU",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOEDU",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FODU_Energy",
+            "description": "Energy for FODU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOEDU_e2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 88 keV/q Unidirectional differential O+ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FOEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FOEDU @ 88 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FOEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOEDU_e6",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 36 keV/q Unidirectional differential O+ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FOEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FOEDU @ 36 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FOEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOEDU_e10",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 15 keV/q Unidirectional differential O+ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FOEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FOEDU @ 15 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FOEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FOEDU_e14",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 6.3 keV/q Unidirectional differential O+ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FOEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FOEDU @ 6.3 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FOEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FOEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "count_raw_O",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] O+ raw count",
+        "fill": "-1e+31",
+        "units": "counts/sample",
+        "x_label": "O+ count",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".4e",
+        "x_fractionDigits": "4",
+        "x_cdf_FORMAT": "E31.4",
+        "x_cdf_FIELDNAM": "O+ count",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FODU_Energy",
+            "description": "Energy for FODU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FO2PDU",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] Unidirectional differential O2+ flux",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FO2PDU",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".4e",
+        "x_fractionDigits": "4",
+        "x_cdf_FORMAT": "E31.4",
+        "x_cdf_FIELDNAM": "FO2PDU",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FO2PDU_Energy",
+            "description": "Energy for FO2PDU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FO2PDU_e2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 88 keV/q Unidirectional differential O2+ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FO2PDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FO2PDU @ 88 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FO2PDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FO2PDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FO2PDU_e6",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 36 keV/q Unidirectional differential O2+ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FO2PDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FO2PDU @ 36 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FO2PDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FO2PDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FO2PDU_e10",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 15 keV/q Unidirectional differential O2+ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FO2PDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FO2PDU @ 15 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FO2PDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FO2PDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FO2PDU_e14",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 6.3 keV/q Unidirectional differential O2+ flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FO2PDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FO2PDU @ 6.3 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FO2PDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FO2PDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FO2PEDU",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] Unidirectional differential O2+ energy flux",
+        "fill": "-1e+31",
+        "units": "keV/s-cm2-sr-keV/q",
+        "x_label": "FO2PEDU",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FO2PEDU",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FO2PDU_Energy",
+            "description": "Energy for FO2PDU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FO2PEDU_e2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 88 keV/q Unidirectional differential O2+ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FO2PEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FO2PEDU @ 88 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FO2PEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FO2PEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FO2PEDU_e6",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 36 keV/q Unidirectional differential O2+ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FO2PEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FO2PEDU @ 36 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FO2PEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FO2PEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FO2PEDU_e10",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 15 keV/q Unidirectional differential O2+ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FO2PEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FO2PEDU @ 15 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FO2PEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FO2PEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "FO2PEDU_e14",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 6.3 keV/q Unidirectional differential O2+ energy flux. This variable is a 'virtual' variable that is computed using the function arr_slice (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FO2PEDU']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-keV/q",
+        "x_label": "FO2PEDU @ 6.3 keV/q",
+        "x_format": ".3e",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "E10.3",
+        "x_cdf_FIELDNAM": "FO2PEDU",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "arr_slice",
+        "x_cdf_COMPONENTS": [
+          "FO2PEDU"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      },
+      {
+        "name": "count_raw_O2P",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[CDAWeb plots not supported] O2+ raw count",
+        "fill": "-1e+31",
+        "units": "counts/sample",
+        "x_label": "O2+ count",
+        "x_labelComponents": [
+          [
+            "109.6keV",
+            "109.6keV",
+            "87.8keV",
+            "70.3keV",
+            "56.3keV",
+            "45.1keV",
+            "36.2keV",
+            "29.0keV",
+            "23.3keV",
+            "18.6keV",
+            "15.0keV",
+            "12.0keV",
+            "9.7keV",
+            "7.8keV",
+            "6.3keV",
+            "5.1keV"
+          ]
+        ],
+        "x_format": ".4e",
+        "x_fractionDigits": "4",
+        "x_cdf_FORMAT": "E31.4",
+        "x_cdf_FIELDNAM": "O2+ count",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "epoch",
+        "size": [
+          16,
+          16,
+          16
+        ],
+        "bins": [
+          {
+            "name": "FIDU_Sector",
+            "description": "Spin sector number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Sector",
+            "units": "Index_No"
+          },
+          {
+            "name": "FO2PDU_Energy",
+            "description": "Energy for FO2PDU",
+            "centers": [
+              109.6,
+              109.6,
+              87.765,
+              70.292,
+              56.323,
+              45.138,
+              36.154,
+              29.013,
+              23.263,
+              18.636,
+              14.998,
+              12.034,
+              9.6979,
+              7.8113,
+              6.2841,
+              5.0713
+            ],
+            "x_label": "Energy",
+            "x_labelComponents": [
+              [
+                "109.6keV",
+                "109.6keV",
+                "87.8keV",
+                "70.3keV",
+                "56.3keV",
+                "45.1keV",
+                "36.2keV",
+                "29.0keV",
+                "23.3keV",
+                "18.6keV",
+                "15.0keV",
+                "12.0keV",
+                "9.7keV",
+                "7.8keV",
+                "6.3keV",
+                "5.1keV"
+              ]
+            ],
+            "units": "keV/q"
+          },
+          {
+            "name": "FIDU_Anode",
+            "description": "Anode number",
+            "centers": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "x_label": "Anode",
+            "units": "Index_No"
+          }
+        ]
+      }
+    ]
+  }
+}

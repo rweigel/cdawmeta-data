@@ -1,0 +1,1128 @@
+{
+  "id": "THB_L2_ESA@3",
+  "title": "THEMIS-B (P1/ARTEMIS-P1): Electrostatic Analyzer (ESA): Electron/Ion Ground-Calculated Energy Fluxes (ions: 5 eV to 25 keV) electrons: 6 eV to 30 keV) and Moments (density, velocity, pressure, and temperature). Includes FULL, REDUCED and BURST modes. FULL: high angular resolution, low (few min) time resolution. REDUCED: degraded angular resolution, high (approx. 3 sec) time resolution. BURST: high angular resolution, high time resolution; only short bursts of data. Note that angular resolution affects moments since they are obtained integrating over the mode-specific angular distribution. - V. Angelopoulos, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
+  "info": {
+    "startDate": "2007-03-07T00:00:00.000Z",
+    "stopDate": "2025-03-11T00:00:00.000Z",
+    "sampleStartDate": "2025-03-09T00:00:00.000Z",
+    "sampleStopDate": "2025-03-10T00:00:00.000Z",
+    "maxRequestDuration": "P50D",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THB_L2_ESA",
+    "contact": "V. Angelopoulos, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 24,
+        "fill": null,
+        "x_description": "thb_peer_epoch",
+        "x_cdf_NAME": "thb_peer_epoch",
+        "x_cdf_DataType": "CDF_EPOCH"
+      },
+      {
+        "name": "thb_peer_data_quality",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT4",
+        "description": "ESA Reduced Mode, Electron Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.) ",
+        "fill": "-2147483648",
+        "units": null,
+        "x_label": "Data_Quality_Flag_elec Rdcd ESA-B",
+        "x_cdf_FORMAT": "i2",
+        "x_cdf_FIELDNAM": "Data_Quality_Flag_elec Rdcd ESA-B",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch"
+      },
+      {
+        "name": "thb_peer_densityQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "(Good data only) ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Electron Density. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_peer_density', 'thb_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "cm^-3",
+        "x_label": "N_elec Rdcd ESA-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Electron Density",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_peer_density",
+          "thb_peer_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch"
+      },
+      {
+        "name": "thb_peer_avgtempQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Average Temperature  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_peer_avgtemp', 'thb_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": "T_elec Rdcd ESA-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "T_elec Rdcd ESA-B",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_peer_avgtemp",
+          "thb_peer_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch"
+      },
+      {
+        "name": "thb_peer_vthermalQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Thermal Velocity  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_peer_vthermal', 'thb_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": "Vth_elec Rdcd ESA-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Vth_elec Rdcd ESA-B",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_peer_vthermal",
+          "thb_peer_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch"
+      },
+      {
+        "name": "thb_peer_sc_potQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----SC Potential (Same time array as Reduced Electron ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_peer_sc_pot', 'thb_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "V",
+        "x_label": "Scpot_elec Rdcd ESA-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Scpot_elec Rdcd ESA-B",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_peer_sc_pot",
+          "thb_peer_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch"
+      },
+      {
+        "name": "thb_peer_en_efluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Energy Flux spectrogram . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_peer_en_eflux', 'thb_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/(cm^2-s-sr-eV)",
+        "x_label": "Eflux_elec Rdcd ESA-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Eflux_elec Rdcd ESA-B",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_peer_en_eflux",
+          "thb_peer_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          32
+        ]
+      },
+      {
+        "name": "thb_peer_t3Q",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_peer_t3', 'thb_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "Tprp1_elec Rdcd ESA-B",
+          "Tprp2_elec Rdcd ESA-B",
+          "Tpar_elec Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_peer_t3",
+          "thb_peer_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_t3_compno",
+            "description": "thb_peer_t3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_elec Rdcd ESA-B",
+              "Tprp2_elec Rdcd ESA-B",
+              "Tpar_elec Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_magt3Q",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_peer_magt3', 'thb_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "Tprp1_elec FA Rdcd ESA-B",
+          "Tprp2_elec FA Rdcd ESA-B",
+          "Tpar_elec FA Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_peer_magt3",
+          "thb_peer_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_magt3_compno",
+            "description": "thb_peer_magt3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_elec FA Rdcd ESA-B",
+              "Tprp2_elec FA Rdcd ESA-B",
+              "Tpar_elec FA Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_ptensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Pressure Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_peer_ptens', 'thb_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "Pxx_elec Rdcd ESA-B",
+          "Pyy_elec Rdcd ESA-B",
+          "Pzz_elec Rdcd ESA-B",
+          "Pxy_elec Rdcd ESA-B",
+          "Pxz_elec Rdcd ESA-B",
+          "Pyz_elec Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Pressure Tensor",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_peer_ptens",
+          "thb_peer_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_ptens_compno",
+            "description": "thb_peer_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_elec Rdcd ESA-B",
+              "Pyy_elec Rdcd ESA-B",
+              "Pzz_elec Rdcd ESA-B",
+              "Pxy_elec Rdcd ESA-B",
+              "Pxz_elec Rdcd ESA-B",
+              "Pyz_elec Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_mftensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Momentum Flux Tensor  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_peer_mftens', 'thb_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "MFxx_elec Rdcd ESA-B",
+          "MFyy_elec Rdcd ESA-B",
+          "MFzz_elec Rdcd ESA-B",
+          "MFxy_elec Rdcd ESA-B",
+          "MFxz_elec Rdcd ESA-B",
+          "MFyz_elec Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Momentum Flux Tensor",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_peer_mftens",
+          "thb_peer_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_mftens_compno",
+            "description": "thb_peer_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "MFxx_elec Rdcd ESA-B",
+              "MFyy_elec Rdcd ESA-B",
+              "MFzz_elec Rdcd ESA-B",
+              "MFxy_elec Rdcd ESA-B",
+              "MFxz_elec Rdcd ESA-B",
+              "MFyz_elec Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_fluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Particle Flux Vector  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_peer_flux', 'thb_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "#/(cm^2-s)",
+        "x_label": [
+          "Fx_elec DSL Rdcd ESA-B",
+          "Fy_elec DSL Rdcd ESA-B",
+          "Fz_elec DSL Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Particle Flux Vector",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_peer_flux",
+          "thb_peer_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_flux_compno",
+            "description": "thb_peer_flux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Fx_elec DSL Rdcd ESA-B",
+              "Fy_elec DSL Rdcd ESA-B",
+              "Fz_elec DSL Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_symmQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL)) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_peer_symm', 'thb_peer_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "None",
+        "x_label": [
+          "Symm_xe Rdcd ESA-B",
+          "Symm_ye Rdcd ESA-B",
+          "Symm_ze Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Symmetry Vector (direction of pressure tensor symmetry (DSL)) ",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thb_peer_symm",
+          "thb_peer_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_symm_compno",
+            "description": "thb_peer_symm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Symm_xe Rdcd ESA-B",
+              "Symm_ye Rdcd ESA-B",
+              "Symm_ze Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_symm_angQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Symmetry Angle (between symmetry direction and B) ",
+        "fill": "NaN",
+        "units": "degrees",
+        "x_label": "symm_ang_elec Rdcd ESA-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Symmetry Angle (between symmetry direction and B)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch"
+      },
+      {
+        "name": "thb_peer_magfQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced Electron ESA data) ",
+        "fill": "NaN",
+        "units": "nT",
+        "x_label": [
+          "Bx_elec DSL Rdcd ESA-B",
+          "By_elec DSL Rdcd ESA-B",
+          "Bz_elec DSL Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Reduced Electron ESA data)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_magf_compno",
+            "description": "thb_peer_magf_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Bx_elec DSL Rdcd ESA-B",
+              "By_elec DSL Rdcd ESA-B",
+              "Bz_elec DSL Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_velocity_dslQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in DSL ",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_elec DSL Rdcd ESA-B",
+          "Vy_elec DSL Rdcd ESA-B",
+          "Vz_elec DSL Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in DSL",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_velocity_dsl_compno",
+            "description": "thb_peer_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec DSL Rdcd ESA-B",
+              "Vy_elec DSL Rdcd ESA-B",
+              "Vz_elec DSL Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_velocity_gseQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in GSE ",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_elec GSE Rdcd ESA-B",
+          "Vy_elec GSE Rdcd ESA-B",
+          "Vz_elec GSE Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in GSE",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_velocity_gse_compno",
+            "description": "thb_peer_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec GSE Rdcd ESA-B",
+              "Vy_elec GSE Rdcd ESA-B",
+              "Vz_elec GSE Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_velocity_gsmQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in GSM ",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_elec GSM Rdcd ESA-B",
+          "Vy_elec GSM Rdcd ESA-B",
+          "Vz_elec GSM Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in GSM",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_velocity_gsm_compno",
+            "description": "thb_peer_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec GSM Rdcd ESA-B",
+              "Vy_elec GSM Rdcd ESA-B",
+              "Vz_elec GSM Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_density",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "(All qualities data) ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Electron Density",
+        "fill": "NaN",
+        "units": "cm^-3 (All Qs)",
+        "x_label": "N_elec Rdcd ESA-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Electron Density(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch"
+      },
+      {
+        "name": "thb_peer_avgtemp",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Average Temperature",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": "T_elec Rdcd ESA-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "T_elec Rdcd ESA-B(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch"
+      },
+      {
+        "name": "thb_peer_vthermal",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Thermal Velocity",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": "Vth_elec Rdcd ESA-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Vth_elec Rdcd ESA-B(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch"
+      },
+      {
+        "name": "thb_peer_sc_pot",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----SC Potential (Same time array as Reduced Electron ESA data)",
+        "fill": "NaN",
+        "units": "V (All Qs)",
+        "x_label": "Scpot_elec Rdcd ESA-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Scpot_elec Rdcd ESA-B(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch"
+      },
+      {
+        "name": "thb_peer_en_eflux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Energy Flux spectrogram",
+        "fill": "NaN",
+        "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+        "x_label": "Eflux_elec Rdcd ESA-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Eflux_elec Rdcd ESA-B(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          32
+        ]
+      },
+      {
+        "name": "thb_peer_t3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": [
+          "Tprp1_elec Rdcd ESA-B",
+          "Tprp2_elec Rdcd ESA-B",
+          "Tpar_elec Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_t3_compno",
+            "description": "thb_peer_t3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_elec Rdcd ESA-B",
+              "Tprp2_elec Rdcd ESA-B",
+              "Tpar_elec Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_magt3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": [
+          "Tprp1_elec FA Rdcd ESA-B",
+          "Tprp2_elec FA Rdcd ESA-B",
+          "Tpar_elec FA Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_magt3_compno",
+            "description": "thb_peer_magt3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_elec FA Rdcd ESA-B",
+              "Tprp2_elec FA Rdcd ESA-B",
+              "Tpar_elec FA Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_ptens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Pressure Tensor",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "Pxx_elec Rdcd ESA-B",
+          "Pyy_elec Rdcd ESA-B",
+          "Pzz_elec Rdcd ESA-B",
+          "Pxy_elec Rdcd ESA-B",
+          "Pxz_elec Rdcd ESA-B",
+          "Pyz_elec Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Pressure Tensor(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_ptens_compno",
+            "description": "thb_peer_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_elec Rdcd ESA-B",
+              "Pyy_elec Rdcd ESA-B",
+              "Pzz_elec Rdcd ESA-B",
+              "Pxy_elec Rdcd ESA-B",
+              "Pxz_elec Rdcd ESA-B",
+              "Pyz_elec Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_mftens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Momentum Flux Tensor",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "MFxx_elec Rdcd ESA-B",
+          "MFyy_elec Rdcd ESA-B",
+          "MFzz_elec Rdcd ESA-B",
+          "MFxy_elec Rdcd ESA-B",
+          "MFxz_elec Rdcd ESA-B",
+          "MFyz_elec Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Momentum Flux Tensor(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_mftens_compno",
+            "description": "thb_peer_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "MFxx_elec Rdcd ESA-B",
+              "MFyy_elec Rdcd ESA-B",
+              "MFzz_elec Rdcd ESA-B",
+              "MFxy_elec Rdcd ESA-B",
+              "MFxz_elec Rdcd ESA-B",
+              "MFyz_elec Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_flux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Particle Flux Vector",
+        "fill": "NaN",
+        "units": "#/(cm^2-s) (All Qs)",
+        "x_label": [
+          "Fx_elec DSL Rdcd ESA-B",
+          "Fy_elec DSL Rdcd ESA-B",
+          "Fz_elec DSL Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Particle Flux Vector(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_flux_compno",
+            "description": "thb_peer_flux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Fx_elec DSL Rdcd ESA-B",
+              "Fy_elec DSL Rdcd ESA-B",
+              "Fz_elec DSL Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_symm",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL)) ",
+        "fill": "NaN",
+        "units": "None (All Qs)",
+        "x_label": [
+          "Symm_xe Rdcd ESA-B",
+          "Symm_ye Rdcd ESA-B",
+          "Symm_ze Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))(all qualities) ",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_symm_compno",
+            "description": "thb_peer_symm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Symm_xe Rdcd ESA-B",
+              "Symm_ye Rdcd ESA-B",
+              "Symm_ze Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_symm_ang",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
+        "fill": "NaN",
+        "units": "degrees (All Qs)",
+        "x_label": "symm_ang_elec Rdcd ESA-B",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "symm_ang_elec Rdcd ESA-B(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch"
+      },
+      {
+        "name": "thb_peer_magf",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced Electron ESA data)",
+        "fill": "NaN",
+        "units": "nT (All Qs)",
+        "x_label": [
+          "Bx_elec DSL Rdcd ESA-B",
+          "By_elec DSL Rdcd ESA-B",
+          "Bz_elec DSL Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Reduced Electron ESA data)(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_magf_compno",
+            "description": "thb_peer_magf_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Bx_elec DSL Rdcd ESA-B",
+              "By_elec DSL Rdcd ESA-B",
+              "Bz_elec DSL Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_velocity_dsl",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in DSL",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_elec DSL Rdcd ESA-B",
+          "Vy_elec DSL Rdcd ESA-B",
+          "Vz_elec DSL Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in DSL(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_velocity_dsl_compno",
+            "description": "thb_peer_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec DSL Rdcd ESA-B",
+              "Vy_elec DSL Rdcd ESA-B",
+              "Vz_elec DSL Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_velocity_gse",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in GSE",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_elec GSE Rdcd ESA-B",
+          "Vy_elec GSE Rdcd ESA-B",
+          "Vz_elec GSE Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in GSE(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_velocity_gse_compno",
+            "description": "thb_peer_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec GSE Rdcd ESA-B",
+              "Vy_elec GSE Rdcd ESA-B",
+              "Vz_elec GSE Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thb_peer_velocity_gsm",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in GSM",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_elec GSM Rdcd ESA-B",
+          "Vy_elec GSM Rdcd ESA-B",
+          "Vz_elec GSM Rdcd ESA-B"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Electron Velocity Vector in GSM(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thb_peer_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thb_peer_velocity_gsm_compno",
+            "description": "thb_peer_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec GSM Rdcd ESA-B",
+              "Vy_elec GSM Rdcd ESA-B",
+              "Vz_elec GSM Rdcd ESA-B"
+            ],
+            "units": null
+          }
+        ]
+      }
+    ]
+  }
+}

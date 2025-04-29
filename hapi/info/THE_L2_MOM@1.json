@@ -1,0 +1,1102 @@
+{
+  "id": "THE_L2_MOM@1",
+  "title": "THEMIS-E (P4):  On Board moments:  Electron/Ion moments density, flux, velocity, pressure and temperature. - V. Angelopoulos, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
+  "info": {
+    "startDate": "2007-08-10T00:00:00.000Z",
+    "stopDate": "2025-03-12T00:00:00.000Z",
+    "sampleStartDate": "2025-03-10T00:00:00.000Z",
+    "sampleStopDate": "2025-03-11T00:00:00.000Z",
+    "maxRequestDuration": "P50D",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THE_L2_MOM",
+    "contact": "V. Angelopoulos, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 24,
+        "fill": null,
+        "x_description": "the_peem_epoch",
+        "x_cdf_NAME": "the_peem_epoch",
+        "x_cdf_DataType": "CDF_EPOCH"
+      },
+      {
+        "name": "the_peem_data_quality",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT4",
+        "description": "Electron Moment Data Quality (0: good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/mom_flag.shtml.) ",
+        "fill": "-2147483648",
+        "units": "0 = Good",
+        "x_label": "Data_Quality_Flag_elec MOM ESA-E",
+        "x_cdf_FORMAT": "i2",
+        "x_cdf_FIELDNAM": "Data_Quality_Flag_elec MOM ESA-E",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch"
+      },
+      {
+        "name": "the_peem_densityQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "(Good data only) ESA On Board Moment (MOM) Electron Density, THEMIS-E. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peem_density', 'the_peem_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "cm^-3",
+        "x_label": "N_elec MOM ESA-E",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "ESA On Board Moment (MOM) Electron Density, THEMIS-E",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "the_peem_density",
+          "the_peem_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch"
+      },
+      {
+        "name": "the_peem_ptotQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Total Pressure. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peem_ptot', 'the_peem_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": "P_elec MOM ESA-E",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Total Pressure",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "the_peem_ptot",
+          "the_peem_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch"
+      },
+      {
+        "name": "the_peem_fluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Particle Flux Vector. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peem_flux', 'the_peem_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "#/(cm^2-s)",
+        "x_label": [
+          "Fx_elec MOM ESA-E",
+          "Fy_elec MOM ESA-E",
+          "Fz_elec MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Particle Flux Vector",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "the_peem_flux",
+          "the_peem_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_flux_compno",
+            "description": "the_peem_flux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Fx_elec MOM ESA-E",
+              "Fy_elec MOM ESA-E",
+              "Fz_elec MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_mftensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Momentum Flux Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peem_mftens', 'the_peem_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "MFxx_elec MOM ESA-E",
+          "MFyy_elec MOM ESA-E",
+          "MFzz_elec MOM ESA-E",
+          "MFxy_elec MOM ESA-E",
+          "MFxz_elec MOM ESA-E",
+          "MFyz_elec MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Momentum Flux Tensor",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "the_peem_mftens",
+          "the_peem_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "the_peem_mftens_compno",
+            "description": "the_peem_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "MFxx_elec MOM ESA-E",
+              "MFyy_elec MOM ESA-E",
+              "MFzz_elec MOM ESA-E",
+              "MFxy_elec MOM ESA-E",
+              "MFxz_elec MOM ESA-E",
+              "MFyz_elec MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_efluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Energy Flux Vector. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peem_eflux', 'the_peem_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/(cm^2-s)",
+        "x_label": [
+          "Efx_elec MOM ESA-E",
+          "Efy_elec MOM ESA-E",
+          "Efz_elec MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Energy Flux Vector",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "the_peem_eflux",
+          "the_peem_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_eflux_compno",
+            "description": "the_peem_eflux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Efx_elec MOM ESA-E",
+              "Efy_elec MOM ESA-E",
+              "Efz_elec MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_velocity_dslQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in DSL. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peem_velocity_dsl', 'the_peem_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_elec DSL MOM ESA-E",
+          "Vy_elec DSL MOM ESA-E",
+          "Vz_elec DSL MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Velocity Vector in DSL",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "the_peem_velocity_dsl",
+          "the_peem_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_velocity_dsl_compno",
+            "description": "the_peem_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec DSL MOM ESA-E",
+              "Vy_elec DSL MOM ESA-E",
+              "Vz_elec DSL MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_velocity_gseQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in GSE. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peem_velocity_gse', 'the_peem_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_elec GSE MOM ESA-E",
+          "Vy_elec GSE MOM ESA-E",
+          "Vz_elec GSE MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Velocity Vector in GSE",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "the_peem_velocity_gse",
+          "the_peem_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_velocity_gse_compno",
+            "description": "the_peem_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec GSE MOM ESA-E",
+              "Vy_elec GSE MOM ESA-E",
+              "Vz_elec GSE MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_velocity_gsmQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in GSM. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peem_velocity_gsm', 'the_peem_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_elec GSM MOM ESA-E",
+          "Vy_elec GSM MOM ESA-E",
+          "Vz_elec GSM MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Velocity Vector in GSM",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "the_peem_velocity_gsm",
+          "the_peem_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_velocity_gsm_compno",
+            "description": "the_peem_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec GSM MOM ESA-E",
+              "Vy_elec GSM MOM ESA-E",
+              "Vz_elec GSM MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_ptensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Pressure Tensor. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peem_ptens', 'the_peem_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "Pxx_elec MOM ESA-E",
+          "Pyy_elec MOM ESA-E",
+          "Pzz_elec MOM ESA-E",
+          "Pxy_elec MOM ESA-E",
+          "Pxz_elec MOM ESA-E",
+          "Pyz_elec MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Pressure Tensor",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "the_peem_ptens",
+          "the_peem_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "the_peem_ptens_compno",
+            "description": "the_peem_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_elec MOM ESA-E",
+              "Pyy_elec MOM ESA-E",
+              "Pzz_elec MOM ESA-E",
+              "Pxy_elec MOM ESA-E",
+              "Pxz_elec MOM ESA-E",
+              "Pyz_elec MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_magQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Magnetic Field Vector DSL (Same time array as MOM Electron ESA data). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peem_mag', 'the_peem_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "nT",
+        "x_label": [
+          "Bx_elec DSL MOM ESA-E",
+          "By_elec DSL MOM ESA-E",
+          "Bz_elec DSL MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Magnetic Field Vector DSL (Same time array as MOM Electron ESA data)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "the_peem_mag",
+          "the_peem_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_mag_compno",
+            "description": "the_peem_mag_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Bx_elec DSL MOM ESA-E",
+              "By_elec DSL MOM ESA-E",
+              "Bz_elec DSL MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_velocity_magQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector, Field Aligned. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peem_velocity_mag', 'the_peem_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_elec FA MOM ESA-E",
+          "Vy_elec FA MOM ESA-E",
+          "Vz_elec FA MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Velocity Vector, Field Aligned",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "the_peem_velocity_mag",
+          "the_peem_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_velocity_mag_compno",
+            "description": "the_peem_velocity_mag_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec FA MOM ESA-E",
+              "Vy_elec FA MOM ESA-E",
+              "Vz_elec FA MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_t3_magQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peem_t3_mag', 'the_peem_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "Tx_elec FA MOM ESA-E",
+          "Ty_elec FA MOM ESA-E",
+          "Tz_elec FA MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "the_peem_t3_mag",
+          "the_peem_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_t3_mag_compno",
+            "description": "the_peem_t3_mag_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tx_elec FA MOM ESA-E",
+              "Ty_elec FA MOM ESA-E",
+              "Tz_elec FA MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_ptens_magQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Pressure Tensor, Field Aligned. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['the_peem_ptens_mag', 'the_peem_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "Pxx_elec FA MOM ESA-E",
+          "Pyy_elec FA MOM ESA-E",
+          "Pzz_elec FA MOM ESA-E",
+          "Pxy_elec FA MOM ESA-E",
+          "Pxz_elec FA MOM ESA-E",
+          "Pyz_elec FA MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Pressure Tensor, Field Aligned",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "the_peem_ptens_mag",
+          "the_peem_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "the_peem_ptens_mag_compno",
+            "description": "the_peem_ptens_mag_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_elec FA MOM ESA-E",
+              "Pyy_elec FA MOM ESA-E",
+              "Pzz_elec FA MOM ESA-E",
+              "Pxy_elec FA MOM ESA-E",
+              "Pxz_elec FA MOM ESA-E",
+              "Pyz_elec FA MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_density",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "(All Qualities data) ESA On Board Moment (MOM) Electron Density, THEMIS-E",
+        "fill": "NaN",
+        "units": "cm^-3 (All Qs)",
+        "x_label": "N_elec MOM ESA-E",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "ESA On Board Moment (MOM) Electron Density, THEMIS-E",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch"
+      },
+      {
+        "name": "the_peem_ptot",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Total Pressure",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": "P_elec MOM ESA-E",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Total Pressure",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch"
+      },
+      {
+        "name": "the_peem_flux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Particle Flux Vector",
+        "fill": "NaN",
+        "units": "#/(cm^2-s) (All Qs)",
+        "x_label": [
+          "Fx_elec MOM ESA-E",
+          "Fy_elec MOM ESA-E",
+          "Fz_elec MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Particle Flux Vector",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_flux_compno",
+            "description": "the_peem_flux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Fx_elec MOM ESA-E",
+              "Fy_elec MOM ESA-E",
+              "Fz_elec MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_mftens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Momentum Flux Tensor",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "MFxx_elec MOM ESA-E",
+          "MFyy_elec MOM ESA-E",
+          "MFzz_elec MOM ESA-E",
+          "MFxy_elec MOM ESA-E",
+          "MFxz_elec MOM ESA-E",
+          "MFyz_elec MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Momentum Flux Tensor",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "the_peem_mftens_compno",
+            "description": "the_peem_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "MFxx_elec MOM ESA-E",
+              "MFyy_elec MOM ESA-E",
+              "MFzz_elec MOM ESA-E",
+              "MFxy_elec MOM ESA-E",
+              "MFxz_elec MOM ESA-E",
+              "MFyz_elec MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_eflux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Energy Flux Vector",
+        "fill": "NaN",
+        "units": "eV/(cm^2-s) (All Qs)",
+        "x_label": [
+          "Efx_elec MOM ESA-E",
+          "Efy_elec MOM ESA-E",
+          "Efz_elec MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Energy Flux Vector",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_eflux_compno",
+            "description": "the_peem_eflux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Efx_elec MOM ESA-E",
+              "Efy_elec MOM ESA-E",
+              "Efz_elec MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_velocity_dsl",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in DSL",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_elec DSL MOM ESA-E",
+          "Vy_elec DSL MOM ESA-E",
+          "Vz_elec DSL MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Velocity Vector in DSL",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_velocity_dsl_compno",
+            "description": "the_peem_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec DSL MOM ESA-E",
+              "Vy_elec DSL MOM ESA-E",
+              "Vz_elec DSL MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_velocity_gse",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in GSE",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_elec GSE MOM ESA-E",
+          "Vy_elec GSE MOM ESA-E",
+          "Vz_elec GSE MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Velocity Vector in GSE",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_velocity_gse_compno",
+            "description": "the_peem_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec GSE MOM ESA-E",
+              "Vy_elec GSE MOM ESA-E",
+              "Vz_elec GSE MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_velocity_gsm",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector in GSM",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_elec GSM MOM ESA-E",
+          "Vy_elec GSM MOM ESA-E",
+          "Vz_elec GSM MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Velocity Vector in GSM",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_velocity_gsm_compno",
+            "description": "the_peem_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec GSM MOM ESA-E",
+              "Vy_elec GSM MOM ESA-E",
+              "Vz_elec GSM MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_ptens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Pressure Tensor",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "Pxx_elec MOM ESA-E",
+          "Pyy_elec MOM ESA-E",
+          "Pzz_elec MOM ESA-E",
+          "Pxy_elec MOM ESA-E",
+          "Pxz_elec MOM ESA-E",
+          "Pyz_elec MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Pressure Tensor",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "the_peem_ptens_compno",
+            "description": "the_peem_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_elec MOM ESA-E",
+              "Pyy_elec MOM ESA-E",
+              "Pzz_elec MOM ESA-E",
+              "Pxy_elec MOM ESA-E",
+              "Pxz_elec MOM ESA-E",
+              "Pyz_elec MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_mag",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Magnetic Field Vector DSL (Same time array as MOM Electron ESA data)",
+        "fill": "NaN",
+        "units": "nT (All Qs)",
+        "x_label": [
+          "Bx_elec DSL MOM ESA-E",
+          "By_elec DSL MOM ESA-E",
+          "Bz_elec DSL MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Magnetic Field Vector DSL (Same time array as MOM Electron ESA data)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_mag_compno",
+            "description": "the_peem_mag_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Bx_elec DSL MOM ESA-E",
+              "By_elec DSL MOM ESA-E",
+              "Bz_elec DSL MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_velocity_mag",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Velocity Vector, Field Aligned",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_elec FA MOM ESA-E",
+          "Vy_elec FA MOM ESA-E",
+          "Vz_elec FA MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Velocity Vector, Field Aligned",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_velocity_mag_compno",
+            "description": "the_peem_velocity_mag_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_elec FA MOM ESA-E",
+              "Vy_elec FA MOM ESA-E",
+              "Vz_elec FA MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_t3_mag",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": [
+          "Tx_elec FA MOM ESA-E",
+          "Ty_elec FA MOM ESA-E",
+          "Tz_elec FA MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "the_peem_t3_mag_compno",
+            "description": "the_peem_t3_mag_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tx_elec FA MOM ESA-E",
+              "Ty_elec FA MOM ESA-E",
+              "Tz_elec FA MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "the_peem_ptens_mag",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Electron Pressure Tensor, Field Aligned",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "Pxx_elec FA MOM ESA-E",
+          "Pyy_elec FA MOM ESA-E",
+          "Pzz_elec FA MOM ESA-E",
+          "Pxy_elec FA MOM ESA-E",
+          "Pxz_elec FA MOM ESA-E",
+          "Pyz_elec FA MOM ESA-E"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "-----Electron Pressure Tensor, Field Aligned",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "the_peem_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "the_peem_ptens_mag_compno",
+            "description": "the_peem_ptens_mag_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_elec FA MOM ESA-E",
+              "Pyy_elec FA MOM ESA-E",
+              "Pzz_elec FA MOM ESA-E",
+              "Pxy_elec FA MOM ESA-E",
+              "Pxz_elec FA MOM ESA-E",
+              "Pyz_elec FA MOM ESA-E"
+            ],
+            "units": null
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,2888 @@
+{
+  "id": "PSP_SWP_SPC_L3I",
+  "title": "Parker Solar Probe/SWEAP/SPC level 3 ion data - Justin C. Kasper (University of Michigan)",
+  "info": {
+    "startDate": "2018-10-30T23:59:59.000Z",
+    "stopDate": "2024-04-13T04:54:22.000Z",
+    "sampleStartDate": "2024-04-12T00:00:11.000Z",
+    "sampleStopDate": "2024-04-12T23:59:22.000Z",
+    "cadence": "PT0.87382S",
+    "x_cadence_fraction": 0.3418890619126886,
+    "x_cadence_note": "Cadence based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/psp/sweap/spc/l3/l3i/2018/psp_swp_spc_l3i_20181031_v01.cdf. This most common cadence occurred for 34.1889% of the 31835 timesteps. Cadence = 873820032 [ns] = PT0.87382S.",
+    "maxRequestDuration": "PT4317550S",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPC_L3I",
+    "contact": "Justin C. Kasper @ University of Michigan",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 30,
+        "fill": null,
+        "x_description": "CDF TT2000 time [ns]",
+        "x_cdf_NAME": "Epoch",
+        "x_cdf_DataType": "CDF_TIME_TT2000"
+      },
+      {
+        "name": "DQF",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT1",
+        "description": "Array of SPC data quality indicators.",
+        "fill": "-128",
+        "units": "-1=unknown 0=good 1=bad",
+        "x_label": "Data Quality Flag",
+        "x_cdf_FORMAT": "I3",
+        "x_cdf_FIELDNAM": "Data quality flag",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          32
+        ],
+        "bins": [
+          {
+            "name": "array32_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32
+            ],
+            "x_label": "Index of 32 DQF values",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "general_flag",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT1",
+        "description": "Global quality flag, signifying whether the data for this epoch are suitable for use without caveate.",
+        "fill": "-128",
+        "units": "0 = good",
+        "x_label": "general flag",
+        "x_cdf_FORMAT": "I3",
+        "x_cdf_FIELDNAM": "general_flag",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "vp_moment_SC_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton bulk velocity from the 1st moment of the reduced distribution function, in the spacecraft frame (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp_moment_SC', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp_moment_xSC",
+          "vp_moment_ySC",
+          "vp_moment_zSC"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity moment in spacecraft frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp_moment_SC",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_moment_SC_deltahigh_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> upper uncertainty. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp_moment_SC_deltahigh', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp_moment_xSC_deltahigh",
+          "vp_moment_ySC_deltahigh",
+          "vp_moment_zSC_deltahigh"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity moment upper uncertainty in the spacecraft frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp_moment_SC_deltahigh",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_moment_SC_deltalow_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> lower uncertainty. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp_moment_SC_deltalow', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp_moment_xSC_deltalow",
+          "vp_moment_ySC_deltalow",
+          "vp_moment_zSC_deltalow"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity moment lower uncertainty in the spacecraft frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp_moment_SC_deltalow",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_moment_RTN_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton bulk velocity from the 1st moment of the reduced distribution function in [inertial] RTN coordinate system (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp_moment_RTN', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp_moment_R",
+          "vp_moment_T",
+          "vp_moment_N"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity moment in RTN frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp_moment_RTN",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_moment_RTN_deltahigh_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> upper uncertainty. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp_moment_RTN_deltahigh', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp_moment_R_deltahigh",
+          "vp_moment_T_deltahigh",
+          "vp_moment_N_deltahigh"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity moment upper uncertainty in the RTN frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp_moment_RTN_deltahigh",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_moment_RTN_deltalow_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> lower uncertainty. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp_moment_RTN_deltalow', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp_moment_R_deltalow",
+          "vp_moment_T_deltalow",
+          "vp_moment_N_deltalow"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity moment lower uncertainty in the RTN frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp_moment_RTN_deltalow",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "np_moment_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton density estimate from the 0th moment of the reduced distribution function (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['np_moment', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Q) cm^{-3}",
+        "x_label": "np_moment",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk density moment ",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "np_moment",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "np_moment_deltahigh_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> upper uncertainty. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['np_moment_deltahigh', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) cm^{-3}",
+        "x_label": "np_moment_deltahigh",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk density moment, upper uncertainty",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "np_moment_deltahigh",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "np_moment_deltalow_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> lower uncertainty. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['np_moment_deltalow', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) cm^{-3}",
+        "x_label": "np_moment_deltalow",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk density moment, lower uncertainty",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "np_moment_deltalow",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp_moment_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton radial [most probable] thermal speed estimate from the 2nd velocity moment of the reduced distribution function (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['wp_moment', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) km/s",
+        "x_label": "wp_moment",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk thermal speed moment ",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "wp_moment",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp_moment_deltahigh_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> upper uncertainty. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['wp_moment_deltahigh', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) km/s",
+        "x_label": "wp_moment_deltahigh",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk thermal speed moment, upper uncertainty",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "wp_moment_deltahigh",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp_moment_deltalow_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> lower uncertainty. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['wp_moment_deltalow', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) km/s",
+        "x_label": "wp_moment_deltalow",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk thermal speed moment, lower uncertainty",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "wp_moment_deltalow",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "vp1_fit_SC_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Primary proton population velocity, from 1-dimensional Maxwellian fitting, in the spacecraft frame (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp1_fit_SC', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp1_fit_xSC",
+          "vp1_fit_ySC",
+          "vp1_fit_zSC"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton velocity in spacecraft frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp1_fit_SC",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp1_fit_SC_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp1_fit_SC_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp1_fit_xSC_uncertainty",
+          "vp1_fit_ySC_uncertainty",
+          "vp1_fit_zSC_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton velocity uncertainty in spacecraft frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp1_fit_SC_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp1_fit_RTN_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Primary proton population velocity, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp1_fit_RTN', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp1_fit_R",
+          "vp1_fit_T",
+          "vp1_fit_N"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton velocity in RTN frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp1_fit_RTN",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp1_fit_RTN_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp1_fit_RTN_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp1_fit_R_uncertainty",
+          "vp1_fit_T_uncertainty",
+          "vp1_fit_N_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton velocity uncertainty in RTN frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp1_fit_RTN_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "np1_fit_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Primary proton population density, from 1-dimensional Maxwellian fitting. (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['np1_fit', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) cm^{-3}",
+        "x_label": "np1_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton density",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "np1_fit",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "np1_fit_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['np1_fit_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) cm^{-3}",
+        "x_label": "np1_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton density, fit uncertainty",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "np1_fit_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp1_fit_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Primary proton population radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['wp1_fit', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) km/s",
+        "x_label": "wp1_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton thermal speed",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "wp1_fit",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp1_fit_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['wp1_fit_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) km/s",
+        "x_label": "wp1_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton thermal speed, fit uncertainty",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "wp1_fit_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "vp_fit_SC_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton bulk velocity, from 1-dimensional Maxwellian fitting, in the spacecraft frame (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp_fit_SC', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp_fit_xSC",
+          "vp_fit_ySC",
+          "vp_fit_zSC"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Proton bulk velocity in the spacecraft frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp_fit_SC",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_fit_SC_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp_fit_SC_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp_fit_xSC_uncertainty",
+          "vp_fit_ySC_uncertainty",
+          "vp_fit_zSC_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity, fit uncertainty in the spacecraft frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp_fit_SC_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_fit_RTN_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton bulk velocity, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp_fit_RTN', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp_fit_R",
+          "vp_fit_T",
+          "vp_fit_N"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Proton bulk velocity in RTN frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp_fit_RTN",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_fit_RTN_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['vp_fit_RTN_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "vp_fit_R_uncertainty",
+          "vp_fit_T_uncertainty",
+          "vp_fit_N_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity, fit uncertainty in RTN frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "vp_fit_RTN_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "np_fit_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[Total] proton density, from 1-dimensional Maxwellian fitting. (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['np_fit', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) cm^{-3}",
+        "x_label": "np_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton density",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "np_fit",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "np_fit_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['np_fit_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "cm^{-3}",
+        "x_label": "np_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton density, fit uncertainty",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "np_fit_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp_fit_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton radial [most probable] thermal speed component, from 1-dimensional Maxwellian fitting. (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['wp_fit', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) km/s",
+        "x_label": "wp_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Proton bulk thermal speed",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "wp_fit",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp_fit_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['wp_fit_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) km/s",
+        "x_label": "wp_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "bulk proton thermal speed, fit uncertainty",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "wp_fit_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "va_fit_SC_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Alpha particle velocity vector, from 1-dimensional Maxwellian fitting, in the spacecraft frame (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['va_fit_SC', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "va_fit_xSC",
+          "va_fit_ySC",
+          "va_fit_zSC"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle velocity in spacecraft frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "va_fit_SC",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "va_fit_SC_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['va_fit_SC_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "va_fit_xSC_uncertainty",
+          "va_fit_ySC_uncertainty",
+          "va_fit_zSC_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle velocity fit uncertainty the spacecraft frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "va_fit_SC_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "va_fit_RTN_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Alpha particle velocity vector, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['va_fit_RTN', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "va_fit_R",
+          "va_fit_T",
+          "va_fit_N"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle velocity in RTN frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "va_fit_RTN",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "va_fit_RTN_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['va_fit_RTN_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "va_fit_R_uncertainty",
+          "va_fit_T_uncertainty",
+          "va_fit_N_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle velocity fit uncertainty in the RTN frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "va_fit_RTN_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "na_fit_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Alpha particle density, from 1-dimensional Maxwellian fitting. (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['na_fit', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) cm^{-3}",
+        "x_label": "na_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle density",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "na_fit",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "na_fit_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['na_fit_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) cm^{-3}",
+        "x_label": "na_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle density fit uncertainty",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "na_fit_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wa_fit_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Alpha particle radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['wa_fit', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) km/s",
+        "x_label": "wa_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle thermal speed",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "wa_fit",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wa_fit_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['wa_fit_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) km/s",
+        "x_label": "wa_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle thermal speed fit uncertainty",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "wa_fit_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "v3_fit_SC_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Population 3 velocity vector, from 1-dimensional Maxwellian fitting, in the spacecraft frame (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['v3_fit_SC', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "v3_fit_xSC",
+          "v3_fit_ySC",
+          "v3_fit_zSC"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 velocity in spacecraft frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "v3_fit_SC",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "v3_fit_SC_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['v3_fit_SC_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "v3_fit_xSC_uncertainty",
+          "v3_fit_ySC_uncertainty",
+          "v3_fit_zSC_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 velocity uncertainty in spacecraft frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "v3_fit_SC_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "v3_fit_RTN_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Population 3 velocity vector, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['v3_fit_RTN', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "v3_fit_R",
+          "v3_fit_T",
+          "v3_fit_N"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 velocity in RTN frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "v3_fit_RTN",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "v3_fit_RTN_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['v3_fit_RTN_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_label": [
+          "v3_fit_R_uncertainty",
+          "v3_fit_T_uncertainty",
+          "v3_fit_N_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 velocity uncertainty in RTN frame",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "v3_fit_RTN_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "n3_fit_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Population 3 particle density, from 1-dimensional Maxwellian fitting. (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['n3_fit', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) cm^{-3}",
+        "x_label": "n3_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 particle density",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "n3_fit",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "n3_fit_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['n3_fit_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) cm^{-3}",
+        "x_label": "n3_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 density, fit uncertainty",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "n3_fit_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "w3_fit_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Population 3 particle radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (Only Good Quality). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['w3_fit', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) km/s",
+        "x_label": "w3_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 thermal speed",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "w3_fit",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "w3_fit_uncertainty_gd",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['w3_fit_uncertainty', 'general_flag']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "(Good Qs) km/s",
+        "x_label": "w3_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 thermal speed, fit uncertainty",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "w3_fit_uncertainty",
+          "general_flag"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "sc_pos_HCI",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "PSP Spacecraft position in the Heliocentric Inertial system, in km",
+        "fill": "-1e+31",
+        "units": "km",
+        "x_label": [
+          "x_HCI",
+          "y_HCI",
+          "z_HCI"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Spacecraft position (HCI)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "sc_vel_HCI",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "PSP Spacecraft velocity in the Heliocentric Inertial system, in km/s",
+        "fill": "-1e+31",
+        "units": "km/s",
+        "x_label": [
+          "Vx_HCI",
+          "Vy_HCI",
+          "Vz_HCI"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Spacecraft velocity vector (HCI)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "carr_latitude",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Carrington Latitude",
+        "fill": "-1e+31",
+        "units": "degrees",
+        "x_label": "latitude",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "carr_latitude",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "carr_longitude",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Carrington Longitude",
+        "fill": "-1e+31",
+        "units": "degrees",
+        "x_label": "longitude",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "carr_longitude",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "vp_moment_SC",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton bulk velocity from the 1st moment of the reduced distribution function, in the spacecraft frame (All Qualities)",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp_moment_xSC",
+          "vp_moment_ySC",
+          "vp_moment_zSC"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity moment in spacecraft frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_moment_SC_deltahigh",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> upper uncertainty",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp_moment_xSC_deltahigh",
+          "vp_moment_ySC_deltahigh",
+          "vp_moment_zSC_deltahigh"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity moment upper uncertainty in the spacecraft frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_moment_SC_deltalow",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> lower uncertainty",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp_moment_xSC_deltalow",
+          "vp_moment_ySC_deltalow",
+          "vp_moment_zSC_deltalow"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity moment lower uncertainty in the spacecraft frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_moment_RTN",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton bulk velocity from the 1st moment of the reduced distribution function in [inertial] RTN coordinate system (All Qualities)",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp_moment_R",
+          "vp_moment_T",
+          "vp_moment_N"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity moment in RTN frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_moment_RTN_deltahigh",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> upper uncertainty",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp_moment_R_deltahigh",
+          "vp_moment_T_deltahigh",
+          "vp_moment_N_deltahigh"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity moment upper uncertainty in the RTN frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_moment_RTN_deltalow",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> lower uncertainty",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp_moment_R_deltalow",
+          "vp_moment_T_deltalow",
+          "vp_moment_N_deltalow"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity moment lower uncertainty in the RTN frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "np_moment",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton density estimate from the 0th moment of the reduced distribution function (All Qualities)",
+        "fill": "-1e+31",
+        "units": "(All Qs) cm^{-3}",
+        "x_label": "np_moment",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk density moment ",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "np_moment_deltahigh",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> upper uncertainty",
+        "fill": "-1e+31",
+        "units": "(All Qs) cm^{-3}",
+        "x_label": "np_moment_deltahigh",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk density moment, upper uncertainty",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "np_moment_deltalow",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> lower uncertainty",
+        "fill": "-1e+31",
+        "units": "(All Qs) cm^{-3}",
+        "x_label": "np_moment_deltalow",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk density moment, lower uncertainty",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp_moment",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton radial [most probable] thermal speed estimate from the 2nd velocity moment of the reduced distribution function (All Qualities)",
+        "fill": "-1e+31",
+        "units": "(All Qs) km/s",
+        "x_label": "wp_moment",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk thermal speed moment ",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp_moment_deltahigh",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> upper uncertainty",
+        "fill": "-1e+31",
+        "units": "(All Qs) km/s",
+        "x_label": "wp_moment_deltahigh",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk thermal speed moment, upper uncertainty",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp_moment_deltalow",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> lower uncertainty",
+        "fill": "-1e+31",
+        "units": "(All Qs) km/s",
+        "x_label": "wp_moment_deltalow",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk thermal speed moment, lower uncertainty",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "vp1_fit_SC",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Primary proton population velocity, from 1-dimensional Maxwellian fitting, in the spacecraft frame (All Qualities)",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp1_fit_xSC",
+          "vp1_fit_ySC",
+          "vp1_fit_zSC"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton velocity in spacecraft frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp1_fit_SC_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp1_fit_xSC_uncertainty",
+          "vp1_fit_ySC_uncertainty",
+          "vp1_fit_zSC_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton velocity uncertainty in spacecraft frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp1_fit_RTN",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Primary proton population velocity, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (All Qualities)",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp1_fit_R",
+          "vp1_fit_T",
+          "vp1_fit_N"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton velocity in RTN frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp1_fit_RTN_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp1_fit_R_uncertainty",
+          "vp1_fit_T_uncertainty",
+          "vp1_fit_N_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton velocity uncertainty in RTN frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "np1_fit",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Primary proton population density, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "fill": "-1e+31",
+        "units": "(All Qs) cm^{-3}",
+        "x_label": "np1_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton density",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "np1_fit_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": "(All Qs) cm^{-3}",
+        "x_label": "np1_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton density, fit uncertainty",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp1_fit",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Primary proton population radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "fill": "-1e+31",
+        "units": "(All Qs) km/s",
+        "x_label": "wp1_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton thermal speed",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp1_fit_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": "(All Qs) km/s",
+        "x_label": "wp1_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Primary proton thermal speed, fit uncertainty",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "vp_fit_SC",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton bulk velocity, from 1-dimensional Maxwellian fitting, in the spacecraft frame (All Qualities)",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp_fit_xSC",
+          "vp_fit_ySC",
+          "vp_fit_zSC"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Proton bulk velocity in the spacecraft frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_fit_SC_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp_fit_xSC_uncertainty",
+          "vp_fit_ySC_uncertainty",
+          "vp_fit_zSC_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity, fit uncertainty in the spacecraft frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_fit_RTN",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton bulk velocity, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (All Qualities)",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp_fit_R",
+          "vp_fit_T",
+          "vp_fit_N"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Proton bulk velocity in RTN frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "vp_fit_RTN_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "vp_fit_R_uncertainty",
+          "vp_fit_T_uncertainty",
+          "vp_fit_N_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton bulk velocity, fit uncertainty in RTN frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "np_fit",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[Total] proton density, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "fill": "-1e+31",
+        "units": "(All Qs) cm^{-3}",
+        "x_label": "np_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton density",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "np_fit_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": "(All Qs) cm^{-3}",
+        "x_label": "np_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "proton density, fit uncertainty",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp_fit",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Proton radial [most probable] thermal speed component, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "fill": "-1e+31",
+        "units": "(All Qs) km/s",
+        "x_label": "wp_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "Proton bulk thermal speed",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wp_fit_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": "(All Qs) km/s",
+        "x_label": "wp_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "bulk proton thermal speed, fit uncertainty",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "va_fit_SC",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Alpha particle velocity vector, from 1-dimensional Maxwellian fitting, in the spacecraft frame (All Qualities)",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "va_fit_xSC",
+          "va_fit_ySC",
+          "va_fit_zSC"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle velocity in spacecraft frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "va_fit_SC_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "va_fit_xSC_uncertainty",
+          "va_fit_ySC_uncertainty",
+          "va_fit_zSC_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle velocity fit uncertainty the spacecraft frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "va_fit_RTN",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Alpha particle velocity vector, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (All Qualities)",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "va_fit_R",
+          "va_fit_T",
+          "va_fit_N"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle velocity in RTN frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "va_fit_RTN_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "va_fit_R_uncertainty",
+          "va_fit_T_uncertainty",
+          "va_fit_N_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle velocity fit uncertainty in the RTN frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "na_fit",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Alpha particle density, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "fill": "-1e+31",
+        "units": "(All Qs) cm^{-3}",
+        "x_label": "na_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle density",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "na_fit_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": "(All Qs) cm^{-3}",
+        "x_label": "na_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle density fit uncertainty",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wa_fit",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Alpha particle radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "fill": "-1e+31",
+        "units": "(All Qs) km/s",
+        "x_label": "wa_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle thermal speed",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "wa_fit_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": "(All Qs) km/s",
+        "x_label": "wa_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "alpha particle thermal speed fit uncertainty",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "v3_fit_SC",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Population 3 velocity vector, from 1-dimensional Maxwellian fitting, in the spacecraft frame (All Qualities)",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "v3_fit_xSC",
+          "v3_fit_ySC",
+          "v3_fit_zSC"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 velocity in spacecraft frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "v3_fit_SC_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "v3_fit_xSC_uncertainty",
+          "v3_fit_ySC_uncertainty",
+          "v3_fit_zSC_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 velocity uncertainty in spacecraft frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "v3_fit_RTN",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Population 3 velocity vector, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (All Qualities)",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "v3_fit_R",
+          "v3_fit_T",
+          "v3_fit_N"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 velocity in RTN frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "v3_fit_RTN_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_label": [
+          "v3_fit_R_uncertainty",
+          "v3_fit_T_uncertainty",
+          "v3_fit_N_uncertainty"
+        ],
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 velocity uncertainty in RTN frame",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "vector_index",
+            "description": "Comp No 1",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": "Comp No 1",
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "n3_fit",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Population 3 particle density, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "fill": "-1e+31",
+        "units": "(All Qs) cm^{-3}",
+        "x_label": "n3_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 particle density",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "n3_fit_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": "(All Qs) cm^{-3}",
+        "x_label": "n3_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 density, fit uncertainty",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "w3_fit",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Population 3 particle radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "fill": "-1e+31",
+        "units": "(All Qs) km/s",
+        "x_label": "w3_fit",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 thermal speed",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      },
+      {
+        "name": "w3_fit_uncertainty",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> 1-sigma error",
+        "fill": "-1e+31",
+        "units": "(All Qs) km/s",
+        "x_label": "w3_fit_uncertainty",
+        "x_format": ".2e",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "E12.2",
+        "x_cdf_FIELDNAM": "population 3 thermal speed, fit uncertainty",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch"
+      }
+    ]
+  }
+}

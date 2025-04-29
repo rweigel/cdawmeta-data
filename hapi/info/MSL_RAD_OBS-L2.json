@@ -1,0 +1,396 @@
+{
+  "id": "MSL_RAD_OBS-L2",
+  "title": "MSL/RAD Level 2 observational radiation data - D. Hassler (SwRI-Boulder)",
+  "info": {
+    "startDate": "2015-01-01T00:11:01.000Z",
+    "stopDate": "2025-03-09T23:52:33.000Z",
+    "sampleStartDate": "2025-03-08T00:12:19.000Z",
+    "sampleStopDate": "2025-03-08T23:46:23.000Z",
+    "cadence": "PT1021S",
+    "x_cadence_fraction": 0.43023255813953487,
+    "x_cadence_note": "Cadence based on variable 'EPOCH' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/msl/rad/cdf/obs-l2/2015/msl_rad_obs-l2_2015001_v00.cdf. This most common cadence occurred for 43.0233% of the 37 timesteps. Cadence = 1021000000000 [ns] = PT1021S.",
+    "maxRequestDuration": "PT4242200S",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MSL_RAD_OBS-L2",
+    "contact": "D. Hassler @ SwRI-Boulder",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 30,
+        "fill": null,
+        "x_description": "Epoch time tag",
+        "x_cdf_NAME": "EPOCH",
+        "x_cdf_DataType": "CDF_TIME_TT2000"
+      },
+      {
+        "name": "ALIVE_TIME_f",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[Quality filtered] Actual instrument observation time. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['ALIVE_TIME', 'FLAGGED_DATA']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "seconds (good Q)",
+        "x_label": "Alive Time",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Alive Time of detector electronics",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "ALIVE_TIME",
+          "FLAGGED_DATA"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH"
+      },
+      {
+        "name": "DOSIMETRY_TOTAL_f",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[Quality filtered] Radiation dose rate on Mars (recorded in Si, corrected for MMRTG contribution, and tissue-equivalent plastic). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['DOSIMETRY_TOTAL', 'FLAGGED_DATA']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "uGray/hr (good Q)",
+        "x_label": [
+          "Total Dose B",
+          "RTG Corrected Dose B",
+          "Total Dose E"
+        ],
+        "x_format": ".3f",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "f10.3",
+        "x_cdf_FIELDNAM": "Total Dose for B both total, and corrected for RTG background",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "DOSIMETRY_TOTAL",
+          "FLAGGED_DATA"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "DOSIMETRY_TIMESLICE_f",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[Quality filtered] Total Dose for an observation at 1/16th timeslice of an observation. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['DOSIMETRY_TIMESLICE', 'FLAGGED_DATA']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "uGray/hr (good Q)",
+        "x_label": [
+          [
+            "Intrv 0",
+            "Intrv 1",
+            "Intrv 2",
+            "Intrv 3",
+            "Intrv 4",
+            "Intrv 5",
+            "Intrv 6",
+            "Intrv 7",
+            "Intrv 8",
+            "Intrv 9",
+            "Intrv 10",
+            "Intrv 11",
+            "Intrv 12",
+            "Intrv 13",
+            "Intrv 14",
+            "Intrv 15"
+          ],
+          [
+            "Total Dose B",
+            "RTG Corrected Dose B",
+            "Total Dose E"
+          ]
+        ],
+        "x_format": ".3f",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "f10.3",
+        "x_cdf_FIELDNAM": "Total Dose for B and E in 1/16th time increments of an observation",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "DOSIMETRY_TIMESLICE",
+          "FLAGGED_DATA"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH",
+        "size": [
+          16,
+          3
+        ]
+      },
+      {
+        "name": "LET_A1A2_f",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "[Quality filtered] LET spectrum on Mars in Si (geometric factor ~ 0.9 cm^2 sr). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['LET_A1A2', 'FLAGGED_DATA']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "counts (good Q)",
+        "x_label": "LET A1+A2",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f10.2",
+        "x_cdf_FIELDNAM": "LET spectrum in silicon",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "LET_A1A2",
+          "FLAGGED_DATA"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH",
+        "size": [
+          52
+        ]
+      },
+      {
+        "name": "HISTOGRAM_NEUTRAL_DE_f",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "[Quality filtered] Neutral particle (neutrons + gamma rays) counts on Mars. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HISTOGRAM_NEUTRAL_DE', 'FLAGGED_DATA']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "counts (good Q)",
+        "x_label": "Neutral D+E",
+        "x_format": ".3f",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "f12.3",
+        "x_cdf_FIELDNAM": "Det. D + Det. E counts",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "HISTOGRAM_NEUTRAL_DE",
+          "FLAGGED_DATA"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH",
+        "size": [
+          96
+        ]
+      },
+      {
+        "name": "HISTOGRAM_NEUTRAL_D_f",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "[Quality filtered] Neutral particle counts in CsI. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HISTOGRAM_NEUTRAL_D', 'FLAGGED_DATA']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "counts (good Q)",
+        "x_label": "Neutral D",
+        "x_format": ".3f",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "f12.3",
+        "x_cdf_FIELDNAM": "Counts in Det. D",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "HISTOGRAM_NEUTRAL_D",
+          "FLAGGED_DATA"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH",
+        "size": [
+          96
+        ]
+      },
+      {
+        "name": "HISTOGRAM_NEUTRAL_E_f",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "[Quality filtered] Neutral particle counts in tissue-equivalent plastic. This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HISTOGRAM_NEUTRAL_E', 'FLAGGED_DATA']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "counts (good Q)",
+        "x_label": "Neutral E",
+        "x_format": ".3f",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "f12.3",
+        "x_cdf_FIELDNAM": "Counts in Det. E",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_filter_flag",
+        "x_cdf_COMPONENTS": [
+          "HISTOGRAM_NEUTRAL_E",
+          "FLAGGED_DATA"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH",
+        "size": [
+          96
+        ]
+      },
+      {
+        "name": "ALIVE_TIME",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[All quality] Actual instrument observation time",
+        "fill": "-1e+31",
+        "units": "seconds (All Q)",
+        "x_label": "Alive Time",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Alive Time of detector electronics",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH"
+      },
+      {
+        "name": "DOSIMETRY_TOTAL",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[All quality] Radiation dose rate on Mars (recorded in Si, corrected for MMRTG contribution, and tissue-equivalent plastic)",
+        "fill": "-1e+31",
+        "units": "uGray/hr (All Q)",
+        "x_label": [
+          "Total Dose B",
+          "RTG Corrected Dose B",
+          "Total Dose E"
+        ],
+        "x_format": ".3f",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "f10.3",
+        "x_cdf_FIELDNAM": "Total Dose for B both total, and corrected for RTG background",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH",
+        "size": [
+          3
+        ]
+      },
+      {
+        "name": "DOSIMETRY_TIMESLICE",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "[All quality] Total Dose for an observation at 1/16th timeslice of an observation",
+        "fill": "-1e+31",
+        "units": "uGray/hr (All Q)",
+        "x_label": [
+          [
+            "Intrv 0",
+            "Intrv 1",
+            "Intrv 2",
+            "Intrv 3",
+            "Intrv 4",
+            "Intrv 5",
+            "Intrv 6",
+            "Intrv 7",
+            "Intrv 8",
+            "Intrv 9",
+            "Intrv 10",
+            "Intrv 11",
+            "Intrv 12",
+            "Intrv 13",
+            "Intrv 14",
+            "Intrv 15"
+          ],
+          [
+            "Total Dose B",
+            "RTG Corrected Dose B",
+            "Total Dose E"
+          ]
+        ],
+        "x_format": ".3f",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "f10.3",
+        "x_cdf_FIELDNAM": "Total Dose for B and E in 1/16th time increments of an observation",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH",
+        "size": [
+          16,
+          3
+        ]
+      },
+      {
+        "name": "LET_A1A2",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "[All quality] LET spectrum on Mars in Si (geometric factor ~ 0.9 cm^2 sr)",
+        "fill": "-1e+31",
+        "units": "counts (All Q)",
+        "x_label": "LET A1+A2",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f10.2",
+        "x_cdf_FIELDNAM": "LET spectrum in silicon",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH",
+        "size": [
+          52
+        ]
+      },
+      {
+        "name": "HISTOGRAM_NEUTRAL_DE",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "[All quality] Neutral particle (neutrons + gamma rays) counts on Mars",
+        "fill": "-1e+31",
+        "units": "counts (All Q",
+        "x_label": "Neutral D+E",
+        "x_format": ".3f",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "f12.3",
+        "x_cdf_FIELDNAM": "Det. D + Det. E counts",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH",
+        "size": [
+          96
+        ]
+      },
+      {
+        "name": "HISTOGRAM_NEUTRAL_D",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "[All quality] Neutral particle counts in CsI",
+        "fill": "-1e+31",
+        "units": "counts (All Q)",
+        "x_label": "Neutral D",
+        "x_format": ".3f",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "f12.3",
+        "x_cdf_FIELDNAM": "Counts in Det. D",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH",
+        "size": [
+          96
+        ]
+      },
+      {
+        "name": "HISTOGRAM_NEUTRAL_E",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "[All quality] Neutral particle counts in tissue-equivalent plastic",
+        "fill": "-1e+31",
+        "units": "counts (All Q)",
+        "x_label": "Neutral E",
+        "x_format": ".3f",
+        "x_fractionDigits": "3",
+        "x_cdf_FORMAT": "f12.3",
+        "x_cdf_FIELDNAM": "Counts in Det. E",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "EPOCH",
+        "size": [
+          96
+        ]
+      },
+      {
+        "name": "FLAGGED_DATA",
+        "type": "string",
+        "x_cdf_DataType": "CDF_CHAR",
+        "description": "[NO PLOT] Quality indicator - flagged data has quality issues from various sources, Commanding, DAN activity, Other; no value=good",
+        "fill": null,
+        "units": "no value=good",
+        "x_label": "Flagged Data",
+        "x_cdf_FORMAT": "a16",
+        "x_cdf_FIELDNAM": "Flagged data should be removed for science",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "length": 80,
+        "x_cdf_DEPEND_0": "EPOCH"
+      }
+    ]
+  }
+}

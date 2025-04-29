@@ -1,0 +1,234 @@
+{
+  "id": "ELB_L1_EPDIF",
+  "title": "[UNCALIBRATED RAW DATA ONLY] Energetic Partical Detector Energy Particles, Ions>keV  - V. Angelopoulos (UCLA, IGPP/EPSS)",
+  "info": {
+    "startDate": "2019-05-22T04:42:13.000Z",
+    "stopDate": "2022-09-19T20:24:15.000Z",
+    "sampleStartDate": "2022-09-18T02:23:21.000Z",
+    "sampleStopDate": "2022-09-18T21:55:57.000Z",
+    "cadence": "PT0.375781S",
+    "x_cadence_fraction": 0.4750593824228028,
+    "x_cadence_note": "Cadence based on variable 'elb_pif_time' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/elfin/elfinb/l1/fast/ion/2019/elb_l1_epdif_20190522_v01.cdf. This most common cadence occurred for 47.5059% of the 600 timesteps. Cadence = 375781000 [ns] = PT0.375781S.",
+    "maxRequestDuration": "PT58630M",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ELB_L1_EPDIF",
+    "contact": "V. Angelopoulos @ UCLA, IGPP/EPSS",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 30,
+        "fill": null,
+        "x_description": "PIF Time in TT2000",
+        "x_cdf_NAME": "elb_pif_time",
+        "x_cdf_DataType": "CDF_TIME_TT2000"
+      },
+      {
+        "name": "elb_pif",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[ADC UNITS ONLY] L1 EPD Ion counts, Fast Mode",
+        "fill": "NaN",
+        "units": "raw counts",
+        "x_label": "Ion counts/sector",
+        "x_format": ".8f",
+        "x_fractionDigits": "8",
+        "x_cdf_FORMAT": "F12.8",
+        "x_cdf_FIELDNAM": "Ion Counts",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "elb_pif_time",
+        "size": [
+          16
+        ],
+        "bins": [
+          {
+            "name": "elb_pif_energies_mean",
+            "description": "Central energy bins associated with each of 16 EPD ion channels",
+            "centers": [
+              63.24549866,
+              97.979599,
+              138.56399536,
+              183.30299377,
+              238.11799622,
+              305.20498657,
+              385.1619873,
+              520.47998047,
+              752.99401855,
+              1081.67004395,
+              1529.70996094,
+              2121.32006836,
+              2893.95996094,
+              3728.61010742,
+              4906.12011719,
+              6500.0
+            ],
+            "x_label": "Central ion energy bins",
+            "units": "keV",
+            "unitsSchema": "VOUnits1.1",
+            "x_unitsOriginal": "keV"
+          }
+        ]
+      },
+      {
+        "name": "elb_pif_8",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> just bottom eight energies. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['elb_pif']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "raw counts",
+        "x_label": "Ion counts/sector",
+        "x_format": ".8f",
+        "x_fractionDigits": "8",
+        "x_cdf_FORMAT": "F12.8",
+        "x_cdf_FIELDNAM": "Ion Counts",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "elb_pif"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "elb_pif_time",
+        "size": [
+          16
+        ],
+        "bins": [
+          {
+            "name": "elb_pif_energies_mean",
+            "description": "Central energy bins associated with each of 16 EPD ion channels",
+            "centers": [
+              63.24549866,
+              97.979599,
+              138.56399536,
+              183.30299377,
+              238.11799622,
+              305.20498657,
+              385.1619873,
+              520.47998047,
+              752.99401855,
+              1081.67004395,
+              1529.70996094,
+              2121.32006836,
+              2893.95996094,
+              3728.61010742,
+              4906.12011719,
+              6500.0
+            ],
+            "x_label": "Central ion energy bins",
+            "units": "keV",
+            "unitsSchema": "VOUnits1.1",
+            "x_unitsOriginal": "keV"
+          }
+        ]
+      },
+      {
+        "name": "elb_pif_top8",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> just top eight energies. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['elb_pif']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "raw counts",
+        "x_label": "Ion counts/sector",
+        "x_format": ".8f",
+        "x_fractionDigits": "8",
+        "x_cdf_FORMAT": "F12.8",
+        "x_cdf_FIELDNAM": "Ion Counts",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "elb_pif"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "elb_pif_time",
+        "size": [
+          16
+        ],
+        "bins": [
+          {
+            "name": "elb_pif_energies_mean",
+            "description": "Central energy bins associated with each of 16 EPD ion channels",
+            "centers": [
+              63.24549866,
+              97.979599,
+              138.56399536,
+              183.30299377,
+              238.11799622,
+              305.20498657,
+              385.1619873,
+              520.47998047,
+              752.99401855,
+              1081.67004395,
+              1529.70996094,
+              2121.32006836,
+              2893.95996094,
+              3728.61010742,
+              4906.12011719,
+              6500.0
+            ],
+            "x_label": "Central ion energy bins",
+            "units": "keV",
+            "unitsSchema": "VOUnits1.1",
+            "x_unitsOriginal": "keV"
+          }
+        ]
+      },
+      {
+        "name": "elb_pif_sectnum",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT1",
+        "description": "Sector Number",
+        "fill": "0",
+        "units": "num sector",
+        "x_label": "Sector Number",
+        "x_cdf_FORMAT": "i2",
+        "x_cdf_FIELDNAM": "elb_pif_sectnum",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "elb_pif_time"
+      },
+      {
+        "name": "elb_pif_nspinsinsum",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT1",
+        "description": "number spins in sum",
+        "fill": "0",
+        "units": null,
+        "x_label": "Number Spins in sum",
+        "x_cdf_FORMAT": "i2",
+        "x_cdf_FIELDNAM": "elb_pif_nspinsinsum",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "elb_pif_time"
+      },
+      {
+        "name": "elb_pif_nsectors",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT1",
+        "description": "Number of Sectors",
+        "fill": "0",
+        "units": null,
+        "x_label": "Number Spins in sum",
+        "x_cdf_FORMAT": "i2",
+        "x_cdf_FIELDNAM": "elb_pif_nsectors",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "elb_pif_time"
+      },
+      {
+        "name": "elb_pif_spinper",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Spin Period",
+        "fill": "NaN",
+        "units": "sec",
+        "x_label": "spinper",
+        "x_format": ".8f",
+        "x_fractionDigits": "8",
+        "x_cdf_FORMAT": "F12.8",
+        "x_cdf_FIELDNAM": "elb_pif_spinper",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DEPEND_0": "elb_pif_time"
+      }
+    ]
+  }
+}

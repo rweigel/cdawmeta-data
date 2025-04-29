@@ -1,0 +1,1153 @@
+{
+  "id": "THD_L2_ESA@0",
+  "title": "THEMIS-D (P3): Electrostatic Analyzer (ESA): Electron/Ion Ground-Calculated Energy Fluxes (ions: 5 eV to 25 keV) electrons: 6 eV to 30 keV) and Moments (density, velocity, pressure, and temperature). Includes FULL, REDUCED and BURST modes. FULL: high angular resolution, low (few min) time resolution. REDUCED: degraded angular resolution, high (approx. 3 sec) time resolution. BURST: high angular resolution, high time resolution; only short bursts of data. Note that angular resolution affects moments since they are obtained integrating over the mode-specific angular distribution. - V. Angelopoulos, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
+  "info": {
+    "startDate": "2007-03-07T00:00:00.000Z",
+    "stopDate": "2025-03-11T00:00:00.000Z",
+    "sampleStartDate": "2025-03-09T00:00:00.000Z",
+    "sampleStopDate": "2025-03-10T00:00:00.000Z",
+    "maxRequestDuration": "P50D",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THD_L2_ESA",
+    "contact": "V. Angelopoulos, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 24,
+        "fill": null,
+        "x_description": "thd_peif_epoch",
+        "x_cdf_NAME": "thd_peif_epoch",
+        "x_cdf_DataType": "CDF_EPOCH"
+      },
+      {
+        "name": "thd_peif_data_quality",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT4",
+        "description": "ESA Full Mode Ion Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.) ",
+        "fill": "-2147483648",
+        "units": null,
+        "x_label": "Data_Quality_Flag_ion Full ESA-D",
+        "x_cdf_FORMAT": "i2",
+        "x_cdf_FIELDNAM": "Data_Quality_Flag_ion Full ESA-D",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch"
+      },
+      {
+        "name": "thd_peif_densityQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "(Good data only) ESA Full (High Angular Resolution, few minute time res.) Mode, Ion Density . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_density', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "cm^-3",
+        "x_label": "N_ion Full ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "N_ion Full ESA-D",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_density",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch"
+      },
+      {
+        "name": "thd_peif_avgtempQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Average Temperature . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_avgtemp', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": "T_ion Full ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "T_ion Full ESA-D",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_avgtemp",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch"
+      },
+      {
+        "name": "thd_peif_vthermalQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Thermal Velocity . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_vthermal', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": "Vth_ion Full ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Vth_ion Full ESA-D",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_vthermal",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch"
+      },
+      {
+        "name": "thd_peif_sc_potQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----SC Potential (Same time array as Full Ion ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_sc_pot', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "V",
+        "x_label": "Scpot_ion Full ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Scpot_ion Full ESA-D",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_sc_pot",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch"
+      },
+      {
+        "name": "thd_peif_en_efluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Energy Flux spectrogram w/ . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_en_eflux', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/(cm^2-s-sr-eV)",
+        "x_label": "Eflux_ion Full ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Eflux_ion Full ESA-D",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_en_eflux",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          32
+        ]
+      },
+      {
+        "name": "thd_peif_t3Q",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_t3', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "Tprp1_ion Full ESA-D",
+          "Tprp2_ion Full ESA-D",
+          "Tpar_ion Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar) ",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_t3",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_t3_compno",
+            "description": "thd_peif_t3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_ion Full ESA-D",
+              "Tprp2_ion Full ESA-D",
+              "Tpar_ion Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_magt3Q",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_magt3', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "Tprp1_ion FA Full ESA-D",
+          "Tprp2_ion FA Full ESA-D",
+          "Tpar_ion FA Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_magt3",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_magt3_compno",
+            "description": "thd_peif_magt3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_ion FA Full ESA-D",
+              "Tprp2_ion FA Full ESA-D",
+              "Tpar_ion FA Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_ptensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Pressure Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_ptens', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "Pxx_ion Full ESA-D",
+          "Pyy_ion Full ESA-D",
+          "Pzz_ion Full ESA-D",
+          "Pxy_ion Full ESA-D",
+          "Pxz_ion Full ESA-D",
+          "Pyz_ion Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Pressure Tensor",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_ptens",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_ptens_compno",
+            "description": "thd_peif_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_ion Full ESA-D",
+              "Pyy_ion Full ESA-D",
+              "Pzz_ion Full ESA-D",
+              "Pxy_ion Full ESA-D",
+              "Pxz_ion Full ESA-D",
+              "Pyz_ion Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_mftensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Momentum Flux Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_mftens', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "MFxx_ion Full ESA-D",
+          "MFyy_ion Full ESA-D",
+          "MFzz_ion Full ESA-D",
+          "MFxy_ion Full ESA-D",
+          "MFxz_ion Full ESA-D",
+          "MFyz_ion Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Momentum Flux Tensor",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_mftens",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_mftens_compno",
+            "description": "thd_peif_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "MFxx_ion Full ESA-D",
+              "MFyy_ion Full ESA-D",
+              "MFzz_ion Full ESA-D",
+              "MFxy_ion Full ESA-D",
+              "MFxz_ion Full ESA-D",
+              "MFyz_ion Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_fluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Particle Flux Vector /w Quality. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_flux', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "#/(cm^2-s)",
+        "x_label": [
+          "Fx_ion DSL Full ESA-D",
+          "Fy_ion DSL Full ESA-D",
+          "Fz_ion DSL Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Particle Flux Vector",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_flux",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_flux_compno",
+            "description": "thd_peif_flux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Fx_ion DSL Full ESA-D",
+              "Fy_ion DSL Full ESA-D",
+              "Fz_ion DSL Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_symmQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL)) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_symm', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "None",
+        "x_label": [
+          "Symm_xi Full ESA-D",
+          "Symm_yi Full ESA-D",
+          "Symm_zi Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Symmetry Vector (direction of pressure tensor symmetry (DSL)) ",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_symm",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_symm_compno",
+            "description": "thd_peif_symm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Symm_xi Full ESA-D",
+              "Symm_yi Full ESA-D",
+              "Symm_zi Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_symm_angQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Symmetry Angle (between symmetry direction and B) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_symm_ang', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "degrees",
+        "x_label": "symm_ang_ion Full ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Symmetry Angle (between symmetry direction and B)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_symm_ang",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch"
+      },
+      {
+        "name": "thd_peif_magfQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Magnetic Field Vector in DSL (Same time array as Full Ion ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_magf', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "nT",
+        "x_label": [
+          "Bx_ion DSL Full ESA-D",
+          "By_ion DSL Full ESA-D",
+          "Bz_ion DSL Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Full Ion ESA data)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_magf",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_magf_compno",
+            "description": "thd_peif_magf_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Bx_ion DSL Full ESA-D",
+              "By_ion DSL Full ESA-D",
+              "Bz_ion DSL Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_velocity_dslQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in DSL . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_velocity_dsl', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_ion DSL Full ESA-D",
+          "Vy_ion DSL Full ESA-D",
+          "Vz_ion DSL Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Velocity Vector in DSL",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_velocity_dsl",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_velocity_dsl_compno",
+            "description": "thd_peif_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion DSL Full ESA-D",
+              "Vy_ion DSL Full ESA-D",
+              "Vz_ion DSL Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_velocity_gseQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in GSE . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_velocity_gse', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_ion GSE Full ESA-D",
+          "Vy_ion GSE Full ESA-D",
+          "Vz_ion GSE Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Velocity Vector in GSE",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_velocity_gse",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_velocity_gse_compno",
+            "description": "thd_peif_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion GSE Full ESA-D",
+              "Vy_ion GSE Full ESA-D",
+              "Vz_ion GSE Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_velocity_gsmQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in GSM. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peif_velocity_gsm', 'thd_peif_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_ion GSM Full ESA-D",
+          "Vy_ion GSM Full ESA-D",
+          "Vz_ion GSM Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Velocity Vector in GSM",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peif_velocity_gsm",
+          "thd_peif_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_velocity_gsm_compno",
+            "description": "thd_peif_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion GSM Full ESA-D",
+              "Vy_ion GSM Full ESA-D",
+              "Vz_ion GSM Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_density",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "(All qualities data) ESA Full (High Angular Resolution, few minute time res.) Mode, Ion Density",
+        "fill": "NaN",
+        "units": "cm^-3 (All Qs)",
+        "x_label": "N_ion Full ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "N_ion Full ESA-D (all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch"
+      },
+      {
+        "name": "thd_peif_avgtemp",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Average Temperature",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": "T_ion Full ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "T_ion Full ESA-D(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch"
+      },
+      {
+        "name": "thd_peif_vthermal",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Thermal Velocity",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": "Vth_ion Full ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Vth_ion Full ESA-D(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch"
+      },
+      {
+        "name": "thd_peif_sc_pot",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----SC Potential (Same time array as Full Ion ESA data)",
+        "fill": "NaN",
+        "units": "V (All Qs)",
+        "x_label": "Scpot_ion Full ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Scpot_ion Full ESA-D(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch"
+      },
+      {
+        "name": "thd_peif_en_eflux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Energy Flux spectrogram",
+        "fill": "NaN",
+        "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+        "x_label": "Eflux_ion Full ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Eflux_ion Full ESA-D(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          32
+        ]
+      },
+      {
+        "name": "thd_peif_t3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": [
+          "Tprp1_ion Full ESA-D",
+          "Tprp2_ion Full ESA-D",
+          "Tpar_ion Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_t3_compno",
+            "description": "thd_peif_t3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_ion Full ESA-D",
+              "Tprp2_ion Full ESA-D",
+              "Tpar_ion Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_magt3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": [
+          "Tprp1_ion FA Full ESA-D",
+          "Tprp2_ion FA Full ESA-D",
+          "Tpar_ion FA Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_magt3_compno",
+            "description": "thd_peif_magt3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_ion FA Full ESA-D",
+              "Tprp2_ion FA Full ESA-D",
+              "Tpar_ion FA Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_ptens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Pressure Tensor",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "Pxx_ion Full ESA-D",
+          "Pyy_ion Full ESA-D",
+          "Pzz_ion Full ESA-D",
+          "Pxy_ion Full ESA-D",
+          "Pxz_ion Full ESA-D",
+          "Pyz_ion Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Pressure Tensor(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_ptens_compno",
+            "description": "thd_peif_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_ion Full ESA-D",
+              "Pyy_ion Full ESA-D",
+              "Pzz_ion Full ESA-D",
+              "Pxy_ion Full ESA-D",
+              "Pxz_ion Full ESA-D",
+              "Pyz_ion Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_mftens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Momentum Flux Tensor",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "MFxx_ion Full ESA-D",
+          "MFyy_ion Full ESA-D",
+          "MFzz_ion Full ESA-D",
+          "MFxy_ion Full ESA-D",
+          "MFxz_ion Full ESA-D",
+          "MFyz_ion Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Momentum Flux Tensor(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_mftens_compno",
+            "description": "thd_peif_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "MFxx_ion Full ESA-D",
+              "MFyy_ion Full ESA-D",
+              "MFzz_ion Full ESA-D",
+              "MFxy_ion Full ESA-D",
+              "MFxz_ion Full ESA-D",
+              "MFyz_ion Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_flux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Particle Flux Vector",
+        "fill": "NaN",
+        "units": "#/(cm^2-s) (All Qs)",
+        "x_label": [
+          "Fx_ion DSL Full ESA-D",
+          "Fy_ion DSL Full ESA-D",
+          "Fz_ion DSL Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Particle Flux Vector(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_flux_compno",
+            "description": "thd_peif_flux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Fx_ion DSL Full ESA-D",
+              "Fy_ion DSL Full ESA-D",
+              "Fz_ion DSL Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_symm",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL)) ",
+        "fill": "NaN",
+        "units": "None (All Qs)",
+        "x_label": [
+          "Symm_xi Full ESA-D",
+          "Symm_yi Full ESA-D",
+          "Symm_zi Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_symm_compno",
+            "description": "thd_peif_symm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Symm_xi Full ESA-D",
+              "Symm_yi Full ESA-D",
+              "Symm_zi Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_symm_ang",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
+        "fill": "NaN",
+        "units": "degrees (All Qs)",
+        "x_label": "symm_ang_ion Full ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "symm_ang_ion Full ESA-D(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch"
+      },
+      {
+        "name": "thd_peif_magf",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Magnetic Field Vector in DSL (Same time array as Full Ion ESA data)",
+        "fill": "NaN",
+        "units": "nT (All Qs)",
+        "x_label": [
+          "Bx_ion DSL Full ESA-D",
+          "By_ion DSL Full ESA-D",
+          "Bz_ion DSL Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Full Ion ESA data)(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_magf_compno",
+            "description": "thd_peif_magf_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Bx_ion DSL Full ESA-D",
+              "By_ion DSL Full ESA-D",
+              "Bz_ion DSL Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_velocity_dsl",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in DSL",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_ion DSL Full ESA-D",
+          "Vy_ion DSL Full ESA-D",
+          "Vz_ion DSL Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Velocity Vector in DSL(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_velocity_dsl_compno",
+            "description": "thd_peif_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion DSL Full ESA-D",
+              "Vy_ion DSL Full ESA-D",
+              "Vz_ion DSL Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_velocity_gse",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in GSE",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_ion GSE Full ESA-D",
+          "Vy_ion GSE Full ESA-D",
+          "Vz_ion GSE Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Velocity Vector in GSE(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_velocity_gse_compno",
+            "description": "thd_peif_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion GSE Full ESA-D",
+              "Vy_ion GSE Full ESA-D",
+              "Vz_ion GSE Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peif_velocity_gsm",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in GSM",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_ion GSM Full ESA-D",
+          "Vy_ion GSM Full ESA-D",
+          "Vz_ion GSM Full ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Velocity Vector in GSM(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peif_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peif_velocity_gsm_compno",
+            "description": "thd_peif_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion GSM Full ESA-D",
+              "Vy_ion GSM Full ESA-D",
+              "Vz_ion GSM Full ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      }
+    ]
+  }
+}

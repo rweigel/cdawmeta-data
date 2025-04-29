@@ -1,0 +1,70 @@
+{
+  "id": "ERG_LEPE_L2_OMNIFLUX",
+  "title": "Low-Energy Particle experiments - electron analyzer (LEP-e) Level 2 omni electron flux data, ARASE/ERG - Shiang-Yu Wang (Academia Sinica, Taiwan)",
+  "info": {
+    "startDate": "2016-12-22T22:26:43.000Z",
+    "stopDate": "2023-12-31T23:59:35.000Z",
+    "sampleStartDate": "2023-12-29T23:59:50.000Z",
+    "sampleStopDate": "2023-12-30T23:59:48.000Z",
+    "cadence": "PT8.000118S",
+    "x_cadence_fraction": 0.0971649806419383,
+    "x_cadence_note": "Cadence based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/erg/lepe/l2/omniflux/2018/erg_lepe_l2_omniflux_20180301_v04_01.cdf. This most common cadence occurred for 9.7165% of the 778 timesteps. Cadence = 8000118000 [ns] = PT8.000118S.",
+    "maxRequestDuration": "PT4319900S",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ERG_LEPE_L2_OMNIFLUX",
+    "contact": "Shiang-Yu Wang @ Academia Sinica, Taiwan",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 30,
+        "fill": null,
+        "x_description": "Time, Beginning of spin",
+        "x_cdf_NAME": "Epoch",
+        "x_cdf_DataType": "CDF_TIME_TT2000"
+      },
+      {
+        "name": "FEDO",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "FEDO: Omni-directional electron number flux",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-eV",
+        "x_label": "e- OMNI Nflux",
+        "x_format": ".4e",
+        "x_fractionDigits": "4",
+        "x_cdf_FORMAT": "E20.4",
+        "x_cdf_FIELDNAM": "FEDO",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          32
+        ]
+      },
+      {
+        "name": "FEDO_T",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> FEDO as stacked time series. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FEDO']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "-1e+31",
+        "units": "#/s-cm2-sr-eV",
+        "x_label": "e- OMNI Nflux",
+        "x_format": ".4e",
+        "x_fractionDigits": "4",
+        "x_cdf_FORMAT": "E20.4",
+        "x_cdf_FIELDNAM": "FEDO",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "FEDO"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          32
+        ]
+      }
+    ]
+  }
+}

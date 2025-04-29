@@ -1,0 +1,148 @@
+{
+  "id": "WI_SOSP_3DP",
+  "title": "Proton omnidirectional fluxes 70 keV - 6.8 MeV, often at 24 sec, SST Open, Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+  "info": {
+    "startDate": "1994-11-15T12:56:18.000Z",
+    "stopDate": "2025-02-18T23:59:49.000Z",
+    "sampleStartDate": "2025-02-17T00:00:08.000Z",
+    "sampleStopDate": "2025-02-17T23:59:56.000Z",
+    "maxRequestDuration": "PT71990M",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_SOSP_3DP",
+    "contact": "R. Lin/S. Bale @ UC Berkeley",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 24,
+        "fill": null,
+        "x_description": "Time, Centered",
+        "x_cdf_NAME": "Epoch",
+        "x_cdf_DataType": "CDF_EPOCH"
+      },
+      {
+        "name": "FLUX",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "Proton number flux 70 keV - 6.8 MeV as a function of energy in 9 channels (spectrogram)",
+        "fill": "NaN",
+        "units": " #/cm2-ster-eV-sec",
+        "x_label": "Proton_No_Flux",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Proton Number Flux",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          9
+        ]
+      },
+      {
+        "name": "FLUX_STACKED",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> As a stacked plot. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FLUX']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": " #/cm2-ster-eV-sec",
+        "x_label": "Proton_No_Flux",
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Proton Number Flux",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "FLUX"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          9
+        ]
+      },
+      {
+        "name": "FLUX_SIMPLE",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> As simple time series. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['FLUX']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": " #/cm2-ster-eV-sec",
+        "x_label": [
+          "ProtonNoFlux_Ch1_Often~70keV",
+          "ProtonNoFlux_Ch2_Often~130keV",
+          "ProtonNoFlux_Ch3_Often~210keV",
+          "ProtonNoFlux_Ch4_Often~330keV",
+          "ProtonNoFlux_Ch5_Often~550keV",
+          "ProtonNoFlux_Ch6_Often~1000keV",
+          "ProtonNoFlux_Ch7_Often~2100keV",
+          "ProtonNoFlux_Ch8_Often~4400keV",
+          "ProtonNoFlux_Ch9_Often~6800keV"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f8.2",
+        "x_cdf_FIELDNAM": "Proton Number Flux",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "FLUX"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          9
+        ]
+      },
+      {
+        "name": "ENERGY_filled",
+        "type": "double",
+        "x_cdf_DataType": "CDF_FLOAT",
+        "description": "---> Time-varying proton energies in 9 channels. This variable is a 'virtual' variable that is computed using the function fix_sparse (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['ENERGY']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "EnergyCh1_Often~70000eV",
+          "EnergyCh2_Often~130000eV",
+          "EnergyCh3_Often~210000eV",
+          "EnergyCh4_Often~330000eV",
+          "EnergyCh5_Often~550000eV",
+          "EnergyCh6_Often~1000000eV",
+          "EnergyCh7_Often~2100000eV",
+          "EnergyCh8_Often~4400000eV",
+          "EnergyCh9_Often~6800000eV"
+        ],
+        "x_format": ".2f",
+        "x_fractionDigits": "2",
+        "x_cdf_FORMAT": "f10.2",
+        "x_cdf_FIELDNAM": "Energy",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "fix_sparse",
+        "x_cdf_COMPONENTS": [
+          "ENERGY"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "Epoch",
+        "size": [
+          9
+        ]
+      },
+      {
+        "name": "TIME",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "UNIX time; seconds since January 1, 1970",
+        "fill": "NaN",
+        "units": "sec since 1-1-70",
+        "x_label": "Time",
+        "x_format": ".0g",
+        "x_fractionDigits": "0",
+        "x_cdf_FORMAT": "g12.0",
+        "x_cdf_FIELDNAM": "UNIX  time",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DEPEND_0": "Epoch"
+      }
+    ]
+  }
+}

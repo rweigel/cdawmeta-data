@@ -1,0 +1,234 @@
+{
+  "id": "ELB_L1_EPDEF",
+  "title": "Energetic Particle Detector, Counts, Electrons>keV [UNCALIBRATED RAW DATA]  - V. Angelopoulos (UCLA, IGPP/EPSS)",
+  "info": {
+    "startDate": "2019-05-22T04:42:13.000Z",
+    "stopDate": "2022-09-24T08:12:01.000Z",
+    "sampleStartDate": "2022-09-23T08:11:57.000Z",
+    "sampleStopDate": "2022-09-23T08:17:58.000Z",
+    "cadence": "PT0.375781S",
+    "x_cadence_fraction": 0.4843592330978809,
+    "x_cadence_note": "Cadence based on variable 'elb_pef_time' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/elfin/elfinb/l1/fast/electron/2019/elb_l1_epdef_20190522_v01.cdf. This most common cadence occurred for 48.4359% of the 480 timesteps. Cadence = 375781000 [ns] = PT0.375781S.",
+    "maxRequestDuration": "PT5H50S",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ELB_L1_EPDEF",
+    "contact": "V. Angelopoulos @ UCLA, IGPP/EPSS",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 30,
+        "fill": null,
+        "x_description": "PEF Time in TT2000",
+        "x_cdf_NAME": "elb_pef_time",
+        "x_cdf_DataType": "CDF_TIME_TT2000"
+      },
+      {
+        "name": "elb_pef",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "[ADC UNITS ONLY] L1 EPD Electron counts, Fast Mode - all 16 energies",
+        "fill": "NaN",
+        "units": "raw counts",
+        "x_label": "Electron counts/sector",
+        "x_format": ".8f",
+        "x_fractionDigits": "8",
+        "x_cdf_FORMAT": "F12.8",
+        "x_cdf_FIELDNAM": "Electron Counts",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "elb_pef_time",
+        "size": [
+          16
+        ],
+        "bins": [
+          {
+            "name": "elb_pef_energies_mean",
+            "description": "Central energy bins for each of 16 EPD electron channels",
+            "centers": [
+              63.24549866,
+              97.979599,
+              138.56399536,
+              183.30299377,
+              238.11799622,
+              305.20498657,
+              385.1619873,
+              520.47998047,
+              752.99401855,
+              1081.67004395,
+              1529.70996094,
+              2121.32006836,
+              2893.95996094,
+              3728.61010742,
+              4906.12011719,
+              6500.0
+            ],
+            "x_label": "Central electron energy bins",
+            "units": "keV",
+            "unitsSchema": "VOUnits1.1",
+            "x_unitsOriginal": "keV"
+          }
+        ]
+      },
+      {
+        "name": "elb_pef_8",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> just bottom eight energies. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['elb_pef']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "raw counts",
+        "x_label": "Electron counts/sector",
+        "x_format": ".8f",
+        "x_fractionDigits": "8",
+        "x_cdf_FORMAT": "F12.8",
+        "x_cdf_FIELDNAM": "Electron Counts",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "elb_pef"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "elb_pef_time",
+        "size": [
+          16
+        ],
+        "bins": [
+          {
+            "name": "elb_pef_energies_mean",
+            "description": "Central energy bins for each of 16 EPD electron channels",
+            "centers": [
+              63.24549866,
+              97.979599,
+              138.56399536,
+              183.30299377,
+              238.11799622,
+              305.20498657,
+              385.1619873,
+              520.47998047,
+              752.99401855,
+              1081.67004395,
+              1529.70996094,
+              2121.32006836,
+              2893.95996094,
+              3728.61010742,
+              4906.12011719,
+              6500.0
+            ],
+            "x_label": "Central electron energy bins",
+            "units": "keV",
+            "unitsSchema": "VOUnits1.1",
+            "x_unitsOriginal": "keV"
+          }
+        ]
+      },
+      {
+        "name": "elb_pef_top8",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "---> just top eight energies . This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['elb_pef']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "raw counts",
+        "x_label": "Electron counts/sector",
+        "x_format": ".8f",
+        "x_fractionDigits": "8",
+        "x_cdf_FORMAT": "F12.8",
+        "x_cdf_FIELDNAM": "Electron Counts",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "alternate_view",
+        "x_cdf_COMPONENTS": [
+          "elb_pef"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "elb_pef_time",
+        "size": [
+          16
+        ],
+        "bins": [
+          {
+            "name": "elb_pef_energies_mean",
+            "description": "Central energy bins for each of 16 EPD electron channels",
+            "centers": [
+              63.24549866,
+              97.979599,
+              138.56399536,
+              183.30299377,
+              238.11799622,
+              305.20498657,
+              385.1619873,
+              520.47998047,
+              752.99401855,
+              1081.67004395,
+              1529.70996094,
+              2121.32006836,
+              2893.95996094,
+              3728.61010742,
+              4906.12011719,
+              6500.0
+            ],
+            "x_label": "Central electron energy bins",
+            "units": "keV",
+            "unitsSchema": "VOUnits1.1",
+            "x_unitsOriginal": "keV"
+          }
+        ]
+      },
+      {
+        "name": "elb_pef_sectnum",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT1",
+        "description": "Sector Number",
+        "fill": "-128",
+        "units": "num sector",
+        "x_label": "Sector Number",
+        "x_cdf_FORMAT": "i2",
+        "x_cdf_FIELDNAM": "elb_pef_sectnum",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "elb_pef_time"
+      },
+      {
+        "name": "elb_pef_nspinsinsum",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT1",
+        "description": "number spins in sum",
+        "fill": "-128",
+        "units": "num spins in sum",
+        "x_label": "Number Spins in Sum",
+        "x_cdf_FORMAT": "i2",
+        "x_cdf_FIELDNAM": "elb_pef_spin_nspinsinsum",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "elb_pef_time"
+      },
+      {
+        "name": "elb_pef_nsectors",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT1",
+        "description": "Number of Sectors",
+        "fill": "-128",
+        "units": "num sectors",
+        "x_label": "Number of sectors",
+        "x_cdf_FORMAT": "i2",
+        "x_cdf_FIELDNAM": "elb_pef_nsectors",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "elb_pef_time"
+      },
+      {
+        "name": "elb_pef_spinper",
+        "type": "double",
+        "x_cdf_DataType": "CDF_REAL4",
+        "description": "Spin Period",
+        "fill": "NaN",
+        "units": "sec",
+        "x_label": "spinper",
+        "x_format": ".8f",
+        "x_fractionDigits": "8",
+        "x_cdf_FORMAT": "F12.8",
+        "x_cdf_FIELDNAM": "elb_pef_spinper",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DEPEND_0": "elb_pef_time"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1153 @@
+{
+  "id": "THD_L2_ESA@4",
+  "title": "THEMIS-D (P3): Electrostatic Analyzer (ESA): Electron/Ion Ground-Calculated Energy Fluxes (ions: 5 eV to 25 keV) electrons: 6 eV to 30 keV) and Moments (density, velocity, pressure, and temperature). Includes FULL, REDUCED and BURST modes. FULL: high angular resolution, low (few min) time resolution. REDUCED: degraded angular resolution, high (approx. 3 sec) time resolution. BURST: high angular resolution, high time resolution; only short bursts of data. Note that angular resolution affects moments since they are obtained integrating over the mode-specific angular distribution. - V. Angelopoulos, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
+  "info": {
+    "startDate": "2007-03-07T00:00:00.000Z",
+    "stopDate": "2025-03-11T00:00:00.000Z",
+    "sampleStartDate": "2025-03-09T00:00:00.000Z",
+    "sampleStopDate": "2025-03-10T00:00:00.000Z",
+    "maxRequestDuration": "P50D",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THD_L2_ESA",
+    "contact": "V. Angelopoulos, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
+    "parameters": [
+      {
+        "name": "Time",
+        "type": "isotime",
+        "units": "UTC",
+        "length": 24,
+        "fill": null,
+        "x_description": "thd_peib_epoch",
+        "x_cdf_NAME": "thd_peib_epoch",
+        "x_cdf_DataType": "CDF_EPOCH"
+      },
+      {
+        "name": "thd_peib_data_quality",
+        "type": "integer",
+        "x_cdf_DataType": "CDF_INT4",
+        "description": "ESA Burst Mode, Ion Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.) ",
+        "fill": "-2147483648",
+        "units": null,
+        "x_label": "Data_Quality_Flag_ion Brst ESA-D",
+        "x_cdf_FORMAT": "i2",
+        "x_cdf_FIELDNAM": "Data_Quality_Flag_ion Brst ESA-D",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch"
+      },
+      {
+        "name": "thd_peib_densityQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "(Good data only) ESA Burst (High Time and Angular Resolution) Mode, Ion Density. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_density', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "cm^-3",
+        "x_label": "N_ion Brst ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "N_ion Brst ESA-D",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_density",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch"
+      },
+      {
+        "name": "thd_peib_avgtempQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Average Temperature . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_avgtemp', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": "T_ion Brst ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "T_ion Brst ESA-D",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_avgtemp",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch"
+      },
+      {
+        "name": "thd_peib_vthermalQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Thermal Velocity . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_vthermal', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": "Vth_ion Brst ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Vth_ion Brst ESA-D",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_vthermal",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch"
+      },
+      {
+        "name": "thd_peib_sc_potW",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----SC Potential (Same time array as Burst Ion ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_sc_pot', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "V",
+        "x_label": "Scpot_ion Brst ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Scpot_ion Brst ESA-D",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_sc_pot",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch"
+      },
+      {
+        "name": "thd_peib_en_efluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Energy Flux spectrogram  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_en_eflux', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/(cm^2-s-sr-eV)",
+        "x_label": "Eflux_ion Brst ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Eflux_ion Brst ESA-D",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_en_eflux",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          32
+        ]
+      },
+      {
+        "name": "thd_peib_t3Q",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_t3', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "Tprp1_ion Brst ESA-D",
+          "Tprp2_ion Brst ESA-D",
+          "Tpar_ion Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_t3",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_t3_compno",
+            "description": "thd_peib_t3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_ion Brst ESA-D",
+              "Tprp2_ion Brst ESA-D",
+              "Tpar_ion Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_magt3Q",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_magt3', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV",
+        "x_label": [
+          "Tprp1_ion FA Brst ESA-D",
+          "Tprp2_ion FA Brst ESA-D",
+          "Tpar_ion FA Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_magt3",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_magt3_compno",
+            "description": "thd_peib_magt3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_ion FA Brst ESA-D",
+              "Tprp2_ion FA Brst ESA-D",
+              "Tpar_ion FA Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_ptensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Pressure Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_ptens', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "Pxx_ion Brst ESA-D",
+          "Pyy_ion Brst ESA-D",
+          "Pzz_ion Brst ESA-D",
+          "Pxy_ion Brst ESA-D",
+          "Pxz_ion Brst ESA-D",
+          "Pyz_ion Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Pressure Tensor",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_ptens",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_ptens_compno",
+            "description": "thd_peib_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_ion Brst ESA-D",
+              "Pyy_ion Brst ESA-D",
+              "Pzz_ion Brst ESA-D",
+              "Pxy_ion Brst ESA-D",
+              "Pxz_ion Brst ESA-D",
+              "Pyz_ion Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_mftensQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Momentum Flux Tensor . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_mftens', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "eV/cm^3",
+        "x_label": [
+          "MFxx_ion Brst ESA-D",
+          "MFyy_ion Brst ESA-D",
+          "MFzz_ion Brst ESA-D",
+          "MFxy_ion Brst ESA-D",
+          "MFxz_ion Brst ESA-D",
+          "MFyz_ion Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Momentum Flux Tensor",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_mftens",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_mftens_compno",
+            "description": "thd_peib_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "MFxx_ion Brst ESA-D",
+              "MFyy_ion Brst ESA-D",
+              "MFzz_ion Brst ESA-D",
+              "MFxy_ion Brst ESA-D",
+              "MFxz_ion Brst ESA-D",
+              "MFyz_ion Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_fluxQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Particle Flux Vector . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_flux', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "#/(cm^2-s)",
+        "x_label": [
+          "Fx_ion DSL Brst ESA-D",
+          "Fy_ion DSL Brst ESA-D",
+          "Fz_ion DSL Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Particle Flux Vector",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_flux",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_flux_compno",
+            "description": "thd_peib_flux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Fx_ion DSL Brst ESA-D",
+              "Fy_ion DSL Brst ESA-D",
+              "Fz_ion DSL Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_symmQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_symm', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "None",
+        "x_label": [
+          "Symm_xi Brst ESA-D",
+          "Symm_yi Brst ESA-D",
+          "Symm_zi Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Symmetry Vector (direction of pressure tensor symmetry (DSL)) ",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_symm",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_symm_compno",
+            "description": "thd_peib_symm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Symm_xi Brst ESA-D",
+              "Symm_yi Brst ESA-D",
+              "Symm_zi Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_symm_angQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Symmetry Angle (between symmetry direction and B) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_symm_ang', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "degrees",
+        "x_label": "symm_ang_ion Brst ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Symmetry Angle (between symmetry direction and B)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_symm_ang",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch"
+      },
+      {
+        "name": "thd_peib_magfQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Ion ESA data) . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_magf', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "nT",
+        "x_label": [
+          "Bx_ion DSL Brst ESA-D",
+          "By_ion DSL Brst ESA-D",
+          "Bz_ion DSL Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Burst Ion ESA data)",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_magf",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_magf_compno",
+            "description": "thd_peib_magf_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Bx_ion DSL Brst ESA-D",
+              "By_ion DSL Brst ESA-D",
+              "Bz_ion DSL Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_velocity_dslQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in DSL  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_velocity_dsl', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_ion DSL Brst ESA-D",
+          "Vy_ion DSL Brst ESA-D",
+          "Vz_ion DSL Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Velocity Vector in DSL",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_velocity_dsl",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_velocity_dsl_compno",
+            "description": "thd_peib_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion DSL Brst ESA-D",
+              "Vy_ion DSL Brst ESA-D",
+              "Vz_ion DSL Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_velocity_gseQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in GSE  . This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_velocity_gse', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_ion GSE Brst ESA-D",
+          "Vy_ion GSE Brst ESA-D",
+          "Vz_ion GSE Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Velocity Vector in GSE",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_velocity_gse",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_velocity_gse_compno",
+            "description": "thd_peib_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion GSE Brst ESA-D",
+              "Vy_ion GSE Brst ESA-D",
+              "Vz_ion GSE Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_velocity_gsmQ",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in GSM. This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thd_peib_velocity_gsm', 'thd_peib_data_quality']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "fill": "NaN",
+        "units": "km/s",
+        "x_label": [
+          "Vx_ion GSM Brst ESA-D",
+          "Vy_ion GSM Brst ESA-D",
+          "Vz_ion GSM Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Velocity Vector in GSM",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "apply_esa_qflag",
+        "x_cdf_COMPONENTS": [
+          "thd_peib_velocity_gsm",
+          "thd_peib_data_quality"
+        ],
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_velocity_gsm_compno",
+            "description": "thd_peib_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion GSM Brst ESA-D",
+              "Vy_ion GSM Brst ESA-D",
+              "Vz_ion GSM Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_density",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "(All qualities data) ESA Burst (High Time and Angular Resolution) Mode, Ion Density",
+        "fill": "NaN",
+        "units": "cm^-3 (All Qs)",
+        "x_label": "N_ion Brst ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "N_ion Brst ESA-D(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch"
+      },
+      {
+        "name": "thd_peib_avgtemp",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Average Temperature",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": "T_ion Brst ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "T_ion Brst ESA-D(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch"
+      },
+      {
+        "name": "thd_peib_vthermal",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Thermal Velocity",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": "Vth_ion Brst ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Vth_ion Brst ESA-D(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch"
+      },
+      {
+        "name": "thd_peib_sc_pot",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----SC Potential (Same time array as Burst Ion ESA data)",
+        "fill": "NaN",
+        "units": "V (All Qs)",
+        "x_label": "Scpot_ion Brst ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Scpot_ion Brst ESA-D(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch"
+      },
+      {
+        "name": "thd_peib_en_eflux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Energy Flux spectrogram",
+        "fill": "NaN",
+        "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+        "x_label": "Eflux_ion Brst ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Eflux_ion Brst ESA-D(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          32
+        ]
+      },
+      {
+        "name": "thd_peib_t3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": [
+          "Tprp1_ion Brst ESA-D",
+          "Tprp2_ion Brst ESA-D",
+          "Tpar_ion Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_t3_compno",
+            "description": "thd_peib_t3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_ion Brst ESA-D",
+              "Tprp2_ion Brst ESA-D",
+              "Tpar_ion Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_magt3",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+        "fill": "NaN",
+        "units": "eV (All Qs)",
+        "x_label": [
+          "Tprp1_ion FA Brst ESA-D",
+          "Tprp2_ion FA Brst ESA-D",
+          "Tpar_ion FA Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_magt3_compno",
+            "description": "thd_peib_magt3_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Tprp1_ion FA Brst ESA-D",
+              "Tprp2_ion FA Brst ESA-D",
+              "Tpar_ion FA Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_ptens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Pressure Tensor",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "Pxx_ion Brst ESA-D",
+          "Pyy_ion Brst ESA-D",
+          "Pzz_ion Brst ESA-D",
+          "Pxy_ion Brst ESA-D",
+          "Pxz_ion Brst ESA-D",
+          "Pyz_ion Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Pressure Tensor(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_ptens_compno",
+            "description": "thd_peib_ptens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "Pxx_ion Brst ESA-D",
+              "Pyy_ion Brst ESA-D",
+              "Pzz_ion Brst ESA-D",
+              "Pxy_ion Brst ESA-D",
+              "Pxz_ion Brst ESA-D",
+              "Pyz_ion Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_mftens",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Momentum Flux Tensor",
+        "fill": "NaN",
+        "units": "eV/cm^3 (All Qs)",
+        "x_label": [
+          "MFxx_ion Brst ESA-D",
+          "MFyy_ion Brst ESA-D",
+          "MFzz_ion Brst ESA-D",
+          "MFxy_ion Brst ESA-D",
+          "MFxz_ion Brst ESA-D",
+          "MFyz_ion Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Momentum Flux Tensor(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          6
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_mftens_compno",
+            "description": "thd_peib_mftens_compno",
+            "centers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "x_label": [
+              "MFxx_ion Brst ESA-D",
+              "MFyy_ion Brst ESA-D",
+              "MFzz_ion Brst ESA-D",
+              "MFxy_ion Brst ESA-D",
+              "MFxz_ion Brst ESA-D",
+              "MFyz_ion Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_flux",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Particle Flux Vector",
+        "fill": "NaN",
+        "units": "#/(cm^2-s) (All Qs)",
+        "x_label": [
+          "Fx_ion DSL Brst ESA-D",
+          "Fy_ion DSL Brst ESA-D",
+          "Fz_ion DSL Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Particle Flux Vector(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_flux_compno",
+            "description": "thd_peib_flux_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Fx_ion DSL Brst ESA-D",
+              "Fy_ion DSL Brst ESA-D",
+              "Fz_ion DSL Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_symm",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL)) ",
+        "fill": "NaN",
+        "units": "None (All Qs)",
+        "x_label": [
+          "Symm_xi Brst ESA-D",
+          "Symm_yi Brst ESA-D",
+          "Symm_zi Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))(all qualities) ",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_symm_compno",
+            "description": "thd_peib_symm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Symm_xi Brst ESA-D",
+              "Symm_yi Brst ESA-D",
+              "Symm_zi Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_symm_ang",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
+        "fill": "NaN",
+        "units": "degrees (All Qs)",
+        "x_label": "symm_ang_ion Brst ESA-D",
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "symm_ang_ion Brst ESA-D(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch"
+      },
+      {
+        "name": "thd_peib_magf",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Ion ESA data)",
+        "fill": "NaN",
+        "units": "nT (All Qs)",
+        "x_label": [
+          "Bx_ion DSL Brst ESA-D",
+          "By_ion DSL Brst ESA-D",
+          "Bz_ion DSL Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Magnetic Field Vector in DSL (Same time array as Burst Ion ESA data)(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_magf_compno",
+            "description": "thd_peib_magf_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Bx_ion DSL Brst ESA-D",
+              "By_ion DSL Brst ESA-D",
+              "Bz_ion DSL Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_velocity_dsl",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in DSL",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_ion DSL Brst ESA-D",
+          "Vy_ion DSL Brst ESA-D",
+          "Vz_ion DSL Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Velocity Vector in DSL(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_velocity_dsl_compno",
+            "description": "thd_peib_velocity_dsl_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion DSL Brst ESA-D",
+              "Vy_ion DSL Brst ESA-D",
+              "Vz_ion DSL Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_velocity_gse",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in GSE",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_ion GSE Brst ESA-D",
+          "Vy_ion GSE Brst ESA-D",
+          "Vz_ion GSE Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Velocity Vector in GSE(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_velocity_gse_compno",
+            "description": "thd_peib_velocity_gse_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion GSE Brst ESA-D",
+              "Vy_ion GSE Brst ESA-D",
+              "Vz_ion GSE Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      },
+      {
+        "name": "thd_peib_velocity_gsm",
+        "type": "double",
+        "x_cdf_DataType": "CDF_DOUBLE",
+        "description": "-----Ion Velocity Vector in GSM",
+        "fill": "NaN",
+        "units": "km/s (All Qs)",
+        "x_label": [
+          "Vx_ion GSM Brst ESA-D",
+          "Vy_ion GSM Brst ESA-D",
+          "Vz_ion GSM Brst ESA-D"
+        ],
+        "x_format": ".6e",
+        "x_fractionDigits": "6",
+        "x_cdf_FORMAT": "E13.6",
+        "x_cdf_FIELDNAM": "Ion Velocity Vector in GSM(all qualities)",
+        "x_cdf_VIRTUAL": false,
+        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DEPEND_0": "thd_peib_epoch",
+        "size": [
+          3
+        ],
+        "bins": [
+          {
+            "name": "thd_peib_velocity_gsm_compno",
+            "description": "thd_peib_velocity_gsm_compno",
+            "centers": [
+              1,
+              2,
+              3
+            ],
+            "x_label": [
+              "Vx_ion GSM Brst ESA-D",
+              "Vy_ion GSM Brst ESA-D",
+              "Vz_ion GSM Brst ESA-D"
+            ],
+            "units": null
+          }
+        ]
+      }
+    ]
+  }
+}
