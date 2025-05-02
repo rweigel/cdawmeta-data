@@ -1,0 +1,353 @@
+{
+  "CDFFileInfo": {
+    "File": "po_h2_pwi_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/po_h2_pwi_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "POLAR PWI LFWR",
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Source_name": "POLAR>Polar Plasma Laboratory",
+    "Data_type": "H2>LFWR",
+    "Descriptor": "PWI>Plasma Wave Instrument",
+    "Data_version": "1",
+    "TEXT": "Reference:..Gurnett, D.A. et al, The Polar plasma wave instrument, Space Science Reviews, Vol. 71, pp. 597-622, 1995.GURNETT@IOWAVE.physics.uiowa.edu\nAn FFT on 256 or 464 values, depending on the snapshot size, was used in calibrating the data; i.e., perform FFT, calibrate in frequency domain, perform inverse FFT to get calibrated time series.\nCoordinate System Used:  local magnetic field-aligned, a spacecraft centered coordinate system where Z is parallel to the local B-field determined from Polar MFE, X points outward and lies in the plane defined by the Z-axis and the radial vector from the earth to the spacecraft, and Y completes a right-handed system and points eastward.  The X- and Z-axes are contained in the north-south plane.\nThe three orthogonal magnetic field components are given in units of nT/Sec rather than nT because the response of the searchcoils across the passband is not flat.  In order to obtain units of nT, the data would need to be digitally filtered to the frequency of interest and then integrated over time.  Integrating over the entire passband could possibly destroy the resolution of the higher frequency components since the low frequency noise, if present, will dominate.\nData are bandpass filtered.  The valid range of data in the frequency domain is from 0.5 to 22.5 Hz.",
+    "MODS": "Created Oct 1999",
+    "ADID_ref": "NSSD0171",
+    "Logical_file_id": "po_h2_pwi_00000000_v01",
+    "Logical_source": "po_h2_pwi",
+    "Logical_source_description": "Polar Plasma Wave Instrument, Low Frequency Waveform Receiver, ~0.01 sec resolution fields",
+    "PI_name": "D. Gurnett",
+    "PI_affiliation": "U. Iowa",
+    "Mission_group": "Polar\n!___Magnetospheric Data\n!___ITM Data including Earth Imaging and Ground-Based",
+    "Instrument_type": "Radio and Plasma Waves (space)",
+    "TEXT_supplement_1": " ",
+    "Time_resolution": "0.01 seconds",
+    "alt_logical_source": "Polar_PWI_lowfreq_h2_cdf",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/POLAR/PWI/LFWR/PT0.01S",
+    "DOI": "https://doi.org/10.48322/xbm6-4c53",
+    "LINK_TEXT": "Notes on",
+    "LINK_TITLE": "H2_PWI coordinates and computation",
+    "HTTP_LINK": "https://cdaweb.gsfc.nasa.gov/cdaweb/misc/NotesP.html#PO_H2_PWI"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time",
+        "DICT_KEY": "time>epoch",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T00:00:00.000",
+        "VALIDMIN": "1996-02-27T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "Delta_T": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time, time between points",
+        "FIELDNAM": "Delta_T",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F5.2",
+        "UNITS": "Seconds",
+        "VALIDMAX": 0.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Seconds"
+      },
+      "VarData": [
+        0.01
+      ]
+    },
+    "NUM_SNAP": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of snapshots in this file",
+        "FIELDNAM": "NUM_SNAP",
+        "FORMAT": "I4",
+        "UNITS": " ",
+        "VALIDMAX": 4800,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " "
+      },
+      "VarData": [
+        3326
+      ]
+    },
+    "DATA_QUALITY": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Data Quality 0 = OK, 1 = poor",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "DATA_QUALITY",
+        "FILLVAL": -2147480064,
+        "FORMAT": "I2",
+        "LABLAXIS": "Data Quality",
+        "UNITS": " (0=OK,1=poor)",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": " (0=OK,1=poor)",
+        "x_LABLAXIS": "Data Quality"
+      }
+    },
+    "LFWR_Ex": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "LFWR Elec. Field, Antenna Ex (perp & outward in Local-Field-Aligned/LFA coords)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "electric_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "LFWR Elec. Field Antenna Ex",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "LFWR Ex-LFA",
+        "UNITS": "mV/M",
+        "VALIDMAX": 400.0,
+        "VALIDMIN": -400.0,
+        "VAR_NOTES": "When FFT is applied, Filter Rolls off at 25 kHz",
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV/M",
+        "x_LABLAXIS": "LFWR Ex-LFA"
+      }
+    },
+    "LFWR_Ey": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "LFWR Elec. Field, Antenna Ey (perp & eastward in Local-Field-Aligned/LFA coords)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "electric_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "LFWR Elec. Field Antenna Ey",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "LFWR Ey-LFA",
+        "UNITS": "mV/M",
+        "VALIDMAX": 400.0,
+        "VALIDMIN": -400.0,
+        "VAR_NOTES": "When FFT is applied, Filter Rolls off at 25 kHz",
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV/M",
+        "x_LABLAXIS": "LFWR Ey-LFA"
+      }
+    },
+    "LFWR_Ez": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "LFWR Elec. Field, Antenna Ez (parallel in Local-Field-Aligned/LFA coords)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "electric_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "LFWR Elec. Field Antenna Ez",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "LFWR Ez-LFA",
+        "UNITS": "mV/M",
+        "VALIDMAX": 400.0,
+        "VALIDMIN": -400.0,
+        "VAR_NOTES": "When FFT is applied, Filter Rolls off at 25 kHz",
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV/M",
+        "x_LABLAXIS": "LFWR Ez-LFA"
+      }
+    },
+    "LFWR_Bx": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "LFWR Mag. Field, Antenna Bx (perp & outward in Local-Field-Aligned/LFA coords)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "LFWR Mag. Field Antenna Bx",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "LFWR Bx-LFA",
+        "UNITS": "nT/Sec",
+        "VALIDMAX": 400.0,
+        "VALIDMIN": -400.0,
+        "VAR_NOTES": "When FFT is applied, Filter Rolls off at 25 kHz",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT/Sec",
+        "x_LABLAXIS": "LFWR Bx-LFA"
+      }
+    },
+    "LFWR_By": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "LFWR Mag. Field, Antenna By (perp & eastward in Local-Field-Aligned/LFA coords)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "LFWR Mag. Field Antenna By",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "LFWR By-LFA",
+        "UNITS": "nT/Sec",
+        "VALIDMAX": 400.0,
+        "VALIDMIN": -400.0,
+        "VAR_NOTES": "When FFT is applied, Filter Rolls off at 25 kHz",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT/Sec",
+        "x_LABLAXIS": "LFWR By-LFA"
+      }
+    },
+    "LFWR_Bz": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "LFWR Mag. Field, Antenna Bz (parallel in Local-Field-Aligned/LFA coords)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "LFWR Mag. Field Antenna Bz",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "LFWR Bz-LFA",
+        "UNITS": "nT/Sec",
+        "VALIDMAX": 400.0,
+        "VALIDMIN": -400.0,
+        "VAR_NOTES": "When FFT is applied, Filter Rolls off at 25 kHz",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT/Sec",
+        "x_LABLAXIS": "LFWR Bz-LFA"
+      }
+    },
+    "Epoch0": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time, begin time of LFWR snapshot",
+        "DICT_KEY": "time>epoch",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T00:00:00.000",
+        "VALIDMIN": "1996-02-27T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "FFT_size": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Size of FFT used in Calibration of snapshot beginning at Epoch0",
+        "DEPEND_0": "Epoch0",
+        "FIELDNAM": "FFT_size",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I3",
+        "LABLAXIS": "FFT_size",
+        "UNITS": " ",
+        "VALIDMAX": 1081933824,
+        "VALIDMIN": 1081081856,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "FFT_size"
+      }
+    }
+  }
+}

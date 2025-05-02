@@ -1,0 +1,599 @@
+{
+  "CDFFileInfo": {
+    "File": "uy_coho1hr_merged_mag_plasma_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/uy_coho1hr_merged_mag_plasma_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "ULYSSES",
+    "Project": "ULYSSES",
+    "Discipline": "Space Physics>Interplanetary Studies\nSolar Physics>Heliospheric Physics",
+    "Source_name": "ULYSSES> Ulysses",
+    "Data_type": "COHO1HR>1 Hour Time Resolution from cohoweb",
+    "Descriptor": "MAG_PLASMA>Merged Trajectory, Magnetic Field, Proton Fluxes, and Plasma",
+    "Data_version": "1",
+    "TEXT": "ULYSSES data have been reprocessed to ensure a uniformity of content and coordinate systems relative to data from other deep-space missions:\n- All spacecraft trajectory data were transformed to a Heliographic Inertial (HGI) coordinate system.\n- calculation of RTN Spherical components of the solar wind velocity from RTN cartesian components:\n- data are a merging of trajectory coordinates, magnetic field data, proton fluxes, and plasma data files. \n- Data gaps were filled with -1.e31. \nNote that an COHOWeb interface to this dataset, providing data subsetting and and graphical browsing, is available at https://omniweb.gsfc.nasa.gov/coho/\nThe difference between T (Large) and T (Small) is discussed at \nhttps://spdf.gsfc.nasa.gov/pub/data/ulysses/plasma/swoops/ion/swoops_ion_users_guide_update_20030214.txt\nThe Heliographic Inertial (HGI) coordinates are Sun-centered and inertially fixed with respect to an X-axis directed along the intersection line of the ecliptic and solar equatorial  planes. The solar equator plane is inclined at 7.25 degrees from the ecliptic. This direction was towards ecliptic longitude of 74.36 degrees  on  1  January  1900  at  1200  UT; because of precession of the celestial equator, this longitude increases by 1.4 degrees/century. The Z axis is directed perpendicular and northward from the solar equator, and the Y-axis completes the right-handed set. This system differs from the usual heliographic coordinates (e.g. Carrington longitudes) which are fixed in the frame of the rotating Sun.\nThe RTN system is fixed at a spacecraft (or the planet). The R axis is directed radially away from the Sun, the T axis is the cross product of the solar rotation axis and the R axis, and the N axis is the cross product of R and T.  At zero Heliographic Latitude when the spacecraft is in the solar equatorial plane the N and solar rotation axes are parallel.",
+    "MODS": " ",
+    "ADID_ref": "NSSD0241",
+    "Logical_file_id": "uy_coho1hr_merged_mag_plasma_00000000_v01",
+    "Logical_source": "uy_coho1hr_merged_mag_plasma",
+    "Logical_source_description": "Ulysses merged hourly magnetic field, plasma, proton fluxes, and ephermis data",
+    "PI_name": "Dr. A. Balogh (magnetic field), Dr. John L. Phillips (plasma)",
+    "PI_affiliation": "Imperial College, London, UK, \nLos Alamos National Laboratory",
+    "Mission_group": "Ulysses\n!___Interplanetary Data ",
+    "Instrument_type": "Particles (space)",
+    "Time_resolution": "1 hour",
+    "Web_site": " ",
+    "Acknowledgement": " ",
+    "Rules_of_use": " ",
+    "LINK_TEXT": "COHO dataset\nAdditional analysis tools for these data from the",
+    "LINK_TITLE": "Documentation\nCOHOWeb service",
+    "HTTP_LINK": "https://omniweb.gsfc.nasa.gov/coho/html/cw_data.html\nhttps://omniweb.gsfc.nasa.gov/coho",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Ulysses/MAGandPLS/PT1H",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time, beginning of interval",
+        "DICT_KEY": "time>epoch",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "E14.8",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2020-01-01T00:00:00.000",
+        "SCALEMIN": "1996-01-01T00:00:00.000",
+        "SCALETYP": "LINEAR",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-01-01T00:00:00.000",
+        "VALIDMIN": "1996-01-01T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "heliocentricDistance": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Heliocentric distance (start of data interval)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Heliocentric Distance",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Ulysses_Dist",
+        "UNITS": "Au",
+        "VALIDMAX": 99999.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Au",
+        "x_LABLAXIS": "Ulysses_Dist"
+      }
+    },
+    "heliographicLatitude": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "HelioGraphic Inertial (HGI) latitude",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "HGI Latitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.1",
+        "LABLAXIS": "HGI_Lat",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "HGI_Lat"
+      }
+    },
+    "heliographicLongitude": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "HGI longitude",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "HGI Longitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.1",
+        "LABLAXIS": "HGI_Long",
+        "UNITS": "deg",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "HGI_Long"
+      }
+    },
+    "BR": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "BR in RTN (Radial-Tangential-Normal) coordinate system",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BR (RTN)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "BR_(RTN)",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "BR_(RTN)"
+      }
+    },
+    "BT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "BT in RTN coordinate system",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BT (RTN)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "BT_(RTN)",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "BT_(RTN)"
+      }
+    },
+    "BN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "BN in RTN coordinate system",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BN (RTN)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "BN_(RTN)",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "BN_(RTN)"
+      }
+    },
+    "ABS_B": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "B Field Magnitude (average of fine scale magnitudes)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Field Magnitude Avg.",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.2",
+        "LABLAXIS": "Field Magnitude Avg.",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Field Magnitude Avg."
+      }
+    },
+    "numVectorsMagFldAvg": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of vectors for Mag field to the average",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "num Vec mag fld avg",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i5",
+        "LABLAXIS": "numVec_AVG",
+        "UNITS": " ",
+        "VALIDMAX": 99999,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "numVec_AVG"
+      }
+    },
+    "plasmaFlowSpeed": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Plasma Flow Speed (RTN)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Plasma Flow Speed",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.1",
+        "LABLAXIS": "Plasma Flow Speed",
+        "UNITS": "km/s",
+        "VALIDMAX": 1200.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Plasma Flow Speed"
+      }
+    },
+    "elevAngle": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton flow elevation angle / latitude (RTN)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "elevation Angle ",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.1",
+        "LABLAXIS": "elevation Angle",
+        "UNITS": "Deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Deg",
+        "x_UNITS_VO": "deg",
+        "x_LABLAXIS": "elevation Angle"
+      }
+    },
+    "azimuthAngle": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton flow azimuth angle / longitude (RTN)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "azimuth Angle ",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.1",
+        "LABLAXIS": "azimuth Angle",
+        "UNITS": "Deg",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Deg",
+        "x_UNITS_VO": "deg",
+        "x_LABLAXIS": "azimuth Angle"
+      }
+    },
+    "protonDensity": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton density",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Plasma Proton density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f9.5",
+        "LABLAXIS": "Plasma_proton_dens",
+        "UNITS": "n/cc",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "n/cc",
+        "x_LABLAXIS": "Plasma_proton_dens"
+      }
+    },
+    "alphaDensity": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha density",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Plasma Alpha density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f9.5",
+        "LABLAXIS": "Plasma_alpha_dens",
+        "UNITS": "n/cc",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "n/cc",
+        "x_LABLAXIS": "Plasma_alpha_dens"
+      }
+    },
+    "protonTempLarge": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Temperature (Large)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Pls Proton temp (Large)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f9.0",
+        "LABLAXIS": "Pls_prot_tempLarge",
+        "UNITS": "deg k",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg k",
+        "x_LABLAXIS": "Pls_prot_tempLarge"
+      }
+    },
+    "protonTempSmall": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Temperature (Small)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Pls Proton temp (Small)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f9.0",
+        "LABLAXIS": "Pls_prot_tempSmall",
+        "UNITS": "deg k",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg k",
+        "x_LABLAXIS": "Pls_prot_tempSmall"
+      }
+    },
+    "protonFlux1_LET": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Flux 2.0 - 4.0, MeV COSPIN, LET",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H 2.0-4.0 MeV COSPIN, LET",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e10.3",
+        "LABLAXIS": "H 2.0-4.0 MeV COSPIN, LET",
+        "UNITS": "1/(sec-cm**2-ster-MeV)",
+        "VALIDMAX": 9998.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(sec-cm**2-ster-MeV)",
+        "x_LABLAXIS": "H 2.0-4.0 MeV COSPIN, LET"
+      }
+    },
+    "protonFlux2_LET": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Flux 4.0 - 6.0, MeV COSPIN, LET",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H 4.0-6.0 MeV COSPIN, LET",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e10.3",
+        "LABLAXIS": "H 4.0-6.0 MeV COSPIN, LET",
+        "UNITS": "1/(sec-cm**2-ster-MeV)",
+        "VALIDMAX": 9998.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(sec-cm**2-ster-MeV)",
+        "x_LABLAXIS": "H 4.0-6.0 MeV COSPIN, LET"
+      }
+    },
+    "protonFlux3_LET": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Flux 6.0 - 8.0, MeV COSPIN, LET",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H 6.0-8.0 MeV COSPIN, LET",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e10.3",
+        "LABLAXIS": "H 6.0-8.0 MeV COSPIN, LET",
+        "UNITS": "1/(sec-cm**2-ster-MeV)",
+        "VALIDMAX": 9998.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(sec-cm**2-ster-MeV)",
+        "x_LABLAXIS": "H 6.0-8.0 MeV COSPIN, LET"
+      }
+    },
+    "protonFlux4_LET": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Flux 8.0 - 16.0, MeV COSPIN, LET",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H 8.0-16.0 MeV COSPIN, LET",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e10.3",
+        "LABLAXIS": "H 8.0-16.0 MeV COSPIN, LET",
+        "UNITS": "1/(sec-cm**2-ster-MeV)",
+        "VALIDMAX": 9998.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(sec-cm**2-ster-MeV)",
+        "x_LABLAXIS": "H 8.0-16.0 MeV COSPIN, LET"
+      }
+    },
+    "protonFlux5_LET": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Flux 16.0 - 20.0, MeV COSPIN, LET",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H 16.0-20.0 MeV COSPIN, LET",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e10.3",
+        "LABLAXIS": "H 16.0-20.0 MeV COSPIN, LET",
+        "UNITS": "1/(sec-cm**2-ster-MeV)",
+        "VALIDMAX": 9998.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(sec-cm**2-ster-MeV)",
+        "x_LABLAXIS": "H 16.0-20.0 MeV COSPIN, LET"
+      }
+    },
+    "protonFlux1_HET": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Flux 39.0 - 70.0, MeV COSPIN, HET",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H 39.0-70.0 MeV COSPIN, HET",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e10.3",
+        "LABLAXIS": "H 39.0-70.0 MeV COSPIN, HET",
+        "UNITS": "1/(sec-cm**2-ster-MeV)",
+        "VALIDMAX": 9998.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(sec-cm**2-ster-MeV)",
+        "x_LABLAXIS": "H 39.0-70.0 MeV COSPIN, HET"
+      }
+    },
+    "protonFlux2_HET": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Flux 71.0 - 94.0, MeV COSPIN, HET",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H 71.0-94.0 MeV COSPIN, HET",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e10.3",
+        "LABLAXIS": "H 71.0-94.0 MeV COSPIN, HET",
+        "UNITS": "1/(sec-cm**2-ster-MeV)",
+        "VALIDMAX": 9998.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(sec-cm**2-ster-MeV)",
+        "x_LABLAXIS": "H 71.0-94.0 MeV COSPIN, HET"
+      }
+    }
+  }
+}

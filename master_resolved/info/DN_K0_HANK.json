@@ -1,0 +1,656 @@
+{
+  "CDFFileInfo": {
+    "File": "dn_k0_hank_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/dn_k0_hank_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Title": "ISTP DARN Radar KeyParameters",
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Discipline": "SpacePhysics>Magnetospheric Science",
+    "Source_name": "DARN>Dual Auroral Radar Network ",
+    "Data_type": "K0>Key Parameters ",
+    "Descriptor": "HANK>Hankasalmi ",
+    "Data_version": "1",
+    "TEXT": "vlptm $Revision: 4.5",
+    "MODS": "skeleton table implemented \nnew formats with all the DEPEND attrs set\nISTP KPGS Standard & Conventions version 1 implemented",
+    "Disclaimer": "  ",
+    "ADID_ref": "NSSD0254",
+    "Logical_file_id": "DN_K0_HANK_00000000_V01 ",
+    "Logical_source": "DN_K0_HANK",
+    "Logical_source_description": "DARN Hankasalmi, Key Parameters",
+    "PI_name": "R. Greenwald",
+    "PI_affiliation": "JHU/APL",
+    "Mission_group": "Ground-Based Investigations\n!___ITM Data including Earth Imaging and Ground-Based",
+    "Instrument_type": "Ground-Based HF-Radars",
+    "TEXT_supplement_1": " ",
+    "alt_logical_source": "DARN_HANK_Ionospheric-Convection-Velocities-K0_1day_cdf",
+    "spase_DatasetResourceID": "spase://GBO/NumericalData/DARN/Hankasalmi/PT2M",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time",
+        "DELTA_MINUS_VAR": "delta_time",
+        "DELTA_PLUS_VAR": "delta_time",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2000-12-31T23:59:59.000",
+        "SCALEMIN": "1992-01-01T00:00:00.000",
+        "UNITS": "ms",
+        "VALIDMAX": "2000-12-31T23:59:59.000",
+        "VALIDMIN": "1992-01-01T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms"
+      }
+    },
+    "Time_PB5": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Time",
+        "FILLVAL": -2147483648,
+        "FORM_PTR": "format_time",
+        "SCALEMAX": [
+          2000,
+          366,
+          86399000
+        ],
+        "SCALEMIN": [
+          1992,
+          1,
+          0
+        ],
+        "UNIT_PTR": "unit_time",
+        "VALIDMAX": [
+          2000,
+          366,
+          86399000
+        ],
+        "VALIDMIN": [
+          1992,
+          1,
+          0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "LABL_PTR_1": "label_time",
+        "x_UNITS": [
+          "year",
+          "day",
+          "msec"
+        ],
+        "x_LABLAXES": [
+          [
+            "Year",
+            "Day of Year (Jan 1 = Day 1)",
+            "Elapsed millisecond of day"
+          ]
+        ]
+      }
+    },
+    "delta_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "half duration of the scan time in msec ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "uncertainty>time",
+        "FIELDNAM": "half scan time in ms",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.5",
+        "LABLAXIS": "half scan time",
+        "SCALEMAX": 100000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "msec",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "half scan time"
+      }
+    },
+    "TFlag": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "method used for determining vel 0-nodata, 1-doppler vel, 2-2 position, 3-3 L-invariant, 4-Divergence free, 5-Relaxation method 1, 6-2 radars, 7-2 or more radars indirectly ",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "index",
+        "DICT_KEY": "flag",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Type flag",
+        "FILLVAL": -128,
+        "FORMAT": "I2",
+        "LABLAXIS": "V method",
+        "SCALEMAX": 17,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 17,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "V method",
+        "x_DEPEND": [
+          "index"
+        ]
+      }
+    },
+    "QFlag": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "reliability of data: 0(best) to 4(acceptable) 5-unable to meet rms criterion 7-(GB only) more than half are from beams greater than 10",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "index",
+        "DICT_KEY": "flag>quality",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Quality flag",
+        "FILLVAL": -128,
+        "FORMAT": "I2",
+        "LABLAXIS": "Qual flag",
+        "SCALEMAX": 7,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 7,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Qual flag",
+        "x_DEPEND": [
+          "index"
+        ]
+      }
+    },
+    "post_gap": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "flag to indicate the previous gap : 0-no gap 3-data were too noisy",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>post_gap",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "post gap quality flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "post gap flag",
+        "SCALEMAX": 3,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 3,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "post gap flag"
+      }
+    },
+    "position": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2,
+          30
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Geographic lat & long at 30 scan positions",
+        "DELTA_MINUS_VAR": "delta_pos",
+        "DELTA_PLUS_VAR": "delta_pos",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "label_pos",
+        "DEPEND_2": "index",
+        "DICT_KEY": "position>latitude_longitude",
+        "FIELDNAM": "Geographic position",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.3",
+        "SCALEMAX": [
+          90.0,
+          180.0
+        ],
+        "SCALEMIN": [
+          60.0,
+          -180.0
+        ],
+        "UNITS": "degrees",
+        "VALIDMAX": [
+          90.0,
+          180.0
+        ],
+        "VALIDMIN": [
+          60.0,
+          -180.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "LABL_PTR_1": "label_pos",
+        "x_UNITS": "degrees",
+        "x_LABLAXES": [
+          [
+            "geographic lat",
+            "geographic long"
+          ]
+        ],
+        "x_DEPEND": [
+          [
+            "geographic lat",
+            "geographic long"
+          ],
+          "index"
+        ]
+      }
+    },
+    "delta_pos": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "half of range resolution of position",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "label_pos",
+        "DICT_KEY": "uncertainty>position",
+        "FIELDNAM": "half range in geographic coordinates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.4",
+        "LABLAXIS": "half resolution",
+        "SCALEMAX": [
+          50.0,
+          100.0
+        ],
+        "SCALEMIN": [
+          0.0,
+          0.0
+        ],
+        "UNITS": "degrees",
+        "VALIDMAX": [
+          50.0,
+          100.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "half resolution",
+        "x_DEPEND": [
+          [
+            "geographic lat",
+            "geographic long"
+          ]
+        ]
+      }
+    },
+    "vel": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2,
+          30
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Ionospheric Convection Velocity (east, north) at 30 geographic positions along scan",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "label_velocity",
+        "DEPEND_2": "index",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimensionVE=vel(1,*),VN=vel(2,*),r=position(1,*),theta=position(2,*),qflag=QFlag",
+        "FIELDNAM": "velocity components",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.2",
+        "SCALEMAX": [
+          3500.0,
+          3500.0
+        ],
+        "SCALEMIN": [
+          -3500.0,
+          -3500.0
+        ],
+        "UNITS": "m/s",
+        "VALIDMAX": [
+          3500.0,
+          3500.0
+        ],
+        "VALIDMIN": [
+          -3500.0,
+          -3500.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "LABL_PTR_1": "label_velocity",
+        "x_UNITS": "m/s",
+        "x_LABLAXES": [
+          [
+            "geograph Veast",
+            "geograph Vnorth"
+          ]
+        ],
+        "x_DEPEND": [
+          [
+            "geograph Veast",
+            "geograph Vnorth"
+          ],
+          "index"
+        ]
+      }
+    },
+    "label_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 27,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label for Time_PB5",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Label for Time_PB5",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Year",
+        "Day of Year (Jan 1 = Day 1)",
+        "Elapsed millisecond of day"
+      ]
+    },
+    "unit_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 4,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Units for Time_PB5",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Units for Time_PB5",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "year",
+        "day",
+        "msec"
+      ]
+    },
+    "format_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 2,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Format for Time_PB5",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Format for Time_PB5",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "I4",
+        "I3",
+        "I8"
+      ]
+    },
+    "index": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -32767,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "the index has no physical meaning",
+        "DICT_KEY": " ",
+        "FIELDNAM": "index to the 30 values",
+        "FILLVAL": -32768,
+        "FORMAT": "I2  ",
+        "SCALEMAX": 30,
+        "SCALEMIN": 1,
+        "UNITS": " ",
+        "VALIDMAX": 30,
+        "VALIDMIN": 1,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    "label_pos": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 15,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label for position",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Label for position",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "geographic lat",
+        "geographic long"
+      ]
+    },
+    "label_velocity": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 15,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label for velocity",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Label for velocity",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "geograph Veast",
+        "geograph Vnorth"
+      ]
+    }
+  }
+}

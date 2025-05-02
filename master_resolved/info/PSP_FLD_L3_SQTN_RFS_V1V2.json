@@ -1,0 +1,186 @@
+{
+  "CDFFileInfo": {
+    "File": "psp_fld_l3_sqtn_rfs_v1v2_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/psp_fld_l3_sqtn_rfs_v1v2_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "In_situ electron density and core temperature (SQTN from V1V2 dipole of Parker Solar Probe during Encounter 01)",
+    "Project": "PSP>Parker Solar Probe",
+    "Source_name": "PSP_FLD>Parker Solar Probe FIELDS",
+    "Discipline": "Solar Physics>Heliospheric Physics Space Physics>Interplanetary Studies",
+    "Data_type": "L3>Level 3 data, time series",
+    "Descriptor": "SQTN_V1V2>Simplified Quasi-Thermal Noise from V1V2 dipole",
+    "Data_version": " ",
+    "PI_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+    "PI_affiliation": "UC Berkeley Space Sciences Laboratory",
+    "TEXT": "Parker Solar Probe/FIELDS Simplified Quasi-Thermal Noise data (SQTN).\nThe SQTN spectroscopy is a method which allows to deduce the electron density and the core temperature of the plasma surrounding a s/c, by using the power spectra acquired from an electric dipole antenna (see [1] for the PSP case, and references therein).\nThere are two dipoles on the PSP/FIELDS experiment [2] exploitable for the SQTN, named V1V2 and V3V4, which are both connected to the FIELDS Radio Frequency Spectrometer (RFS), see [3].\nThe density is deduced from the plasma frequency (fp) detection algorithm, applied to RFS available spectra, with elimination of questionable detection (or false positive) using QTN theory (see [1]). No fp detection results in filling the data by -1e31 (for all variables provided here). In particular, since we are using 2x2m dipoles on PSP, the fp detection is impossible when the local Debye length is larger than about 5m. On a daily basis, the typical rate of validated detection of fp is more than 90% of the available spectra when PSP is within 0.25 AU of the Sun, but this rate may drop to only 20% at larger distances (0.5 AU being the upper limit used to product this CDF file, which corresponds at most to +/- 15 days around the exact date of the PSP perihelion).\nWhen the fp detection is validated, fp errors bars are defined taking into account the RFS_LFR spectral resolution (64 pseudo-logarithmically spaced frequencies in the range of 10 kHz-1.7 MHz), then refined by using QTN theory, and this finally provides the error bars for the density (electron_density_delta). The electron density is then deduced as the most probable value within the error bars, using again QTN theory.\nNote the electron density provided here is fully independant of antennas calibrations and floating potential, but not the electron core temperature which is deduced from the QTN level below fp (see [1]), so the core temperature will be certainly more subject to future improvments of this CDF file (see version and mods, v00 corresponding to the method exactly as published for the two first encounters/perihelions by PSP in [1]).\nAll variables provided here were not subject to post-processing noise filtering nor any interpolation/smoothing of data.\nThe time resolution of the RFS varies with instrument mode, so does these electron data derived from RFS data.  During encounter (when PSP is within 0.25 AU of the Sun), cadence for RFS HFR and LFR spectra is typically about 7 seconds (and about 3.5 seconds during +/- 3 days around the perihelion date from encounter 06). During cruise mode, which is the default mode for operations outside of 0.25 AU, cadence for HFR and LFR spectra is about 56 seconds.\nReferences:\n1. Moncuquet, M., Meyer-Vernet, N., Issautier, K. et al. (2020), Astrophysical Journal Supplement Series, 246:44. https://doi.org/10.3847/1538-4365/ab5a84\n2. Bale, S.D., Goetz, K., Harvey, P.R. et al. Space Sci Rev (2016) 204: 49. https://doi.org/10.1007/s11214-016-0244-5\n3. Pulupa, M., Bale, S. D., Bonnell, J.W. et al. (2017) JGR Space Physics, 122, 2836-2854. https://doi.org/10.1002/2016JA023345",
+    "Instrument_type": "Electric Fields (space)\nRadio and Plasma Waves (space)",
+    "Mission_group": "Parker Solar Probe (PSP)",
+    "Logical_file_id": " ",
+    "Logical_source": "psp_fld_l3_sqtn_rfs_V1V2",
+    "Logical_source_description": "Parker Solar Probe FIELDS Level 3 Simplified Quasi-Thermal Noise (SQTN) data, using the Radio Frequency Spectrometer (RFS) spectra when connected to V1V2 dipole antenna",
+    "Time_resolution": "Varies with instrument mode (see TEXT)",
+    "Parents": " ",
+    "Generated_by": " ",
+    "Rules_of_use": "The PSP/FIELDS data provided here are publicly available. We suggest contacting Michel.Moncuquet@obspm.fr (LESIA) when using these data and for any further question. For parents data, see PSP/FIELDS Rules of the Road available at http://fields.ssl.berkeley.edu/rules/",
+    "Generation_date": " ",
+    "Acknowledgement": "In publications, we recommend to add the following sentence in the acknowledgments:  \"The authors acknowledge LESIA (Laboratoire d Etudes Spatiales et Instrumentation en Astrophysique), Observatoire de PARIS, CNRS (Centre National de la Recherche Scientifique) and CNES (Centre National d Etudes Spatiales) for support for production of these data and CDPP (Centre de Donnees de la Physique des Plasmas) for their archiving and provision.\"",
+    "LINK_TEXT": "High Resolution PSP/FIELDS data are available at\nPSP/FIELDS data are available at ",
+    "LINK_TITLE": "CDPP\nFIELDS SOC",
+    "HTTP_LINK": "https://cdpp.cnes.fr/\nhttps://fields.ssl.berkeley.edu/data/",
+    "MODS": " ",
+    "spase_DatasetResourceID": " ",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Universal Time in nanoseconds since 01/01/2000",
+        "DICT_KEY": "time>epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "FORMAT": "I22",
+        "LABLAXIS": "epoch",
+        "MONOTON": "INCREASE",
+        "RESOLUTION": "56s or 7s",
+        "SCALEMAX": "2018-11-02T00:00:00.000000000",
+        "SCALEMIN": "2018-11-01T00:00:00.000000000",
+        "SI_CONVERSION": "1.0e-9>s",
+        "TIME_BASE": "J2000",
+        "UNITS": "ns",
+        "VALIDMAX": "2050-01-01T00:00:00.000000000",
+        "VALIDMIN": "2018-08-12T00:00:00.000000000",
+        "VAR_NOTES": "Same epoch as each lfr_auto_averages_ch0_V1V2 spectrum in parents files psp_fld_l2_rfs_lfr_*.cdf",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "epoch"
+      }
+    },
+    "electron_density": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron number density",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density>number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "electron_density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E13.6",
+        "LABLAXIS": "electron density",
+        "SCALEMAX": 1037.08,
+        "SCALEMIN": 5.52997,
+        "SI_CONVERSION": "1.e-6>m^-3",
+        "UNITS": "cm^-3",
+        "VALIDMAX": 99999.9,
+        "VALIDMIN": 0.1,
+        "VAR_NOTES": "The electron density is deduced from the automatic detection of the plasma frequency in RFS spectra with SQTN spectroscopy (see TEXT_global_attributes and VAR_NOTES_density_quality_flag_attributes for more details)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^-3",
+        "x_LABLAXIS": "electron density"
+      }
+    },
+    "density_quality_flag": {
+      "VarDescription": {
+        "DataType": "CDF_BYTE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron density quality flag, byte: avail starting 09/17/2023",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>quality_density_number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "density_quality_flag",
+        "FILLVAL": 255,
+        "FORMAT": "I4",
+        "LABLAXIS": "density quality flag",
+        "UNITS": "0=fail 1=>pass",
+        "VALIDMAX": 4,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "The flag mostly indicates the pass/fail of the several processing sequentially applied on each RFS-LFR spectrum to detect the plasma frequency fp and so the electron density. A first algorithm is aimed to detect fp by search of the steepest climb (within the limits of the RFS-LFR spectral resolution), with flag=0 if it fails, flag=1 if pass. Then a second algo checks if the spectrum is QTN-like, and if so refines the fp value (flag=2, majority of cases). In some cases of non-QTN spectra, a third process, based on the possible cutoff at fp of enough strong solar emissions (as type 3 emissions), allows to set an upper limit on fp (flag=3, and corresponding inf_uncertainty set to fillval). Also some QTN-like spectra with very high resonance at fp (instability) are indicated by flag=4. Summary for the density_quality_flag values : 0) no detection, 1,2,4) density validated from QTN criteria, 3) upper limit of density only .",
+        "VAR_TYPE": "data",
+        "x_UNITS": "0=fail 1=>pass",
+        "x_LABLAXIS": "density quality flag"
+      }
+    },
+    "electron_core_temperature": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron core temperature",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "electron_core_temperature",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E13.6",
+        "LABLAXIS": "electron core temperature",
+        "SCALEMAX": 118.592,
+        "SCALEMIN": 0.687773,
+        "SI_CONVERSION": "1>11604.447Kelvin",
+        "UNITS": "eV",
+        "VALIDMAX": 999.999,
+        "VALIDMIN": 0.01,
+        "VAR_NOTES": "The electron core temperature is deduced from the QTN level below fp in RFS spectra with SQTN spectroscopy (see TEXT_global_attributes)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "electron core temperature"
+      }
+    },
+    "electron_density_delta": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Uncertainty of electron density",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "electron_density_delta",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E13.6",
+        "SI_CONVERSION": "1.e-6>m^-3",
+        "UNITS": "m^-3",
+        "VALIDMAX": 99999.9,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "electron_density - electron_density_delta[0] < electron_density < electron_density + electron_density_delta[1]",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "m^-3"
+      }
+    }
+  }
+}

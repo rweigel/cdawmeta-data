@@ -1,0 +1,5640 @@
+{
+  "CDFFileInfo": {
+    "File": "thd_l2_mom_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/thd_l2_mom_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "THEMIS",
+    "Source_name": "THD>Themis Probe D",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Data_type": "MOM",
+    "Descriptor": "L2>L2 DATA",
+    "Data_version": "1",
+    "PI_name": "V. Angelopoulos, C.W. Carlson & J. McFadden",
+    "PI_affiliation": "UCB, NASA NAS5-02099",
+    "TITLE": "On-Board Moments, ESA and SST",
+    "TEXT": "THEMIS-D:  On Board moments:  Electron/Ion moments density, flux, velocity, pressure and temperature.Moment Data Quality flags (0: good data; non-zero flags are totals of values; 1: missing S/C potential, 16: electron density Gt 2*ion density, 32: ion density Gt 2*electron density, 64: Spacecraft Maneuver).",
+    "Instrument_type": "Particles (space)\nPlasma and Solar Wind",
+    "Mission_group": "THEMIS",
+    "Logical_source": "thd_l2_mom",
+    "Logical_file_id": "thd_l2_mom_00000000_v01",
+    "Logical_source_description": "THEMIS-D (P3):  On Board moments:  Electron/Ion moments density, flux, velocity, pressure and temperature.",
+    "Time_resolution": " ",
+    "Rules_of_use": "Open Data for Scientific Use",
+    "Generated_by": "THEMIS SOC",
+    "Generation_date": "Fri May 29 11:49:04 2009",
+    "Acknowledgement": "NASA Contract NAS5-02099",
+    "MODS": " ",
+    "ADID_ref": "NSSD0110",
+    "LINK_TEXT": "MOM\nESA\nMOM",
+    "LINK_TITLE": "Data Quality Flags\nInstrument description including data modes, products and caveats\nProcessing history and the THEMIS mission website including TDAS s/w",
+    "HTTP_LINK": "http://themis.ssl.berkeley.edu/mom_flag.shtml\nhttp://themis.ssl.berkeley.edu/instrument_esa.shtml\nhttp://themis.ssl.berkeley.edu/mom_proc_history.shtml",
+    "File_naming_convention": "source_descriptor_datatype",
+    "Caveats": "See THEMIS website for caveats",
+    "Validity": " ",
+    "Validator": " ",
+    "Validate": "Compatible with the ISTP CDF Standards",
+    "Inst_mod": "THM>xxxx",
+    "Parents": " ",
+    "Inst_settings": "Not used",
+    "Software_version": " ",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/THEMIS/D/MOM/PT3S",
+    "DOI": "https://doi.org/10.48322/ryqr-m277"
+  },
+  "CDFVariables": {
+    "thd_peim_data_quality": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion Moment Data Quality (0: good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/mom_flag.shtml.) ",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Data_Quality_Flag_ion MOM ESA-D",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABLAXIS": "Data_Quality_Flag_ion MOM ESA-D",
+        "PROPERTY": "scalar",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "TENSOR_ORDER": 0,
+        "UNITS": "0 = Good",
+        "VALIDMAX": 112,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "0 = Good",
+        "x_LABLAXIS": "Data_Quality_Flag_ion MOM ESA-D"
+      }
+    },
+    "thd_peim_densityQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Good data only) ESA On Board Moment (MOM) Ion Density, THEMIS-D",
+        "COMPONENT_0": "thd_peim_density",
+        "COMPONENT_1": "thd_peim_data_quality",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ESA On Board Moment (MOM) Ion Density, THEMIS-D",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABLAXIS": "N_ion MOM ESA-D",
+        "PROPERTY": "scalar",
+        "SCALETYP": "log",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e6>m^-3",
+        "TENSOR_ORDER": 0,
+        "UNITS": "cm^-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "cm^-3",
+        "x_LABLAXIS": "N_ion MOM ESA-D",
+        "COMPONENTS": [
+          "thd_peim_density",
+          "thd_peim_data_quality"
+        ]
+      }
+    },
+    "thd_peim_ptotQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Total Pressure",
+        "COMPONENT_0": "thd_peim_ptot",
+        "COMPONENT_1": "thd_peim_data_quality",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Total Pressure",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABLAXIS": "P_ion MOM ESA-D",
+        "PROPERTY": "scalar",
+        "SCALETYP": "log",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 0,
+        "UNITS": "eV/cm^3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV/cm^3",
+        "x_LABLAXIS": "P_ion MOM ESA-D",
+        "COMPONENTS": [
+          "thd_peim_ptot",
+          "thd_peim_data_quality"
+        ]
+      }
+    },
+    "thd_peim_fluxQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Particle Flux Vector",
+        "COMPONENT_0": "thd_peim_flux",
+        "COMPONENT_1": "thd_peim_data_quality",
+        "COORDINATE_SYSTEM": "DSL (Despun Spacecraft)",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_flux_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Particle Flux Vector",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peim_flux_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e4>m^-2 s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "#/(cm^2-s)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/(cm^2-s)",
+        "x_LABLAXES": [
+          [
+            "Fx_ion MOM ESA-D",
+            "Fy_ion MOM ESA-D",
+            "Fz_ion MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_flux_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peim_flux",
+          "thd_peim_data_quality"
+        ]
+      }
+    },
+    "thd_peim_mftensQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Momentum Flux Tensor",
+        "COMPONENT_0": "thd_peim_mftens",
+        "COMPONENT_1": "thd_peim_data_quality",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_mftens_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Momentum Flux Tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peim_mftens_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV/cm^3",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV/cm^3",
+        "x_LABLAXES": [
+          [
+            "MFxx_ion MOM ESA-D",
+            "MFyy_ion MOM ESA-D",
+            "MFzz_ion MOM ESA-D",
+            "MFxy_ion MOM ESA-D",
+            "MFxz_ion MOM ESA-D",
+            "MFyz_ion MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_mftens_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peim_mftens",
+          "thd_peim_data_quality"
+        ]
+      }
+    },
+    "thd_peim_efluxQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Energy Flux Vector",
+        "COMPONENT_0": "thd_peim_eflux",
+        "COMPONENT_1": "thd_peim_data_quality",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_eflux_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Energy Flux Vector",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peim_eflux_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.6e-15>J m^-2 s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "eV/(cm^2-s)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV/(cm^2-s)",
+        "x_LABLAXES": [
+          [
+            "Efx_ion MOM ESA-D",
+            "Efy_ion MOM ESA-D",
+            "Efz_ion MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_eflux_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peim_eflux",
+          "thd_peim_data_quality"
+        ]
+      }
+    },
+    "thd_peim_velocity_dslQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Velocity Vector in DSL",
+        "COMPONENT_0": "thd_peim_velocity_dsl",
+        "COMPONENT_1": "thd_peim_data_quality",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_velocity_dsl_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Velocity Vector in DSL",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peim_velocity_dsl_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "km/s",
+        "x_LABLAXES": [
+          [
+            "Vx_ion DSL MOM ESA-D",
+            "Vy_ion DSL MOM ESA-D",
+            "Vz_ion DSL MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_velocity_dsl_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peim_velocity_dsl",
+          "thd_peim_data_quality"
+        ]
+      }
+    },
+    "thd_peim_velocity_gseQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Velocity Vector in GSE",
+        "COMPONENT_0": "thd_peim_velocity_gse",
+        "COMPONENT_1": "thd_peim_data_quality",
+        "COORDINATE_SYSTEM": "GSE",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_velocity_gse_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Velocity Vector in GSE",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peim_velocity_gse_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_gse",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "km/s",
+        "x_LABLAXES": [
+          [
+            "Vx_ion GSE MOM ESA-D",
+            "Vy_ion GSE MOM ESA-D",
+            "Vz_ion GSE MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_velocity_gse_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peim_velocity_gse",
+          "thd_peim_data_quality"
+        ]
+      }
+    },
+    "thd_peim_velocity_gsmQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Velocity Vector in GSM",
+        "COMPONENT_0": "thd_peim_velocity_gsm",
+        "COMPONENT_1": "thd_peim_data_quality",
+        "COORDINATE_SYSTEM": "GSM",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_velocity_gsm_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Velocity Vector in GSM",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peim_velocity_gsm_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_gsm",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "km/s",
+        "x_LABLAXES": [
+          [
+            "Vx_ion GSM MOM ESA-D",
+            "Vy_ion GSM MOM ESA-D",
+            "Vz_ion GSM MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_velocity_gsm_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peim_velocity_gsm",
+          "thd_peim_data_quality"
+        ]
+      }
+    },
+    "thd_peim_ptensQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Pressure Tensor",
+        "COMPONENT_0": "thd_peim_ptens",
+        "COMPONENT_1": "thd_peim_data_quality",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_ptens_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Pressure Tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peim_ptens_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV/cm^3",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV/cm^3",
+        "x_LABLAXES": [
+          [
+            "Pxx_ion MOM ESA-D",
+            "Pyy_ion MOM ESA-D",
+            "Pzz_ion MOM ESA-D",
+            "Pxy_ion MOM ESA-D",
+            "Pxz_ion MOM ESA-D",
+            "Pyz_ion MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_ptens_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peim_ptens",
+          "thd_peim_data_quality"
+        ]
+      }
+    },
+    "thd_peim_magQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Magnetic Field Vector DSL (Same time array as MOM Ion ESA data)",
+        "COMPONENT_0": "thd_peim_mag",
+        "COMPONENT_1": "thd_peim_data_quality",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_mag_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Magnetic Field Vector DSL (Same time array as MOM Ion ESA data)",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peim_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": 1,
+        "UNITS": "nT",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT",
+        "x_LABLAXES": [
+          [
+            "Bx_ion DSL MOM ESA-D",
+            "By_ion DSL MOM ESA-D",
+            "Bz_ion DSL MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_mag_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peim_mag",
+          "thd_peim_data_quality"
+        ]
+      }
+    },
+    "thd_peim_velocity_magQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Velocity Vector, Field Aligned",
+        "COMPONENT_0": "thd_peim_velocity_mag",
+        "COMPONENT_1": "thd_peim_data_quality",
+        "COORDINATE_SYSTEM": "FA",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_velocity_mag_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Velocity Vector, Field Aligned",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peim_velocity_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_nfa",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "km/s",
+        "x_LABLAXES": [
+          [
+            "Vx_ion FA MOM ESA-D",
+            "Vy_ion FA MOM ESA-D",
+            "Vz_ion FA MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_velocity_mag_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peim_velocity_mag",
+          "thd_peim_data_quality"
+        ]
+      }
+    },
+    "thd_peim_t3_magQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "COMPONENT_0": "thd_peim_t3_mag",
+        "COMPONENT_1": "thd_peim_data_quality",
+        "COORDINATE_SYSTEM": "FA",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_t3_mag_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peim_t3_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_nfa",
+        "SCALETYP": "log",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-19>J",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "3d temperatures around magnetic axis (Z) and normal axes (X,Y), where Y is Z direction crosed into Sun direction, and X completes orthogonal system.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV",
+        "x_LABLAXES": [
+          [
+            "Tx_ion FA MOM ESA-D",
+            "Ty_ion FA MOM ESA-D",
+            "Tz_ion FA MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_t3_mag_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peim_t3_mag",
+          "thd_peim_data_quality"
+        ]
+      }
+    },
+    "thd_peim_ptens_magQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Pressure Tensor, Field Aligned",
+        "COMPONENT_0": "thd_peim_ptens_mag",
+        "COMPONENT_1": "thd_peim_data_quality",
+        "COORDINATE_SYSTEM": "FA",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_ptens_mag_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Pressure Tensor, Field Aligned",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peim_ptens_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_nfa",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV/cm^3",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_NOTES": "Pressure tensor around magnetic axis (Z) and normal axes (X,Y), where Y is Z direction crosed into Sun direction, and X completes orthogonal system.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV/cm^3",
+        "x_LABLAXES": [
+          [
+            "Pxx_ion FA MOM ESA-D",
+            "Pyy_ion FA MOM ESA-D",
+            "Pzz_ion FA MOM ESA-D",
+            "Pxy_ion FA MOM ESA-D",
+            "Pxz_ion FA MOM ESA-D",
+            "Pyz_ion FA MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_ptens_mag_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peim_ptens_mag",
+          "thd_peim_data_quality"
+        ]
+      }
+    },
+    "thd_peem_data_quality": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron Moment Data Quality (0: good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/mom_flag.shtml.) ",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Data_Quality_Flag_elec MOM ESA-D",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABLAXIS": "Data_Quality_Flag_elec MOM ESA-D",
+        "PROPERTY": "scalar",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "TENSOR_ORDER": 0,
+        "UNITS": "0 = Good",
+        "VALIDMAX": 112,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "0 = Good",
+        "x_LABLAXIS": "Data_Quality_Flag_elec MOM ESA-D"
+      }
+    },
+    "thd_peem_densityQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Good data only) ESA On Board Moment (MOM) Electron Density, THEMIS-D",
+        "COMPONENT_0": "thd_peem_density",
+        "COMPONENT_1": "thd_peem_data_quality",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ESA On Board Moment (MOM) Electron Density, THEMIS-D",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABLAXIS": "N_elec MOM ESA-D",
+        "PROPERTY": "scalar",
+        "SCALETYP": "log",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e6>m^-3",
+        "TENSOR_ORDER": 0,
+        "UNITS": "cm^-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "cm^-3",
+        "x_LABLAXIS": "N_elec MOM ESA-D",
+        "COMPONENTS": [
+          "thd_peem_density",
+          "thd_peem_data_quality"
+        ]
+      }
+    },
+    "thd_peem_ptotQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Total Pressure",
+        "COMPONENT_0": "thd_peem_ptot",
+        "COMPONENT_1": "thd_peem_data_quality",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Total Pressure",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABLAXIS": "P_elec MOM ESA-D",
+        "PROPERTY": "scalar",
+        "SCALETYP": "log",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 0,
+        "UNITS": "eV/cm^3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV/cm^3",
+        "x_LABLAXIS": "P_elec MOM ESA-D",
+        "COMPONENTS": [
+          "thd_peem_ptot",
+          "thd_peem_data_quality"
+        ]
+      }
+    },
+    "thd_peem_fluxQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Particle Flux Vector",
+        "COMPONENT_0": "thd_peem_flux",
+        "COMPONENT_1": "thd_peem_data_quality",
+        "COORDINATE_SYSTEM": "DSL (Despun Spacecraft)",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_flux_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Particle Flux Vector",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peem_flux_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e4>m^-2 s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "#/(cm^2-s)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/(cm^2-s)",
+        "x_LABLAXES": [
+          [
+            "Fx_elec MOM ESA-D",
+            "Fy_elec MOM ESA-D",
+            "Fz_elec MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_flux_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peem_flux",
+          "thd_peem_data_quality"
+        ]
+      }
+    },
+    "thd_peem_mftensQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Momentum Flux Tensor",
+        "COMPONENT_0": "thd_peem_mftens",
+        "COMPONENT_1": "thd_peem_data_quality",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_mftens_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Momentum Flux Tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peem_mftens_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV/cm^3",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV/cm^3",
+        "x_LABLAXES": [
+          [
+            "MFxx_elec MOM ESA-D",
+            "MFyy_elec MOM ESA-D",
+            "MFzz_elec MOM ESA-D",
+            "MFxy_elec MOM ESA-D",
+            "MFxz_elec MOM ESA-D",
+            "MFyz_elec MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_mftens_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peem_mftens",
+          "thd_peem_data_quality"
+        ]
+      }
+    },
+    "thd_peem_efluxQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Energy Flux Vector",
+        "COMPONENT_0": "thd_peem_eflux",
+        "COMPONENT_1": "thd_peem_data_quality",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_eflux_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Energy Flux Vector",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peem_eflux_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.6e-15>J m^-2 s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "eV/(cm^2-s)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV/(cm^2-s)",
+        "x_LABLAXES": [
+          [
+            "Efx_elec MOM ESA-D",
+            "Efy_elec MOM ESA-D",
+            "Efz_elec MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_eflux_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peem_eflux",
+          "thd_peem_data_quality"
+        ]
+      }
+    },
+    "thd_peem_velocity_dslQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Velocity Vector in DSL",
+        "COMPONENT_0": "thd_peem_velocity_dsl",
+        "COMPONENT_1": "thd_peem_data_quality",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_velocity_dsl_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Velocity Vector in DSL",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peem_velocity_dsl_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "km/s",
+        "x_LABLAXES": [
+          [
+            "Vx_elec DSL MOM ESA-D",
+            "Vy_elec DSL MOM ESA-D",
+            "Vz_elec DSL MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_velocity_dsl_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peem_velocity_dsl",
+          "thd_peem_data_quality"
+        ]
+      }
+    },
+    "thd_peem_velocity_gseQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Velocity Vector in GSE",
+        "COMPONENT_0": "thd_peem_velocity_gse",
+        "COMPONENT_1": "thd_peem_data_quality",
+        "COORDINATE_SYSTEM": "GSE",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_velocity_gse_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Velocity Vector in GSE",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peem_velocity_gse_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_gse",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "km/s",
+        "x_LABLAXES": [
+          [
+            "Vx_elec GSE MOM ESA-D",
+            "Vy_elec GSE MOM ESA-D",
+            "Vz_elec GSE MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_velocity_gse_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peem_velocity_gse",
+          "thd_peem_data_quality"
+        ]
+      }
+    },
+    "thd_peem_velocity_gsmQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Velocity Vector in GSM",
+        "COMPONENT_0": "thd_peem_velocity_gsm",
+        "COMPONENT_1": "thd_peem_data_quality",
+        "COORDINATE_SYSTEM": "GSM",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_velocity_gsm_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Velocity Vector in GSM",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peem_velocity_gsm_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_gsm",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "km/s",
+        "x_LABLAXES": [
+          [
+            "Vx_elec GSM MOM ESA-D",
+            "Vy_elec GSM MOM ESA-D",
+            "Vz_elec GSM MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_velocity_gsm_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peem_velocity_gsm",
+          "thd_peem_data_quality"
+        ]
+      }
+    },
+    "thd_peem_ptensQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Pressure Tensor",
+        "COMPONENT_0": "thd_peem_ptens",
+        "COMPONENT_1": "thd_peem_data_quality",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_ptens_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Pressure Tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peem_ptens_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV/cm^3",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV/cm^3",
+        "x_LABLAXES": [
+          [
+            "Pxx_elec MOM ESA-D",
+            "Pyy_elec MOM ESA-D",
+            "Pzz_elec MOM ESA-D",
+            "Pxy_elec MOM ESA-D",
+            "Pxz_elec MOM ESA-D",
+            "Pyz_elec MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_ptens_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peem_ptens",
+          "thd_peem_data_quality"
+        ]
+      }
+    },
+    "thd_peem_magQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Magnetic Field Vector DSL (Same time array as MOM Electron ESA data)",
+        "COMPONENT_0": "thd_peem_mag",
+        "COMPONENT_1": "thd_peem_data_quality",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_mag_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Magnetic Field Vector DSL (Same time array as MOM Electron ESA data)",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peem_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": 1,
+        "UNITS": "nT",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT",
+        "x_LABLAXES": [
+          [
+            "Bx_elec DSL MOM ESA-D",
+            "By_elec DSL MOM ESA-D",
+            "Bz_elec DSL MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_mag_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peem_mag",
+          "thd_peem_data_quality"
+        ]
+      }
+    },
+    "thd_peem_velocity_magQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Velocity Vector, Field Aligned",
+        "COMPONENT_0": "thd_peem_velocity_mag",
+        "COMPONENT_1": "thd_peem_data_quality",
+        "COORDINATE_SYSTEM": "FA",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_velocity_mag_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Velocity Vector, Field Aligned",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peem_velocity_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_nfa",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "km/s",
+        "x_LABLAXES": [
+          [
+            "Vx_elec FA MOM ESA-D",
+            "Vy_elec FA MOM ESA-D",
+            "Vz_elec FA MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_velocity_mag_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peem_velocity_mag",
+          "thd_peem_data_quality"
+        ]
+      }
+    },
+    "thd_peem_t3_magQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "COMPONENT_0": "thd_peem_t3_mag",
+        "COMPONENT_1": "thd_peem_data_quality",
+        "COORDINATE_SYSTEM": "FA",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_t3_mag_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peem_t3_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_nfa",
+        "SCALETYP": "log",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-19>J",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "3d temperatures around magnetic axis (Z) and normal axes (X,Y), where Y is Z direction crosed into Sun direction, and X completes orthogonal system.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV",
+        "x_LABLAXES": [
+          [
+            "Tx_elec FA MOM ESA-D",
+            "Ty_elec FA MOM ESA-D",
+            "Tz_elec FA MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_t3_mag_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peem_t3_mag",
+          "thd_peem_data_quality"
+        ]
+      }
+    },
+    "thd_peem_ptens_magQ": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Pressure Tensor, Field Aligned",
+        "COMPONENT_0": "thd_peem_ptens_mag",
+        "COMPONENT_1": "thd_peem_data_quality",
+        "COORDINATE_SYSTEM": "FA",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_ptens_mag_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Pressure Tensor, Field Aligned",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_esa_qflag",
+        "LABL_PTR_1": "thd_peem_ptens_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_nfa",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV/cm^3",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_NOTES": "Pressure tensor around magnetic axis (Z) and normal axes (X,Y), where Y is Z direction crosed into Sun direction, and X completes orthogonal system.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV/cm^3",
+        "x_LABLAXES": [
+          [
+            "Pxx_elec FA MOM ESA-D",
+            "Pyy_elec FA MOM ESA-D",
+            "Pzz_elec FA MOM ESA-D",
+            "Pxy_elec FA MOM ESA-D",
+            "Pxz_elec FA MOM ESA-D",
+            "Pyz_elec FA MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_ptens_mag_compno"
+        ],
+        "COMPONENTS": [
+          "thd_peem_ptens_mag",
+          "thd_peem_data_quality"
+        ]
+      }
+    },
+    "thd_peim_density": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(All qualities data) ESA On Board Moment (MOM) Ion Density, THEMIS-D",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ESA On Board Moment (MOM) Ion Density, THEMIS-D",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "N_ion MOM ESA-D",
+        "PROPERTY": "scalar",
+        "SCALETYP": "log",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e6>m^-3",
+        "TENSOR_ORDER": 0,
+        "UNITS": "cm^-3 (All Qs)",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^-3 (All Qs)",
+        "x_LABLAXIS": "N_ion MOM ESA-D"
+      }
+    },
+    "thd_peim_ptot": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Total Pressure",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Total Pressure",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "P_ion MOM ESA-D",
+        "PROPERTY": "scalar",
+        "SCALETYP": "log",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 0,
+        "UNITS": "eV/cm^3 (All Qs)",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm^3 (All Qs)",
+        "x_LABLAXIS": "P_ion MOM ESA-D"
+      }
+    },
+    "thd_peim_flux": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Particle Flux Vector",
+        "COORDINATE_SYSTEM": "DSL (Despun Spacecraft)",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_flux_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Particle Flux Vector",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peim_flux_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e4>m^-2 s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "#/(cm^2-s) (All Qs)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/(cm^2-s) (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Fx_ion MOM ESA-D",
+            "Fy_ion MOM ESA-D",
+            "Fz_ion MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_flux_compno"
+        ]
+      }
+    },
+    "thd_peim_flux_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 16,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_flux_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "thd_peim_flux_labl",
+        "FORMAT": "a16",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Fx_ion MOM ESA-D",
+        "Fy_ion MOM ESA-D",
+        "Fz_ion MOM ESA-D"
+      ]
+    },
+    "thd_peim_flux_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_flux_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peim_flux_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peim_flux_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Fx_ion MOM ESA-D",
+            "Fy_ion MOM ESA-D",
+            "Fz_ion MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peim_mftens": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Momentum Flux Tensor",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_mftens_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Momentum Flux Tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peim_mftens_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV/cm^3 (All Qs)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm^3 (All Qs)",
+        "x_LABLAXES": [
+          [
+            "MFxx_ion MOM ESA-D",
+            "MFyy_ion MOM ESA-D",
+            "MFzz_ion MOM ESA-D",
+            "MFxy_ion MOM ESA-D",
+            "MFxz_ion MOM ESA-D",
+            "MFyz_ion MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_mftens_compno"
+        ]
+      }
+    },
+    "thd_peim_mftens_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 18,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_mftens_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "thd_peim_mftens_labl",
+        "FORMAT": "a18",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "MFxx_ion MOM ESA-D",
+        "MFyy_ion MOM ESA-D",
+        "MFzz_ion MOM ESA-D",
+        "MFxy_ion MOM ESA-D",
+        "MFxz_ion MOM ESA-D",
+        "MFyz_ion MOM ESA-D"
+      ]
+    },
+    "thd_peim_mftens_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_mftens_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peim_mftens_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peim_mftens_labl",
+        "VALIDMAX": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "MFxx_ion MOM ESA-D",
+            "MFyy_ion MOM ESA-D",
+            "MFzz_ion MOM ESA-D",
+            "MFxy_ion MOM ESA-D",
+            "MFxz_ion MOM ESA-D",
+            "MFyz_ion MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "thd_peim_eflux": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Energy Flux Vector",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_eflux_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Energy Flux Vector",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peim_eflux_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.6e-15>J m^-2 s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "eV/(cm^2-s) (All Qs)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/(cm^2-s) (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Efx_ion MOM ESA-D",
+            "Efy_ion MOM ESA-D",
+            "Efz_ion MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_eflux_compno"
+        ]
+      }
+    },
+    "thd_peim_eflux_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 17,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_eflux_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "thd_peim_eflux_labl",
+        "FORMAT": "a17",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Efx_ion MOM ESA-D",
+        "Efy_ion MOM ESA-D",
+        "Efz_ion MOM ESA-D"
+      ]
+    },
+    "thd_peim_eflux_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_eflux_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peim_eflux_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peim_eflux_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Efx_ion MOM ESA-D",
+            "Efy_ion MOM ESA-D",
+            "Efz_ion MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peim_velocity_dsl": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Velocity Vector in DSL",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_velocity_dsl_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Velocity Vector in DSL",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peim_velocity_dsl_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s (All Qs)",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Vx_ion DSL MOM ESA-D",
+            "Vy_ion DSL MOM ESA-D",
+            "Vz_ion DSL MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_velocity_dsl_compno"
+        ]
+      }
+    },
+    "thd_peim_velocity_dsl_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ESA Ion Velocity DSL, On Board",
+        "DICT_KEY": "label",
+        "FIELDNAM": "ESA Ion Velocity DSL, On Board",
+        "FORMAT": "a20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Vx_ion DSL MOM ESA-D",
+        "Vy_ion DSL MOM ESA-D",
+        "Vz_ion DSL MOM ESA-D"
+      ]
+    },
+    "thd_peim_velocity_dsl_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_velocity_dsl_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peim_velocity_dsl_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peim_velocity_dsl_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Vx_ion DSL MOM ESA-D",
+            "Vy_ion DSL MOM ESA-D",
+            "Vz_ion DSL MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peim_velocity_gse": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Velocity Vector in GSE",
+        "COORDINATE_SYSTEM": "GSE",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_velocity_gse_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Velocity Vector in GSE",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peim_velocity_gse_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_gse",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s (All Qs)",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Vx_ion GSE MOM ESA-D",
+            "Vy_ion GSE MOM ESA-D",
+            "Vz_ion GSE MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_velocity_gse_compno"
+        ]
+      }
+    },
+    "thd_peim_velocity_gse_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ESA Ion Velocity GSE, On Board",
+        "DICT_KEY": "label",
+        "FIELDNAM": "ESA Ion Velocity GSE, On Board",
+        "FORMAT": "a20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Vx_ion GSE MOM ESA-D",
+        "Vy_ion GSE MOM ESA-D",
+        "Vz_ion GSE MOM ESA-D"
+      ]
+    },
+    "thd_peim_velocity_gse_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_velocity_gse_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peim_velocity_gse_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peim_velocity_gse_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Vx_ion GSE MOM ESA-D",
+            "Vy_ion GSE MOM ESA-D",
+            "Vz_ion GSE MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peim_velocity_gsm": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Velocity Vector in GSM",
+        "COORDINATE_SYSTEM": "GSM",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_velocity_gsm_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Velocity Vector in GSM",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peim_velocity_gsm_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_gsm",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s (All Qs)",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Vx_ion GSM MOM ESA-D",
+            "Vy_ion GSM MOM ESA-D",
+            "Vz_ion GSM MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_velocity_gsm_compno"
+        ]
+      }
+    },
+    "thd_peim_velocity_gsm_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ESA Ion Velocity GSM, On Board",
+        "DICT_KEY": "label",
+        "FIELDNAM": "ESA Ion Velocity GSM, On Board",
+        "FORMAT": "a20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Vx_ion GSM MOM ESA-D",
+        "Vy_ion GSM MOM ESA-D",
+        "Vz_ion GSM MOM ESA-D"
+      ]
+    },
+    "thd_peim_velocity_gsm_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_velocity_gsm_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peim_velocity_gsm_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peim_velocity_gsm_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Vx_ion GSM MOM ESA-D",
+            "Vy_ion GSM MOM ESA-D",
+            "Vz_ion GSM MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peim_ptens": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Pressure Tensor",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_ptens_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Pressure Tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peim_ptens_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV/cm^3 (All Qs)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm^3 (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Pxx_ion MOM ESA-D",
+            "Pyy_ion MOM ESA-D",
+            "Pzz_ion MOM ESA-D",
+            "Pxy_ion MOM ESA-D",
+            "Pxz_ion MOM ESA-D",
+            "Pyz_ion MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_ptens_compno"
+        ]
+      }
+    },
+    "thd_peim_ptens_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 17,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_ptens_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "thd_peim_ptens_labl",
+        "FORMAT": "a17",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Pxx_ion MOM ESA-D",
+        "Pyy_ion MOM ESA-D",
+        "Pzz_ion MOM ESA-D",
+        "Pxy_ion MOM ESA-D",
+        "Pxz_ion MOM ESA-D",
+        "Pyz_ion MOM ESA-D"
+      ]
+    },
+    "thd_peim_ptens_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_ptens_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peim_ptens_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peim_ptens_labl",
+        "VALIDMAX": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Pxx_ion MOM ESA-D",
+            "Pyy_ion MOM ESA-D",
+            "Pzz_ion MOM ESA-D",
+            "Pxy_ion MOM ESA-D",
+            "Pxz_ion MOM ESA-D",
+            "Pyz_ion MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "thd_peim_mag": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Magnetic Field Vector DSL (Same time array as MOM Ion ESA data)",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_mag_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Magnetic Field Vector DSL (Same time array as MOM Ion ESA data)",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peim_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": 1,
+        "UNITS": "nT (All Qs)",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Bx_ion DSL MOM ESA-D",
+            "By_ion DSL MOM ESA-D",
+            "Bz_ion DSL MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_mag_compno"
+        ]
+      }
+    },
+    "thd_peim_mag_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic Field DSL, ESA Ion, On Board",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Magnetic Field DSL, ESA Ion, On Board",
+        "FORMAT": "a20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Bx_ion DSL MOM ESA-D",
+        "By_ion DSL MOM ESA-D",
+        "Bz_ion DSL MOM ESA-D"
+      ]
+    },
+    "thd_peim_mag_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_mag_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peim_mag_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peim_mag_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Bx_ion DSL MOM ESA-D",
+            "By_ion DSL MOM ESA-D",
+            "Bz_ion DSL MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peim_velocity_mag": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Velocity Vector, Field Aligned",
+        "COORDINATE_SYSTEM": "FA",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_velocity_mag_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Velocity Vector, Field Aligned",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peim_velocity_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_nfa",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s (All Qs)",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Vx_ion FA MOM ESA-D",
+            "Vy_ion FA MOM ESA-D",
+            "Vz_ion FA MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_velocity_mag_compno"
+        ]
+      }
+    },
+    "thd_peim_velocity_mag_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 19,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ESA Ion Velocity, Field Aligned, On Board",
+        "DICT_KEY": "label",
+        "FIELDNAM": "ESA Ion Velocity, Field Aligned, On Board",
+        "FORMAT": "a19",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Vx_ion FA MOM ESA-D",
+        "Vy_ion FA MOM ESA-D",
+        "Vz_ion FA MOM ESA-D"
+      ]
+    },
+    "thd_peim_velocity_mag_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_velocity_mag_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peim_velocity_mag_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peim_velocity_mag_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Vx_ion FA MOM ESA-D",
+            "Vy_ion FA MOM ESA-D",
+            "Vz_ion FA MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peim_t3_mag": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "COORDINATE_SYSTEM": "FA",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_t3_mag_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peim_t3_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_nfa",
+        "SCALETYP": "log",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-19>J",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV (All Qs)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "3d temperatures around magnetic axis (Z) and normal axes (X,Y), where Y is Z direction crosed into Sun direction, and X completes orthogonal system.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Tx_ion FA MOM ESA-D",
+            "Ty_ion FA MOM ESA-D",
+            "Tz_ion FA MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_t3_mag_compno"
+        ]
+      }
+    },
+    "thd_peim_t3_mag_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 19,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_t3_mag_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "thd_peim_t3_mag_labl",
+        "FORMAT": "a19",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Tx_ion FA MOM ESA-D",
+        "Ty_ion FA MOM ESA-D",
+        "Tz_ion FA MOM ESA-D"
+      ]
+    },
+    "thd_peim_t3_mag_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_t3_mag_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peim_t3_mag_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peim_t3_mag_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Tx_ion FA MOM ESA-D",
+            "Ty_ion FA MOM ESA-D",
+            "Tz_ion FA MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peim_ptens_mag": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Ion Pressure Tensor, Field Aligned",
+        "COORDINATE_SYSTEM": "FA",
+        "DEPEND_0": "thd_peim_epoch",
+        "DEPEND_1": "thd_peim_ptens_mag_compno",
+        "DEPEND_EPOCH0": "thd_peim_epoch0",
+        "DEPEND_TIME": "thd_peim_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Ion Pressure Tensor, Field Aligned",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peim_ptens_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_nfa",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV/cm^3 (All Qs)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_NOTES": "Pressure tensor around magnetic axis (Z) and normal axes (X,Y), where Y is Z direction crosed into Sun direction, and X completes orthogonal system.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm^3 (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Pxx_ion FA MOM ESA-D",
+            "Pyy_ion FA MOM ESA-D",
+            "Pzz_ion FA MOM ESA-D",
+            "Pxy_ion FA MOM ESA-D",
+            "Pxz_ion FA MOM ESA-D",
+            "Pyz_ion FA MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peim_ptens_mag_compno"
+        ]
+      }
+    },
+    "thd_peim_ptens_mag_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_ptens_mag_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "thd_peim_ptens_mag_labl",
+        "FORMAT": "a20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Pxx_ion FA MOM ESA-D",
+        "Pyy_ion FA MOM ESA-D",
+        "Pzz_ion FA MOM ESA-D",
+        "Pxy_ion FA MOM ESA-D",
+        "Pxz_ion FA MOM ESA-D",
+        "Pyz_ion FA MOM ESA-D"
+      ]
+    },
+    "thd_peim_ptens_mag_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_ptens_mag_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peim_ptens_mag_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peim_ptens_mag_labl",
+        "VALIDMAX": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Pxx_ion FA MOM ESA-D",
+            "Pyy_ion FA MOM ESA-D",
+            "Pzz_ion FA MOM ESA-D",
+            "Pxy_ion FA MOM ESA-D",
+            "Pxz_ion FA MOM ESA-D",
+            "Pyz_ion FA MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "thd_peim_time": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_time, UTC, in seconds since 01-Jan-1970 00:00:00; marks center time of data sample",
+        "FIELDNAM": "thd_peim_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "thd_peim_epoch0": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "EPOCH0 of THEMIS time base",
+        "FIELDNAM": "thd_peim_epoch0",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "timebase",
+        "UNITS": "msec",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_NOTES": "EPOCH of 01-Jan-1970 00:00:00",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "timebase"
+      },
+      "VarData": [
+        "1970-01-01T00:00:00.000"
+      ]
+    },
+    "thd_peim_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peim_epoch",
+        "COMPONENT_0": "thd_peim_epoch0",
+        "COMPONENT_1": "thd_peim_time",
+        "FIELDNAM": "thd_peim_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "thd_peim_epoch0",
+          "thd_peim_time"
+        ]
+      }
+    },
+    "thd_peem_density": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(All Qualities data) ESA On Board Moment (MOM) Electron Density, THEMIS-D",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ESA On Board Moment (MOM) Electron Density, THEMIS-D",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "N_elec MOM ESA-D",
+        "PROPERTY": "scalar",
+        "SCALETYP": "log",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e6>m^-3",
+        "TENSOR_ORDER": 0,
+        "UNITS": "cm^-3 (All Qs)",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^-3 (All Qs)",
+        "x_LABLAXIS": "N_elec MOM ESA-D"
+      }
+    },
+    "thd_peem_ptot": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Total Pressure",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Total Pressure",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "P_elec MOM ESA-D",
+        "PROPERTY": "scalar",
+        "SCALETYP": "log",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 0,
+        "UNITS": "eV/cm^3 (All Qs)",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm^3 (All Qs)",
+        "x_LABLAXIS": "P_elec MOM ESA-D"
+      }
+    },
+    "thd_peem_flux": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Particle Flux Vector",
+        "COORDINATE_SYSTEM": "DSL (Despun Spacecraft)",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_flux_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Particle Flux Vector",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peem_flux_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e4>m^-2 s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "#/(cm^2-s) (All Qs)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/(cm^2-s) (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Fx_elec MOM ESA-D",
+            "Fy_elec MOM ESA-D",
+            "Fz_elec MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_flux_compno"
+        ]
+      }
+    },
+    "thd_peem_flux_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 17,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_flux_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "thd_peem_flux_labl",
+        "FORMAT": "a17",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Fx_elec MOM ESA-D",
+        "Fy_elec MOM ESA-D",
+        "Fz_elec MOM ESA-D"
+      ]
+    },
+    "thd_peem_flux_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_flux_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peem_flux_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peem_flux_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Fx_elec MOM ESA-D",
+            "Fy_elec MOM ESA-D",
+            "Fz_elec MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peem_mftens": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Momentum Flux Tensor",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_mftens_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Momentum Flux Tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peem_mftens_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV/cm^3 (All Qs)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm^3 (All Qs)",
+        "x_LABLAXES": [
+          [
+            "MFxx_elec MOM ESA-D",
+            "MFyy_elec MOM ESA-D",
+            "MFzz_elec MOM ESA-D",
+            "MFxy_elec MOM ESA-D",
+            "MFxz_elec MOM ESA-D",
+            "MFyz_elec MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_mftens_compno"
+        ]
+      }
+    },
+    "thd_peem_mftens_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 19,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_mftens_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "thd_peem_mftens_labl",
+        "FORMAT": "a19",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "MFxx_elec MOM ESA-D",
+        "MFyy_elec MOM ESA-D",
+        "MFzz_elec MOM ESA-D",
+        "MFxy_elec MOM ESA-D",
+        "MFxz_elec MOM ESA-D",
+        "MFyz_elec MOM ESA-D"
+      ]
+    },
+    "thd_peem_mftens_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_mftens_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peem_mftens_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peem_mftens_labl",
+        "VALIDMAX": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "MFxx_elec MOM ESA-D",
+            "MFyy_elec MOM ESA-D",
+            "MFzz_elec MOM ESA-D",
+            "MFxy_elec MOM ESA-D",
+            "MFxz_elec MOM ESA-D",
+            "MFyz_elec MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "thd_peem_eflux": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Energy Flux Vector",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_eflux_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Energy Flux Vector",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peem_eflux_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.6e-15>J m^-2 s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "eV/(cm^2-s) (All Qs)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/(cm^2-s) (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Efx_elec MOM ESA-D",
+            "Efy_elec MOM ESA-D",
+            "Efz_elec MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_eflux_compno"
+        ]
+      }
+    },
+    "thd_peem_eflux_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 18,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_eflux_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "thd_peem_eflux_labl",
+        "FORMAT": "a18",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Efx_elec MOM ESA-D",
+        "Efy_elec MOM ESA-D",
+        "Efz_elec MOM ESA-D"
+      ]
+    },
+    "thd_peem_eflux_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_eflux_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peem_eflux_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peem_eflux_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Efx_elec MOM ESA-D",
+            "Efy_elec MOM ESA-D",
+            "Efz_elec MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peem_velocity_dsl": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Velocity Vector in DSL",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_velocity_dsl_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Velocity Vector in DSL",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peem_velocity_dsl_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s (All Qs)",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Vx_elec DSL MOM ESA-D",
+            "Vy_elec DSL MOM ESA-D",
+            "Vz_elec DSL MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_velocity_dsl_compno"
+        ]
+      }
+    },
+    "thd_peem_velocity_dsl_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 21,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ESA Electron Velocity DSL, On Board",
+        "DICT_KEY": "label",
+        "FIELDNAM": "ESA Electron Velocity DSL, On Board",
+        "FORMAT": "a21",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Vx_elec DSL MOM ESA-D",
+        "Vy_elec DSL MOM ESA-D",
+        "Vz_elec DSL MOM ESA-D"
+      ]
+    },
+    "thd_peem_velocity_dsl_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_velocity_dsl_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peem_velocity_dsl_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peem_velocity_dsl_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Vx_elec DSL MOM ESA-D",
+            "Vy_elec DSL MOM ESA-D",
+            "Vz_elec DSL MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peem_velocity_gse": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Velocity Vector in GSE",
+        "COORDINATE_SYSTEM": "GSE",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_velocity_gse_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Velocity Vector in GSE",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peem_velocity_gse_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_gse",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s (All Qs)",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Vx_elec GSE MOM ESA-D",
+            "Vy_elec GSE MOM ESA-D",
+            "Vz_elec GSE MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_velocity_gse_compno"
+        ]
+      }
+    },
+    "thd_peem_velocity_gse_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 21,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ESA Electron Velocity GSE, On Board",
+        "DICT_KEY": "label",
+        "FIELDNAM": "ESA Electron Velocity GSE, On Board",
+        "FORMAT": "a21",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Vx_elec GSE MOM ESA-D",
+        "Vy_elec GSE MOM ESA-D",
+        "Vz_elec GSE MOM ESA-D"
+      ]
+    },
+    "thd_peem_velocity_gse_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_velocity_gse_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peem_velocity_gse_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peem_velocity_gse_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Vx_elec GSE MOM ESA-D",
+            "Vy_elec GSE MOM ESA-D",
+            "Vz_elec GSE MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peem_velocity_gsm": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Velocity Vector in GSM",
+        "COORDINATE_SYSTEM": "GSM",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_velocity_gsm_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Velocity Vector in GSM",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peem_velocity_gsm_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_gsm",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s (All Qs)",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Vx_elec GSM MOM ESA-D",
+            "Vy_elec GSM MOM ESA-D",
+            "Vz_elec GSM MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_velocity_gsm_compno"
+        ]
+      }
+    },
+    "thd_peem_velocity_gsm_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 21,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ESA Electron Velocity GSM, On Board",
+        "DICT_KEY": "label",
+        "FIELDNAM": "ESA Electron Velocity GSM, On Board",
+        "FORMAT": "a21",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Vx_elec GSM MOM ESA-D",
+        "Vy_elec GSM MOM ESA-D",
+        "Vz_elec GSM MOM ESA-D"
+      ]
+    },
+    "thd_peem_velocity_gsm_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_velocity_gsm_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peem_velocity_gsm_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peem_velocity_gsm_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Vx_elec GSM MOM ESA-D",
+            "Vy_elec GSM MOM ESA-D",
+            "Vz_elec GSM MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peem_ptens": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Pressure Tensor",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_ptens_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Pressure Tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peem_ptens_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV/cm^3 (All Qs)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm^3 (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Pxx_elec MOM ESA-D",
+            "Pyy_elec MOM ESA-D",
+            "Pzz_elec MOM ESA-D",
+            "Pxy_elec MOM ESA-D",
+            "Pxz_elec MOM ESA-D",
+            "Pyz_elec MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_ptens_compno"
+        ]
+      }
+    },
+    "thd_peem_ptens_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 18,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_ptens_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "thd_peem_ptens_labl",
+        "FORMAT": "a18",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Pxx_elec MOM ESA-D",
+        "Pyy_elec MOM ESA-D",
+        "Pzz_elec MOM ESA-D",
+        "Pxy_elec MOM ESA-D",
+        "Pxz_elec MOM ESA-D",
+        "Pyz_elec MOM ESA-D"
+      ]
+    },
+    "thd_peem_ptens_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_ptens_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peem_ptens_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peem_ptens_labl",
+        "VALIDMAX": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Pxx_elec MOM ESA-D",
+            "Pyy_elec MOM ESA-D",
+            "Pzz_elec MOM ESA-D",
+            "Pxy_elec MOM ESA-D",
+            "Pxz_elec MOM ESA-D",
+            "Pyz_elec MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "thd_peem_mag": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Magnetic Field Vector DSL (Same time array as MOM Electron ESA data)",
+        "COORDINATE_SYSTEM": "DSL",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_mag_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Magnetic Field Vector DSL (Same time array as MOM Electron ESA data)",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peem_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_dsl",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": 1,
+        "UNITS": "nT (All Qs)",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Bx_elec DSL MOM ESA-D",
+            "By_elec DSL MOM ESA-D",
+            "Bz_elec DSL MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_mag_compno"
+        ]
+      }
+    },
+    "thd_peem_mag_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 21,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic Field DSL, ESA Electron, On Board",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Magnetic Field DSL, ESA Electron, On Board",
+        "FORMAT": "a21",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Bx_elec DSL MOM ESA-D",
+        "By_elec DSL MOM ESA-D",
+        "Bz_elec DSL MOM ESA-D"
+      ]
+    },
+    "thd_peem_mag_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_mag_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peem_mag_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peem_mag_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Bx_elec DSL MOM ESA-D",
+            "By_elec DSL MOM ESA-D",
+            "Bz_elec DSL MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peem_velocity_mag": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Velocity Vector, Field Aligned",
+        "COORDINATE_SYSTEM": "FA",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_velocity_mag_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Velocity Vector, Field Aligned",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peem_velocity_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_nfa",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": 1,
+        "UNITS": "km/s (All Qs)",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -10000.0,
+          -10000.0,
+          -10000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Vx_elec FA MOM ESA-D",
+            "Vy_elec FA MOM ESA-D",
+            "Vz_elec FA MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_velocity_mag_compno"
+        ]
+      }
+    },
+    "thd_peem_velocity_mag_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ESA Electron Velocity, Field Aligned, On Board",
+        "DICT_KEY": "label",
+        "FIELDNAM": "ESA Electron Velocity, Field Aligned, On Board",
+        "FORMAT": "a20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Vx_elec FA MOM ESA-D",
+        "Vy_elec FA MOM ESA-D",
+        "Vz_elec FA MOM ESA-D"
+      ]
+    },
+    "thd_peem_velocity_mag_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_velocity_mag_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peem_velocity_mag_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peem_velocity_mag_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Vx_elec FA MOM ESA-D",
+            "Vy_elec FA MOM ESA-D",
+            "Vz_elec FA MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peem_t3_mag": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "COORDINATE_SYSTEM": "FA",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_t3_mag_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peem_t3_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_nfa",
+        "SCALETYP": "log",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-19>J",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV (All Qs)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "3d temperatures around magnetic axis (Z) and normal axes (X,Y), where Y is Z direction crosed into Sun direction, and X completes orthogonal system.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Tx_elec FA MOM ESA-D",
+            "Ty_elec FA MOM ESA-D",
+            "Tz_elec FA MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_t3_mag_compno"
+        ]
+      }
+    },
+    "thd_peem_t3_mag_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_t3_mag_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "thd_peem_t3_mag_labl",
+        "FORMAT": "a20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Tx_elec FA MOM ESA-D",
+        "Ty_elec FA MOM ESA-D",
+        "Tz_elec FA MOM ESA-D"
+      ]
+    },
+    "thd_peem_t3_mag_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_t3_mag_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peem_t3_mag_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peem_t3_mag_labl",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Tx_elec FA MOM ESA-D",
+            "Ty_elec FA MOM ESA-D",
+            "Tz_elec FA MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "thd_peem_ptens_mag": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----Electron Pressure Tensor, Field Aligned",
+        "COORDINATE_SYSTEM": "FA",
+        "DEPEND_0": "thd_peem_epoch",
+        "DEPEND_1": "thd_peem_ptens_mag_compno",
+        "DEPEND_EPOCH0": "thd_peem_epoch0",
+        "DEPEND_TIME": "thd_peem_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "-----Electron Pressure Tensor, Field Aligned",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "thd_peem_ptens_mag_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz_nfa",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.602e-13>J m^-3",
+        "TENSOR_ORDER": 2,
+        "UNITS": "eV/cm^3 (All Qs)",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_NOTES": "Pressure tensor around magnetic axis (Z) and normal axes (X,Y), where Y is Z direction crosed into Sun direction, and X completes orthogonal system.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm^3 (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Pxx_elec FA MOM ESA-D",
+            "Pyy_elec FA MOM ESA-D",
+            "Pzz_elec FA MOM ESA-D",
+            "Pxy_elec FA MOM ESA-D",
+            "Pxz_elec FA MOM ESA-D",
+            "Pyz_elec FA MOM ESA-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "thd_peem_ptens_mag_compno"
+        ]
+      }
+    },
+    "thd_peem_ptens_mag_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 21,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_ptens_mag_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "thd_peem_ptens_mag_labl",
+        "FORMAT": "a21",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Pxx_elec FA MOM ESA-D",
+        "Pyy_elec FA MOM ESA-D",
+        "Pzz_elec FA MOM ESA-D",
+        "Pxy_elec FA MOM ESA-D",
+        "Pxz_elec FA MOM ESA-D",
+        "Pyz_elec FA MOM ESA-D"
+      ]
+    },
+    "thd_peem_ptens_mag_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_ptens_mag_compno",
+        "DICT_KEY": "number",
+        "FIELDNAM": "thd_peem_ptens_mag_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "thd_peem_ptens_mag_labl",
+        "VALIDMAX": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Pxx_elec FA MOM ESA-D",
+            "Pyy_elec FA MOM ESA-D",
+            "Pzz_elec FA MOM ESA-D",
+            "Pxy_elec FA MOM ESA-D",
+            "Pxz_elec FA MOM ESA-D",
+            "Pyz_elec FA MOM ESA-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "thd_peem_time": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_time, UTC, in seconds since 01-Jan-1970 00:00:00; marks center time of data sample",
+        "FIELDNAM": "thd_peem_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "thd_peem_epoch0": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "EPOCH0 of THEMIS time base",
+        "FIELDNAM": "thd_peem_epoch0",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "timebase",
+        "UNITS": "msec",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_NOTES": "EPOCH of 01-Jan-1970 00:00:00",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "timebase"
+      },
+      "VarData": [
+        "1970-01-01T00:00:00.000"
+      ]
+    },
+    "thd_peem_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_peem_epoch",
+        "COMPONENT_0": "thd_peem_epoch0",
+        "COMPONENT_1": "thd_peem_time",
+        "FIELDNAM": "thd_peem_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "thd_peem_epoch0",
+          "thd_peem_time"
+        ]
+      }
+    },
+    "thd_pxxm_pot": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spacecraft Potential, THEMIS-D",
+        "DEPEND_0": "thd_pxxm_epoch",
+        "DEPEND_EPOCH0": "thd_pxxm_epoch0",
+        "DEPEND_TIME": "thd_pxxm_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Spacecraft Potential, THEMIS-D",
+        "FILLVAL": "NaN",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "Sc_pot MOM THEMIS-D",
+        "PROPERTY": "scalar",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1.0>V",
+        "TENSOR_ORDER": 0,
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Sc_pot MOM THEMIS-D"
+      }
+    },
+    "thd_pxxm_time": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_pxxm_time, UTC, in seconds since 01-Jan-1970 00:00:00; marks center time of data sample",
+        "FIELDNAM": "thd_pxxm_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "thd_pxxm_epoch0": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "EPOCH0 of THEMIS time base",
+        "FIELDNAM": "thd_pxxm_epoch0",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "timebase",
+        "UNITS": "msec",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_NOTES": "EPOCH of 01-Jan-1970 00:00:00",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "timebase"
+      },
+      "VarData": [
+        "1970-01-01T00:00:00.000"
+      ]
+    },
+    "thd_pxxm_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_pxxm_epoch",
+        "COMPONENT_0": "thd_pxxm_epoch0",
+        "COMPONENT_1": "thd_pxxm_time",
+        "FIELDNAM": "thd_pxxm_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "thd_pxxm_epoch0",
+          "thd_pxxm_time"
+        ]
+      }
+    },
+    "Rep_xyz_dsl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "XYZ DSL",
+        "DICT_KEY": "label>representation",
+        "FIELDNAM": "XYZ DSL",
+        "FORMAT": "a1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    "Rep_xyz_gse": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "XYZ GSE",
+        "DICT_KEY": "label>representation",
+        "FIELDNAM": "XYZ GSE",
+        "FORMAT": "a1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    "Rep_xyz_gsm": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "XYZ GSM",
+        "DICT_KEY": "label>representation",
+        "FIELDNAM": "XYZ GSM",
+        "FORMAT": "a1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    "Rep_xyz_nfa": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 2,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Rep_xyz_nfa",
+        "DICT_KEY": "label>representation",
+        "FIELDNAM": "Rep_xyz_nfa",
+        "FORMAT": "a2",
+        "VAR_NOTES": "NFA: Nominally Field Aligned ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "xx",
+        "yy",
+        "zz"
+      ]
+    },
+    "thd_eesa_solarwind_flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ESA electron solar wind mode flag; 0: Not in Solar Wind mode, 1: in Solar Wind mode",
+        "DEPEND_0": "thd_eesa_solarwind_flag_epoch",
+        "DEPEND_EPOCH0": "thd_eesa_solarwind_flag_epoch0",
+        "DEPEND_TIME": "thd_eesa_solarwind_flag_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "thd_eesa_solarwind_flag",
+        "FILLVAL": 255,
+        "FORMAT": "I5",
+        "LABLAXIS": "eesa_solarwind_flag",
+        "SCALETYP": "linear",
+        "UNITS": "adc",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "adc",
+        "x_LABLAXIS": "eesa_solarwind_flag"
+      }
+    },
+    "thd_eesa_solarwind_flag_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_eesa_solarwind_flag_time",
+        "FIELDNAM": "thd_eesa_solarwind_flag_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "thd_eesa_solarwind_flag_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_eesa_solarwind_flag_epoch",
+        "COMPONENT_0": "thd_eesa_solarwind_flag_epoch0",
+        "COMPONENT_1": "thd_eesa_solarwind_flag_time",
+        "FIELDNAM": "thd_eesa_solarwind_flag_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2100-12-31T23:59:59.999",
+        "VALIDMIN": "2001-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "thd_eesa_solarwind_flag_epoch0",
+          "thd_eesa_solarwind_flag_time"
+        ]
+      }
+    },
+    "thd_eesa_solarwind_flag_epoch0": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "EPOCH0 of THEMIS time base",
+        "FIELDNAM": "thd_eesa_solarwind_flag_epoch0",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "timebase",
+        "UNITS": "msec",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_NOTES": "EPOCH of 01-Jan-1970 00:00:00",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "timebase"
+      },
+      "VarData": [
+        "1970-01-01T00:00:00.000"
+      ]
+    },
+    "thd_iesa_solarwind_flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ESA ion solar wind mode flag; 0: Not in Solar Wind mode, 1: in Solar Wind mode",
+        "DEPEND_0": "thd_iesa_solarwind_flag_epoch",
+        "DEPEND_EPOCH0": "thd_iesa_solarwind_flag_epoch0",
+        "DEPEND_TIME": "thd_iesa_solarwind_flag_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "thd_iesa_solarwind_flag",
+        "FILLVAL": 255,
+        "FORMAT": "I5",
+        "LABLAXIS": "iesa_solarwind_flag",
+        "SCALETYP": "linear",
+        "UNITS": "adc",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "adc",
+        "x_LABLAXIS": "iesa_solarwind_flag"
+      }
+    },
+    "thd_iesa_solarwind_flag_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_iesa_solarwind_flag_time",
+        "FIELDNAM": "thd_iesa_solarwind_flag_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "thd_iesa_solarwind_flag_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thd_iesa_solarwind_flag_epoch",
+        "COMPONENT_0": "thd_iesa_solarwind_flag_epoch0",
+        "COMPONENT_1": "thd_iesa_solarwind_flag_time",
+        "FIELDNAM": "thd_iesa_solarwind_flag_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2100-12-31T23:59:59.999",
+        "VALIDMIN": "2001-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "thd_iesa_solarwind_flag_epoch0",
+          "thd_iesa_solarwind_flag_time"
+        ]
+      }
+    },
+    "thd_iesa_solarwind_flag_epoch0": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "EPOCH0 of THEMIS time base",
+        "FIELDNAM": "thd_iesa_solarwind_flag_epoch0",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "timebase",
+        "UNITS": "msec",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_NOTES": "EPOCH of 01-Jan-1970 00:00:00",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "timebase"
+      },
+      "VarData": [
+        "1970-01-01T00:00:00.000"
+      ]
+    },
+    "range_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "range_epoch",
+        "FIELDNAM": "range_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "UT",
+        "UNITS": "msec",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "UT"
+      }
+    }
+  }
+}

@@ -1,0 +1,755 @@
+{
+  "CDFFileInfo": {
+    "File": "helios1_40sec_mag-plasma_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/helios1_40sec_mag-plasma_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "Helios",
+    "Source_name": "HELIOS-1>Helios-1",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Data_type": "40sec>40 sec Helios magnetic field and plasma data",
+    "Descriptor": "mag-plasma>Merged magnetic field, plasma, trajectory",
+    "Data_version": "1",
+    "PI_name": "R. Schwenn, F. M. Neubauer",
+    "PI_affiliation": "Max Planck Institute for Solar System Research, University of Cologne",
+    "TEXT": "General information about initial ascii files: This subdirectory contains daily files of 40.5 sec Helios magnetic field and plasma data described below.  It also contains a file of software written by Aaron Roberts, readhelios40s_dat.pro, for creating alfvenicity graphs.       The Helios mission consisted of two spacecraft launched into the inner heliosphere, both executing orbits from 0.3 to 1 AU with roughly a six month orbital period.     Magnetic field data were recorded at high resolution, with plasma data recorded  at approximately 40.5 s resolution.  These datasets give the highest resolution  plasma (proton and helium) moments with the corresponding average magnetic field  for each plasma measurement.  There are results from two plasma sensors, one of  which gives the vector velocity.         The coverage is best in the early years and varies considerably for the rest of the mission.  The files Helios1_stats and Helios2_stats give the year, day of  year, number of points, and percentage of possible points for the days included  in the sets.  There is no coverage for many days, with the main reason being that  the spacecraft pass behind the Sun with respect to the Earth, thus cutting off  communication.              \nThe overall intervals covered are:  \nHelios 1:  1974 day 346 to          \n           1985 day 247              \nHelios 2:  1976 day 017 to    \n           1980 day 068       \nThe present set of files were produced by R. Schwenn and obtained from J. Luhmann. They have been reformatted by Aaron Roberts to assure spaces between the variables,  and in the process the HGI longitude and the RTN versions of the variables were added for convenience.  Also, spacecraft positions were interpolated to make them  distinct. The fill value for missing data in the original files was either -1 or 0;  all these have been changed to 0. The other entries are directly from the original  files.            \nR. Schwenn should be acknowledged for plasma data and F. Neubauer for magnetic field data.  GSFC/SPDF nssdcftp (or successor) should be acknowledged as the immediate  source of the data.               \n* The RTN components were calculated from the SSE XYZ components using R -> -X, T -> -Y, and N -> Z.  The Cartesian coordinates for B and the angles for V are the  original variables in the file, and no correction was made in the conversion to RTN  for the actual spacecraft position.  Since RTN and SSE are defined relative to the helioequatorial plane and to the ecliptic plane, respectively, and since these planes are inclined by 7.25 degrees relative to each other (heliocentric orbits of Earth,  Helios 1 and Helios 2 are virtually co-planar), this introduces errors of up to 100% * (1 - cos 7.25) = 1% in the RTN components.  However, the V and B are consistent with each other and can be compared directly.                 \n(text by Aaron Roberts, with edits by Joe King; October, 2008)  ",
+    "Instrument_type": "Magnetic Fields (space)\nPlasma and Solar Wind\nEphemeris/Attitude/Ancillary",
+    "Mission_group": "Helios\n!___Interplanetary Data near 1 AU",
+    "Logical_source": "helios1_40sec_mag-plasma",
+    "Logical_file_id": "helios-1_40sec_mag-plasma_00000000_v01",
+    "Logical_source_description": "Merged 40.5 s magnetic field, plasma data, ephemeris",
+    "Time_resolution": "40.5 seconds",
+    "LINK_TEXT": "Above data in the form of ",
+    "LINK_TITLE": "ASCII files",
+    "HTTP_LINK": "https://spdf.gsfc.nasa.gov/pub/data/helios/helios1/merged/he1_40sec/",
+    "File_naming_convention": "source_datatype_descriptor_yyyyMMdd",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Helios1/E1/PT40.5S",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Default time",
+        "DICT_KEY": "time",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "UNITS": "ms",
+        "VALIDMAX": "3000-01-01T00:00:00.000",
+        "VALIDMIN": "1000-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms"
+      }
+    },
+    "R_Helio": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Heliocentric distance (AU)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "distance",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "R_Helio",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "R_Helio",
+        "UNITS": "AU",
+        "VALIDMAX": 2.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AU",
+        "x_LABLAXIS": "R_Helio"
+      }
+    },
+    "ESS_Ang": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Earth-sun-spacecraft angle (deg)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ESS_Ang",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "ESS_Ang",
+        "UNITS": "degree",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "ESS_Ang"
+      }
+    },
+    "clong": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Carrington longitude (deg)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "C long",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Carrington longitude",
+        "UNITS": "degree",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "Carrington longitude"
+      }
+    },
+    "clat": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Carrington/HGI latitude (deg)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "C/HGI lat",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Carrington/HGI latitude",
+        "UNITS": "degree",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "Carrington/HGI latitude"
+      }
+    },
+    "HGIlong": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "HGI Longitude (deg)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "HGI Long",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "HGI Longitude",
+        "UNITS": "degree",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "HGI Longitude"
+      }
+    },
+    "B_R": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The HGI \"R\" component of the magnetic field (nT)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B_R",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "B_R",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B_R"
+      }
+    },
+    "B_T": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The HGI \"T\" component of the magnetic field (nT)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B_T",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "B_T",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B_T"
+      }
+    },
+    "B_N": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The HGI \"N\" component of the magnetic field (nT)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B_N",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "B_N",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B_N"
+      }
+    },
+    "Vp_R": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The HGI \"R\" component of the proton velocity  (km/s)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vp_R",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f9.2",
+        "LABLAXIS": "Vp_R",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Vp_R"
+      }
+    },
+    "Vp_T": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The HGI \"T\" component of the proton velocity  (km/s)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vp_T",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f9.2",
+        "LABLAXIS": "Vp_T",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Vp_T"
+      }
+    },
+    "Vp_N": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The HGI \"N\" component of the proton velocity  (km/s)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vp_N",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f9.2",
+        "LABLAXIS": "Vp_N",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Vp_N"
+      }
+    },
+    "crot": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Carrington rotation",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "Carrington rotation",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Carrington rotation",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "Carrington rotation",
+        "UNITS": " ",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Carrington rotation"
+      }
+    },
+    "Np": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton number density (cm^-3)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "N_p",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "N_p",
+        "UNITS": "cm^-3",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^-3",
+        "x_LABLAXIS": "N_p"
+      }
+    },
+    "Vp": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton speed  (Km/s)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "V_p",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "V_p",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "V_p"
+      }
+    },
+    "Tp": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Temperature  (K)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T_p",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f12.2",
+        "LABLAXIS": "T_p",
+        "UNITS": "K",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "K",
+        "x_LABLAXIS": "T_p"
+      }
+    },
+    "V_Azimuth": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Azimuth of the velocity vector (deg)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "direction",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "V_Azimuth",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "V_Azimuth",
+        "UNITS": "degree",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "V_Azimuth"
+      }
+    },
+    "V_Elev": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Elevation of the velocity vector (deg)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "direction",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "V_Elev",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "V_Elev",
+        "UNITS": "degree",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "V_Elev"
+      }
+    },
+    "B_x": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SSE (spacecraft) X component of the magnetic field",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Bx_SSE",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Bx_SSE",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Bx_SSE"
+      }
+    },
+    "B_y": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SSE (spacecraft) Y component of the magnetic field",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "By_SSE",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "By_SSE",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "By_SSE"
+      }
+    },
+    "B_z": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SSE (spacecraft) Z component of the magnetic field",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Bz_SSE",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Bz_SSE",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Bz_SSE"
+      }
+    },
+    "stdev_B_x": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Standard deviation of the B_X component over the 40.5 s",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field deviation",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "stdev Bx_SSE",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "stdev Bx_SSE",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "stdev Bx_SSE"
+      }
+    },
+    "stdev_B_y": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Standard deviation of the B_Y component over the 40.5 s",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field deviation",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "stdev By_SSE",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "stdev By_SSE",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "stdev By_SSE"
+      }
+    },
+    "stdev_B_z": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Standard deviation of the B_Z component over the 40.5 s",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field deviation",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "stdev Bz_SSE",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "stdev Bz_SSE",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "stdev Bz_SSE"
+      }
+    },
+    "N_a": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha number density (cm^-3)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "N_a",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Alpha number density",
+        "UNITS": "cm^-3",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^-3",
+        "x_LABLAXIS": "Alpha number density"
+      }
+    },
+    "V_a": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha speed  (Km/s)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "V_a",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "velocity",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "velocity"
+      }
+    },
+    "T_a": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha temperature (K)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T_a",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f12.2",
+        "LABLAXIS": "temperature",
+        "UNITS": "K",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "K",
+        "x_LABLAXIS": "temperature"
+      }
+    },
+    "Np2": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton density (second instrument)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "N_p2",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "density",
+        "UNITS": "cm^-3",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^-3",
+        "x_LABLAXIS": "density"
+      }
+    },
+    "Vp2": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton speed (second instrument)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "V_p2",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "velocity",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "velocity"
+      }
+    }
+  }
+}

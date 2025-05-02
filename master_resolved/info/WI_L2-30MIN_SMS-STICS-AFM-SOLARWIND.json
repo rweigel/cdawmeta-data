@@ -1,0 +1,1217 @@
+{
+  "CDFFileInfo": {
+    "File": "wi_l2-30min_sms-stics-afm-solarwind_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/wi_l2-30min_sms-stics-afm-solarwind_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Source_name": "WIND>Wind Interplanetary Plasma Laboratory",
+    "Data_type": "L2-30MIN>Level2 30minute",
+    "Descriptor": "SMS-STICS-AFM-SOLARWIND>SMS Solar Wind & Suprathermal Ion Composition Investigation solarwind AFM solarwind",
+    "Data_version": " ",
+    "TITLE": "WIND SMS Level2 stics afm solarwind ",
+    "TEXT": "The Suprathermal Ion Composition Spectrometer (STICS) is a time of flight (TOF) plasma mass spectrometer, capable of identifying mass and mass per charge for incident ions up to 200 keV/e. It uses an electrostatic analyzer to admit ions of a particular energy per charge (E/Q) into the TOF chamber. The E/Q voltage is stepped through 32 values, sitting at each value for approximately 24 sec., to measure ions over the full E/Q range of 6 - 200 keV/e. Ions then pass through a carbon foil and TOF chamber, before finally impacting on a solid-state detector (SSD) for energy measurement. STICS combines these three measurements of E/Q, TOF and residual energy, producing PHA words. This triple-coincidence technique greatly improves the signal to noise ratio in the data. Measurements of E/Q and TOF without residual energy also produce PHA words. These double-coincidence measurements are characterized by better statistics since ions whose energy does not allow them to be registered by the SSD can still be counted in double-coincidence measurements. However, ion identification in double-coincidence measurements are limited to a select number of ions that are well separated in E/Q - TOF space.  The STICS instrument provides full 3D velocity distribution functions, through a combination of multiple telescopes and spacecraft spin. The instrument includes 3 separate TOF telescopes that view 3 separate latitude sectors, as shown in Figure 1. In addition, the WIND spacecraft spins, allowing the 3 telescopes to trace out a nearly 4�° steradian viewing area. The longitudinal sectors are shown in Figure 2. The solar direction is in sectors 8-10 while the earthward direction is in sectors 0-2.",
+    "MODS": "Initial release",
+    "ADID_ref": "NSSD0142",
+    "Logical_file_id": "WI_L2-HPLUS-30MIN_SMS-STICS-AFM-TC-SOLARWIND_00000000_V01",
+    "Logical_source": "WI_L2-HPLUS-30MIN_SMS-STICS-AFM-TC-SOLARWIND",
+    "Logical_source_description": "Solar Wind and Suprathermal Ion Composition  Instrument, Key Parameters",
+    "PI_name": "S. T. Lepri",
+    "PI_affiliation": "U of Michigan",
+    "Instrument_type": "Plasma and Solar Wind",
+    "TEXT_supplement_1": " ",
+    "LINK_TEXT": "Historic Wind SMS \nWind STICS ",
+    "LINK_TITLE": "Home Page\nRelease Notes",
+    "HTTP_LINK": "http://space.umd.edu/wind/\nhttps://spdf.gsfc.nasa.gov/pub/data/wind/documents/wind_stics_lv2_release_notes_revD.pdf",
+    "NSSDC_id": "sphe-00653",
+    "alt_logical_source": "Wind_SMS_Key-Parameters-K0_1min_cdf",
+    "Mission_group": "Wind\n!___Interplanetary Data near 1 AU",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Wind/SMS/STICS/AngularFluxMap/Level2/SolarWind/PT30M",
+    "DOI": "https://doi.org/10.48322/57np-qg69"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time start of avg interval",
+        "DICT_KEY": "time>Epoch_center_range",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2020-01-01T00:00:00.000",
+        "SCALEMIN": "1994-01-01T00:00:00.000",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-01-01T00:00:00.000",
+        "VALIDMIN": "1994-01-01T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "AFM_tc_hplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence H+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC H+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC H+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC H+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_heplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence He+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC He+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC He+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC He+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_he2plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence He2+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC He2+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC He2+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC He2+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_oplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence O+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC O+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC O+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC O+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_o6plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence O6+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC O6+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC O6+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC O6+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_c5plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence C5+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC C5+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC C5+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC C5+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_fe10plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence Fe10+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC Fe10+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC Fe10+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC Fe10+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_cplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence C+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC C+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC C+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC C+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_nplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence N+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC N+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC N+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC N+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_o2plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence O2+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC O2+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC O2+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC O2+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_c6plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence C6+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC C6+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC C6+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC C6+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_c4plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence C4+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC C4+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC C4+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC C4+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_o7plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence O7+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC O7+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC O7+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC O7+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_o8plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence O8+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC O8+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC O8+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC O8+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_fe8plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence Fe8+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC Fe8+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC Fe8+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC Fe8+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_fe9plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence Fe9+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC Fe9+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC Fe9+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC Fe9+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_tc_fe16plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in triple coincidence Fe16+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM TC Fe16+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM TC Fe16+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM TC Fe16+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_dc_hplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in double coincidence H+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM DC H+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM DC H+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM DC H+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_dc_heplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in double coincidence He+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM DC He+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM DC He+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM DC He+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_dc_he2plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in double coincidence He2+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM DC He2+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM DC He2+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM DC He2+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_dc_oplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in double coincidence O+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM DC O+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM DC O+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM DC O+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_dc_o6plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in double coincidence O6+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM DC O6+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM DC O6+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM DC O6+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "AFM_dc_cplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angular flux map gives the flux of ions flowing in a given direction in double coincidence C+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_index",
+        "DEPEND_2": "TELESCOPE_index",
+        "FIELDNAM": "AFM DC C+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "AFM DC C+",
+        "LABL_PTR_2": "Telescope_Labl",
+        "UNITS": "(cm^2 sr s)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "(cm^2 sr s)^-1",
+        "x_LABLAXIS": "AFM DC C+",
+        "x_LABLAXES": [
+          [
+            "Telescope 1 +53deg",
+            "Telescope 2 0deg",
+            "Telescope 3 -53deg"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTOR_index",
+          "TELESCOPE_index"
+        ]
+      }
+    },
+    "SECTOR_index": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sector index",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Sector index",
+        "FILLVAL": -9,
+        "FORMAT": "i2",
+        "LABLAXIS": "Sector index",
+        "SCALETYP": "linear",
+        "UNITS": "sector index",
+        "VALIDMAX": 16,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sector index",
+        "x_LABLAXIS": "Sector index"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    "TELESCOPE_index": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TELESCOPE index",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "TELESCOPE index",
+        "FILLVAL": -9,
+        "FORMAT": "i2",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 3,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "Telescope_Labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 18,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Telescope",
+        "FIELDNAM": "Telescope",
+        "FORMAT": "A18",
+        "LABLAXIS": "Telescope",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Telescope"
+      },
+      "VarData": [
+        "Telescope 1 +53deg",
+        "Telescope 2 0deg",
+        "Telescope 3 -53deg"
+      ]
+    }
+  }
+}

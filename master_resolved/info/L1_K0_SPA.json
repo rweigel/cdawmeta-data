@@ -1,0 +1,1959 @@
+{
+  "CDFFileInfo": {
+    "File": "l1_k0_spa_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/l1_k0_spa_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "LANL GEO Energetic Particle",
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Source_name": "LANL1991_080>Los Alamos National Laboratory 1989",
+    "Descriptor": "SPA>Synchronous Orbit Particle Analyzer",
+    "Data_type": "K0>Key Parameter",
+    "Data_version": "1",
+    "TEXT": "     Electron, proton and helium measurements are taken every 160 ms from one \nof the three telescopes according to the following sequence:  T1, T2, T3, \nT2, T1, T2 etc.  Heavy ion data accumulated from each of the three telescopes \nagain according to the timing and sequence above and summed for 10.24 seconds\nwhich is approximately one spacecraft rotation.  SOPA Key Parameters are \nnormally averaged over three telescopes for ~ 1 minute (6 - 10.24 second\ndata accumulation cycles) giving an average over much of the sky.  The time \nassociated with each set of Key Parameters is determined by using the time \n(in minutes of the day) at the start of each data collection cycle as an index\ninto an array of 1440 time slots dividing the day into 1440 one minute \nintervals.  The time reported is the midpoint of each interval.  \n     We provide six fluxes:\n        Low energy Protons:  50 keV to 400 keV\n        High energy Protons: 1.2 MeV to 5 MeV\n        Low energy Electrons:  50 keV to 225 keV\n        High energy Electrons: 315 keV to 1.5 MeV\n        Helium      : ~0.9 MeV to ~1.3 Mev\n        Heavy Ions  : ~5 MeV to ~15 MeV (includes carbon, nitrogen,\n                       and oxygen\n     We also compute two electron temperatures and densities and two proton\ntemperatures and densities.  These are based on approximately the same energy\nranges as the fluxes given in above and are determined for relativistic\nMaxwellian distributions.  \n \nStatus of SOPA Instrument 1991-080:  Operating normally as of 01-Feb-1993\nwith the following exception.  Detector D1 on Telescope 2 is becoming noisy.\nThis affects proton and ion data from that telescope.  Bad data is disabled \nthru software in the ground processing and is NOT averaged into the Key \nparameter data.  Therefore, the parameters given are good but do not cover \nthe same percentage of the sky.\n   \nData is flagged with a data quality flag as follows:\n   +1 Data is Good\n    0 Data is Suspect\n   -1 Data is Unusable\nLANL personnel should be contacted before using any data tagged as suspect.\nReferences:   Belian, R. D., Gisler, G. R., Cayton, T. E., Christensen, R. A.,\nHigh-Z Energetic Particles at Geosynchronous Orbit During The Great Solar \nProton Event Series of October 1989, J. Geophys. Res., 97, 16897, 1992",
+    "MODS": "created 30-Nov-1992 \nadded text to describe instrument 04-Feb-1993",
+    "ADID_ref": "NSSD0100",
+    "Logical_file_id": "l1_k0_spa_00000000_v01 ",
+    "Logical_source": "l1_k0_spa",
+    "Logical_source_description": "LANL 1991 Synchronous Orbit Particle Analyzer Key Parameters",
+    "Instrument_type": "Particles (space)",
+    "PI_name": "Reiner Friedel",
+    "PI_affiliation": "LANL",
+    "TEXT_supplement_1": " ",
+    "alt_logical_source": "LANL1991_SPA_Key-Parameters-K0_1min_cdf",
+    "Mission_group": "LANL\n!___Magnetospheric Data",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/LANL/1991/SOPA/PT60S",
+    "DOI": "https://doi.org/10.48322/1jyx-5h51",
+    "LINK_TEXT": "More LANL Synchronous Orbit Energetic Particle (SOPA) data, information and plots at",
+    "LINK_TITLE": "http://leadbelly.lanl.gov/lanl_ep_data/",
+    "HTTP_LINK": "http://leadbelly.lanl.gov/lanl_ep_data/"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time, centered",
+        "DICT_KEY": "time>Epoch",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2020-12-31T23:59:59.000",
+        "SCALEMIN": "1992-08-01T00:00:00.000",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T23:59:59.000",
+        "VALIDMIN": "1992-08-01T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "Time_PB5": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time (year, day of year, ms of day) at center of interval ",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "unit_time",
+        "DICT_KEY": "time>PB5",
+        "FIELDNAM": "Time",
+        "FILLVAL": -2147483648,
+        "FORM_PTR": "format_time",
+        "LABL_PTR_1": "label_time",
+        "SCALEMAX": [
+          2020,
+          366,
+          86399000
+        ],
+        "SCALEMIN": [
+          1992,
+          214,
+          0
+        ],
+        "UNIT_PTR": "unit_time",
+        "VALIDMAX": [
+          2020,
+          366,
+          86399000
+        ],
+        "VALIDMIN": [
+          1992,
+          214,
+          0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": [
+          "year",
+          "day",
+          "msec"
+        ],
+        "x_LABLAXES": [
+          [
+            "Year",
+            "Day of Year (Jan 1 = Day 1)",
+            "Elapsed millisecond of day"
+          ]
+        ],
+        "x_DEPEND": [
+          [
+            "year",
+            "day",
+            "msec"
+          ]
+        ]
+      }
+    },
+    "sc_loc": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Spacecraft position, geographic (latitude, longitude (deg), radius (RE))",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position>",
+        "FIELDNAM": "S/C position",
+        "FILLVAL": -1e+31,
+        "FORM_PTR": "format_pos",
+        "LABL_PTR_1": "Polar",
+        "SCALEMAX": [
+          90.0,
+          180.0,
+          7.0
+        ],
+        "SCALEMIN": [
+          -90.0,
+          -180.0,
+          6.0
+        ],
+        "UNIT_PTR": "unit_pos",
+        "VALIDMAX": [
+          90.0,
+          180.0,
+          7.0
+        ],
+        "VALIDMIN": [
+          -90.0,
+          -180.0,
+          6.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "Degrees",
+          "Degrees",
+          "Earth radii"
+        ],
+        "x_LABLAXES": [
+          [
+            "S/C Latitude",
+            "S/C Longitude",
+            "S/C Orbit Radius"
+          ]
+        ]
+      }
+    },
+    "spa_e_temp": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Electron temperature in 2 energy bands (50-225 keV, 315-1500 keV)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_E",
+        "DICT_KEY": "temperature>electron",
+        "FIELDNAM": "SPA Electron Temp",
+        "FILLVAL": -1e+31,
+        "FORM_PTR": "TEMP_FORM",
+        "LABL_PTR_1": "E_TEMP_LABL",
+        "SCALEMAX": [
+          50.0,
+          50.0
+        ],
+        "SCALEMIN": [
+          0.0,
+          0.0
+        ],
+        "UNITS": "keV",
+        "VALIDMAX": [
+          50.0,
+          50.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "Electron temperature determined from relativistic Maxwellian distributions and averaged over 3 11deg telescopes (separated by  30deg) rotating with spacecraft",
+        "VAR_TYPE": "data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXES": [
+          [
+            "Te (50-225keV)",
+            "Te (315-1500keV)"
+          ]
+        ],
+        "x_DEPEND": [
+          "ENERGY_E"
+        ]
+      }
+    },
+    "spa_p_temp": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Proton temperature in 2 energy bands (50-400 keV, 1.2-5.0 MeV)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_P",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "SPA Proton Temp",
+        "FILLVAL": -1e+31,
+        "FORM_PTR": "TEMP_FORM",
+        "LABL_PTR_1": "P_TEMP_LABL",
+        "SCALEMAX": [
+          50.0,
+          50.0
+        ],
+        "SCALEMIN": [
+          0.0,
+          0.0
+        ],
+        "UNITS": "keV",
+        "VALIDMAX": [
+          50.0,
+          50.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "Proton temperature determined from relativistic Maxwellian distributions and averaged over 3 11deg telescopes (separated by  30deg) rotating with spacecraft",
+        "VAR_TYPE": "data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXES": [
+          [
+            "Tp (50-400 keV)",
+            "Tp (1.2-5.0 MeV)"
+          ]
+        ],
+        "x_DEPEND": [
+          "ENERGY_P"
+        ]
+      }
+    },
+    "spa_e_dens": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Partial electron densities in 2 energy bands (50-225 keV, 315-1500 keV)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_E",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "SPA Elect. Density 1",
+        "FILLVAL": -1e+31,
+        "FORM_PTR": "DENS_FORM",
+        "LABL_PTR_1": "E_DENS_LABL",
+        "SCALEMAX": [
+          5000.0,
+          5000.0
+        ],
+        "SCALEMIN": [
+          0.009999999776482582,
+          0.009999999776482582
+        ],
+        "UNITS": "e/cm3",
+        "VALIDMAX": [
+          5000.0,
+          5000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "Partial electron densities determined from relativistic Maxwellian distributions and averaged over 3 11deg telescopes (separated by  30deg) rotating with spacecraft",
+        "VAR_TYPE": "data",
+        "x_UNITS": "e/cm3",
+        "x_LABLAXES": [
+          [
+            "Ne (50-225 keV)",
+            "Ne (315-1500 keV)"
+          ]
+        ],
+        "x_DEPEND": [
+          "ENERGY_E"
+        ]
+      }
+    },
+    "spa_p_dens": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Partial proton densities in 2 energy bands (50-400 keV, 1.2-5.0 MeV)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_P",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "SPA Prot. Density",
+        "FILLVAL": -1e+31,
+        "FORM_PTR": "DENS_FORM",
+        "LABL_PTR_1": "P_DENS_LABL",
+        "SCALEMAX": [
+          5000.0,
+          5000.0
+        ],
+        "SCALEMIN": [
+          0.0,
+          0.0
+        ],
+        "UNITS": "p/cm3",
+        "VALIDMAX": [
+          5000.0,
+          5000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "Partial proton densities determined from relativistic Maxwellian distributions and averaged over 3 11deg telescopes (separated by  30deg) rotating with spacecraft",
+        "VAR_TYPE": "data",
+        "x_UNITS": "p/cm3",
+        "x_LABLAXES": [
+          [
+            "Np (50-400 keV)",
+            "Np (1.2-5.0 MeV)"
+          ]
+        ],
+        "x_DEPEND": [
+          "ENERGY_P"
+        ]
+      }
+    },
+    "spa_a_flux": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Alpha flux (Helium) from ~0.9 MeV to ~1.3 Mev",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "particle_flux>alpha",
+        "FIELDNAM": "SPA alpha flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.5",
+        "LABLAXIS": "Alpha Flux",
+        "SCALEMAX": 50000.0,
+        "SCALEMIN": 0.01,
+        "UNITS": "a/(keV-cm2-ster-sec)",
+        "VALIDMAX": 50000.0,
+        "VALIDMIN": 0.01,
+        "VAR_NOTES": "alpha flux (Helium) averaged over 3 11deg telescopes (separated by  30deg) rotating with spacecraft",
+        "VAR_TYPE": "data",
+        "x_UNITS": "a/(keV-cm2-ster-sec)",
+        "x_LABLAXIS": "Alpha Flux"
+      }
+    },
+    "spa_hvy_flx": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Heavy Ion flux at ~5 MeV to ~15 MeV (includes carbon, nitrogen, and oxygen",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "SPA heavy part. flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.5",
+        "LABLAXIS": "Heavy Flux",
+        "SCALEMAX": 500.0,
+        "SCALEMIN": 0.001,
+        "UNITS": "P/(keV-cm2-ster-sec)",
+        "VALIDMAX": 500.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Heavy Ion flux averaged over 3 11deg telescopes (separated by  30deg) rotating with spacecraft",
+        "VAR_TYPE": "data",
+        "x_UNITS": "P/(keV-cm2-ster-sec)",
+        "x_LABLAXIS": "Heavy Flux"
+      }
+    },
+    "spa_e_flx": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Electron flux in 2 energy bands (50-225 keV, 315-1500 keV)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_E",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "SPA Electron Flux",
+        "FILLVAL": -1e+31,
+        "FORM_PTR": "FLUX_FORM",
+        "LABL_PTR_1": "E_FLUX_LABL",
+        "SCALEMAX": 5000.0,
+        "SCALEMIN": 0.1,
+        "UNITS": "e/(keV-cm2-ster-sec)",
+        "VALIDMAX": 50000.0,
+        "VALIDMIN": 0.1,
+        "VAR_NOTES": "Electron flux is averaged over 3 11deg telescopes (separated by  30deg) rotating with spacecraft",
+        "VAR_TYPE": "data",
+        "x_UNITS": "e/(keV-cm2-ster-sec)",
+        "x_LABLAXES": [
+          [
+            "Ee (50-225 keV)",
+            "Ee (315-1500 keV)"
+          ]
+        ],
+        "x_DEPEND": [
+          "ENERGY_E"
+        ]
+      }
+    },
+    "spa_p_flx": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Proton flux in 2 energy bands (50-400 keV, 1.2-5.0 MeV)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_P",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "SPA proton flux",
+        "FILLVAL": -1e+31,
+        "FORM_PTR": "FLUX_FORM",
+        "LABL_PTR_1": "P_FLUX_LABL",
+        "SCALEMAX": 5000.0,
+        "SCALEMIN": 0.01,
+        "UNITS": "p/(keV-cm2-ster-sec)",
+        "VALIDMAX": 50000.0,
+        "VALIDMIN": 0.01,
+        "VAR_NOTES": "proton flux averaged over 3 11deg telescopes (separated by  30deg) rotating with spacecraft",
+        "VAR_TYPE": "data",
+        "x_UNITS": "p/(keV-cm2-ster-sec)",
+        "x_LABLAXES": [
+          [
+            "Ep (50-400 keV)",
+            "Ep (1.2-5.0 MeV)"
+          ]
+        ],
+        "x_DEPEND": [
+          "ENERGY_P"
+        ]
+      }
+    },
+    "label_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 27,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Labels for Time_PB5                     ",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "Labels for Time_PB5",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Year",
+        "Day of Year (Jan 1 = Day 1)",
+        "Elapsed millisecond of day"
+      ]
+    },
+    "unit_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 4,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Units for Time_PB5                      ",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "Units for Time_PB5",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "year",
+        "day",
+        "msec"
+      ]
+    },
+    "format_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 2,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Format for Time_PB5                     ",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "Format for Time_PB5",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "I4",
+        "I3",
+        "I8"
+      ]
+    },
+    "Polar": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 17,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label for s/c position                  ",
+        "DICT_KEY": "label>position",
+        "FIELDNAM": "Label for s/c position",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "S/C Latitude",
+        "S/C Longitude",
+        "S/C Orbit Radius"
+      ]
+    },
+    "unit_pos": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 11,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Units for s/c position                  ",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Units for s/c position",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Degrees",
+        "Degrees",
+        "Earth radii"
+      ]
+    },
+    "ENERGY_E": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Electron energies, midpoints of 2 energy bands (50-225 keV, 315-15000 keV)",
+        "DELTA_MINUS_VAR": "E_MINUS",
+        "DELTA_PLUS_VAR": "E_PLUS",
+        "DICT_KEY": "energy>electron",
+        "FIELDNAM": "Electron Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f6.1",
+        "LABLAXIS": "E Energy",
+        "SCALEMAX": [
+          225.0,
+          1500.0
+        ],
+        "SCALEMIN": [
+          50.0,
+          315.0
+        ],
+        "UNITS": "keV",
+        "VALIDMAX": [
+          225.0,
+          1500.0
+        ],
+        "VALIDMIN": [
+          50.0,
+          315.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "E Energy"
+      },
+      "VarData": [
+        135.0,
+        900.0
+      ]
+    },
+    "ENERGY_P": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Proton energies, midpoints of 2 energy bands (50-400 keV, 1.2-5.0 MeV)",
+        "DELTA_MINUS_VAR": "P_MINUS",
+        "DELTA_PLUS_VAR": "P_PLUS",
+        "DICT_KEY": "energy>proton",
+        "FIELDNAM": "Proton Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f6.1",
+        "LABLAXIS": "P Energy",
+        "SCALEMAX": [
+          400.0,
+          5000.0
+        ],
+        "SCALEMIN": [
+          50.0,
+          1200.0
+        ],
+        "UNITS": "keV",
+        "VALIDMAX": [
+          400.0,
+          5000.0
+        ],
+        "VALIDMIN": [
+          50.0,
+          1200.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "P Energy"
+      },
+      "VarData": [
+        225.0,
+        3100.0
+      ]
+    },
+    "E_MINUS": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Electron energies, delta to lower limits of 2 energy bands (50-225 keV, 315-15000 keV)",
+        "DICT_KEY": "ISTP>range>absolute",
+        "FIELDNAM": "Electron Energy Range low",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f6.1",
+        "LABLAXIS": "-dE elect",
+        "SCALEMAX": [
+          225.0,
+          1500.0
+        ],
+        "SCALEMIN": [
+          50.0,
+          315.0
+        ],
+        "UNITS": "keV",
+        "VALIDMAX": [
+          225.0,
+          1500.0
+        ],
+        "VALIDMIN": [
+          50.0,
+          315.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "-dE elect"
+      },
+      "VarData": [
+        85.0,
+        585.0
+      ]
+    },
+    "E_PLUS": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Electron energies, delta to upper limits of 2 energy bands (50-225 keV, 315-15000 keV)",
+        "DICT_KEY": "ISTP>range>absolute",
+        "FIELDNAM": "Electron Energy Range HIGH",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f6.1",
+        "LABLAXIS": "+dE elect",
+        "SCALEMAX": [
+          225.0,
+          1500.0
+        ],
+        "SCALEMIN": [
+          50.0,
+          315.0
+        ],
+        "UNITS": "keV",
+        "VALIDMAX": [
+          225.0,
+          1500.0
+        ],
+        "VALIDMIN": [
+          50.0,
+          315.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "+dE elect"
+      },
+      "VarData": [
+        90.0,
+        600.0
+      ]
+    },
+    "P_MINUS": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Proton energies, delta to lower limits of 2 energy bands (50-400 keV, 1.2-5.0 MeV)",
+        "DICT_KEY": "ISTP>range>absolute",
+        "FIELDNAM": "Proton Energy Range low",
+        "FORMAT": "f6.1",
+        "LABLAXIS": "-dE prot",
+        "SCALEMAX": [
+          400.0,
+          5000.0
+        ],
+        "SCALEMIN": [
+          50.0,
+          1200.0
+        ],
+        "UNITS": "keV",
+        "VALIDMAX": [
+          400.0,
+          5000.0
+        ],
+        "VALIDMIN": [
+          50.0,
+          1200.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "-dE prot"
+      },
+      "VarData": [
+        175.0,
+        1900.0
+      ]
+    },
+    "P_PLUS": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Proton energies, delta to upper limits of 2 energy bands (50-400 keV, 1.2-5.0 MeV)",
+        "DICT_KEY": "ISTP>range>absolute",
+        "FIELDNAM": "Proton Energy Range HIGH",
+        "FORMAT": "f6.1",
+        "LABLAXIS": "+dE prot",
+        "SCALEMAX": [
+          400.0,
+          5000.0
+        ],
+        "SCALEMIN": [
+          50.0,
+          1200.0
+        ],
+        "UNITS": "keV",
+        "VALIDMAX": [
+          400.0,
+          5000.0
+        ],
+        "VALIDMIN": [
+          50.0,
+          1200.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "+dE prot"
+      },
+      "VarData": [
+        175.0,
+        1900.0
+      ]
+    },
+    "E_DQF": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Electron data quality flag: Unusable = -1, Suspect = 0, Good = 1",
+        "DICT_KEY": "flag>electron_quality",
+        "FIELDNAM": "Electron Data Quality Flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABL_PTR_1": "E_DQF_LABL",
+        "SCALEMAX": [
+          1,
+          1
+        ],
+        "SCALEMIN": [
+          -1,
+          -1
+        ],
+        "UNITS": "  ",
+        "VALIDMAX": [
+          1,
+          1
+        ],
+        "VALIDMIN": [
+          -1,
+          -1
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Lo E DQ",
+            "Hi E DQ"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        1
+      ]
+    },
+    "P_DQF": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Proton data quality flag: Unusable = -1, Suspect = 0, Good = 1",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "Proton Data Quality Flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABL_PTR_1": "P_DQF_LABL",
+        "SCALEMAX": [
+          1,
+          1
+        ],
+        "SCALEMIN": [
+          -1,
+          -1
+        ],
+        "UNITS": "  ",
+        "VALIDMAX": [
+          1,
+          1
+        ],
+        "VALIDMIN": [
+          -1,
+          -1
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Lo P DQ",
+            "Hi P DQ"
+          ]
+        ]
+      },
+      "VarData": [
+        -1,
+        -1
+      ]
+    },
+    "ET_DQF": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "e Temperature data qual flag: Unusable = -1, Suspect = 0, Good = 1",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "e Temperature Data Qual Flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABL_PTR_1": "ET_DQ_LB",
+        "SCALEMAX": [
+          1,
+          1
+        ],
+        "SCALEMIN": [
+          -1,
+          -1
+        ],
+        "UNITS": "  ",
+        "VALIDMAX": [
+          1,
+          1
+        ],
+        "VALIDMIN": [
+          -1,
+          -1
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Lo ET DQ",
+            "Hi ET DQ"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        1
+      ]
+    },
+    "ED_DQF": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "e Density data qual flag: Unusable = -1, Suspect = 0, Good = 1",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "e Density Data Qual Flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABL_PTR_1": "ED_DQF_LABL",
+        "SCALEMAX": [
+          1,
+          1
+        ],
+        "SCALEMIN": [
+          -1,
+          -1
+        ],
+        "UNITS": "  ",
+        "VALIDMAX": [
+          1,
+          1
+        ],
+        "VALIDMIN": [
+          -1,
+          -1
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Lo E d DQ",
+            "Hi E d DQ"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        1
+      ]
+    },
+    "PT_DQF": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "p Temperature data qual flag: Unusable = -1, Suspect = 0, Good = 1",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "p Temperature Data Qual Flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABL_PTR_1": "PT_DQF_LABL",
+        "SCALEMAX": [
+          1,
+          1
+        ],
+        "SCALEMIN": [
+          -1,
+          -1
+        ],
+        "UNITS": "  ",
+        "VALIDMAX": [
+          1,
+          1
+        ],
+        "VALIDMIN": [
+          -1,
+          -1
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Lo PT DQ",
+            "Hi PT DQ"
+          ]
+        ]
+      },
+      "VarData": [
+        -1,
+        -1
+      ]
+    },
+    "PD_DQF": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "e Temperature data qual flag: Unusable = -1, Suspect = 0, Good = 1",
+        "DICT_KEY": "  ",
+        "FIELDNAM": "e Temperature Data Qual Flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABL_PTR_1": "PD_DQF_LABL",
+        "SCALEMAX": [
+          1,
+          1
+        ],
+        "SCALEMIN": [
+          -1,
+          -1
+        ],
+        "UNITS": "  ",
+        "VALIDMAX": [
+          1,
+          1
+        ],
+        "VALIDMIN": [
+          -1,
+          -1
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Lo P d DQ",
+            "Hi P d DQ"
+          ]
+        ]
+      },
+      "VarData": [
+        -1,
+        -1
+      ]
+    },
+    "A_DQF": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Alpha data qual flag: Unusable = -1, Suspect = 0, Good = 1",
+        "DICT_KEY": "flag>quality_particl_flux",
+        "FIELDNAM": "Alpha Data Qual Flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABLAXIS": "Alpha DQ",
+        "SCALEMAX": [
+          1,
+          1
+        ],
+        "SCALEMIN": [
+          -1,
+          -1
+        ],
+        "UNITS": "  ",
+        "VALIDMAX": [
+          1,
+          1
+        ],
+        "VALIDMIN": [
+          -1,
+          -1
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Alpha DQ"
+      },
+      "VarData": [
+        -1
+      ]
+    },
+    "CNO_DQF": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "CNO Flux data qual flag: Unusable = -1, Suspect = 0, Good = 1",
+        "DICT_KEY": "flag>quality_particle_flux",
+        "FIELDNAM": "CNO Flux Data Qual Flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABLAXIS": "CNO DQ",
+        "SCALEMAX": [
+          1,
+          1
+        ],
+        "SCALEMIN": [
+          -1,
+          -1
+        ],
+        "UNITS": "  ",
+        "VALIDMAX": [
+          1,
+          1
+        ],
+        "VALIDMIN": [
+          -1,
+          -1
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "CNO DQ"
+      },
+      "VarData": [
+        0
+      ]
+    },
+    "E_FLUX_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 17,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Labels for e flux axes                  ",
+        "DICT_KEY": "label>particle_flux",
+        "FIELDNAM": "Labels for e flux axes",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Ee (50-225 keV)",
+        "Ee (315-1500 keV)"
+      ]
+    },
+    "P_FLUX_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 16,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Labels for p flux axes                  ",
+        "DICT_KEY": "label>particle_flux",
+        "FIELDNAM": "Labels for p flux axes",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Ep (50-400 keV)",
+        "Ep (1.2-5.0 MeV)"
+      ]
+    },
+    "format_pos": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 4,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Format for S/C Location                 ",
+        "DICT_KEY": "label>format",
+        "FIELDNAM": "Format for S/C Location",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "F8.3",
+        "F8.3",
+        "F6.4"
+      ]
+    },
+    "FLUX_FORM": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 5,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Format for flux values                  ",
+        "DICT_KEY": "label>format",
+        "FIELDNAM": "Format for flux values",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "F10.2",
+        "F10.5"
+      ]
+    },
+    "E_DENS_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 17,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Labels for e Temperature axes           ",
+        "DICT_KEY": "label>temperature",
+        "FIELDNAM": "Labels for e Temperature axes",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Ne (50-225 keV)",
+        "Ne (315-1500 keV)"
+      ]
+    },
+    "P_DENS_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 16,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Labels for p Density axes               ",
+        "DICT_KEY": "label>density",
+        "FIELDNAM": "Labels for p Density axes",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Np (50-400 keV)",
+        "Np (1.2-5.0 MeV)"
+      ]
+    },
+    "DENS_FORM": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 5,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Format for flux values                  ",
+        "DICT_KEY": "label>format",
+        "FIELDNAM": "Format for flux values",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "F10.2",
+        "F10.5"
+      ]
+    },
+    "E_TEMP_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 16,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Labels for e Temperature axes           ",
+        "DICT_KEY": "label>temperature",
+        "FIELDNAM": "Labels for e Temperature axes",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Te (50-225keV)",
+        "Te (315-1500keV)"
+      ]
+    },
+    "P_TEMP_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 16,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Labels for p temp axes                  ",
+        "DICT_KEY": "label>temperature",
+        "FIELDNAM": "Labels for p temp axes",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Tp (50-400 keV)",
+        "Tp (1.2-5.0 MeV)"
+      ]
+    },
+    "TEMP_FORM": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 5,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Format for flux values                  ",
+        "DICT_KEY": "label>format",
+        "FIELDNAM": "Format for flux values",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "F9.4 ",
+        "F10.5"
+      ]
+    },
+    "E_DQF_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 7,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Labels for e Flux Data Quality          ",
+        "DICT_KEY": "label>quality",
+        "FIELDNAM": "Labels for e Flux Data Quality",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Lo E DQ",
+        "Hi E DQ"
+      ]
+    },
+    "P_DQF_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 7,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Labels for p Flux Data Quality          ",
+        "DICT_KEY": "label>quality",
+        "FIELDNAM": "Labels for p Flux Data Quality",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Lo P DQ",
+        "Hi P DQ"
+      ]
+    },
+    "ET_DQ_LB": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 8,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Labels for e Temperature Data Quality   ",
+        "DICT_KEY": "label>quality",
+        "FIELDNAM": "Labels for e Temperature Data Quality",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Lo ET DQ",
+        "Hi ET DQ"
+      ]
+    },
+    "PT_DQF_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 8,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Labels for p Temp Data Quality          ",
+        "DICT_KEY": "label>quality",
+        "FIELDNAM": "Labels for p Temp Data Quality",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Lo PT DQ",
+        "Hi PT DQ"
+      ]
+    },
+    "ED_DQF_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 9,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Labels for e Flux Dens Quality          ",
+        "DICT_KEY": "label>quality",
+        "FIELDNAM": "Labels for e Flux Dens Quality",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Lo E d DQ",
+        "Hi E d DQ"
+      ]
+    },
+    "PD_DQF_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 9,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Labels for p Flux Dens Quality          ",
+        "DICT_KEY": "label>quality",
+        "FIELDNAM": "Labels for p Flux Dens Quality",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Lo P d DQ",
+        "Hi P d DQ"
+      ]
+    },
+    "POST_GAP_FLAG": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "0 = no gap in data; 1 = data for previous gap not available",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>post_gap",
+        "FIELDNAM": "Post gap flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABLAXIS": "Gap Flag",
+        "SCALEMAX": 20,
+        "SCALEMIN": 0,
+        "UNITS": "  ",
+        "VALIDMAX": 20,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Gap Flag"
+      }
+    }
+  }
+}

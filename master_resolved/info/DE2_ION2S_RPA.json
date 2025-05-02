@@ -1,0 +1,520 @@
+{
+  "CDFFileInfo": {
+    "File": "de2_ion2s_rpa_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/de2_ion2s_rpa_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "DE-2 RPA 2-sec Plasma Densities and Temperatures in ASCII",
+    "Project": "DE>Dynamics Explorer",
+    "Source_name": "DE>Dynamics Explorer",
+    "Discipline": "Space Physics>Magnetospheric  Ionospheric Interactions",
+    "Descriptor": "ion2s> ion 2 second",
+    "Data_type": "rpa>Retarding PotentialAnalyzer",
+    "Data_version": "1",
+    "Text": "The Retarding Potential Analyzer (RPA) measured the bulk ion velocity in the direction of the spacecraft motion, the constituent ion concentrations, and the ion temperature along the satellite path. These parameters were derived from a least squares fit to the ion number flux vs energy curve obtained by sweeping or stepping the voltage applied to the internal retarding grids of the RPA. In addition, a separate wide aperture sensor, a duct sensor, was flown to measure the spectral characteristics of iregularities in the total ion concentration. The measured parameters obtained from this investigation were important to the understanding of mechanisms that influence the plasma; i.e., to understand the coupling between the solar wind and the earth's atmosphere. The measurements were made with a multigridded planar retarding potential analyzer very similar in concept and geometry to the instruments carried on the AE satellites. The retarding potential was variable in the range from approximately +32 to 0 volts. The details of this voltage trace, and whether it was continuous or stepped, depended on the operating mode of the instrument. Specific parameters deduced from these measurements were ion temperature; vehicle potential; ram component of the ion drift velocity; the ion and electron concentration irregularity spectrum; and the concentration of H+, He+, O+, and Fe+, and of molecular ions near perigee. Additional details are in W. B. Hanson et al., Space Sci. Instrum., v. 5, n. 4, p. 503, 1981.\nIt includes the high-resolution data from the Dynamics Explorer 2 (DE-2) Retarding Potential Analyzer (RPA) for the whole DE-2 mission time period in ASCII format.  The ASCII version was generated at NSSDC from the PI-provided binary data (SPIO-00232). The RPA data files include orbit parameters and geophysical data at a time resolution of usually 2 seconds and sometimes 4 second. The following geophysical parameters are provided: ion drift vector, ion density, ion temperature, spacecraft potential, ion densities of atomic oxygen, hydrogen, helium, molecular constituents and high mass constituents, data quality flag, and RMS error. The ion drift vector is given by its components in spacecraft coordinates; the y and z components are IDM measurements. Due to a failure in the instrument memory system RPA data are not available from 81317 06:26:40 UT to 82057 13:16:00 UT. This data set is based on the revised version of the RPA files that was submitted by the PI team in June of 1995. The revised RPA data include a correction to the spacecraft potential.\nThe Dynamics Explorer 2 Retarding Potential Analyzer (RPA) files contain the ion temperature, the ion drift velocity along the sensor look direction, and the ion composition and orbit parameters in ASCII format. The time resolution is typically 2 seconds. Data are given as daily files (typically a few 100 Kbytes each). NSSDC-developed software was used to read the RPA binary data and create ASCII files.  For more on DE-2, RPA, and the binary data, see RPA_VOLDESC_DE.SFD and RPA_FORMAT_DE.SFD. \nThe RPA files are requested with the DATA_TYPE = RPA_ASCII and the ENTRY_ID = yyddd and are then staged as yydddhhmm_RPA_DE_2S_V01.ASC; yy is the year, ddd is the day of the year, hh is the hour, and mm is the minute of the starting time of the data in the file.  The date range for the IDM files is 81218-83049 with most days represented.\nThe data quality field contains a flag that describes the quality of the RPA data.  A value greater than or equal to 0 indicates that the data has passed the set of basic quality checks.  A negative value indicates that the RPA data fails at least one check and is untrustworthy.  Following are the sequence of checks. Tests are sequentially performed until a flag is assigned. \n   Ni<8000 or Ni>6.E6                 flag=-70\n   Psi<-2 or Psi>0.5                  flag=-60\n   for INVARIANT LATITUDE<50\n      Ti<500 or Ti>10000              flag=-50\n      |Vx|>700 m/s                    flag=-20\n      Mols>O+                         flag=-40\n       H+>O+                          flag=-30\n       Vx=0                           flag= 40\n       Vx non zero \n         Sum of light ions > 25% O+   flag= 50\n         Sum of light ions < 25% O+   flag= 20\n   set flag to 0 if one of the needed concentrations is unavailable.\n   increase magnitude of flag by 5 if rms fit error > 10%\n   for INVARIANT LATITUDE>50\n      Ti<500 or Ti>200000             flag=-50\n        Ti>7000\n          |Vx|<1000 and |Vz|<1000     flag=-20\n          Alt>600\n            Mols>O+                   flag=-40\n            O+>Mols                   flag= 30\n          Alt<=600\n           Mols>O+\n             Vx>0                     flag=-10\n             Vx<=0                    flag=  0\n           O+>Mols                    flag= 30\n        Ti<=7000\n          |Vx|>2000                   flag=-20\n          Mols>O+                     flag=-40\n          O+>Mols                     flag= 60\n   set flag to 0 if one of the needed concentrations is unavailable. Increase magnitude of flag by 5 if rms fit error > 12%\nThe sweep type field contains a number (1 - 4) that represents the type of RPA sweep used.  The sweep types are: \n  1. Integral RPA curve obtained with voltage sweep from 0 to beyond 10 volts.\n  2. Electronic derivative of RPA curve obtained with voltage sweep from 0 to beyond 10 volts.\n  3. Integral RPA curve obtained with voltage sweep from 0 up to 8 volts.\n  4. Electronic derivative of RPA curve obtained with voltage sweep from 0 to 8 volts.",
+    "ADID_ref": "NSSD0241",
+    "Logical_source": "de2_ion2s_rpa",
+    "Logical_file_id": "de2_ion2s_rpa_00000000_v01",
+    "Logical_source_description": "2-sec ion temperature, velocity, and densities (O+, H+, He+, molecular)",
+    "PI_name": "Rod Heelis",
+    "PI_affiliation": "University of Texas, Dallas",
+    "NSSDC_id": "SPIO-00104",
+    "Mission_group": "Dynamics Explorer\n!___Magnetospheric Data\n!___ITM Data including Earth Imaging and Ground-Based",
+    "Instrument_type": "Particles (space)",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/DE2/RPA/PT2S",
+    "DOI": "https://doi.org/10.48322/41b3-kz41"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "NSSDC standard-reference time value. ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D.",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "x": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "x component of ion velocity in s/c coordinates (vx) - vx is app. parallel to s/c direction of motion",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "x component of ion velocity",
+        "FILLVAL": 0.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "v_x s/c coord",
+        "UNITS": "m/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "v_x s/c coord"
+      }
+    },
+    "y": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Y component of ion velocity in s/c coordinates (vy) - vy is app. vertical to s/c dir. of motion (>0 up)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "y component of ion velocity",
+        "FILLVAL": 0.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "v_y s/c coord",
+        "UNITS": "m/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "v_y s/c coord"
+      }
+    },
+    "z": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "z component of ion velocity in s/c coordinates (vz) - vz is app. vertical to s/c dir. of motion (>0 right)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "z component of ion velocity",
+        "FILLVAL": 0.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "v_z s/c coord",
+        "UNITS": "m/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "v_z s/c coord"
+      }
+    },
+    "ionTemperature": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion temperature in degree Kelvin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ion temperature",
+        "FILLVAL": 0.0,
+        "FORMAT": "f9.2",
+        "LABLAXIS": "Ion temperature",
+        "UNITS": "K",
+        "VALIDMAX": 6000.0,
+        "VALIDMIN": 100.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "K",
+        "x_LABLAXIS": "Ion temperature"
+      }
+    },
+    "ionDensity": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Total ion density (all ions) in ions per cm^3 ",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ion density",
+        "FILLVAL": 0.0,
+        "FORMAT": "f11.2",
+        "LABLAXIS": "Total ion dens.",
+        "SCALETYP": "log",
+        "UNITS": "cm^-3",
+        "VALIDMAX": 6000000.0,
+        "VALIDMIN": 1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^-3",
+        "x_LABLAXIS": "Total ion dens."
+      }
+    },
+    "O": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "O+ density in ions per cm^3",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O+ density",
+        "FILLVAL": 0.0,
+        "FORMAT": "f11.2",
+        "LABLAXIS": "O+ density",
+        "SCALETYP": "log",
+        "UNITS": "cm^-3",
+        "VALIDMAX": 6000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^-3",
+        "x_LABLAXIS": "O+ density"
+      }
+    },
+    "H": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ density in ions per cm^3",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+ density",
+        "FILLVAL": 0.0,
+        "FORMAT": "f11.2",
+        "LABLAXIS": "H+ density",
+        "SCALETYP": "log",
+        "UNITS": "cm^-3",
+        "VALIDMAX": 6000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^-3",
+        "x_LABLAXIS": "H+ density"
+      }
+    },
+    "He": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "He+ density in ions per cm^3",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He+ density",
+        "FILLVAL": 0.0,
+        "FORMAT": "f11.2",
+        "LABLAXIS": "He+ density",
+        "SCALETYP": "log",
+        "UNITS": "cm^-3",
+        "VALIDMAX": 6000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^-3",
+        "x_LABLAXIS": "He+ density"
+      }
+    },
+    "molecularIons": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Molecular ion density in ions per cm^3",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "molecular ion density",
+        "FILLVAL": 0.0,
+        "FORMAT": "f11.2",
+        "LABLAXIS": "Molec. ions dens.",
+        "SCALETYP": "log",
+        "UNITS": "cm^-3",
+        "VALIDMAX": 6000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^-3",
+        "x_LABLAXIS": "Molec. ions dens."
+      }
+    },
+    "highMass": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "High mass ion density in ions per cm^3",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "high mass ion density",
+        "FILLVAL": 0.0,
+        "FORMAT": "f11.2",
+        "LABLAXIS": "High mass ion den",
+        "SCALETYP": "log",
+        "UNITS": "cm^-3",
+        "VALIDMAX": 6000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^-3",
+        "x_LABLAXIS": "High mass ion den"
+      }
+    },
+    "sigma": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sigma - RMS error of RPA analysis in percent",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "sigma -RMS error of RPA analysis",
+        "FILLVAL": 0.0,
+        "FORMAT": "f4.0",
+        "LABLAXIS": "Sigma RMS-RPA",
+        "UNITS": "%",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "%",
+        "x_LABLAXIS": "Sigma RMS-RPA"
+      }
+    },
+    "scPotential": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spacecraft potential in Volts",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Spacecraft potential",
+        "FILLVAL": 0.0,
+        "FORMAT": "f9.2",
+        "LABLAXIS": "s/c potential",
+        "UNITS": "Volts",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": -10.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Volts",
+        "x_LABLAXIS": "s/c potential"
+      }
+    },
+    "dataQuality": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Data quality flag (<0 untrustworthy, see https://spdf.gsfc.nasa.gov/pub/data/de/de2/plasma_rpa/",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Quality Flag",
+        "FILLVAL": -1,
+        "FORMAT": "i3",
+        "LABLAXIS": "Quality Flag",
+        "UNITS": "( < 0 fails)",
+        "VALIDMAX": 60,
+        "VALIDMIN": -70,
+        "VAR_TYPE": "data",
+        "x_UNITS": "( < 0 fails)",
+        "x_LABLAXIS": "Quality Flag"
+      }
+    },
+    "sweepType": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sweep type (1: 0->10Volt, 2: 0-10V, 3: 0-8V Integral, 4: 0-8V Electronic",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "sweep type)",
+        "FILLVAL": 0.0,
+        "FORMAT": "f3.0",
+        "LABLAXIS": "Sweep type",
+        "UNITS": "(1-4)",
+        "VALIDMAX": 5.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(1-4)",
+        "x_LABLAXIS": "Sweep type"
+      }
+    },
+    "glat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geographic Latitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Geographic Latitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "Geog Latitude",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Geog Latitude"
+      }
+    },
+    "glon": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geographic Longitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Geographic Longitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "Geog Longitude",
+        "UNITS": "deg",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Geog Longitude"
+      }
+    },
+    "ilat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Invariant Latitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Invariant Latitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "Inv Lat",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Inv Lat"
+      }
+    },
+    "mlt": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic Local Time",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Mag. Local Time",
+        "FILLVAL": 0.0,
+        "FORMAT": "f5.2",
+        "LABLAXIS": "MLT",
+        "UNITS": "hr",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "hr",
+        "x_LABLAXIS": "MLT"
+      }
+    },
+    "alt": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Altitude in km",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Altitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Altitude",
+        "UNITS": "km",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "Altitude"
+      }
+    }
+  }
+}

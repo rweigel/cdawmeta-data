@@ -1,0 +1,552 @@
+{
+  "CDFFileInfo": {
+    "File": "i2_neprof_tops_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/i2_neprof_tops_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISIS>International Satellite for Ionosphere Studies\nNSSDC>Archived Data",
+    "Discipline": "Space Physics>Ionospheric Science",
+    "Source_name": "ISIS-2>International Satellite for Ionosphere Studies 1",
+    "Data_type": "NEPROF>Density Profiles",
+    "Descriptor": "TOPS>Topside Sounder",
+    "Data_version": "1",
+    "TITLE": "CRC Electron Density Profiles",
+    "TEXT": "This data set, provided by the Communications Research Centre (CRC) in Ottawa, Canada, consists of electron density profiles for the ionosphere above the F2 maximum (topside ionosphere). The data were computed from the orginal ionograms using Jackson's method (Jackson, Proceedings of the IEEE., p. 960, June 1969).\nISIS-1 was launched on 1969-01-30 into an elliptical orbit (500-3500km) with an inclination of 88.4 degrees and ISIS-2 was launched on 1971-04-01 into an circular orbit at 1400 km with an inclination of 88.1 degrees.\nBoth satellites were fully instrumented ionospheric observatories including sweep- and fixed-frequequency ionosondes, a VLF receiver, energetic and soft particle detectors, an ion mass spectrometer, an electrostatic analyzer, an Langmuir probe, a beacon transmitter, a cosmic noise experiment and ISIS 2 also carried two photometers. A tape recorder with 1-h capacity was included on both satellites. Data were also collected during overflights of several telemetry stations. The telemetry stations were in areas that provided primary data coverage near the 80-deg-W meridian and in areas near Hawaii, Singapore, Australia, the UK, Norway, India, Japan, Antarctica, New Zealand, and Central Africa.",
+    "ADID_ref": "NSSD0110",
+    "Logical_file_id": "i2_neprof_tops_00000000_v01",
+    "Logical_source": "i2_neprof_tops",
+    "Logical_source_description": "ISIS-2 Topside Electron Density Profiles, manually scaled at CRC",
+    "PI_name": "J. E. Jackson",
+    "PI_affiliation": "Communication Research Centre (CRC), Ottawa",
+    "Mission_group": "ISIS\n!___ITM Data including Earth Imaging and Ground-Based",
+    "Instrument_type": "Imaging and Remote Sensing (ITM/Earth)",
+    "TEXT_supplement_1": " ",
+    "NSSDC_id": "SPIO-00183",
+    "LINK_TEXT": "ISIS2 full listing ",
+    "LINK_TITLE": "(shows data availability)",
+    "HTTP_LINK": "https://cdaweb.gsfc.nasa.gov/ISIS_ALOUETTE_DOCS/I2_NEPROF_TOPS_full_listing.txt",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/ISIS2/SFS/TOPS",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time",
+        "DICT_KEY": "time>Epoch",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2000-01-01T00:00:00.000",
+        "SCALEMIN": "1969-01-01T00:00:00.000",
+        "UNITS": "ms",
+        "VALIDMAX": "2000-01-01T00:00:00.000",
+        "VALIDMIN": "1969-01-01T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "spacecraftID": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "sat.-ID: 1=AL1, 2=AL2, 3=ISIS1, 4=ISIS2",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "satellite ID",
+        "FILLVAL": 9,
+        "FORMAT": "I1",
+        "LABLAXIS": "s/c_ID",
+        "UNITS": " ",
+        "VALIDMAX": 9,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "s/c_ID"
+      }
+    },
+    "density": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          26
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Topside electon density in cm-3 from F peak to orbit altitude",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "height",
+        "DICT_KEY": "density",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Topside Ne in cm-3",
+        "FILLVAL": -9999.0,
+        "FORMAT": "f11.2",
+        "LABLAXIS": "Ne",
+        "UNITS": "cm-3",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 10.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "Ne",
+        "x_DEPEND": [
+          "height"
+        ]
+      }
+    },
+    "log_density": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          26
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Logarithm (base 10) of topside Ne in cm-3",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "height",
+        "DICT_KEY": "log density",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "log(Ne/cm-3)",
+        "FILLVAL": -9.0,
+        "FORMAT": "f7.4",
+        "LABLAXIS": "log(Ne/cm-3)",
+        "UNITS": " ",
+        "VALIDMAX": 9.0,
+        "VALIDMIN": 1.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "log(Ne/cm-3)",
+        "x_DEPEND": [
+          "height"
+        ]
+      }
+    },
+    "tec": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Total Electron Content in TECU (=1E16 m-2)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "TEC",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "TEC",
+        "UNITS": "1E16 m-2 ",
+        "VALIDMAX": 500.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1E16 m-2 ",
+        "x_LABLAXIS": "TEC"
+      }
+    },
+    "tec_iri": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "IRI-95 value for TEC in TECU",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "TEC_IRI95",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "TEC_IRI95",
+        "UNITS": "1.E16 m-2",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1.E16 m-2",
+        "x_LABLAXIS": "TEC_IRI95"
+      }
+    },
+    "IRI_F2peak": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "IRI-95 value for the natural logarithm of the F2 peak density in cm-3",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "ln(NmF2_IRI/cm-3)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.4",
+        "LABLAXIS": "ln(NmF2/cm-3)",
+        "UNITS": "IRI95",
+        "VALIDMAX": 500.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "IRI95",
+        "x_LABLAXIS": "ln(NmF2/cm-3)"
+      }
+    },
+    "IRI_F2peakHeight": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "IRI-95 value for F2 peak height in km",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "hmF2 IRI-95 ",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f5.1",
+        "LABLAXIS": "hmF2_IRI95",
+        "UNITS": "km",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "hmF2_IRI95"
+      }
+    },
+    "numDataPoints": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of data points per profile",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Num Data Points",
+        "FORMAT": "I3",
+        "LABLAXIS": "Number of",
+        "UNITS": "data points",
+        "VALIDMAX": 999,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "data",
+        "x_UNITS": "data points",
+        "x_LABLAXIS": "Number of"
+      }
+    },
+    "qualityIndex": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Quality Index ( 0-best, 10-worst)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Quality Index",
+        "FILLVAL": -1,
+        "FORMAT": "I2",
+        "LABLAXIS": "Quality Index",
+        "UNITS": " ",
+        "VALIDMAX": 10,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Quality Index"
+      }
+    },
+    "lon": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Longitude in degree (-180 to 180)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Longitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.1",
+        "LABLAXIS": "Longitude",
+        "UNITS": "degree",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "Longitude"
+      }
+    },
+    "lat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Latitude in degree",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Latitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Latitude",
+        "UNITS": "degree",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "Latitude"
+      }
+    },
+    "dip": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic Inclination in degree",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Magnetic Inclination",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Dip",
+        "UNITS": "degree",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "Dip"
+      }
+    },
+    "L": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "L value",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "L value",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "L value",
+        "UNITS": " ",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "L value"
+      }
+    },
+    "sza": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "solar zenith angle at 100 km",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Solar zenith angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "SZA",
+        "UNITS": "degree",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "SZA"
+      }
+    },
+    "sunspotNumber": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "12-month-running mean of sunspot number",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Rz12",
+        "FILLVAL": -1,
+        "FORMAT": "I3",
+        "LABLAXIS": "Rz12",
+        "UNITS": " ",
+        "VALIDMAX": 300,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Rz12"
+      }
+    },
+    "IGindex": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "12-month-running mean of IG ionosonde index",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "label",
+        "FIELDNAM": "IG-12 index",
+        "FILLVAL": -1,
+        "FORMAT": "I3",
+        "LABLAXIS": "IG-12",
+        "UNITS": " ",
+        "VALIDMAX": 350,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "IG-12"
+      }
+    },
+    "height": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          26
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "height",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Index",
+        "DICT_KEY": "height",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "height",
+        "FILLVAL": -9999.0,
+        "FORMAT": "f7.1",
+        "LABLAXIS": "height",
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": 4000.0,
+        "VALIDMIN": 100.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "height",
+        "x_DEPEND": [
+          "Index"
+        ]
+      }
+    },
+    "Index": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          26
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Index to arrays",
+        "FIELDNAM": "Index",
+        "FORMAT": "I2",
+        "LABLAXIS": "Array-Index",
+        "SCALETYP": "linear",
+        "UNITS": "raw",
+        "VALIDMAX": 26,
+        "VALIDMIN": 1,
+        "VAR_NOTES": "Added to try to enable plots.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "raw",
+        "x_LABLAXIS": "Array-Index"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
+    }
+  }
+}

@@ -1,0 +1,2325 @@
+{
+  "CDFFileInfo": {
+    "File": "wi_h1_swe_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/wi_h1_swe_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "WIND> Solar Wind Parameters",
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Source_name": "WIND>Wind Interplanetary Plasma Laboratory",
+    "Descriptor": "SWE>Solar Wind Experiment",
+    "Data_type": "H1>100-sec Proton Anisotropy Analysis",
+    "File_naming_convention": "source_datatype_descriptor",
+    "Data_version": " ",
+    "PI_name": "K. Ogilvie",
+    "PI_affiliation": "NASA GSFC",
+    "TEXT": "SWE, a comprehensive plasma instrument for the WIND spacecraft, K.W.\nOgilvie, et al., Space Sci. Rev., 71, 55-77, 1995\nSolar wind proton parameters, including anisotropic temperatures, derived by non-linear fitting of the measurements and with moment techniques.\nData reported within this file do not exceed the limits of various parameters listed in the following section.  There may be more valid data in the original dataset that requires additional work to interpret but was discarded due to the limits.  In particular we have tried to exclude non-solar wind data from these files. \nWe provide the one sigma uncertainty for each parameter produced by the non-linear curve fitting analysis either directly from the fitting or by propagating uncertainties for bulk speeds, flow angles or any other derived parameter.\nFor the non-linear anisotropic proton analysis, a scalar thermal speed is produced by determining parallel and perpendicular temperatures, taking the trace, Tscalar = (2Tperp + Tpara)/3 and converting the result back to a thermal speed.  The uncertainties are also propagated through\nNotes: Data reported within this file do not exceed the limits of various paremeters listed in the following section.  There  may be more valid data in the original dataset that require  additional work to interpret but was discarded due to the limits.  In particular we have tried to exclude non-solar wind data and questionable alpha data from these files. \nWe provide the one sigma uncertainty for each parameter produced by the non-linear curve fitting analysis either directly from the fitting or by propagating uncertainties for bulk speeds, flow angles or any other derived parameter.  For the non-linear anisotropic proton analysis, a scalar thermal speed is produced by determining parallel and perpendicular tmperatures, taking the trace, Tscalar = (2Tperp + Tpara)/3 and converting the result back to a thermal speed.  The uncertainties are also.    propagated through  Limits: Minimum mach number:        1.5000000; Maximum chisq/dof:             100000.00; Minimum distance; to bow shock:                      5.0000000 [Re]; Maximum uncertainty in any; parameter from non-linear;analysis:                               70.0000[%].",
+    "Instrument_type": "Ephemeris/Attitude/Ancillary\nPlasma and Solar Wind\nMagnetic Fields (space)",
+    "Mission_group": "Wind",
+    "Logical_source": "wind_h1_swe",
+    "Logical_file_id": "wi_h1_swe_00000000_v01",
+    "Logical_source_description": "Wind Solar Wind Experiment, 92-sec Solar Wind Alpha and Proton Anisotropy Analysis",
+    "Time_resolution": "92 seconds",
+    "Generated_by": " ",
+    "Generation_date": " ",
+    "MODS": " ",
+    "LINK_TEXT": "Wind SWE ",
+    "LINK_TITLE": "Home Page",
+    "HTTP_LINK": "http://web.mit.edu/afs/athena/org/s/space/www/wind.html",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Wind/SWE/Definitive/PT92S",
+    "DOI": "https://doi.org/10.48322/nasd-j276"
+  },
+  "CDFVariables": {
+    "fit_flag": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "This flag denotes the fit quality and encodes any contingencies in the ion VDF analysis (10=SW parameters OK)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "fit_flag",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "fit flag",
+        "SCALETYP": "linear",
+        "UNITS": "(10=He_OK,>1=P_OK)",
+        "VALIDMAX": 10,
+        "VALIDMIN": -1,
+        "VAR_NOTES": "FLAG values indicate analysis contingencies:. .10: Solar wind parameters OK -- no action necessary..9: Alpha particles relatively too cold..8: Alpha particles overlap within protons in CDF. ..7: Alphas too fast, out of SWE range..6: Alpha particle peak may be confused with second proton peak...5: Parameters OK, but Tp=Ta constraint used (params obtained with SUB_PROT=1) ..4: alphas are unusually cold, Tp=Ta constraint used (SUB_PROT=1)..3:  alpha patr. relatively too hot (SUB_PROT=1). Tp=Ta constraint used..2:  The speed of the alpha is unusually low. ..1: Poor peak identification..0: Spectrum cannot be fit with a bimax model..",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(10=He_OK,>1=P_OK)",
+        "x_LABLAXIS": "fit flag"
+      }
+    },
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "CDF Epoch time at the beginning of each SWE spectrum (milliseconds)",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALETYP": "linear",
+        "TIME_BASE": "0 AD",
+        "UNITS": "ms",
+        "VALIDMAX": "2029-12-31T23:59:59.999",
+        "VALIDMIN": "1990-01-01T00:00:00.000",
+        "VAR_NOTES": "The Epoch value is the number of milliseconds since 01-Jan-0000 00:00:00.000..",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "year": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> year",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "year",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "year",
+        "SCALETYP": "linear",
+        "UNITS": "(2038=Yr0)",
+        "VALIDMAX": 2,
+        "VALIDMIN": -54,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(2038=Yr0)",
+        "x_LABLAXIS": "year"
+      }
+    },
+    "doy": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Fractional day of year of start of spectrum (Noon on January 1 = 1.5)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "doy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "doy",
+        "SCALETYP": "linear",
+        "UNITS": "day",
+        "VALIDMAX": 367.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "day",
+        "x_LABLAXIS": "doy"
+      }
+    },
+    "Proton_V_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton bulk speed",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "vp",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "proton bulk speed",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "proton bulk speed"
+      }
+    },
+    "Proton_V_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Proton bulk speed (w/ uncertainties)",
+        "COMPONENT_0": "Proton_V_nonlin",
+        "DELTA_MINUS_VAR": "Proton_sigmaV_nonlin",
+        "DELTA_PLUS_VAR": "Proton_sigmaV_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "vp",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "proton bulk speed",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "proton bulk speed",
+        "COMPONENTS": [
+          "Proton_V_nonlin"
+        ]
+      }
+    },
+    "Proton_sigmaV_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty of the proton bulk speed",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "uncertainty in vp",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "uncertainty in Vp",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "From fit uncertainty, measurement uncertainties",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "uncertainty in Vp"
+      }
+    },
+    "Proton_VX_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "VX_GSE component of the proton vector velocity [km/s], from non-linear analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton bulk Vx, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Vx GSE nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 0.0,
+        "VALIDMIN": -1800.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Vx GSE nonlin"
+      }
+    },
+    "Proton_VX_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> VX_GSE (with uncertainties)",
+        "COMPONENT_0": "Proton_VX_nonlin",
+        "DELTA_MINUS_VAR": "Proton_sigmaVX_nonlin",
+        "DELTA_PLUS_VAR": "Proton_sigmaVX_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton bulk Vx, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Vx GSE nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 0.0,
+        "VALIDMIN": -1800.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Vx GSE nonlin",
+        "COMPONENTS": [
+          "Proton_VX_nonlin"
+        ]
+      }
+    },
+    "Proton_sigmaVX_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty of VX_GSE",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in Proton bulk Vx, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma P+ Vx nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Sigma P+ Vx nonlin"
+      }
+    },
+    "Proton_VY_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "VY_GSE component of the proton vector velocity [km/s], from non-linear analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton bulk Vy, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Vy GSE nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Vy GSE nonlin"
+      }
+    },
+    "Proton_VY_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> VY_GSE (with uncertainties)",
+        "COMPONENT_0": "Proton_VY_nonlin",
+        "DELTA_MINUS_VAR": "Proton_sigmaVY_nonlin",
+        "DELTA_PLUS_VAR": "Proton_sigmaVY_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton bulk Vy, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Vy GSE nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Vy GSE nonlin",
+        "COMPONENTS": [
+          "Proton_VY_nonlin"
+        ]
+      }
+    },
+    "Proton_sigmaVY_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty of VY_GSE",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in Proton bulk Vy, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma P+ Vy nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Sigma P+ Vy nonlin"
+      }
+    },
+    "Proton_VZ_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "VZ_GSE component of the proton vector velocity [km/s], from non-linear analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton bulk Vz, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Vz GSE nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Vz GSE nonlin"
+      }
+    },
+    "Proton_VZ_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> VZ_GSE (with uncertainties)",
+        "COMPONENT_0": "Proton_VZ_nonlin",
+        "DELTA_MINUS_VAR": "Proton_sigmaVZ_nonlin",
+        "DELTA_PLUS_VAR": "Proton_sigmaVZ_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton bulk Vz, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Vz GSE nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Vz GSE nonlin",
+        "COMPONENTS": [
+          "Proton_VZ_nonlin"
+        ]
+      }
+    },
+    "Proton_sigmaVZ_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty of VZ_GSE",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in Proton bulk Vz, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma P+ Vz nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Sigma P+ Vz nonlin"
+      }
+    },
+    "Proton_W_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Scalar [isotropic] proton thermal speed [km/s], from the trace of the anisotropic temperatures.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Scalar proton thermal speed",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ W nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ W nonlin"
+      }
+    },
+    "Proton_W_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Scalar [isotropic] proton thermal speed (with uncertainties)",
+        "COMPONENT_0": "Proton_W_nonlin",
+        "DELTA_MINUS_VAR": "Proton_sigmaW_nonlin",
+        "DELTA_PLUS_VAR": "Proton_sigmaW_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Scalar proton thermal speed",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ W nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ W nonlin",
+        "COMPONENTS": [
+          "Proton_W_nonlin"
+        ]
+      }
+    },
+    "Proton_sigmaW_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty in the proton thermal speed [km/s].",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in scalar proton thermal speed",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma P+ W nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Sigma P+ W nonlin"
+      }
+    },
+    "Proton_Wperp_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton thermal speed perpendicular to the magnetic field direction [km/s].",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton thermal speed perpendicular to the magnetic field direction [km/s].",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Wperp nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Wperp nonlin"
+      }
+    },
+    "Proton_Wperp_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Proton thermal speed perpendicular (with uncertainties)",
+        "COMPONENT_0": "Proton_Wperp_nonlin",
+        "DELTA_MINUS_VAR": "Proton_sigmaWperp_nonlin",
+        "DELTA_PLUS_VAR": "Proton_sigmaWperp_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton thermal speed perpendicular to the magnetic field direction [km/s].",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Wperp nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Wperp nonlin",
+        "COMPONENTS": [
+          "Proton_Wperp_nonlin"
+        ]
+      }
+    },
+    "Proton_sigmaWperp_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty in the perpendicular proton thermal speed [km/s].",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in the perpendicular proton thermal speed [km/s].",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma P+ Wperp nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Sigma P+ Wperp nonlin"
+      }
+    },
+    "Proton_Wpar_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton thermal speed parallel to the magnetic field direction [km/s].",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton thermal speed parallel to the magnetic field direction [km/s].",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Wpar nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Wpar nonlin"
+      }
+    },
+    "Proton_Wpar_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Proton thermal speed parallel (with uncertainties)",
+        "COMPONENT_0": "Proton_Wpar_nonlin",
+        "DELTA_MINUS_VAR": "Proton_sigmaWpar_nonlin",
+        "DELTA_PLUS_VAR": "Proton_sigmaWpar_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton thermal speed parallel to the magnetic field direction [km/s].",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Wpar nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Wpar nonlin",
+        "COMPONENTS": [
+          "Proton_Wpar_nonlin"
+        ]
+      }
+    },
+    "Proton_sigmaWpar_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty in the parallel proton thermal speed [km/s].",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in the parallel proton thermal speed [km/s].",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma P+ Wpar nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Sigma P+ Wpar nonlin"
+      }
+    },
+    "EW_flowangle": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "East-West GSE bulk Flow Angle [degrees]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "East-West Flow Angle [degrees]",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "east-west flow angle",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "east-west flow angle"
+      }
+    },
+    "EW_flowangle_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> East-West Flow Angle (with uncertainties)",
+        "COMPONENT_0": "EW_flowangle",
+        "DELTA_MINUS_VAR": "SigmaEW_flowangle",
+        "DELTA_PLUS_VAR": "SigmaEW_flowangle",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "East-West Flow Angle [degrees]",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "east-west flow angle",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "east-west flow angle",
+        "COMPONENTS": [
+          "EW_flowangle"
+        ]
+      }
+    },
+    "SigmaEW_flowangle": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty in the east-west flow angle",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ew_flow_angle_DELTA_VAR",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "ew_flow_angle_DELTA_VAR",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "ew_flow_angle_DELTA_VAR"
+      }
+    },
+    "NS_flowangle": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "North-south GSE bulk flow angle [degrees]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "North-south flow angle [degrees]",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "north-south flow angle",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "north-south flow angle"
+      }
+    },
+    "NS_flowangle_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> North-south flow angle (with uncertainties)",
+        "COMPONENT_0": "NS_flowangle",
+        "DELTA_MINUS_VAR": "SigmaNS_flowangle",
+        "DELTA_PLUS_VAR": "SigmaNS_flowangle",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "North-south flow angle [degrees]",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "north-south flow angle",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "north-south flow angle",
+        "COMPONENTS": [
+          "NS_flowangle"
+        ]
+      }
+    },
+    "SigmaNS_flowangle": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty in north-south flow angle",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ns_flow_angle_DELTA_VAR",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "ns_flow_angle_DELTA_VAR",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "ns_flow_angle_DELTA_VAR"
+      }
+    },
+    "Proton_Np_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton number density Np (n/cc) from non-linear analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton number density Np (n/cc) from non-linear analysis (linear scale)",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ density",
+        "SCALETYP": "linear",
+        "UNITS": "cm^{-3}",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^{-3}",
+        "x_LABLAXIS": "P+ density"
+      }
+    },
+    "Proton_Np_nonlin_log": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Proton number density Np (log scale)",
+        "COMPONENT_0": "Proton_Np_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton number density Np (n/cc) from non-linear analysis",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ density",
+        "SCALETYP": "log",
+        "UNITS": "cm^{-3}",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "cm^{-3}",
+        "x_LABLAXIS": "P+ density",
+        "COMPONENTS": [
+          "Proton_Np_nonlin"
+        ]
+      }
+    },
+    "Proton_Np_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Proton number density Np (with uncertainties)",
+        "COMPONENT_0": "Proton_Np_nonlin",
+        "DELTA_MINUS_VAR": "Proton_sigmaNp_nonlin",
+        "DELTA_PLUS_VAR": "Proton_sigmaNp_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton number density Np (n/cc) from non-linear analysis (linear scale)",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ density",
+        "SCALETYP": "linear",
+        "UNITS": "cm^{-3}",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "cm^{-3}",
+        "x_LABLAXIS": "P+ density",
+        "COMPONENTS": [
+          "Proton_Np_nonlin"
+        ]
+      }
+    },
+    "Proton_sigmaNp_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty in the proton density",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in the proton density",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "sigma P+ density",
+        "SCALETYP": "linear",
+        "UNITS": "cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^{-3}",
+        "x_LABLAXIS": "sigma P+ density"
+      }
+    },
+    "Alpha_V_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha bulk speed V (km/s) from non-linear analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha bulk speed V (km/s) from non-linear analysis",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "alpha bulk speed",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "alpha bulk speed"
+      }
+    },
+    "Alpha_V_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Alpha bulk speed V (with uncertainties)",
+        "COMPONENT_0": "Alpha_V_nonlin",
+        "DELTA_MINUS_VAR": "Alpha_sigmaV_nonlin",
+        "DELTA_PLUS_VAR": "Alpha_sigmaV_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha bulk speed V (km/s) from non-linear analysis",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "alpha bulk speed",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "alpha bulk speed",
+        "COMPONENTS": [
+          "Alpha_V_nonlin"
+        ]
+      }
+    },
+    "Alpha_sigmaV_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty in alpha V [km/s]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "va_DELTA_VAR",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "uncertainty in Va",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "uncertainty in Va"
+      }
+    },
+    "Alpha_VX_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha velocity component Vx (GSE, km/s) from non-linear analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha bulk Vx, nonlinva_x",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ Vx GSE nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 0.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "He++ Vx GSE nonlin"
+      }
+    },
+    "Alpha_VX_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Alpha velocity component Vx (with uncertainties)",
+        "COMPONENT_0": "Alpha_VX_nonlin",
+        "DELTA_MINUS_VAR": "Alpha_sigmaVX_nonlin",
+        "DELTA_PLUS_VAR": "Alpha_sigmaVX_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha bulk Vx, nonlinva_x",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ Vx GSE nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 0.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "He++ Vx GSE nonlin",
+        "COMPONENTS": [
+          "Alpha_VX_nonlin"
+        ]
+      }
+    },
+    "Alpha_sigmaVX_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty in alpha Vx [km/s]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in Alpha bulk Vx, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma He++ Vx nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Sigma He++ Vx nonlin"
+      }
+    },
+    "Alpha_VY_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha velocity component Vy (GSE, km/s) from non-linear analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton bulk Vy, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ Vy GSE nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "He++ Vy GSE nonlin"
+      }
+    },
+    "Alpha_VY_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Alpha velocity component Vy (with uncertainties)",
+        "COMPONENT_0": "Alpha_VY_nonlin",
+        "DELTA_MINUS_VAR": "Alpha_sigmaVY_nonlin",
+        "DELTA_PLUS_VAR": "Alpha_sigmaVY_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton bulk Vy, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ Vy GSE nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "He++ Vy GSE nonlin",
+        "COMPONENTS": [
+          "Alpha_VY_nonlin"
+        ]
+      }
+    },
+    "Alpha_sigmaVY_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--->1-sigma uncertainty in alpha Vy [km/s]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in Alpha bulk Vy, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma He++ Vy nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Sigma He++ Vy nonlin"
+      }
+    },
+    "Alpha_VZ_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha velocity component Vz (GSE, km/s) from non-linear analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton bulk Vz, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ Vz GSE nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "He++ Vz GSE nonlin"
+      }
+    },
+    "Alpha_VZ_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Alpha velocity component Vz (with uncertainties)",
+        "COMPONENT_0": "Alpha_VZ_nonlin",
+        "DELTA_MINUS_VAR": "Alpha_sigmaVZ_nonlin",
+        "DELTA_PLUS_VAR": "Alpha_sigmaVZ_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton bulk Vz, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ Vz GSE nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "He++ Vz GSE nonlin",
+        "COMPONENTS": [
+          "Alpha_VZ_nonlin"
+        ]
+      }
+    },
+    "Alpha_sigmaVZ_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--->1-sigma uncertainty in alpha Vz [km/s]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in Alpha bulk Vz, nonlin",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma He++ Vz nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Sigma He++ Vz nonlin"
+      }
+    },
+    "Alpha_W_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Scalar [isotropic] alpha particle thermal speed [km/s].",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Scalar Alpha thermal speed",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ W nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Calculated from the trace of the anisotropic alpha pressure tensor, obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "He++ W nonlin"
+      }
+    },
+    "Alpha_W_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Scalar [isotropic] alpha particle thermal speed [km/s] (with uncertainties)",
+        "COMPONENT_0": "Alpha_W_nonlin",
+        "DELTA_MINUS_VAR": "Alpha_sigmaW_nonlin",
+        "DELTA_PLUS_VAR": "Alpha_sigmaW_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Scalar Alpha thermal speed",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ W nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Calculated from the trace of the anisotropic alpha pressure tensor, obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "He++ W nonlin",
+        "COMPONENTS": [
+          "Alpha_W_nonlin"
+        ]
+      }
+    },
+    "Alpha_sigmaW_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty in alpha thermal speed [km/s].",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in scalar alpha thermal speed",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma He++ W nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Sigma He++ W nonlin"
+      }
+    },
+    "Alpha_Wperp_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha particle thermal speed perpendicular to the magnetic field direction [km/s].",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha particle thermal speed perpendicular to the magnetic field direction [km/s].",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ Wperp nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "He++ Wperp nonlin"
+      }
+    },
+    "Alpha_Wperp_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Alpha particle thermal speed perpendicular (with uncertainties)",
+        "COMPONENT_0": "Alpha_Wperp_nonlin",
+        "DELTA_MINUS_VAR": "Alpha_sigmaWperp_nonlin",
+        "DELTA_PLUS_VAR": "Alpha_sigmaWperp_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha particle thermal speed perpendicular to the magnetic field direction [km/s].",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ Wperp nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "He++ Wperp nonlin",
+        "COMPONENTS": [
+          "Alpha_Wperp_nonlin"
+        ]
+      }
+    },
+    "Alpha_sigmaWperp_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty in the perpendicular alpha thermal speed [km/s].",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in the perpendicular alpha thermal speed [km/s].",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma He++ Wperp nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Sigma He++ Wperp nonlin"
+      }
+    },
+    "Alpha_Wpar_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha particle thermal speed parallel to the magnetic field direction [km/s]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha thermal speed parallel to the magnetic field direction [km/s].",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ Wpar nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "He++ Wpar nonlin"
+      }
+    },
+    "Alpha_Wpar_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Alpha particle thermal speed parallel (with uncertainties)",
+        "COMPONENT_0": "Alpha_Wpar_nonlin",
+        "DELTA_MINUS_VAR": "Alpha_sigmaWpar_nonlin",
+        "DELTA_PLUS_VAR": "Alpha_sigmaWpar_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha thermal speed parallel to the magnetic field direction [km/s].",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ Wpar nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "He++ Wpar nonlin",
+        "COMPONENTS": [
+          "Alpha_Wpar_nonlin"
+        ]
+      }
+    },
+    "Alpha_sigmaWpar_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty in the perpendicular alpha thermal speed [km/s].",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in the perpendicular alpha thermal speed [km/s].",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma He++ Wpar nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Sigma He++ Wpar nonlin"
+      }
+    },
+    "Alpha_Na_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha number density Na (n/cc) from non-linear analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha number density Na (n/cc) from non-linear analysis",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ density nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^{-3}",
+        "x_LABLAXIS": "He++ density nonlin"
+      }
+    },
+    "Alpha_Na_nonlin_log": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Alpha number density Na (log scale)",
+        "COMPONENT_0": "Alpha_Na_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha number density Na (n/cc) from non-linear analysis",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ density nonlin",
+        "SCALETYP": "log",
+        "UNITS": "cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "cm^{-3}",
+        "x_LABLAXIS": "He++ density nonlin",
+        "COMPONENTS": [
+          "Alpha_Na_nonlin"
+        ]
+      }
+    },
+    "Alpha_Na_nonlin_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Alpha number density Na (with uncertainties)",
+        "COMPONENT_0": "Alpha_Na_nonlin",
+        "DELTA_MINUS_VAR": "Alpha_sigmaNa_nonlin",
+        "DELTA_PLUS_VAR": "Alpha_sigmaNa_nonlin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha number density Na (n/cc) from non-linear analysis",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "He++ density nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "cm^{-3}",
+        "x_LABLAXIS": "He++ density nonlin",
+        "COMPONENTS": [
+          "Alpha_Na_nonlin"
+        ]
+      }
+    },
+    "Alpha_sigmaNa_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty in the alpha density [n/cc]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "One sigma uncertainty in the alpha density [n/cc]",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma He++ density nonlin",
+        "SCALETYP": "linear",
+        "UNITS": "cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^{-3}",
+        "x_LABLAXIS": "Sigma He++ density nonlin"
+      }
+    },
+    "ChisQ_DOF_nonlin": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Reduced chi-squared for this fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi-square per degree of freedom",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "chisq/dof",
+        "SCALETYP": "linear",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Obtained from non-linear fitting to the ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chisq/dof"
+      }
+    },
+    "Peak_doy": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Time that the peak charge flux was observed for each spectrum (in fractional day of year)",
+        "DELTA_MINUS_VAR": "sigmaPeak_doy",
+        "DELTA_PLUS_VAR": "sigmaPeak_doy",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "time of peak flux (observed) in fractional day of year",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Peak DOY",
+        "SCALETYP": "linear",
+        "UNITS": "days",
+        "VALIDMAX": 367.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Statistical moments of the ion velocity distribution function (VDF) are estimated analytically from the  ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "days",
+        "x_LABLAXIS": "Peak DOY"
+      }
+    },
+    "sigmaPeak_doy": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma uncertainty in time of peak flux (in fractional day of year)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "1-sigma uncertainty in time of peak flux (in fractional day of year)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Sigma Peak DOY",
+        "SCALETYP": "linear",
+        "UNITS": "days",
+        "VALIDMAX": 0.00106,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "calculated from the number of spacecraft spins corresponding to the half-width measurement ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "days",
+        "x_LABLAXIS": "Sigma Peak DOY"
+      }
+    },
+    "Proton_V_moment": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton bulk speed (km/s) from moment analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton bulk speed (km/s) from moment analysis",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "bulk speed moment",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Statistical moments of the ion velocity distribution function (VDF) are estimated analytically from the  ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "bulk speed moment"
+      }
+    },
+    "Proton_VX_moment": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton velocity component Vx (GSE, km/s) from moment analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton velocity component Vx (GSE, km/s) from moment analysis",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Vx moment",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 0.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Statistical moments of the ion velocity distribution function (VDF) are estimated analytically from the  ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Vx moment"
+      }
+    },
+    "Proton_VY_moment": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton velocity component Vy (GSE, km/s) from moment analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton velocity component Vy (GSE, km/s) from moment analysis",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Vy moment",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Statistical moments of the ion velocity distribution function (VDF) are estimated analytically from the  ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Vy moment"
+      }
+    },
+    "Proton_VZ_moment": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton velocity component Vz (GSE, km/s) from moment analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton velocity component Vz (GSE, km/s) from moment analysis",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Vz moment",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Statistical moments of the ion velocity distribution function (VDF) are estimated analytically from the  ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Vz moment"
+      }
+    },
+    "Proton_W_moment": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton thermal speed W (km/s) from isotropic moment analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton thermal speed W (km/s) from isotropic moment analysis",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ W moment",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Statistical moments of the ion velocity distribution function (VDF) are estimated analytically from the  ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ W moment"
+      }
+    },
+    "Proton_Wperp_moment": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton thermal speed Wperpendicular (km/s) from bimax moment analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton thermal speed Wperpendicular (km/s) from bimax moment analysis",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Wperp moment",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Statistical moments of the ion velocity distribution function (VDF) are estimated analytically from the  ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Wperp moment"
+      }
+    },
+    "Proton_Wpar_moment": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton thermal speed Wparallel (km/s) from bimax moment analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton thermal speed Wparallel (km/s) from bimax moment analysis",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ Wpar moment",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Statistical moments of the ion velocity distribution function (VDF) are estimated analytically from the  ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "P+ Wpar moment"
+      }
+    },
+    "Proton_Np_moment": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton number density Np (n/cc) from moment analysis",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "nm",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ N moment",
+        "SCALETYP": "linear",
+        "UNITS": "cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Statistical moments of the ion velocity distribution function (VDF) are estimated analytically from the  ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^{-3}",
+        "x_LABLAXIS": "P+ N moment"
+      }
+    },
+    "Proton_Np_moment_log": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Proton number density Np (n/cc) from moment analysis (log scale)",
+        "COMPONENT_0": "Proton_Np_moment",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "nm",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P+ N moment",
+        "SCALETYP": "log",
+        "UNITS": "cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Statistical moments of the ion velocity distribution function (VDF) are estimated analytically from the  ion current distribution function (CDF).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "cm^{-3}",
+        "x_LABLAXIS": "P+ N moment",
+        "COMPONENTS": [
+          "Proton_Np_moment"
+        ]
+      }
+    },
+    "BX": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic field component Bx (GSE, nT) averaged over plasma measurement",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnetic field component Bx (GSE, nT) averaged over plasma measurement",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "BX",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "calculated from 3-second MFI experiment Version 5 data",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "BX"
+      }
+    },
+    "BY": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic field component By (GSE, nT) averaged over plasma measurement",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnetic field component By (GSE, nT) averaged over plasma measurement",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "BY",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "calculated from 3-second MFI experiment Version 5 data",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "BY"
+      }
+    },
+    "BZ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic field component Bz (GSE, nT) averaged over plasma measurement",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnetic field component Bz (GSE, nT) averaged over plasma measurement",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "BZ",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "calculated from 3-second MFI experiment Version 5 data",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "BZ"
+      }
+    },
+    "Ang_dev": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Angluar deviation of magnetic field over plasma measurement [degrees]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Angluar deviation of magnetic field over plasma measurement [degrees]",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "B angular deviation",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "calculated from 3-second MFI experiment Version 5 data",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "B angular deviation"
+      }
+    },
+    "dev": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Deviation in magnitude of field over plasma measurement [nT]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Deviation in magnitude of field over plasma measurement [nT]",
+        "FILLVAL": 100000.0,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "B mag deviation",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "calculated from 3-second MFI experiment Version 5 data",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B mag deviation"
+      }
+    },
+    "xgse": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "X (GSE) Position of Wind S/C at start of spectrum [Re]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "xgse",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "xgse",
+        "SCALETYP": "linear",
+        "UNITS": "earth radii",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "earth radii",
+        "x_LABLAXIS": "xgse"
+      }
+    },
+    "ygse": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Y (GSE) Position of Wind S/C at start of spectrum [Re]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ygse",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "ygse",
+        "SCALETYP": "linear",
+        "UNITS": "earth radii",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "earth radii",
+        "x_LABLAXIS": "ygse"
+      }
+    },
+    "zgse": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Z (GSE) Position of Wind S/C at start of spectrum [Re]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "zgse",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "zgse",
+        "SCALETYP": "linear",
+        "UNITS": "earth radii",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "earth radii",
+        "x_LABLAXIS": "zgse"
+      }
+    },
+    "ygsm": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Y (GSM) Position of Wind S/C at start of spectrum [Re]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ygsm",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "ygsm",
+        "SCALETYP": "linear",
+        "UNITS": "earth radii",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "earth radii",
+        "x_LABLAXIS": "ygsm"
+      }
+    },
+    "zgsm": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Z (GSM) Position of Wind S/C at start of spectrum [Re]",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "zgsm",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "zgsm",
+        "SCALETYP": "linear",
+        "UNITS": "earth radii",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "earth radii",
+        "x_LABLAXIS": "zgsm"
+      }
+    }
+  }
+}

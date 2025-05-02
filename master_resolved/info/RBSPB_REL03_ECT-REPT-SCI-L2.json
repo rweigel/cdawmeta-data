@@ -1,0 +1,2835 @@
+{
+  "CDFFileInfo": {
+    "File": "rbspb_rel03_ect-rept-sci-l2_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/rbspb_rel03_ect-rept-sci-l2_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "LWS>Living With a Star",
+    "Source_name": "RBSPB>Radiation Belt Storm Probes B",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Data_type": "rel03>Release 03",
+    "Descriptor": "ECT-REPT-Sci-L2>Relativistic Electron Proton Telescope Level-2",
+    "File_naming_convention": "source_datatype_descriptor",
+    "Data_version": " ",
+    "PI_name": "D. Baker",
+    "PI_affiliation": "University of Colorado at Boulder",
+    "TEXT": " ",
+    "Instrument_type": "Particles (space)",
+    "Mission_group": "Van Allen Probes (RBSP)",
+    "Logical_source": "rbspb_rel03_ect-rept-l2",
+    "Logical_file_id": "rbspb_rel03_ect-rept-l2_00000000_v01",
+    "Logical_source_description": "Electron fluxes 2-20 MeV and proton fluxes 20-120 MeV from ECT/REPT",
+    "Time_resolution": "milliseconds",
+    "Rules_of_use": " ",
+    "Generated_by": " ",
+    "Generation_date": " ",
+    "Acknowledgement": " ",
+    "MODS": " ",
+    "ADID_ref": "NSSD0110",
+    "LINK_TEXT": "ECT home page\nECT SOC and data services\nVan Allen Probes",
+    "LINK_TITLE": "at UNH\nat LANL\nScience Gateway (including Mission Rules of the Road for Data Usage)",
+    "HTTP_LINK": "http://rbsp-ect.sr.unh.edu\nhttps://rbsp-ect.newmexicoconsortium.org/rbsp_ect.php\nhttp://rbspgway.jhuapl.edu/",
+    "cdawlib_idl_row_notranspose": "FALSE",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/RBSP/B/ECT/REPT/L2/Sectors/Release03/PT4.2S",
+    "DOI": "https://doi.org/10.48322/nzhx-1t77"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time since 0 AD",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "MONOTON": "INCREASE",
+        "SCALETYP": "linear",
+        "VALIDMAX": "2059-12-31T23:59:59.999",
+        "VALIDMIN": "1990-01-01T00:00:00.000",
+        "VAR_NOTES": "The midpoint of the sample time.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null
+      }
+    },
+    "Data_Quality": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Data Quality Flag (0=valid)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>quality",
+        "FIELDNAM": "Data_Quality",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I8",
+        "LABLAXIS": "Data_Quality",
+        "SCALETYP": "linear",
+        "UNITS": "(0=valid)",
+        "VALIDMAX": 7,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "0 = valid data; 1 = timing err; 2 = bias_st off; 3 = timing err and bias_st off",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(0=valid)",
+        "x_LABLAXIS": "Data_Quality"
+      }
+    },
+    "FESA": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          12
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FESA: Spin-Averaged Differential Electron Flux 2-20 MeV, in 12 energy bands (spectrogram)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "FESA_Energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "REPT FESA",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABL_PTR_1": "FESA_LABL_1",
+        "QUALITY_VAR": "Data_Quality",
+        "SCALETYP": "log",
+        "UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Dimension 1 corresponds to 12 electron energy bins.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_LABLAXES": [
+          [
+            "FESA_@_1.80 MeV",
+            "FESA_@_2.10 MeV",
+            "FESA_@_2.60 MeV",
+            "FESA_@_3.40 MeV",
+            "FESA_@_4.20 MeV",
+            "FESA_@_5.20 MeV",
+            "FESA_@_6.30 MeV",
+            "FESA_@_7.70 MeV",
+            "FESA_@_9.90 MeV",
+            "FESA_@_12.30 MeV",
+            "FESA_@_15.20 MeV",
+            "FESA_@_20.00 MeV"
+          ]
+        ],
+        "x_DEPEND": [
+          "FESA_Energy"
+        ]
+      }
+    },
+    "FESA_E": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          12
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> (stacked time series)",
+        "COMPONENT_0": "FESA",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "FESA_Energy",
+        "DISPLAY_TYPE": "default_dimensiony=FESA(1),y=FESA(3), y=FESA(5),y=FESA(7), y=FESA(9), z=FESA_Energy",
+        "FIELDNAM": "REPT FESA",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "REPT FESA",
+        "LABL_PTR_1": "FESA_LABL_1",
+        "QUALITY_VAR": "Data_Quality",
+        "SCALETYP": "log",
+        "UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Dimension 1 corresponds to 12 electron energy bins.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_LABLAXIS": "REPT FESA",
+        "x_LABLAXES": [
+          [
+            "FESA_@_1.80 MeV",
+            "FESA_@_2.10 MeV",
+            "FESA_@_2.60 MeV",
+            "FESA_@_3.40 MeV",
+            "FESA_@_4.20 MeV",
+            "FESA_@_5.20 MeV",
+            "FESA_@_6.30 MeV",
+            "FESA_@_7.70 MeV",
+            "FESA_@_9.90 MeV",
+            "FESA_@_12.30 MeV",
+            "FESA_@_15.20 MeV",
+            "FESA_@_20.00 MeV"
+          ]
+        ],
+        "x_DEPEND": [
+          "FESA_Energy"
+        ],
+        "COMPONENTS": [
+          "FESA"
+        ]
+      }
+    },
+    "FESA_Energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          12
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy levels for FESA ",
+        "DELTA_MINUS_VAR": "FESA_Delta_Energy",
+        "DELTA_PLUS_VAR": "FESA_Delta_Energy",
+        "FIELDNAM": "Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Energy",
+        "SCALETYP": "log",
+        "UNITS": "MeV",
+        "VALIDMAX": 25.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "The centers of the electron energy bins.  The Value Uncertainty contains the plus/minus range for each bin.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        1.8,
+        2.1,
+        2.6,
+        3.4,
+        4.2,
+        5.2,
+        6.3,
+        7.7,
+        9.9,
+        12.3,
+        15.2,
+        20.0
+      ]
+    },
+    "FESA_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          12
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 16,
+        "NumWrittenRecords": 1,
+        "PadValue": "                ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FESA_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "FESA_LABL_1",
+        "FORMAT": "A29",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "FESA_@_1.80 MeV",
+        "FESA_@_2.10 MeV",
+        "FESA_@_2.60 MeV",
+        "FESA_@_3.40 MeV",
+        "FESA_@_4.20 MeV",
+        "FESA_@_5.20 MeV",
+        "FESA_@_6.30 MeV",
+        "FESA_@_7.70 MeV",
+        "FESA_@_9.90 MeV",
+        "FESA_@_12.30 MeV",
+        "FESA_@_15.20 MeV",
+        "FESA_@_20.00 MeV"
+      ]
+    },
+    "FESA_Delta_Energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          12
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Delta energies for FESA ",
+        "FIELDNAM": "FESA_Delta_Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.6",
+        "LABLAXIS": "FESA_LABL_2",
+        "SCALETYP": "linear",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "The (Selesnick-Blake bowtie) delta energies associated with the electron energy bins.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "FESA_LABL_2"
+      },
+      "VarData": [
+        0.0426,
+        0.08655,
+        0.17585,
+        0.20545,
+        0.4247,
+        0.37575,
+        0.3521,
+        0.2619,
+        0.1477,
+        0.0835,
+        1.0,
+        1.0
+      ]
+    },
+    "FESA_LABL_2": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          12
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 10,
+        "NumWrittenRecords": 1,
+        "PadValue": "          ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FESA_LABL_2",
+        "DICT_KEY": "label",
+        "FIELDNAM": "FESA_LABL_2",
+        "FORMAT": "A10",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Delta E 1 ",
+        "Delta E 2 ",
+        "Delta E 3 ",
+        "Delta E 4 ",
+        "Delta E 5 ",
+        "Delta E 6 ",
+        "Delta E 7 ",
+        "Delta E 8 ",
+        "Delta E 9 ",
+        "Delta E 10",
+        "Delta E 11",
+        "Delta E 12"
+      ]
+    },
+    "FEDU": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          36,
+          12
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "FEDU: Unidirectional Differential Electron Flux 2-20 MeV, in 12 energy and 36 angle bins (energy-angle displays)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTORS",
+        "DEPEND_2": "FEDU_Energy",
+        "DISPLAY_TYPE": "default_dimensionTHUMBSIZE>166>xsz=4,ysz=1.5>x=SECTORS,y=FEDU_Energy,z=FEDU",
+        "FIELDNAM": "REPT FEDU",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "FEDU_Flux",
+        "LABL_PTR_1": "FEDU_SECTOR_LABL_1",
+        "LABL_PTR_2": "FEDU_LABL_1",
+        "QUALITY_VAR": "Data_Quality",
+        "SCALETYP": "log",
+        "UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Dimension 1 corresponds to 12 electron energy bins.  Dimension 2 holds 36 sectors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_LABLAXIS": "FEDU_Flux",
+        "x_LABLAXES": [
+          [
+            "FEDU_@_5_Deg",
+            "FEDU_@_15_Deg",
+            "FEDU_@_25_Deg",
+            "FEDU_@_35_Deg",
+            "FEDU_@_45_Deg",
+            "FEDU_@_55_Deg",
+            "FEDU_@_65_Deg",
+            "FEDU_@_75_Deg",
+            "FEDU_@_85_Deg",
+            "FEDU_@_95_Deg",
+            "FEDU_@_105_Deg",
+            "FEDU_@_115_Deg",
+            "FEDU_@_125_Deg",
+            "FEDU_@_135_Deg",
+            "FEDU_@_145_Deg",
+            "FEDU_@_155_Deg",
+            "FEDU_@_165_Deg",
+            "FEDU_@_175_Deg",
+            "FEDU_@_185_Deg",
+            "FEDU_@_195_Deg",
+            "FEDU_@_205_Deg",
+            "FEDU_@_215_Deg",
+            "FEDU_@_225_Deg",
+            "FEDU_@_235_Deg",
+            "FEDU_@_245_Deg",
+            "FEDU_@_255_Deg",
+            "FEDU_@_265_Deg",
+            "FEDU_@_275_Deg",
+            "FEDU_@_285_Deg",
+            "FEDU_@_295_Deg",
+            "FEDU_@_305_Deg",
+            "FEDU_@_315_Deg",
+            "FEDU_@_325_Deg",
+            "FEDU_@_335_Deg",
+            "FEDU_@_345_Deg",
+            "FEDU_@_355_Deg"
+          ],
+          [
+            "FEDU_@_1.80 MeV",
+            "FEDU_@_2.10 MeV",
+            "FEDU_@_2.60 MeV",
+            "FEDU_@_3.40 MeV",
+            "FEDU_@_4.20 MeV",
+            "FEDU_@_5.20 MeV",
+            "FEDU_@_6.30 MeV",
+            "FEDU_@_7.70 MeV",
+            "FEDU_@_9.90 MeV",
+            "FEDU_@_12.30 MeV",
+            "FEDU_@_15.20 MeV",
+            "FEDU_@_20.00 MeV"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTORS",
+          "FEDU_Energy"
+        ]
+      }
+    },
+    "FEDU_E": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          36,
+          12
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Spectrograms by energy at sample angles",
+        "COMPONENT_0": "FEDU",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTORS",
+        "DEPEND_2": "FEDU_Energy",
+        "DISPLAY_TYPE": "default_dimensiony=FEDU_Energy,z=FEDU(1,*), z=FEDU(4,*), z=FEDU(7,*), z=FEDU(10,*), z=FEDU(13,*), z=FEDU(16,*), z=FEDU(19,*), z=FEDU(22,*), z=FEDU(25,*), z=FEDU(28,*), z=FEDU(31,*), z=FEDU(34,*) ",
+        "FIELDNAM": "REPT FEDU",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABL_PTR_1": "FEDU_SECTOR_LABL_1",
+        "LABL_PTR_2": "FEDU_LABL_1",
+        "QUALITY_VAR": "Data_Quality",
+        "SCALETYP": "log",
+        "UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_LABLAXES": [
+          [
+            "FEDU_@_5_Deg",
+            "FEDU_@_15_Deg",
+            "FEDU_@_25_Deg",
+            "FEDU_@_35_Deg",
+            "FEDU_@_45_Deg",
+            "FEDU_@_55_Deg",
+            "FEDU_@_65_Deg",
+            "FEDU_@_75_Deg",
+            "FEDU_@_85_Deg",
+            "FEDU_@_95_Deg",
+            "FEDU_@_105_Deg",
+            "FEDU_@_115_Deg",
+            "FEDU_@_125_Deg",
+            "FEDU_@_135_Deg",
+            "FEDU_@_145_Deg",
+            "FEDU_@_155_Deg",
+            "FEDU_@_165_Deg",
+            "FEDU_@_175_Deg",
+            "FEDU_@_185_Deg",
+            "FEDU_@_195_Deg",
+            "FEDU_@_205_Deg",
+            "FEDU_@_215_Deg",
+            "FEDU_@_225_Deg",
+            "FEDU_@_235_Deg",
+            "FEDU_@_245_Deg",
+            "FEDU_@_255_Deg",
+            "FEDU_@_265_Deg",
+            "FEDU_@_275_Deg",
+            "FEDU_@_285_Deg",
+            "FEDU_@_295_Deg",
+            "FEDU_@_305_Deg",
+            "FEDU_@_315_Deg",
+            "FEDU_@_325_Deg",
+            "FEDU_@_335_Deg",
+            "FEDU_@_345_Deg",
+            "FEDU_@_355_Deg"
+          ],
+          [
+            "FEDU_@_1.80 MeV",
+            "FEDU_@_2.10 MeV",
+            "FEDU_@_2.60 MeV",
+            "FEDU_@_3.40 MeV",
+            "FEDU_@_4.20 MeV",
+            "FEDU_@_5.20 MeV",
+            "FEDU_@_6.30 MeV",
+            "FEDU_@_7.70 MeV",
+            "FEDU_@_9.90 MeV",
+            "FEDU_@_12.30 MeV",
+            "FEDU_@_15.20 MeV",
+            "FEDU_@_20.00 MeV"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTORS",
+          "FEDU_Energy"
+        ],
+        "COMPONENTS": [
+          "FEDU"
+        ]
+      }
+    },
+    "FEDU_A": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          36,
+          12
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Spectrograms by angle at sample energies",
+        "COMPONENT_0": "FEDU",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTORS",
+        "DEPEND_2": "FEDU_Energy",
+        "DISPLAY_TYPE": "default_dimensiony=SECTORS, z=FEDU(*,1),z=FEDU(*,3), z=FEDU(*,5), z=FEDU(*,7),z=FEDU(*,9) ",
+        "FIELDNAM": "REPT FEDU",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABL_PTR_1": "FEDU_SECTOR_LABL_1",
+        "LABL_PTR_2": "FEDU_LABL_1",
+        "QUALITY_VAR": "Data_Quality",
+        "SCALETYP": "log",
+        "UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Dimension 1 corresponds to 12 electron energy bins.  Dimension 2 holds 36 sectors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_LABLAXES": [
+          [
+            "FEDU_@_5_Deg",
+            "FEDU_@_15_Deg",
+            "FEDU_@_25_Deg",
+            "FEDU_@_35_Deg",
+            "FEDU_@_45_Deg",
+            "FEDU_@_55_Deg",
+            "FEDU_@_65_Deg",
+            "FEDU_@_75_Deg",
+            "FEDU_@_85_Deg",
+            "FEDU_@_95_Deg",
+            "FEDU_@_105_Deg",
+            "FEDU_@_115_Deg",
+            "FEDU_@_125_Deg",
+            "FEDU_@_135_Deg",
+            "FEDU_@_145_Deg",
+            "FEDU_@_155_Deg",
+            "FEDU_@_165_Deg",
+            "FEDU_@_175_Deg",
+            "FEDU_@_185_Deg",
+            "FEDU_@_195_Deg",
+            "FEDU_@_205_Deg",
+            "FEDU_@_215_Deg",
+            "FEDU_@_225_Deg",
+            "FEDU_@_235_Deg",
+            "FEDU_@_245_Deg",
+            "FEDU_@_255_Deg",
+            "FEDU_@_265_Deg",
+            "FEDU_@_275_Deg",
+            "FEDU_@_285_Deg",
+            "FEDU_@_295_Deg",
+            "FEDU_@_305_Deg",
+            "FEDU_@_315_Deg",
+            "FEDU_@_325_Deg",
+            "FEDU_@_335_Deg",
+            "FEDU_@_345_Deg",
+            "FEDU_@_355_Deg"
+          ],
+          [
+            "FEDU_@_1.80 MeV",
+            "FEDU_@_2.10 MeV",
+            "FEDU_@_2.60 MeV",
+            "FEDU_@_3.40 MeV",
+            "FEDU_@_4.20 MeV",
+            "FEDU_@_5.20 MeV",
+            "FEDU_@_6.30 MeV",
+            "FEDU_@_7.70 MeV",
+            "FEDU_@_9.90 MeV",
+            "FEDU_@_12.30 MeV",
+            "FEDU_@_15.20 MeV",
+            "FEDU_@_20.00 MeV"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTORS",
+          "FEDU_Energy"
+        ],
+        "COMPONENTS": [
+          "FEDU"
+        ]
+      }
+    },
+    "FEDU_T": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          36,
+          12
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> FEDU - Unidirectional Differential Electron Flux 2-60 MeV (time series)",
+        "COMPONENT_0": "FEDU",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTORS",
+        "DEPEND_2": "FEDU_Energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "REPT FEDU",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABL_PTR_1": "FEDU_SECTOR_LABL_1",
+        "LABL_PTR_2": "FEDU_LABL_1",
+        "QUALITY_VAR": "Data_Quality",
+        "SCALETYP": "log",
+        "UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Dimension 1 corresponds to 12 electron energy bins.  Dimension 2 holds 36 sectors.",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_LABLAXES": [
+          [
+            "FEDU_@_5_Deg",
+            "FEDU_@_15_Deg",
+            "FEDU_@_25_Deg",
+            "FEDU_@_35_Deg",
+            "FEDU_@_45_Deg",
+            "FEDU_@_55_Deg",
+            "FEDU_@_65_Deg",
+            "FEDU_@_75_Deg",
+            "FEDU_@_85_Deg",
+            "FEDU_@_95_Deg",
+            "FEDU_@_105_Deg",
+            "FEDU_@_115_Deg",
+            "FEDU_@_125_Deg",
+            "FEDU_@_135_Deg",
+            "FEDU_@_145_Deg",
+            "FEDU_@_155_Deg",
+            "FEDU_@_165_Deg",
+            "FEDU_@_175_Deg",
+            "FEDU_@_185_Deg",
+            "FEDU_@_195_Deg",
+            "FEDU_@_205_Deg",
+            "FEDU_@_215_Deg",
+            "FEDU_@_225_Deg",
+            "FEDU_@_235_Deg",
+            "FEDU_@_245_Deg",
+            "FEDU_@_255_Deg",
+            "FEDU_@_265_Deg",
+            "FEDU_@_275_Deg",
+            "FEDU_@_285_Deg",
+            "FEDU_@_295_Deg",
+            "FEDU_@_305_Deg",
+            "FEDU_@_315_Deg",
+            "FEDU_@_325_Deg",
+            "FEDU_@_335_Deg",
+            "FEDU_@_345_Deg",
+            "FEDU_@_355_Deg"
+          ],
+          [
+            "FEDU_@_1.80 MeV",
+            "FEDU_@_2.10 MeV",
+            "FEDU_@_2.60 MeV",
+            "FEDU_@_3.40 MeV",
+            "FEDU_@_4.20 MeV",
+            "FEDU_@_5.20 MeV",
+            "FEDU_@_6.30 MeV",
+            "FEDU_@_7.70 MeV",
+            "FEDU_@_9.90 MeV",
+            "FEDU_@_12.30 MeV",
+            "FEDU_@_15.20 MeV",
+            "FEDU_@_20.00 MeV"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTORS",
+          "FEDU_Energy"
+        ],
+        "COMPONENTS": [
+          "FEDU"
+        ]
+      }
+    },
+    "FEDU_Energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          12
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy levels for FEDU ",
+        "DELTA_MINUS_VAR": "FEDU_Delta_Energy",
+        "DELTA_PLUS_VAR": "FEDU_Delta_Energy",
+        "FIELDNAM": "FEDU_Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "Energy",
+        "SCALETYP": "log",
+        "UNITS": "MeV",
+        "VALIDMAX": 25.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "The centers of the electron energy bins.  The Value Uncertainty contains the plus/minus range for each bin.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        1.8,
+        2.1,
+        2.6,
+        3.4,
+        4.2,
+        5.2,
+        6.3,
+        7.7,
+        9.9,
+        12.3,
+        15.2,
+        20.0
+      ]
+    },
+    "FEDU_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          12
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 16,
+        "NumWrittenRecords": 1,
+        "PadValue": "                ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FEDU_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "FEDU_LABL_1",
+        "FORMAT": "A20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "FEDU_@_1.80 MeV",
+        "FEDU_@_2.10 MeV",
+        "FEDU_@_2.60 MeV",
+        "FEDU_@_3.40 MeV",
+        "FEDU_@_4.20 MeV",
+        "FEDU_@_5.20 MeV",
+        "FEDU_@_6.30 MeV",
+        "FEDU_@_7.70 MeV",
+        "FEDU_@_9.90 MeV",
+        "FEDU_@_12.30 MeV",
+        "FEDU_@_15.20 MeV",
+        "FEDU_@_20.00 MeV"
+      ]
+    },
+    "FEDU_Delta_Energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          12
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Delta energy levels for FEDU ",
+        "FIELDNAM": "FEDU_Delta_Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.6",
+        "LABLAXIS": "FEDU_LABL_2",
+        "SCALETYP": "linear",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "The (Selesnick-Blake bowtie) delta energies associated with the electron energy bins.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "FEDU_LABL_2"
+      },
+      "VarData": [
+        0.0426,
+        0.08655,
+        0.17585,
+        0.20545,
+        0.4247,
+        0.37575,
+        0.3521,
+        0.2619,
+        0.1477,
+        0.0835,
+        1.0,
+        1.0
+      ]
+    },
+    "FEDU_LABL_2": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          12
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 33,
+        "NumWrittenRecords": 1,
+        "PadValue": "                                 ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FEDU_LABL_2",
+        "DICT_KEY": "label",
+        "FIELDNAM": "FEDU_LABL_2",
+        "FORMAT": "A33",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Delta E 1                        ",
+        "Delta E 2                        ",
+        "Delta E 3                        ",
+        "Delta E 4                        ",
+        "Delta E 5                        ",
+        "Delta E 6                        ",
+        "Delta E 7                        ",
+        "Delta E 8                        ",
+        "Delta E 9                        ",
+        "Delta E 10                       ",
+        "Delta E 11                       ",
+        "Delta E 12                       "
+      ]
+    },
+    "FPSA": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FPSA: Spin-Averaged Differential Proton Flux 20-120 MeV (spectrograms)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "FPSA_Energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "REPT FPSA",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABL_PTR_1": "FPSA_LABL_1",
+        "QUALITY_VAR": "Data_Quality",
+        "SCALETYP": "log",
+        "UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Dimension 1 corresponds to 8 proton energy bins.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_LABLAXES": [
+          [
+            "FPSA_@_21.25 MeV",
+            "FPSA_@_27.60 MeV",
+            "FPSA_@_35.90 MeV",
+            "FPSA_@_46.70 MeV",
+            "FPSA_@_60.70 MeV",
+            "FPSA_@_78.90 MeV",
+            "FPSA_@_102.60 MeV",
+            "FPSA_@_208.00 MeV"
+          ]
+        ],
+        "x_DEPEND": [
+          "FPSA_Energy"
+        ]
+      }
+    },
+    "FPSA_E": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> (stacked time series)",
+        "COMPONENT_0": "FPSA",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "FPSA_Energy",
+        "DISPLAY_TYPE": "default_dimensiony=FPSA(1),y=FPSA(3), y=FPSA(5),y=FPSA(7), z=FPSA_Energy",
+        "FIELDNAM": "REPT FPSA",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "REPT FPSA",
+        "LABL_PTR_1": "FPSA_LABL_1",
+        "QUALITY_VAR": "Data_Quality",
+        "SCALETYP": "log",
+        "UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Dimension 1 corresponds to 8 proton energy bins.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_LABLAXIS": "REPT FPSA",
+        "x_LABLAXES": [
+          [
+            "FPSA_@_21.25 MeV",
+            "FPSA_@_27.60 MeV",
+            "FPSA_@_35.90 MeV",
+            "FPSA_@_46.70 MeV",
+            "FPSA_@_60.70 MeV",
+            "FPSA_@_78.90 MeV",
+            "FPSA_@_102.60 MeV",
+            "FPSA_@_208.00 MeV"
+          ]
+        ],
+        "x_DEPEND": [
+          "FPSA_Energy"
+        ],
+        "COMPONENTS": [
+          "FPSA"
+        ]
+      }
+    },
+    "FPSA_Energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy levels for FPSA ",
+        "DELTA_MINUS_VAR": "FPSA_Energy_DELTA_VAR",
+        "DELTA_PLUS_VAR": "FPSA_Energy_DELTA_VAR",
+        "FIELDNAM": "Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Energy",
+        "SCALETYP": "log",
+        "UNITS": "MeV",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 10.0,
+        "VAR_NOTES": "The centers of the proton energy bins.  The Value Uncertainty contains the plus/minus range for each bin.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        21.3,
+        27.6,
+        35.9,
+        46.7,
+        60.7,
+        78.9,
+        103.0,
+        208.0
+      ]
+    },
+    "FPSA_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 18,
+        "NumWrittenRecords": 1,
+        "PadValue": "                  ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FPSA_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "FPSA_LABL_1",
+        "FORMAT": "A18",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "FPSA_@_21.25 MeV",
+        "FPSA_@_27.60 MeV",
+        "FPSA_@_35.90 MeV",
+        "FPSA_@_46.70 MeV",
+        "FPSA_@_60.70 MeV",
+        "FPSA_@_78.90 MeV",
+        "FPSA_@_102.60 MeV",
+        "FPSA_@_208.00 MeV"
+      ]
+    },
+    "FPSA_Energy_DELTA_VAR": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FPSA_Energy_DELTA_VAR",
+        "FIELDNAM": "FPSA_Energy_DELTA_VAR",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "FPSA_Energy_DELTA_VAR_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "MeV",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "The (Van Allen-Baker bowtie) plus/minus width of each energy bin from the center of the bin.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "FPSA_Energy_DELTA_VAR_LABL_1"
+      },
+      "VarData": [
+        2.75,
+        3.6,
+        4.7,
+        6.1,
+        7.9,
+        10.3,
+        13.4,
+        92.0
+      ]
+    },
+    "FPSA_Efficiency": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Efficiency values for FPSA ",
+        "FIELDNAM": "FPSA_Efficiency",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "FPSA_LABL_2",
+        "SCALETYP": "linear",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "The efficiencies for the proton energy bins.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "FPSA_LABL_2"
+      },
+      "VarData": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "FPSA_LABL_2": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 30,
+        "NumWrittenRecords": 1,
+        "PadValue": "                              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FPSA_LABL_2",
+        "DICT_KEY": "label",
+        "FIELDNAM": "FPSA_LABL_2",
+        "FORMAT": "A30",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Proton Bowtie Efficiency Bin 1",
+        "Proton Bowtie Efficiency Bin 2",
+        "Proton Bowtie Efficiency Bin 3",
+        "Proton Bowtie Efficiency Bin 4",
+        "Proton Bowtie Efficiency Bin 5",
+        "Proton Bowtie Efficiency Bin 6",
+        "Proton Bowtie Efficiency Bin 7",
+        "Proton Bowtie Efficiency Bin 8"
+      ]
+    },
+    "FPDU": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          36,
+          8
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "FPDU - Unidirectional Differential Proton Flux 20-120 MeV, in 8 energy and 36 angle bins (energy-angle displays)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTORS",
+        "DEPEND_2": "FPDU_Energy",
+        "DISPLAY_TYPE": "default_dimensionTHUMBSIZE>166>xsz=4,ysz=1.5>x=SECTORS,y=FPDU_Energy,z=FPDU",
+        "FIELDNAM": "REPT FPDU",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "FPDU_FLUX",
+        "LABL_PTR_1": "FPDU_SECTOR_LABL_1",
+        "LABL_PTR_2": "FPDU_LABL_1",
+        "QUALITY_VAR": "Data_Quality",
+        "SCALETYP": "log",
+        "UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Dimension 1 corresponds to 8 proton energy bins.  Dimension 2 holds 36 sectors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_LABLAXIS": "FPDU_FLUX",
+        "x_LABLAXES": [
+          [
+            "FPDU_@_5_Deg",
+            "FPDU_@_15_Deg",
+            "FPDU_@_25_Deg",
+            "FPDU_@_35_Deg",
+            "FPDU_@_45_Deg",
+            "FPDU_@_55_Deg",
+            "FPDU_@_65_Deg",
+            "FPDU_@_75_Deg",
+            "FPDU_@_85_Deg",
+            "FPDU_@_95_Deg",
+            "FPDU_@_105_Deg",
+            "FPDU_@_115_Deg",
+            "FPDU_@_125_Deg",
+            "FPDU_@_135_Deg",
+            "FPDU_@_145_Deg",
+            "FPDU_@_155_Deg",
+            "FPDU_@_165_Deg",
+            "FPDU_@_175_Deg",
+            "FPDU_@_185_Deg",
+            "FPDU_@_195_Deg",
+            "FPDU_@_205_Deg",
+            "FPDU_@_215_Deg",
+            "FPDU_@_225_Deg",
+            "FPDU_@_235_Deg",
+            "FPDU_@_245_Deg",
+            "FPDU_@_255_Deg",
+            "FPDU_@_265_Deg",
+            "FPDU_@_275_Deg",
+            "FPDU_@_285_Deg",
+            "FPDU_@_295_Deg",
+            "FPDU_@_305_Deg",
+            "FPDU_@_315_Deg",
+            "FPDU_@_325_Deg",
+            "FPDU_@_335_Deg",
+            "FPDU_@_345_Deg",
+            "FPDU_@_355_Deg"
+          ],
+          [
+            "FPDU_@_21.25 MeV",
+            "FPDU_@_27.60 MeV",
+            "FPDU_@_35.90 MeV",
+            "FPDU_@_46.70 MeV",
+            "FPDU_@_60.70 MeV",
+            "FPDU_@_78.90 MeV",
+            "FPDU_@_102.60 MeV",
+            "FPDU_@_208.00 MeV"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTORS",
+          "FPDU_Energy"
+        ]
+      }
+    },
+    "FPDU_E": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          36,
+          8
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Spectrograms in energy at sample angles",
+        "COMPONENT_0": "FPDU",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTORS",
+        "DEPEND_2": "FPDU_Energy",
+        "DISPLAY_TYPE": "default_dimensiony=FPDU_Energy,z=FPDU(1,*), z=FPDU(4,*), z=FPDU(7,*), z=FPDU(10,*), z=FPDU(13,*), z=FPDU(16,*), z=FPDU(19,*), z=FPDU(22,*), z=FPDU(25,*), z=FPDU(28,*), z=FPDU(31,*), z=FPDU(34,*) ",
+        "FIELDNAM": "REPT FPDU",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABL_PTR_1": "FPDU_SECTOR_LABL_1",
+        "LABL_PTR_2": "FPDU_LABL_1",
+        "QUALITY_VAR": "Data_Quality",
+        "SCALETYP": "log",
+        "UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Dimension 1 corresponds to 8 proton energy bins.  Dimension 2 holds 36 sectors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_LABLAXES": [
+          [
+            "FPDU_@_5_Deg",
+            "FPDU_@_15_Deg",
+            "FPDU_@_25_Deg",
+            "FPDU_@_35_Deg",
+            "FPDU_@_45_Deg",
+            "FPDU_@_55_Deg",
+            "FPDU_@_65_Deg",
+            "FPDU_@_75_Deg",
+            "FPDU_@_85_Deg",
+            "FPDU_@_95_Deg",
+            "FPDU_@_105_Deg",
+            "FPDU_@_115_Deg",
+            "FPDU_@_125_Deg",
+            "FPDU_@_135_Deg",
+            "FPDU_@_145_Deg",
+            "FPDU_@_155_Deg",
+            "FPDU_@_165_Deg",
+            "FPDU_@_175_Deg",
+            "FPDU_@_185_Deg",
+            "FPDU_@_195_Deg",
+            "FPDU_@_205_Deg",
+            "FPDU_@_215_Deg",
+            "FPDU_@_225_Deg",
+            "FPDU_@_235_Deg",
+            "FPDU_@_245_Deg",
+            "FPDU_@_255_Deg",
+            "FPDU_@_265_Deg",
+            "FPDU_@_275_Deg",
+            "FPDU_@_285_Deg",
+            "FPDU_@_295_Deg",
+            "FPDU_@_305_Deg",
+            "FPDU_@_315_Deg",
+            "FPDU_@_325_Deg",
+            "FPDU_@_335_Deg",
+            "FPDU_@_345_Deg",
+            "FPDU_@_355_Deg"
+          ],
+          [
+            "FPDU_@_21.25 MeV",
+            "FPDU_@_27.60 MeV",
+            "FPDU_@_35.90 MeV",
+            "FPDU_@_46.70 MeV",
+            "FPDU_@_60.70 MeV",
+            "FPDU_@_78.90 MeV",
+            "FPDU_@_102.60 MeV",
+            "FPDU_@_208.00 MeV"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTORS",
+          "FPDU_Energy"
+        ],
+        "COMPONENTS": [
+          "FPDU"
+        ]
+      }
+    },
+    "FPDU_A": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          36,
+          8
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Spectrograms in angle at sample energies",
+        "COMPONENT_0": "FPDU",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTORS",
+        "DEPEND_2": "FPDU_Energy",
+        "DISPLAY_TYPE": "default_dimensiony=SECTORS, z=FPDU(*,1),z=FPDU(*,3), z=FPDU(*,5), z=FPDU(*,7) ",
+        "FIELDNAM": "REPT FPDU",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABL_PTR_1": "FPDU_SECTOR_LABL_1",
+        "LABL_PTR_2": "FPDU_LABL_1",
+        "QUALITY_VAR": "Data_Quality",
+        "SCALETYP": "log",
+        "UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Dimension 1 corresponds to 8 proton energy bins.  Dimension 2 holds 36 sectors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_LABLAXES": [
+          [
+            "FPDU_@_5_Deg",
+            "FPDU_@_15_Deg",
+            "FPDU_@_25_Deg",
+            "FPDU_@_35_Deg",
+            "FPDU_@_45_Deg",
+            "FPDU_@_55_Deg",
+            "FPDU_@_65_Deg",
+            "FPDU_@_75_Deg",
+            "FPDU_@_85_Deg",
+            "FPDU_@_95_Deg",
+            "FPDU_@_105_Deg",
+            "FPDU_@_115_Deg",
+            "FPDU_@_125_Deg",
+            "FPDU_@_135_Deg",
+            "FPDU_@_145_Deg",
+            "FPDU_@_155_Deg",
+            "FPDU_@_165_Deg",
+            "FPDU_@_175_Deg",
+            "FPDU_@_185_Deg",
+            "FPDU_@_195_Deg",
+            "FPDU_@_205_Deg",
+            "FPDU_@_215_Deg",
+            "FPDU_@_225_Deg",
+            "FPDU_@_235_Deg",
+            "FPDU_@_245_Deg",
+            "FPDU_@_255_Deg",
+            "FPDU_@_265_Deg",
+            "FPDU_@_275_Deg",
+            "FPDU_@_285_Deg",
+            "FPDU_@_295_Deg",
+            "FPDU_@_305_Deg",
+            "FPDU_@_315_Deg",
+            "FPDU_@_325_Deg",
+            "FPDU_@_335_Deg",
+            "FPDU_@_345_Deg",
+            "FPDU_@_355_Deg"
+          ],
+          [
+            "FPDU_@_21.25 MeV",
+            "FPDU_@_27.60 MeV",
+            "FPDU_@_35.90 MeV",
+            "FPDU_@_46.70 MeV",
+            "FPDU_@_60.70 MeV",
+            "FPDU_@_78.90 MeV",
+            "FPDU_@_102.60 MeV",
+            "FPDU_@_208.00 MeV"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTORS",
+          "FPDU_Energy"
+        ],
+        "COMPONENTS": [
+          "FPDU"
+        ]
+      }
+    },
+    "FPDU_T": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          36,
+          8
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> FPDU - Unidirectional Differential Proton Flux (time series)",
+        "COMPONENT_0": "FPDU",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTORS",
+        "DEPEND_2": "FPDU_Energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "REPT FPDU",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABL_PTR_1": "FPDU_SECTOR_LABL_1",
+        "LABL_PTR_2": "FPDU_LABL_1",
+        "QUALITY_VAR": "Data_Quality",
+        "SCALETYP": "log",
+        "UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Dimension 1 corresponds to 8 proton energy bins.  Dimension 2 holds 36 sectors.",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+        "x_LABLAXES": [
+          [
+            "FPDU_@_5_Deg",
+            "FPDU_@_15_Deg",
+            "FPDU_@_25_Deg",
+            "FPDU_@_35_Deg",
+            "FPDU_@_45_Deg",
+            "FPDU_@_55_Deg",
+            "FPDU_@_65_Deg",
+            "FPDU_@_75_Deg",
+            "FPDU_@_85_Deg",
+            "FPDU_@_95_Deg",
+            "FPDU_@_105_Deg",
+            "FPDU_@_115_Deg",
+            "FPDU_@_125_Deg",
+            "FPDU_@_135_Deg",
+            "FPDU_@_145_Deg",
+            "FPDU_@_155_Deg",
+            "FPDU_@_165_Deg",
+            "FPDU_@_175_Deg",
+            "FPDU_@_185_Deg",
+            "FPDU_@_195_Deg",
+            "FPDU_@_205_Deg",
+            "FPDU_@_215_Deg",
+            "FPDU_@_225_Deg",
+            "FPDU_@_235_Deg",
+            "FPDU_@_245_Deg",
+            "FPDU_@_255_Deg",
+            "FPDU_@_265_Deg",
+            "FPDU_@_275_Deg",
+            "FPDU_@_285_Deg",
+            "FPDU_@_295_Deg",
+            "FPDU_@_305_Deg",
+            "FPDU_@_315_Deg",
+            "FPDU_@_325_Deg",
+            "FPDU_@_335_Deg",
+            "FPDU_@_345_Deg",
+            "FPDU_@_355_Deg"
+          ],
+          [
+            "FPDU_@_21.25 MeV",
+            "FPDU_@_27.60 MeV",
+            "FPDU_@_35.90 MeV",
+            "FPDU_@_46.70 MeV",
+            "FPDU_@_60.70 MeV",
+            "FPDU_@_78.90 MeV",
+            "FPDU_@_102.60 MeV",
+            "FPDU_@_208.00 MeV"
+          ]
+        ],
+        "x_DEPEND": [
+          "SECTORS",
+          "FPDU_Energy"
+        ],
+        "COMPONENTS": [
+          "FPDU"
+        ]
+      }
+    },
+    "FPDU_Energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy levels for FPDU ",
+        "DELTA_MINUS_VAR": "FPDU_Energy_DELTA_VAR",
+        "DELTA_PLUS_VAR": "FPDU_Energy_DELTA_VAR",
+        "FIELDNAM": "FPDU_Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Energy",
+        "SCALETYP": "log",
+        "UNITS": "MeV",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 10.0,
+        "VAR_NOTES": "The centers of the proton energy bins.  The Value Uncertainty contains the plus/minus range for each bin.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        21.3,
+        27.6,
+        35.9,
+        46.7,
+        60.7,
+        78.9,
+        103.0,
+        208.0
+      ]
+    },
+    "FPDU_Energy_DELTA_VAR": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FPDU_Energy_DELTA_VAR",
+        "FIELDNAM": "FPDU_Energy_DELTA_VAR",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "FPDU_Energy_DELTA_VAR_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "MeV",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "The (Van Allen-Baker bowtie) plus/minus width of each energy bin from the center of the bin.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "FPDU_Energy_DELTA_VAR_LABL_1"
+      },
+      "VarData": [
+        2.75,
+        3.6,
+        4.7,
+        6.1,
+        7.9,
+        10.3,
+        13.4,
+        92.0
+      ]
+    },
+    "FPDU_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 18,
+        "NumWrittenRecords": 1,
+        "PadValue": "                  ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FPDU_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "FPDU_LABL_1",
+        "FORMAT": "A18",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "FPDU_@_21.25 MeV",
+        "FPDU_@_27.60 MeV",
+        "FPDU_@_35.90 MeV",
+        "FPDU_@_46.70 MeV",
+        "FPDU_@_60.70 MeV",
+        "FPDU_@_78.90 MeV",
+        "FPDU_@_102.60 MeV",
+        "FPDU_@_208.00 MeV"
+      ]
+    },
+    "FPDU_Efficiency": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Efficiency values for FPDU ",
+        "FIELDNAM": "FPDU_Efficiency",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "FPDU_LABL_2",
+        "SCALETYP": "linear",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "The efficiencies for the proton energy bins.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "FPDU_LABL_2"
+      },
+      "VarData": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "FPDU_LABL_2": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 30,
+        "NumWrittenRecords": 1,
+        "PadValue": "                              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FPDU_LABL_2",
+        "DICT_KEY": "label",
+        "FIELDNAM": "FPDU_LABL_2",
+        "FORMAT": "A31",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Proton Bowtie Efficiency Bin 1",
+        "Proton Bowtie Efficiency Bin 2",
+        "Proton Bowtie Efficiency Bin 3",
+        "Proton Bowtie Efficiency Bin 4",
+        "Proton Bowtie Efficiency Bin 5",
+        "Proton Bowtie Efficiency Bin 6",
+        "Proton Bowtie Efficiency Bin 7",
+        "Proton Bowtie Efficiency Bin 8"
+      ]
+    },
+    "SECTORS": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          36
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The center of the sector in which the instrument is pointing.",
+        "DELTA_MINUS_VAR": "SECTORS_DELTA_VAR",
+        "DELTA_PLUS_VAR": "SECTORS_DELTA_VAR",
+        "FIELDNAM": "SECTORS",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "SECTORS",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "There are 36 sectors per spin of the satellite.  This is the center of each sector in degrees.  The Value Uncertainty contains the plus/minus range (of 5 degrees).",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "SECTORS"
+      },
+      "VarData": [
+        5.0,
+        15.0,
+        25.0,
+        35.0,
+        45.0,
+        55.0,
+        65.0,
+        75.0,
+        85.0,
+        95.0,
+        105.0,
+        115.0,
+        125.0,
+        135.0,
+        145.0,
+        155.0,
+        165.0,
+        175.0,
+        185.0,
+        195.0,
+        205.0,
+        215.0,
+        225.0,
+        235.0,
+        245.0,
+        255.0,
+        265.0,
+        275.0,
+        285.0,
+        295.0,
+        305.0,
+        315.0,
+        325.0,
+        335.0,
+        345.0,
+        355.0
+      ]
+    },
+    "SECTORS_DELTA_VAR": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          36
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The plus/minus range from the center of each sector.",
+        "FIELDNAM": "SECTORS_DELTA_VAR",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "SECTORS_DELTA_VAR",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Each sector covers 10 degrees.  The range from the center is plus/minus 5 degrees.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "SECTORS_DELTA_VAR"
+      },
+      "VarData": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "FEDU_SECTOR_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          36
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 16,
+        "NumWrittenRecords": 1,
+        "PadValue": "                ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SECTOR_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "SECTOR_LABL_1",
+        "FORMAT": "A20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "FEDU_@_5_Deg",
+        "FEDU_@_15_Deg",
+        "FEDU_@_25_Deg",
+        "FEDU_@_35_Deg",
+        "FEDU_@_45_Deg",
+        "FEDU_@_55_Deg",
+        "FEDU_@_65_Deg",
+        "FEDU_@_75_Deg",
+        "FEDU_@_85_Deg",
+        "FEDU_@_95_Deg",
+        "FEDU_@_105_Deg",
+        "FEDU_@_115_Deg",
+        "FEDU_@_125_Deg",
+        "FEDU_@_135_Deg",
+        "FEDU_@_145_Deg",
+        "FEDU_@_155_Deg",
+        "FEDU_@_165_Deg",
+        "FEDU_@_175_Deg",
+        "FEDU_@_185_Deg",
+        "FEDU_@_195_Deg",
+        "FEDU_@_205_Deg",
+        "FEDU_@_215_Deg",
+        "FEDU_@_225_Deg",
+        "FEDU_@_235_Deg",
+        "FEDU_@_245_Deg",
+        "FEDU_@_255_Deg",
+        "FEDU_@_265_Deg",
+        "FEDU_@_275_Deg",
+        "FEDU_@_285_Deg",
+        "FEDU_@_295_Deg",
+        "FEDU_@_305_Deg",
+        "FEDU_@_315_Deg",
+        "FEDU_@_325_Deg",
+        "FEDU_@_335_Deg",
+        "FEDU_@_345_Deg",
+        "FEDU_@_355_Deg"
+      ]
+    },
+    "FPDU_SECTOR_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          36
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 16,
+        "NumWrittenRecords": 1,
+        "PadValue": "                ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SECTOR_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "SECTOR_LABL_1",
+        "FORMAT": "A20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "FPDU_@_5_Deg",
+        "FPDU_@_15_Deg",
+        "FPDU_@_25_Deg",
+        "FPDU_@_35_Deg",
+        "FPDU_@_45_Deg",
+        "FPDU_@_55_Deg",
+        "FPDU_@_65_Deg",
+        "FPDU_@_75_Deg",
+        "FPDU_@_85_Deg",
+        "FPDU_@_95_Deg",
+        "FPDU_@_105_Deg",
+        "FPDU_@_115_Deg",
+        "FPDU_@_125_Deg",
+        "FPDU_@_135_Deg",
+        "FPDU_@_145_Deg",
+        "FPDU_@_155_Deg",
+        "FPDU_@_165_Deg",
+        "FPDU_@_175_Deg",
+        "FPDU_@_185_Deg",
+        "FPDU_@_195_Deg",
+        "FPDU_@_205_Deg",
+        "FPDU_@_215_Deg",
+        "FPDU_@_225_Deg",
+        "FPDU_@_235_Deg",
+        "FPDU_@_245_Deg",
+        "FPDU_@_255_Deg",
+        "FPDU_@_265_Deg",
+        "FPDU_@_275_Deg",
+        "FPDU_@_285_Deg",
+        "FPDU_@_295_Deg",
+        "FPDU_@_305_Deg",
+        "FPDU_@_315_Deg",
+        "FPDU_@_325_Deg",
+        "FPDU_@_335_Deg",
+        "FPDU_@_345_Deg",
+        "FPDU_@_355_Deg"
+      ]
+    },
+    "SECTOR_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          36
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 9,
+        "NumWrittenRecords": 1,
+        "PadValue": "         ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SECTOR_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "SECTOR_LABL_1",
+        "FORMAT": "A20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Sector 1 ",
+        "Sector 2 ",
+        "Sector 3 ",
+        "Sector 4 ",
+        "Sector 5 ",
+        "Sector 6 ",
+        "Sector 7 ",
+        "Sector 8 ",
+        "Sector 9 ",
+        "Sector 10",
+        "Sector 11",
+        "Sector 12",
+        "Sector 13",
+        "Sector 14",
+        "Sector 15",
+        "Sector 16",
+        "Sector 17",
+        "Sector 18",
+        "Sector 19",
+        "Sector 20",
+        "Sector 21",
+        "Sector 22",
+        "Sector 23",
+        "Sector 24",
+        "Sector 25",
+        "Sector 26",
+        "Sector 27",
+        "Sector 28",
+        "Sector 29",
+        "Sector 30",
+        "Sector 31",
+        "Sector 32",
+        "Sector 33",
+        "Sector 34",
+        "Sector 35",
+        "Sector 36"
+      ]
+    },
+    "Cal_UTC": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 25,
+        "NumWrittenRecords": 1,
+        "PadValue": "                         ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The UTC time when the calibration set was applied.",
+        "FIELDNAM": "Cal_UTC",
+        "FORMAT": "A26",
+        "VAR_NOTES": "The UTC time when the calibration set was applied during the day.",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "0000-00-00T00:00:00.00000"
+      ]
+    },
+    "Cal_Change_Count": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The number of times that the REPT calibration values changed during the day.",
+        "FIELDNAM": "Cal_Change_Count",
+        "FILLVAL": 0,
+        "FORMAT": "I8",
+        "LABLAXIS": "Cal_Change_Count",
+        "SCALETYP": "linear",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "The values will be either zero, indicating the calibrations remained constant, or one, indicating the calibrations changed during the day.",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Cal_Change_Count"
+      },
+      "VarData": [
+        0
+      ]
+    },
+    "Cal_Index": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The data index (zero-based) corresponding to a calibration set.",
+        "FIELDNAM": "Cal_Index",
+        "FILLVAL": -1,
+        "FORMAT": "I10",
+        "LABLAXIS": "Cal_Index",
+        "SCALETYP": "linear",
+        "VALIDMAX": 2147483647,
+        "VALIDMIN": -1,
+        "VAR_NOTES": "The index, usually 0, of the first data that used the corresponding calibration set.",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Cal_Index"
+      },
+      "VarData": [
+        0
+      ]
+    },
+    "Cal_Tag": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 2,
+        "NumWrittenRecords": 1,
+        "PadValue": "  ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "A tag to identify the calibration set used during a day.",
+        "FIELDNAM": "Cal_Tag",
+        "FORMAT": "A3",
+        "VAR_NOTES": "This tag indicates the calibration set used to start the day.",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "00"
+      ]
+    },
+    "Position": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "[Time-series] Position of the satellite in geographic coordinates",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position>geographic",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Satellite position (GEO)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "Position_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": 210000.0,
+        "VALIDMIN": -210000.0,
+        "VAR_NOTES": "Origin = Earths center of mass. X = Intersection of Greenwich meridian and geographic equator. Z = Geographic North Pole. Y = completes a right-handed Cartesian triad",
+        "VAR_TYPE": "data",
+        "SI_CONVERSION": "1.0e-3>m",
+        "x_UNITS": "km",
+        "x_LABLAXES": [
+          [
+            "Xgeo",
+            "Ygeo",
+            "Zgeo"
+          ]
+        ]
+      }
+    },
+    "Position_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 4,
+        "NumWrittenRecords": 1,
+        "PadValue": "    ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Position labels",
+        "DICT_KEY": "label>position",
+        "FIELDNAM": "Position_LABL_1",
+        "FORMAT": "A4",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Xgeo",
+        "Ygeo",
+        "Zgeo"
+      ]
+    },
+    "Position_Quality": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Position Quality flag",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>quality",
+        "FIELDNAM": "Position_Quality",
+        "FILLVAL": -32768,
+        "FORMAT": "I11",
+        "LABLAXIS": "Quality",
+        "UNITS": "(0=highest)",
+        "VALIDMAX": 32767,
+        "VALIDMIN": -32768,
+        "VAR_NOTES": "0 denotes highest quality.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "(0=highest)",
+        "x_LABLAXIS": "Quality"
+      }
+    },
+    "B_Calc": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "---> Calculated magnetic field strength",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic_field>amplitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnetic field strength",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "B",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "SI_CONVERSION": "1.0e9>T",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B"
+      }
+    },
+    "B_Eq": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "---> Calculated magnetic field strength at magnetic equator",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic_field>amplitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Equatorial magnetic field strength",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "B_Eq",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "SI_CONVERSION": "1.0e9>T",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B_Eq"
+      }
+    },
+    "L": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "---> Calculated McIlwains L parameter (Earths radii)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "McIlwains L parameter",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "L",
+        "SCALETYP": "linear",
+        "UNITS": "R_E",
+        "VALIDMAX": 20.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "SI_CONVERSION": "1.5696e-7>m",
+        "x_UNITS": "R_E",
+        "x_LABLAXIS": "L"
+      }
+    },
+    "L_star": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "---> Calculated Roederers L* parameter (Earths radii)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Roederers L* parameter",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "L*",
+        "SCALETYP": "linear",
+        "UNITS": "R_E",
+        "VALIDMAX": 20.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "SI_CONVERSION": "1.5696e-7>m",
+        "x_UNITS": "R_E",
+        "x_LABLAXIS": "L*"
+      }
+    },
+    "I": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "---> Adiabatic invariant (bounce)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Adiabatic invariant (bounce)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "I",
+        "SCALETYP": "linear",
+        "UNITS": "none",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "SI_CONVERSION": "none",
+        "x_UNITS": "none",
+        "x_LABLAXIS": "I"
+      }
+    },
+    "MLT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "angle_hour",
+        "CATDESC": "---> Calculated Magnetic Local Time (hours)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnetic Local Time",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "MLT",
+        "SCALETYP": "linear",
+        "UNITS": "h",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "SI_CONVERSION": "2.778e-4>s",
+        "x_UNITS": "h",
+        "x_LABLAXIS": "MLT"
+      }
+    },
+    "Position_TT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "[Labels on plots] Position of the satellite in geographic coordinates",
+        "COMPONENT_0": "Position",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position>geographic",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Satellite position (GEO)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "alternate_view",
+        "LABL_PTR_1": "Position_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": 63700.0,
+        "VALIDMIN": -63700.0,
+        "VAR_NOTES": "Origin = Earths center of mass. X = Intersection of Greenwich meridian and geographic equator. Z = Geographic North Pole. Y = completes a right-handed Cartesian triad",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "SI_CONVERSION": "1.0e-3>m",
+        "x_UNITS": "km",
+        "x_LABLAXES": [
+          [
+            "Xgeo",
+            "Ygeo",
+            "Zgeo"
+          ]
+        ],
+        "COMPONENTS": [
+          "Position"
+        ]
+      }
+    },
+    "B_Calc_TT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "---> Calculated magnetic field strength",
+        "COMPONENT_0": "B_Calc",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic_field>amplitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnetic field strength",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "B",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "SI_CONVERSION": "1.0e9>T",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B",
+        "COMPONENTS": [
+          "B_Calc"
+        ]
+      }
+    },
+    "B_Eq_TT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "---> Calculated magnetic field strength at magnetic equator",
+        "COMPONENT_0": "B_Eq",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic_field>amplitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Equatorial magnetic field strength",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "B_Eq",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "SI_CONVERSION": "1.0e9>T",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B_Eq",
+        "COMPONENTS": [
+          "B_Eq"
+        ]
+      }
+    },
+    "L_TT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "---> Calculated McIlwains L parameter (Earths radii)",
+        "COMPONENT_0": "L",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "McIlwains L parameter",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "L",
+        "SCALETYP": "linear",
+        "UNITS": "R_E",
+        "VALIDMAX": 20.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "SI_CONVERSION": "1.5696e-7>m",
+        "x_UNITS": "R_E",
+        "x_LABLAXIS": "L",
+        "COMPONENTS": [
+          "L"
+        ]
+      }
+    },
+    "L_star_TT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "---> Calculated Roederers L* parameter (Earths radii)",
+        "COMPONENT_0": "L_star",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Roederers L* parameter",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "L*",
+        "SCALETYP": "linear",
+        "UNITS": "R_E",
+        "VALIDMAX": 20.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "SI_CONVERSION": "1.5696e-7>m",
+        "x_UNITS": "R_E",
+        "x_LABLAXIS": "L*",
+        "COMPONENTS": [
+          "L_star"
+        ]
+      }
+    },
+    "I_TT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "---> Adiabatic invariant (bounce)",
+        "COMPONENT_0": "I",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Adiabatic invariant (bounce)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "I",
+        "SCALETYP": "linear",
+        "UNITS": "none",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "SI_CONVERSION": "none",
+        "x_UNITS": "none",
+        "x_LABLAXIS": "I",
+        "COMPONENTS": [
+          "I"
+        ]
+      }
+    },
+    "MLT_TT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "angle_hour",
+        "CATDESC": "---> Calculated Magnetic Local Time (hours)",
+        "COMPONENT_0": "MLT",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnetic Local Time",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "MLT",
+        "SCALETYP": "linear",
+        "UNITS": "h",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "SI_CONVERSION": "2.778e-4>s",
+        "x_UNITS": "h",
+        "x_LABLAXIS": "MLT",
+        "COMPONENTS": [
+          "MLT"
+        ]
+      }
+    },
+    "Alpha": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "angle_degrees",
+        "CATDESC": "[NO DATA] Pitch angle",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle>pitch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Pitch angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "Alpha",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "SI_CONVERSION": "57.296>rad",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "Alpha"
+      }
+    },
+    "Alpha_Eq": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "angle_degrees",
+        "CATDESC": "[NO DATA] Equatorial pitch angle",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle>pitch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Equat. Pitch angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "Alpha(Eq)",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "SI_CONVERSION": "57.296>rad",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "Alpha(Eq)"
+      }
+    }
+  }
+}

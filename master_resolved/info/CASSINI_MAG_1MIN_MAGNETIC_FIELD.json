@@ -1,0 +1,382 @@
+{
+  "CDFFileInfo": {
+    "File": "cassini_mag_1min_magnetic_field_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/cassini_mag_1min_magnetic_field_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Project": "Cassini",
+    "Source_name": "Cassini",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Data_type": "MAG_1min>Cassini 1-min Magnetic Field",
+    "Data_version": "1",
+    "Descriptor": "magnetic_field>MAG - Dual Technique Magnetometer",
+    "PI_name": "Michele Dougherty",
+    "PI_affiliation": "Imperial College, London",
+    "Mission_group": "Cassini",
+    "TEXT": "Cassini magnetic-field 1 minute averages for the year 2020 in RTN  coordinates. RTN coordinates consist of R (radial component, Sun tothe spacecraft), T (tangential component, parallel to the Solar    Equatorial plane and perpendicular to R), and N (normal component, completes right handed set).\nThis file contains a subset of all of the Cassini MAG data for 2001consisting of only the data after the day of the last Jupiter      bowshock crossing (2001-01-15).\nThis file was produced from raw (L1A) data at the PDS/PPI node usingsoftware provided by the Cassini MAG team, and employing the latest calibration available. The MAG team reports that while range-0 data are well calibrated, higher range data needs improvement (see the   RANGE_CHANGES.ASC document for a time history of range changes). Thesedata will be replaced as the calibration is improved.\" \nThe data are mostly from the fluxgate magnetometer (FGM). The tableat vhm.txt identifies the 52 days in 2000-2004 for which the data are solely from the vector helium magnetometer (VHM).  Days not in the table contain only FGM data.VHM_mode variable indicates (value 1) whether data are from VHM\nThe data were produced from raw (L1A) data at the PDS/PPI node using software provided by the Cassini MAG team, and employing the latest calibration available.  PDS/PPI produced both 1-sec vectors and 1-min averages.  The MAG team reports that while range-0 data are well calibrated for both FGM and VHM, higher range data need improvement.  FGM_mode variable indicates (value 0) if data is range-0.Seehttp://www.igpp.ucla.edu/cgi-bin/ditdos?volume=COMAG_0XXX&folder=DOCUMENT/DATA_QUALITY&file=RANGE_CHANGESfor details.  In particular, this documentation reports that FGM wasin range=0 for the following extended intervals (plus other brief intervals):\n1999/230/05 - 1999/245/07 (YYYY/DDD/HH, inclusive)1999/245/09 - 2000/037/122000/039/00 - 2000/053/182000/053/20 - 2000/056/012000/057/23 - 2002/334/132002/334/17 - 2003/292/182003/292/22 - 2004/046/112004/046/15 - 2004/088/082004/088/12 - 2004/136/062004/136/11 - 2004/174/012004/174/06 - 2004/182/17",
+    "Instrument_type": "Magnetic Fields (space)",
+    "Logical_source": "cassini_mag_1min_magnetic_field",
+    "Logical_file_id": "cassini_mag_1min_magnetic_field_20030101_v01",
+    "Logical_source_description": "1 min averaged magnetic field",
+    "Time_resolution": "1 min",
+    "LINK_TEXT": "Above data in the form of ",
+    "LINK_TITLE": "ASCII files",
+    "HTTP_LINK": "https://spdf.gsfc.nasa.gov/pub/data/cassini/",
+    "File_naming_convention": "source_datatype_descriptor_yyyyMMdd",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Cassini/MAG/CDF/PT1M",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Default time",
+        "DICT_KEY": "time",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "TIME_BASE": " ",
+        "UNITS": "ms",
+        "VALIDMAX": "3000-01-01T00:00:00.000",
+        "VALIDMIN": "1000-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms"
+      }
+    },
+    "B_comp": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "magnetic field vector",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field RTN vector",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B_rtn",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "B_rtn, nT",
+        "LABL_PTR_1": "B_comp_labl",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B_rtn, nT",
+        "x_LABLAXES": [
+          [
+            "Br",
+            "Bt",
+            "Bn"
+          ]
+        ]
+      }
+    },
+    "B_mag": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "magnetic field magnitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field magnitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B_total",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "B_tot, nT",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B_tot, nT"
+      }
+    },
+    "B_comp_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 2,
+        "NumWrittenRecords": 1,
+        "PadValue": "  ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "B_comp_labl",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "B_comp_labl",
+        "FIELDNAM": "B_comp_labl",
+        "FILLVAL": -1e+31,
+        "FORMAT": "a1",
+        "LABLAXIS": "B_comp",
+        "UNITS": " ",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "B_comp"
+      },
+      "VarData": [
+        "Br",
+        "Bt",
+        "Bn"
+      ]
+    },
+    "VHM_mode": {
+      "VarDescription": {
+        "DataType": "CDF_BYTE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag for data source (FGM or VHM)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "VHM data",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VHM_mode",
+        "FILLVAL": -128,
+        "FORMAT": "i1",
+        "LABLAXIS": "FGM(0)/VHM(1)",
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "FGM(0)/VHM(1)"
+      }
+    },
+    "FGM_mode": {
+      "VarDescription": {
+        "DataType": "CDF_BYTE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FGM range mode (0 only currently well calibrated)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "FGM mode",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FGM_mode",
+        "FILLVAL": -128,
+        "FORMAT": "i1",
+        "LABLAXIS": "FGM range mode",
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "FGM range mode"
+      }
+    },
+    "sc_r": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C helio-distance",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "S/C heliocentric distance",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "sc_r",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "S/C dist, AU",
+        "UNITS": "AU",
+        "VALIDMAX": 9.9,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AU",
+        "x_LABLAXIS": "S/C dist, AU"
+      }
+    },
+    "sc_lat": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C helio-latitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "S/C heliocentric latitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "latitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "SC latitude, deg",
+        "UNITS": "deg",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "SC latitude, deg"
+      }
+    },
+    "sc_long": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C helio-longitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "S/C heliocentric longitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "longitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "SC longitude, deg",
+        "UNITS": "deg",
+        "VALIDMAX": 400.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "SC longitude, deg"
+      }
+    },
+    "sc_pos": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C coordinates, HGI",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "S/C coordinates, HGI",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "sc_pos",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "S/C HGI, AU",
+        "LABL_PTR_1": "sc_pos_labl",
+        "UNITS": "AU",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -100.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AU",
+        "x_LABLAXIS": "S/C HGI, AU",
+        "x_LABLAXES": [
+          [
+            "X_HGI",
+            "Y_HGI",
+            "Z_HGI"
+          ]
+        ]
+      }
+    },
+    "sc_pos_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 5,
+        "NumWrittenRecords": 1,
+        "PadValue": "     ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "sc_pos_labl",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "sc_pos_labl",
+        "FIELDNAM": "sc_pos_labl",
+        "FILLVAL": -1e+31,
+        "FORMAT": "a1",
+        "LABLAXIS": "sc_pos",
+        "UNITS": " ",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "sc_pos"
+      },
+      "VarData": [
+        "X_HGI",
+        "Y_HGI",
+        "Z_HGI"
+      ]
+    },
+    "num_points": {
+      "VarDescription": {
+        "DataType": "CDF_BYTE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "num_points",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "num_points",
+        "FIELDNAM": "num_points",
+        "FILLVAL": 128,
+        "FORMAT": "i2",
+        "LABLAXIS": "averaged points",
+        "UNITS": " ",
+        "VALIDMAX": 90,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "averaged points"
+      }
+    }
+  }
+}

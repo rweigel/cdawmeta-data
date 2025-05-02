@@ -1,0 +1,735 @@
+{
+  "CDFFileInfo": {
+    "File": "de2_wind2s_wats_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/de2_wind2s_wats_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "DE-2 WATS 2-sec Neutral Densities, Temperatures, and horizontal (zonal) wind velocities",
+    "Project": "DE>Dynamics Explorer",
+    "Source_name": "DE>Dynamics Explorer",
+    "Discipline": "Space Physics>Magnetospheric  Ionospheric Interactions",
+    "Descriptor": "wind2s> wind 2 second",
+    "Data_type": "WATS> Wind and Temperature Spectrometer",
+    "Data_version": "1",
+    "Text": "The Wind and Temperature Spectrometer (WATS) measured the in situ neutral winds, the neutral particle temperatures, and the concentrations of selected gases. The objective of this investigation was to study the interrelationships among the winds, temperatures, plasma drift, electric fields, and other properties of the thermosphere that were measured by this and other instruments on the spacecraft. Knowledge of how these properties are interrelated contributed to an understanding of the consequences of the acceleration of neutral particles by the ions in the ionosphere, the acceleration of ions by neutrals creating electric fields, and the related energy transfer between the ionosphere and the magnetosphere. Three components of the wind, one normal to the satellite velocity vector in the horizontal plane, one vertical, and one in the satellite direction were measured. A retarding potential quadrupole mass spectrometer, coupled to the atmosphere through a precisely orificed antechamber, was used. It was operated in either of two modes: one employed the retarding capability and the other used the ion source as a conventional nonretarding source. Two scanning baffles were used in front of the mass spectrometer: one moved vertically and the other moved horizontally. The magnitudes of the horizontal and vertical components of the wind normal to the spacecraft velocity vector were computed from measurements of the angular relationship between the neutral particle stream and the sensor. The component of the total stream velocity in the satellite direction was measured directly by the spectrometer system through determination of the required retarding potential.  At altitudes too high for neutral species measurements, the planned operation required the instrument to measure the thermal ion species only.  A series of four sequentially occurring slots --each a 2-s long measurement interval-- was adapted for the basic measurement format of the instrument. Different functions were commanded into these slots in any combination, one per measurement interval. Thus the time resolution can be 2, 4, 6, or 8 seconds.  Further details are found in N. W. Spencer et al., Space Sci. Instrum., v. 5, n. 4, p. 417, 1981.\nThis data set consists of the high-resolution data of the Dynamics .Explorer 2 Wind and Temperature Spectrometer (WATS) experiment. The files contain the neutral density, temperature and horizontal (zonal) wind velocity, and orbital parameters in ASCII format. The time resolution is typically 2 seconds. Data are given as daily files (typically a few 100 Kbytes each). PI-provided software (WATSCOR) was used to correct the binary data set.  NSSDC-developed software was used to add the orbit parameters, to convert the binary into ASCII format and to combine the (PI-provided) orbital files into daily files. For more on DE-2, WATS, and the binary data, see the WATS_VOLDESC_SFDU_DE.DOC and WATS_FORMAT_SFDU_DE.DOC files. More information about the processing done at NSSDC is given in WATS_NSSDC_PRO_DE.DOC.",
+    "ADID_ref": "NSSD0241",
+    "Logical_source": "de2_wind2s_wats",
+    "Logical_file_id": "de2_wind2s_wats_00000000_v01",
+    "Logical_source_description": "2-sec neutral densities, temperature, and horizontal (zonal) wind velocity",
+    "PI_name": "Nelson W. Spencer",
+    "PI_affiliation": "NASA/GSFC",
+    "NSSDC_id": "SPTH-00002",
+    "Mission_group": "Dynamics Explorer\n!___Magnetospheric Data\n!___ITM Data including Earth Imaging and Ground-Based",
+    "Instrument_type": "Particles (space)",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/DE2/WATS/PT2S",
+    "DOI": "https://doi.org/10.48322/z50y-hd65"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "NSSDC standard-reference time value. ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D.",
+        "FILLVAL": "0000-01-01T00:00:00.000",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "Mode": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Mode = 3,4 measuring the horizontal velocity, =5,6 measuring the vertical velocity",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Mode",
+        "FILLVAL": 9,
+        "FORMAT": "i2",
+        "LABLAXIS": "Mode",
+        "UNITS": " ",
+        "VALIDMAX": 6,
+        "VALIDMIN": 3,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Mode"
+      }
+    },
+    "Slot": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Slot = 1,2,3,4; steps from 1 to 4 during each 8-sec measurement sequence, mode may change at each step",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Slot",
+        "FILLVAL": 9,
+        "FORMAT": "i1",
+        "LABLAXIS": "Slot",
+        "UNITS": " ",
+        "VALIDMAX": 4,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Slot"
+      }
+    },
+    "Outin": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Outin = 1 baffle going out, 0 going in ",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Outin",
+        "FILLVAL": 9,
+        "FORMAT": "i1",
+        "LABLAXIS": "Outin",
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Outin"
+      }
+    },
+    "density": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Density of neutrals in cm-3",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionscatter",
+        "FIELDNAM": "neutral density",
+        "FILLVAL": -9.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "Neutral Density",
+        "SCALETYP": "log",
+        "UNITS": "cm-3",
+        "VALIDMAX": 100000000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Density of N2 (Mass=28) or O+O2 (Mass=32); negative values should beignored.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "Neutral Density"
+      }
+    },
+    "Tn": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Neutral Temperature in Kelvin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionscatter",
+        "FIELDNAM": "Neutral Temperature",
+        "FILLVAL": -9.0,
+        "FORMAT": "f7.1",
+        "LABLAXIS": "Tn",
+        "UNITS": "K",
+        "VALIDMAX": 2000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "K",
+        "x_LABLAXIS": "Tn"
+      }
+    },
+    "Tn_corr": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Neutral temperature after WATSCOR correction",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionscatter",
+        "FIELDNAM": "Tn_corr",
+        "FILLVAL": -9.0,
+        "FORMAT": "f7.1",
+        "LABLAXIS": "Tn_corr",
+        "UNITS": "k",
+        "VALIDMAX": 2000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "k",
+        "x_LABLAXIS": "Tn_corr"
+      }
+    },
+    "V_sc": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Horizontal/Vertical velocity if Mode=3,4/5,6 (in s/c coordinates",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Horiz/Vert Velocity",
+        "FILLVAL": 9999.0,
+        "FORMAT": "f8.1",
+        "LABLAXIS": "V_hori/vert_sc",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_NOTES": "Velocity is given in spacecraft coordinates. The horizontal  component (Mode=3,4) is positive in the Z-axis direction. The vertical component (Mode=5,6) is positive in the Y-axis direction.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "V_hori/vert_sc"
+      }
+    },
+    "V_H_sc": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Horizontal velocity in s/c coordinates (positive in the Z-axis direction)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionscatter",
+        "FIELDNAM": "Horizontal Velocity",
+        "FILLVAL": 9999.0,
+        "FORMAT": "f8.1",
+        "LABLAXIS": "V_horiz_sc",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_NOTES": "Velocity is given in spacecraft coordinates. The horizontal  component (Mode=3,4) is direction. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "V_horiz_sc"
+      }
+    },
+    "V_V_sc": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------------------> Vertical velocity (positive in the Y-axis direction)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionscatter",
+        "FIELDNAM": "Vertical Velocity",
+        "FILLVAL": 9999.0,
+        "FORMAT": "f8.1",
+        "LABLAXIS": "V_vert_sc",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_NOTES": "Velocity is given in spacecraft coordinates. The vertical component (Mode=5,6) is positive in the Y-axis direction.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "V_vert_sc"
+      }
+    },
+    "C1": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Instrument counts/8",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Instrument counts/8",
+        "FILLVAL": -9,
+        "FORMAT": "i5",
+        "LABLAXIS": "Instrument counts/8",
+        "UNITS": " ",
+        "VALIDMAX": 99999,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Instrument counts/8"
+      }
+    },
+    "C2": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Counts + background)/8",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Counts + background/8",
+        "FILLVAL": -9,
+        "FORMAT": "i5",
+        "LABLAXIS": "(Counts + background)/8",
+        "UNITS": " ",
+        "VALIDMAX": 99999,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "(Counts + background)/8"
+      }
+    },
+    "T1": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time when the baffle crosses the first optical position sensor.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T1",
+        "FILLVAL": -9,
+        "FORMAT": "i3",
+        "LABLAXIS": "T1",
+        "UNITS": "2s/255 ",
+        "VALIDMAX": 999,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "2s/255 ",
+        "x_LABLAXIS": "T1"
+      }
+    },
+    "T2": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time when the baffle crosses the second optical position sensor.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T2",
+        "FILLVAL": -9,
+        "FORMAT": "i3",
+        "LABLAXIS": "T2",
+        "UNITS": "2s/255 ",
+        "VALIDMAX": 999,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "2s/255 ",
+        "x_LABLAXIS": "T2"
+      }
+    },
+    "V_geo": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Horizontal/Vertical velocity if Mode=3,4/5,6 (in corotating Earth frame; positive eastward and upward)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H/V velocity",
+        "FILLVAL": 9999.0,
+        "FORMAT": "f8.1",
+        "LABLAXIS": "V_hori/vert",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "V_hori/vert"
+      }
+    },
+    "V_H_geo": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Horizontal velocity in corotatingEarth frame (positive eastward)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionscatter",
+        "FIELDNAM": "H velocity",
+        "FILLVAL": 9999.0,
+        "FORMAT": "f8.1",
+        "LABLAXIS": "V_horiz",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "V_horiz"
+      }
+    },
+    "V_V_geo": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------------------> Vertical velocity (positive upward)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionscatter",
+        "FIELDNAM": "V velocity",
+        "FILLVAL": 9999.0,
+        "FORMAT": "f8.1",
+        "LABLAXIS": "V_vert",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "V_vert"
+      }
+    },
+    "V_geo_corr": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Horizontalin corotating Earth frame; )",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H/V velocity corr",
+        "FILLVAL": 9999.0,
+        "FORMAT": "f8.1",
+        "LABLAXIS": "V_hori/vert_corr",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "V_hori/vert_corr"
+      }
+    },
+    "V_H_geo_corr": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Horizontal velocity in corotating Earth frame after WATSCOR correction",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionscatter",
+        "FIELDNAM": "H velocity corr",
+        "FILLVAL": 9999.0,
+        "FORMAT": "f8.1",
+        "LABLAXIS": "V_horiz_corr",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "V_horiz_corr"
+      }
+    },
+    "V_V_geo_corr": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------------------> Vertical velocity",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionscatter",
+        "FIELDNAM": "V velocity corr",
+        "FILLVAL": 9999.0,
+        "FORMAT": "f8.1",
+        "LABLAXIS": "V_vert_corr",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "V_vert_corr"
+      }
+    },
+    "OrbitNumber": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Orbit Number",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Orbit Number",
+        "FILLVAL": -9,
+        "FORMAT": "i6",
+        "LABLAXIS": "Orbit #",
+        "UNITS": " ",
+        "VALIDMAX": 999999,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Orbit #"
+      }
+    },
+    "alt": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Altitude in km",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Altitude",
+        "FILLVAL": -9.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Altitude",
+        "UNITS": "km",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "Altitude"
+      }
+    },
+    "glat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geographic Latitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Geographic Latitude",
+        "FILLVAL": -9.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "Geog Lat",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Geog Lat"
+      }
+    },
+    "glon": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geographic Longitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Geographic Longitude",
+        "FILLVAL": -9.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "Geog Long",
+        "UNITS": "deg",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Geog Long"
+      }
+    },
+    "lst": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Local Solar Time",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "LST",
+        "FILLVAL": -9.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "LST",
+        "UNITS": "hr",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "hr",
+        "x_LABLAXIS": "LST"
+      }
+    },
+    "lmt": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Local Magnetic Time",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "LMT",
+        "FILLVAL": -9.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "LMT",
+        "UNITS": "hr",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "hr",
+        "x_LABLAXIS": "LMT"
+      }
+    },
+    "sza": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Solar Zenith Angle in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SZA",
+        "FILLVAL": -9.0,
+        "FORMAT": "f7.1",
+        "LABLAXIS": "SZA",
+        "UNITS": "hr",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "hr",
+        "x_LABLAXIS": "SZA"
+      }
+    },
+    "L": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "McIllwain L value",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "McIllwain L value",
+        "FILLVAL": -9.0,
+        "FORMAT": "f5.2",
+        "LABLAXIS": "L value",
+        "UNITS": " ",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "L value"
+      }
+    },
+    "ilat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Invariant latitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Invariant Latitude",
+        "FILLVAL": -9.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "Inv Lat",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Inv Lat"
+      }
+    }
+  }
+}

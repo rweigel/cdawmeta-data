@@ -1,0 +1,5691 @@
+{
+  "CDFFileInfo": {
+    "File": "de1_1min_rims_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/de1_1min_rims_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Project": "DE>Dynamics Explorer",
+    "Source_name": "DE1>Dynamics Explorer 1",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Descriptor": "1MIN> 1 minute",
+    "Data_type": "RIMS>Retarding Ion Mass Spectrometer",
+    "Time_resolution": "1 minute",
+    "Data_version": " ",
+    "Skeleton_version": " ",
+    "PI_name": "Dr. Charles R. Chappell",
+    "PI_affiliation": "NASA/MSFC",
+    "TEXT": "The data were provided by Dennis Gallagher (MSFC). The Retarding Ion Mass Spectrometer (RIMS) consisted of a retarding potential analyzer for energy analysis in series with a magnetic ion-mass spectrometer for mass analysis. Multiple sensor heads permitted the determination of the thermal plasma flow characteristics. This instrument was designed to operate in two basic commandable modes: a high-altitude mode in which the density, temperature, and bulk-flow characteristics of principally H+, He+, and O+ ions were measured; and a low-altitude mode that concentrated on the composition in the 1- to 32-u range. This investigation provided information on (1) the densities of H+, He+, and O+ ions in the ionosphere, plasmasphere, plasma trough, and polar cap (including the density distribution along the magnetic vector in the vicinity of the satellite apogee); (2) the temperature of H+, He+, and O+ ions in the ionosphere, plasmasphere, plasma trough, and polar cap (energy range 0-45 eV); (3) the bulk flow velocities of H+, He+, and O+ in the plasmapause, plasma trough and polar cap; (4) the changing character of the cold plasma density, temperature, and bulk flow in regions of interaction with hot plasma such as at the boundary between the plasmasphere and the ring current; and (5) the detailed composition of ionospheric plasma in the 1-to 32-u range. He++ and O++ were also measured. The instrument consisted of three detector heads. One looked out in the radial direction, and the other two were along the plus and minus spin-axis directions. Each detector had a 55-deg half-cone acceptance angle. The detector heads had a gridded, weakly collimating aperture where the retarding analysis was performed, followed by a parallel plate ceramic magnetic mass analyzer with two separate exit slits corresponding to ion masses in the ratio 1:4. Ions exiting from these slits were detected with electron multipliers. In the apogee mode, the thermal particle fluxes were measured while the potential on a set of retarding grids was stepped through a sequence of settings. In the perigee mode, the retarding grids were grounded and the detector utilized a continuous acceleration potential sweep that focused the mass ranges from 1 to 8, and 4 to 32 u. Time resolution was 16 msec. Additional details can be found in C. R. Chappell et al., Space Sci. Instrum., v. 5, n. 4, p. 477, 1981.\nCriterian for selecting data points to be fitted aperature bias = 0 must have at least 10 or more non-zero points in rpa curve.  if less that 1.3 Re high voltage monitor must be turned on maximum countr rate value must at least 5.0 must have at least 4 points starting from end of rpa curve find 3 consecutive point of increasing value, reset end of rpa curve to here make certain last point is 1 sigma above noise level (the points excluded in previous step), if not drop point and check new last point, continue until criteria is met, must have at least 3 points left starting at new end of selected rpa curve stop first point greater that 80% of maximum of spin curve, if non found stop at last point less that maximum, must have at least 3 points left change curve from count rate curve to l**2 curve if number of points are 5 or less: do a linear least squares fit (linfit) to the data, if the linear correlation coefficient (lcc) greater than 0.800 then points will be used, if not, data set is discarded if number of points are greater then 5: do a linfit to the bottom 5 and a linfit to the top 5 points, in 6 or more points do linfit to the middle 5, saving the lcc and slope for each case. if all three lccs are less than 0.800 discard data set through a series of tests find the set of 5 with the best lcc slope combination once set of 5 has been selected add rest of points one at a time and redo linfit, if lcc gets worse discard point otherwise keep it, do this until all points are checked we now have the points to be used",
+    "LINK_TEXT": "More information on DE-1 Retarding Ion Mass Spectrometer is available at ",
+    "LINK_TITLE": "Space Plasma Physics Page",
+    "HTTP_LINK": "https://spdf.gsfc.nasa.gov/pub/data/de/de1/plasma_rims/",
+    "TEXT_supplement": "Two Dynamics Explorer (DE) spacecraft were launched August 3, 1981, and placed into coplanar polar orbits with DE-1 in a highly elliptical orbit and DE-2 in a lower more circular orbit. The primary objective of the DE program was to investigate magnetosphere-ionosphere-atmosphere coupling processes.\nThe DE mission provided a wealth of new information on a wide variety of magnetospheric plasma wave phenomena including auroral kilometric radiation, auroral hiss, Z mode radiation, narrow-band electromagnetic emissions associated with equatorial upper hybrid waves, whistler mode emissions, wave-particle interactions stimulated by ground VLF transmitters, equatorial ion cyclotron.emissions, ion Bernstein mode emissions, and electric field turbulence along the auroral field lines. ",
+    "Instrument_type": "Radio and Plasma Waves (space)",
+    "Mission_group": "Dynamics Explorer",
+    "Logical_source_description": "DE-1 Retarding Ion Mass Spectrometer 1-min temperature and density data (low channel used for H+, He++, high channel for He+, O+, O++)",
+    "Logical_source": "de1_1min_rims",
+    "Logical_file_id": "de1_1min_rims_00000000_v01",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/DE1/RIMS/PT1M",
+    "DOI": "https://doi.org/10.48322/4e3s-bm07"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "NSSDC standard-reference time value. (vefi)",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D.(vefi)",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "compno_3": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -32767,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "compno_3",
+        "FIELDNAM": "compno_3",
+        "FILLVAL": 0,
+        "FORMAT": "I3",
+        "SCALETYP": "linear",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "bfsm_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 5,
+        "NumWrittenRecords": 1,
+        "PadValue": " ....",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "bfsm Label",
+        "DICT_KEY": "label",
+        "FIELDNAM": "BFSM Label",
+        "FORMAT": "A5",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "B_X_S",
+        "B_Y_S",
+        "B_Z_S"
+      ]
+    },
+    "re": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C radial distance in earth radii",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Altitude in Re",
+        "FILLVAL": 0.0,
+        "FORMAT": "f6.3",
+        "LABLAXIS": "Altitude",
+        "UNITS": "Re",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Re",
+        "x_LABLAXIS": "Altitude"
+      }
+    },
+    "smlong_sc": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C Longitude in SM coord.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SM Longitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "SM Longitude",
+        "UNITS": "deg",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "SM Longitude"
+      }
+    },
+    "smlat_sc": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C Latitude in SM coord.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SM Latitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "SM Latitude",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "SM Latitude"
+      }
+    },
+    "smlat_sun": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SM Latitude of sun",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Sun SM Latitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "Sun SM Latitude",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Sun SM Latitude"
+      }
+    },
+    "calc_mlt": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Calculated Magnetic Local Time",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MLT Calculated",
+        "FILLVAL": 0.0,
+        "FORMAT": "f5.2",
+        "LABLAXIS": "MLT Calculated",
+        "UNITS": " ",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "MLT Calculated"
+      }
+    },
+    "shell_l": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "L value",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "L value",
+        "FILLVAL": 0.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "L value",
+        "UNITS": " ",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "L value"
+      }
+    },
+    "bfsm": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic Field Vector in SM Coord.",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "compno_3",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SM B-Vector",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "SM B-Vector",
+        "LABL_PTR_1": "bfsm_labl",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "SM B-Vector",
+        "x_LABLAXES": [
+          [
+            "B_X_S",
+            "B_Y_S",
+            "B_Z_S"
+          ]
+        ],
+        "x_DEPEND": [
+          "compno_3"
+        ]
+      }
+    },
+    "kp": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "3-hour KP magnetic index",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "KP Magnetic Index",
+        "FILLVAL": -1,
+        "FORMAT": "i3",
+        "LABLAXIS": "KP magnetic index",
+        "UNITS": " ",
+        "VALIDMAX": 999,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "KP magnetic index"
+      }
+    },
+    "f10_7": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Daily F10.7 solar flux at 10.7 cm",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Daily F10.7 solar flux at 10.7 cm",
+        "FILLVAL": 0.0,
+        "FORMAT": "f5.1",
+        "LABLAXIS": "Daily F10.7 solar flux",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -1.1,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Daily F10.7 solar flux"
+      }
+    },
+    "flag_gen": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag gen",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag gen",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag gen",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag gen"
+      }
+    },
+    "temp_pz_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ Temperature in eV, detector head in positive z-direction (spin axis)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+ Temperature, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "H+ Temp, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "H+ Temp, +z"
+      }
+    },
+    "temp_pz_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He++ Temperature, +z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He++ Temperature, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He++ Temp, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "He++ Temp, +z"
+      }
+    },
+    "temp_pz_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He+ Temperature, +z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He+ Temperature, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He+ Temp, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "He+ Temp, +z"
+      }
+    },
+    "temp_pz_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O+ Temperature, +z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O+ Temperature, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O+ Temp, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O+ Temp, +z"
+      }
+    },
+    "temp_pz_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O++ Temperature, +z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O++ Temperature, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O++ Temp, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O++ Temp, +z"
+      }
+    },
+    "flags_pz_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag H+ Temperature, +z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag H+ Temperature, +z",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag H+ Temperature, +z",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag H+ Temperature, +z"
+      }
+    },
+    "flags_pz_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag He++ Temperature, +z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He++ Temperature, +z",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag He++ Temp, +z",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He++ Temp, +z"
+      }
+    },
+    "flags_pz_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag He+ Temperature, +z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He+ Temperature, +z",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag He+ Temp, +z",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He+ Temp, +z"
+      }
+    },
+    "flags_pz_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag O+ Temperature, +z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O+ Temperature, +z",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag O+ Temp, +z",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O+ Temp, +z"
+      }
+    },
+    "flags_pz_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag O++ Temperature, +z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O++ Temperature, +z",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag O++ Temp, +z",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O++ Temp, +z"
+      }
+    },
+    "temp_mz_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ Temperature in eV, detector head in negative z-direction (spin axis)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+ Temperature, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "H+ Temp, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "H+ Temp, -z"
+      }
+    },
+    "temp_mz_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He++ Temperature, -z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He++ Temperature, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He++ Temp, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "He++ Temp, -z"
+      }
+    },
+    "temp_mz_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He+ Temperature, -z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He+ Temperature, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He++ Temp, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "He++ Temp, -z"
+      }
+    },
+    "temp_mz_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O+ Temperature, -z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O+ Temperature, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O+ Temp, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O+ Temp, -z"
+      }
+    },
+    "temp_mz_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O++ Temperature, -z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O++ Temperature,-z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O++ Temp, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O++ Temp, -z"
+      }
+    },
+    "flags_mz_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag H+ Temperature, negative z-direction",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag H+ Temperature, -z",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag H+ Temp, -z",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag H+ Temp, -z"
+      }
+    },
+    "flags_mz_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag He++ Temperature, -z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He++ Temperature, -z",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag He++ Temp, -z",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He++ Temp, -z"
+      }
+    },
+    "flags_mz_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag He+ Temperature, -z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He+ Temperature, -z",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag He+ Temp, -z",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He+ Temp, -z"
+      }
+    },
+    "flags_mz_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag O+ Temperature, -z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O+ Temperature, -z",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag O+ Temp, -z",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O+ Temp, -z"
+      }
+    },
+    "flags_mz_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag O++ Temperature, -z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O++ Temperature,-z",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag O++ Temp, -z",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O++ Temp, -z"
+      }
+    },
+    "temp_z_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ Temperature in eV, average radial head temperature (temp-z)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+ Temperature, radial",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "H+ Temp, rad",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "calculated from available Z head temperatures",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "H+ Temp, rad"
+      }
+    },
+    "temp_z_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He++ Temperature, radial",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He++ Temperature, radial",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He++ Temp, rad",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "calculated from available Z head temperatures",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "He++ Temp, rad"
+      }
+    },
+    "temp_z_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> H+ Temperature, radial",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He+ Temperature, radial",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He+ Temp, rad",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "calculated from available Z head temperatures",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "He+ Temp, rad"
+      }
+    },
+    "temp_z_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O+ Temperature, radial",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O+ Temperature, radial",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O+ Temp, rad",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "calculated from available Z head temperatures",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O+ Temp, rad"
+      }
+    },
+    "temp_z_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O++ Temperature, radial",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O++ Temperature, radial",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O++ Temp, rad",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "calculated from available Z head temperatures",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O++ Temp, rad"
+      }
+    },
+    "flags_z_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag H+ Temperature, radial",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag H+ Temperature, radial",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag H+ Temp, rad",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag H+ Temp, rad"
+      }
+    },
+    "flags_z_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag He++ Temperature, radial",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He++ Temperature, radial",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag He++ Temp, rad",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He++ Temp, rad"
+      }
+    },
+    "flags_z_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag He+ Temperature, radial",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He+ Temperature, radial",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag He+ Temp, radial",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He+ Temp, radial"
+      }
+    },
+    "flags_z_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag O+ Temperature, radial",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O+ Temperature, radial",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag O+ Temp, rad",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O+ Temp, rad"
+      }
+    },
+    "flags_z_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag O++ Temperature, radial",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O++ Temperature, radial",
+        "FILLVAL": -1e+31,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag O++ Temp, rad",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O++ Temp, rad"
+      }
+    },
+    "den_temp_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ density in cm-3, fit to radial head data with temp-z held constant",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+ Density, n, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (H+), T=const",
+        "UNITS": "cm-3 ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Density from fit to radial head data with temperature (temp_z) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3 ",
+        "x_LABLAXIS": "n (H+), T=const"
+      }
+    },
+    "den_temp_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He++ density, n, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He++ Density, n, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (He++), T=const",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Density from fit to radial head data with temperature (temp_z) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (He++), T=const"
+      }
+    },
+    "den_temp_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He+ density, n, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He+ Density, n, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (He+), T=const",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Density from fit to radial head data with temperature (temp_z) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (He+), T=const"
+      }
+    },
+    "den_temp_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O+ density, n, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O+ Density, n, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (O+), T=const",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Density from fit to radial head data with temperature (temp_z) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (O+), T=const"
+      }
+    },
+    "den_temp_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O++ density, n, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O++ Density, n, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (O++), T=const",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Density from fit to radial head data with temperature (temp_z) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (O++), T=const"
+      }
+    },
+    "pot_temp_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ Potential in V, with temp_z held constant",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+ Potential, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "H+ Potential, T=const",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Potential from fit to radial head data with temperature (temp_z) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "H+ Potential, T=const"
+      }
+    },
+    "pot_temp_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> He++ Potential, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He++ Potential, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He++ Potential, T=const",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Potential from fit to radial head data with temperature (temp_z) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "He++ Potential, T=const"
+      }
+    },
+    "pot_temp_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> He+ Potential, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He+ Potential, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He+ Potential, T=const",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Potential from fit to radial head data with temperature (temp_z) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "He+ Potential, T=const"
+      }
+    },
+    "pot_temp_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> O+ Potential, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O+ Potential, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O+ Potential, T=const",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Potential from fit to radial head data with temperature (temp_z) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "O+ Potential, T=const"
+      }
+    },
+    "pot_temp_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> O++ Potential, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O++ Potential, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O++ Potential, T=const",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Potential from fit to radial head data with temperature (temp_z) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "O++ Potential, T=const"
+      }
+    },
+    "chisqr_temp_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "Chi-square for H+ fit with temp-z held constant",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Chi^2 H+, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Chi^2 H+, T=const",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Chi^2 H+, T=const"
+      }
+    },
+    "chisqr_temp_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> Chi^2 He++, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Chi^2 He++, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Chi^2 He++, T=const",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Chi^2 He++, T=const"
+      }
+    },
+    "chisqr_temp_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> Chi^2 He+, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Chi^2 He+, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Chi^2 He+, T=const",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Chi^2 He+, T=const"
+      }
+    },
+    "chisqr_temp_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> Chi^2 O+, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Chi^2 O+, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Chi^2 O+, T=const",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Chi^2 O+, T=const"
+      }
+    },
+    "chisqr_temp_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> Chi^2 O++, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Chi^2 O++, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Chi^2 O++, T=const",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Chi^2 O++, T=const"
+      }
+    },
+    "flags_temp_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag for H+ fit with temp-z held constant",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag H+, T=const",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag H+ , T=const",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag H+ , T=const"
+      }
+    },
+    "flags_temp_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag He++, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He++, T=const",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag He++, T=const",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He++, T=const"
+      }
+    },
+    "flags_temp_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag He+, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He+, T=const",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag He+, T=const",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He+, T=const"
+      }
+    },
+    "flags_temp_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag O+, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O+, T=const",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag O+, T=const",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O+, T=const"
+      }
+    },
+    "flags_temp_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag O++, T=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O++, T=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag O++, T=const",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O++, T=const"
+      }
+    },
+    "avg_pot": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Weighted average of H+ and He+ potentials (avg_pot)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+ He+ Average Potential ",
+        "FILLVAL": -9.999999796611898e-32,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "H+ He+ Avg Potential",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -1.100000023841858,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "H+ He+ Avg Potential"
+      }
+    },
+    "pot_flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag for weighted avg of H+ and He+ potentials",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+, He+ Flag Potential Avg",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "H+, He+ Flag Potential Avg",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "H+, He+ Flag Potential Avg"
+      }
+    },
+    "den_pot_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ density in cm-3, radial head data with potential (avg_pot) held constant",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+ Density, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "H+ Density, Pot=const",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Density from fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "H+ Density, Pot=const"
+      }
+    },
+    "den_pot_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He++ Density, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He++ Density, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He++ Density, Pot=const",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Density from fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "He++ Density, Pot=const"
+      }
+    },
+    "den_pot_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He+ Density, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He+ Density, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He++ Density, Pot=const",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Density from fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "He++ Density, Pot=const"
+      }
+    },
+    "den_pot_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O+ Density, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O+ Density, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O+ Density, Pot=const",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Density from fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "O+ Density, Pot=const"
+      }
+    },
+    "den_pot_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O++ Density, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O++ Density, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O++ Density, Pot=const",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Density from fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "O++ Density, Pot=const"
+      }
+    },
+    "temp_rd_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ Temperature in K with potential held constant",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+ Temperature, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "H+ Temperature, Pot=const",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Temperature from fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "H+ Temperature, Pot=const"
+      }
+    },
+    "temp_rd_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> He++ Temperature, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He++ Temperature, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He++ Temperature, Pot=const",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Temperature from fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "He++ Temperature, Pot=const"
+      }
+    },
+    "temp_rd_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> He+ Temperature, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He+ Temperature, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He++ Temperature, Pot=const",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Temperature from fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "He++ Temperature, Pot=const"
+      }
+    },
+    "temp_rd_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> O+ Temperature, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O+ Temperature, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O+ Temperature, Pot=const",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Temperature from fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O+ Temperature, Pot=const"
+      }
+    },
+    "temp_rd_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> O++ Temperature, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O++ Temperature, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O++ Temperature, Pot=const",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Temperature from fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O++ Temperature, Pot=const"
+      }
+    },
+    "chisqr_pot_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "Chi-square for H+ fit with potential held constant",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Chi^2 H+, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Chi^2 H+, Pot=const",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Chi-squared of fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Chi^2 H+, Pot=const"
+      }
+    },
+    "chisqr_pot_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> Chi^2 He++, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Chi^2 He++, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Chi^2 He++, Pot=const",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Chi-squared of fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Chi^2 He++, Pot=const"
+      }
+    },
+    "chisqr_pot_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> Chi^2 He+, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Chi^2 He+, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Chi^2 He++, Pot=const",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Chi-squared of fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Chi^2 He++, Pot=const"
+      }
+    },
+    "chisqr_pot_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> Chi^2 O+, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Chi^2 O+, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Chi^2 O+, Pot=const",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Chi-squared of fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Chi^2 O+, Pot=const"
+      }
+    },
+    "chisqr_pot_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> Chi^2 O++, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Chi^2 O++, Potential=const",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Chi^2 O+, Pot=const",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Chi-squared of fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Chi^2 O+, Pot=const"
+      }
+    },
+    "flags_pot_lo_Hplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag for H+ fit with potential held constant",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag H+, Potential=const",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag H+, Pot=const",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Flag for fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag H+, Pot=const"
+      }
+    },
+    "flags_pot_lo_Heplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag He++, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He++, Potential=const",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag He++, Pot=const",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Flag for fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He++, Pot=const"
+      }
+    },
+    "flags_pot_hi_Heplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag He+, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He+, Potential=const",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag He+, Pot=const",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Flag for fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He+, Pot=const"
+      }
+    },
+    "flags_pot_hi_Oplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag O+, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O+, Potential=const",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag O+, Pot=const",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Flag for fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O+, Pot=const"
+      }
+    },
+    "flags_pot_hi_Oplusplus": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag O++, Potential=const",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O++, Potential=const",
+        "FILLVAL": 255.0,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag O++, Pot=const",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Flag for fit to radial head data with potential (avg_pot) held constant",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O++, Pot=const"
+      }
+    },
+    "temp_pz_LO_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ Temperature values minus standard deviation (StD) in K, +z head",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+ Temperature -StD, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "H+ Temp-StD, +z",
+        "UNITS": " eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": " eV",
+        "x_LABLAXIS": "H+ Temp-StD, +z"
+      }
+    },
+    "temp_pz_LO_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He++ Temperature -StD, +z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He++ Temperature -StD, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He++ Temp-StD, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "He++ Temp-StD, +z"
+      }
+    },
+    "temp_pz_LO_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He+ Temperature -StD, +z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He+ Temperature -StD, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He+ Temp-StD, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "He+ Temp-StD, +z"
+      }
+    },
+    "temp_pz_LO_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O+ Temperature -StD, +z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O+ Temperature -StD, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O+ Temp-StD, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O+ Temp-StD, +z"
+      }
+    },
+    "temp_pz_LO_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O++ Temperature -StD, +z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O++ Temperature -StD, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O+ Temp-StD, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O+ Temp-StD, +z"
+      }
+    },
+    "temp_mz_LO_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ temperature in K minus StD, -z head",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+ Temperature -StD, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "H+ Temp-StD, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "H+ Temp-StD, -z"
+      }
+    },
+    "temp_mz_LO_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He++ Temperature -StD, -z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He++ Temperature -StD, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He++ Temp-StD, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "He++ Temp-StD, -z"
+      }
+    },
+    "temp_mz_LO_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He+ Temperature -StD, -z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He+ Temperature -StD, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He++ Temp -StD, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "He++ Temp -StD, -z"
+      }
+    },
+    "temp_mz_LO_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O+ Temperature -StD, -z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O+ Temperature -StD, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O+ Temp -StD, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O+ Temp -StD, -z"
+      }
+    },
+    "temp_mz_LO_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O++ Temperature -StD, -z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O++ Temperature -StD, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O+ Temp -StD, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O+ Temp -StD, -z"
+      }
+    },
+    "temp_z_LO_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ temperature (in K) minus STD, average of radial data",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+ Temperature -StD, r",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "H+ Temp-StD, r",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "H+ Temp-StD, r"
+      }
+    },
+    "temp_z_LO_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He++ Temperature -StD, r",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He++ Temperature -StD, r",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "H+ Temp-StD, r",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "H+ Temp-StD, r"
+      }
+    },
+    "temp_z_LO_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He+ Temperature -StD, r",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He+ Temperature -StD, r",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He+ Temp-StD, r",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "He+ Temp-StD, r"
+      }
+    },
+    "temp_z_LO_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O+ Temperature -StD, r",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O+ Temperature -StD, r",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O+ Temp-StD, r",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O+ Temp-StD, r"
+      }
+    },
+    "temp_z_LO_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O++ Temperature -StD, r",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O++ Temperature -StD, r",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O++ Temperature -StD, r",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "O++ Temperature -StD, r"
+      }
+    },
+    "flags_z_LO_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for T (H+)-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag T (H+)-STD, r",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag T H+mSTD, r",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag T H+mSTD, r"
+      }
+    },
+    "flags_z_LO_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for T (He++) -STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag T (HE++) -STD, r",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag He++ mSTD, r",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He++ mSTD, r"
+      }
+    },
+    "flags_z_LO_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for T (He+) -STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag T (He+) -STD, r",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag He+ mSTD, r",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He+ mSTD, r"
+      }
+    },
+    "flags_z_LO_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for T (O+) -STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag T (O+) -STD, r",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag T O+ mSTD, r",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag T O+ mSTD, r"
+      }
+    },
+    "flags_z_LO_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for T (O++) -STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag T (O++) -STD, r",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag T O++ mSTD, r",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag T O++ mSTD, r"
+      }
+    },
+    "den_temp_LO_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "n (H+) from fit to radial head data with temp held constant (temp_z-STD)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (H+), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (H+), T-STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (H+), T-STD"
+      }
+    },
+    "den_temp_LO_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> n (He++)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (He++), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (He++), T-STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (He++), T-STD"
+      }
+    },
+    "den_temp_LO_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> n(He+)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (He+), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (He+), T-STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (He+), T-STD"
+      }
+    },
+    "den_temp_LO_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> n(O+)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (O+), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (O+), T-STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (O+), T-STD"
+      }
+    },
+    "den_temp_LO_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> n(O++)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (O++), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (O++), T-STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (O++), T-STD"
+      }
+    },
+    "pot_temp_LO_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> H+ potential from fit, T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Potential (H+), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Potential (H+), T-STD",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Potential (H+), T-STD"
+      }
+    },
+    "pot_temp_LO_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> He++ potential",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Potential (He++), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Potential (He++), T-STD",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Potential (He++), T-STD"
+      }
+    },
+    "pot_temp_LO_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> He+ potential",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Potential (He+), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Potential (He+), T-STD",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Potential (He+), T-STD"
+      }
+    },
+    "pot_temp_LO_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> O+ potential",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Potential (O+), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Potential (O+), T-STD",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Potential (O+), T-STD"
+      }
+    },
+    "pot_temp_LO_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> O++ potential",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Potential (O++), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Potential (O++), T-STD",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Potential (O++), T-STD"
+      }
+    },
+    "chisqr_temp_LO_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi-square for H+ fit, T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (H+), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (H+), T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (H+), T-STD"
+      }
+    },
+    "chisqr_temp_LO_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi-square for He++ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (He++), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (He++), T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (He++), T-STD"
+      }
+    },
+    "chisqr_temp_LO_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi-square for He+ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (He+), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (He+), T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (He+), T-STD"
+      }
+    },
+    "chisqr_temp_LO_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi-square for O+ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (O+), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (O+), T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (O+), T-STD"
+      }
+    },
+    "chisqr_temp_LO_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi-square for O++ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (O++), T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (O++), T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (O++), T-STD"
+      }
+    },
+    "flags_temp_LO_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for H+ fit, T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag H+, T-STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag H+, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag H+, T-STD"
+      }
+    },
+    "flags_temp_LO_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for He++ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He++, T-STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag He++, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He++, T-STD"
+      }
+    },
+    "flags_temp_LO_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for He+ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He+, T-STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag He+, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He+, T-STD"
+      }
+    },
+    "flags_temp_LO_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for O+ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O+, T-STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag O+, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O+, T-STD"
+      }
+    },
+    "flags_temp_LO_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for O++ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O++, T-STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag O++, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O++, T-STD"
+      }
+    },
+    "avg_pot_LO": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Weighted average of H+ and He+ potentials (avg_pot), T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Avg potential, temp_z-STD",
+        "FILLVAL": -9.999999796611898e-32,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Avg Potential, T-STD",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -1.100000023841858,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Avg Potential, T-STD"
+      }
+    },
+    "pot_flag_LO": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> Flag for avg_pot",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag avg pot, T-STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag Avg Pot, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag Avg Pot, T-STD"
+      }
+    },
+    "den_pot_LO_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ density from fit to radial head data with potential (avg_pot) held constant, T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (H+), Pot, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (H+), P, T-STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (H+), P, T-STD"
+      }
+    },
+    "den_pot_LO_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He++ density",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (He++), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (He++), P, T-STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (He++), P, T-STD"
+      }
+    },
+    "den_pot_LO_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He+ density",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (He+), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (He+), P, T-STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (He+), P, T-STD"
+      }
+    },
+    "den_pot_LO_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O+ density",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (O+), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (O+), P, T-STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (O+), P, T-STD"
+      }
+    },
+    "den_pot_LO_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O++ density",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (O++), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (O++), P, T-STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (O++), P, T-STD"
+      }
+    },
+    "temp_rd_LO_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> H+ temperature from fit, T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (H+), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (H+), P, T-STD",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (H+), P, T-STD"
+      }
+    },
+    "temp_rd_LO_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> T (He++)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (He++), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (He++), pot, T-STD",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (He++), pot, T-STD"
+      }
+    },
+    "temp_rd_LO_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> T (He+)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (He+), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (He+), P, T-STD",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (He+), P, T-STD"
+      }
+    },
+    "temp_rd_LO_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> T (O+)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (O+), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (O+), P, T-STD",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (O+), P, T-STD"
+      }
+    },
+    "temp_rd_LO_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> T (O++)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (O++), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (O++), P, T-STD",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (O++), P, T-STD"
+      }
+    },
+    "chisqr_pot_LO_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi-square for H+ fit, T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (H+), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (H+), P, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (H+), P, T-STD"
+      }
+    },
+    "chisqr_pot_LO_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi^2 (He++), T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (He++), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (He++), P, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (He++), P, T-STD"
+      }
+    },
+    "chisqr_pot_LO_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi^2 (He+), T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (He+), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (He+), P, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (He+), P, T-STD"
+      }
+    },
+    "chisqr_pot_LO_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi^2 (O+), T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (O+), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (O+), P, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (O+), P, T-STD"
+      }
+    },
+    "chisqr_pot_LO_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi^2 (O++), T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (O++), P, T-STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (O++), P, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (O++), P, T-STD"
+      }
+    },
+    "flags_pot_LO_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for H+ fit, T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag H+, P, T-STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag H+, P, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag H+, P, T-STD"
+      }
+    },
+    "flags_pot_LO_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag He++, T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He++, P, T-STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag He++, P, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He++, P, T-STD"
+      }
+    },
+    "flags_pot_LO_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag He+, T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He+, P, T-STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag He+, P, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He+, P, T-STD"
+      }
+    },
+    "flags_pot_LO_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag O+, T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O+, P, T-STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag O+, P, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O+, P, T-STD"
+      }
+    },
+    "flags_pot_LO_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag O++, T-STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O++, P, T-STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag O++, P, T-STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O++, P, T-STD"
+      }
+    },
+    "temp_pz_HI_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "+++ Temperature values plus standard deviation (STD): H+ temperature in K plus STD, +z head",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (H+)+STD, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (H+)+STD, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (H+)+STD, +z"
+      }
+    },
+    "temp_pz_HI_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He++ temperature",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (He++)+STD, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (He++)+STD, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (He++)+STD, +z"
+      }
+    },
+    "temp_pz_HI_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He+ temperature",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (He+)+STD, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (He+)+STD, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (He+)+STD, +z"
+      }
+    },
+    "temp_pz_HI_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O+ temperature",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (O+)+STD, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (O+)+STD, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (O+)+STD, +z"
+      }
+    },
+    "temp_pz_HI_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O++ temperature",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (O++)+STD, +z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (O++)+STD, +z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (O++)+STD, +z"
+      }
+    },
+    "temp_mz_HI_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ temperature (in K) plus STD, -z head data",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (H+)+STD, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (H+)+STD, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (H+)+STD, -z"
+      }
+    },
+    "temp_mz_HI_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> T (He++)+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (He++)+STD, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (He++)+STD, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (He++)+STD, -z"
+      }
+    },
+    "temp_mz_HI_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> T(He+)+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (He+)+STD, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (He+)+STD, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (He+)+STD, -z"
+      }
+    },
+    "temp_mz_HI_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> T(O+)+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (O+)+STD, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (O+)+STD, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (O+)+STD, -z"
+      }
+    },
+    "temp_mz_HI_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> T(O++)+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (O++)+STD, -z",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (O++)+std, -z",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (O++)+std, -z"
+      }
+    },
+    "temp_z_HI_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ temperature (in K) plus STD, average of radial data",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (H+)+STD, r",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (H+)+std, r",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (H+)+std, r"
+      }
+    },
+    "temp_z_HI_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> T(He++)+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (He++)+STD, r",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (He++)+std, r",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (He++)+std, r"
+      }
+    },
+    "temp_z_HI_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> T(He+)+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (He+)+STD, r",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (He+)+std, r",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (He+)+std, r"
+      }
+    },
+    "temp_z_HI_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> T(O+)+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (O+)+STD, r",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (O+)+std, r",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (O+)+std, r"
+      }
+    },
+    "temp_z_HI_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> T(O++)+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (O++)+STD, r",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (O++)+std, r",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (O++)+std, r"
+      }
+    },
+    "flags_z_HI_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for T(H+)+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag T (H+)+STD, r",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "H+ Flag+STD, r",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "H+ Flag+STD, r"
+      }
+    },
+    "flags_z_HI_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for T(He++)+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag T (He++)+STD, r",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He++ Flag+STD, r",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "He++ Flag+STD, r"
+      }
+    },
+    "flags_z_HI_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for T(He+)+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag T (He+)+STD, r",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "He+ Flag+STD, r",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "He+ Flag+STD, r"
+      }
+    },
+    "flags_z_HI_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for T(O+)+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag T (O+)+STD, r",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O+ Flag+STD, r",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "O+ Flag+STD, r"
+      }
+    },
+    "flags_z_HI_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for T(O++)+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag T (O++)+STD, r",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "O++ Flag+STD, r",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "O++ Flag+STD, r"
+      }
+    },
+    "den_temp_HI_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "n (H+) from fit to radial head data with temp held constant (temp_z+STD)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (H+), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (H+), T+STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (H+), T+STD"
+      }
+    },
+    "den_temp_HI_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> n (He++)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (He++), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (He++), T+STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (He++), T+STD"
+      }
+    },
+    "den_temp_HI_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> n (He+)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (He+), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (He+), T+STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (He+), T+STD"
+      }
+    },
+    "den_temp_HI_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> n (O+)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (O+), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (O+), T+STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (O+), T+STD"
+      }
+    },
+    "den_temp_HI_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> n (O++)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (O++), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (O++), T+STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (O++), T+STD"
+      }
+    },
+    "pot_temp_HI_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> H+ potential from fit, T+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Potential (H+), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Potential (H+), T+STD",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Potential (H+), T+STD"
+      }
+    },
+    "pot_temp_HI_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> He++ potential",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Potential (He++), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Potential (He++), T+STD",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Potential (He++), T+STD"
+      }
+    },
+    "pot_temp_HI_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> He+ potential",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Potential (He+), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Potential (He+), T+STD",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Potential (He+), T+STD"
+      }
+    },
+    "pot_temp_HI_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> O+ potential",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Potential (O+), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Potential (O+), T+STD",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Potential (O+), T+STD"
+      }
+    },
+    "pot_temp_HI_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> O++ potential",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Potential (O++), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Potential (O++), T+STD",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Potential (O++), T+STD"
+      }
+    },
+    "chisqr_temp_HI_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi-square for H+ fit, T+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (H+), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (H+), T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (H+), T+STD"
+      }
+    },
+    "chisqr_temp_HI_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi-square for He++ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (He++), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (He++), T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (He++), T+STD"
+      }
+    },
+    "chisqr_temp_HI_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi-square for He+ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (He+), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (He+), T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (He+), T+STD"
+      }
+    },
+    "chisqr_temp_HI_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi-square for O+ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (O+), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (O+), T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (O+), T+STD"
+      }
+    },
+    "chisqr_temp_HI_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi-square for O++ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (O++), T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (O++), T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (O++), T+STD"
+      }
+    },
+    "flags_temp_HI_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for H+ fit, T+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag H+, T+STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag H+, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag H+, T+STD"
+      }
+    },
+    "flags_temp_HI_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for He++ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He++, T+STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag He++, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He++, T+STD"
+      }
+    },
+    "flags_temp_HI_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for He+ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He+, T+STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag He+, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He+, T+STD"
+      }
+    },
+    "flags_temp_HI_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for O+ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O+, T+STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag O+, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O+, T+STD"
+      }
+    },
+    "flags_temp_HI_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for O++ fit",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O++, T+STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag O++, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O++, T+STD"
+      }
+    },
+    "avg_pot_HI": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Weighted average of H+ and He+ potentials (avg_pot), T+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Avg Pot, T+STD",
+        "FILLVAL": -9.999999796611898e-32,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Avg Pot, T+STD",
+        "UNITS": "V",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -1.100000023841858,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Avg Pot, T+STD"
+      }
+    },
+    "pot_flag_HI": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> Flag for avg_pot",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag avg pot, T+STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag Avg Pot, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag Avg Pot, T+STD"
+      }
+    },
+    "den_pot_HI_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "H+ density from fit to radial head data with potential (avg_pot) held constant, T+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (H+), Pot, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (H+), P, T+STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (H+), P, T+STD"
+      }
+    },
+    "den_pot_HI_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He++ density",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (He++), Pot, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (He++), Pot, T+STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (He++), Pot, T+STD"
+      }
+    },
+    "den_pot_HI_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> He+ density",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (He+), Pot, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (He+), Pot, T+STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (He+), Pot, T+STD"
+      }
+    },
+    "den_pot_HI_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O+ density",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (O+), Pot, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (O+), Pot, T+STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (O+), Pot, T+STD"
+      }
+    },
+    "den_pot_HI_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> O++ density",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "n (O++), Pot, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "n (O++), Pot, T+STD",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "n (O++), Pot, T+STD"
+      }
+    },
+    "temp_rd_HI_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> H+ temperature from fit, T+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (H+), P, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (H+), P, T+STD",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (H+), P, T+STD"
+      }
+    },
+    "temp_rd_HI_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> T (He++)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (He++), P, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (He++), P, T+STD",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (He++), P, T+STD"
+      }
+    },
+    "temp_rd_HI_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> T (He+)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (He+), P, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (He+), P, T+STD",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (He+), P, T+STD"
+      }
+    },
+    "temp_rd_HI_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> T (O+)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (O+), P, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (O+), P, T+STD",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (O+), P, T+STD"
+      }
+    },
+    "temp_rd_HI_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> T (O++)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T (O++), P, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "T (O++), P, T+STD",
+        "UNITS": "eV",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "T (O++), P, T+STD"
+      }
+    },
+    "chisqr_pot_HI_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi-square for H+ fit, T+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (H+), P, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (H+), P, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (H+), P, T+STD"
+      }
+    },
+    "chisqr_pot_HI_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi^2 (He++)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (He++), P, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (He++), P, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (He++), P, T+STD"
+      }
+    },
+    "chisqr_pot_HI_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi^2 (He+)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (He+), P, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (He+), P, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (He+), P, T+STD"
+      }
+    },
+    "chisqr_pot_HI_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi^2 (O+)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (O+), P, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (O+), P, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (O+), P, T+STD"
+      }
+    },
+    "chisqr_pot_HI_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -1.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-----> chi^2 (O++)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "chi^2 (O++), P, T+STD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "chi^2 (O++), P, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "chi^2 (O++), P, T+STD"
+      }
+    },
+    "flags_pot_HI_lo_Hplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for H+ fit, T+STD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag H+, P, T+STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag H+, P, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag H+, P, T+STD"
+      }
+    },
+    "flags_pot_HI_lo_Heplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for He++",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He++, P, T+STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag He++, P, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He++, P, T+STD"
+      }
+    },
+    "flags_pot_HI_hi_Heplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for He+",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag He+, P, T+STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag He+, P, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag He+, P, T+STD"
+      }
+    },
+    "flags_pot_HI_hi_Oplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for O+",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O+, P, T+STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag O+, P, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O+, P, T+STD"
+      }
+    },
+    "flags_pot_HI_hi_Oplusplus_plus_std": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 254,
+        "RecVariance": "VARY",
+        "SparseRecords": "PAD"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Flag for O++",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flag O++, P, T+STD",
+        "FILLVAL": 255,
+        "FORMAT": "g12.3",
+        "LABLAXIS": "Flag O++, P, T+STD",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag O++, P, T+STD"
+      }
+    }
+  }
+}

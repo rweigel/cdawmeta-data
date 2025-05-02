@@ -1,0 +1,1072 @@
+{
+  "CDFFileInfo": {
+    "File": "stb_l2_magplasma_1m_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/stb_l2_magplasma_1m_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "STP>Solar Terrestrial Probes",
+    "Source_name": "STB>Solar Terrestrial Relations Observatory . of the Sun-Earth Line",
+    "Discipline": "Solar Physics>Heliospheric Physics",
+    "Data_type": "l2-magplasma-1m>Level-2 combined Mag and Plasma 1-minute average",
+    "Descriptor": "impact>In-situ Measurements of Particles and CME Transients_Magnetometer",
+    "Data_version": "1",
+    "PI_name": "J. Luhmann",
+    "PI_affiliation": "UCB/SSL",
+    "TEXT": "The file contains Level 2 magnetic field vectors from the IMPACT/MAG instrument and solar wind parameters from the PLASTIC instrument on the STEREO Behind spacecraft.",
+    "Instrument_type": "Magnetic Fields (space)\nPlasma and Solar Wind",
+    "Mission_group": "STEREO",
+    "Logical_source": "STB_L2_MAGPLA_1m",
+    "Logical_L0source": "STB_L1_MAG_20090321_V01",
+    "Logical_Plastic": "STB_L2_PLA_1DMax_1min_20",
+    "Logical_file_id": "STB_L2_MAGPLASMA_1m_2014_V01",
+    "Logical_source_description": "STEREO Behind IMPACT/MAG Magnetic Field and PLASTIC Solar Wind Plasma Data",
+    "Time_resolution": "00:01:00.000",
+    "Generated_by": " ",
+    "Generation_date": " ",
+    "MODS": "Version 1: Used internally at UCB and UCLA ONLY. No corrections applied to raw MAG data...Version 2: Offset correction applied to MAG data...Version 3: Initial algorithm for correcting glitches in the X sensor on STEREO Ahead applied...Version 4: Improvement in glitch correction algorithm applied...Version 5: Further refinement of glitch correction for X sensor on STEREO Ahead. Also, two timing issues resolved: a) applying a 6ms time shift to account for time lag between IMPACT IDPU and MAG, b) fixing an occasional 1 second \"glitch\"...Version 6: Added \"FILTER_VALUE\" variable",
+    "LINK_TEXT": "Experiment and Data descriptions for STEREO/IMPACT",
+    "LINK_TITLE": "STEREO/IMPACT PI Site",
+    "HTTP_LINK": "http://sprg.ssl.berkeley.edu/impact",
+    "File_naming_convention": "source_datatype_descriptor",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/STEREO-B/MAGPLASMA/L2/PT1M",
+    "DOI": "https://doi.org/10.48322/qhr7-rz23"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time since 0 AD",
+        "DICT_KEY": "time>epoch",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "UNITS": "ms",
+        "VALIDMAX": "2156-12-31T00:00:00.000",
+        "VALIDMIN": "2006-01-01T00:00:00.000",
+        "VAR_NOTES": "Interval-centered time tag",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "FILTER_VALUE": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "If the total B field is greater than this value, that data point is filtered out and the B field replaced with fill values. It is expected that such values are spurious and non-physical.",
+        "FIELDNAM": "FILTER_VALUE",
+        "FILLVAL": 100.0,
+        "FORMAT": "E12.2",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nT"
+      },
+      "VarData": [
+        500.0
+      ]
+    },
+    "BFIELDRTN": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic field vector in RTN coordinates from the IMPACT/MAG instrument.",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CART_COMPNO",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B Field in RTN",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "B_RTN_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXES": [
+          [
+            "Bx(rtn)",
+            "By(rtn)",
+            "Bz(rtn)"
+          ]
+        ],
+        "x_DEPEND": [
+          "CART_COMPNO"
+        ]
+      }
+    },
+    "BTOTAL": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Total magnetic field from the IMPACT/MAG instrument.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B Field",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABLAXIS": "Btotal",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Btotal"
+      }
+    },
+    "CART_COMPNO": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Comp No 1",
+        "FIELDNAM": "Comp No 1",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Comp No 1",
+        "SCALETYP": "linear",
+        "VALIDMAX": [
+          3.0,
+          3.0,
+          3.0
+        ],
+        "VALIDMIN": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Comp No 1"
+      },
+      "VarData": [
+        1.0,
+        2.0,
+        3.0
+      ]
+    },
+    "B_RTN_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 7,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "CART_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "CART_LABL_1",
+        "FORMAT": "a7",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Bx(rtn)",
+        "By(rtn)",
+        "Bz(rtn)"
+      ]
+    },
+    "HAE": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Distance from Sun; N distance above the Sun' rotational equator. T should be zero.",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CART_COMPNO",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Position HAE",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "HAE_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "AU",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": -10.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AU",
+        "x_LABLAXES": [
+          [
+            "x(HAE)",
+            "y(HAE)",
+            "z(HAE)"
+          ]
+        ],
+        "x_DEPEND": [
+          "CART_COMPNO"
+        ]
+      }
+    },
+    "HEE": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Heliocentric Earth Ecliptic.",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CART_COMPNO",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "HEE",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "HEE_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "AU",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": -10.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AU",
+        "x_LABLAXES": [
+          [
+            "x(HEE)",
+            "y(HEE)",
+            "z(HEE)"
+          ]
+        ],
+        "x_DEPEND": [
+          "CART_COMPNO"
+        ]
+      }
+    },
+    "HEEQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Heliocentric Earth Equatorial.",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CART_COMPNO",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "HEEQ",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "HEEQ_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "AU",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": -10.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AU",
+        "x_LABLAXES": [
+          [
+            "x(HEEQ)",
+            "y(HEEQ)",
+            "z(HEEQ)"
+          ]
+        ],
+        "x_DEPEND": [
+          "CART_COMPNO"
+        ]
+      }
+    },
+    "CARR": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Carrington. ",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CART_COMPNO",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "CARR",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "CARR_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "AU",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": -10.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AU",
+        "x_LABLAXES": [
+          [
+            "x(CARR)",
+            "y(CARR)",
+            "z(CARR)"
+          ]
+        ],
+        "x_DEPEND": [
+          "CART_COMPNO"
+        ]
+      }
+    },
+    "RTN": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Radial-Tangential-Normal",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CART_COMPNO",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "POSITION IN RTN",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "RTN_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "AU",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": -10.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AU",
+        "x_LABLAXES": [
+          [
+            "x(RTN)",
+            "y(RTN)",
+            "z(RTN)"
+          ]
+        ],
+        "x_DEPEND": [
+          "CART_COMPNO"
+        ]
+      }
+    },
+    "R": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Distance of STEREO from the the Sun.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "POSITION IN RTN",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABLAXIS": "R_RTN",
+        "LABL_PTR_1": "R",
+        "SCALETYP": "linear",
+        "UNITS": "AU",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AU",
+        "x_LABLAXIS": "R_RTN"
+      }
+    },
+    "CART_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 7,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "CART_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "CART_LABL_1",
+        "FORMAT": "a7",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Bx(rtn)",
+        "By(rtn)",
+        "Bz(rtn)",
+        "BTotal "
+      ]
+    },
+    "CART_LABL_2": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 7,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "CART_LABL_2",
+        "DICT_KEY": "label",
+        "FIELDNAM": "CART_LABL_2",
+        "FORMAT": "a7",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "x      ",
+        "y      ",
+        "z      "
+      ]
+    },
+    "CART_LABL_3": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 7,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "CART_LABL_3",
+        "DICT_KEY": "label",
+        "FIELDNAM": "CART_LABL_3",
+        "FORMAT": "a7",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "R      "
+      ]
+    },
+    "Np": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Solar wind proton number density",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Density",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Np",
+        "UNITS": "1/cm3",
+        "VALIDMAX": 500.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/cm3",
+        "x_LABLAXIS": "Np"
+      }
+    },
+    "Vp": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Bulk Speed from the PLASTIC instrument.",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Bulk Speed",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Speed",
+        "UNITS": "km/s",
+        "VALIDMAX": 3000.0,
+        "VALIDMIN": 200.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Speed"
+      }
+    },
+    "Tp": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Temperature from the PLASTIC instrument.",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Temperature",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Temperature",
+        "UNITS": "deg_K",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg_K",
+        "x_LABLAXIS": "Temperature"
+      }
+    },
+    "Vth": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Thermal Speed from the PLASTIC instrument.",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Thermal_Speed",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Thermal_Speed",
+        "UNITS": "km/s",
+        "VALIDMAX": 2000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Thermal_Speed"
+      }
+    },
+    "Vr_Over_V_RTN": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Direction cosine of radial velocity from the PLASTIC instrument.",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton radial velocity",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Vr/V RTN",
+        "UNITS": "Na",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": -1.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Na",
+        "x_LABLAXIS": "Vr/V RTN"
+      }
+    },
+    "Vt_Over_V_RTN": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Direction cosine tangential velocity from the PLASTIC instrument.",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vt/V RTN",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Vt/V RTN",
+        "UNITS": "Na",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": -1.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Na",
+        "x_LABLAXIS": "Vt/V RTN"
+      }
+    },
+    "Vn_Over_V_RTN": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Direction cosine of normal velocity from the PLASTIC instrument.",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vn/V RTN",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Vn/V RTN",
+        "UNITS": "Na",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": -1.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Na",
+        "x_LABLAXIS": "Vn/V RTN"
+      }
+    },
+    "Vp_RTN": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Solar Wind Proton Speed",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vp_RTN",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Vp RTN",
+        "UNITS": "km/sec",
+        "VALIDMAX": 3000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/sec",
+        "x_LABLAXIS": "Vp RTN"
+      }
+    },
+    "Entropy": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Entropy",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Entropy",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Entropy",
+        "UNITS": "Na",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": -10.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Na",
+        "x_LABLAXIS": "Entropy"
+      }
+    },
+    "Beta": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Beta",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Beta",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Beta",
+        "UNITS": "Na",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.001,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Na",
+        "x_LABLAXIS": "Beta"
+      }
+    },
+    "Total_Pressure": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Total Pressure",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Total Pressure",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Total Pressure",
+        "UNITS": "pPa",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.001,
+        "VAR_TYPE": "data",
+        "x_UNITS": "pPa",
+        "x_LABLAXIS": "Total Pressure"
+      }
+    },
+    "Cone_Angle": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Cone Angle",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Cone Angle",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Cone Angle",
+        "UNITS": "deg",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Cone Angle"
+      }
+    },
+    "Clock_Angle": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Clock Angle",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Clock Angle",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Clock Angle",
+        "UNITS": "deg",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": -360.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Clock Angle"
+      }
+    },
+    "Magnetic_Pressure": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic Pressure",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnetic Pressure",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Magnetic Pressure",
+        "UNITS": "pPa",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_TYPE": "data",
+        "x_UNITS": "pPa",
+        "x_LABLAXIS": "Magnetic Pressure"
+      }
+    },
+    "Dynamic_Pressure": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Dynamic Pressure",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Dynamic Pressure",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Dynanmic Pressure",
+        "UNITS": "nPa",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nPa",
+        "x_LABLAXIS": "Dynanmic Pressure"
+      }
+    },
+    "HAE_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 6,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "HAE_LABL_1",
+        "FIELDNAM": "HAE_LABL_1",
+        "FORMAT": "A21",
+        "LABLAXIS": "HAE_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "HAE_LABL_1"
+      },
+      "VarData": [
+        "x(HAE)",
+        "y(HAE)",
+        "z(HAE)"
+      ]
+    },
+    "HEE_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 6,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "HEE_LABL_1",
+        "FIELDNAM": "HEE_LABL_1",
+        "FORMAT": "A21",
+        "LABLAXIS": "HEE_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "HEE_LABL_1"
+      },
+      "VarData": [
+        "x(HEE)",
+        "y(HEE)",
+        "z(HEE)"
+      ]
+    },
+    "HEEQ_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 7,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "HEEQ_LABL_1",
+        "FIELDNAM": "HEEQ_LABL_1",
+        "FORMAT": "A21",
+        "LABLAXIS": "HEEQ_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "HEEQ_LABL_1"
+      },
+      "VarData": [
+        "x(HEEQ)",
+        "y(HEEQ)",
+        "z(HEEQ)"
+      ]
+    },
+    "CARR_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 7,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "CARR_LABL_1",
+        "FIELDNAM": "CARR_LABL_1",
+        "FORMAT": "A21",
+        "LABLAXIS": "CARR_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "CARR_LABL_1"
+      },
+      "VarData": [
+        "x(CARR)",
+        "y(CARR)",
+        "z(CARR)"
+      ]
+    },
+    "RTN_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 6,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "RTN_LABL_1",
+        "FIELDNAM": "RTN_LABL_1",
+        "FORMAT": "A21",
+        "LABLAXIS": "RTN_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "RTN_LABL_1"
+      },
+      "VarData": [
+        "x(RTN)",
+        "y(RTN)",
+        "z(RTN)"
+      ]
+    }
+  }
+}

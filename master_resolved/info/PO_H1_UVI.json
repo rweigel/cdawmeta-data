@@ -1,0 +1,102 @@
+{
+  "CDFFileInfo": {
+    "File": "po_h1_uvi_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/po_h1_uvi_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Discipline": "Space Physics>Ionospheric Science",
+    "Source_name": "POLAR>Polar Plasma Laboratory",
+    "Data_type": "H1>High Res.",
+    "Descriptor": "UVI>Ultraviolet Imager",
+    "Data_version": "1",
+    "TITLE": "UVI High Res. Images",
+    "TEXT": "References --------------------\n1. M. R. Torr, et al., A far ultraviolet imager for the International Solar-Terrestrial Physics mission, Space Sci. Rev., v71, pp329 - 383, 1995\nNotes ------------------------ \n1. The UVI field of view is circular with an 8 degree full width.  The circular image is stored in IMAGE_DATA as a rectangular array of 228 rows and 200 columns.\n2.  Time information is contained in EPOCH, Time_PB5, IMG_MINUS_MSEC, and IMG_PLUS_MSEC.  \n3. Pointing information is given in GCI_LOOK_DIR, GEODETIC_LAT, and GEODETIC_LONG. ",
+    "MODS": "v1.0 Initial Prelaunch Release 10/16/95 \nv1.0 Interim Prelaunch Release \n5/8/96 Added KPGS_VERSION\n3/9/97 Changed min/max valuesfor IMAGE_DATA",
+    "ADID_ref": "NSSD0175",
+    "Logical_file_id": "PO_H1_UVI_00000000_V01",
+    "Logical_source": "PO_H1_UVI",
+    "Logical_source_description": "Polar Ultraviolet Imager, High Res.",
+    "PI_name": "G. Parks",
+    "PI_affiliation": "U. Washington",
+    "Mission_group": "Polar\n!___Magnetospheric Data\n!___ITM Data including Earth Imaging and Ground-Based",
+    "Instrument_type": "Imaging and Remote Sensing (ITM/Earth)",
+    "POINTER_CDF": " ",
+    "TEXT_supplement_1": " ",
+    "alt_logical_source": "Polar_UVI_Sample1-High-Resolution-Images-H1_1min_cdf",
+    "spase_DatasetResourceID": " ",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Epoch",
+        "DELTA_MINUS_VAR": "IMG_MINUS_MSEC",
+        "DELTA_PLUS_VAR": "IMG_PLUS_MSEC",
+        "DICT_KEY": "time>epoch",
+        "FIELDNAM": "Time Line",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F16.2",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2020-12-31T23:59:59.000",
+        "SCALEMIN": "1990-01-01T00:00:00.000",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T23:59:59.000",
+        "VALIDMIN": "1990-01-01T00:00:00.000",
+        "VAR_NOTES": "The time in EPOCH and Time_PB5 refer to the center of the image in IMAGE_DATA. There is an offset of up to 8 major frames between the beginning of the image exposure and the ATC telemetry time stamp.  The times shown here are corrected for this and describe the actual time of exposure.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "IMAGE_DATA": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          228,
+          200
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "MPEG canned images",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "photon_flux>brightness",
+        "FIELDNAM": "FUV Image",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.1",
+        "LABLAXIS": "FUV Image",
+        "SCALEMAX": 100.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "photon cm^-2 s^-1",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "The UVI field of view is circular with an 8 degree full width.  The circular image is stored in IMAGE_DATA as a rectangular array of 228 rows and 200 columns.  Consequently, the corners of each image contain non-image data.  The non-active corner pixel locations are identified by a corner fill value = -128.  The image is oriented such that the direction of decreasing row number points along the spacecraft spin axis.  The direction of decreasing column number points to the outboard direction (relative to the spin axis).  The orientation is the same for both detectors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "photon cm^-2 s^-1",
+        "x_LABLAXIS": "FUV Image"
+      }
+    }
+  }
+}

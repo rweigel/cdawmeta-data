@@ -1,0 +1,275 @@
+{
+  "CDFFileInfo": {
+    "File": "cnofs_vefi_LD_500ms_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/cnofs_vefi_LD_500ms_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "CNOFS VEFI/LD low rate data",
+    "Project": "CNOFS",
+    "Source_name": "CNOFS>Communications Navigation Outage Forecast System",
+    "Instrument": "VEFI lightning detector",
+    "PI_name": "Robert H. Holzworth",
+    "PI_affiliation": "University of Washington",
+    "PI_VEFI_name": "Robert F. Pfaff",
+    "PI_VEFI_affiliation": "GSFC",
+    "Instrument_type": "Electric Fields (space)",
+    "Mission_group": "CNOFS",
+    "Logical_source": "cnofs_vefi_LD_500ms",
+    "Logical_file_id": "cnofs_vefi_LD_500ms_00000000_v01",
+    "Logical_source_description": "CNOFS VEFI Lightning Detector, low rate data (eclipse portion of CNOFS orbit)",
+    "Time_resolution": " 500 ms",
+    "Orbit": "Eclipse portion of C/NOFS orbit   3050",
+    "Generation_date": "2012-May-08/16:49",
+    "TEXT": "This data file contains the low rate data from the VEFI lightning detector. Two photodiodes measure white light irradiance in 2 look directions and for 7 threshold values. Reference: Jacobson et al, J Atm Ocean Tech, 2011, doi:10.1175/JTECH-D-11-00047.1",
+    "Data_use": "Users are requested to contact Dr. R. H. Holzworth at Univ of Washington prior to publication of any lightning detector data",
+    "Descriptor": "VEFI>Vector Electric Field Instrument",
+    "Data_type": "LD_500MS>Lightning Detector",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/CNOFS/VEFI/Lightning/PT0.5S",
+    "DOI": "https://doi.org/10.48322/pv2n-aj92"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time from UT 0000-Jan-01 00:00:00",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "VALIDMAX": "2029-12-31T23:59:59.999",
+        "VALIDMIN": "2008-04-17T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "lat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "C/NOFS latitude in degrees",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Geodetic latitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "latitude",
+        "UNITS": "deg",
+        "VALIDMAX": 20.0,
+        "VALIDMIN": -20.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "latitude"
+      }
+    },
+    "lon": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "C/NOFS longitude in degrees (east)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Geodetic longitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "longitude",
+        "UNITS": "deg",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "longitude"
+      }
+    },
+    "alt": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "C/NOFS altitude in km",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Altitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "altitude",
+        "UNITS": "km",
+        "VALIDMAX": 900.0,
+        "VALIDMIN": 350.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "altitude"
+      }
+    },
+    "ldn": {
+      "VarDescription": {
+        "DataType": "CDF_UINT2",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 65534,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of samples with white-light irradiance in 7 bins defined by the irradiance boundary values 0.23, 3.7, 11, 23, 39, 60, 84, > 84 mW/m^2 (north-viewing diode)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "North-viewing lightning detector",
+        "FILLVAL": 65535,
+        "FORMAT": "i4",
+        "LABLAXIS": "LD_north",
+        "LABL_PTR_1": "cnofs_LD_ldn_labl",
+        "UNITS": "counts",
+        "VALIDMAX": 4032,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "LD_north",
+        "x_LABLAXES": [
+          [
+            "LD-N .23<I<3.7",
+            "LD-N 3.7<I<11",
+            "LD-N 11<I<23",
+            "LD-N 23<I<39",
+            "LD-N 39<I<60",
+            "LD-N 60<I<84",
+            "LD-N I>84"
+          ]
+        ]
+      }
+    },
+    "lds": {
+      "VarDescription": {
+        "DataType": "CDF_UINT2",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 65534,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of samples with white-light irradiance in 7 bins defined by the irradiance boundary values 0.23, 3.7, 11, 23, 39, 60, 84, > 84 mW/m^2 (south-viewing diode)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "South-viewing lightning detector",
+        "FILLVAL": 65535,
+        "FORMAT": "i4",
+        "LABLAXIS": "LD_south",
+        "LABL_PTR_1": "cnofs_LD_lds_labl",
+        "UNITS": "counts",
+        "VALIDMAX": 4032,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "LD_south",
+        "x_LABLAXES": [
+          [
+            "LD-S .23<I<3.7",
+            "LD-S 3.7<I<11",
+            "LD-S 11<I<23",
+            "LD-S 23<I<39",
+            "LD-S 39<I<60",
+            "LD-S 60<I<84",
+            "LD-S I>84"
+          ]
+        ]
+      }
+    },
+    "cnofs_LD_ldn_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 17,
+        "NumWrittenRecords": 1,
+        "PadValue": "                 ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "cnofs_LD_ldn_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "cnofs_LD_ldn_labl",
+        "FORMAT": "a17",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "LD-N .23<I<3.7",
+        "LD-N 3.7<I<11",
+        "LD-N 11<I<23",
+        "LD-N 23<I<39",
+        "LD-N 39<I<60",
+        "LD-N 60<I<84",
+        "LD-N I>84"
+      ]
+    },
+    "cnofs_LD_lds_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 17,
+        "NumWrittenRecords": 1,
+        "PadValue": "                 ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "cnofs_LD_lds_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "cnofs_LD_lds_labl",
+        "FORMAT": "a17",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "LD-S .23<I<3.7",
+        "LD-S 3.7<I<11",
+        "LD-S 11<I<23",
+        "LD-S 23<I<39",
+        "LD-S 39<I<60",
+        "LD-S 60<I<84",
+        "LD-S I>84"
+      ]
+    }
+  }
+}

@@ -1,0 +1,454 @@
+{
+  "CDFFileInfo": {
+    "File": "wi_em_3dp_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/wi_em_3dp_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Data_type": "EM>EESA (On-Board) Electron Plasma Moments @ Spin Resolution (version 3), Wind 3DP",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Source_name": "WIND>Wind Interplanetary Plasma Laboratory",
+    "Logical_source_description": "Electron Plasma moments (computed on-board) (NOT CORRECTED FOR S/C POTENTIAL) @ 3 second (spin) resolution (version 3), EESA LOW, Wind 3DP",
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "TEXT": "Wind 3dp, EESA LOW 1 spin resolution Plasma ( electron ) moments (computed on spacecraft)",
+    "PI_name": "R. Lin/S. Bale",
+    "PI_affiliation": "UC Berkeley",
+    "Instrument_type": "Plasma and Solar Wind",
+    "Mission_group": "Wind\n!___Interplanetary Data near 1 AU",
+    "Data_version": "1",
+    "Descriptor": "3DP>3-D PLASMA ANALYZER",
+    "ADID_ref": "NSSD0143",
+    "MODS": "Version 3 Product, August 2005",
+    "Logical_source": "wi_em_3dp",
+    "Logical_file_id": "wi_em_3dp_00000000_v01",
+    "alt_logical_source": "Wind_3DP_Plasma-Moments-Electron-Onboard-EM_3sec_cdf",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Wind/3DP/EM/PT3S",
+    "DOI": "https://doi.org/10.48322/bsy7-7789",
+    "LINK_TEXT": " \nWind 3DP ",
+    "LINK_TITLE": "Caveats for the correct use of Wind 3DP datasets\nhome page at UCB (with plotting and digital data)",
+    "HTTP_LINK": "https://spdf.gsfc.nasa.gov/pub/data/wind/3dp/wind3dp_caveats.pdf\nhttp://sprg.ssl.berkeley.edu/wind3dp/"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time, Centered",
+        "DICT_KEY": "time",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "e12.0",
+        "LABLAXIS": "Epoch",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T23:59:59.999",
+        "VALIDMIN": "1992-01-01T00:00:00.000",
+        "VAR_NOTES": "Time is centered, confirmed for 3DP by P.Schroeder 2005 Nov 07",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "SPIN": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "On-board spin count",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "Number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Spin Count",
+        "FORMAT": "i6",
+        "LABLAXIS": "Spin_Count",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 32767,
+        "VALIDMIN": -32768,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Spin_Count"
+      }
+    },
+    "E_DENS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron number density (not corrected for any s/c potential)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Electron number density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "UNCOR_Dens_Electn",
+        "SCALETYP": "linear",
+        "UNITS": "#/cm3",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Per Lynn Wilson Jan2015:  These results cannot take the spacecraft potential into account.  Wind does not measure the spacecraft potential actively, so it cannot perform this correction onboard and the results have many uncertainties.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cm3",
+        "x_LABLAXIS": "UNCOR_Dens_Electn"
+      }
+    },
+    "E_VELS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron velocity vector (GSE)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Electron velocity vector",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "E_VELS_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "km/sec",
+        "VALIDMAX": [
+          4000.0,
+          4000.0,
+          4000.0
+        ],
+        "VALIDMIN": [
+          -4000.0,
+          -4000.0,
+          -4000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/sec",
+        "x_LABLAXES": [
+          [
+            "UNCOR_V_xGSE_Electn",
+            "UNCOR_V_yGSE_Electn",
+            "UNCOR_V_zGSE_Electn"
+          ]
+        ]
+      }
+    },
+    "E_TENS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Residual Variance in Electron Velocity (6 components in instrument coords)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "E_TENS",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e11.5",
+        "LABL_PTR_1": "E_TENS_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "(km/s)^2",
+        "VALIDMAX": [
+          10000000.0,
+          10000000.0,
+          10000000.0,
+          10000000.0,
+          10000000.0,
+          10000000.0
+        ],
+        "VALIDMIN": [
+          -10000000.0,
+          -10000000.0,
+          -10000000.0,
+          -10000000.0,
+          -10000000.0,
+          -10000000.0
+        ],
+        "VAR_NOTES": "Per Lynn Wilson Jan2015:  This is in one of two units. It is calculated as the pressure tensor divided by the number density.  In the decommutation source code, they say the units are (km/s)^2.  In some of the other moment analysis software, the pressure is in units of [eV cm^(-3)].",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(km/s)^2",
+        "x_LABLAXES": [
+          [
+            "UNCOR_Var_ElctnV_XX",
+            "UNCOR_Var_ElctnV_YY",
+            "UNCOR_Var_ElctnV_ZZ",
+            "UNCOR_Var_ElctnV_XY",
+            "UNCOR_Var_ElctnV_XZ",
+            "UNCOR_Var_ElctnV_YZ"
+          ]
+        ]
+      }
+    },
+    "E_TEMP": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron temperature",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Electron temperature",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "UNCOR_Temp_Elect",
+        "SCALETYP": "linear",
+        "UNITS": "eV",
+        "VALIDMAX": 500.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "UNCOR_Temp_Elect"
+      }
+    },
+    "E_Q": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron Heat Flux (Q)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "Q",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Electron Heat Flux (Q)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e12.5",
+        "LABL_PTR_1": "E_Q_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "(km/s)^3/cm^3",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          -10000000000.0,
+          -10000000000.0,
+          -10000000000.0
+        ],
+        "VAR_NOTES": "Per Lynn Wilson Jan2015:  This is the vector form of the electron heat flux.  It should have units of either [(km/s)^3 cm^(-3)] or [eV km/s cm^(-3)] .  I am guessing the former due to the .VV units used above, since this is usually given the structure tag .NVVV.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(km/s)^3/cm^3",
+        "x_LABLAXES": [
+          [
+            "UNCOR_Q_XGSE_Electn",
+            "UNCOR_Q_YGSE_Electn",
+            "UNCOR_Q_ZGSE_Electn"
+          ]
+        ]
+      }
+    },
+    "GAP": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Gap flag (0=no gap, 1=gap)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "GAP",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GAP",
+        "FORMAT": "i1",
+        "LABLAXIS": "Gap_Flag",
+        "SCALETYP": "linear",
+        "UNITS": "(0=No Gap)",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(0=No Gap)",
+        "x_LABLAXIS": "Gap_Flag"
+      }
+    },
+    "VALID": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Data quality flag (1=good, 0=bad)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "VALID",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VALID",
+        "FORMAT": "i1",
+        "LABLAXIS": "DQ_Flag",
+        "SCALETYP": "linear",
+        "UNITS": "(1=good)",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(1=good)",
+        "x_LABLAXIS": "DQ_Flag"
+      }
+    },
+    "E_VELS_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 23,
+        "NumWrittenRecords": 1,
+        "PadValue": "                       ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "E_VELS_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "E_VELS_LABL_1",
+        "FORMAT": "a23",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "UNCOR_V_xGSE_Electn",
+        "UNCOR_V_yGSE_Electn",
+        "UNCOR_V_zGSE_Electn"
+      ]
+    },
+    "E_Q_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 23,
+        "NumWrittenRecords": 1,
+        "PadValue": "                       ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "E_Q_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "E_Q_LABL_1",
+        "FORMAT": "a23",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "UNCOR_Q_XGSE_Electn",
+        "UNCOR_Q_YGSE_Electn",
+        "UNCOR_Q_ZGSE_Electn"
+      ]
+    },
+    "E_TENS_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 26,
+        "NumWrittenRecords": 1,
+        "PadValue": "                          ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "E_TENS_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "E_TENS_LABL_1",
+        "FORMAT": "a26",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "UNCOR_Var_ElctnV_XX",
+        "UNCOR_Var_ElctnV_YY",
+        "UNCOR_Var_ElctnV_ZZ",
+        "UNCOR_Var_ElctnV_XY",
+        "UNCOR_Var_ElctnV_XZ",
+        "UNCOR_Var_ElctnV_YZ"
+      ]
+    },
+    "TIME": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Unix Time (since 1970/01/01)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "time",
+        "FIELDNAM": "Time",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e12.0",
+        "LABLAXIS": "Unix Time",
+        "UNITS": "ms since 1970/01/01",
+        "VALIDMAX": 10000000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "ms since 1970/01/01",
+        "x_LABLAXIS": "Unix Time"
+      }
+    }
+  }
+}

@@ -1,0 +1,2382 @@
+{
+  "CDFFileInfo": {
+    "File": "cnofs_cindi_ivm_500ms_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/cnofs_cindi_ivm_500ms_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "CNOFS",
+    "Source_name": "CNOFS>Communications Navigation Outage Forecast System",
+    "Discipline": "Space Physics>Ionospheric Science",
+    "Data_type": "IVM_500ms>Ion Velocity Meter",
+    "Descriptor": "CINDI>Coupled Ion-Neutral Dynamics",
+    "File_naming_convention": "source_descriptor_datatype",
+    "Data_version": " ",
+    "PI_name": "Dr. Roderick A. Heelis",
+    "PI_affiliation": "University of Texas, Dallas",
+    "TEXT": " The Communications/Navigation Outage Forecasting System (C/NOFS) is a prototype operational system designed to monitor and forecast ionospheric scintillation in real-time and on a global scale. In the space-borne segment, C/NOFS will fly a system of proven sensors on-board a three-axis stabilized satellite to detect ionospheric scintillation. This will provide data for global, real-time specification, and 4 hour forecast capability.  \nC/NOFS is a joint effort between the DOD Space Test Program and AFRL (Air Force Research Laboratory). The space test program provides the spacecraft, launch vehicle, launch and first year on-orbit operations.  AFRL is responsible for the multi-instrument payload, payload integration  and test, model development, data center operations, and product generation and distribution. \nThe C/NOFS payload consists of six instruments: the Planar Langmuir Probe (PLP) for measurements of plasma density, the Vector Electric Field Instrument (VEFI) for measurements of vector electric and magnetic fields, the Ion Velocity Meter (IVM) for measurements of plasma drift velocities and ion temperatures, the Neutral Wind Meter (NWM) for measurements of neutral winds, the C/NOFS Occultation Receiver for Ionospheric Sensing and Specification (CORISS) for remote sensing of the electron density vertical profile, the Coherent Electromagnetic Radio Tomography (CERTO) for measurements of ionospheric scintillation parameters. Both the Neutral Wind Meter (NWM) and the Ion Velocity Meter (IVM) are provided by NASA as the CINDI (Coupled Ion-Neutral Dynamics Investigation) payload, which was selected as an Explorer Mission of Opportunity.\n The goal of C/NOFS is to forecast scintillation three to six hours before its onset such that system operators will be able to plan in ways that will optimize mission command and control.\nThe spacecraft will be launched into an orbit with perigee/apogee of 400/700 km, and an inclination of 13 degrees. Launch is currently planned for early 2006.\nInformation about C/NOFS can be found at Air Force Research Laboratory page: http://www.kirtland.af.mil/shared/media/document/AFD-070404-094.pdf.\nThe Coupled Ion-Neutral Dynamics Investigation (CINDI) payload is funded by NASA as an Explorer Mission of Opportunity. CINDI consists of two instruments: the Ion Velocity Meter (IVM) and the Neutral Wind Meter (NWM). The IVM instrument includes a ion drift meter and a retarding potential analyzer. IVM measure the ion drift vector, the ion temperature, and the major ion composition with a spatial resolution of about 4 km along the satellite track; the ion drift meter also provides vertical and horizontal ion drift components at 500 m resolution. The NWM consists of a cross track wind sensor and a ram wind sensor providing a direct measure of the neutral wind vector with a spatial resolution of about 8 km along the satellite track.",
+    "Instrument_type": "Particles (space)",
+    "Mission_group": "CNOFS",
+    "Logical_source": "cnofs_cindi_ivm_500ms",
+    "Logical_file_id": " ",
+    "Logical_source_description": "CNOFS CINDI IVM ion density, composition, temperature, and drift (0.5-sec)",
+    "Time_resolution": "0.5 second",
+    "Rules_of_use": " ",
+    "MODS": " ",
+    "LINK_TEXT": "More detailed CINDI background and information \nIVM ",
+    "LINK_TITLE": "on the CINDI website\nquality flag and processing-format descriptions",
+    "HTTP_LINK": "http://cindispace.utdallas.edu/\nhttps://spdf.gsfc.nasa.gov/pub/data/cnofs/cindi/",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/CNOFS/CINDI/IVM/PT0.5S",
+    "DOI": "https://doi.org/10.48322/r9x4-x639"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Default time",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALETYP": "linear",
+        "VALIDMAX": "2029-12-31T23:59:59.999",
+        "VALIDMIN": "1990-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "RPAflag": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "RPA data quality flag: 0=high 9=low (https://spdf.gsfc.nasa.gov/pub/data/cnofs/cindi/)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "RPA data quality 0-9",
+        "FILLVAL": -99,
+        "FORMAT": "I3",
+        "LABLAXIS": "RPA-quality",
+        "SCALETYP": "linear",
+        "UNITS": "0high-9low",
+        "VALIDMAX": 10,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "0high-9low",
+        "x_LABLAXIS": "RPA-quality"
+      }
+    },
+    "driftMeterflag": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Drift Meter data quality flag for v_horz and v_vert (https://spdf.gsfc.nasa.gov/pub/data/cnofs/cindi/)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "DM data quality 0-9",
+        "FILLVAL": -99,
+        "FORMAT": "I3",
+        "LABLAXIS": "DM-quality",
+        "SCALETYP": "linear",
+        "UNITS": "0high-9low",
+        "VALIDMAX": 10,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "0high-9low",
+        "x_LABLAXIS": "DM-quality"
+      }
+    },
+    "ionVelocityX": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion velocity in s/c coordinates in m/s (offset and photoemissission corrected if possible) -------> v_ram",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "v_SC-X corr m/s",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "v_ram",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Offset and photoemission corrected, if possible. Check Offset flag variable",
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "v_ram"
+      }
+    },
+    "ionVelocityY": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> v_horiz (horizontal, positive to right of spacecraft)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "v_SC-Y corr m/s",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "v_horiz",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Offset and photoemission corrected, if possible. Check Offset flag variable",
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "v_horiz"
+      }
+    },
+    "ionVelocityZ": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> v_vert (vertical, positive in Nadir direction)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "v_SC-Z corr m/s",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "v_vert",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_NOTES": "Offset and photoemission corrected, if possible. Check Offset flag variable",
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "v_vert"
+      }
+    },
+    "vXvariance": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Variance (VAR) of ion velocity in s/c coordinates -------> VAR of v_ram in m/s",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VAR v_ram [m/s]",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "VAR v_ram",
+        "SCALETYP": "linear",
+        "UNITS": "(m/s)^2",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(m/s)^2",
+        "x_LABLAXIS": "VAR v_ram"
+      }
+    },
+    "vHvariance": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> VAR of v_horiz in (m/s)^2",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VAR v_horiz [(m/s)^2]",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "VAR v_hor",
+        "SCALETYP": "linear",
+        "UNITS": "(m/s)^2",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(m/s)^2",
+        "x_LABLAXIS": "VAR v_hor"
+      }
+    },
+    "vVvariance": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> VAR of v_vert in (m/s)^2",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VAR v_vert [(m/s)^2]",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "VAR v_vert",
+        "SCALETYP": "linear",
+        "UNITS": "(m/s)^2",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(m/s)^2",
+        "x_LABLAXIS": "VAR v_vert"
+      }
+    },
+    "offsetFlag": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Offset flag (0 if offset corrected, 1 if non-offset data are used)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "offset flag",
+        "FILLVAL": -1,
+        "FORMAT": "I2",
+        "LABLAXIS": "offset flag",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "offset flag = 0 if offset corrected data are available, =1 if non-offset data are used.",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "offset flag"
+      }
+    },
+    "Vx": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Uncorrected velocity measurement in m/s -------> Vx",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vx Uncorrected [m/s]",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Vx uncorr",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "Vx uncorr"
+      }
+    },
+    "Vy": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Vy",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vy Uncorrected [m/s]",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Vy uncorr",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "Vy uncorr"
+      }
+    },
+    "Vz": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Vz",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vy Uncorrected [m/s]",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Vy uncorr",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "Vy uncorr"
+      }
+    },
+    "ionVelparallel": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion velocity in magnetic coordinates (GM) -------> Vi_parallel ",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vi_parallel_mag ",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Vi_parallel_mag",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "Vi_parallel_mag"
+      }
+    },
+    "ionVelzonal": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Vi_zonal ",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vi_zonal_mag",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Vi_zonal_mag",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "Vi_zonal_mag"
+      }
+    },
+    "ionVelmeridional": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Vi_meridional",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vi_meridional_mag",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Vi_merid_mag",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "Vi_merid_mag"
+      }
+    },
+    "ionDensity": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion density in cm-3",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ni/cm-3",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "Ion density",
+        "SCALETYP": "log",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "Ion density"
+      }
+    },
+    "ionDensityvariance": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "----> Variance (VAR) of ion density in cm-6",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VAR_Ni/cm-6",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "VAR Ni",
+        "SCALETYP": "log",
+        "UNITS": "cm-6",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-6",
+        "x_LABLAXIS": "VAR Ni"
+      }
+    },
+    "Ni": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion density in cm-3 from 0V RPA point",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ni RPA 0 V point",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "Ni RPA 0V",
+        "SCALETYP": "log",
+        "UNITS": "cm-3",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "Ni RPA 0V"
+      }
+    },
+    "ionTemperature": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion temperature in Kelvin",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ion temperature/K",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "Ti",
+        "SCALETYP": "linear",
+        "UNITS": "K",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "K",
+        "x_LABLAXIS": "Ti"
+      }
+    },
+    "ionTemperaturevariance": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "----> Variance (VAR) of ion temperature in K^2",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VAR_Ti/K^2",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "VAR Ti",
+        "SCALETYP": "log",
+        "UNITS": "K^2",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "K^2",
+        "x_LABLAXIS": "VAR Ti"
+      }
+    },
+    "atomicMass_ion1": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion 1 (normally O+) -------> Atomic Mass Number",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ion1 AMU",
+        "FILLVAL": -99,
+        "FORMAT": "I3",
+        "LABLAXIS": "Ion1",
+        "SCALETYP": "linear",
+        "UNITS": "AMU",
+        "VALIDMAX": 999,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AMU",
+        "x_LABLAXIS": "Ion1"
+      }
+    },
+    "ion1fraction": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--------> fraction of ion1",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Fraction Ion1",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "Ion1",
+        "SCALETYP": "linear",
+        "UNITS": "fraction",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "fraction",
+        "x_LABLAXIS": "Ion1"
+      }
+    },
+    "ion1variance": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--------> VAR of fraction",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VAR Fraction Ion1",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "VAR fract.",
+        "SCALETYP": "log",
+        "UNITS": "Ion1",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Ion1",
+        "x_LABLAXIS": "VAR fract."
+      }
+    },
+    "atomicMass_ion2": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion 2 (normally H+) -------> Atomic Mass Number ",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ion2 AMU",
+        "FILLVAL": -99,
+        "FORMAT": "I3",
+        "LABLAXIS": "Ion2",
+        "SCALETYP": "linear",
+        "UNITS": "AMU",
+        "VALIDMAX": 999,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AMU",
+        "x_LABLAXIS": "Ion2"
+      }
+    },
+    "ion2fraction": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--------> fraction of Ion2",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Fraction Ion2",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "Ion2",
+        "SCALETYP": "linear",
+        "UNITS": "fraction",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "fraction",
+        "x_LABLAXIS": "Ion2"
+      }
+    },
+    "ion2variance": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--------> VAR of fraction",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VAR Fraction Ion2",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "VAR fract.",
+        "SCALETYP": "log",
+        "UNITS": "Ion2",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Ion2",
+        "x_LABLAXIS": "VAR fract."
+      }
+    },
+    "atomicMass_ion3": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion3 (normally He+) -------> Atomic Mass Number ",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ion3 AMU",
+        "FILLVAL": -99,
+        "FORMAT": "I3",
+        "LABLAXIS": "Ion3",
+        "SCALETYP": "linear",
+        "UNITS": "AMU",
+        "VALIDMAX": 999,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AMU",
+        "x_LABLAXIS": "Ion3"
+      }
+    },
+    "ion3fraction": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--------> fraction of Ion3",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Fraction Ion3",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "Ion3",
+        "SCALETYP": "linear",
+        "UNITS": "fraction",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "fraction",
+        "x_LABLAXIS": "Ion3"
+      }
+    },
+    "ion3variance": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--------> VAR of fraction",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VAR Fraction Ion3",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "VAR fract.",
+        "SCALETYP": "log",
+        "UNITS": "Ion3",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Ion3",
+        "x_LABLAXIS": "VAR fract."
+      }
+    },
+    "atomicMass_ion4": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion4 -------> Atomic Mass Number",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ion4 AMU",
+        "FILLVAL": -99,
+        "FORMAT": "I3",
+        "LABLAXIS": "Ion4",
+        "SCALETYP": "linear",
+        "UNITS": "AMU",
+        "VALIDMAX": 999,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AMU",
+        "x_LABLAXIS": "Ion4"
+      }
+    },
+    "ion4fraction": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--------> fraction of Ion4",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Fraction Ion4",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "Ion4",
+        "SCALETYP": "linear",
+        "UNITS": "fraction",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "fraction",
+        "x_LABLAXIS": "Ion4"
+      }
+    },
+    "ion4variance": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--------> VAR of fraction",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VAR Fraction Ion4",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "VAR fract.",
+        "SCALETYP": "log",
+        "UNITS": "Ion4",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Ion4",
+        "x_LABLAXIS": "VAR fract."
+      }
+    },
+    "atomicMass_ion5": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion 5 -------> Atomic Mass Number",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ion5 AMU",
+        "FILLVAL": -99,
+        "FORMAT": "I3",
+        "LABLAXIS": "Ion5",
+        "SCALETYP": "linear",
+        "UNITS": "AMU",
+        "VALIDMAX": 999,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AMU",
+        "x_LABLAXIS": "Ion5"
+      }
+    },
+    "ion5fraction": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--------> fraction of Ion5",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Fraction Ion5",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "Ion5",
+        "SCALETYP": "linear",
+        "UNITS": "fraction",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "fraction",
+        "x_LABLAXIS": "Ion5"
+      }
+    },
+    "ion5variance": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--------> VAR of fraction",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VAR Fraction Ion5",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "VAR fract.",
+        "SCALETYP": "log",
+        "UNITS": "Ion5",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Ion5",
+        "x_LABLAXIS": "VAR fract."
+      }
+    },
+    "sensPlanePot": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sensor plane potential in Volt",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Potential/V",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "Potential",
+        "SCALETYP": "linear",
+        "UNITS": "V",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "Potential"
+      }
+    },
+    "sensPlanePotvar": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "----> Variance (VAR) of sensor plane potential in V^2",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VAR_Potential/V^2",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "VAR Pot.",
+        "SCALETYP": "linear",
+        "UNITS": "V^2",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V^2",
+        "x_LABLAXIS": "VAR Pot."
+      }
+    },
+    "dmAdensity": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "DM Electrometer A -------> Electron density in cm-3",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "DM-A Ne/cm-3",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.2",
+        "LABLAXIS": "DM-A Ne",
+        "SCALETYP": "log",
+        "UNITS": "cm-3",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "DM-A Ne"
+      }
+    },
+    "dmAdensityVAR": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> VAR of electron density in cm-6",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "DM-A VAR_Ne/cm-6",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.2",
+        "LABLAXIS": "DM-A VAR_Ne",
+        "SCALETYP": "log",
+        "UNITS": "cm-6",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-6",
+        "x_LABLAXIS": "DM-A VAR_Ne"
+      }
+    },
+    "dmAdensityDQ": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> n*10+q  q=quality flag (https://spdf.gsfc.nasa.gov/pub/data/cnofs/cindi/), n=number of points for averaging",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "DM-A Q*10+N",
+        "FILLVAL": -99,
+        "FORMAT": "I2",
+        "LABLAXIS": "DM-A",
+        "SCALETYP": "linear",
+        "UNITS": "Q*10+N",
+        "VALIDMAX": 99,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Q*10+N",
+        "x_LABLAXIS": "DM-A"
+      }
+    },
+    "dmBdensity": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "DM Electrometer B -------> Electron density in cm-3",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "DM-B Ne/cm-3",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.2",
+        "LABLAXIS": "DM-B Ne",
+        "SCALETYP": "log",
+        "UNITS": "cm-3",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "DM-B Ne"
+      }
+    },
+    "dmBdensityVAR": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> VAR of electron density in cm-6",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "DM-B VAR_Ne/cm-6",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.2",
+        "LABLAXIS": "DM-B VAR_Ne",
+        "SCALETYP": "log",
+        "UNITS": "cm-6",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-6",
+        "x_LABLAXIS": "DM-B VAR_Ne"
+      }
+    },
+    "dmBdensityDQ": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> n*10+q  q=quality flag (https://spdf.gsfc.nasa.gov/pub/data/cnofs/cindi/), n=number of points for averaging",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "DM-B Q*10+N",
+        "FILLVAL": -99,
+        "FORMAT": "I2",
+        "LABLAXIS": "DM-B",
+        "SCALETYP": "linear",
+        "UNITS": "Q*10+N",
+        "VALIDMAX": 99,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Q*10+N",
+        "x_LABLAXIS": "DM-B"
+      }
+    },
+    "date": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Date as YYYYDDD",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "YYYYDDD",
+        "FILLVAL": -32768,
+        "FORMAT": "i7",
+        "LABLAXIS": "date",
+        "SCALETYP": "linear",
+        "UNITS": "YYYYDDD",
+        "VALIDMAX": 2200001,
+        "VALIDMIN": 2000001,
+        "VAR_TYPE": "data",
+        "x_UNITS": "YYYYDDD",
+        "x_LABLAXIS": "date"
+      }
+    },
+    "orbitNumber": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Orbit number",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Orbit number",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.0",
+        "LABLAXIS": "orbit#",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "orbit#"
+      }
+    },
+    "time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "UT in seconds",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "UT/sec",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f9.3",
+        "LABLAXIS": "UT",
+        "SCALETYP": "linear",
+        "UNITS": "sec",
+        "VALIDMAX": 86400.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "glat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geographic latitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Geog Lat/deg",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Latitude",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Latitude"
+      }
+    },
+    "glon": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geographic longitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Geog Long/deg",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Longitude",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Longitude"
+      }
+    },
+    "altitude": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Altitude in km",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "h/km",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.1",
+        "LABLAXIS": "h",
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "h"
+      }
+    },
+    "xpos": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spacecraft position in Earth-centered inertial (ECI) coordinates in km -------> X",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ECI-X/km",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "ECI-X",
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Earth-centered inertial (ECI) coordinates with Z going through the North Pole and the X-Y plane in the equatorial plane not rotating with Earth",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "ECI-X"
+      }
+    },
+    "ypos": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Y",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ECI-Y/km",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "ECI-Y",
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Earth-centered inertial (ECI) coordinates with Z going through the North Pole and the X-Y plane in the equatorial plane not rotating with Earth",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "ECI-Y"
+      }
+    },
+    "zpos": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ECI-Z/km",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "ECI-Z",
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Earth-centered inertial (ECI) coordinates with Z going through the North Pole and the X-Y plane in the equatorial plane not rotating with Earth",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "ECI-Z"
+      }
+    },
+    "xvel": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spacecraft velocity in ECI in km/sec -------> v_X",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ECI-vX",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "ECI-vX",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Earth-centered inertial (ECI) coordinates with Z going through the North Pole and the X-Y plane in the equatorial plane not rotating with Earth",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "ECI-vX"
+      }
+    },
+    "yvel": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> v_Y",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ECI-vY",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "ECI-vY",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Earth-centered inertial (ECI) coordinates with Z going through the North Pole and the X-Y plane in the equatorial plane not rotating with Earth",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "ECI-vY"
+      }
+    },
+    "zvel": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> v_Z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ECI-vZ",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "ECI-vZ",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "Earth-centered inertial (ECI) coordinates with Z going through the North Pole and the X-Y plane in the equatorial plane not rotating with Earth",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "ECI-vZ"
+      }
+    },
+    "sza": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Solar Zenith Angle (SZA) in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SZA/deg",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "SZA",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "SZA"
+      }
+    },
+    "slt": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Solar Local Time (SLT) in hours",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SLT/hrs",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "SLT",
+        "SCALETYP": "linear",
+        "UNITS": "hrs",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "hrs",
+        "x_LABLAXIS": "SLT"
+      }
+    },
+    "apex_altitude": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Apex altitude in km",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "h_apex/km",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.1",
+        "LABLAXIS": "h_apex",
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "h_apex"
+      }
+    },
+    "alat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Apex latitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Lat_apex/deg",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "lat_apex",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "lat_apex"
+      }
+    },
+    "alon": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Apex longitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Lon_apex/deg",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "long_apex",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "long_apex"
+      }
+    },
+    "ilat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Invariant latitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Inv Lat/deg",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Inv Lat",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Inv Lat"
+      }
+    },
+    "mag_incl": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic inclination (Dip) in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Dip/deg",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Dip",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Dip"
+      }
+    },
+    "mlat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Corrected magnetic latitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "CGM-lat/deg",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "CGM_lat",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "CGM_lat"
+      }
+    },
+    "mlt": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic Local Time (MLT) in hours",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MLT/hrs",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "MLT",
+        "SCALETYP": "linear",
+        "UNITS": "hrs",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "hrs",
+        "x_LABLAXIS": "MLT"
+      }
+    },
+    "magFieldNorth": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "IGRF geomagnetic field in nT -------> North",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B-IGRF North/nT",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f12.2",
+        "LABLAXIS": "B-IGRF North",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "International Geomagnetic Reference Field (IGRF) ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B-IGRF North"
+      }
+    },
+    "magFieldEast": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> East",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B-IGRF East/nT",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f12.2",
+        "LABLAXIS": "B-IGRF East",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "International Geomagnetic Reference Field (IGRF) ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B-IGRF East"
+      }
+    },
+    "magFieldDown": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> Down",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B-IGRF Down/nT",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f12.2",
+        "LABLAXIS": "B-IGRF Down",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_NOTES": "International Geomagnetic Reference Field (IGRF) ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B-IGRF Down"
+      }
+    },
+    "ECISC_matrix": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          18
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ECI to SC conversion matrix",
+        "DEPEND_0": "ECISC_index1",
+        "FIELDNAM": "ECI->SC Matrix",
+        "FILLVAL": -999999.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "ECI->SC",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_NOTES": "Earth-centered inertial (ECI) coordinates with Z going through the North Pole and the X-Y plane in the equatorial plane not rotating with Earth.  Spacecraft (SC) coordinates consist of x in the positive ram direction, z in positive nadir direction, and y positive to right of spacecraft.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "ECI->SC"
+      }
+    },
+    "LVLHSC_matrix": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          18
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "LVLH to SC conversion matrix",
+        "DEPEND_0": "LVLHSC_index1",
+        "FIELDNAM": "LVLH->SC Matrix",
+        "FILLVAL": -999999.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "LVLH->SC",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_NOTES": "Local vertical local horizontal (LVLH) coordinates with X in direction of s/c motion, Z pointing towards cent of Earth and Y perpendicular to orbit plane.  Spacecraft (SC) coordinates consist of x in the positive ram direction, z in positive nadir direction, and y positive to right of spacecraft.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "LVLH->SC"
+      }
+    },
+    "bgx": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "IGRF geomagnetic field in nT in spacecraft coordinates (SCC) -------> x",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B_IGRF SCC_x/nT",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "B_IGRF SCC_x",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B_IGRF SCC_x"
+      }
+    },
+    "bgy": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> y",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B_IGRF SCC_y/nT",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "B_IGRF SCC_y",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B_IGRF SCC_y"
+      }
+    },
+    "bgz": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B_IGRF SCC_z/nT",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "B_IGRF SCC_z",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B_IGRF SCC_z"
+      }
+    },
+    "ramsunangle": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "RSA - angle between ram and sun",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ram sun angle",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "ram sun angle",
+        "SCALETYP": "linear",
+        "UNITS": "degree",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "ram sun angle"
+      }
+    },
+    "scABSvelocityX": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spacecraft absolute velocity in spacecraft coordinates SSC (in inertial space) -------> x",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "s/c abs velocity SCC_x [m/s]",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.4",
+        "LABLAXIS": "vA_SC SCC_x",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "vA_SC SCC_x"
+      }
+    },
+    "scABSvelocityY": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> y",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "s/c abs velocity SCC_y [m/s]",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.4",
+        "LABLAXIS": "vA_SC SCC_y",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "vA_SC SCC_y"
+      }
+    },
+    "scABSvelocityZ": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "s/c abs velocity SCC_z [m/s]",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.4",
+        "LABLAXIS": "vA_SC SCC_z",
+        "SCALETYP": "linear",
+        "UNITS": "m/s ",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s ",
+        "x_LABLAXIS": "vA_SC SCC_z"
+      }
+    },
+    "scRELvelocityX": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spacecraft relative velocity in spacecraft coordinates (to co-rotating atmosphere) -------> x",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "s/c rel velocity SCC_x [m/s]",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.4",
+        "LABLAXIS": "vR_SC SCC_z",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "vR_SC SCC_z"
+      }
+    },
+    "scRELvelocityY": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> y",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "s/c rel velocity SCC_y [m/s]",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.4",
+        "LABLAXIS": "vR_SC SCC_y",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "vR_SC SCC_y"
+      }
+    },
+    "scRELvelocityZ": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "s/c rel velocity SCC_z [m/s]",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.4",
+        "LABLAXIS": "vR_SC SCC_z",
+        "SCALETYP": "linear",
+        "UNITS": "m/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/s",
+        "x_LABLAXIS": "vR_SC SCC_z"
+      }
+    },
+    "zonalunitvectorX": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Unit vectors for magnetic coordinate system in s/c coordinates (SC) -------> U_zonal_SC_x",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "U_zonal_SC_x",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.5",
+        "LABLAXIS": "U_zonal_SC_x",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "U_zonal_SC_x"
+      }
+    },
+    "zonalunitvectorY": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> U_zonal_SC_y",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "U_zonal_SC_y",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.5",
+        "LABLAXIS": "U_zonal_SC_y",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "U_zonal_SC_y"
+      }
+    },
+    "zonalunitvectorZ": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> U_zonal_SC_z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "U_zonal_SC_z",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.5",
+        "LABLAXIS": "U_zonal_SC_z",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "U_zonal_SC_z"
+      }
+    },
+    "parallelunitvectorX": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> U_parallel_SC_x",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "U_parallel_SC_x",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.5",
+        "LABLAXIS": "U_para_SC_x",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "U_para_SC_x"
+      }
+    },
+    "parallelunitvectorY": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> U_parallel_SC_y",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "U_parallel_SC_y",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.5",
+        "LABLAXIS": "U_para_SC_y",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "U_para_SC_y"
+      }
+    },
+    "parallelunitvectorZ": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> U_parallel_SC_z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "U_parallel_SC_z",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.5",
+        "LABLAXIS": "U_para_SC_z",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "U_para_SC_z"
+      }
+    },
+    "meridionalunitvectorX": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> U_meridional_SC_x",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "U_meridional_SC_x",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.5",
+        "LABLAXIS": "U_merid_SC_x",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "U_merid_SC_x"
+      }
+    },
+    "meridionalunitvectorY": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> U_meridional_SC_y",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "U_meridional_SC_y",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.5",
+        "LABLAXIS": "U_merid_SC_y",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "U_merid_SC_y"
+      }
+    },
+    "meridionalunitvectorZ": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "-------> U_meridional_SC_z",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "U_meridional_SC_z",
+        "FILLVAL": -999999.0,
+        "FORMAT": "f9.5",
+        "LABLAXIS": "U_merid_SC_z",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "U_merid_SC_z"
+      }
+    },
+    "ECISC_index1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          18
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -32767,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "index ECI/SC Matrix",
+        "FIELDNAM": "index",
+        "FORMAT": "I2",
+        "LABLAXIS": "ECI/SC Matrix",
+        "UNITS": " ",
+        "VALIDMAX": 33,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "ECI/SC Matrix"
+      },
+      "VarData": [
+        11,
+        11,
+        12,
+        12,
+        13,
+        13,
+        21,
+        21,
+        22,
+        22,
+        23,
+        23,
+        31,
+        31,
+        32,
+        32,
+        33,
+        33
+      ]
+    },
+    "LVLHSC_index1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          18
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -32767,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "index LVLH/SC Matrix",
+        "FIELDNAM": "index",
+        "FORMAT": "I2",
+        "LABLAXIS": "LVLH/SC Matrix",
+        "UNITS": " ",
+        "VALIDMAX": 33,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "LVLH/SC Matrix"
+      },
+      "VarData": [
+        11,
+        11,
+        12,
+        12,
+        13,
+        13,
+        21,
+        21,
+        22,
+        22,
+        23,
+        23,
+        31,
+        31,
+        32,
+        32,
+        33,
+        33
+      ]
+    }
+  }
+}

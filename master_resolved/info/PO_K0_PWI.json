@@ -1,0 +1,1222 @@
+{
+  "CDFFileInfo": {
+    "File": "po_k0_pwi_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/po_k0_pwi_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "POLAR PWI KPGS",
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Source_name": "POLAR>Polar Plasma Laboratory",
+    "Data_type": "K0>Key Parameter",
+    "Descriptor": "PWI>Plasma Wave Instrument",
+    "Data_version": "1",
+    "TEXT": "Reference:..Gurnett, D.A. et al, The Polar plasma wave instrument, Space Science Reviews, Vol. 71, pp. 597-622, 1995.GURNETT@IOWAVE.physics.uiowa.edu\nNote:..The electron ion and cyclotron frequencies are derived from the following:  Fce = 0.028 kHz*B, where B is the magnitude of the ambient magnetic field measured in nT.  Fcp = Fce/1837 in kHz.  FcO+ = Fcp/16 in kHz.  All frequencies in the key parameters are converted to Hz.\nSince the SFR frequency steps vary with the mode, the measured SFR frequencies will be mapped to a fixed array of 160 approximately logarithmically spaced frequency values, 32 frequency values for each of the five SFR channels.  In the log mode, the 64 frequency steps of the fourth and fifth frequency channels will be mapped to 32 frequency steps each, using geometric averaging.  In the linear mode, the 448 linearly spaced frequency steps of the five frequency channels will be mapped to the fixed array of 160 logarithmically spaced frequency values using a windowing technique.  The magnetic and electric field values corresponding to each SFR frequency step will be similarly mapped to 160-point fixed arrays corresponding to the mapped frequency array.",
+    "MODS": "Created Sept 1992, modified by JT 2/15/96",
+    "ADID_ref": "NSSD0171",
+    "Logical_file_id": "po_k0_pwi_00000000_v01",
+    "Logical_source": "po_k0_pwi",
+    "Logical_source_description": "Polar Plasma Wave Instrument Key Parameter",
+    "PI_name": "D. Gurnett",
+    "PI_affiliation": "U. Iowa",
+    "Mission_group": "Polar\n!___Magnetospheric Data",
+    "Instrument_type": "Radio and Plasma Waves (space)",
+    "TEXT_supplement_1": " ",
+    "Time_resolution": "5-minute",
+    "NSSDC_id": "spms-00224",
+    "alt_logical_source": "Polar_PWI_Key-Parameters-K0_1min_cdf",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/POLAR/PWI/KeyParameters/PT300S",
+    "DOI": "https://doi.org/10.48322/0zmq-1b63"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time, beginning of 5-min. interval",
+        "DICT_KEY": "time>Epoch",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "SCALEMAX": "2020-12-31T00:00:00.000",
+        "SCALEMIN": "1992-08-01T00:00:00.000",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T00:00:00.000",
+        "VALIDMIN": "1992-08-01T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "Time_PB5": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time, start of 5-min. interval",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "unit_time",
+        "DICT_KEY": "time>PB5",
+        "FIELDNAM": "Time",
+        "FILLVAL": -2147483648,
+        "FORM_PTR": "format_time",
+        "LABL_PTR_1": "label_time",
+        "SCALEMAX": [
+          2020,
+          365,
+          8640000
+        ],
+        "SCALEMIN": [
+          1992,
+          214,
+          0
+        ],
+        "UNIT_PTR": "unit_time",
+        "VALIDMAX": [
+          2020,
+          365,
+          0
+        ],
+        "VALIDMIN": [
+          1992,
+          214,
+          0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": [
+          "year",
+          "day",
+          "msec"
+        ],
+        "x_LABLAXES": [
+          [
+            "Year",
+            "Day of Year (Jan 1 = day 1)",
+            "Elapsed ms of Day"
+          ]
+        ],
+        "x_DEPEND": [
+          [
+            "year",
+            "day",
+            "msec"
+          ]
+        ]
+      }
+    },
+    "Fce": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Electron Cyclotron Frequency, scalar",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "frequency>electron",
+        "FIELDNAM": "Electron Cyclotron Frequency",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "Fce",
+        "SCALEMAX": 1000000.0,
+        "SCALEMIN": 10.0,
+        "UNITS": "Hz",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 10.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "Fce"
+      }
+    },
+    "Fcp": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Proton Cyclotron Frequency, scalar",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "frequency>proton",
+        "FIELDNAM": "Proton Cyclotron Frequency",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "Fcp",
+        "SCALEMAX": 550.0,
+        "SCALEMIN": 0.0055,
+        "UNITS": "Hz",
+        "VALIDMAX": 550.0,
+        "VALIDMIN": 0.0055,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "Fcp"
+      }
+    },
+    "FcO": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Oxygen Cyclotron Frequency, scalar",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "frequency>oxygen",
+        "FIELDNAM": "Oxygen Cyclotron Frequency",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "FcO",
+        "SCALEMAX": 35.0,
+        "SCALEMIN": 0.0005,
+        "UNITS": "Hz",
+        "VALIDMAX": 35.0,
+        "VALIDMIN": 0.0005,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "FcO"
+      }
+    },
+    "MLAT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Magnetic Latitude, scalar",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position>magnetic_latitude",
+        "FIELDNAM": "Magnetic Latitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "MLAT",
+        "SCALEMAX": 90.0,
+        "SCALEMIN": -90.0,
+        "UNITS": "Degrees",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "MLAT"
+      }
+    },
+    "EDMLT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Magnetic Local Time, scalar",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position>magnetic_local_time",
+        "FIELDNAM": "Magnetic Local Time",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "EDMLT",
+        "SCALEMAX": 24.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "Hours",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Hours",
+        "x_LABLAXIS": "EDMLT"
+      }
+    },
+    "L_Shell": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "McIlwain Parameter, scalar",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position",
+        "FIELDNAM": "McIlwain Parameter",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "L",
+        "SCALEMAX": 100.0,
+        "SCALEMIN": 1.0,
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "L"
+      }
+    },
+    "GR_DIST": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Geocentric Radial Distance, scalar",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position>radial_distance",
+        "FIELDNAM": "Geocentric Radial Distance",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "Re",
+        "SCALEMAX": 10.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "Re",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Re",
+        "x_LABLAXIS": "Re"
+      }
+    },
+    "SFRA_Av_E": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          160
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Avg. Elec. Field at 160 freq., 25-800000 Hz (SFR A)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DICT_KEY": "electric_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Elec. Field Averages/SFR A",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "SFRA_Av_E",
+        "SCALEMAX": 1e-06,
+        "SCALEMIN": 1e-18,
+        "SCALETYP": "log",
+        "UNITS": "(V/M)**2/Hz",
+        "VALIDMAX": 1e-06,
+        "VALIDMIN": 1e-18,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(V/M)**2/Hz",
+        "x_LABLAXIS": "SFRA_Av_E",
+        "x_DEPEND": [
+          "Frequency"
+        ]
+      }
+    },
+    "SFRA_Av_M": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          160
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Avg. Mag. Field at 160 freq., 25-800000 Hz (SFR A)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Mag. Field Averages/SFR A",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "SFRA_Av_M",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": 1e-14,
+        "SCALETYP": "log",
+        "UNITS": "(V/M)**2/Hz",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 1e-14,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(V/M)**2/Hz",
+        "x_LABLAXIS": "SFRA_Av_M",
+        "x_DEPEND": [
+          "Frequency"
+        ]
+      }
+    },
+    "SFRB_Av_E": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          160
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Avg. Elec. Field at 160 freq., 25-800000 Hz (SFR B)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DICT_KEY": "electric_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Elec. Field Averages/SFR B",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "SFRB_Av_E",
+        "SCALEMAX": 1e-06,
+        "SCALEMIN": 1e-18,
+        "SCALETYP": "log",
+        "UNITS": "nT**2/Hz",
+        "VALIDMAX": 1e-06,
+        "VALIDMIN": 1e-18,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT**2/Hz",
+        "x_LABLAXIS": "SFRB_Av_E",
+        "x_DEPEND": [
+          "Frequency"
+        ]
+      }
+    },
+    "SFRB_Av_M": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          160
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Avg. Mag. Field at 160 freq., 25-800000 Hz (SFR B)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Mag. Field Averages/SFR B",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "SFRB_Av_M",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": 1e-14,
+        "SCALETYP": "log",
+        "UNITS": "nT**2/Hz",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 1e-14,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT**2/Hz",
+        "x_LABLAXIS": "SFRB_Av_M",
+        "x_DEPEND": [
+          "Frequency"
+        ]
+      }
+    },
+    "SFRA_Pk_E": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          160
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Pk. Elec. Field at 160 freq., 25-800000 Hz (SFR A)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DICT_KEY": "electric_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Elec. Field Peaks/SFR A",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "SFRA_Pk_E",
+        "SCALEMAX": 1e-06,
+        "SCALEMIN": 1e-18,
+        "SCALETYP": "log",
+        "UNITS": "(V/M)**2/Hz",
+        "VALIDMAX": 1e-06,
+        "VALIDMIN": 1e-18,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(V/M)**2/Hz",
+        "x_LABLAXIS": "SFRA_Pk_E",
+        "x_DEPEND": [
+          "Frequency"
+        ]
+      }
+    },
+    "SFRA_Pk_M": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          160
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Pk. Mag. Field at 160 freq., 25-800000 Hz (SFR A)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Mag. Field Peaks/SFR A",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "SFRA_Pk_M",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": 1e-14,
+        "SCALETYP": "log",
+        "UNITS": "nT**2/Hz",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 1e-14,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT**2/Hz",
+        "x_LABLAXIS": "SFRA_Pk_M",
+        "x_DEPEND": [
+          "Frequency"
+        ]
+      }
+    },
+    "SFRB_Pk_E": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          160
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Pk. Elec. Field at 160 freq., 25-800000 Hz (SFR B)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DICT_KEY": "electric_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Elec. Field Peaks/SFR B",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "SFRB_Pk_E",
+        "SCALEMAX": 1e-06,
+        "SCALEMIN": 1e-18,
+        "SCALETYP": "log",
+        "UNITS": "(V/M)**2/Hz",
+        "VALIDMAX": 1e-06,
+        "VALIDMIN": 1e-18,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(V/M)**2/Hz",
+        "x_LABLAXIS": "SFRB_Pk_E",
+        "x_DEPEND": [
+          "Frequency"
+        ]
+      }
+    },
+    "SFRB_Pk_M": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          160
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Pk. Mag. Field at 160 freq., 25-800000 Hz (SFR B)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Mag. Field Peaks/SFR B",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "SFRB_Pk_M",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": 1e-14,
+        "SCALETYP": "log",
+        "UNITS": "nT**2/Hz",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 1e-14,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT**2/Hz",
+        "x_LABLAXIS": "SFRB_Pk_M",
+        "x_DEPEND": [
+          "Frequency"
+        ]
+      }
+    },
+    "Frequency": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          160
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Frequencies, 160 (26-800000) Hz",
+        "DICT_KEY": "frequency>spectrogram",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Frequencies",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F10.2",
+        "LABLAXIS": "Frequency",
+        "SCALEMAX": 794453.0,
+        "SCALEMIN": 26.77,
+        "SCALETYP": "log",
+        "UNITS": "Hz",
+        "VALIDMAX": 794453.0,
+        "VALIDMIN": 26.77,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "Frequency"
+      },
+      "VarData": [
+        26.77,
+        28.82,
+        30.37,
+        32.44,
+        34.54,
+        36.65,
+        38.78,
+        41.47,
+        44.18,
+        46.93,
+        50.26,
+        53.63,
+        57.05,
+        60.51,
+        64.61,
+        68.76,
+        73.6,
+        78.51,
+        83.52,
+        89.26,
+        95.11,
+        101.09,
+        107.89,
+        114.84,
+        122.68,
+        130.73,
+        139.77,
+        149.07,
+        158.66,
+        169.39,
+        180.48,
+        192.86,
+        207.45,
+        224.28,
+        236.99,
+        254.07,
+        271.29,
+        288.65,
+        306.15,
+        328.24,
+        350.57,
+        373.13,
+        400.53,
+        428.28,
+        456.39,
+        484.87,
+        518.57,
+        552.79,
+        592.56,
+        633.06,
+        674.28,
+        721.58,
+        769.86,
+        819.16,
+        875.19,
+        932.56,
+        997.29,
+        1063.78,
+        1138.41,
+        1215.32,
+        1294.63,
+        1383.37,
+        1475.21,
+        1577.76,
+        1659.58,
+        1794.23,
+        1895.94,
+        2032.54,
+        2170.29,
+        2309.17,
+        2449.23,
+        2625.95,
+        2804.55,
+        2985.06,
+        3204.21,
+        3426.21,
+        3651.09,
+        3878.93,
+        4148.54,
+        4422.34,
+        4740.52,
+        5064.44,
+        5394.28,
+        5772.61,
+        6158.87,
+        6553.31,
+        7001.49,
+        7460.47,
+        7978.29,
+        8510.21,
+        9107.25,
+        9722.58,
+        10357.03,
+        11066.99,
+        11801.69,
+        12622.1,
+        13141.97,
+        14081.37,
+        14893.54,
+        15984.23,
+        17083.99,
+        18192.89,
+        19311.09,
+        20722.03,
+        22147.91,
+        23588.96,
+        25190.16,
+        26960.56,
+        28753.98,
+        30570.83,
+        32720.8,
+        34904.11,
+        37279.46,
+        39859.45,
+        42486.38,
+        45328.41,
+        48400.94,
+        51538.32,
+        55102.87,
+        58753.02,
+        62870.82,
+        66903.81,
+        71644.92,
+        76530.58,
+        81567.51,
+        86981.13,
+        92804.78,
+        99306.61,
+        105135.73,
+        112650.94,
+        119148.33,
+        127873.87,
+        136671.91,
+        145543.09,
+        154488.69,
+        165776.22,
+        177183.28,
+        188711.64,
+        201521.3,
+        215684.44,
+        230031.8,
+        244566.66,
+        261766.41,
+        279232.91,
+        298235.66,
+        318875.63,
+        339891.03,
+        362627.31,
+        387207.56,
+        412306.56,
+        440823.0,
+        470024.19,
+        502966.53,
+        535230.5,
+        573159.31,
+        612244.63,
+        652540.06,
+        695849.06,
+        742438.25,
+        794452.88
+      ]
+    },
+    "SFR_MODE": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Instrument Mode (SFR)  0=Log, 1=Lin, 2=Mixed",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Instrument Mode for SFR",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I11",
+        "LABLAXIS": "SFR_mode",
+        "SCALEMAX": 3,
+        "SCALEMIN": -1,
+        "UNITS": " ",
+        "VALIDMAX": 2,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "SFR_mode"
+      }
+    },
+    "SFRA_Antenna": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Antenna (SFRA) 0 = Eu, 1 = Ez, 2 = L, 3 = Bz",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Antenna for SFR A",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABLAXIS": "SFRA_Ant",
+        "SCALEMAX": 4,
+        "SCALEMIN": -1,
+        "UNITS": " ",
+        "VALIDMAX": 3,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "SFRA_Ant"
+      }
+    },
+    "SFRB_Antenna": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Antenna (SFRB) 0 = Eu 1 = Ev 2 = Ez 3 = L",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Antenna for SFR B",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABLAXIS": "SFRB_Ant",
+        "SCALEMAX": 4,
+        "SCALEMIN": -1,
+        "UNITS": " ",
+        "VALIDMAX": 3,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "SFRB_Ant"
+      }
+    },
+    "MLATV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time axis label: Magnetic Latitude, scalar",
+        "COMPONENT_0": "MLAT",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position>magnetic_latitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnetic LatitudeV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "MLAT",
+        "SCALEMAX": 90.0,
+        "SCALEMIN": -90.0,
+        "UNITS": "Degrees",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "MLAT",
+        "COMPONENTS": [
+          "MLAT"
+        ]
+      }
+    },
+    "EDMLTV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time axis label: Magnetic Local Time, scalar",
+        "COMPONENT_0": "EDMLT",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position>magnetic_local_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnetic Local TimeV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "EDMLT",
+        "SCALEMAX": 24.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "Hours",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "Hours",
+        "x_LABLAXIS": "EDMLT",
+        "COMPONENTS": [
+          "EDMLT"
+        ]
+      }
+    },
+    "L_ShellV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time axis label: McIlwain Parameter, scalar",
+        "COMPONENT_0": "L_Shell",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "McIlwain ParameterV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "L",
+        "SCALEMAX": 100.0,
+        "SCALEMIN": 1.0,
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": null,
+        "x_LABLAXIS": "L",
+        "COMPONENTS": [
+          "L_Shell"
+        ]
+      }
+    },
+    "GR_DISTV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time axis label: Geocentric Radial Distance, scalar",
+        "COMPONENT_0": "GR_DIST",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position>radial_distance",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Geocentric Radial DistanceV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "Re",
+        "SCALEMAX": 10.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "Re",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "Re",
+        "x_LABLAXIS": "Re",
+        "COMPONENTS": [
+          "GR_DIST"
+        ]
+      }
+    },
+    "DATA_QUALITY": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Data Quality Flag0 = Green, 1 = Yellow, 2 = Red",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>quality",
+        "FIELDNAM": "Data Quality Flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I11",
+        "LABLAXIS": "DATA_QUAL",
+        "SCALEMAX": 3,
+        "SCALEMIN": -1,
+        "UNITS": " ",
+        "VALIDMAX": 2,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "DATA_QUAL"
+      }
+    },
+    "POST_GAP_FLAG": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Number of missing frames preceding current Major Frame ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>post_gap",
+        "FIELDNAM": "Number of missing frames",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I11",
+        "LABLAXIS": "POST_GAP",
+        "SCALEMAX": 9393,
+        "SCALEMIN": 0,
+        "UNITS": "Maj Frames",
+        "VALIDMAX": 9392,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Maj Frames",
+        "x_LABLAXIS": "POST_GAP"
+      }
+    },
+    "label_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 27,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label for PB5 Time",
+        "DICT_KEY": "label>time",
+        "FIELDNAM": "Label for PB5 Time",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Year",
+        "Day of Year (Jan 1 = day 1)",
+        "Elapsed ms of Day"
+      ]
+    },
+    "unit_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 4,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Units for PB5 Time",
+        "DICT_KEY": "label>unit",
+        "FIELDNAM": "Units for PB5 Time",
+        "FORMAT": "A4",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "year",
+        "day",
+        "msec"
+      ]
+    },
+    "format_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 2,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Formats for PB5 Time",
+        "DICT_KEY": "label>format",
+        "FIELDNAM": "Formats for PB5 Time",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "I4",
+        "I3",
+        "I8"
+      ]
+    }
+  }
+}

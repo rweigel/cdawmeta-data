@@ -1,0 +1,354 @@
+{
+  "CDFFileInfo": {
+    "File": "wi_ehsp_3dp_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/wi_ehsp_3dp_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Data_type": "EHSP>EESA High Electron Omnidirectional Fluxes",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Source_name": "WIND>Wind Interplanetary Plasma Laboratory",
+    "Logical_source_description": "Electron omnidirectional fluxes 100 eV-30 keV, often at 24 sec, EESA High, Wind 3DP",
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "TEXT": "Wind 3dp, EESA HIGH electron omni directional energy spectra\nNote per Lynn Wilson Jan 2015 wrt time resolution: 24 sec timing changes and is not necessarily constant, depending on the mode that the instrument happens to be in.  Not only does the period/interval between each point change, the duration over which the data were taken can change as well.",
+    "PI_name": "R. Lin/S. Bale",
+    "PI_affiliation": "UC Berkeley",
+    "Instrument_type": "Particles (space)",
+    "Data_version": "1",
+    "Descriptor": "3DP>3-D PLASMA ANALYZER",
+    "ADID_ref": "NSSD0143",
+    "Logical_source": "wi_ehsp_3dp",
+    "Logical_file_id": "wi_ehsp_3dp_00000000_v01",
+    "alt_logical_source": "Wind_3DP_electron_omnifluxes_cdf",
+    "Mission_group": "Wind\n!___Interplanetary Data near 1 AU",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Wind/3DP/EESA_HIGH/SP/PT24S",
+    "DOI": "https://doi.org/10.48322/c201-q577",
+    "LINK_TEXT": " \nWind 3DP ",
+    "LINK_TITLE": "Caveats for the correct use of Wind 3DP datasets\nhome page at UCB (with plotting and digital data)",
+    "HTTP_LINK": "https://spdf.gsfc.nasa.gov/pub/data/wind/3dp/wind3dp_caveats.pdf\nhttp://sprg.ssl.berkeley.edu/wind3dp/"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time, Centered",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "e12.0",
+        "LABLAXIS": "Epoch",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T23:59:59.999",
+        "VALIDMIN": "1992-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "FLUX": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron differential number flux 100 eV - 30 keV, as a function of energy [spectrogram] ",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Electron Number Flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Electron_No_Flux",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-sec-eV",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cm2-ster-sec-eV",
+        "x_LABLAXIS": "Electron_No_Flux",
+        "x_DEPEND": [
+          "ENERGY"
+        ]
+      }
+    },
+    "FLUX_STACKED": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As stacked plot",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX, z=ENERGY",
+        "FIELDNAM": "Electron Number Flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Electron_No_Flux",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-sec-eV",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "#/cm2-ster-sec-eV",
+        "x_LABLAXIS": "Electron_No_Flux",
+        "x_DEPEND": [
+          "ENERGY"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_SIMPLE": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As time series",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Electron Number Flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Electron_No_Flux",
+        "LABL_PTR_1": "FLUX_LABL_1",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-sec-eV",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "#/cm2-ster-sec-eV",
+        "x_LABLAXIS": "Electron_No_Flux",
+        "x_LABLAXES": [
+          [
+            "ElecNoFlux_Ch1_Often~27660eV",
+            "ElecNoFlux_Ch2_Often~18940eV",
+            "ElecNoFlux_Ch3_Often~12970eV",
+            "ElecNoFlux_Ch4_Often~8875eV",
+            "ElecNoFlux_Ch5_Often~6076eV",
+            "ElecNoFlux_Ch6_Often~4161eV",
+            "ElecNoFlux_Ch7_Often~2849eV",
+            "ElecNoFlux_Ch8_Often~1952eV",
+            "ElecNoFlux_Ch9_Often~1339eV",
+            "ElecNoFlux_Ch10_Often~920.3eV",
+            "ElecNoFlux_Ch11_Often~634.4eV",
+            "ElecNoFlux_Ch12_Often~432.7eV",
+            "ElecNoFlux_Ch13_Often~292.0eV",
+            "ElecNoFlux_Ch14_Often~200.1eV",
+            "ElecNoFlux_Ch15_Often~136.8eV"
+          ]
+        ],
+        "x_DEPEND": [
+          "ENERGY"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "ENERGY": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Time-varying electron energies for 15 channels",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "ENERGY_LABL_1",
+        "SCALETYP": "log",
+        "UNITS": "eV ",
+        "VALIDMAX": 28000.0,
+        "VALIDMIN": 130.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV ",
+        "x_LABLAXES": [
+          [
+            "ch1_Often~27660eV",
+            "ch2_Often~18940eV",
+            "ch3_Often~12970eV",
+            "ch4_Often~8875eV",
+            "ch5_Often~6076eV",
+            "ch6_Often~4161eV",
+            "ch7_Often~2849eV",
+            "ch8_Often~1952eV",
+            "ch9_Often~1339eV",
+            "ch10_Often~920.3eV",
+            "ch11_Often~634.4eV",
+            "ch12_Often~432.7eV",
+            "ch13_Often~292.0eV",
+            "ch14_Often~200.1eV",
+            "ch15_Often~136.8eV"
+          ]
+        ]
+      }
+    },
+    "ENERGY_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 18,
+        "NumWrittenRecords": 1,
+        "PadValue": "                  ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ENERGY_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "ENERGY_LABL_1",
+        "FORMAT": "a18",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "ch1_Often~27660eV",
+        "ch2_Often~18940eV",
+        "ch3_Often~12970eV",
+        "ch4_Often~8875eV",
+        "ch5_Often~6076eV",
+        "ch6_Often~4161eV",
+        "ch7_Often~2849eV",
+        "ch8_Often~1952eV",
+        "ch9_Often~1339eV",
+        "ch10_Often~920.3eV",
+        "ch11_Often~634.4eV",
+        "ch12_Often~432.7eV",
+        "ch13_Often~292.0eV",
+        "ch14_Often~200.1eV",
+        "ch15_Often~136.8eV"
+      ]
+    },
+    "FLUX_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 29,
+        "NumWrittenRecords": 1,
+        "PadValue": "                             ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FLUX_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "FLUX_LABL_1",
+        "FORMAT": "a29",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "ElecNoFlux_Ch1_Often~27660eV",
+        "ElecNoFlux_Ch2_Often~18940eV",
+        "ElecNoFlux_Ch3_Often~12970eV",
+        "ElecNoFlux_Ch4_Often~8875eV",
+        "ElecNoFlux_Ch5_Often~6076eV",
+        "ElecNoFlux_Ch6_Often~4161eV",
+        "ElecNoFlux_Ch7_Often~2849eV",
+        "ElecNoFlux_Ch8_Often~1952eV",
+        "ElecNoFlux_Ch9_Often~1339eV",
+        "ElecNoFlux_Ch10_Often~920.3eV",
+        "ElecNoFlux_Ch11_Often~634.4eV",
+        "ElecNoFlux_Ch12_Often~432.7eV",
+        "ElecNoFlux_Ch13_Often~292.0eV",
+        "ElecNoFlux_Ch14_Often~200.1eV",
+        "ElecNoFlux_Ch15_Often~136.8eV"
+      ]
+    },
+    "TIME": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "UNIX Time (secs since 1 Jan 1970)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Time",
+        "FILLVAL": "NaN",
+        "FORMAT": "g12.0",
+        "LABLAXIS": "Time",
+        "UNITS": "sec",
+        "VALIDMAX": 1000000000000.0,
+        "VALIDMIN": 1.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "Time"
+      }
+    }
+  }
+}

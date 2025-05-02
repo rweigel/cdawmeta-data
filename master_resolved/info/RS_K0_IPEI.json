@@ -1,0 +1,751 @@
+{
+  "CDFFileInfo": {
+    "File": "rs_k0_ipei_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/rs_k0_ipei_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "ROCSAT-1(FORMOSAT-1)/IPEI CDF FORMAT",
+    "Project": "ROCSAT(FORMOSAT)",
+    "Discipline": "Space Physics>Ionospheric Studies",
+    "Source_name": "ROCSAT-1(FORMOSAT-1)>Ionospheric Plasma and Electrodynamics Instrument ",
+    "Descriptor": "IPEI>Ionospheric Plasma and Electrodynamics Instrument ",
+    "Data_type": "K0>Key Parameter",
+    "Data_version": "1",
+    "TEXT": "1-second averaged data\n***Important Notes*** on Accuracy of VperpM_MF (meridional),VperpZ_MF (zonal), and VparaMF (parallel) components.\nGeophysical flow components VperpM_MF, VperpZ_MF, and VparaMF are converted from flow velocities, Vx, Vy, and Vz \nmeasured in the S/C coordinate system. Vx points along the S/C trajectory vector, Vz is in the nadir direction, \nand Vy points to the right of the S/C trajectory vector (in the anti-angular momentum direction).\n1) Vx, Vy, and Vz are measured flow velocities at S/C coordinate in the Earth-centered Inertia Coordinate System (non-rotating) (ECI coordinate).\n2) VperZ_MF, VperM_MF, and VparaMF are geophysical flows in the Earth-centered Fixed Coordinated System (rotate with the Earth) (ECF coordinate).\n3) Uncertainty of +-(37.8-75.45) m/s in Vx based on 0.5% - 1% error in fitting could be introduced to all geophysical flow components.\n4) VperpM_MF at low latitude is almost identical to (-Vz). No Vx is included so that it is very reliable.\n5) Uncertainties from Vx could exist in VperpZ_MF and VparaMF.\n6) VperpZ_MF and VparaMF can be used to study the relative changes in flow velocity due to  geophysical effects.\nBut can not be used to study the long-term variations because the result could be biased by the uncertainty in Vx.",
+    "MODS": "Version 1.0 Jan. 28, 2008",
+    "ADID_ref": "NSSD0110",
+    "Logical_file_id": "RS_K0_IPEI_20011228_V01",
+    "Logical_source": "RS_K0_IPEI",
+    "Logical_source_description": "ROCSAT-1(FORMOSAT-1)/IPEI, Key Parameters",
+    "PI_name": "Shin-Yi Su",
+    "PI_affiliation": "Institute of Space Science, National Central University, Taiwan, R.O.C.",
+    "Mission_group": "Formosat",
+    "Instrument_type": "Particles (space)",
+    "TEXT_supplement_1": " ",
+    "Http_link": "http://csrsddc.csrsr.ncu.edu.tw",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/ROCSAT-1/IPEI/PT1s",
+    "DOI": " ",
+    "LINK_TEXT": "ROCSAT-1(FORMOSAT-1)/IPEI\nHomePage",
+    "LINK_TITLE": "IPEI/SDDC"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "Time, centered, in NSSDC Epoch",
+        "DICT_KEY": "time>Epoch",
+        "FIELDNAM": "Time Line",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMIN": "1999-03-11T00:00:00.000",
+        "UNITS": "ms",
+        "VALIDMAX": "2004-06-13T00:00:00.000",
+        "VALIDMIN": "1999-03-11T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "Time_PB5": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time, centered, in GSFC PB5 Format (yr, day, ms)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "unit_time",
+        "DICT_KEY": "time>PB5",
+        "FIELDNAM": "Time Line",
+        "FILLVAL": -2147483648,
+        "FORM_PTR": "format_time",
+        "LABL_PTR_1": "label_time",
+        "SCALEMIN": [
+          1999,
+          70,
+          0
+        ],
+        "UNIT_PTR": "unit_time",
+        "VALIDMAX": [
+          2004,
+          164,
+          86396000
+        ],
+        "VALIDMIN": [
+          1999,
+          70,
+          0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": [
+          "year",
+          "day",
+          "msec"
+        ],
+        "x_LABLAXES": [
+          [
+            "Year",
+            "Day of Year (jan 1 = day 1)",
+            "elapsed ms of day"
+          ]
+        ],
+        "x_DEPEND": [
+          [
+            "year",
+            "day",
+            "msec"
+          ]
+        ]
+      }
+    },
+    "vx_rpy": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Ion drift in S/C LVLH coordinates > x component = along the S/C trajectory vector",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity>drift",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vx_s/c_LVLH",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Vx_s/c",
+        "SCALEMAX": 500.0,
+        "SCALEMIN": -500.0,
+        "UNITS": "m/sec",
+        "VALIDMAX": 500.0,
+        "VALIDMIN": -500.0,
+        "VAR_NOTES": "Ion drift in S/C LVLH coordinates (in ECI Frame of Reference):   x: along the S/C trajectory vector. y: opposite to angular momentum. z: toward the Earth Center.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/sec",
+        "x_LABLAXIS": "Vx_s/c"
+      }
+    },
+    "vy_rpy": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "--------------------------> y component = opposite to angular momentum",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity>drift",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vy_s/c_LVLH",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Vy_s/c",
+        "SCALEMAX": 500.0,
+        "SCALEMIN": -500.0,
+        "UNITS": "m/sec",
+        "VALIDMAX": 500.0,
+        "VALIDMIN": -500.0,
+        "VAR_NOTES": "Ion drift in S/C LVLH coordinates (in ECI Frame of Reference):   x: along the S/C trajectory vector. y: opposite to angular momentum. z: toward the Earth Center.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/sec",
+        "x_LABLAXIS": "Vy_s/c"
+      }
+    },
+    "vz_rpy": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "--------------------------> z component = toward the Earth Center",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity>drift",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Vz_s/c_LVLH",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Vz_s/c",
+        "SCALEMAX": 500.0,
+        "SCALEMIN": -500.0,
+        "UNITS": "m/sec",
+        "VALIDMAX": 500.0,
+        "VALIDMIN": -500.0,
+        "VAR_NOTES": "Ion drift in S/C LVLH coordinates (in ECI Frame of Reference):   x: along the S/C trajectory vector. y: opposite to angular momentum. z: toward the Earth Center.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/sec",
+        "x_LABLAXIS": "Vz_s/c"
+      }
+    },
+    "v1": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Ion drift in Magnetic Field Coordinates > Component parallel to MF",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity>drift",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VparaMF",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "VparaMF",
+        "SCALEMAX": 500.0,
+        "SCALEMIN": -500.0,
+        "UNITS": "m/sec",
+        "VALIDMAX": 500.0,
+        "VALIDMIN": -500.0,
+        "VAR_NOTES": "Ion drift in Magnetic Field coordinates (in ECF Frame of Reference) (parallel component)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/sec",
+        "x_LABLAXIS": "VparaMF"
+      }
+    },
+    "v2m": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "--------------------------> Meridional component perpendicular to MF",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity>drift",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VperpMF_merd",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "VperpMF_merd",
+        "SCALEMAX": 500.0,
+        "SCALEMIN": -500.0,
+        "UNITS": "m/sec",
+        "VALIDMAX": 500.0,
+        "VALIDMIN": -500.0,
+        "VAR_NOTES": "Ion drift in Magnetic Field coordinates (in ECF Frame of Reference) (perpendicular, meridional component, positive outward(upward)).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/sec",
+        "x_LABLAXIS": "VperpMF_merd"
+      }
+    },
+    "v2z": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "--------------------------> Zonal component perpendicular to MF",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity>drift",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VperpMF_zonal",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "VperpMF_zonal",
+        "SCALEMAX": 500.0,
+        "SCALEMIN": -500.0,
+        "UNITS": "m/sec",
+        "VALIDMAX": 500.0,
+        "VALIDMIN": -500.0,
+        "VAR_NOTES": "Ion drift in Magnetic Field coordinates (in ECF Frame of Reference) (perpendicular,zonal component, positive eastward).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "m/sec",
+        "x_LABLAXIS": "VperpMF_zonal"
+      }
+    },
+    "Ni": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Total ion density in cm^-3",
+        "COMPONENT_0": "logN",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density>number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ni",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.3",
+        "FUNCT": "convert_Ni",
+        "LABLAXIS": "Ni/cm-3",
+        "SCALEMAX": 1000000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": " ",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Total ion number density in cm^-3",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Ni/cm-3",
+        "COMPONENTS": [
+          "logN"
+        ]
+      }
+    },
+    "logN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Logarithm (base 10) of total ion density in cm^-3",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density>number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Log(Ni)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f5.3",
+        "LABLAXIS": "Log(Ni/cm-3)",
+        "SCALEMAX": 7.0,
+        "SCALEMIN": 3.0,
+        "UNITS": " ",
+        "VALIDMAX": 7.0,
+        "VALIDMIN": 3.0,
+        "VAR_NOTES": "Logarithm (Base 10) of total ion number density in cm^-3",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Log(Ni/cm-3)"
+      }
+    },
+    "temp": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Ion Temperature (K)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ti",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f6.1",
+        "LABLAXIS": "Ti",
+        "SCALEMAX": 3000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "K",
+        "VALIDMAX": 3000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Ion Temperature (K)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "K",
+        "x_LABLAXIS": "Ti"
+      }
+    },
+    "O": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Ion Composition > percentage of O+ ions",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "species>ion",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O+(%)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f5.1",
+        "LABLAXIS": "O+",
+        "SCALEMAX": 100.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "%",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Ion Composition, percentage of O+ ions",
+        "VAR_TYPE": "data",
+        "x_UNITS": "%",
+        "x_LABLAXIS": "O+"
+      }
+    },
+    "H": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "---------------> percentage of H+ ions",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "species>ion",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "H+(%)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f5.1",
+        "LABLAXIS": "H+",
+        "SCALEMAX": 100.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "%",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Ion Composition, percentage of H+ ions",
+        "VAR_TYPE": "data",
+        "x_UNITS": "%",
+        "x_LABLAXIS": "H+"
+      }
+    },
+    "He": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "---------------> percentage of He+ ions",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "species>ion",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He+(%)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f5.1",
+        "LABLAXIS": "He+",
+        "SCALEMAX": 100.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "%",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Ion Composition, percentage of He+ ions",
+        "VAR_TYPE": "data",
+        "x_UNITS": "%",
+        "x_LABLAXIS": "He+"
+      }
+    },
+    "NO": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "---------------> percentage of NO+ ions",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "species>ion",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "NO+(%)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f5.1",
+        "LABLAXIS": "NO+",
+        "SCALEMAX": 100.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "%",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Ion Composition, percentage of NO+ ions",
+        "VAR_TYPE": "data",
+        "x_UNITS": "%",
+        "x_LABLAXIS": "NO+"
+      }
+    },
+    "glat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Geographic Latitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position>latitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GeogLat",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "GeogLat",
+        "SCALEMAX": 40.0,
+        "SCALEMIN": -40.0,
+        "UNITS": "degree",
+        "VALIDMAX": 35.13,
+        "VALIDMIN": -35.13,
+        "VAR_NOTES": "Geographic Latitude",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "GeogLat"
+      }
+    },
+    "glon": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Geographic Longitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position>longitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GLong",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "GeogLong",
+        "SCALEMAX": 360.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "degree",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Geographic Longitude",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "GeogLong"
+      }
+    },
+    "dlat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Dip Latitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position>latitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "DipLat",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "DipLat",
+        "SCALEMAX": 70.0,
+        "SCALEMIN": -50.0,
+        "UNITS": "degree",
+        "VALIDMAX": 70.0,
+        "VALIDMIN": -50.0,
+        "VAR_NOTES": "Dip Latitude",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degree",
+        "x_LABLAXIS": "DipLat"
+      }
+    },
+    "alt": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Altitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position>altitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Altitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Altitude",
+        "SCALEMAX": 650.0,
+        "SCALEMIN": 550.0,
+        "UNITS": "km",
+        "VALIDMAX": 650.0,
+        "VALIDMIN": 550.0,
+        "VAR_NOTES": "Altitude",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "Altitude"
+      }
+    },
+    "lhr": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Local Time (hr)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "time>local",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "LT(hr)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f6.3",
+        "LABLAXIS": "LT",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": 24.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "hr",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "hr",
+        "x_LABLAXIS": "LT"
+      }
+    },
+    "label_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 27,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label for Time_PB5",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Label for Time_PB5",
+        "FORMAT": "a27",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Year",
+        "Day of Year (jan 1 = day 1)",
+        "elapsed ms of day"
+      ]
+    },
+    "unit_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 4,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Units for Time_PB5",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Units for Time_PB5",
+        "FORMAT": "a4",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "year",
+        "day",
+        "msec"
+      ]
+    },
+    "format_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 2,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Format for Time_PB5",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Format for Time_PB5",
+        "FORMAT": "a2",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "I4",
+        "I3",
+        "I8"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1590 @@
+{
+  "CDFFileInfo": {
+    "File": "solo_l2_epd-step-burst_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/solo_l2_epd-step-burst_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Project": "SOLO>Solar Orbiter",
+    "Source_name": "SOLO>Solar Orbiter",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Data_type": "L2>Level 2 Data",
+    "Descriptor": "EPD-STEP-BURST>Energetic Particle Detector, SupraThermal Electrons and Protons, Burst",
+    "Data_version": " ",
+    "Software_version": " ",
+    "PI_name": "J. Rodriguez-Pacheco",
+    "PI_affiliation": "Space Research Group, Universidad de Alcala",
+    "TEXT": "Energetic Particle Detector (EPD). Instrument suite, part of the scientific payload aboard the Solar Orbiter mission, dedicated to the study of solar energetic particles. EPD measures electrons, protons and heavy ions with high temporal resolution over a wide energy range, from suprathermal energies to several hundreds of MeV/nucleon. It is composed of four units: SupraThermal Electrons and Protons (STEP), Electron Proton Telescope (EPT), Suprathermal Ion Spectrograph (SIS) and High Energy Telescope (HET).\nhttps://doi.org/10.1051/0004-6361/201935287",
+    "Instrument_type": "Particles (space)",
+    "Mission_group": "Solar Orbiter",
+    "Logical_source": "solo_L2_epd-step-burst",
+    "Logical_source_description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, SupraThermal Electrons and Protons, Burst",
+    "Logical_file_id": " ",
+    "Rules_of_use": "See http://espada.uah.es/epd/EPD_data.php",
+    "Generated_by": "Space Research Group, Universidad de Alcala",
+    "Generation_date": " ",
+    "Acknowledgement": "See http://espada.uah.es/epd/EPD_data.php",
+    "MODS": " ",
+    "HTTP_LINK": "http://espada.uah.es/epd/EPD_data.php",
+    "Parents": " \n ",
+    "Data_product": "BURST>Burst",
+    "LEVEL": "L2>Level 2 Data",
+    "SOOP_TYPE": "I_DEFAULT",
+    "OBS_ID": " ",
+    "TARGET_NAME": " ",
+    "TARGET_CLASS": "interplanetary_medium",
+    "TARGET_REGION": "heliosphere",
+    "TIME_MIN": " ",
+    "TIME_MAX": " ",
+    "spase_DatasetResourceID": " ",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "EPOCH": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CADENCE": "1 second",
+        "CATDESC": "Nanoseconds since J2000",
+        "DELTA_PLUS_VAR": "DELTA_EPOCH",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "Time",
+        "SCALEMAX": "2020-07-31T21:49:31.000000000",
+        "SCALEMIN": "2020-07-31T21:34:31.000000000",
+        "SCALETYP": "linear",
+        "UNITS": "nanoseconds",
+        "VALIDMAX": "2050-01-01T00:00:00.000000000",
+        "VALIDMIN": "2000-01-01T00:00:00.000000000",
+        "VAR_NOTES": "Start of acquisition interval. ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nanoseconds",
+        "x_LABLAXIS": "Time"
+      }
+    },
+    "DELTA_EPOCH": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Accumulation period in seconds",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "Delta epoch",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I",
+        "LABLAXIS": "Delta epoch",
+        "SCALEMAX": 3600,
+        "SCALEMIN": 0,
+        "SCALETYP": "linear",
+        "UNITS": "seconds",
+        "VALIDMAX": 3600,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "seconds",
+        "x_LABLAXIS": "Delta epoch"
+      }
+    },
+    "Magnet_Flux": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sector averaged magnet channel flux",
+        "DELTA_MINUS_VAR": "Magnet_Uncertainty",
+        "DELTA_PLUS_VAR": "Magnet_Uncertainty",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnet Flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Magnet Flux",
+        "LABL_PTR_1": "Bins_Text",
+        "SCALEMAX": 1988000.0,
+        "SCALEMIN": 9439.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Includes ions of different species. Calibrated using the detector response for Hydrogen. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Magnet Flux",
+        "x_LABLAXES": [
+          [
+            "0.0057 - 0.0090 MeV/n",
+            "0.0060 - 0.0091 MeV/n",
+            "0.0062 - 0.0092 MeV/n",
+            "0.0065 - 0.0094 MeV/n",
+            "0.0069 - 0.0096 MeV/n",
+            "0.0071 - 0.0098 MeV/n",
+            "0.0074 - 0.0101 MeV/n",
+            "0.0078 - 0.0105 MeV/n",
+            "0.0083 - 0.0109 MeV/n",
+            "0.0086 - 0.0112 MeV/n",
+            "0.0097 - 0.0128 MeV/n",
+            "0.0115 - 0.0141 MeV/n",
+            "0.0122 - 0.0148 MeV/n",
+            "0.0127 - 0.0153 MeV/n",
+            "0.0135 - 0.0163 MeV/n",
+            "0.0143 - 0.0171 MeV/n",
+            "0.0149 - 0.0177 MeV/n",
+            "0.0159 - 0.0186 MeV/n",
+            "0.0169 - 0.0195 MeV/n",
+            "0.0176 - 0.0202 MeV/n",
+            "0.0186 - 0.0213 MeV/n",
+            "0.0198 - 0.0224 MeV/n",
+            "0.0209 - 0.0237 MeV/n",
+            "0.0223 - 0.0248 MeV/n",
+            "0.0231 - 0.0257 MeV/n",
+            "0.0245 - 0.0274 MeV/n",
+            "0.0262 - 0.0288 MeV/n",
+            "0.0272 - 0.0298 MeV/n",
+            "0.0287 - 0.0317 MeV/n",
+            "0.0306 - 0.0332 MeV/n",
+            "0.0318 - 0.0344 MeV/n",
+            "0.0335 - 0.0366 MeV/n",
+            "0.0358 - 0.0384 MeV/n",
+            "0.0377 - 0.0411 MeV/n",
+            "0.0404 - 0.0431 MeV/n",
+            "0.0420 - 0.0447 MeV/n",
+            "0.0440 - 0.0478 MeV/n",
+            "0.0473 - 0.0502 MeV/n",
+            "0.0494 - 0.0522 MeV/n",
+            "0.0518 - 0.0560 MeV/n",
+            "0.0556 - 0.0586 MeV/n",
+            "0.0579 - 0.0609 MeV/n",
+            "0.0605 - 0.0655 MeV/n",
+            "0.0651 - 0.0683 MeV/n",
+            "0.0680 - 0.0738 MeV/n",
+            "0.0736 - 0.0771 MeV/n",
+            "0.0767 - 0.0802 MeV/n",
+            "0.0799 - 0.0865 MeV/n"
+          ]
+        ],
+        "x_DEPEND": [
+          "Bins_Low_Energy"
+        ]
+      }
+    },
+    "Magnet_Uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Uncertainty in sector averaged magnet channel flux",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnet Flux Uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Magnet Flux Sigma",
+        "SCALEMAX": 1500000.0,
+        "SCALEMIN": 9439.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Magnet Flux Sigma",
+        "x_DEPEND": [
+          "Bins_Low_Energy"
+        ]
+      }
+    },
+    "Magnet_Rate": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sector averaged magnet channel count rate",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnet Count Rate",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Magnet Count Rate",
+        "LABL_PTR_1": "Bins_Text",
+        "SCALEMAX": 2.0,
+        "SCALEMIN": 0.5,
+        "SCALETYP": "log",
+        "UNITS": "counts / s",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts / s",
+        "x_LABLAXIS": "Magnet Count Rate",
+        "x_LABLAXES": [
+          [
+            "0.0057 - 0.0090 MeV/n",
+            "0.0060 - 0.0091 MeV/n",
+            "0.0062 - 0.0092 MeV/n",
+            "0.0065 - 0.0094 MeV/n",
+            "0.0069 - 0.0096 MeV/n",
+            "0.0071 - 0.0098 MeV/n",
+            "0.0074 - 0.0101 MeV/n",
+            "0.0078 - 0.0105 MeV/n",
+            "0.0083 - 0.0109 MeV/n",
+            "0.0086 - 0.0112 MeV/n",
+            "0.0097 - 0.0128 MeV/n",
+            "0.0115 - 0.0141 MeV/n",
+            "0.0122 - 0.0148 MeV/n",
+            "0.0127 - 0.0153 MeV/n",
+            "0.0135 - 0.0163 MeV/n",
+            "0.0143 - 0.0171 MeV/n",
+            "0.0149 - 0.0177 MeV/n",
+            "0.0159 - 0.0186 MeV/n",
+            "0.0169 - 0.0195 MeV/n",
+            "0.0176 - 0.0202 MeV/n",
+            "0.0186 - 0.0213 MeV/n",
+            "0.0198 - 0.0224 MeV/n",
+            "0.0209 - 0.0237 MeV/n",
+            "0.0223 - 0.0248 MeV/n",
+            "0.0231 - 0.0257 MeV/n",
+            "0.0245 - 0.0274 MeV/n",
+            "0.0262 - 0.0288 MeV/n",
+            "0.0272 - 0.0298 MeV/n",
+            "0.0287 - 0.0317 MeV/n",
+            "0.0306 - 0.0332 MeV/n",
+            "0.0318 - 0.0344 MeV/n",
+            "0.0335 - 0.0366 MeV/n",
+            "0.0358 - 0.0384 MeV/n",
+            "0.0377 - 0.0411 MeV/n",
+            "0.0404 - 0.0431 MeV/n",
+            "0.0420 - 0.0447 MeV/n",
+            "0.0440 - 0.0478 MeV/n",
+            "0.0473 - 0.0502 MeV/n",
+            "0.0494 - 0.0522 MeV/n",
+            "0.0518 - 0.0560 MeV/n",
+            "0.0556 - 0.0586 MeV/n",
+            "0.0579 - 0.0609 MeV/n",
+            "0.0605 - 0.0655 MeV/n",
+            "0.0651 - 0.0683 MeV/n",
+            "0.0680 - 0.0738 MeV/n",
+            "0.0736 - 0.0771 MeV/n",
+            "0.0767 - 0.0802 MeV/n",
+            "0.0799 - 0.0865 MeV/n"
+          ]
+        ],
+        "x_DEPEND": [
+          "Bins_Low_Energy"
+        ]
+      }
+    },
+    "Integral_Flux": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sector averaged integral channel flux",
+        "DELTA_MINUS_VAR": "Integral_Uncertainty",
+        "DELTA_PLUS_VAR": "Integral_Uncertainty",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Integral Flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Integral Flux",
+        "LABL_PTR_1": "Bins_Text",
+        "SCALEMAX": 2959000.0,
+        "SCALEMIN": 9475.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Includes ions of different species and electrons. Calibrated using the detector response for Hydrogen. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Integral Flux",
+        "x_LABLAXES": [
+          [
+            "0.0057 - 0.0090 MeV/n",
+            "0.0060 - 0.0091 MeV/n",
+            "0.0062 - 0.0092 MeV/n",
+            "0.0065 - 0.0094 MeV/n",
+            "0.0069 - 0.0096 MeV/n",
+            "0.0071 - 0.0098 MeV/n",
+            "0.0074 - 0.0101 MeV/n",
+            "0.0078 - 0.0105 MeV/n",
+            "0.0083 - 0.0109 MeV/n",
+            "0.0086 - 0.0112 MeV/n",
+            "0.0097 - 0.0128 MeV/n",
+            "0.0115 - 0.0141 MeV/n",
+            "0.0122 - 0.0148 MeV/n",
+            "0.0127 - 0.0153 MeV/n",
+            "0.0135 - 0.0163 MeV/n",
+            "0.0143 - 0.0171 MeV/n",
+            "0.0149 - 0.0177 MeV/n",
+            "0.0159 - 0.0186 MeV/n",
+            "0.0169 - 0.0195 MeV/n",
+            "0.0176 - 0.0202 MeV/n",
+            "0.0186 - 0.0213 MeV/n",
+            "0.0198 - 0.0224 MeV/n",
+            "0.0209 - 0.0237 MeV/n",
+            "0.0223 - 0.0248 MeV/n",
+            "0.0231 - 0.0257 MeV/n",
+            "0.0245 - 0.0274 MeV/n",
+            "0.0262 - 0.0288 MeV/n",
+            "0.0272 - 0.0298 MeV/n",
+            "0.0287 - 0.0317 MeV/n",
+            "0.0306 - 0.0332 MeV/n",
+            "0.0318 - 0.0344 MeV/n",
+            "0.0335 - 0.0366 MeV/n",
+            "0.0358 - 0.0384 MeV/n",
+            "0.0377 - 0.0411 MeV/n",
+            "0.0404 - 0.0431 MeV/n",
+            "0.0420 - 0.0447 MeV/n",
+            "0.0440 - 0.0478 MeV/n",
+            "0.0473 - 0.0502 MeV/n",
+            "0.0494 - 0.0522 MeV/n",
+            "0.0518 - 0.0560 MeV/n",
+            "0.0556 - 0.0586 MeV/n",
+            "0.0579 - 0.0609 MeV/n",
+            "0.0605 - 0.0655 MeV/n",
+            "0.0651 - 0.0683 MeV/n",
+            "0.0680 - 0.0738 MeV/n",
+            "0.0736 - 0.0771 MeV/n",
+            "0.0767 - 0.0802 MeV/n",
+            "0.0799 - 0.0865 MeV/n"
+          ]
+        ],
+        "x_DEPEND": [
+          "Bins_Low_Energy"
+        ]
+      }
+    },
+    "Integral_Uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Uncertainty in sector averaged integral channel flux",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Integral Flux Uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Integral Flux Sigma",
+        "SCALEMAX": 2093000.0,
+        "SCALEMIN": 9475.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Integral Flux Sigma",
+        "x_DEPEND": [
+          "Bins_Low_Energy"
+        ]
+      }
+    },
+    "Integral_Rate": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sector averaged integral channel count rate",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Integral Count Rate",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Integral Count Rate",
+        "LABL_PTR_1": "Bins_Text",
+        "SCALEMAX": 3.0,
+        "SCALEMIN": 0.5,
+        "SCALETYP": "log",
+        "UNITS": "counts / s",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts / s",
+        "x_LABLAXIS": "Integral Count Rate",
+        "x_LABLAXES": [
+          [
+            "0.0057 - 0.0090 MeV/n",
+            "0.0060 - 0.0091 MeV/n",
+            "0.0062 - 0.0092 MeV/n",
+            "0.0065 - 0.0094 MeV/n",
+            "0.0069 - 0.0096 MeV/n",
+            "0.0071 - 0.0098 MeV/n",
+            "0.0074 - 0.0101 MeV/n",
+            "0.0078 - 0.0105 MeV/n",
+            "0.0083 - 0.0109 MeV/n",
+            "0.0086 - 0.0112 MeV/n",
+            "0.0097 - 0.0128 MeV/n",
+            "0.0115 - 0.0141 MeV/n",
+            "0.0122 - 0.0148 MeV/n",
+            "0.0127 - 0.0153 MeV/n",
+            "0.0135 - 0.0163 MeV/n",
+            "0.0143 - 0.0171 MeV/n",
+            "0.0149 - 0.0177 MeV/n",
+            "0.0159 - 0.0186 MeV/n",
+            "0.0169 - 0.0195 MeV/n",
+            "0.0176 - 0.0202 MeV/n",
+            "0.0186 - 0.0213 MeV/n",
+            "0.0198 - 0.0224 MeV/n",
+            "0.0209 - 0.0237 MeV/n",
+            "0.0223 - 0.0248 MeV/n",
+            "0.0231 - 0.0257 MeV/n",
+            "0.0245 - 0.0274 MeV/n",
+            "0.0262 - 0.0288 MeV/n",
+            "0.0272 - 0.0298 MeV/n",
+            "0.0287 - 0.0317 MeV/n",
+            "0.0306 - 0.0332 MeV/n",
+            "0.0318 - 0.0344 MeV/n",
+            "0.0335 - 0.0366 MeV/n",
+            "0.0358 - 0.0384 MeV/n",
+            "0.0377 - 0.0411 MeV/n",
+            "0.0404 - 0.0431 MeV/n",
+            "0.0420 - 0.0447 MeV/n",
+            "0.0440 - 0.0478 MeV/n",
+            "0.0473 - 0.0502 MeV/n",
+            "0.0494 - 0.0522 MeV/n",
+            "0.0518 - 0.0560 MeV/n",
+            "0.0556 - 0.0586 MeV/n",
+            "0.0579 - 0.0609 MeV/n",
+            "0.0605 - 0.0655 MeV/n",
+            "0.0651 - 0.0683 MeV/n",
+            "0.0680 - 0.0738 MeV/n",
+            "0.0736 - 0.0771 MeV/n",
+            "0.0767 - 0.0802 MeV/n",
+            "0.0799 - 0.0865 MeV/n"
+          ]
+        ],
+        "x_DEPEND": [
+          "Bins_Low_Energy"
+        ]
+      }
+    },
+    "Bins_Low_Energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Lowest energy of each bin for sector averaged flux",
+        "DELTA_PLUS_VAR": "Bins_Width",
+        "FIELDNAM": "Bins Low Energy",
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Energy",
+        "LABL_PTR_1": "Bins_Text",
+        "SCALEMAX": 0.07992000132799149,
+        "SCALEMIN": 0.00572500005364418,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.602e-13>J",
+        "UNITS": "MeV",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 9.999999974752427e-07,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Energy",
+        "x_LABLAXES": [
+          [
+            "0.0057 - 0.0090 MeV/n",
+            "0.0060 - 0.0091 MeV/n",
+            "0.0062 - 0.0092 MeV/n",
+            "0.0065 - 0.0094 MeV/n",
+            "0.0069 - 0.0096 MeV/n",
+            "0.0071 - 0.0098 MeV/n",
+            "0.0074 - 0.0101 MeV/n",
+            "0.0078 - 0.0105 MeV/n",
+            "0.0083 - 0.0109 MeV/n",
+            "0.0086 - 0.0112 MeV/n",
+            "0.0097 - 0.0128 MeV/n",
+            "0.0115 - 0.0141 MeV/n",
+            "0.0122 - 0.0148 MeV/n",
+            "0.0127 - 0.0153 MeV/n",
+            "0.0135 - 0.0163 MeV/n",
+            "0.0143 - 0.0171 MeV/n",
+            "0.0149 - 0.0177 MeV/n",
+            "0.0159 - 0.0186 MeV/n",
+            "0.0169 - 0.0195 MeV/n",
+            "0.0176 - 0.0202 MeV/n",
+            "0.0186 - 0.0213 MeV/n",
+            "0.0198 - 0.0224 MeV/n",
+            "0.0209 - 0.0237 MeV/n",
+            "0.0223 - 0.0248 MeV/n",
+            "0.0231 - 0.0257 MeV/n",
+            "0.0245 - 0.0274 MeV/n",
+            "0.0262 - 0.0288 MeV/n",
+            "0.0272 - 0.0298 MeV/n",
+            "0.0287 - 0.0317 MeV/n",
+            "0.0306 - 0.0332 MeV/n",
+            "0.0318 - 0.0344 MeV/n",
+            "0.0335 - 0.0366 MeV/n",
+            "0.0358 - 0.0384 MeV/n",
+            "0.0377 - 0.0411 MeV/n",
+            "0.0404 - 0.0431 MeV/n",
+            "0.0420 - 0.0447 MeV/n",
+            "0.0440 - 0.0478 MeV/n",
+            "0.0473 - 0.0502 MeV/n",
+            "0.0494 - 0.0522 MeV/n",
+            "0.0518 - 0.0560 MeV/n",
+            "0.0556 - 0.0586 MeV/n",
+            "0.0579 - 0.0609 MeV/n",
+            "0.0605 - 0.0655 MeV/n",
+            "0.0651 - 0.0683 MeV/n",
+            "0.0680 - 0.0738 MeV/n",
+            "0.0736 - 0.0771 MeV/n",
+            "0.0767 - 0.0802 MeV/n",
+            "0.0799 - 0.0865 MeV/n"
+          ]
+        ]
+      },
+      "VarData": [
+        0.00572500005364418,
+        0.006006999872624874,
+        0.006215999834239483,
+        0.006521000061184168,
+        0.00686099985614419,
+        0.007098999805748463,
+        0.007416000124067068,
+        0.007818999700248241,
+        0.008294999599456787,
+        0.00864300038665533,
+        0.009743999689817429,
+        0.011529999785125256,
+        0.012230000458657742,
+        0.012729999609291553,
+        0.01348000019788742,
+        0.014340000227093697,
+        0.014890000224113464,
+        0.015879999846220016,
+        0.016920000314712524,
+        0.017580000683665276,
+        0.01858000084757805,
+        0.019780000671744347,
+        0.020919999107718468,
+        0.02225000038743019,
+        0.02311999909579754,
+        0.024460000917315483,
+        0.026159999892115593,
+        0.027219999581575394,
+        0.028699999675154686,
+        0.030629999935626984,
+        0.03181999921798706,
+        0.03345999866724014,
+        0.0357699990272522,
+        0.03765000030398369,
+        0.04039999842643738,
+        0.04197999835014343,
+        0.04399000108242035,
+        0.04729999974370003,
+        0.0493599995970726,
+        0.05178000032901764,
+        0.05561000108718872,
+        0.05793000012636185,
+        0.06054000183939934,
+        0.06511999666690826,
+        0.06796000152826309,
+        0.07362999767065048,
+        0.07665000110864639,
+        0.07992000132799149
+      ]
+    },
+    "Bins_Width": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Width of each energy bin for sector averaged flux",
+        "FIELDNAM": "Bins Width",
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Bin width",
+        "SI_CONVERSION": "1.602e-13>J",
+        "UNITS": "MeV",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Bin width"
+      },
+      "VarData": [
+        0.003232999937608838,
+        0.003085999982431531,
+        0.002940000034868717,
+        0.0028520000632852316,
+        0.0027489999774843454,
+        0.0027459999546408653,
+        0.0026740001048892736,
+        0.00266100000590086,
+        0.0025949999690055847,
+        0.0025969999842345715,
+        0.00304599991068244,
+        0.002589999930933118,
+        0.002529999939724803,
+        0.002529999939724803,
+        0.0027799999807029963,
+        0.002739999908953905,
+        0.0027799999807029963,
+        0.0027699999045580626,
+        0.0026199999265372753,
+        0.0026100000832229853,
+        0.0027600000612437725,
+        0.0026100000832229853,
+        0.00279000005684793,
+        0.002580000087618828,
+        0.002589999930933118,
+        0.002899999963119626,
+        0.0026000000070780516,
+        0.0026199999265372753,
+        0.003000000026077032,
+        0.0026100000832229853,
+        0.0026199999265372753,
+        0.0031900000758469105,
+        0.0026700000744313,
+        0.0035000001080334187,
+        0.0027199999894946814,
+        0.00267999991774559,
+        0.003819999983534217,
+        0.0028800000436604023,
+        0.0028899998869746923,
+        0.004240000154823065,
+        0.003000000026077032,
+        0.003000000026077032,
+        0.004920000210404396,
+        0.0031799999997019768,
+        0.005869999993592501,
+        0.0034199999645352364,
+        0.0035000001080334187,
+        0.006579999811947346
+      ]
+    },
+    "Bins_Text": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 25,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Text description of each energy bin for sector averaged flux",
+        "FIELDNAM": "Bins Text",
+        "FORMAT": "A25",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "0.0057 - 0.0090 MeV/n",
+        "0.0060 - 0.0091 MeV/n",
+        "0.0062 - 0.0092 MeV/n",
+        "0.0065 - 0.0094 MeV/n",
+        "0.0069 - 0.0096 MeV/n",
+        "0.0071 - 0.0098 MeV/n",
+        "0.0074 - 0.0101 MeV/n",
+        "0.0078 - 0.0105 MeV/n",
+        "0.0083 - 0.0109 MeV/n",
+        "0.0086 - 0.0112 MeV/n",
+        "0.0097 - 0.0128 MeV/n",
+        "0.0115 - 0.0141 MeV/n",
+        "0.0122 - 0.0148 MeV/n",
+        "0.0127 - 0.0153 MeV/n",
+        "0.0135 - 0.0163 MeV/n",
+        "0.0143 - 0.0171 MeV/n",
+        "0.0149 - 0.0177 MeV/n",
+        "0.0159 - 0.0186 MeV/n",
+        "0.0169 - 0.0195 MeV/n",
+        "0.0176 - 0.0202 MeV/n",
+        "0.0186 - 0.0213 MeV/n",
+        "0.0198 - 0.0224 MeV/n",
+        "0.0209 - 0.0237 MeV/n",
+        "0.0223 - 0.0248 MeV/n",
+        "0.0231 - 0.0257 MeV/n",
+        "0.0245 - 0.0274 MeV/n",
+        "0.0262 - 0.0288 MeV/n",
+        "0.0272 - 0.0298 MeV/n",
+        "0.0287 - 0.0317 MeV/n",
+        "0.0306 - 0.0332 MeV/n",
+        "0.0318 - 0.0344 MeV/n",
+        "0.0335 - 0.0366 MeV/n",
+        "0.0358 - 0.0384 MeV/n",
+        "0.0377 - 0.0411 MeV/n",
+        "0.0404 - 0.0431 MeV/n",
+        "0.0420 - 0.0447 MeV/n",
+        "0.0440 - 0.0478 MeV/n",
+        "0.0473 - 0.0502 MeV/n",
+        "0.0494 - 0.0522 MeV/n",
+        "0.0518 - 0.0560 MeV/n",
+        "0.0556 - 0.0586 MeV/n",
+        "0.0579 - 0.0609 MeV/n",
+        "0.0605 - 0.0655 MeV/n",
+        "0.0651 - 0.0683 MeV/n",
+        "0.0680 - 0.0738 MeV/n",
+        "0.0736 - 0.0771 MeV/n",
+        "0.0767 - 0.0802 MeV/n",
+        "0.0799 - 0.0865 MeV/n"
+      ]
+    },
+    "Sector_Magnet_Flux": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          15
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sectored magnet channel flux",
+        "DELTA_MINUS_VAR": "Sector_Magnet_Uncertainty",
+        "DELTA_PLUS_VAR": "Sector_Magnet_Uncertainty",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Sector_Bins_Low_Energy",
+        "DEPEND_2": "Sectors",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Sector Magnet Flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Magnet Flux",
+        "LABL_PTR_1": "Sector_Bins_Text",
+        "LABL_PTR_2": "Sector_Names",
+        "SCALEMAX": 6786000.0,
+        "SCALEMIN": 52400.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Includes ions of different species. Calibrated using the detector response for Hydrogen. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Magnet Flux",
+        "x_LABLAXES": [
+          [
+            "0.0059 - 0.0091 MeV/n",
+            "0.0066 - 0.0095 MeV/n",
+            "0.0074 - 0.0101 MeV/n",
+            "0.0083 - 0.0110 MeV/n",
+            "0.0097 - 0.0128 MeV/n",
+            "0.0121 - 0.0151 MeV/n",
+            "0.0144 - 0.0177 MeV/n",
+            "0.0171 - 0.0208 MeV/n",
+            "0.0206 - 0.0249 MeV/n",
+            "0.0249 - 0.0291 MeV/n",
+            "0.0291 - 0.0351 MeV/n",
+            "0.0351 - 0.0410 MeV/n",
+            "0.0410 - 0.0498 MeV/n",
+            "0.0498 - 0.0583 MeV/n",
+            "0.0583 - 0.0708 MeV/n",
+            "0.0708 - 0.0865 MeV/n"
+          ],
+          [
+            "Pixel 1",
+            "Pixel 2",
+            "Pixel 3",
+            "Pixel 4",
+            "Pixel 5",
+            "Pixel 6",
+            "Pixel 7",
+            "Pixel 8",
+            "Pixel 9",
+            "Pixel 10",
+            "Pixel 11",
+            "Pixel 12",
+            "Pixel 13",
+            "Pixel 14",
+            "Pixel 15"
+          ]
+        ],
+        "x_DEPEND": [
+          "Sector_Bins_Low_Energy",
+          "Sectors"
+        ]
+      }
+    },
+    "Sector_Magnet_Uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          15
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Uncertainty in sectored magnet channel flux",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Sector_Bins_Low_Energy",
+        "DEPEND_2": "Sectors",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Sector Magnet Flux Uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Magnet Flux Sigma",
+        "SCALEMAX": 6786000.0,
+        "SCALEMIN": 52400.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Magnet Flux Sigma",
+        "x_DEPEND": [
+          "Sector_Bins_Low_Energy",
+          "Sectors"
+        ]
+      }
+    },
+    "Sector_Magnet_Rate": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          15
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sectored magnet channel count rate",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Sector_Bins_Low_Energy",
+        "DEPEND_2": "Sectors",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Sector Magnet Count Rate",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Magnet Count Rate",
+        "LABL_PTR_1": "Sector_Bins_Text",
+        "LABL_PTR_2": "Sector_Names",
+        "SCALEMAX": 2.0,
+        "SCALEMIN": 0.5,
+        "SCALETYP": "log",
+        "UNITS": "counts / s",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts / s",
+        "x_LABLAXIS": "Magnet Count Rate",
+        "x_LABLAXES": [
+          [
+            "0.0059 - 0.0091 MeV/n",
+            "0.0066 - 0.0095 MeV/n",
+            "0.0074 - 0.0101 MeV/n",
+            "0.0083 - 0.0110 MeV/n",
+            "0.0097 - 0.0128 MeV/n",
+            "0.0121 - 0.0151 MeV/n",
+            "0.0144 - 0.0177 MeV/n",
+            "0.0171 - 0.0208 MeV/n",
+            "0.0206 - 0.0249 MeV/n",
+            "0.0249 - 0.0291 MeV/n",
+            "0.0291 - 0.0351 MeV/n",
+            "0.0351 - 0.0410 MeV/n",
+            "0.0410 - 0.0498 MeV/n",
+            "0.0498 - 0.0583 MeV/n",
+            "0.0583 - 0.0708 MeV/n",
+            "0.0708 - 0.0865 MeV/n"
+          ],
+          [
+            "Pixel 1",
+            "Pixel 2",
+            "Pixel 3",
+            "Pixel 4",
+            "Pixel 5",
+            "Pixel 6",
+            "Pixel 7",
+            "Pixel 8",
+            "Pixel 9",
+            "Pixel 10",
+            "Pixel 11",
+            "Pixel 12",
+            "Pixel 13",
+            "Pixel 14",
+            "Pixel 15"
+          ]
+        ],
+        "x_DEPEND": [
+          "Sector_Bins_Low_Energy",
+          "Sectors"
+        ]
+      }
+    },
+    "Sector_Integral_Flux": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          15
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sectored integral channel flux",
+        "DELTA_MINUS_VAR": "Sector_Integral_Uncertainty",
+        "DELTA_PLUS_VAR": "Sector_Integral_Uncertainty",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Sector_Bins_Low_Energy",
+        "DEPEND_2": "Sectors",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Sector Integral Flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Integral Flux",
+        "LABL_PTR_1": "Sector_Bins_Text",
+        "LABL_PTR_2": "Sector_Names",
+        "SCALEMAX": 12900000.0,
+        "SCALEMIN": 53820.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Includes ions of different species and electrons. Calibrated using the detector response for Hydrogen. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Integral Flux",
+        "x_LABLAXES": [
+          [
+            "0.0059 - 0.0091 MeV/n",
+            "0.0066 - 0.0095 MeV/n",
+            "0.0074 - 0.0101 MeV/n",
+            "0.0083 - 0.0110 MeV/n",
+            "0.0097 - 0.0128 MeV/n",
+            "0.0121 - 0.0151 MeV/n",
+            "0.0144 - 0.0177 MeV/n",
+            "0.0171 - 0.0208 MeV/n",
+            "0.0206 - 0.0249 MeV/n",
+            "0.0249 - 0.0291 MeV/n",
+            "0.0291 - 0.0351 MeV/n",
+            "0.0351 - 0.0410 MeV/n",
+            "0.0410 - 0.0498 MeV/n",
+            "0.0498 - 0.0583 MeV/n",
+            "0.0583 - 0.0708 MeV/n",
+            "0.0708 - 0.0865 MeV/n"
+          ],
+          [
+            "Pixel 1",
+            "Pixel 2",
+            "Pixel 3",
+            "Pixel 4",
+            "Pixel 5",
+            "Pixel 6",
+            "Pixel 7",
+            "Pixel 8",
+            "Pixel 9",
+            "Pixel 10",
+            "Pixel 11",
+            "Pixel 12",
+            "Pixel 13",
+            "Pixel 14",
+            "Pixel 15"
+          ]
+        ],
+        "x_DEPEND": [
+          "Sector_Bins_Low_Energy",
+          "Sectors"
+        ]
+      }
+    },
+    "Sector_Integral_Uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          15
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Uncertainty in sectored integral channel flux",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Sector_Bins_Low_Energy",
+        "DEPEND_2": "Sectors",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Sector Integral Flux Uncert.",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Integral Flux Sigma",
+        "SCALEMAX": 9125000.0,
+        "SCALEMIN": 53820.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Integral Flux Sigma",
+        "x_DEPEND": [
+          "Sector_Bins_Low_Energy",
+          "Sectors"
+        ]
+      }
+    },
+    "Sector_Integral_Rate": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16,
+          15
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sectored integral channel count rate",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Sector_Bins_Low_Energy",
+        "DEPEND_2": "Sectors",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Sector Integral Count Rate",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Electron Count Rate",
+        "LABL_PTR_1": "Sector_Bins_Text",
+        "LABL_PTR_2": "Sector_Names",
+        "SCALEMAX": 2.0,
+        "SCALEMIN": 0.5,
+        "SCALETYP": "log",
+        "UNITS": "counts / s",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts / s",
+        "x_LABLAXIS": "Electron Count Rate",
+        "x_LABLAXES": [
+          [
+            "0.0059 - 0.0091 MeV/n",
+            "0.0066 - 0.0095 MeV/n",
+            "0.0074 - 0.0101 MeV/n",
+            "0.0083 - 0.0110 MeV/n",
+            "0.0097 - 0.0128 MeV/n",
+            "0.0121 - 0.0151 MeV/n",
+            "0.0144 - 0.0177 MeV/n",
+            "0.0171 - 0.0208 MeV/n",
+            "0.0206 - 0.0249 MeV/n",
+            "0.0249 - 0.0291 MeV/n",
+            "0.0291 - 0.0351 MeV/n",
+            "0.0351 - 0.0410 MeV/n",
+            "0.0410 - 0.0498 MeV/n",
+            "0.0498 - 0.0583 MeV/n",
+            "0.0583 - 0.0708 MeV/n",
+            "0.0708 - 0.0865 MeV/n"
+          ],
+          [
+            "Pixel 1",
+            "Pixel 2",
+            "Pixel 3",
+            "Pixel 4",
+            "Pixel 5",
+            "Pixel 6",
+            "Pixel 7",
+            "Pixel 8",
+            "Pixel 9",
+            "Pixel 10",
+            "Pixel 11",
+            "Pixel 12",
+            "Pixel 13",
+            "Pixel 14",
+            "Pixel 15"
+          ]
+        ],
+        "x_DEPEND": [
+          "Sector_Bins_Low_Energy",
+          "Sectors"
+        ]
+      }
+    },
+    "Sector_Bins_Low_Energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Lowest energy of each bin for sectored flux",
+        "DELTA_PLUS_VAR": "Sector_Bins_Width",
+        "FIELDNAM": "Sector Bins Low Energy",
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Energy",
+        "LABL_PTR_1": "Sector_Bins_Text",
+        "SCALEMAX": 0.07078000158071518,
+        "SCALEMIN": 0.005915999878197908,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.602e-13>J",
+        "UNITS": "MeV",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 9.999999974752427e-07,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Energy",
+        "x_LABLAXES": [
+          [
+            "0.0059 - 0.0091 MeV/n",
+            "0.0066 - 0.0095 MeV/n",
+            "0.0074 - 0.0101 MeV/n",
+            "0.0083 - 0.0110 MeV/n",
+            "0.0097 - 0.0128 MeV/n",
+            "0.0121 - 0.0151 MeV/n",
+            "0.0144 - 0.0177 MeV/n",
+            "0.0171 - 0.0208 MeV/n",
+            "0.0206 - 0.0249 MeV/n",
+            "0.0249 - 0.0291 MeV/n",
+            "0.0291 - 0.0351 MeV/n",
+            "0.0351 - 0.0410 MeV/n",
+            "0.0410 - 0.0498 MeV/n",
+            "0.0498 - 0.0583 MeV/n",
+            "0.0583 - 0.0708 MeV/n",
+            "0.0708 - 0.0865 MeV/n"
+          ]
+        ]
+      },
+      "VarData": [
+        0.005915999878197908,
+        0.006637000013142824,
+        0.007435999810695648,
+        0.008294999599456787,
+        0.009743999689817429,
+        0.012070000171661377,
+        0.014410000294446945,
+        0.017090000212192535,
+        0.0206300001591444,
+        0.024890000000596046,
+        0.029069999232888222,
+        0.03505999967455864,
+        0.04097000136971474,
+        0.04977000132203102,
+        0.0582600012421608,
+        0.07078000158071518
+      ]
+    },
+    "Sector_Bins_Width": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Width of each energy bin for sectored flux",
+        "FIELDNAM": "Sector Bins Width",
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Bin width",
+        "SI_CONVERSION": "1.602e-13>J",
+        "UNITS": "MeV",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Bin width"
+      },
+      "VarData": [
+        0.0031500000040978193,
+        0.0028230000752955675,
+        0.002713999943807721,
+        0.002684999955818057,
+        0.00304599991068244,
+        0.0030700000934302807,
+        0.0032599999103695154,
+        0.0037299999967217445,
+        0.004259999841451645,
+        0.00418000016361475,
+        0.0059899999760091305,
+        0.005909999832510948,
+        0.008799999952316284,
+        0.008489999920129776,
+        0.012520000338554382,
+        0.015720000490546227
+      ]
+    },
+    "Sector_Bins_Text": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 25,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Text description of each energy bin for sectored flux",
+        "FIELDNAM": "Sector Bins Text",
+        "FORMAT": "A25",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "0.0059 - 0.0091 MeV/n",
+        "0.0066 - 0.0095 MeV/n",
+        "0.0074 - 0.0101 MeV/n",
+        "0.0083 - 0.0110 MeV/n",
+        "0.0097 - 0.0128 MeV/n",
+        "0.0121 - 0.0151 MeV/n",
+        "0.0144 - 0.0177 MeV/n",
+        "0.0171 - 0.0208 MeV/n",
+        "0.0206 - 0.0249 MeV/n",
+        "0.0249 - 0.0291 MeV/n",
+        "0.0291 - 0.0351 MeV/n",
+        "0.0351 - 0.0410 MeV/n",
+        "0.0410 - 0.0498 MeV/n",
+        "0.0498 - 0.0583 MeV/n",
+        "0.0583 - 0.0708 MeV/n",
+        "0.0708 - 0.0865 MeV/n"
+      ]
+    },
+    "Sectors": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 254,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sectors",
+        "FIELDNAM": "Sectors",
+        "FORMAT": "I",
+        "LABLAXIS": "Sector number",
+        "LABL_PTR_1": "Sector_Names",
+        "SCALEMAX": 15,
+        "SCALEMIN": 1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 15,
+        "VALIDMIN": 1,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Sector number",
+        "x_LABLAXES": [
+          [
+            "Pixel 1",
+            "Pixel 2",
+            "Pixel 3",
+            "Pixel 4",
+            "Pixel 5",
+            "Pixel 6",
+            "Pixel 7",
+            "Pixel 8",
+            "Pixel 9",
+            "Pixel 10",
+            "Pixel 11",
+            "Pixel 12",
+            "Pixel 13",
+            "Pixel 14",
+            "Pixel 15"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "Sector_Names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 8,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sector names",
+        "FIELDNAM": "Sector names",
+        "FORMAT": "A8",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Pixel 1",
+        "Pixel 2",
+        "Pixel 3",
+        "Pixel 4",
+        "Pixel 5",
+        "Pixel 6",
+        "Pixel 7",
+        "Pixel 8",
+        "Pixel 9",
+        "Pixel 10",
+        "Pixel 11",
+        "Pixel 12",
+        "Pixel 13",
+        "Pixel 14",
+        "Pixel 15"
+      ]
+    },
+    "QUALITY_FLAG": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Data quality flag",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "Quality flag",
+        "FILLVAL": 255,
+        "FORMAT": "I",
+        "LABLAXIS": "Quality flag",
+        "SCALEMAX": 4,
+        "SCALEMIN": 0,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 4,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "0:Bad, 1:Known problems, 2:Survey data, 3:Good, 4:Excellent",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Quality flag"
+      }
+    },
+    "QUALITY_BITMASK": {
+      "VarDescription": {
+        "DataType": "CDF_UINT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 65534,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Computer readable quality parameter",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "Quality bitmask",
+        "FILLVAL": 65535,
+        "FORMAT": "Z4",
+        "LABLAXIS": "Quality bitmask",
+        "SCALEMAX": 32767,
+        "SCALEMIN": 0,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 32767,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "0x1: Bad value, 0x2: Close mode, 0x4: High flux mode ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Quality bitmask"
+      }
+    }
+  }
+}

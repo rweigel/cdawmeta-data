@@ -1,0 +1,204 @@
+{
+  "CDFFileInfo": {
+    "File": "ig_k0_pci_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/ig_k0_pci_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Source_name": "INTERBALL-GROUND>Ground Based Data",
+    "Data_type": "K0>Key Parameter",
+    "Descriptor": "PCI>PC Geomagnetic Index",
+    "Data_version": "1",
+    "TITLE": "Polar Cap Activity Index",
+    "TEXT": "References:     1.Troshichev O.A. et al, Planet.Space Sci.,   36, 1095, 1988. \n2.Vennerstrom S. et al,  Report UAG-103, World Data Center A for STP, Boulder, April 1994 ",
+    "MODS": "created Mar 1996",
+    "ADID_ref": "NSSD0250",
+    "Logical_file_id": "IG_K0_PCI_00000000_V01",
+    "Logical_source": "IG_K0_PCI",
+    "Logical_source_description": "Interball Polar Cap Activity Index, Key Parameters",
+    "PI_name": "V.Sergeev ",
+    "PI_affiliation": "Institute of physics Univ. of St.-Peterburg St.-Peterburg, Russia ",
+    "Mission_group": "Interball\n!___ITM Data including Earth Imaging and Ground-Based",
+    "Instrument_type": "Ground-Based Magnetometers, Riometers, Sounders",
+    "TEXT_supplement_1": "PC-index is an empirical magnetic activity index based on data from single near-pole station (Thule or Vostok for N or S hemispheres, respectively).\nIts derivation procedure is optimized to achieve the best correlation of  PC-index with the solar wind electric field (SWEF) magnitude ( v*B*sin(teta/2)**2 ). \nThe averaged horizontal magnetic disturbance vector (quiet  value subtracted) is projected onto the optimal direction (defined  empirically for each UT hour and each season based on the best correlation  with the SWEF) and, after normalization to the equivalent value  of SWEF, it gives the PC-index (expressed in mV/m). \nAlthough PC-index is  formally expressed in mV/m, it actually represents the  measure of magnetic activity, the normalization procedure (to SWEF)  helps to reduce the seasonal/diurnal effects to facilitate the intercomparison.\nThe resolution of the northern cap PC-index is 5 min and of the one from southern cap - 15 min. However, one time scale with the 5 min step is used for both indices and each  15 min averaged value of southern index is, hence, repeated for three times. \nFull description: http://www.iki.rssi.ru/interball.html",
+    "alt_logical_source": "Interball-Ground_PCI_Key-Parameters-K0_cdf",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Interball/PC_Index/KeyParameter/K0/PT5M",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time, centered",
+        "DICT_KEY": "time>epoch",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1995-08-13T23:57:30.000",
+        "SCALEMIN": "1995-08-07T00:02:30.000",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T23:59:59.000",
+        "VALIDMIN": "1994-01-01T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "PC_Vostok": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Southern Polar Cap magnetic activity index, 'Vostok'",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number>magnetic_activity_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Southern PC index, 'Vostok'",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F5.1",
+        "LABLAXIS": "PCS",
+        "SCALEMAX": 15.0,
+        "SCALEMIN": -5.0,
+        "UNITS": " ",
+        "VALIDMAX": 30.0,
+        "VALIDMIN": -10.0,
+        "VAR_NOTES": "15 min averaged value of southern index is repeated for three times. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "PCS"
+      }
+    },
+    "PC_Thule": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Nothern Polar Cap magnetic activity index, 'Thule'",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number>magnetic_activity_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Nothern PC index, 'Thule'",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F5.1",
+        "LABLAXIS": "PCN",
+        "SCALEMAX": 15.0,
+        "SCALEMIN": -5.0,
+        "UNITS": " ",
+        "VALIDMAX": 30.0,
+        "VALIDMIN": -10.0,
+        "VAR_NOTES": "5 min. resolution",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "PCN"
+      }
+    },
+    "Flag_Vostok": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "none",
+        "CATDESC": "Status Flag, PCS : 0-good data, 2-missing data, 5 - data delayed",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>status",
+        "FIELDNAM": "Status Flag, PCS",
+        "FILLVAL": 128,
+        "FORMAT": "I2",
+        "LABLAXIS": "FLag_S",
+        "SCALEMAX": 5,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 5,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "FLag_S"
+      }
+    },
+    "Flag_Thule": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "none",
+        "CATDESC": "Status Flag, PCN : 0-good data, 2-missing data, 5 - data delayed",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>status",
+        "FIELDNAM": "Status Flag, PCN",
+        "FILLVAL": 128,
+        "FORMAT": "I2",
+        "LABLAXIS": "Flag_N",
+        "SCALEMAX": 5,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 5,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Flag_N"
+      }
+    },
+    "Gap_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "none",
+        "CATDESC": "Post Gap Flag : 0 no gap before this point, 1-5 gap reason",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>post_gap",
+        "FIELDNAM": "Post Gap Flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "GAP_FLAG",
+        "SCALEMAX": 5,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 5,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "GAP_FLAG"
+      }
+    }
+  }
+}

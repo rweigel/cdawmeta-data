@@ -1,0 +1,1088 @@
+{
+  "CDFFileInfo": {
+    "File": "wi_h4_swe_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/wi_h4_swe_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISTP",
+    "Source_name": "WIND>Wind Interplanetary Plasma Laboratory",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Data_type": "H4>3 sec solar wind electron pitch-angle distributions",
+    "Descriptor": "SWE>Solar Wind Experiment",
+    "File_naming_convention": "source_datatype_descriptor",
+    "Data_version": "1",
+    "PI_name": "K. Ogilvie",
+    "PI_affiliation": "NASA/GSFC",
+    "TEXT": "Explanatory notes: \nThe electron pitch-angle distributions included in this data set are derived from sorting, by pitch (wrt B) and energy, the solar wind electron distributions measured by the Wind/SWE electron instrument (see Ogilvie et al., \"SWE, a comprehensive plasma instrument for the Wind spacecraft\", Space Sci. Rev., 71, 55, 1955).\nPitch-angle distrubutions, organized by energy, are computed from 3s measurements which are spaced either 6s or 12s in time.  These quantities are reliable and citable with caution, meaning that the PI advises that the user should discuss their interpretations with a member of the SWE science team before publishing. \nThe following comments are intended to aid in the use and interpretation of the electron pitch-angle distributions reported in this data set.  For each 'energy spectrum', observations are made at 16 energy channels ranging from about 10 eV to as much as 3 keV.  The exact energies at which observations are made is time-varying, and this data set reports the energy each channel observes (along with the observations themselves) at any time.  The observations made at each energy are sorted into pitch-angle bins, six degrees in width, from 0 degrees (flux nearly parallel to B) to 180 degrees (flux nearly anti-parallel with B).  A \"spin-averaged\" set of observations (aggregated from all pitch-angle bins, each energy) is also reported, one value for each energy channel.  The value reported for any bin (including the spin-averaged \"energy bins\") is given as a phase-space density, f [#/{cc*(cm/s)^3}], averaged over contributing detectors.\nThe data set reported here contains: f_pitch_E00, f_pitch_E01, f_pitch_E02, f_pitch_E03, f_pitch_E04, f_pitch_E05, f_pitch_E06, f_pitch_E07, f_pitch_E08, f_pitch_E09, f_pitch_E10, f_pitch_E11, f_pitch_E12, f_pitch_E13, f_pitch_E14, f_pitch_E15 (the pitch-angle distributions for each energy channel, with 30 pitch-angle bins for each), and f_pitch_SPA (with 16 spin-averaged energy bins).\nFor reference, the electron speeds (|V|, in cm/s) corresponding to the energy channels used, are reported in this data set.",
+    "Instrument_type": "Plasma and Solar Wind",
+    "Mission_group": "Wind",
+    "Logical_source": "wi_h4_swe",
+    "Logical_file_id": "wi_h4_swe_20010709_v01",
+    "Logical_source_description": "Wind Solar Wind Experiment (SWE), 3 sec solar wind electron pitch-angle distributions at 6-12 sec cadence",
+    "Time_resolution": "3 seconds",
+    "Generation_date": "20071203",
+    "MODS": "Skeleton created 12/03/2007",
+    "LINK_TEXT": "Additional information about instruments and parameters is available on the ",
+    "LINK_TITLE": "Wind Data Page",
+    "HTTP_LINK": "http://wind.nasa.gov/data.php",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Wind/SWE/H4/PT06S",
+    "DOI": "https://doi.org/10.48322/wx5n-w132"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time at start of measurement interval.",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "MONOTON": "INCREASE",
+        "SCALETYP": "linear",
+        "VALIDMAX": "2029-12-31T23:59:59.999",
+        "VALIDMIN": "1990-01-01T00:00:00.000",
+        "VAR_NOTES": "Measurements are from observations over a single spin period of approx 3 sec but read out on either 6 or 12 sec telemetry cadence, depending on telemetery rate",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null
+      }
+    },
+    "Ve": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron speed",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Echan_vals",
+        "DICT_KEY": "velocity>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ve",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABL_PTR_1": "Echan_List1",
+        "SCALETYP": "log",
+        "UNITS": "cm/s",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "time-varying electron speeds corresponding to fluxes",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm/s",
+        "x_LABLAXES": [
+          [
+            "Ve @ chan[0]",
+            "Ve @ chan[1]",
+            "Ve @ chan[2]",
+            "Ve @ chan[3]",
+            "Ve @ chan[4]",
+            "Ve @ chan[5]",
+            "Ve @ chan[6]",
+            "Ve @ chan[7]",
+            "Ve @ chan[8]",
+            "Ve @ chan[9]",
+            "Ve @ chan10]",
+            "Ve @ chan[11]",
+            "Ve @ chan[12]",
+            "Ve @ chan[13]",
+            "Ve @ chan[14]",
+            "Ve @ chan[15]"
+          ]
+        ],
+        "x_DEPEND": [
+          "Echan_vals"
+        ]
+      }
+    },
+    "Ve_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot of all channels",
+        "COMPONENT_0": "Ve",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Echan_vals",
+        "DICT_KEY": "velocity>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ve",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "Ve @ all Channels",
+        "SCALETYP": "log",
+        "UNITS": "cm/s",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "time-varying electron speeds corresponding to fluxes",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "cm/s",
+        "x_LABLAXIS": "Ve @ all Channels",
+        "x_DEPEND": [
+          "Echan_vals"
+        ],
+        "COMPONENTS": [
+          "Ve"
+        ]
+      }
+    },
+    "eV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron energy",
+        "COMPONENT_0": "Ve",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Echan_vals",
+        "DICT_KEY": "velocity>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "eV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "convert_toeV",
+        "LABL_PTR_1": "Echan_List2",
+        "SCALETYP": "log",
+        "UNITS": "eV",
+        "VALIDMAX": 3500.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "time-varying electron speeds corresponding to fluxes",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV",
+        "x_LABLAXES": [
+          [
+            "eV @ chan[0]",
+            "eV @ chan[1]",
+            "eV @ chan[2]",
+            "eV @ chan[3]",
+            "eV @ chan[4]",
+            "eV @ chan[5]",
+            "eV @ chan[6]",
+            "eV @ chan[7]",
+            "eV @ chan[8]",
+            "eV @ chan[9]",
+            "eV @ chan10]",
+            "eV @ chan[11]",
+            "eV @ chan[12]",
+            "eV @ chan[13]",
+            "eV @ chan[14]",
+            "eV @ chan[15]"
+          ]
+        ],
+        "x_DEPEND": [
+          "Echan_vals"
+        ],
+        "COMPONENTS": [
+          "Ve"
+        ]
+      }
+    },
+    "eV_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot of all channels, by energy",
+        "COMPONENT_0": "Ve",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Echan_vals",
+        "DICT_KEY": "velocity>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "eV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "convert_toeV",
+        "LABLAXIS": "eV @ all Channels",
+        "SCALETYP": "log",
+        "UNITS": "eV",
+        "VALIDMAX": 3500.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "time-varying electron energies corresponding to fluxes",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "eV @ all Channels",
+        "x_DEPEND": [
+          "Echan_vals"
+        ],
+        "COMPONENTS": [
+          "Ve"
+        ]
+      }
+    },
+    "f_pitch_E00": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 00 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E00",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 00",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 00",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E01": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 01 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E01",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 01",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 01",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E02": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 02 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E02",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 02",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 02",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E03": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 03 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E03",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 03",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 03",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E04": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 04 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E04",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 04",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 04",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E05": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 05 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E05",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 05",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 05",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E06": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 06 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E06",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 06",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 06",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E07": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 07 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E07",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 07",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 07",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E08": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 08 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E08",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 08",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 08",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E09": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 09 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E09",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 09",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 09",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E10": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 10 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E10",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 10",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 10",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E11": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 11 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E11",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 11",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 11",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E12": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 12 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E12",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 12",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 12",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E13": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 13 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E13",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 13",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 13",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E14": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 14 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E14",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 14",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 14",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_E15": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 15 (time-varying energy value)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Pitch_Angle",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_E15",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Elec Flux, chan 15",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For the EXX distributions, Ve[XX] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Elec Flux, chan 15",
+        "x_DEPEND": [
+          "Pitch_Angle"
+        ]
+      }
+    },
+    "f_pitch_SPA": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron spin-averaged flux, binned by energy channel",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Echan_vals",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_pitch_SPA",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Spin-Avg Elec Flux",
+        "SCALETYP": "log",
+        "UNITS": "#/{cc*(cm/s)^3}",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each spin-averaged flux value, f_pitch_SPA[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/{cc*(cm/s)^3}",
+        "x_LABLAXIS": "Spin-Avg Elec Flux",
+        "x_DEPEND": [
+          "Echan_vals"
+        ]
+      }
+    },
+    "Pitch_Angle": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Comp No 1",
+        "FIELDNAM": "Comp No 1",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Center Pitch Angle",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 200.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Center Pitch Angle"
+      },
+      "VarData": [
+        3.0,
+        9.0,
+        15.0,
+        21.0,
+        27.0,
+        33.0,
+        39.0,
+        45.0,
+        51.0,
+        57.0,
+        63.0,
+        69.0,
+        75.0,
+        81.0,
+        87.0,
+        93.0,
+        99.0,
+        105.0,
+        111.0,
+        117.0,
+        123.0,
+        129.0,
+        135.0,
+        141.0,
+        147.0,
+        153.0,
+        159.0,
+        165.0,
+        171.0,
+        177.0
+      ]
+    },
+    "Echan_vals": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Echan_vals",
+        "FIELDNAM": "Energy channel",
+        "FORMAT": "I2",
+        "LABLAXIS": "Energy channel",
+        "VALIDMAX": 15,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Energy channel"
+      },
+      "VarData": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "Echan_List1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 13,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Echan_List",
+        "FIELDNAM": "Energy channel",
+        "FORMAT": "A11",
+        "LABLAXIS": "Echan",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Echan"
+      },
+      "VarData": [
+        "Ve @ chan[0]",
+        "Ve @ chan[1]",
+        "Ve @ chan[2]",
+        "Ve @ chan[3]",
+        "Ve @ chan[4]",
+        "Ve @ chan[5]",
+        "Ve @ chan[6]",
+        "Ve @ chan[7]",
+        "Ve @ chan[8]",
+        "Ve @ chan[9]",
+        "Ve @ chan10]",
+        "Ve @ chan[11]",
+        "Ve @ chan[12]",
+        "Ve @ chan[13]",
+        "Ve @ chan[14]",
+        "Ve @ chan[15]"
+      ]
+    },
+    "Echan_List2": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 13,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Echan_List",
+        "FIELDNAM": "Energy channel",
+        "FORMAT": "A11",
+        "LABLAXIS": "Echan",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Echan"
+      },
+      "VarData": [
+        "eV @ chan[0]",
+        "eV @ chan[1]",
+        "eV @ chan[2]",
+        "eV @ chan[3]",
+        "eV @ chan[4]",
+        "eV @ chan[5]",
+        "eV @ chan[6]",
+        "eV @ chan[7]",
+        "eV @ chan[8]",
+        "eV @ chan[9]",
+        "eV @ chan10]",
+        "eV @ chan[11]",
+        "eV @ chan[12]",
+        "eV @ chan[13]",
+        "eV @ chan[14]",
+        "eV @ chan[15]"
+      ]
+    }
+  }
+}

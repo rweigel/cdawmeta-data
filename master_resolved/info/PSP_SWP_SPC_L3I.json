@@ -1,0 +1,5375 @@
+{
+  "CDFFileInfo": {
+    "File": "psp_swp_spc_l3i_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/psp_swp_spc_l3i_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Project": "LWS>Living With a Star",
+    "Source_name": "PSP>Parker Solar Probe",
+    "Discipline": "Solar Physics>Heliospheric Physics\nSpace Physics>Interplanetary Studies",
+    "Data_type": "L3i>Solar Wind Ion velocity moments and fits",
+    "Descriptor": "SWP_SPC>Solar Wind Electrons Alphas and Protons / Solar Probe Cup ",
+    "File_naming_convention": "source_descriptor_datatype_yyyyMMdd",
+    "Data_version": " ",
+    "PI_name": "Justin C. Kasper",
+    "PI_affiliation": "University of Michigan",
+    "TEXT": "This file includes the densities, vector velocities, and scalar (radial component) temperatures of the solar wind protons measured by the Solar Probe Cup (SPC). These are determined both by a direct computation of the velocity moments of the reduced distribution function and by attempting to fit the primary peak in the ion I(V) curve with a Maxwellian model.\nWhen such fitting is successful, the data set also includes Maxwellian model fits to the alpha-particle (He++) and tertiary (usually proton beam or shoulder) populations.",
+    "Instrument_type": "Plasma and Solar Wind",
+    "Mission_group": "Parker Solar Probe (PSP)",
+    "Logical_source": "psp_swp_spc_l3i",
+    "Logical_file_id": "psp_swp_spc_l3i_00000000_v01",
+    "Logical_source_description": "Parker Solar Probe/SWEAP/SPC level 3 ion data",
+    "Time_resolution": "variable",
+    "Rules_of_use": "NASA open data policy applies. Consultation with the instrument team is strongly recommended.",
+    "Generated_by": "Michael L. Stevens (mstevens@cfa.harvard.edu)",
+    "Generation_date": " ",
+    "Acknowledgement": "This project acknowledges the Parker Solar Probe SWEAP instrument team and the SWEAP science data center for providing these solar wind plasma measurements.",
+    "MODS": " ",
+    "LINK_TITLE": " Space Science Reviews\n Data Link",
+    "LINK_TEXT": "SWEAP instrument paper at\nSmithsonian Astrophysical Observatory SWEAP",
+    "HTTP_LINK": "https://link.springer.com/article/10.1007/s11214-015-0206-3\nhttp://sweap.cfa.harvard.edu/Data.html",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/ParkerSolarProbe/SWEAP/SPC/Level3/SolarWindMomentsFits/PT0.2185S",
+    "Calibrations_used": " ",
+    "DOI": "https://doi.org/10.48322/49we-tr31"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "CDF TT2000 time [ns]",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "REFERENCE_POSITION": "Rotating Earth Geoid",
+        "SCALETYP": "linear",
+        "TIME_BASE": "J2000",
+        "TIME_SCALE": "Terrestrial Time",
+        "UNITS": "ns",
+        "VALIDMAX": "2029-12-31T23:59:58.999000000",
+        "VALIDMIN": "1990-01-01T00:00:00.000000000",
+        "VAR_NOTES": "Spacecraft ephemeris time, expressed as the number of nanoseconds since J2000 (2000-01-01T12:00:00.000000000) with leap seconds included.    Please refer to CDF TT2000 documentation with regards to this convention.  This time corresponds to the first measurement of the spectrum. Owing to frequent changes in the operating mode, this is usually NOT regular cadence.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "DQF": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "DimSizes": [
+          32
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Array of SPC data quality indicators.",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "array32_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Data quality flag",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "Data Quality Flag",
+        "SCALETYP": "linear",
+        "UNITS": "-1=unknown 0=good 1=bad",
+        "VALIDMAX": 127,
+        "VALIDMIN": -2,
+        "VAR_NOTES": "The indication of the 32 elements of the data quality array is given by the metadata variable 'DQF_flagnames'. All flags are encoded as follows: --------- ---------------    = 0,   good/nominal/condition not present/etc     > 1,  bad/problematic/condition present/etc     = -1,  status not determined (\"don't know\")    < -1,  status does not matter (\"don't care\")  -1 (\"don't know\") is the default value for all flags.  The 0th flag array element is the [standardized] global quality flag, signifying whether the data are suitable for use without caveate. It is repeated in the \"general_flag\" variable.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "-1=unknown 0=good 1=bad",
+        "x_LABLAXIS": "Data Quality Flag",
+        "x_DEPEND": [
+          "array32_index"
+        ]
+      }
+    },
+    "general_flag": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Global quality flag, signifying whether the data for this epoch are suitable for use without caveate.",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "general_flag",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "general flag",
+        "SCALETYP": "linear",
+        "UNITS": "0 = good",
+        "VALIDMAX": 127,
+        "VALIDMIN": -2,
+        "VAR_NOTES": "All flags are encoded as follows: --------------------------    = 0,   good/nominal/condition not present/etc     > 1,  bad/problematic/condition present/etc     = -1,  status not determined (\"don't know\")    < -1,  status does not matter (\"don't care\")  -1 (\"don't know\") is the default value for all flags.  The user is advised to consider the quoted measurement uncertainties, particularly when the general quality flag is zero. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "0 = good",
+        "x_LABLAXIS": "general flag"
+      }
+    },
+    "vp_moment_SC_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton bulk velocity from the 1st moment of the reduced distribution function, in the spacecraft frame (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp_moment_SC",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "vp_moment_SC_deltalow_gd",
+        "DELTA_PLUS_VAR": "vp_moment_SC_deltahigh_gd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "proton bulk velocity moment in spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp_moment_SC_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          1000.0,
+          1000.0,
+          0.0
+        ],
+        "VALIDMIN": [
+          -1000.0,
+          -1000.0,
+          -2000.0
+        ],
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton bulk speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_moment_xSC",
+            "vp_moment_ySC",
+            "vp_moment_zSC"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp_moment_SC",
+          "general_flag"
+        ]
+      }
+    },
+    "vp_moment_SC_deltahigh_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> upper uncertainty",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp_moment_SC_deltahigh",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk velocity moment upper uncertainty in the spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp_moment_SC_deltahigh_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_moment_xSC_deltahigh",
+            "vp_moment_ySC_deltahigh",
+            "vp_moment_zSC_deltahigh"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp_moment_SC_deltahigh",
+          "general_flag"
+        ]
+      }
+    },
+    "vp_moment_SC_deltalow_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> lower uncertainty",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp_moment_SC_deltalow",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk velocity moment lower uncertainty in the spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp_moment_SC_deltalow_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_moment_xSC_deltalow",
+            "vp_moment_ySC_deltalow",
+            "vp_moment_zSC_deltalow"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp_moment_SC_deltalow",
+          "general_flag"
+        ]
+      }
+    },
+    "vp_moment_RTN_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton bulk velocity from the 1st moment of the reduced distribution function in [inertial] RTN coordinate system (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp_moment_RTN",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "vp_moment_RTN_deltahigh_gd",
+        "DELTA_PLUS_VAR": "vp_moment_RTN_deltalow_gd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "proton bulk velocity moment in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp_moment_RTN_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          1000.0,
+          1000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          -1000.0,
+          -1000.0
+        ],
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton bulk speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_moment_R",
+            "vp_moment_T",
+            "vp_moment_N"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp_moment_RTN",
+          "general_flag"
+        ]
+      }
+    },
+    "vp_moment_RTN_deltahigh_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> upper uncertainty",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp_moment_RTN_deltahigh",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk velocity moment upper uncertainty in the RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp_moment_RTN_deltahigh_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_moment_R_deltahigh",
+            "vp_moment_T_deltahigh",
+            "vp_moment_N_deltahigh"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp_moment_RTN_deltahigh",
+          "general_flag"
+        ]
+      }
+    },
+    "vp_moment_RTN_deltalow_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> lower uncertainty",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp_moment_RTN_deltalow",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk velocity moment lower uncertainty in the RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp_moment_RTN_deltalow_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_moment_R_deltalow",
+            "vp_moment_T_deltalow",
+            "vp_moment_N_deltalow"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp_moment_RTN_deltalow",
+          "general_flag"
+        ]
+      }
+    },
+    "np_moment_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton density estimate from the 0th moment of the reduced distribution function (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "np_moment",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "np_moment_deltalow_gd",
+        "DELTA_PLUS_VAR": "np_moment_deltahigh_gd",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "proton bulk density moment ",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "np_moment",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Q) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.01,
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton density, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Q) cm^{-3}",
+        "x_LABLAXIS": "np_moment",
+        "COMPONENTS": [
+          "np_moment",
+          "general_flag"
+        ]
+      }
+    },
+    "np_moment_deltahigh_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> upper uncertainty",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "np_moment_deltahigh",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk density moment, upper uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "np_moment_deltahigh",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton density, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) cm^{-3}",
+        "x_LABLAXIS": "np_moment_deltahigh",
+        "COMPONENTS": [
+          "np_moment_deltahigh",
+          "general_flag"
+        ]
+      }
+    },
+    "np_moment_deltalow_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> lower uncertainty",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "np_moment_deltalow",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk density moment, lower uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "np_moment_deltalow",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton density, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) cm^{-3}",
+        "x_LABLAXIS": "np_moment_deltalow",
+        "COMPONENTS": [
+          "np_moment_deltalow",
+          "general_flag"
+        ]
+      }
+    },
+    "wp_moment_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton radial [most probable] thermal speed estimate from the 2nd velocity moment of the reduced distribution function (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "wp_moment",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "wp_moment_deltalow_gd",
+        "DELTA_PLUS_VAR": "wp_moment_deltahigh_gd",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "proton bulk thermal speed moment ",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "wp_moment",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) km/s",
+        "x_LABLAXIS": "wp_moment",
+        "COMPONENTS": [
+          "wp_moment",
+          "general_flag"
+        ]
+      }
+    },
+    "wp_moment_deltahigh_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> upper uncertainty",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "wp_moment_deltahigh",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk thermal speed moment, upper uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "wp_moment_deltahigh",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) km/s",
+        "x_LABLAXIS": "wp_moment_deltahigh",
+        "COMPONENTS": [
+          "wp_moment_deltahigh",
+          "general_flag"
+        ]
+      }
+    },
+    "wp_moment_deltalow_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> lower uncertainty",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "wp_moment_deltalow",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk thermal speed moment, lower uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "wp_moment_deltalow",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) km/s",
+        "x_LABLAXIS": "wp_moment_deltalow",
+        "COMPONENTS": [
+          "wp_moment_deltalow",
+          "general_flag"
+        ]
+      }
+    },
+    "vp1_fit_SC_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Primary proton population velocity, from 1-dimensional Maxwellian fitting, in the spacecraft frame (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp1_fit_SC",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "vp1_fit_SC_uncertainty_gd",
+        "DELTA_PLUS_VAR": "vp1_fit_SC_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Primary proton velocity in spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp1_fit_SC_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          1000.0,
+          1000.0,
+          0.0
+        ],
+        "VALIDMIN": [
+          -1000.0,
+          -1000.0,
+          -2000.0
+        ],
+        "VAR_NOTES": "The strongest signal peak, which generally corresponds to the bulk proton population in the solar wind, is fit to a convected Maxwellian model. ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp1_fit_xSC",
+            "vp1_fit_ySC",
+            "vp1_fit_zSC"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp1_fit_SC",
+          "general_flag"
+        ]
+      }
+    },
+    "vp1_fit_SC_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp1_fit_SC_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Primary proton velocity uncertainty in spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp1_fit_SC_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp1_fit_xSC_uncertainty",
+            "vp1_fit_ySC_uncertainty",
+            "vp1_fit_zSC_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp1_fit_SC_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "vp1_fit_RTN_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Primary proton population velocity, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp1_fit_RTN",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "vp1_fit_RTN_uncertainty_gd",
+        "DELTA_PLUS_VAR": "vp1_fit_RTN_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Primary proton velocity in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp1_fit_RTN_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          1000.0,
+          1000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          -1000.0,
+          -1000.0
+        ],
+        "VAR_NOTES": "The strongest signal peak, which generally corresponds to the bulk proton population in the solar wind, is fit to a convected Maxwellian model. ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp1_fit_R",
+            "vp1_fit_T",
+            "vp1_fit_N"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp1_fit_RTN",
+          "general_flag"
+        ]
+      }
+    },
+    "vp1_fit_RTN_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp1_fit_RTN_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Primary proton velocity uncertainty in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp1_fit_RTN_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp1_fit_R_uncertainty",
+            "vp1_fit_T_uncertainty",
+            "vp1_fit_N_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp1_fit_RTN_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "np1_fit_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Primary proton population density, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "np1_fit",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "np1_fit_uncertainty_gd",
+        "DELTA_PLUS_VAR": "np1_fit_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Primary proton density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "np1_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.01,
+        "VAR_NOTES": "The strongest signal peak, which generally corresponds to the bulk proton population in the solar wind, is fit to a convected Maxwellian model.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) cm^{-3}",
+        "x_LABLAXIS": "np1_fit",
+        "COMPONENTS": [
+          "np1_fit",
+          "general_flag"
+        ]
+      }
+    },
+    "np1_fit_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "np1_fit_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Primary proton density, fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "np1_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) cm^{-3}",
+        "x_LABLAXIS": "np1_fit_uncertainty",
+        "COMPONENTS": [
+          "np1_fit_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "wp1_fit_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Primary proton population radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "wp1_fit",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "wp1_fit_uncertainty_gd",
+        "DELTA_PLUS_VAR": "wp1_fit_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Primary proton thermal speed",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "wp1_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "The strongest signal peak, which generally corresponds to the bulk proton population in the solar wind, is fit to a convected Maxwellian model.  This measurement most accurately represents the thermal width of the reduced phase-space-distribution function along the SPC-normal direction. This roughly corresponds to the radial component of the temperature tensor.  This is a most probable thermal speed, i.e. the model distribution goes like exp(-v^2/w^2).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) km/s",
+        "x_LABLAXIS": "wp1_fit",
+        "COMPONENTS": [
+          "wp1_fit",
+          "general_flag"
+        ]
+      }
+    },
+    "wp1_fit_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "wp1_fit_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Primary proton thermal speed, fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "wp1_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) km/s",
+        "x_LABLAXIS": "wp1_fit_uncertainty",
+        "COMPONENTS": [
+          "wp1_fit_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "vp_fit_SC_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton bulk velocity, from 1-dimensional Maxwellian fitting, in the spacecraft frame (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp_fit_SC",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "vp_fit_SC_uncertainty_gd",
+        "DELTA_PLUS_VAR": "vp_fit_SC_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Proton bulk velocity in the spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp_fit_SC_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          1000.0,
+          1000.0,
+          0.0
+        ],
+        "VALIDMIN": [
+          -1000.0,
+          -1000.0,
+          -2000.0
+        ],
+        "VAR_NOTES": "the bulk proton population in the solar wind is fit to a group of convected Maxwellian models. ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_fit_xSC",
+            "vp_fit_ySC",
+            "vp_fit_zSC"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp_fit_SC",
+          "general_flag"
+        ]
+      }
+    },
+    "vp_fit_SC_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp_fit_SC_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk velocity, fit uncertainty in the spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp_fit_SC_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_fit_xSC_uncertainty",
+            "vp_fit_ySC_uncertainty",
+            "vp_fit_zSC_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp_fit_SC_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "vp_fit_RTN_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton bulk velocity, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp_fit_RTN",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "vp_fit_RTN_uncertainty_gd",
+        "DELTA_PLUS_VAR": "vp_fit_RTN_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Proton bulk velocity in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp_fit_RTN_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          1000.0,
+          1000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          -1000.0,
+          -1000.0
+        ],
+        "VAR_NOTES": "the bulk proton population in the solar wind is fit to a group of convected Maxwellian models. ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_fit_R",
+            "vp_fit_T",
+            "vp_fit_N"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp_fit_RTN",
+          "general_flag"
+        ]
+      }
+    },
+    "vp_fit_RTN_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "vp_fit_RTN_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk velocity, fit uncertainty in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "vp_fit_RTN_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_fit_R_uncertainty",
+            "vp_fit_T_uncertainty",
+            "vp_fit_N_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "vp_fit_RTN_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "np_fit_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[Total] proton density, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "np_fit",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "np_fit_uncertainty_gd",
+        "DELTA_PLUS_VAR": "np_fit_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "proton density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "np_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.01,
+        "VAR_NOTES": "the bulk proton population in the solar wind is fit to a group of convected Maxwellian models.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) cm^{-3}",
+        "x_LABLAXIS": "np_fit",
+        "COMPONENTS": [
+          "np_fit",
+          "general_flag"
+        ]
+      }
+    },
+    "np_fit_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "np_fit_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton density, fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "np_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "cm^{-3}",
+        "x_LABLAXIS": "np_fit_uncertainty",
+        "COMPONENTS": [
+          "np_fit_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "wp_fit_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton radial [most probable] thermal speed component, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "wp_fit",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "wp_fit_uncertainty_gd",
+        "DELTA_PLUS_VAR": "wp_fit_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Proton bulk thermal speed",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "wp_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "the bulk proton population in the solar wind is fit to a group of convected Maxwellian models.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) km/s",
+        "x_LABLAXIS": "wp_fit",
+        "COMPONENTS": [
+          "wp_fit",
+          "general_flag"
+        ]
+      }
+    },
+    "wp_fit_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "wp_fit_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "bulk proton thermal speed, fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "wp_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) km/s",
+        "x_LABLAXIS": "wp_fit_uncertainty",
+        "COMPONENTS": [
+          "wp_fit_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "va_fit_SC_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha particle velocity vector, from 1-dimensional Maxwellian fitting, in the spacecraft frame (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "va_fit_SC",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "va_fit_SC_uncertainty_gd",
+        "DELTA_PLUS_VAR": "va_fit_SC_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "alpha particle velocity in spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "va_fit_SC_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          1000.0,
+          1000.0,
+          0.0
+        ],
+        "VALIDMIN": [
+          -1000.0,
+          -1000.0,
+          -2000.0
+        ],
+        "VAR_NOTES": "The alpha particle (He++) peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model. ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "va_fit_xSC",
+            "va_fit_ySC",
+            "va_fit_zSC"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "va_fit_SC",
+          "general_flag"
+        ]
+      }
+    },
+    "va_fit_SC_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "va_fit_SC_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "alpha particle velocity fit uncertainty the spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "va_fit_SC_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "va_fit_xSC_uncertainty",
+            "va_fit_ySC_uncertainty",
+            "va_fit_zSC_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "va_fit_SC_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "va_fit_RTN_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha particle velocity vector, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "va_fit_RTN",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "va_fit_RTN_uncertainty_gd",
+        "DELTA_PLUS_VAR": "va_fit_RTN_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "alpha particle velocity in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "va_fit_RTN_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          1000.0,
+          1000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          -1000.0,
+          -1000.0
+        ],
+        "VAR_NOTES": "The alpha particle (He++) peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model. ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "va_fit_R",
+            "va_fit_T",
+            "va_fit_N"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "va_fit_RTN",
+          "general_flag"
+        ]
+      }
+    },
+    "va_fit_RTN_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "va_fit_RTN_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "alpha particle velocity fit uncertainty in the RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "va_fit_RTN_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "va_fit_R_uncertainty",
+            "va_fit_T_uncertainty",
+            "va_fit_N_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "va_fit_RTN_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "na_fit_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha particle density, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "na_fit",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "na_fit_uncertainty_gd",
+        "DELTA_PLUS_VAR": "na_fit_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "alpha particle density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "na_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.01,
+        "VAR_NOTES": "The alpha particle (He++) peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) cm^{-3}",
+        "x_LABLAXIS": "na_fit",
+        "COMPONENTS": [
+          "na_fit",
+          "general_flag"
+        ]
+      }
+    },
+    "na_fit_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "na_fit_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "alpha particle density fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "na_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) cm^{-3}",
+        "x_LABLAXIS": "na_fit_uncertainty",
+        "COMPONENTS": [
+          "na_fit_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "wa_fit_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha particle radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "wa_fit",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "wa_fit_uncertainty_gd",
+        "DELTA_PLUS_VAR": "wa_fit_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "alpha particle thermal speed",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "wa_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "The alpha particle (He++) peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model.  This measurement most accurately represents the thermal width of the reduced phase-space-distribution function along the SPC-normal direction. This roughly corresponds to the radial component of the temperature tensor.  This is a most probable thermal speed, i.e. the model distribution goes like exp(-v^2/w^2).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) km/s",
+        "x_LABLAXIS": "wa_fit",
+        "COMPONENTS": [
+          "wa_fit",
+          "general_flag"
+        ]
+      }
+    },
+    "wa_fit_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "wa_fit_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "alpha particle thermal speed fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "wa_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) km/s",
+        "x_LABLAXIS": "wa_fit_uncertainty",
+        "COMPONENTS": [
+          "wa_fit_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "v3_fit_SC_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Population 3 velocity vector, from 1-dimensional Maxwellian fitting, in the spacecraft frame (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "v3_fit_SC",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "v3_fit_SC_uncertainty_gd",
+        "DELTA_PLUS_VAR": "v3_fit_SC_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "population 3 velocity in spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "v3_fit_SC_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          1000.0,
+          1000.0,
+          0.0
+        ],
+        "VALIDMIN": [
+          -1000.0,
+          -1000.0,
+          -2000.0
+        ],
+        "VAR_NOTES": "The population 3 peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model.   Population 3 most typically characterizes a proton shoulder or beam (mtoq=1)",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "v3_fit_xSC",
+            "v3_fit_ySC",
+            "v3_fit_zSC"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "v3_fit_SC",
+          "general_flag"
+        ]
+      }
+    },
+    "v3_fit_SC_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "v3_fit_SC_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "population 3 velocity uncertainty in spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "v3_fit_SC_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "v3_fit_xSC_uncertainty",
+            "v3_fit_ySC_uncertainty",
+            "v3_fit_zSC_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "v3_fit_SC_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "v3_fit_RTN_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Population 3 velocity vector, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "v3_fit_RTN",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "v3_fit_SC_uncertainty_gd",
+        "DELTA_PLUS_VAR": "v3_fit_RTN_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "population 3 velocity in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "v3_fit_RTN_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          1000.0,
+          1000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          -1000.0,
+          -1000.0
+        ],
+        "VAR_NOTES": "The population 3 peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model.   Population 3 most typically characterizes a proton shoulder or beam (mtoq=1)",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "v3_fit_R",
+            "v3_fit_T",
+            "v3_fit_N"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "v3_fit_RTN",
+          "general_flag"
+        ]
+      }
+    },
+    "v3_fit_RTN_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "v3_fit_RTN_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "population 3 velocity uncertainty in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "v3_fit_RTN_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity_gd",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": [
+          "(Good Q) km/s",
+          "(Good Q) km/s",
+          "(Good Q) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "v3_fit_R_uncertainty",
+            "v3_fit_T_uncertainty",
+            "v3_fit_N_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ],
+        "COMPONENTS": [
+          "v3_fit_RTN_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "n3_fit_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Population 3 particle density, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "n3_fit",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "n3_fit_uncertainty_gd",
+        "DELTA_PLUS_VAR": "n3_fit_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "population 3 particle density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "n3_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.01,
+        "VAR_NOTES": "The population 3 particle peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model.  Population 3 most typically characterizes a proton shoulder or beam (mtoq=1)",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) cm^{-3}",
+        "x_LABLAXIS": "n3_fit",
+        "COMPONENTS": [
+          "n3_fit",
+          "general_flag"
+        ]
+      }
+    },
+    "n3_fit_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "n3_fit_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "population 3 density, fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "n3_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) cm^{-3}",
+        "x_LABLAXIS": "n3_fit_uncertainty",
+        "COMPONENTS": [
+          "n3_fit_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "w3_fit_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Population 3 particle radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "w3_fit",
+        "COMPONENT_1": "general_flag",
+        "DELTA_MINUS_VAR": "w3_fit_uncertainty_gd",
+        "DELTA_PLUS_VAR": "w3_fit_uncertainty_gd",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "population 3 thermal speed",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "w3_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "The population 3 peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model.  Population 3 most typically characterizes a proton shoulder or beam (mtoq=1)  This measurement most accurately represents the thermal width of the reduced phase-space-distribution function along the SPC-normal direction. This roughly corresponds to the radial component of the temperature tensor.  This is a most probable thermal speed, i.e. the model distribution goes like exp(-v^2/w^2). ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) km/s",
+        "x_LABLAXIS": "w3_fit",
+        "COMPONENTS": [
+          "w3_fit",
+          "general_flag"
+        ]
+      }
+    },
+    "w3_fit_uncertainty_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "w3_fit_uncertainty",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "population 3 thermal speed, fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "w3_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) km/s",
+        "x_LABLAXIS": "w3_fit_uncertainty",
+        "COMPONENTS": [
+          "w3_fit_uncertainty",
+          "general_flag"
+        ]
+      }
+    },
+    "pop3_mtoq_gd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Species identifier for third population fit (in addition to primary proton and alpha peaks) (Only Good Quality)",
+        "COMPARE_VAL": 0,
+        "COMPONENT_0": "pop3_mtoq",
+        "COMPONENT_1": "general_flag",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "population 3 mass-to-charge ratio",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "m-to-q",
+        "SCALETYP": "linear",
+        "UNITS": "(Good Qs) u/e",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "When the n3_fit, w3_fit, and/or v3_fit variables are valid, they indicate that a third ion population has been measured in addition to the primary proton and alpha particle populations. This variable indicates the estimated mass-per-charge for that population, in fundamental units (i.e. protons=1/1=1, alphas=4/2=2, O6=16/6=2.67). Population 3 most typically characterizes a proton shoulder or beam (mtoq=1)",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": "(Good Qs) u/e",
+        "x_LABLAXIS": "m-to-q",
+        "COMPONENTS": [
+          "pop3_mtoq",
+          "general_flag"
+        ]
+      }
+    },
+    "sc_pos_HCI": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PSP Spacecraft position in the Heliocentric Inertial system, in km",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Spacecraft position (HCI)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "HCI_LABL",
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": [
+          300000000.0,
+          300000000.0,
+          300000000.0
+        ],
+        "VALIDMIN": [
+          -300000000.0,
+          -300000000.0,
+          -300000000.0
+        ],
+        "VAR_NOTES": "Also called Ecliptic J2000. Z is the solar north rotational axis, and X is the solar ascending node on the J2000 ecliptic.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXES": [
+          [
+            "x_HCI",
+            "y_HCI",
+            "z_HCI"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "sc_vel_HCI": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PSP Spacecraft velocity in the Heliocentric Inertial system, in km/s",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Spacecraft velocity vector (HCI)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "VHECI_LABL",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": [
+          300.0,
+          300.0,
+          300.0
+        ],
+        "VALIDMIN": [
+          -300.0,
+          -300.0,
+          -300.0
+        ],
+        "VAR_NOTES": "Also called Ecliptic J2000. Z is the solar north rotational axis, and X is the solar ascending node on the J2000 ecliptic.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXES": [
+          [
+            "Vx_HCI",
+            "Vy_HCI",
+            "Vz_HCI"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "carr_latitude": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Carrington Latitude",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "carr_latitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "latitude",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": "spacecraft position degrees Latitude from solar equator",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "latitude"
+      }
+    },
+    "carr_longitude": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Carrington Longitude",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "carr_longitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "longitude",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_NOTES": "spacecraft position degrees longitude from solar prime meridian",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "longitude"
+      }
+    },
+    "vp_moment_SC": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton bulk velocity from the 1st moment of the reduced distribution function, in the spacecraft frame (All Qualities)",
+        "DELTA_MINUS_VAR": "vp_moment_SC_deltalow",
+        "DELTA_PLUS_VAR": "vp_moment_SC_deltahigh",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "proton bulk velocity moment in spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp_moment_SC_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          1000.0,
+          1000.0,
+          0.0
+        ],
+        "VALIDMIN": [
+          -1000.0,
+          -1000.0,
+          -2000.0
+        ],
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton bulk speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_moment_xSC",
+            "vp_moment_ySC",
+            "vp_moment_zSC"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "vp_moment_SC_deltahigh": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> upper uncertainty",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk velocity moment upper uncertainty in the spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp_moment_SC_deltahigh_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_moment_xSC_deltahigh",
+            "vp_moment_ySC_deltahigh",
+            "vp_moment_zSC_deltahigh"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "vp_moment_SC_deltalow": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> lower uncertainty",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk velocity moment lower uncertainty in the spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp_moment_SC_deltalow_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_moment_xSC_deltalow",
+            "vp_moment_ySC_deltalow",
+            "vp_moment_zSC_deltalow"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "vp_moment_RTN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton bulk velocity from the 1st moment of the reduced distribution function in [inertial] RTN coordinate system (All Qualities)",
+        "DELTA_MINUS_VAR": "vp_moment_RTN_deltahigh",
+        "DELTA_PLUS_VAR": "vp_moment_RTN_deltalow",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "proton bulk velocity moment in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp_moment_RTN_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          1000.0,
+          1000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          -1000.0,
+          -1000.0
+        ],
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton bulk speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_moment_R",
+            "vp_moment_T",
+            "vp_moment_N"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "vp_moment_RTN_deltahigh": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> upper uncertainty",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk velocity moment upper uncertainty in the RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp_moment_RTN_deltahigh_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_moment_R_deltahigh",
+            "vp_moment_T_deltahigh",
+            "vp_moment_N_deltahigh"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "vp_moment_RTN_deltalow": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> lower uncertainty",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk velocity moment lower uncertainty in the RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp_moment_RTN_deltalow_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_moment_R_deltalow",
+            "vp_moment_T_deltalow",
+            "vp_moment_N_deltalow"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "np_moment": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton density estimate from the 0th moment of the reduced distribution function (All Qualities)",
+        "DELTA_MINUS_VAR": "np_moment_deltalow",
+        "DELTA_PLUS_VAR": "np_moment_deltahigh",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "proton bulk density moment ",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "np_moment",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.01,
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton density, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) cm^{-3}",
+        "x_LABLAXIS": "np_moment"
+      }
+    },
+    "np_moment_deltahigh": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> upper uncertainty",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk density moment, upper uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "np_moment_deltahigh",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton density, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) cm^{-3}",
+        "x_LABLAXIS": "np_moment_deltahigh"
+      }
+    },
+    "np_moment_deltalow": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> lower uncertainty",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk density moment, lower uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "np_moment_deltalow",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton density, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) cm^{-3}",
+        "x_LABLAXIS": "np_moment_deltalow"
+      }
+    },
+    "wp_moment": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton radial [most probable] thermal speed estimate from the 2nd velocity moment of the reduced distribution function (All Qualities)",
+        "DELTA_MINUS_VAR": "wp_moment_deltalow",
+        "DELTA_PLUS_VAR": "wp_moment_deltahigh",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "proton bulk thermal speed moment ",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "wp_moment",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) km/s",
+        "x_LABLAXIS": "wp_moment"
+      }
+    },
+    "wp_moment_deltahigh": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> upper uncertainty",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk thermal speed moment, upper uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "wp_moment_deltahigh",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) km/s",
+        "x_LABLAXIS": "wp_moment_deltahigh"
+      }
+    },
+    "wp_moment_deltalow": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> lower uncertainty",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk thermal speed moment, lower uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "wp_moment_deltalow",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This moment is a model-independant estimate of the proton most-probable thermal speed, but it is subject to confusion with alpha particles when present. Error bars represent estimated upper and lower limits.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) km/s",
+        "x_LABLAXIS": "wp_moment_deltalow"
+      }
+    },
+    "vp1_fit_SC": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Primary proton population velocity, from 1-dimensional Maxwellian fitting, in the spacecraft frame (All Qualities)",
+        "DELTA_MINUS_VAR": "vp1_fit_SC_uncertainty",
+        "DELTA_PLUS_VAR": "vp1_fit_SC_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Primary proton velocity in spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp1_fit_SC_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          1000.0,
+          1000.0,
+          0.0
+        ],
+        "VALIDMIN": [
+          -1000.0,
+          -1000.0,
+          -2000.0
+        ],
+        "VAR_NOTES": "The strongest signal peak, which generally corresponds to the bulk proton population in the solar wind, is fit to a convected Maxwellian model. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp1_fit_xSC",
+            "vp1_fit_ySC",
+            "vp1_fit_zSC"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "vp1_fit_SC_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Primary proton velocity uncertainty in spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp1_fit_SC_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp1_fit_xSC_uncertainty",
+            "vp1_fit_ySC_uncertainty",
+            "vp1_fit_zSC_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "vp1_fit_RTN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Primary proton population velocity, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (All Qualities)",
+        "DELTA_MINUS_VAR": "vp1_fit_RTN_uncertainty",
+        "DELTA_PLUS_VAR": "vp1_fit_RTN_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Primary proton velocity in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp1_fit_RTN_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          1000.0,
+          1000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          -1000.0,
+          -1000.0
+        ],
+        "VAR_NOTES": "The strongest signal peak, which generally corresponds to the bulk proton population in the solar wind, is fit to a convected Maxwellian model. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp1_fit_R",
+            "vp1_fit_T",
+            "vp1_fit_N"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "vp1_fit_RTN_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Primary proton velocity uncertainty in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp1_fit_RTN_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp1_fit_R_uncertainty",
+            "vp1_fit_T_uncertainty",
+            "vp1_fit_N_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "np1_fit": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Primary proton population density, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "DELTA_MINUS_VAR": "np1_fit_uncertainty",
+        "DELTA_PLUS_VAR": "np1_fit_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Primary proton density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "np1_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.01,
+        "VAR_NOTES": "The strongest signal peak, which generally corresponds to the bulk proton population in the solar wind, is fit to a convected Maxwellian model.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) cm^{-3}",
+        "x_LABLAXIS": "np1_fit"
+      }
+    },
+    "np1_fit_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Primary proton density, fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "np1_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) cm^{-3}",
+        "x_LABLAXIS": "np1_fit_uncertainty"
+      }
+    },
+    "wp1_fit": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Primary proton population radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "DELTA_MINUS_VAR": "wp1_fit_uncertainty",
+        "DELTA_PLUS_VAR": "wp1_fit_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Primary proton thermal speed",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "wp1_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "The strongest signal peak, which generally corresponds to the bulk proton population in the solar wind, is fit to a convected Maxwellian model.  This measurement most accurately represents the thermal width of the reduced phase-space-distribution function along the SPC-normal direction. This roughly corresponds to the radial component of the temperature tensor.  This is a most probable thermal speed, i.e. the model distribution goes like exp(-v^2/w^2).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) km/s",
+        "x_LABLAXIS": "wp1_fit"
+      }
+    },
+    "wp1_fit_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Primary proton thermal speed, fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "wp1_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) km/s",
+        "x_LABLAXIS": "wp1_fit_uncertainty"
+      }
+    },
+    "vp_fit_SC": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton bulk velocity, from 1-dimensional Maxwellian fitting, in the spacecraft frame (All Qualities)",
+        "DELTA_MINUS_VAR": "vp_fit_SC_uncertainty",
+        "DELTA_PLUS_VAR": "vp_fit_SC_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Proton bulk velocity in the spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp_fit_SC_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          1000.0,
+          1000.0,
+          0.0
+        ],
+        "VALIDMIN": [
+          -1000.0,
+          -1000.0,
+          -2000.0
+        ],
+        "VAR_NOTES": "the bulk proton population in the solar wind is fit to a group of convected Maxwellian models. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_fit_xSC",
+            "vp_fit_ySC",
+            "vp_fit_zSC"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "vp_fit_SC_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk velocity, fit uncertainty in the spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp_fit_SC_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_fit_xSC_uncertainty",
+            "vp_fit_ySC_uncertainty",
+            "vp_fit_zSC_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "vp_fit_RTN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton bulk velocity, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (All Qualities)",
+        "DELTA_MINUS_VAR": "vp_fit_RTN_uncertainty",
+        "DELTA_PLUS_VAR": "vp_fit_RTN_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Proton bulk velocity in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp_fit_RTN_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          1000.0,
+          1000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          -1000.0,
+          -1000.0
+        ],
+        "VAR_NOTES": "the bulk proton population in the solar wind is fit to a group of convected Maxwellian models. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_fit_R",
+            "vp_fit_T",
+            "vp_fit_N"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "vp_fit_RTN_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton bulk velocity, fit uncertainty in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "vp_fit_RTN_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "vp_fit_R_uncertainty",
+            "vp_fit_T_uncertainty",
+            "vp_fit_N_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "np_fit": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[Total] proton density, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "DELTA_MINUS_VAR": "np_fit_uncertainty",
+        "DELTA_PLUS_VAR": "np_fit_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "proton density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "np_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.01,
+        "VAR_NOTES": "the bulk proton population in the solar wind is fit to a group of convected Maxwellian models.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) cm^{-3}",
+        "x_LABLAXIS": "np_fit"
+      }
+    },
+    "np_fit_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "proton density, fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "np_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) cm^{-3}",
+        "x_LABLAXIS": "np_fit_uncertainty"
+      }
+    },
+    "wp_fit": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton radial [most probable] thermal speed component, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "DELTA_MINUS_VAR": "wp_fit_uncertainty",
+        "DELTA_PLUS_VAR": "wp_fit_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "Proton bulk thermal speed",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "wp_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "the bulk proton population in the solar wind is fit to a group of convected Maxwellian models.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) km/s",
+        "x_LABLAXIS": "wp_fit"
+      }
+    },
+    "wp_fit_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "bulk proton thermal speed, fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "wp_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) km/s",
+        "x_LABLAXIS": "wp_fit_uncertainty"
+      }
+    },
+    "va_fit_SC": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha particle velocity vector, from 1-dimensional Maxwellian fitting, in the spacecraft frame (All Qualities)",
+        "DELTA_MINUS_VAR": "va_fit_SC_uncertainty",
+        "DELTA_PLUS_VAR": "va_fit_SC_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "alpha particle velocity in spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "va_fit_SC_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          1000.0,
+          1000.0,
+          0.0
+        ],
+        "VALIDMIN": [
+          -1000.0,
+          -1000.0,
+          -2000.0
+        ],
+        "VAR_NOTES": "The alpha particle (He++) peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "va_fit_xSC",
+            "va_fit_ySC",
+            "va_fit_zSC"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "va_fit_SC_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "alpha particle velocity fit uncertainty the spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "va_fit_SC_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "va_fit_xSC_uncertainty",
+            "va_fit_ySC_uncertainty",
+            "va_fit_zSC_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "va_fit_RTN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha particle velocity vector, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (All Qualities)",
+        "DELTA_MINUS_VAR": "va_fit_RTN_uncertainty",
+        "DELTA_PLUS_VAR": "va_fit_RTN_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "alpha particle velocity in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "va_fit_RTN_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          1000.0,
+          1000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          -1000.0,
+          -1000.0
+        ],
+        "VAR_NOTES": "The alpha particle (He++) peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "va_fit_R",
+            "va_fit_T",
+            "va_fit_N"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "va_fit_RTN_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "alpha particle velocity fit uncertainty in the RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "va_fit_RTN_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "va_fit_R_uncertainty",
+            "va_fit_T_uncertainty",
+            "va_fit_N_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "na_fit": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha particle density, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "DELTA_MINUS_VAR": "na_fit_uncertainty",
+        "DELTA_PLUS_VAR": "na_fit_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "alpha particle density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "na_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.01,
+        "VAR_NOTES": "The alpha particle (He++) peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) cm^{-3}",
+        "x_LABLAXIS": "na_fit"
+      }
+    },
+    "na_fit_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "alpha particle density fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "na_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) cm^{-3}",
+        "x_LABLAXIS": "na_fit_uncertainty"
+      }
+    },
+    "wa_fit": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha particle radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "DELTA_MINUS_VAR": "wa_fit_uncertainty",
+        "DELTA_PLUS_VAR": "wa_fit_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "alpha particle thermal speed",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "wa_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "The alpha particle (He++) peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model.  This measurement most accurately represents the thermal width of the reduced phase-space-distribution function along the SPC-normal direction. This roughly corresponds to the radial component of the temperature tensor.  This is a most probable thermal speed, i.e. the model distribution goes like exp(-v^2/w^2).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) km/s",
+        "x_LABLAXIS": "wa_fit"
+      }
+    },
+    "wa_fit_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "alpha particle thermal speed fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "wa_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) km/s",
+        "x_LABLAXIS": "wa_fit_uncertainty"
+      }
+    },
+    "v3_fit_SC": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Population 3 velocity vector, from 1-dimensional Maxwellian fitting, in the spacecraft frame (All Qualities)",
+        "DELTA_MINUS_VAR": "v3_fit_SC_uncertainty",
+        "DELTA_PLUS_VAR": "v3_fit_SC_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "population 3 velocity in spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "v3_fit_SC_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          1000.0,
+          1000.0,
+          0.0
+        ],
+        "VALIDMIN": [
+          -1000.0,
+          -1000.0,
+          -2000.0
+        ],
+        "VAR_NOTES": "The population 3 peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model.   Population 3 most typically characterizes a proton shoulder or beam (mtoq=1)",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "v3_fit_xSC",
+            "v3_fit_ySC",
+            "v3_fit_zSC"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "v3_fit_SC_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "population 3 velocity uncertainty in spacecraft frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "v3_fit_SC_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "v3_fit_xSC_uncertainty",
+            "v3_fit_ySC_uncertainty",
+            "v3_fit_zSC_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "v3_fit_RTN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Population 3 velocity vector, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (All Qualities)",
+        "DELTA_MINUS_VAR": "v3_fit_SC_uncertainty",
+        "DELTA_PLUS_VAR": "v3_fit_RTN_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "population 3 velocity in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "v3_fit_RTN_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          1000.0,
+          1000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          -1000.0,
+          -1000.0
+        ],
+        "VAR_NOTES": "The population 3 peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model.   Population 3 most typically characterizes a proton shoulder or beam (mtoq=1)",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "v3_fit_R",
+            "v3_fit_T",
+            "v3_fit_N"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "v3_fit_RTN_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "vector_index",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "population 3 velocity uncertainty in RTN frame",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "v3_fit_RTN_uncertainty_LABL_1",
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_velocity",
+        "VALIDMAX": [
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  The flow angles relative to the SPC are obtained by comparing fluxes upon the four sensor quadrants. This uncertainty incorporates uncertainties in the absolute responses of the respective sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "(All Qs) km/s",
+          "(All Qs) km/s",
+          "(All Qs) km/s"
+        ],
+        "x_LABLAXES": [
+          [
+            "v3_fit_R_uncertainty",
+            "v3_fit_T_uncertainty",
+            "v3_fit_N_uncertainty"
+          ]
+        ],
+        "x_DEPEND": [
+          "vector_index"
+        ]
+      }
+    },
+    "n3_fit": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Population 3 particle density, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "DELTA_MINUS_VAR": "n3_fit_uncertainty",
+        "DELTA_PLUS_VAR": "n3_fit_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "population 3 particle density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "n3_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.01,
+        "VAR_NOTES": "The population 3 particle peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model.  Population 3 most typically characterizes a proton shoulder or beam (mtoq=1)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) cm^{-3}",
+        "x_LABLAXIS": "n3_fit"
+      }
+    },
+    "n3_fit_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "population 3 density, fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "n3_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) cm^{-3}",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) cm^{-3}",
+        "x_LABLAXIS": "n3_fit_uncertainty"
+      }
+    },
+    "w3_fit": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Population 3 particle radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (All Qualities)",
+        "DELTA_MINUS_VAR": "w3_fit_uncertainty",
+        "DELTA_PLUS_VAR": "w3_fit_uncertainty",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionnoerrorbars",
+        "FIELDNAM": "population 3 thermal speed",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "w3_fit",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "The population 3 peak in the solar wind, when clearly distinguishable, is fit to a convected Maxwellian model.  Population 3 most typically characterizes a proton shoulder or beam (mtoq=1)  This measurement most accurately represents the thermal width of the reduced phase-space-distribution function along the SPC-normal direction. This roughly corresponds to the radial component of the temperature tensor.  This is a most probable thermal speed, i.e. the model distribution goes like exp(-v^2/w^2). ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) km/s",
+        "x_LABLAXIS": "w3_fit"
+      }
+    },
+    "w3_fit_uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> 1-sigma error",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "population 3 thermal speed, fit uncertainty",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "w3_fit_uncertainty",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.001,
+        "VAR_NOTES": "This uncertainty may be invalid when the Maxwellian is a poor model for the data. Refer to the data quality flags.  This variable reflects *precision* uncertainty from fitting, summed in quadrature with the *accuracy* uncertainy associated with the absolute responses of the SPC sensors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(All Qs) km/s",
+        "x_LABLAXIS": "w3_fit_uncertainty"
+      }
+    },
+    "pop3_mtoq": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Species identifier for third population fit (in addition to primary proton and alpha peaks) (All Qualities)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "population 3 mass-to-charge ratio",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "m-to-q",
+        "SCALETYP": "linear",
+        "UNITS": "(All Qs) u/e",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "When the n3_fit, w3_fit, and/or v3_fit variables are valid, they indicate that a third ion population has been measured in addition to the primary proton and alpha particle populations. This variable indicates the estimated mass-per-charge for that population, in fundamental units (i.e. protons=1/1=1, alphas=4/2=2, O6=16/6=2.67). Population 3 most typically characterizes a proton shoulder or beam (mtoq=1)",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "(All Qs) u/e",
+        "x_LABLAXIS": "m-to-q"
+      }
+    },
+    "HCI_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 10,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "HCI system coordinates",
+        "FIELDNAM": "HCI_LABL",
+        "FORMAT": "A11",
+        "LABLAXIS": "HCI_LABL",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "HCI_LABL"
+      },
+      "VarData": [
+        "x_HCI",
+        "y_HCI",
+        "z_HCI"
+      ]
+    },
+    "SC_frame": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 10,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The Parker Solar Probe spacecraft coordinate system.",
+        "FIELDNAM": "PSP frame of reference",
+        "FORMAT": "A11",
+        "LABLAXIS": "cartesian",
+        "VAR_NOTES": "This coordinate system is aligned with the Solar Probe Cup. In encounter orientations, the X-axis points in the spacecraft RAM direction, the Z-axis points [roughly] towards the sun, and the Y-axis points south relative to the solar ecliptic plane.  This system is roughly, but not strictly aligned with the heliographic RTN system (R = -Z_SC, T = X_SC, N = -Y_SC) in encounters.  Note that this system is co-moving with the spacecraft. Flows from the sun appear aberrated and shifted in the spacecraft frame according to the instantaneous velocity of the spacecraft.",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "cartesian"
+      },
+      "VarData": [
+        "X_SC",
+        "Y_SC",
+        "Z_SC"
+      ]
+    },
+    "unit_velocity": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 13,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "units for cartesian velocity vectors",
+        "FIELDNAM": "unit_velocity",
+        "FORMAT": "A11",
+        "LABLAXIS": "unit_velocity",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "unit_velocity"
+      },
+      "VarData": [
+        "(All Qs) km/s",
+        "(All Qs) km/s",
+        "(All Qs) km/s"
+      ]
+    },
+    "unit_velocity_gd": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 13,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "units for cartesian velocity vectors",
+        "FIELDNAM": "unit_velocity",
+        "FORMAT": "A11",
+        "LABLAXIS": "unit_velocity",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "unit_velocity"
+      },
+      "VarData": [
+        "(Good Q) km/s",
+        "(Good Q) km/s",
+        "(Good Q) km/s"
+      ]
+    },
+    "RTN_FRAME": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 10,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The inertial Radial-Tangential-Normal frame",
+        "FIELDNAM": "RTN frame of reference",
+        "FORMAT": "A11",
+        "LABLAXIS": "cartesian",
+        "VAR_NOTES": "This coordinate system is oriented such that the R basis vector points along the sun-spacecraft line. The T basis vector is the cross product of the solar rotation axis with R, and the N basis vector completes the triad.  This frame is inertial, i.e. it is the so-oriented inertial frame for the spacecraft's instantaneous position. Vector velocities in this frame are measured relative to the fixed stars.",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "cartesian"
+      },
+      "VarData": [
+        "R",
+        "T",
+        "N"
+      ]
+    },
+    "vp_fit_SC_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 24,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp_fit_SC_LABL_1",
+        "FIELDNAM": "vp_fit_SC_LABL_1",
+        "FORMAT": "A25",
+        "LABLAXIS": "vp_fit_SC_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp_fit_SC_LABL_1"
+      },
+      "VarData": [
+        "vp_fit_xSC",
+        "vp_fit_ySC",
+        "vp_fit_zSC"
+      ]
+    },
+    "vp_fit_SC_uncertainty_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 36,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp_fit_SC_uncertainty_LABL_1",
+        "FIELDNAM": "vp_fit_SC_uncertainty_LABL_1",
+        "FORMAT": "A37",
+        "LABLAXIS": "vp_fit_SC_uncertainty_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp_fit_SC_uncertainty_LABL_1"
+      },
+      "VarData": [
+        "vp_fit_xSC_uncertainty",
+        "vp_fit_ySC_uncertainty",
+        "vp_fit_zSC_uncertainty"
+      ]
+    },
+    "vp1_fit_SC_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 25,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp1_fit_SC_LABL_1",
+        "FIELDNAM": "vp1_fit_SC_LABL_1",
+        "FORMAT": "A26",
+        "LABLAXIS": "vp1_fit_SC_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp1_fit_SC_LABL_1"
+      },
+      "VarData": [
+        "vp1_fit_xSC",
+        "vp1_fit_ySC",
+        "vp1_fit_zSC"
+      ]
+    },
+    "vp_fit_RTN_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 25,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp_fit_RTN_LABL_1",
+        "FIELDNAM": "vp_fit_RTN_LABL_1",
+        "FORMAT": "A26",
+        "LABLAXIS": "vp_fit_RTN_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp_fit_RTN_LABL_1"
+      },
+      "VarData": [
+        "vp_fit_R",
+        "vp_fit_T",
+        "vp_fit_N"
+      ]
+    },
+    "vp_fit_RTN_uncertainty_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 37,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp_fit_RTN_uncertainty_LABL_1",
+        "FIELDNAM": "vp_fit_RTN_uncertainty_LABL_1",
+        "FORMAT": "A38",
+        "LABLAXIS": "vp_fit_RTN_uncertainty_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp_fit_RTN_uncertainty_LABL_1"
+      },
+      "VarData": [
+        "vp_fit_R_uncertainty",
+        "vp_fit_T_uncertainty",
+        "vp_fit_N_uncertainty"
+      ]
+    },
+    "vp1_fit_SC_uncertainty_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 37,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp1_fit_SC_uncertainty_LABL_1",
+        "FIELDNAM": "vp1_fit_SC_uncertainty_LABL_1",
+        "FORMAT": "A38",
+        "LABLAXIS": "vp1_fit_SC_uncertainty_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp1_fit_SC_uncertainty_LABL_1"
+      },
+      "VarData": [
+        "vp1_fit_xSC_uncertainty",
+        "vp1_fit_ySC_uncertainty",
+        "vp1_fit_zSC_uncertainty"
+      ]
+    },
+    "vp1_fit_RTN_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 26,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp1_fit_RTN_LABL_1",
+        "FIELDNAM": "vp1_fit_RTN_LABL_1",
+        "FORMAT": "A27",
+        "LABLAXIS": "vp1_fit_RTN_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp1_fit_RTN_LABL_1"
+      },
+      "VarData": [
+        "vp1_fit_R",
+        "vp1_fit_T",
+        "vp1_fit_N"
+      ]
+    },
+    "vp1_fit_RTN_uncertainty_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 38,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp1_fit_RTN_uncertainty_LABL_1",
+        "FIELDNAM": "vp1_fit_RTN_uncertainty_LABL_1",
+        "FORMAT": "A39",
+        "LABLAXIS": "vp1_fit_RTN_uncertainty_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp1_fit_RTN_uncertainty_LABL_1"
+      },
+      "VarData": [
+        "vp1_fit_R_uncertainty",
+        "vp1_fit_T_uncertainty",
+        "vp1_fit_N_uncertainty"
+      ]
+    },
+    "vp_moment_SC_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 27,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp_moment_SC_LABL_1",
+        "FIELDNAM": "vp_moment_SC_LABL_1",
+        "FORMAT": "A28",
+        "LABLAXIS": "vp_moment_SC_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp_moment_SC_LABL_1"
+      },
+      "VarData": [
+        "vp_moment_xSC",
+        "vp_moment_ySC",
+        "vp_moment_zSC"
+      ]
+    },
+    "vp_moment_SC_deltahigh_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 37,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp_moment_SC_deltahigh_LABL_1",
+        "FIELDNAM": "vp_moment_SC_deltahigh_LABL_1",
+        "FORMAT": "A38",
+        "LABLAXIS": "vp_moment_SC_deltahigh_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp_moment_SC_deltahigh_LABL_1"
+      },
+      "VarData": [
+        "vp_moment_xSC_deltahigh",
+        "vp_moment_ySC_deltahigh",
+        "vp_moment_zSC_deltahigh"
+      ]
+    },
+    "vp_moment_SC_deltalow_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 36,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp_moment_SC_deltalow_LABL_1",
+        "FIELDNAM": "vp_moment_SC_deltalow_LABL_1",
+        "FORMAT": "A37",
+        "LABLAXIS": "vp_moment_SC_deltalow_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp_moment_SC_deltalow_LABL_1"
+      },
+      "VarData": [
+        "vp_moment_xSC_deltalow",
+        "vp_moment_ySC_deltalow",
+        "vp_moment_zSC_deltalow"
+      ]
+    },
+    "vp_moment_RTN_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 28,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp_moment_RTN_LABL_1",
+        "FIELDNAM": "vp_moment_RTN_LABL_1",
+        "FORMAT": "A29",
+        "LABLAXIS": "vp_moment_RTN_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp_moment_RTN_LABL_1"
+      },
+      "VarData": [
+        "vp_moment_R",
+        "vp_moment_T",
+        "vp_moment_N"
+      ]
+    },
+    "vp_moment_RTN_deltahigh_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 38,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp_moment_RTN_deltahigh_LABL_1",
+        "FIELDNAM": "vp_moment_RTN_deltahigh_LABL_1",
+        "FORMAT": "A39",
+        "LABLAXIS": "vp_moment_RTN_deltahigh_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp_moment_RTN_deltahigh_LABL_1"
+      },
+      "VarData": [
+        "vp_moment_R_deltahigh",
+        "vp_moment_T_deltahigh",
+        "vp_moment_N_deltahigh"
+      ]
+    },
+    "vp_moment_RTN_deltalow_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 37,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "vp_moment_RTN_deltalow_LABL_1",
+        "FIELDNAM": "vp_moment_RTN_deltalow_LABL_1",
+        "FORMAT": "A38",
+        "LABLAXIS": "vp_moment_RTN_deltalow_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vp_moment_RTN_deltalow_LABL_1"
+      },
+      "VarData": [
+        "vp_moment_R_deltalow",
+        "vp_moment_T_deltalow",
+        "vp_moment_N_deltalow"
+      ]
+    },
+    "va_fit_SC_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 24,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "va_fit_SC_LABL_1",
+        "FIELDNAM": "va_fit_SC_LABL_1",
+        "FORMAT": "A25",
+        "LABLAXIS": "va_fit_SC_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "va_fit_SC_LABL_1"
+      },
+      "VarData": [
+        "va_fit_xSC",
+        "va_fit_ySC",
+        "va_fit_zSC"
+      ]
+    },
+    "va_fit_SC_uncertainty_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 36,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "va_fit_SC_uncertainty_LABL_1",
+        "FIELDNAM": "va_fit_SC_uncertainty_LABL_1",
+        "FORMAT": "A37",
+        "LABLAXIS": "va_fit_SC_uncertainty_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "va_fit_SC_uncertainty_LABL_1"
+      },
+      "VarData": [
+        "va_fit_xSC_uncertainty",
+        "va_fit_ySC_uncertainty",
+        "va_fit_zSC_uncertainty"
+      ]
+    },
+    "va_fit_RTN_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 25,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "va_fit_RTN_LABL_1",
+        "FIELDNAM": "va_fit_RTN_LABL_1",
+        "FORMAT": "A26",
+        "LABLAXIS": "va_fit_RTN_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "va_fit_RTN_LABL_1"
+      },
+      "VarData": [
+        "va_fit_R",
+        "va_fit_T",
+        "va_fit_N"
+      ]
+    },
+    "va_fit_RTN_uncertainty_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 37,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "va_fit_RTN_uncertainty_LABL_1",
+        "FIELDNAM": "va_fit_RTN_uncertainty_LABL_1",
+        "FORMAT": "A38",
+        "LABLAXIS": "va_fit_RTN_uncertainty_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "va_fit_RTN_uncertainty_LABL_1"
+      },
+      "VarData": [
+        "va_fit_R_uncertainty",
+        "va_fit_T_uncertainty",
+        "va_fit_N_uncertainty"
+      ]
+    },
+    "v3_fit_SC_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 24,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "v3_fit_SC_LABL_1",
+        "FIELDNAM": "v3_fit_SC_LABL_1",
+        "FORMAT": "A25",
+        "LABLAXIS": "v3_fit_SC_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "v3_fit_SC_LABL_1"
+      },
+      "VarData": [
+        "v3_fit_xSC",
+        "v3_fit_ySC",
+        "v3_fit_zSC"
+      ]
+    },
+    "v3_fit_SC_uncertainty_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 36,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "v3_fit_SC_uncertainty_LABL_1",
+        "FIELDNAM": "v3_fit_SC_uncertainty_LABL_1",
+        "FORMAT": "A37",
+        "LABLAXIS": "v3_fit_SC_uncertainty_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "v3_fit_SC_uncertainty_LABL_1"
+      },
+      "VarData": [
+        "v3_fit_xSC_uncertainty",
+        "v3_fit_ySC_uncertainty",
+        "v3_fit_zSC_uncertainty"
+      ]
+    },
+    "v3_fit_RTN_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 25,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "v3_fit_RTN_LABL_1",
+        "FIELDNAM": "v3_fit_RTN_LABL_1",
+        "FORMAT": "A26",
+        "LABLAXIS": "v3_fit_RTN_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "v3_fit_RTN_LABL_1"
+      },
+      "VarData": [
+        "v3_fit_R",
+        "v3_fit_T",
+        "v3_fit_N"
+      ]
+    },
+    "v3_fit_RTN_uncertainty_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 37,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "v3_fit_RTN_uncertainty_LABL_1",
+        "FIELDNAM": "v3_fit_RTN_uncertainty_LABL_1",
+        "FORMAT": "A38",
+        "LABLAXIS": "v3_fit_RTN_uncertainty_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "v3_fit_RTN_uncertainty_LABL_1"
+      },
+      "VarData": [
+        "v3_fit_R_uncertainty",
+        "v3_fit_T_uncertainty",
+        "v3_fit_N_uncertainty"
+      ]
+    },
+    "VHECI_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "VHECI_LABL",
+        "FIELDNAM": "VHECI_LABL",
+        "FORMAT": "A21",
+        "LABLAXIS": "VHECI_LABL",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "VHECI_LABL"
+      },
+      "VarData": [
+        "Vx_HCI",
+        "Vy_HCI",
+        "Vz_HCI"
+      ]
+    },
+    "vector_index": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 254,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Comp No 1",
+        "FIELDNAM": "Comp No 1",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Comp No 1",
+        "SCALETYP": "linear",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Comp No 1"
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "array32_index": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          32
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 254,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Comp No 1",
+        "FIELDNAM": "Comp No 1",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Index of 32 DQF values",
+        "SCALETYP": "linear",
+        "VALIDMAX": 32,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Index of 32 DQF values"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "DQF_flagnames": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          32
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 70,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The names of the data quality array fields.",
+        "FIELDNAM": "DQF_flagnames",
+        "FORMAT": "A11",
+        "LABLAXIS": "none",
+        "UNITS": "none",
+        "VAR_NOTES": "The 0th flag array element is the [standardized] global quality flag, signifying whether the data are suitable for use without caveate. Refer to the SPC science data center documentation for descriptions of other elements and value definitions.",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": "none",
+        "x_LABLAXIS": "none"
+      },
+      "VarData": [
+        "(0) general flag",
+        "(1) primary peak low signal",
+        "(2) no primary peak detected",
+        "(3) cold primary peak or current spike detected",
+        "(4) sensor saturated",
+        "(5) primary peak not bound",
+        "(6) poor Maxwellian fit to primary peak",
+        "(7) flow direction poorly constrained or undetermined",
+        "(8) alpha peak low signal/not identified",
+        "(9) poor Maxwellian fit to alpha peak",
+        "(10) alpha peak not bound",
+        "(11) wind speed off scale high",
+        "(12) wind speed off scale low",
+        "(13) wind speed off scale unknown",
+        "(14) likely proton-alpha confusion",
+        "(15) unusually high noise levels detected",
+        "(16) proton full-scan mode (not peak-tracking)",
+        "(17) reduced data quality: anomalous periodic noise type A, (>1 Hz)",
+        "(18) reduced data quality: anomalous periodic noise type B (< 1Hz)",
+        "(19) temperature/survival heater cycling: potential fluctuations",
+        "(20) reduced data quality: broadband or other anomalous noise (type C)",
+        "(21) fragmented or incomplete spectrum measured",
+        "(22) energy ranging/peak tracking error",
+        "(23) spacecraft maneuver",
+        "(24) not used/TBD",
+        "(25) not used/TBD",
+        "(26) not used/TBD",
+        "(27) not used/TBD",
+        "(28) not used/TBD",
+        "(29) not used/TBD",
+        "(30) not used/TBD",
+        "(31) not used/TBD"
+      ]
+    }
+  }
+}

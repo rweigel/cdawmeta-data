@@ -1,0 +1,336 @@
+{
+  "CDFFileInfo": {
+    "File": "endurance_l1a_pes_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/endurance_l1a_pes_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "SPDF> Space Physics Data Facility",
+    "Source_name": "Endurance",
+    "Discipline": "Space Physics>Ionospheric Science",
+    "Descriptor": "PES>Photoelectron Spectrometer",
+    "Data_type": "L1A>Level 1A",
+    "Data_version": "01",
+    "PI_name": "G. Collinson",
+    "PI_affiliation": "NASA GSFC / Catholic University of America ",
+    "Logical_source_description": "Level 1a PES Science and Housekeeping data at 40ms time resolution as downlinked in the Data Matrix",
+    "Logical_source": "endurance_l1a_pes",
+    "Logical_file_id": "endurance_l1a_pes_00000000_v01",
+    "Mission_group": "Sounding Rockets",
+    "Instrument_type": "Particles (space)",
+    "MODS": " ",
+    "TEXT": " ",
+    "HTTP_LINK": "https://spdf.gsfc.nasa.gov/pub/data/aaa_sounding_rockets/endurance/endurance-2022/aareadme.html",
+    "LINK_TEXT": "Endurance",
+    "LINK_TITLE": " further information",
+    "spase_DatasetResourceID": " ",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Start Time for the record",
+        "FIELDNAM": "Time Line",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "E14.8",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALETYP": "linear",
+        "UNITS": "ns",
+        "VALIDMAX": "2040-12-31T23:59:59.000000000",
+        "VALIDMIN": "1990-01-01T00:00:00.000000000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "stp_count_PES": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PES step number",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "sensor",
+        "FIELDNAM": "PES step",
+        "FILLVAL": -99,
+        "FORMAT": "i3",
+        "LABLAXIS": "PES step",
+        "UNITS": " ",
+        "VALIDMAX": 81,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Each of the 8 sensors that made up the PES instrument operated in an 81-step energy sweep which took 10s to complete. This variable gives which step was under operation at any given time. Values until after deployment are spurious",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "PES step",
+        "x_DEPEND": [
+          "sensor"
+        ]
+      }
+    },
+    "PES_A_counts": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PES Side A, Total Integrated Counts",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "sensor",
+        "FIELDNAM": "PES A counts",
+        "FILLVAL": -99,
+        "FORMAT": "i6",
+        "LABLAXIS": "PES A counts",
+        "UNITS": " ",
+        "VALIDMAX": 2147483647,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Each PES sensor had two detectors (A side and B side). This is the accumulated counts on the A-side counter. This was reset to zero at the beginning of each step. This accumulated counts updated every 40ms. The total counts per bin can be taken from the final measurement in each step",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "PES A counts",
+        "x_DEPEND": [
+          "sensor"
+        ]
+      }
+    },
+    "PES_B_counts": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PES Side B, Total Integrated Counts",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "sensor",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PES B counts",
+        "FILLVAL": -99,
+        "FORMAT": "i6",
+        "LABLAXIS": "PES B counts",
+        "UNITS": " ",
+        "VALIDMAX": 2147483647,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Each PES sensor had two detectors (A side and B side). This is the accumulated counts on the B-side counter. This was reset to zero at the beginning of each step. This accumulated counts updated every 40ms. The total counts per bin can be taken from the final measurement in each step",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "PES B counts",
+        "x_DEPEND": [
+          "sensor"
+        ]
+      }
+    },
+    "PES_HV_mon": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PES ESA High Voltage Supply Monitor",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "sensor",
+        "FIELDNAM": "PES HV Mon",
+        "FILLVAL": -99,
+        "FORMAT": "i6",
+        "LABLAXIS": "PES HV Mon",
+        "UNITS": " ",
+        "VALIDMAX": 2147483647,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Digital Monitor of High Voltage Supply for Electrostatic Analyzer. All values before the end of deployment and after the final science scan are spurious",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "PES HV Mon",
+        "x_DEPEND": [
+          "sensor"
+        ]
+      }
+    },
+    "PES_ESA_mon": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PES ESA Stepper Monitor",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "sensor",
+        "FIELDNAM": "PES ESA Mon",
+        "FILLVAL": -99,
+        "FORMAT": "i6",
+        "LABLAXIS": "PES ESA Mon",
+        "UNITS": " ",
+        "VALIDMAX": 2147483647,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Digital Monitor of voltage applied to ESA all PES sensors. All values before the end of deployment and after the final science scan are spurious",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "PES ESA Mon",
+        "x_DEPEND": [
+          "sensor"
+        ]
+      }
+    },
+    "PES_RPA_mon": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PES RPA Stepper Monitor",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "sensor",
+        "FIELDNAM": "PES RPA Mon",
+        "FILLVAL": -99,
+        "FORMAT": "i6",
+        "LABLAXIS": "PES RPA Mon",
+        "UNITS": " ",
+        "VALIDMAX": 2147483647,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Digital Monitor of voltage applied to RPA all PES sensors. All values before the end of deployment and after the final science scan are spurious",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "PES RPA Mon",
+        "x_DEPEND": [
+          "sensor"
+        ]
+      }
+    },
+    "PES_CEM_mon": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PES CEM Stepper Monitor",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "sensor",
+        "FIELDNAM": "PES CEM Mon",
+        "FILLVAL": -99,
+        "FORMAT": "i6",
+        "LABLAXIS": "PES CEM Mon",
+        "UNITS": " ",
+        "VALIDMAX": 2147483647,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Digital Monitor of voltage applied to CEM all PES sensors. All values before the end of deployment and after the final science scan are spurious",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "PES CEM Mon",
+        "x_DEPEND": [
+          "sensor"
+        ]
+      }
+    },
+    "sensor": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -32767,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "FIELDNAM": "sensor",
+        "FILLVAL": -9,
+        "FORMAT": "i2",
+        "LABLAXIS": "sensor",
+        "SCALETYP": "linear",
+        "VALIDMAX": 8,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "sensor"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  }
+}

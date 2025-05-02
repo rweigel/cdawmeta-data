@@ -1,0 +1,944 @@
+{
+  "CDFFileInfo": {
+    "File": "dmsp-f15_ssj_precipitating-electrons-ions_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/dmsp-f15_ssj_precipitating-electrons-ions_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "DMSP",
+    "Source_name": "dmsp-f15",
+    "Discipline": "Space Physics>Magnetospheric Science\nSpace Physics>Ionospheric Science",
+    "Data_type": "precipitating-electrons-ions",
+    "Descriptor": "ssj",
+    "File_naming_convention": "source_descriptor_datatype_yyyyMMdd",
+    "Data_version": " ",
+    "PI_name": "Staff",
+    "PI_affiliation": "AFRL, NCEI, CU",
+    "TEXT": "Precipitating electrons and ions observed at nominally 850km altitude and over a range of energies from 30 eV to 30 keV using the Special Sensor J (SSJ) instrument.  Please contact Rob.Redmon@noaa.gov with questions and comments. Many individuals made important contributions including: D. Hardy, E. Holeman, F. Rich, D. Ober, G. Wilson, J. Machuzak, K. Kadinsky-Cade, J. McGarity, W.F. Denig, K. Martin, R. Redmon, D. Knipp, L. Kilcommons.",
+    "Instrument_type": "Particles (space)",
+    "Mission_group": "DMSP",
+    "Logical_source": "dmsp-f15_ssj_precipitating-electrons-ions",
+    "Logical_file_id": " ",
+    "Logical_source_description": "Precipitating electrons and ions observed at nominally 850km.",
+    "Time_resolution": "1 second",
+    "Rules_of_use": "Please acknowledge providers.  If you find problems, please report them.",
+    "Generated_by": "Rob Redmon",
+    "Generation_date": " ",
+    "Acknowledgement": "Data access provided by NCEI in coordination with AFRL and CU Boulder.",
+    "MODS": " ",
+    "LINK_TEXT": "National Centers for Environmental Information",
+    "LINK_TITLE": "Satellite Data Services",
+    "HTTP_LINK": "http://www.ngdc.noaa.gov/stp/satellite/satdataservices.html",
+    "DWELL_TIME": "The count integration time at each energy step is 0.098 seconds for J4 (through F15) and 0.05 starting with J5 (F16 and later).",
+    "VERSION": " 1.1.2",
+    "spase_DatasetResourceID": " ",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Default time",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALETYP": "linear",
+        "TIME_BASE": "0 AD",
+        "UNITS": "ms",
+        "VALIDMAX": "2029-12-31T23:59:59.999",
+        "VALIDMIN": "1990-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "SC_ECI": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Earth Centered Inertial (ECI) spacecraft location (x,y,z) in km.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SC_ECI",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "SC_ECI",
+        "LABL_PTR_1": "SC_ECI_LABEL",
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": [
+          7500.0,
+          7500.0,
+          7500.0
+        ],
+        "VALIDMIN": [
+          -7500.0,
+          -7500.0,
+          -7500.0
+        ],
+        "VAR_NOTES": "Epoch is True of Date (TOD). These ECI coordinates are calculated from an SPDF SSC Locator 1-minute ephemeris using an 8 order interpolation (Burden, R. L. and Faires, J. D., Numerical Analysis, 5th Ed., PWS Publishing Company, Boston, 1993). Using SPDF methods, expected accuracy is on the order of a few km.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "SC_ECI",
+        "x_LABLAXES": [
+          [
+            "x_ECI",
+            "y_ECI",
+            "z_ECI"
+          ]
+        ]
+      }
+    },
+    "SC_ECI_LABEL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 5,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SC_ECI_LABEL",
+        "FIELDNAM": "SC_ECI_LABEL",
+        "FORMAT": "A5",
+        "LABLAXIS": "SC_ECI_LABEL",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "SC_ECI_LABEL"
+      },
+      "VarData": [
+        "x_ECI",
+        "y_ECI",
+        "z_ECI"
+      ]
+    },
+    "SC_GEOCENTRIC_LAT": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geocentric latitude",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SC_GEOCENTRIC_LAT",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "SC_GEOCENTRIC_LAT",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": "Calculated using IDL Astro Library function eci2geo().",
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "SC_GEOCENTRIC_LAT"
+      }
+    },
+    "SC_GEOCENTRIC_LON": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geocentric Longitude",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SC_GEOCENTRIC_LON",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "SC_GEOCENTRIC_LON",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Calculated using IDL Astro Library function eci2geo().",
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "SC_GEOCENTRIC_LON"
+      }
+    },
+    "SC_GEOCENTRIC_R": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Distance from center of Earth in km.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SC_GEOCENTRIC_RADIUS",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "SC_GEOCENTRIC_R",
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": 7500.0,
+        "VALIDMIN": 6380.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "SC_GEOCENTRIC_R"
+      }
+    },
+    "SC_AACGM_LAT": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Altitude Adjusted Corrected Geomagnetic  Latitude",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SC_AACGM_LAT",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "SC_AACGM_LAT",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": "Calculated using SuperDARN AACGM IDL library. Values are the result of linearly interpolating between 2 nearest AACGM 5-year epochs.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "SC_AACGM_LAT"
+      }
+    },
+    "SC_AACGM_LON": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Altitude Adjusted Corrected Geomagnetic  Longitude",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SC_AACGM_LON",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "SC_AACGM_LON",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Calculated using SuperDARN AACGM IDL library. Values are the result of linearly interpolating between 2 nearest AACGM 5-year epochs.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "SC_AACGM_LON"
+      }
+    },
+    "SC_AACGM_LTIME": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Altitude Adjusted Corrected Geomagnetic Local Time",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SC_AACGM_LTIME",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "SC_AACGM_LTIME",
+        "SCALETYP": "linear",
+        "UNITS": "hr",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Calculated using SuperDARN AACGM IDL library. Values are the result of linearly interpolating between 2 nearest AACGM 5-year epochs.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "hr",
+        "x_LABLAXIS": "SC_AACGM_LTIME"
+      }
+    },
+    "CHANNEL_ENERGIES": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          19
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Channel center energies (eV).",
+        "FIELDNAM": "CHANNEL_ENERGIES",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "CHANNEL_ENERGIES",
+        "SCALETYP": "log",
+        "UNITS": "eV",
+        "VALIDMAX": 30000.0,
+        "VALIDMIN": 30.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "CHANNEL_ENERGIES"
+      },
+      "VarData": [
+        30000.0,
+        20400.0,
+        13900.0,
+        9450.0,
+        6460.0,
+        4400.0,
+        3000.0,
+        2040.0,
+        1390.0,
+        949.0,
+        646.0,
+        440.0,
+        300.0,
+        204.0,
+        139.0,
+        95.0,
+        65.0,
+        44.0,
+        30.0
+      ]
+    },
+    "ELE_COUNTS_OBS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          19
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron counts as observed; no corrections.",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CHANNEL_ENERGIES",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ELE_COUNTS_OBS",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ele_Counts",
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 2060000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Ele_Counts",
+        "x_DEPEND": [
+          "CHANNEL_ENERGIES"
+        ]
+      }
+    },
+    "ELE_COUNTS_BKG": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          19
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Background electron count estimate.",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CHANNEL_ENERGIES",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ELE_COUNTS_BKG",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ele_Backgrnd_Counts",
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 2060000.0,
+        "VALIDMIN": -2060000.0,
+        "VAR_NOTES": "This instrument doesn't have a dedicated background channel. An estimate is arrived at by running the AFRL technique forward and backward in time and choosing the largest of these two estimates for each observation and energy channel.",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Ele_Backgrnd_Counts",
+        "x_DEPEND": [
+          "CHANNEL_ENERGIES"
+        ]
+      }
+    },
+    "ELE_GEOMETRIC": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          19
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron Channel Geometric factors (cm2-eV-ster-sec).",
+        "FIELDNAM": "ELE_GEOMETRIC",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ele_Geometric_Factors",
+        "SCALETYP": "linear",
+        "UNITS": "cm2-eV-ster-sec",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "cm2-eV-ster-sec",
+        "x_LABLAXIS": "Ele_Geometric_Factors"
+      },
+      "VarData": [
+        0.0314,
+        0.0254,
+        0.0206,
+        0.0166,
+        0.0135,
+        0.0109,
+        0.00883,
+        0.00715,
+        0.00579,
+        0.00468,
+        9.28e-05,
+        6.33e-05,
+        4.41e-05,
+        3.07e-05,
+        1.73e-05,
+        9.35e-06,
+        4.91e-06,
+        2.34e-06,
+        9.06e-07
+      ]
+    },
+    "ELE_DIFF_ENERGY_FLUX": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          19
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron differential energy flux (ev/cm2/delta-eV/ster/s).",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CHANNEL_ENERGIES",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ELE_DIFF_ENERGY_FLUX",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ele_Diff_E-Flux",
+        "SCALETYP": "log",
+        "UNITS": "eV/cm2/delta-eV/ster/s",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_NOTES": "Uncertainty represented in variable ELE_DIFF_ENERGY_FLUX_STD",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm2/delta-eV/ster/s",
+        "x_LABLAXIS": "Ele_Diff_E-Flux",
+        "x_DEPEND": [
+          "CHANNEL_ENERGIES"
+        ]
+      }
+    },
+    "ELE_DIFF_ENERGY_FLUX_STD": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          19
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Estimated relative uncertainty in electron differential energy flux (fractional).",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CHANNEL_ENERGIES",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ELE_DIFF_ENERGY_FLUX_STD",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "STD_Ele_Diff_E-Flux",
+        "SCALETYP": "log",
+        "UNITS": "fractional",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_TYPE": "data",
+        "x_UNITS": "fractional",
+        "x_LABLAXIS": "STD_Ele_Diff_E-Flux",
+        "x_DEPEND": [
+          "CHANNEL_ENERGIES"
+        ]
+      }
+    },
+    "ELE_TOTAL_ENERGY_FLUX": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron total energy flux integrated over energy (eV/cm2/ster/s).",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ELE_TOTAL_ENERGY_FLUX",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ele_Total_E-Flux",
+        "SCALETYP": "log",
+        "UNITS": "eV/cm2/ster/s",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_NOTES": "Uncertainty represented in variable ELE_TOTAL_ENERGY_FLUX_STD",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm2/ster/s",
+        "x_LABLAXIS": "Ele_Total_E-Flux"
+      }
+    },
+    "ELE_TOTAL_ENERGY_FLUX_STD": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Estimated relative uncertainty in electron total energy flux integrated over energy (fractional).",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ELE_TOTAL_ENERGY_FLUX_STD",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "STD_Ele_Total_E-Flux",
+        "SCALETYP": "log",
+        "UNITS": "fractional",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_TYPE": "data",
+        "x_UNITS": "fractional",
+        "x_LABLAXIS": "STD_Ele_Total_E-Flux"
+      }
+    },
+    "ELE_AVG_ENERGY": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Average electron energy (eV).",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ELE_AVG_ENERGY",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ele_Eavg",
+        "SCALETYP": "log",
+        "UNITS": "eV",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_NOTES": "Computed as: Total Energy Flux / Total Number Flux. Uncertainty represented in variable ELE_AVG_ENERGY_STD",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "Ele_Eavg"
+      }
+    },
+    "ELE_AVG_ENERGY_STD": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Estimated relative uncertainty in average electron energy (fractional).",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ELE_AVG_ENERGY_STD",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "STD_Ele_Eavg",
+        "SCALETYP": "log",
+        "UNITS": "fractional",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_TYPE": "data",
+        "x_UNITS": "fractional",
+        "x_LABLAXIS": "STD_Ele_Eavg"
+      }
+    },
+    "ION_COUNTS_OBS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          19
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion counts as observed; no corrections.",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CHANNEL_ENERGIES",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_COUNTS_OBS",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ion_Counts",
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 2060000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Ion_Counts",
+        "x_DEPEND": [
+          "CHANNEL_ENERGIES"
+        ]
+      }
+    },
+    "ION_COUNTS_BKG": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          19
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Background ion count estimate.",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CHANNEL_ENERGIES",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_COUNTS_BKG",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ion_Backgrnd_Counts",
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 2060000.0,
+        "VALIDMIN": -2060000.0,
+        "VAR_NOTES": "This instrument doesn't have a dedicated background channel. An estimate is arrived at by running the AFRL technique forward and backward in time and choosing the largest of these two estimates for each observation and energy channel.",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Ion_Backgrnd_Counts",
+        "x_DEPEND": [
+          "CHANNEL_ENERGIES"
+        ]
+      }
+    },
+    "ION_GEOMETRIC": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          19
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion Channel Geometric factors (cm2-eV-ster-sec).",
+        "FIELDNAM": "ION_GEOMETRIC",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ion_Geometric_Factors",
+        "SCALETYP": "linear",
+        "UNITS": "cm2-eV-ster-sec",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "cm2-eV-ster-sec",
+        "x_LABLAXIS": "Ion_Geometric_Factors"
+      },
+      "VarData": [
+        0.0646,
+        0.0458,
+        0.0312,
+        0.0212,
+        0.0144,
+        0.00982,
+        0.00668,
+        0.00455,
+        0.00309,
+        0.0021,
+        0.0503,
+        0.0343,
+        0.0234,
+        0.016,
+        0.0109,
+        0.00737,
+        0.00508,
+        0.00347,
+        0.00237
+      ]
+    },
+    "ION_DIFF_ENERGY_FLUX": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          19
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion differential energy flux (ev/cm2/delta-eV/ster/s).",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CHANNEL_ENERGIES",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_DIFF_ENERGY_FLUX",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ion_Diff_E-Flux",
+        "SCALETYP": "log",
+        "UNITS": "ev/cm2/delta-eV/ster/s",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_NOTES": "Uncertainty represented in variable ION_DIFF_ENERGY_FLUX_STD",
+        "VAR_TYPE": "data",
+        "x_UNITS": "ev/cm2/delta-eV/ster/s",
+        "x_LABLAXIS": "Ion_Diff_E-Flux",
+        "x_DEPEND": [
+          "CHANNEL_ENERGIES"
+        ]
+      }
+    },
+    "ION_DIFF_ENERGY_FLUX_STD": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          19
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Estimated relative uncertainty in ion differential energy flux (fractional).",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "CHANNEL_ENERGIES",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ELE_DIFF_ENERGY_FLUX_STD",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "STD_Ion_Diff_E-Flux",
+        "SCALETYP": "log",
+        "UNITS": "fractional",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_TYPE": "data",
+        "x_UNITS": "fractional",
+        "x_LABLAXIS": "STD_Ion_Diff_E-Flux",
+        "x_DEPEND": [
+          "CHANNEL_ENERGIES"
+        ]
+      }
+    },
+    "ION_TOTAL_ENERGY_FLUX": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion total energy flux integrated over energy (eV/cm2/ster/s).",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_TOTAL_ENERGY_FLUX",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ion_Total_E-Flux",
+        "SCALETYP": "log",
+        "UNITS": "eV/cm2/ster/s",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_NOTES": "Uncertainty represented in variable ION_TOTAL_ENERGY_FLUX_STD",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm2/ster/s",
+        "x_LABLAXIS": "Ion_Total_E-Flux"
+      }
+    },
+    "ION_TOTAL_ENERGY_FLUX_STD": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Estimated relative uncertainty in ion total energy flux integrated over energy (fractional).",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_TOTAL_ENERGY_FLUX_STD",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "STD_Ion_Total_E-Flux",
+        "SCALETYP": "log",
+        "UNITS": "fractional",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_TYPE": "data",
+        "x_UNITS": "fractional",
+        "x_LABLAXIS": "STD_Ion_Total_E-Flux"
+      }
+    },
+    "ION_AVG_ENERGY": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Average ion energy (eV).",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_AVG_ENERGY",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ion_Eavg",
+        "SCALETYP": "log",
+        "UNITS": "eV",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_NOTES": "Computed as: Total Energy Flux / Total Number Flux. Uncertainty represented in variable ION_AVG_ENERGY_STD",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "Ion_Eavg"
+      }
+    },
+    "ION_AVG_ENERGY_STD": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Estimated relative uncertainty in ion average energy (fractional).",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_AVG_ENERGY_STD",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "STD_Ion_Eavg",
+        "SCALETYP": "log",
+        "UNITS": "fractional",
+        "VALIDMAX": 1e+30,
+        "VALIDMIN": -1e+30,
+        "VAR_TYPE": "data",
+        "x_UNITS": "fractional",
+        "x_LABLAXIS": "STD_Ion_Eavg"
+      }
+    }
+  }
+}

@@ -1,0 +1,685 @@
+{
+  "CDFFileInfo": {
+    "File": "mvn_swi_l2_onboardsvyspec_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/mvn_swi_l2_onboardsvyspec_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "MAVEN SWIA Onboard Energy Spectra",
+    "Project": "MAVEN>Mars Atmosphere and Volatile EvolutioN Mission",
+    "Discipline": "Planetary Physics>Particles",
+    "Source_name": "MAVEN>Mars Atmosphere and Volatile EvolutioN Mission",
+    "Descriptor": "SWIA>Solar Wind Ion Analyzer",
+    "Data_type": "CAL>Calibrated",
+    "Data_version": " ",
+    "TEXT": "MAVEN SWIA Onboard Energy Spectra",
+    "MODS": " ",
+    "Logical_file_id": " ",
+    "Logical_source": "mvn_swi_l2_onboardsvyspec",
+    "Logical_source_description": "DERIVED FROM: MAVEN SWIA (Solar Wind Ion Analyzer) Onboard Survey Energy Spectra",
+    "PI_name": "J.S. Halekas",
+    "PI_affiliation": "U Iowa",
+    "Instrument_type": "Particles (space)\nPlasma and Solar Wind",
+    "Mission_group": "MAVEN",
+    "LINK_TEXT": "MAVEN Data Archive \nMAVEN home page \nMAVEN home page ",
+    "LINK_TITLE": "at PDS PPI Node\nat LASP\nat NASA.gov",
+    "HTTP_LINK": "https://pds-ppi.igpp.ucla.edu/search/?sc=MAVEN&facet=SPACECRAFT_NAME\nhttp://lasp.colorado.edu/home/maven/\nhttps://science.nasa.gov/mission/maven",
+    "Parents": " ",
+    "PDS_collection_id": "urn:nasa:pds:maven.swia.calibrated:data.onboard_svy_spec",
+    "PDS_start_time": " ",
+    "PDS_stop_time": " ",
+    "PDS_sclk_start_count": "35160100000000.0",
+    "PDS_sclk_stop_count": "35165800000000.0",
+    "leapseconds_kernel": " ",
+    "Spacecraft_clock_kernel": " ",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/MAVEN/SWIA/Level2/EnergySpectra/Survey/PT4S",
+    "DOI": "https://doi.org/10.17189/1414248"
+  },
+  "CDFVariables": {
+    "epoch": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time, start of sample, in TT2000 time base",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "FORMAT": "I22",
+        "LABLAXIS": "epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2017-01-02T00:00:50.366544000",
+        "SCALEMIN": "2017-01-01T00:00:54.786467584",
+        "UNITS": "ns",
+        "VALIDMAX": "2030-12-31T23:58:59.999998080",
+        "VALIDMIN": "2013-11-17T23:59:59.999998080",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "epoch"
+      }
+    },
+    "time_met": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time, start of sample, in raw mission elapsed time",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "time_met",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F25.6",
+        "LABLAXIS": "Time (MET)",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": 536587000.0,
+        "SCALEMIN": 536501000.0,
+        "UNITS": "s",
+        "VALIDMAX": 978264000.0,
+        "VALIDMIN": 438005000.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "s",
+        "x_LABLAXIS": "Time (MET)"
+      }
+    },
+    "time_unix": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time, start of sample, in Unix time",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "time_unix",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F25.6",
+        "LABLAXIS": "Time (UNIX)",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": 1483320000.0,
+        "SCALEMIN": 1483230000.0,
+        "UNITS": "s",
+        "VALIDMAX": 1924990000.0,
+        "VALIDMIN": 1384730000.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "s",
+        "x_LABLAXIS": "Time (UNIX)"
+      }
+    },
+    "spectra_counts": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Raw Instrument Counts (as spectrogram)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "energy_spectra",
+        "DISPLAY_TYPE": "default_dimensiony=energy_spectra,z=spectra_counts",
+        "FIELDNAM": "Raw Counts",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F18.7",
+        "LABLAXIS": "Raw Counts",
+        "SCALEMAX": 100000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Raw Counts",
+        "x_DEPEND": [
+          "energy_spectra"
+        ]
+      }
+    },
+    "spectra_counts_time": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Raw Instrument Counts (as time series).",
+        "COMPONENT_0": "spectra_counts",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "energy_spectra",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Raw Counts",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F18.7",
+        "FUNCT": "alternate_view",
+        "LABL_PTR_1": "counts_labl",
+        "SCALEMAX": 100000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Cts at E0",
+            "Cts at E1",
+            "Cts at E2",
+            "Cts at E3",
+            "Cts at E4",
+            "Cts at E5",
+            "Cts at E6",
+            "Cts at E7",
+            "Cts at E8",
+            "Cts at E9",
+            "Cts at E10",
+            "Cts at E11",
+            "Cts at E12",
+            "Cts at E13",
+            "Cts at E14",
+            "Cts at E15",
+            "Cts at E16",
+            "Cts at E17",
+            "Cts at E18",
+            "Cts at E19",
+            "Cts at E20",
+            "Cts at E21",
+            "Cts at E22",
+            "Cts at E23",
+            "Cts at E24",
+            "Cts at E25",
+            "Cts at E26",
+            "Cts at E27",
+            "Cts at E28",
+            "Cts at E29",
+            "Cts at E30",
+            "Cts at E31",
+            "Cts at E32",
+            "Cts at E33",
+            "Cts at E34",
+            "Cts at E35",
+            "Cts at E36",
+            "Cts at E37",
+            "Cts at E38",
+            "Cts at E39",
+            "Cts at E40",
+            "Cts at E41",
+            "Cts at E42",
+            "Cts at E43",
+            "Cts at E44",
+            "Cts at E45",
+            "Cts at E46",
+            "Cts at E47"
+          ]
+        ],
+        "x_DEPEND": [
+          "energy_spectra"
+        ],
+        "COMPONENTS": [
+          "spectra_counts"
+        ]
+      }
+    },
+    "spectra_diff_en_fluxes": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Calibrated differential energy flux (as spectrogram)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "energy_spectra",
+        "DISPLAY_TYPE": "default_dimensiony=energy_spectra,z=spectra_diff_en_fluxes",
+        "FIELDNAM": "Differential Energy Flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F18.7",
+        "LABLAXIS": "Differential Energy Flux",
+        "SCALEMAX": 99999997952,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "ev/[eV cm^2 sr s]",
+        "VALIDMAX": 100000000376832,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "ev/[eV cm^2 sr s]",
+        "x_LABLAXIS": "Differential Energy Flux",
+        "x_DEPEND": [
+          "energy_spectra"
+        ]
+      }
+    },
+    "spectra_diff_en_fluxes_stack": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Calibrated differential energy flux (as overlaid time series)",
+        "COMPONENT_0": "spectra_diff_en_fluxes",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "energy_spectra",
+        "DISPLAY_TYPE": "default_dimensiony=spectra_diff_en_fluxes_stack(1), y=spectra_diff_en_fluxes_stack(10),y=spectra_diff_en_fluxes_stack(19), y=spectra_diff_en_fluxes_stack(28),y=spectra_diff_en_fluxes_stack(35), y=spectra_diff_en_fluxes_stack(45), z=energy_spectra",
+        "FIELDNAM": "Differential Energy Flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E15.7",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "Differential Energy Flux",
+        "LABL_PTR_1": "en_label",
+        "SCALEMAX": 99999998000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "eV/[eV cm^2 sr s]",
+        "VALIDMAX": 100000000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV/[eV cm^2 sr s]",
+        "x_LABLAXIS": "Differential Energy Flux",
+        "x_DEPEND": [
+          "energy_spectra"
+        ],
+        "COMPONENTS": [
+          "spectra_diff_en_fluxes"
+        ]
+      }
+    },
+    "atten_state": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Attenuator state, 1 = open, 2 = closed, 3 = cover closed",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "atten_state",
+        "FILLVAL": 255,
+        "FORMAT": "I7",
+        "LABLAXIS": "Attenuator State",
+        "SCALEMAX": 3,
+        "SCALEMIN": 1,
+        "VALIDMAX": 3,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Attenuator State"
+      }
+    },
+    "num_accum": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of Accumulations Summed",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "num_accum",
+        "FILLVAL": -32768,
+        "FORMAT": "I7",
+        "LABLAXIS": "Accumulations",
+        "SCALEMAX": 512,
+        "SCALEMIN": 0,
+        "VALIDMAX": 512,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Accumulations"
+      }
+    },
+    "decom_flag": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Decommutation Flag: 0 = uncertain mode/attenuator flags, 1 = known mode/attenuator flags",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "decom_flag",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.7",
+        "LABLAXIS": "Decommutation Flag",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": 0.0,
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Decommutation Flag"
+      }
+    },
+    "geom_factor": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Full Analyzer Geometric Factor",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "geom_factor",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.7",
+        "LABLAXIS": "geom_factor",
+        "SCALEMAX": 0.01,
+        "SCALEMIN": 0.0,
+        "UNITS": "cm^2 sr eV/eV",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "cm^2 sr eV/eV",
+        "x_LABLAXIS": "geom_factor"
+      },
+      "VarData": [
+        0.0056
+      ]
+    },
+    "de_over_e_spectra": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectra DeltaE/E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "de_over_e_spectra",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.7",
+        "LABLAXIS": "de_over_e_spectra",
+        "SCALEMAX": 0.2,
+        "SCALEMIN": 0.0,
+        "UNITS": "eV/eV",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "eV/eV",
+        "x_LABLAXIS": "de_over_e_spectra"
+      },
+      "VarData": [
+        0.15
+      ]
+    },
+    "accum_time_spectra": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectra Integration Time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "accum_time_spectra",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.7",
+        "LABLAXIS": "accum_time_spectra",
+        "SCALEMAX": 2.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "s",
+        "VALIDMAX": 4.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "s",
+        "x_LABLAXIS": "accum_time_spectra"
+      },
+      "VarData": [
+        1.3056
+      ]
+    },
+    "energy_spectra": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectra Energy Table",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.7",
+        "LABLAXIS": "Energy",
+        "SCALEMAX": 30000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "eV",
+        "VALIDMAX": 50000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        23244.8007813,
+        20114.5,
+        17405.6992188,
+        15061.7001953,
+        13033.4003906,
+        11278.2001953,
+        9759.4101563,
+        8445.1396484,
+        7307.8500977,
+        6323.7202148,
+        5472.1201172,
+        4735.2099609,
+        4097.5297852,
+        3545.7199707,
+        3068.2299805,
+        2655.0400391,
+        2297.4899902,
+        1988.0899658,
+        1720.3599854,
+        1488.6899414,
+        1288.2099609,
+        1114.7299805,
+        964.6110229,
+        834.7089844,
+        722.3010254,
+        625.0310059,
+        540.8590088,
+        468.0230103,
+        404.9960022,
+        350.4559937,
+        303.2609863,
+        262.4219971,
+        227.0820007,
+        196.5010071,
+        170.0390015,
+        147.1399994,
+        127.3249969,
+        110.1790009,
+        95.3412018,
+        82.5018997,
+        71.3916016,
+        61.777401,
+        53.4580002,
+        46.2589989,
+        40.0293999,
+        34.6386986,
+        29.9740009,
+        25.9375
+      ]
+    },
+    "counts_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          48
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 10,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Counts for ind energies Label",
+        "FIELDNAM": "counts_label",
+        "FILLVAL": " ",
+        "FORMAT": "A10",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Cts at E0",
+        "Cts at E1",
+        "Cts at E2",
+        "Cts at E3",
+        "Cts at E4",
+        "Cts at E5",
+        "Cts at E6",
+        "Cts at E7",
+        "Cts at E8",
+        "Cts at E9",
+        "Cts at E10",
+        "Cts at E11",
+        "Cts at E12",
+        "Cts at E13",
+        "Cts at E14",
+        "Cts at E15",
+        "Cts at E16",
+        "Cts at E17",
+        "Cts at E18",
+        "Cts at E19",
+        "Cts at E20",
+        "Cts at E21",
+        "Cts at E22",
+        "Cts at E23",
+        "Cts at E24",
+        "Cts at E25",
+        "Cts at E26",
+        "Cts at E27",
+        "Cts at E28",
+        "Cts at E29",
+        "Cts at E30",
+        "Cts at E31",
+        "Cts at E32",
+        "Cts at E33",
+        "Cts at E34",
+        "Cts at E35",
+        "Cts at E36",
+        "Cts at E37",
+        "Cts at E38",
+        "Cts at E39",
+        "Cts at E40",
+        "Cts at E41",
+        "Cts at E42",
+        "Cts at E43",
+        "Cts at E44",
+        "Cts at E45",
+        "Cts at E46",
+        "Cts at E47"
+      ]
+    },
+    "num_spec": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -32767,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of Spectra in File",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "num_spec",
+        "FILLVAL": -32768,
+        "FORMAT": "I7",
+        "LABLAXIS": "num_spec",
+        "SCALEMAX": 21600,
+        "SCALEMIN": 0,
+        "VALIDMAX": 21600,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "num_spec"
+      },
+      "VarData": [
+        21600
+      ]
+    }
+  }
+}

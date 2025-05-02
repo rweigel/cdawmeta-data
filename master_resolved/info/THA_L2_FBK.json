@@ -1,0 +1,1811 @@
+{
+  "CDFFileInfo": {
+    "File": "tha_l2_fbk_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/tha_l2_fbk_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "themis",
+    "Source_name": "THA>Themis Probe A",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Data_type": "fbk>Filter BanK and HF data",
+    "Descriptor": "L2>L2 DATA",
+    "Data_version": "1",
+    "PI_name": "V. Angelopoulos, J. W. Bonnell & F. S. Mozer; A. Roux and R. E. Ergun",
+    "PI_affiliation": "UCB; CETP and LASP respectively, NASA NAS5-02099",
+    "TEXT": "Sensor and electronics design provided by UCB (J. W. Bonnell, F. S. Mozer), Digital Fields Board provided by LASP (R. Ergun), Search coil data provided by CETP (A. Roux).",
+    "Instrument_type": "Electric Fields (space)\nMagnetic Fields (space)\nRadio and Plasma Waves (space)",
+    "Mission_group": "THEMIS",
+    "Logical_source": "tha_l2_fbk",
+    "Logical_file_id": "tha_l2_fbk_00000000_v01",
+    "Logical_source_description": "Probe Electric Field Instrument and Search Coil Magnetometer Instrument, Digital Fields Board- digitally computed Filter Bank spectra and E12 peak and average in HF band.",
+    "Time_resolution": "1/16 - 8 Samples/s",
+    "Rules_of_use": "Open Data for Scientific Use",
+    "Generated_by": "THEMIS SOC",
+    "Generation_date": "2006-09-18",
+    "Acknowledgement": "NASA Contract NAS5-02099",
+    "MODS": "Rev- 2006-09-18",
+    "ADID_ref": "NSSD0110",
+    "LINK_TEXT": "Digital Field Board\nFFT",
+    "LINK_TITLE": "Description including data modes, products and caveats\nProcessing history and the THEMIS mission website including TDAS s/w",
+    "HTTP_LINK": "http://themis.ssl.berkeley.edu/instrument_dfb.shtml\nhttp://themis.ssl.berkeley.edu/fbk_proc_history.shtml",
+    "File_naming_convention": "source_descriptor_datatype",
+    "Software_version": "xxxx",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/THEMIS/A/FBK/PT4S",
+    "DOI": "https://doi.org/10.48322/ed7r-tt72"
+  },
+  "CDFVariables": {
+    "tha_fb_hff": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "High-Frequency Filter peak and average values",
+        "DEPEND_0": "tha_fb_hff_epoch",
+        "DEPEND_1": "tha_fb_hff_compno",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_hff_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "tha_fbh",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABL_PTR_1": "tha_fb_hff_labl",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": " 1.0>V",
+        "UNITS": "V",
+        "VALIDMAX": [
+          10000000000.0,
+          10000000000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": "hf_peak and hf_avg are the peak and average values of the output of the High-Frequency Filter, a broadband filter convering the 100- to 400-kHz band used for AKR detection",
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXES": [
+          [
+            "FBK-A HF Filter Peak Voltage",
+            "FBK-A HF Filter Average Voltage"
+          ]
+        ],
+        "x_DEPEND": [
+          "tha_fb_hff_compno"
+        ]
+      }
+    },
+    "tha_fb_hff_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fbh_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fbh_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_hff_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fbh_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_hff_time",
+        "FIELDNAM": "tha_fbh_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_hff_time"
+        ]
+      }
+    },
+    "tha_fb_hff_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 31,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fbh_labl",
+        "FIELDNAM": "tha_fbh_labl",
+        "FORMAT": "A31",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "FBK-A HF Filter Peak Voltage",
+        "FBK-A HF Filter Average Voltage"
+      ]
+    },
+    "tha_fb_hff_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -32767,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fbh_compno",
+        "FIELDNAM": "tha_fbh_compno",
+        "FILLVAL": -32768,
+        "FORMAT": "I3",
+        "LABL_PTR_1": "tha_fb_hff_labl",
+        "UNITS": "num",
+        "VALIDMAX": [
+          2,
+          2
+        ],
+        "VALIDMIN": [
+          1,
+          1
+        ],
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "num",
+        "x_LABLAXES": [
+          [
+            "FBK-A HF Filter Peak Voltage",
+            "FBK-A HF Filter Average Voltage"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2
+      ]
+    },
+    "tha_fb_v1": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK Potential, Sensor 1",
+        "DEPEND_0": "tha_fb_v1_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_v1_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A Potential, Sensor 1",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0>V",
+        "UNITS": "<|V|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|V|>",
+        "x_LABLAXIS": "FBK-A Potential, Sensor 1",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_v1_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_v1_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_v1_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_v1_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_v1_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_v1_time",
+        "FIELDNAM": "tha_fb_v1_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_v1_time"
+        ]
+      }
+    },
+    "tha_fb_v2": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK Potential, Sensor 2",
+        "DEPEND_0": "tha_fb_v2_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_v2_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A Potential, Sensor 2",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0>V",
+        "UNITS": "<|V|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|V|>",
+        "x_LABLAXIS": "FBK-A Potential, Sensor 2",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_v2_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_v2_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_v2_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_v2_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_v2_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_v2_time",
+        "FIELDNAM": "tha_fb_v2_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_v2_time"
+        ]
+      }
+    },
+    "tha_fb_v3": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK Potential, Sensor 3",
+        "DEPEND_0": "tha_fb_v3_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_v3_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A Potential, Sensor 3",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0>V",
+        "UNITS": "<|V|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|V|>",
+        "x_LABLAXIS": "FBK-A Potential, Sensor 3",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_v3_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_v3_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_v3_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_v3_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_v3_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_v3_time",
+        "FIELDNAM": "tha_fb_v3_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_v3_time"
+        ]
+      }
+    },
+    "tha_fb_v4": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK Potential, Sensor 4",
+        "DEPEND_0": "tha_fb_v4_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_v4_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A Potential, Sensor 4",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0>V",
+        "UNITS": "<|V|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|V|>",
+        "x_LABLAXIS": "FBK-A Potential, Sensor 4",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_v4_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_v4_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_v4_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_v4_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_v4_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_v4_time",
+        "FIELDNAM": "tha_fb_v4_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_v4_time"
+        ]
+      }
+    },
+    "tha_fb_v5": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK Potential, Sensor 5",
+        "DEPEND_0": "tha_fb_v5_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_v5_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A Potential, Sensor 5",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0>V",
+        "UNITS": "<|V|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|V|>",
+        "x_LABLAXIS": "FBK-A Potential, Sensor 5",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_v5_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_v5_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_v5_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_v5_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_v5_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_v5_time",
+        "FIELDNAM": "tha_fb_v5_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_v5_time"
+        ]
+      }
+    },
+    "tha_fb_v6": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK Potential, Sensor 6",
+        "DEPEND_0": "tha_fb_v6_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_v6_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A Potential, Sensor 6",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0>V",
+        "UNITS": "<|V|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|V|>",
+        "x_LABLAXIS": "FBK-A Potential, Sensor 6",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_v6_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_v6_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_v6_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_v6_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_v6_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_v6_time",
+        "FIELDNAM": "tha_fb_v6_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_v6_time"
+        ]
+      }
+    },
+    "tha_fb_edc12": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK E Field DC Component, Sensors 1&2 (spin plane)",
+        "DEPEND_0": "tha_fb_edc12_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_edc12_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A EDC12",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0e-3>V m^-1",
+        "UNITS": "<|mV/m|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|mV/m|>",
+        "x_LABLAXIS": "FBK-A EDC12",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_edc12_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_edc12_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_edc12_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_edc12_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_edc12_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_edc12_time",
+        "FIELDNAM": "tha_fb_edc12_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_edc12_time"
+        ]
+      }
+    },
+    "tha_fb_edc34": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK E Field DC Component, Sensors 3&4 (spin plane)",
+        "DEPEND_0": "tha_fb_edc34_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_edc34_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A EDC34",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0e-3>V m^-1",
+        "UNITS": "<|mV/m|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|mV/m|>",
+        "x_LABLAXIS": "FBK-A EDC34",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_edc34_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_edc34_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_edc34_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_edc34_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_edc34_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_edc34_time",
+        "FIELDNAM": "tha_fb_edc34_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_edc34_time"
+        ]
+      }
+    },
+    "tha_fb_edc56": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK E Field DC Component, Sensors 5&6 (axial)",
+        "DEPEND_0": "tha_fb_edc56_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_edc56_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A EDC56",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0e-3>V m^-1",
+        "UNITS": "<|mV/m|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|mV/m|>",
+        "x_LABLAXIS": "FBK-A EDC56",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_edc56_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_edc56_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_edc56_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_edc56_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_edc56_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_edc56_time",
+        "FIELDNAM": "tha_fb_edc56_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_edc56_time"
+        ]
+      }
+    },
+    "tha_fb_scm1": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK Search Coil Magnetometer (SCM) Axis 1",
+        "DEPEND_0": "tha_fb_scm1_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_scm1_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A SCM1",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0e-9>T",
+        "UNITS": "<|nT|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|nT|>",
+        "x_LABLAXIS": "FBK-A SCM1",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_scm1_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_scm1_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_scm1_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_scm1_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_scm1_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_scm1_time",
+        "FIELDNAM": "tha_fb_scm1_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_scm1_time"
+        ]
+      }
+    },
+    "tha_fb_scm2": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK Search Coil Magnetometer (SCM) Axis 2",
+        "DEPEND_0": "tha_fb_scm2_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_scm2_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A SCM2",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0e-9>T",
+        "UNITS": "<|nT|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|nT|>",
+        "x_LABLAXIS": "FBK-A SCM2",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_scm2_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_scm2_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_scm2_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_scm2_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_scm2_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_scm2_time",
+        "FIELDNAM": "tha_fb_scm2_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_scm2_time"
+        ]
+      }
+    },
+    "tha_fb_scm3": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK Search Coil Magnetometer (SCM) Axis 3",
+        "DEPEND_0": "tha_fb_scm3_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_scm3_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A SCM3",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0e-9>T",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "FBK-A SCM3",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_scm3_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_scm3_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_scm3_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_scm3_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_scm3_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_scm3_time",
+        "FIELDNAM": "tha_fb_scm3_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_scm3_time"
+        ]
+      }
+    },
+    "tha_fb_eac12": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK E Field AC Component, Sensors 1&2 (spin plane)",
+        "DEPEND_0": "tha_fb_eac12_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_eac12_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A EAC12",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0e-3>V m^-1",
+        "UNITS": "<|mV/m|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|mV/m|>",
+        "x_LABLAXIS": "FBK-A EAC12",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_eac12_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_eac12_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_eac12_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_eac12_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_eac12_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_eac12_time",
+        "FIELDNAM": "tha_fb_eac12_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_eac12_time"
+        ]
+      }
+    },
+    "tha_fb_eac34": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK E Field AC Component, Sensors 3&4 (spin plane)",
+        "DEPEND_0": "tha_fb_eac34_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_eac34_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A EAC34",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0e-3>V m^-1",
+        "UNITS": "<|mV/m|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|mV/m|>",
+        "x_LABLAXIS": "FBK-A EAC34",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_eac34_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_eac34_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_eac34_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_eac34_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_eac34_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_eac34_time",
+        "FIELDNAM": "tha_fb_eac34_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_eac34_time"
+        ]
+      }
+    },
+    "tha_fb_eac56": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectrogram FBK E Field AC Component, Sensors 5&6 (axial)",
+        "DEPEND_0": "tha_fb_eac56_epoch",
+        "DEPEND_1": "tha_fb_yaxis",
+        "DEPEND_EPOCH0": "tha_fbk_epoch0",
+        "DEPEND_TIME": "tha_fb_eac56_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Calibrated Spectra",
+        "FILLVAL": "NaN",
+        "FORMAT": "G13.6",
+        "LABLAXIS": "FBK-A EAC56",
+        "SCALETYP": "log",
+        "SC_ID": "a",
+        "SI_CONVERSION": "1.0e-3>V m^-1",
+        "UNITS": "<|mV/m|>",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "<|mV/m|>",
+        "x_LABLAXIS": "FBK-A EAC56",
+        "x_DEPEND": [
+          "tha_fb_yaxis"
+        ]
+      }
+    },
+    "tha_fb_eac56_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_eac56_time, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "tha_fb_eac56_time",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "tha_fb_eac56_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_eac56_epoch",
+        "COMPONENT_0": "tha_fbk_epoch0",
+        "COMPONENT_1": "tha_fb_eac56_time",
+        "FIELDNAM": "tha_fb_eac56_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "2000-12-31T16:40:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "tha_fbk_epoch0",
+          "tha_fb_eac56_time"
+        ]
+      }
+    },
+    "tha_fb_yaxis": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fb_yaxis",
+        "FIELDNAM": "tha_fb_yaxis",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.3",
+        "LABLAXIS": "Frequency",
+        "SCALETYP": "log",
+        "UNITS": "Hz",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "Frequency"
+      },
+      "VarData": [
+        2689.0,
+        572.0,
+        144.2,
+        36.2,
+        9.05,
+        2.26
+      ]
+    },
+    "tha_fbk_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 6,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fbk_labl",
+        "FIELDNAM": "Frequency",
+        "FORMAT": "A6",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "2-kHz ",
+        "512-Hz",
+        "128-Hz",
+        "32-Hz ",
+        "8-Hz  ",
+        "2-Hz  "
+      ]
+    },
+    "tha_fbk_fcenter": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fbk_fcenter: center frequency (geometric mean)",
+        "FIELDNAM": "tha_fbk_fcenter",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.3",
+        "LABL_PTR_1": "tha_fbk_freqno",
+        "UNITS": "Hz",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Hz"
+      },
+      "VarData": [
+        2689.0,
+        572.0,
+        144.2,
+        36.2,
+        9.05,
+        2.26
+      ]
+    },
+    "tha_fbk_fband": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "tha_fbk_fband: frequency bandwidths",
+        "FIELDNAM": "tha_fbk_fband",
+        "FILLVAL": "NaN",
+        "FORMAT": "E12.3",
+        "LABL_PTR_1": "tha_fbk_freqno",
+        "UNITS": "Hz",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Hz"
+      },
+      "VarData": [
+        4604.0,
+        588.0,
+        147.2,
+        36.9,
+        9.22,
+        2.31
+      ]
+    },
+    "tha_fbk_freqno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Frequency Number",
+        "DICT_KEY": "number",
+        "FIELDNAM": "freqno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "SCALETYP": "linear",
+        "VALIDMAX": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "tha_fbk_epoch0": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "EPOCH0 of THEMIS TIME BASE",
+        "FIELDNAM": "tha_fbk_epoch0",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "timebase",
+        "UNITS": "msec",
+        "VALIDMAX": "2030-01-01T06:53:20.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_NOTES": "EPOCH of 01-Jan-1970 00:00:00",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "timebase"
+      },
+      "VarData": [
+        "1970-01-01T00:00:00.000"
+      ]
+    },
+    "range_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "range_epoch",
+        "FIELDNAM": "range_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "UT",
+        "UNITS": "msec",
+        "VALIDMAX": "2030-01-01T06:53:20.000",
+        "VALIDMIN": "1990-01-01T08:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "UT"
+      }
+    }
+  }
+}

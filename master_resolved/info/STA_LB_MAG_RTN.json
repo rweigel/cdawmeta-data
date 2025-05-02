@@ -1,0 +1,182 @@
+{
+  "CDFFileInfo": {
+    "File": "sta_lb_mag_rtn_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/sta_lb_mag_rtn_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "STP>Solar Terrestrial Probes",
+    "Source_name": "STEREOA>Solar Terrestrial Relations Observatory Ahead of the Sun-Earth Line",
+    "Discipline": "Solar Physics>Heliospheric Physics",
+    "Data_type": "LB>Level Beacon",
+    "Descriptor": "IMPACT_MAG>In-situ Measurements of Particles and CME Transients_Magnetometer",
+    "Data_version": "6",
+    "PI_name": "J. Luhmann",
+    "PI_affiliation": "UCB/SSL",
+    "TEXT": "The file contains Level Beacon magnetic field vectors from the IMPACT/MAG instrument on the STEREO Ahead spacecraft.",
+    "Instrument_type": "Magnetic Fields (space)",
+    "Mission_group": "STEREO",
+    "Logical_source": "sta_lb_mag_rtn",
+    "Logical_file_id": "sta_lb_mag_rtn_00000000_v01",
+    "Logical_source_description": "STEREO Ahead IMPACT Reprocessed Beacon MAG Magnetic Field Vectors around 2015 Solar Conjunction",
+    "Time_resolution": "00:00:10.000",
+    "Generated_by": "stereo2cdf",
+    "Generation_date": "2019 351 DEC 17 15:09:20.612",
+    "MODS": "Version 1: Used internally at UCB and UCLA ONLY. No corrections applied to raw MAG data.  Version 2: Offset correction applied to MAG data.  Version 3: Initial algorithm for correcting glitches in the X sensor on STEREO Ahead applied.  Version 4: Improvement in glitch correction algorithm applied.  Version 5: Further refinement of glitch correction for X sensor on STEREO Ahead. Also, two timing issues resolved: a) applying a 6ms time shift to account for time lag between IMPACT IDPU and MAG, b) fixing an occasional 1 second \"glitch\".  Version 6: Added \"FILTER_VALUE\" variable",
+    "LINK_TEXT": "Experiment and Data descriptions for STEREO/IMPACT",
+    "LINK_TITLE": "STEREO/IMPACT PI Site",
+    "HTTP_LINK": "http://sprg.ssl.berkeley.edu/impact",
+    "File_naming_convention": "source_datatype_descriptor",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/STEREO-A/IMPACT/MAG/RTN/LevelBeacon/PT0.125S",
+    "DOI": "https://doi.org/10.48322/trbb-ff59"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time since 0 AD",
+        "DICT_KEY": "time>epoch",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T00:00:00.000",
+        "VALIDMIN": "1990-01-01T00:00:00.000",
+        "VAR_NOTES": "Interval-centered time tag",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "BFIELD": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 4.95663e-38,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic field vector in RTN coordinates from the IMPACT/MAG instrument.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B Field in RTN Coordinates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "CART_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXES": [
+          [
+            "BR",
+            "BT",
+            "BN",
+            "BTotal"
+          ]
+        ]
+      }
+    },
+    "MAGFLAGUC": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 25620144,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "MAGFLAGUC",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "MAGFLAGUC",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I8",
+        "LABLAXIS": "MAGFLAGUC",
+        "SCALETYP": "linear",
+        "VALIDMAX": 4294967295,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "     bit 0:3 Mag Error counter.     bit 4:7 Mag Command counter.     bit 8   spare.     bit 9   First.     bit 10  Time.     bit 11  Interface Parity Error (0=OK, 1=Fault).     bit 12  Interface Timeout Error (0=OK, 1=Fault).     bit 13  ADC Cal (0=OFF, 1=ON).     bit 14  In Flight Cal (0=OFF, 1=ON).     bit 15  Range (0=low fields, high sensitivity, 1=high fields, low sen. bit 16  Calibration (0=old cal, 1=new cal) bit 17  6ms added (to sync correctly with IDPU) bit 18  62.5 ms to 08hz data (no longer used) bit 19  timestamp resync -> that is the time stampe has been changed (ie the 1 second glitch) bit 20  datarate resync -> timestamps where calculated with a different dt for mixed freq data. the data rate was not synced properly so the records timestamps were calculated incorrectly bit 21  derived from 32hz data MAG data ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "MAGFLAGUC"
+      }
+    },
+    "CART_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 6,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "CART_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "CART_LABL_1",
+        "FORMAT": "a6",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "BR",
+        "BT",
+        "BN",
+        "BTotal"
+      ]
+    },
+    "FILTER_VALUE": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 4.96e-38,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "If the total B field is greater than this value, that data point is filtered out and the B field replaced with fill values. It is expected that such values are spurious and non-physical.",
+        "FIELDNAM": "FILTER_VALUE",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "filter",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "filter"
+      },
+      "VarData": [
+        4.07e-29
+      ]
+    }
+  }
+}

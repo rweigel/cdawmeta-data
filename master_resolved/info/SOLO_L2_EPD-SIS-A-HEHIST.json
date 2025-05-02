@@ -1,0 +1,493 @@
+{
+  "CDFFileInfo": {
+    "File": "solo_l2_epd-sis-a-hehist_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/solo_l2_epd-sis-a-hehist_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Project": "SOLO>Solar Orbiter",
+    "Source_name": "SOLO>Solar Orbiter",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Data_type": "L2>Level 2 Data",
+    "Descriptor": "EPD-SIS-A-HEHIST>Energetic Particle Detector, Suprathermal Ion Spectrograph, A Telescope, Helium histogram",
+    "Data_version": " ",
+    "Software_version": " ",
+    "PI_name": "J. Rodriguez-Pacheco",
+    "PI_affiliation": "Space Research Group, Universidad de Alcala",
+    "TEXT": "Energetic Particle Detector (EPD). Instrument suite, part of the scientific payload aboard the Solar Orbiter mission, dedicated to the study of solar energetic particles. EPD measures electrons, protons and heavy ions with high temporal resolution over a wide energy range, from suprathermal energies to several hundreds of MeV/nucleon. It is composed of four units: SupraThermal Electrons and Protons (STEP), Electron Proton Telescope (EPT), Suprathermal Ion Spectrograph (SIS) and High Energy Telescope (HET).\nhttps://doi.org/10.1051/0004-6361/201935287",
+    "Instrument_type": "Particles (space)",
+    "Mission_group": "Solar Orbiter",
+    "Logical_source": "solo_L2_epd-sis-a-hehist",
+    "Logical_source_description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Suprathermal Ion Spectrograph, A Telescope, Helium histogram",
+    "Logical_file_id": " ",
+    "Rules_of_use": "See http://espada.uah.es/epd/EPD_data.php",
+    "Generated_by": "Space Research Group, Universidad de Alcala",
+    "Generation_date": " ",
+    "Acknowledgement": "See http://espada.uah.es/epd/EPD_data.php",
+    "MODS": " ",
+    "HTTP_LINK": "http://espada.uah.es/epd/EPD_data.php",
+    "Parents": " \n ",
+    "Data_product": "HEHIST>Helium histogram",
+    "LEVEL": "L2>Level 2 Data",
+    "SOOP_TYPE": "I_DEFAULT",
+    "OBS_ID": " ",
+    "TARGET_NAME": " ",
+    "TARGET_CLASS": "interplanetary_medium",
+    "TARGET_REGION": "heliosphere",
+    "TIME_MIN": " ",
+    "TIME_MAX": " ",
+    "spase_DatasetResourceID": " ",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "EPOCH": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CADENCE": "30 minutes",
+        "CATDESC": "Nanoseconds since J2000",
+        "DELTA_PLUS_VAR": "DELTA_EPOCH",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "Time",
+        "SCALEMAX": "2020-08-01T00:00:00.000000000",
+        "SCALEMIN": "2020-07-31T00:00:00.000000000",
+        "SCALETYP": "linear",
+        "UNITS": "nanoseconds",
+        "VALIDMAX": "2050-01-01T00:00:00.000000000",
+        "VALIDMIN": "2000-01-01T00:00:00.000000000",
+        "VAR_NOTES": "Start of acquisition interval",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nanoseconds",
+        "x_LABLAXIS": "Time"
+      }
+    },
+    "DELTA_EPOCH": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Accumulation period in seconds",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "Delta epoch",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I",
+        "LABLAXIS": "Delta epoch",
+        "SCALEMAX": 3600,
+        "SCALEMIN": 0,
+        "SCALETYP": "linear",
+        "UNITS": "seconds",
+        "VALIDMAX": 3600,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "seconds",
+        "x_LABLAXIS": "Delta epoch"
+      }
+    },
+    "He_Histogram": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          80
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Helium mass histogram. Detected counts per mass bin for particles in the energy range 0.5 - 2 MeV/n.",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Mass_Bins",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "He Histogram",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "He counts",
+        "SCALEMAX": 0.0010000000474974513,
+        "SCALEMIN": 9.999999747378752e-05,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "He counts",
+        "x_DEPEND": [
+          "Mass_Bins"
+        ]
+      }
+    },
+    "Mass_Bins": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          80
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Lowest mass value for each bin",
+        "DELTA_PLUS_VAR": "Mass_Bins_Width",
+        "FIELDNAM": "Bins Mass",
+        "FORMAT": "F6.3",
+        "LABLAXIS": "Mass",
+        "SCALEMAX": 5.95,
+        "SCALEMIN": 2.0,
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.66054e-27>kg",
+        "UNITS": "amu",
+        "VALIDMAX": 6.0,
+        "VALIDMIN": 2.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "amu",
+        "x_LABLAXIS": "Mass"
+      },
+      "VarData": [
+        2.0,
+        2.05,
+        2.1,
+        2.15,
+        2.2,
+        2.25,
+        2.3,
+        2.35,
+        2.4,
+        2.45,
+        2.5,
+        2.55,
+        2.6,
+        2.65,
+        2.7,
+        2.75,
+        2.8,
+        2.85,
+        2.9,
+        2.95,
+        3.0,
+        3.05,
+        3.1,
+        3.15,
+        3.2,
+        3.25,
+        3.3,
+        3.35,
+        3.4,
+        3.45,
+        3.5,
+        3.55,
+        3.6,
+        3.65,
+        3.7,
+        3.75,
+        3.8,
+        3.85,
+        3.9,
+        3.95,
+        4.0,
+        4.05,
+        4.1,
+        4.15,
+        4.2,
+        4.25,
+        4.3,
+        4.35,
+        4.4,
+        4.45,
+        4.5,
+        4.55,
+        4.6,
+        4.65,
+        4.7,
+        4.75,
+        4.8,
+        4.85,
+        4.9,
+        4.95,
+        5.0,
+        5.05,
+        5.1,
+        5.15,
+        5.2,
+        5.25,
+        5.3,
+        5.35,
+        5.4,
+        5.45,
+        5.5,
+        5.55,
+        5.6,
+        5.65,
+        5.7,
+        5.75,
+        5.8,
+        5.85,
+        5.9,
+        5.95
+      ]
+    },
+    "Mass_Bins_Width": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          80
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Width of each mass bin",
+        "FIELDNAM": "Bins Width",
+        "FORMAT": "F6.3",
+        "LABLAXIS": " ",
+        "SI_CONVERSION": "1.66054e-27>kg",
+        "UNITS": "amu",
+        "VALIDMAX": 6.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "amu",
+        "x_LABLAXIS": " "
+      },
+      "VarData": [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    "XYZ": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Particle flow direction (unit vector) in spacecraft XYZ coordinates",
+        "FIELDNAM": "Flow direction XYZ",
+        "FORMAT": "F6.3",
+        "LABL_PTR_1": "XYZ_Labels",
+        "UNITS": " ",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": -1.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "X",
+            "Y",
+            "Z"
+          ]
+        ]
+      },
+      "VarData": [
+        -0.866,
+        0.5,
+        0.0
+      ]
+    },
+    "QUALITY_FLAG": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Data quality flag",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "Quality flag",
+        "FILLVAL": 255,
+        "FORMAT": "I",
+        "LABLAXIS": "Quality flag",
+        "SCALEMAX": 4,
+        "SCALEMIN": 0,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 4,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "0:Bad, 1:Known problems, 2:Survey data, 3:Good, 4:Excellent",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Quality flag"
+      }
+    },
+    "QUALITY_BITMASK": {
+      "VarDescription": {
+        "DataType": "CDF_UINT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 65534,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Computer readable quality parameter",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "Quality bitmask",
+        "FILLVAL": 65535,
+        "FORMAT": "Z4",
+        "LABLAXIS": "Quality bitmask",
+        "SCALEMAX": 32767,
+        "SCALEMIN": 0,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 32767,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "0x1: Integration aborted, 0x2: Iris moved during integration, 0x4: Iris closed, 0x10: Iris setting 0 (fully open), 0x20: Iris setting 1 (26%), 0x40: Iris setting 2 (4%), 0x80: Iris setting 3 (1%) ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Quality bitmask"
+      }
+    },
+    "XYZ_Labels": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Labels for vector components in spacecraft XYZ coordinates",
+        "FIELDNAM": "Spacecraft XYZ Labels",
+        "FORMAT": "A1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "X",
+        "Y",
+        "Z"
+      ]
+    }
+  }
+}

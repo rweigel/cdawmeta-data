@@ -1,0 +1,1049 @@
+{
+  "CDFFileInfo": {
+    "File": "msl_rad_obs-l2_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/msl_rad_obs-l2_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Standard_data_product_id": "RAD_RDR",
+    "Product_type": "DATA",
+    "Product_id": " ",
+    "Instrument_host_name": "MARS SCIENCE LABORATORY",
+    "Instrument_host_id": "MSL",
+    "Mission_name": "MARS SCIENCE LABORATORY",
+    "Target_name": "MARS",
+    "Target_type": "PLANET",
+    "Instrument_name": "RADIATION ASSESSMENT DETECTOR",
+    "Instrument_id": "RAD",
+    "Producer_id": "GWEIGLE",
+    "Producer_full_name": "GERALD WEIGLE",
+    "Git_commit": " ",
+    "Software_version": " ",
+    "RDR_version": " ",
+    "Start_sol": " ",
+    "Start_time": " ",
+    "Stop_time": " ",
+    "Spacecraft_clock_start_count": " ",
+    "Spacecraft_clock_stop_count": " ",
+    "File_records": " ",
+    "LINK_TEXT": "The RAD instrument is described in detail in ",
+    "LINK_TITLE": "Hassler et al (2014)",
+    "HTTP_LINK": "https://link.springer.com/article/10.1007/s11214-012-9913-1",
+    "Note": "This *cdf file contains observations taken from the Mars Science Laboratory Radiation Assessment Detector (RAD) for the mission elapsed. This file is in CDF form and the data have undergone calibration and decompression from the binary MSL RAD EDR data.",
+    "Description": "This file contains data from RAD_RDR: Radiation Assessment Detector on the Mars Science Laboratory (MSL). There is one sols worth of observations where each observation can have four types of data: (1) Counters, (2) Histograms, (3) Dosimetry, and (4) PHA data. These data are organized in a hierarchical fashion in which some observations may not have all four types. These are described in the data object sections. For additional information and details concerning data organization, science meaning, etc., please refer to the Data Set Catalog, MSLRAD_RDR_DS.CAT.1 ",
+    "Quality_flag_note": "Dataset contains all data, however data is flagged (FLAGGED_DATA) if there are quality issues(cmds > 2, DAN firing, data corruption, &c.",
+    "Duration_note": "A RAD instrument observation is the 'sampling period', for each observation there are variables DURATION and ALIVE_TIME that both are indicators of the length of the observation.  Though similar, they have slightly different meanings, the DURATION (a coarse timer with 1 sec res) is the period from when RAD began acquiring data, until RAD stopped taking data.  The ALIVE_TIME (10us res) is based on how many seconds the hardware was able to accept incoming particles. ALIVE_TIME has a companion variable DEAD_TIME, which indicates how many seconds the hardware was 'busy' processing (and hence cannot accept an incoming particle).  In most nominal cases, the most accurate what to determine the observations active period is ALIVE_TIME + DEAD_TIME.   There can be exceptions, if the ALIVE_TIME counter maxxed out.  In those cases the DURATION would be used. ",
+    "PI_affiliation": "SwRI-Boulder",
+    "PI_name": "D. Hassler",
+    "Project": "MSL>Mars Science Laboratory",
+    "Source_name": "MSL",
+    "TEXT": "The Radiation Assessment Detector (RAD) and its data products are described in detail in the literature (Hassler et al., 2012). Each RAD observation contains the following: (1) Instrument counters, (2) Neutral particle count histograms in detectors D and E, (3) LET count histograms, (4) Absorbed dose rate in detectors B and E, (5) High-cadence dose rate in B and E (16 rates per observation).",
+    "Mission_group": "Mars Science Laboratory (MSL)",
+    "Data_type": "obs-l2",
+    "Data_version": " ",
+    "Descriptor": "RAD>Radiation Assessment Detector",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Generated_by": "Big Head Endian (BHE) for Southwest Research Institute",
+    "Generation_date": " ",
+    "Instrument_type": "Particles (space)",
+    "Logical_file_id": "msl_rad_obs-l2",
+    "Logical_source": "msl_rad_obs-l2",
+    "Acknowledgement": "Please acknowledge the RAD Principal Investigator Dr. Hassler of Southwest Research Institute Boulder.",
+    "Rules_of_use": "The RAD data are archived as fully citable data. Please consult the RAD team for further details on processing and usage of these data.",
+    "Time_resolution": "RAD accumulates nominally acquires data in a 16 min observational cadence. During times of high count rates this cadence switches to 8 min.",
+    "Logical_source_description": "MSL/RAD Level 2 observational radiation data",
+    "spase_DatasetResourceID": " ",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "ALIVE_TIME_f": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[Quality filtered] Actual instrument observation time",
+        "COMPARE_VAL": " ",
+        "COMPONENT_0": "ALIVE_TIME",
+        "COMPONENT_1": "FLAGGED_DATA",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alive Time of detector electronics",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "Alive Time",
+        "Level": [
+          1,
+          2
+        ],
+        "UNITS": "seconds (good Q)",
+        "VALIDMAX": 5000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "DataType": "CDF_FLOAT",
+        "x_UNITS": "seconds (good Q)",
+        "x_LABLAXIS": "Alive Time",
+        "COMPONENTS": [
+          "ALIVE_TIME",
+          "FLAGGED_DATA"
+        ]
+      }
+    },
+    "DOSIMETRY_TOTAL_f": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[Quality filtered] Radiation dose rate on Mars (recorded in Si, corrected for MMRTG contribution, and tissue-equivalent plastic)",
+        "COMPARE_VAL": " ",
+        "COMPONENT_0": "DOSIMETRY_TOTAL",
+        "COMPONENT_1": "FLAGGED_DATA",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Total Dose for B both total, and corrected for RTG background",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.3",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "DOSIMETRY_OBS_LABEL",
+        "Level": 2,
+        "UNITS": "uGray/hr (good Q)",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "DataType": "CDF_FLOAT",
+        "x_UNITS": "uGray/hr (good Q)",
+        "x_LABLAXES": [
+          [
+            "Total Dose B",
+            "RTG Corrected Dose B",
+            "Total Dose E"
+          ]
+        ],
+        "COMPONENTS": [
+          "DOSIMETRY_TOTAL",
+          "FLAGGED_DATA"
+        ]
+      }
+    },
+    "DOSIMETRY_TIMESLICE_f": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[Quality filtered] Total Dose for an observation at 1/16th timeslice of an observation",
+        "COMPARE_VAL": " ",
+        "COMPONENT_0": "DOSIMETRY_TIMESLICE",
+        "COMPONENT_1": "FLAGGED_DATA",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "DOSIMETRY_TIMESLICE_AXIS",
+        "DEPEND_2": "DOSIMETRY_DOSE_AXIS",
+        "DISPLAY_TYPE": "default_dimensiony=DOSIMETRY_TIMESLICE_AXIS,z=DOSIMETRY_TIMESLICE_f(*,1), z=DOSIMETRY_TIMESLICE_f(*,2), z=DOSIMETRY_TIMESLICE_f(*,3)",
+        "FIELDNAM": "Total Dose for B and E in 1/16th time increments of an observation",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.3",
+        "FUNCT": "apply_filter_flag",
+        "LABL_PTR_1": "DOSIMETRY_TIMESLICE_LABEL",
+        "LABL_PTR_2": "DOSIMETRY_DOSE_LABEL",
+        "Level": 2,
+        "UNITS": "uGray/hr (good Q)",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "DataType": "CDF_FLOAT",
+        "x_UNITS": "uGray/hr (good Q)",
+        "x_LABLAXES": [
+          [
+            "Intrv 0",
+            "Intrv 1",
+            "Intrv 2",
+            "Intrv 3",
+            "Intrv 4",
+            "Intrv 5",
+            "Intrv 6",
+            "Intrv 7",
+            "Intrv 8",
+            "Intrv 9",
+            "Intrv 10",
+            "Intrv 11",
+            "Intrv 12",
+            "Intrv 13",
+            "Intrv 14",
+            "Intrv 15"
+          ],
+          [
+            "Total Dose B",
+            "RTG Corrected Dose B",
+            "Total Dose E"
+          ]
+        ],
+        "x_DEPEND": [
+          "DOSIMETRY_TIMESLICE_AXIS",
+          "DOSIMETRY_DOSE_AXIS"
+        ],
+        "COMPONENTS": [
+          "DOSIMETRY_TIMESLICE",
+          "FLAGGED_DATA"
+        ]
+      }
+    },
+    "DOSIMETRY_TIMESLICE_AXIS": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Bin start time",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "Bin start time",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I10",
+        "LABLAXIS": "1/16th timestamp",
+        "Level": 2,
+        "SCALETYP": "linear",
+        "UNITS": "rclk",
+        "VALIDMAX": 9999,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "DataType": "CDF_UINT4",
+        "x_UNITS": "rclk",
+        "x_LABLAXIS": "1/16th timestamp"
+      }
+    },
+    "DOSIMETRY_DOSE_AXIS": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Total Dose",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "Total Dose",
+        "FILLVAL": 255,
+        "FORMAT": "I4",
+        "LABLAXIS": "Dosimetry",
+        "Level": 2,
+        "UNITS": "uGray/hr",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "DataType": "CDF_UINT1",
+        "x_UNITS": "uGray/hr",
+        "x_LABLAXIS": "Dosimetry"
+      }
+    },
+    "LET_A1A2_f": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          52
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "BIN_OFFSET": 18,
+        "CATDESC": "[Quality filtered] LET spectrum on Mars in Si (geometric factor ~ 0.9 cm^2 sr)",
+        "COMPARE_VAL": " ",
+        "COMPONENT_0": "LET_A1A2",
+        "COMPONENT_1": "FLAGGED_DATA",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "LET_BIN_ENERGY",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "LET spectrum in silicon",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.2",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "LET A1+A2",
+        "Level": 2,
+        "ORIGINAL_SIZE": 52,
+        "SCALETYP": "log",
+        "UNITS": "counts (good Q)",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "DataType": "CDF_DOUBLE",
+        "x_UNITS": "counts (good Q)",
+        "x_LABLAXIS": "LET A1+A2",
+        "x_DEPEND": [
+          "LET_BIN_ENERGY"
+        ],
+        "COMPONENTS": [
+          "LET_A1A2",
+          "FLAGGED_DATA"
+        ]
+      }
+    },
+    "LET_BIN_ENERGY": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          52
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "BIN_OFFSET": 18,
+        "CATDESC": "Energy at the start of the bin",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "Bin Start",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "Energy",
+        "Level": [
+          1,
+          2
+        ],
+        "ORIGINAL_SIZE": 52,
+        "UNITS": "keV/micron",
+        "VALIDMAX": 45000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "DataType": "CDF_DOUBLE",
+        "x_UNITS": "keV/micron",
+        "x_LABLAXIS": "Energy"
+      }
+    },
+    "HISTOGRAM_NEUTRAL_DE_f": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          96
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "BIN_OFFSET": 54,
+        "CATDESC": "[Quality filtered] Neutral particle (neutrons + gamma rays) counts on Mars",
+        "COMPARE_VAL": " ",
+        "COMPONENT_0": "HISTOGRAM_NEUTRAL_DE",
+        "COMPONENT_1": "FLAGGED_DATA",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "HISTOGRAM_BIN_ENERGY_D",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Det. D + Det. E counts",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f12.3",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "Neutral D+E",
+        "Level": 2,
+        "ORIGINAL_SIZE": 96,
+        "SCALETYP": "log",
+        "UNITS": "counts (good Q)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "DataType": "CDF_DOUBLE",
+        "x_UNITS": "counts (good Q)",
+        "x_LABLAXIS": "Neutral D+E",
+        "x_DEPEND": [
+          "HISTOGRAM_BIN_ENERGY_D"
+        ],
+        "COMPONENTS": [
+          "HISTOGRAM_NEUTRAL_DE",
+          "FLAGGED_DATA"
+        ]
+      }
+    },
+    "HISTOGRAM_NEUTRAL_D_f": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          96
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "BIN_OFFSET": 54,
+        "CATDESC": "[Quality filtered] Neutral particle counts in CsI",
+        "COMPARE_VAL": " ",
+        "COMPONENT_0": "HISTOGRAM_NEUTRAL_D",
+        "COMPONENT_1": "FLAGGED_DATA",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "HISTOGRAM_BIN_ENERGY_D",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Counts in Det. D",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f12.3",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "Neutral D",
+        "Level": 2,
+        "ORIGINAL_SIZE": 96,
+        "SCALETYP": "log",
+        "UNITS": "counts (good Q)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "DataType": "CDF_DOUBLE",
+        "x_UNITS": "counts (good Q)",
+        "x_LABLAXIS": "Neutral D",
+        "x_DEPEND": [
+          "HISTOGRAM_BIN_ENERGY_D"
+        ],
+        "COMPONENTS": [
+          "HISTOGRAM_NEUTRAL_D",
+          "FLAGGED_DATA"
+        ]
+      }
+    },
+    "HISTOGRAM_NEUTRAL_E_f": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          96
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "BIN_OFFSET": 54,
+        "CATDESC": "[Quality filtered] Neutral particle counts in tissue-equivalent plastic",
+        "COMPARE_VAL": " ",
+        "COMPONENT_0": "HISTOGRAM_NEUTRAL_E",
+        "COMPONENT_1": "FLAGGED_DATA",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "HISTOGRAM_BIN_ENERGY_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Counts in Det. E",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f12.3",
+        "FUNCT": "apply_filter_flag",
+        "LABLAXIS": "Neutral E",
+        "Level": 2,
+        "ORIGINAL_SIZE": 96,
+        "SCALETYP": "log",
+        "UNITS": "counts (good Q)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "DataType": "CDF_DOUBLE",
+        "x_UNITS": "counts (good Q)",
+        "x_LABLAXIS": "Neutral E",
+        "x_DEPEND": [
+          "HISTOGRAM_BIN_ENERGY_E"
+        ],
+        "COMPONENTS": [
+          "HISTOGRAM_NEUTRAL_E",
+          "FLAGGED_DATA"
+        ]
+      }
+    },
+    "ALIVE_TIME": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[All quality] Actual instrument observation time",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alive Time of detector electronics",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Alive Time",
+        "Level": [
+          1,
+          2
+        ],
+        "UNITS": "seconds (All Q)",
+        "VALIDMAX": 5000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "DataType": "CDF_FLOAT",
+        "x_UNITS": "seconds (All Q)",
+        "x_LABLAXIS": "Alive Time"
+      }
+    },
+    "DOSIMETRY_TOTAL": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[All quality] Radiation dose rate on Mars (recorded in Si, corrected for MMRTG contribution, and tissue-equivalent plastic)",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Total Dose for B both total, and corrected for RTG background",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.3",
+        "LABL_PTR_1": "DOSIMETRY_OBS_LABEL",
+        "Level": 2,
+        "UNITS": "uGray/hr (All Q)",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "DataType": "CDF_FLOAT",
+        "x_UNITS": "uGray/hr (All Q)",
+        "x_LABLAXES": [
+          [
+            "Total Dose B",
+            "RTG Corrected Dose B",
+            "Total Dose E"
+          ]
+        ]
+      }
+    },
+    "DOSIMETRY_TIMESLICE": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          16,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[All quality] Total Dose for an observation at 1/16th timeslice of an observation",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "DOSIMETRY_TIMESLICE_AXIS",
+        "DEPEND_2": "DOSIMETRY_DOSE_AXIS",
+        "DISPLAY_TYPE": "default_dimensiony=DOSIMETRY_TIMESLICE_AXIS,z=DOSIMETRY_TIMESLICE(*,1), z=DOSIMETRY_TIMESLICE(*,2), z=DOSIMETRY_TIMESLICE(*,3)",
+        "FIELDNAM": "Total Dose for B and E in 1/16th time increments of an observation",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.3",
+        "LABL_PTR_1": "DOSIMETRY_TIMESLICE_LABEL",
+        "LABL_PTR_2": "DOSIMETRY_DOSE_LABEL",
+        "Level": 2,
+        "UNITS": "uGray/hr (All Q)",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "DataType": "CDF_FLOAT",
+        "x_UNITS": "uGray/hr (All Q)",
+        "x_LABLAXES": [
+          [
+            "Intrv 0",
+            "Intrv 1",
+            "Intrv 2",
+            "Intrv 3",
+            "Intrv 4",
+            "Intrv 5",
+            "Intrv 6",
+            "Intrv 7",
+            "Intrv 8",
+            "Intrv 9",
+            "Intrv 10",
+            "Intrv 11",
+            "Intrv 12",
+            "Intrv 13",
+            "Intrv 14",
+            "Intrv 15"
+          ],
+          [
+            "Total Dose B",
+            "RTG Corrected Dose B",
+            "Total Dose E"
+          ]
+        ],
+        "x_DEPEND": [
+          "DOSIMETRY_TIMESLICE_AXIS",
+          "DOSIMETRY_DOSE_AXIS"
+        ]
+      }
+    },
+    "LET_A1A2": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          52
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "BIN_OFFSET": 18,
+        "CATDESC": "[All quality] LET spectrum on Mars in Si (geometric factor ~ 0.9 cm^2 sr)",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "LET_BIN_ENERGY",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "LET spectrum in silicon",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.2",
+        "LABLAXIS": "LET A1+A2",
+        "Level": 2,
+        "ORIGINAL_SIZE": 52,
+        "SCALETYP": "log",
+        "UNITS": "counts (All Q)",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "DataType": "CDF_DOUBLE",
+        "x_UNITS": "counts (All Q)",
+        "x_LABLAXIS": "LET A1+A2",
+        "x_DEPEND": [
+          "LET_BIN_ENERGY"
+        ]
+      }
+    },
+    "HISTOGRAM_NEUTRAL_DE": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          96
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "BIN_OFFSET": 54,
+        "CATDESC": "[All quality] Neutral particle (neutrons + gamma rays) counts on Mars",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "HISTOGRAM_BIN_ENERGY_D",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Det. D + Det. E counts",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f12.3",
+        "LABLAXIS": "Neutral D+E",
+        "Level": 2,
+        "ORIGINAL_SIZE": 96,
+        "SCALETYP": "log",
+        "UNITS": "counts (All Q",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "DataType": "CDF_DOUBLE",
+        "x_UNITS": "counts (All Q",
+        "x_LABLAXIS": "Neutral D+E",
+        "x_DEPEND": [
+          "HISTOGRAM_BIN_ENERGY_D"
+        ]
+      }
+    },
+    "HISTOGRAM_NEUTRAL_D": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          96
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "BIN_OFFSET": 54,
+        "CATDESC": "[All quality] Neutral particle counts in CsI",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "HISTOGRAM_BIN_ENERGY_D",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Counts in Det. D",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f12.3",
+        "LABLAXIS": "Neutral D",
+        "Level": 2,
+        "ORIGINAL_SIZE": 96,
+        "SCALETYP": "log",
+        "UNITS": "counts (All Q)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "DataType": "CDF_DOUBLE",
+        "x_UNITS": "counts (All Q)",
+        "x_LABLAXIS": "Neutral D",
+        "x_DEPEND": [
+          "HISTOGRAM_BIN_ENERGY_D"
+        ]
+      }
+    },
+    "HISTOGRAM_NEUTRAL_E": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          96
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "BIN_OFFSET": 54,
+        "CATDESC": "[All quality] Neutral particle counts in tissue-equivalent plastic",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "HISTOGRAM_BIN_ENERGY_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Counts in Det. E",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f12.3",
+        "LABLAXIS": "Neutral E",
+        "Level": 2,
+        "ORIGINAL_SIZE": 96,
+        "SCALETYP": "log",
+        "UNITS": "counts (All Q)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "DataType": "CDF_DOUBLE",
+        "x_UNITS": "counts (All Q)",
+        "x_LABLAXIS": "Neutral E",
+        "x_DEPEND": [
+          "HISTOGRAM_BIN_ENERGY_E"
+        ]
+      }
+    },
+    "HISTOGRAM_BIN_ENERGY_D": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          96
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "BIN_OFFSET": 54,
+        "CATDESC": "Energy at the start of the bin for detector D",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Bin Start Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f12.3",
+        "LABLAXIS": "Energy",
+        "Level": 2,
+        "ORIGINAL_SIZE": 96,
+        "UNITS": "MeV",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "DataType": "CDF_DOUBLE",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Energy"
+      }
+    },
+    "HISTOGRAM_BIN_ENERGY_E": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          96
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "BIN_OFFSET": 54,
+        "CATDESC": "Energy at the start of the bin for detector E",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Bin Start Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f12.3",
+        "LABLAXIS": "Energy",
+        "Level": 2,
+        "ORIGINAL_SIZE": 96,
+        "UNITS": "MeV",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "DataType": "CDF_DOUBLE",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Energy"
+      }
+    },
+    "FLAGGED_DATA": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 80,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOT] Quality indicator - flagged data has quality issues from various sources, Commanding, DAN activity, Other; no value=good",
+        "DB": "NA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Flagged data should be removed for science",
+        "FORMAT": "a16",
+        "LABLAXIS": "Flagged Data",
+        "Level": [
+          1,
+          2
+        ],
+        "UNITS": "no value=good",
+        "VAR_TYPE": "data",
+        "DataType": "CDF_CHAR",
+        "x_UNITS": "no value=good",
+        "x_LABLAXIS": "Flagged Data"
+      }
+    },
+    "EPOCH": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Epoch time tag",
+        "COMPRESS": "FALSE",
+        "DB": "NA",
+        "FIELDNAM": "Epoch TT2000",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "Epoch",
+        "Level": [
+          1,
+          2
+        ],
+        "UNITS": "ms",
+        "VALIDMAX": "2035-01-01T00:00:00.000000000",
+        "VALIDMIN": "2005-01-01T00:00:00.000000000",
+        "VAR_TYPE": "support_data",
+        "DataType": "CDF_TIME_TT2000",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "DOSIMETRY_OBS_LABEL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 80,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Labels for Dosimetry",
+        "FIELDNAM": "Labels for Dosimetry",
+        "FORMAT": "a81",
+        "Level": 2,
+        "VAR_TYPE": "metadata",
+        "DataType": "CDF_CHAR",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Total Dose B",
+        "RTG Corrected Dose B",
+        "Total Dose E"
+      ]
+    },
+    "DOSIMETRY_TIMESLICE_LABEL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 80,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Labels for Dosimetry timeslice intervals",
+        "FIELDNAM": "Labels for Dosimetry Timeslice intervals",
+        "FORMAT": "a81",
+        "Level": 2,
+        "VAR_TYPE": "metadata",
+        "DataType": "CDF_CHAR",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Intrv 0",
+        "Intrv 1",
+        "Intrv 2",
+        "Intrv 3",
+        "Intrv 4",
+        "Intrv 5",
+        "Intrv 6",
+        "Intrv 7",
+        "Intrv 8",
+        "Intrv 9",
+        "Intrv 10",
+        "Intrv 11",
+        "Intrv 12",
+        "Intrv 13",
+        "Intrv 14",
+        "Intrv 15"
+      ]
+    },
+    "DOSIMETRY_DOSE_LABEL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 80,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Labels for Dosimetry Detector",
+        "FIELDNAM": "Labels for Dosimetry Detector",
+        "FORMAT": "a81",
+        "Level": 2,
+        "VAR_TYPE": "metadata",
+        "DataType": "CDF_CHAR",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Total Dose B",
+        "RTG Corrected Dose B",
+        "Total Dose E"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1588 @@
+{
+  "CDFFileInfo": {
+    "File": "wi_l2-30min_sms-stics-erpa-solarwind_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/wi_l2-30min_sms-stics-erpa-solarwind_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Source_name": "WIND>Wind Interplanetary Plasma Laboratory",
+    "Data_type": "L2-30MIN>Level2 30minute",
+    "Descriptor": "SMS-STICS-ERPA-SOLARWIND>SMS Solar Wind & Suprathermal Ion Composition Investigation solarwind ERPA solarwind",
+    "Data_version": " ",
+    "TITLE": "WIND SMS Level2 stics erpa solarwind ",
+    "TEXT": "The Suprathermal Ion Composition Spectrometer (STICS) is a time of flight (TOF) plasma mass spectrometer, capable of identifying mass and mass per charge for incident ions up to 200 keV/e. It uses an electrostatic analyzer to admit ions of a particular energy per charge (E/Q) into the TOF chamber. The E/Q voltage is stepped through 32 values, sitting at each value for approximately 24 sec., to measure ions over the full E/Q range of 6 - 200 keV/e. Ions then pass through a carbon foil and TOF chamber, before finally impacting on a solid-state detector (SSD) for energy measurement. STICS combines these three measurements of E/Q, TOF and residual energy, producing PHA words. This triple-coincidence technique greatly improves the signal to noise ratio in the data. Measurements of E/Q and TOF without residual energy also produce PHA words. These double-coincidence measurements are characterized by better statistics since ions whose energy does not allow them to be registered by the SSD can still be counted in double-coincidence measurements. However, ion identification in double-coincidence measurements are limited to a select number of ions that are well separated in E/Q - TOF space.  The STICS instrument provides full 3D velocity distribution functions, through a combination of multiple telescopes and spacecraft spin. The instrument includes 3 separate TOF telescopes that view 3 separate latitude sectors, as shown in Figure 1. In addition, the WIND spacecraft spins, allowing the 3 telescopes to trace out a nearly 4�° steradian viewing area. The longitudinal sectors are shown in Figure 2. The solar direction is in sectors 8-10 while the earthward direction is in sectors 0-2.",
+    "MODS": "Initial release",
+    "ADID_ref": "NSSD0142",
+    "Logical_file_id": "WI_L2-30MIN_SMS-STICS-ERPA-SOLARWIND_00000000_V01",
+    "Logical_source": "WI_L2-30MIN_SMS-STICS-ERPA-SOLARWIND",
+    "Logical_source_description": "Solar Wind and Suprathermal Ion Composition  Instrument, Key Parameters",
+    "PI_name": "S. T. Lepri",
+    "PI_affiliation": "U of Michigan",
+    "Instrument_type": "Plasma and Solar Wind",
+    "TEXT_supplement_1": " ",
+    "LINK_TEXT": "Historic Wind SMS \nWind STICS ",
+    "LINK_TITLE": "Home Page\nRelease Notes",
+    "HTTP_LINK": "http://space.umd.edu/wind/\nhttps://spdf.gsfc.nasa.gov/pub/data/wind/documents/wind_stics_lv2_release_notes_revD.pdf",
+    "NSSDC_id": "sphe-00653",
+    "alt_logical_source": "Wind_SMS_Key-Parameters-K0_1min_cdf",
+    "Mission_group": "Wind\n!___Interplanetary Data near 1 AU",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Wind/SMS/STICS/EnergyResolvedPitchAngleDistribution/Level2/SolarWind/PT30M",
+    "DOI": "https://doi.org/10.48322/yd5h-ty18"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time start of avg interval",
+        "DICT_KEY": "time>Epoch_center_range",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2020-01-01T00:00:00.000",
+        "SCALEMIN": "1994-01-01T00:00:00.000",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-01-01T00:00:00.000",
+        "VALIDMIN": "1994-01-01T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "ERPA_tc_hplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence H+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_hplus",
+        "FIELDNAM": "erpa tc H+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc H+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc H+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_hplus_sum": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pitch-angle distributions triple coincidence H+ - summed over energy",
+        "COMPONENT_0": "ERPA_tc_hplus",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "erpa tc H+ - summed over energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "FUNCT": "spdf_sum_over_row",
+        "LABLAXIS": "erpa tc H+ - summed over energy",
+        "SCALETYP": "log",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc H+ - summed over energy",
+        "x_DEPEND": [
+          "SECTOR_angle"
+        ],
+        "COMPONENTS": [
+          "ERPA_tc_hplus"
+        ]
+      }
+    },
+    "ERPA_tc_heplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence He+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_heplus",
+        "FIELDNAM": "erpa tc He+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc He+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc He+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_heplus_sum": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pitch-angle distributions triple coincidence He+ - summed over energy",
+        "COMPONENT_0": "ERPA_tc_heplus",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "erpa tc He+ - summed over energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "FUNCT": "spdf_sum_over_row",
+        "LABLAXIS": "erpa tc He+ - summed over energy",
+        "SCALETYP": "log",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc He+ - summed over energy",
+        "x_DEPEND": [
+          "SECTOR_angle"
+        ],
+        "COMPONENTS": [
+          "ERPA_tc_heplus"
+        ]
+      }
+    },
+    "ERPA_tc_he2plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence He2+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_he2plus",
+        "FIELDNAM": "erpa tc He2+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc He2+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc He2+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_he2plus_sum": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pitch-angle distributions triple coincidence He2+ - summed over energy",
+        "COMPONENT_0": "ERPA_tc_he2plus",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "erpa tc He2+ - summed over energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "FUNCT": "spdf_sum_over_row",
+        "LABLAXIS": "erpa tc He2+ - summed over energy",
+        "SCALETYP": "log",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc He2+ - summed over energy",
+        "x_DEPEND": [
+          "SECTOR_angle"
+        ],
+        "COMPONENTS": [
+          "ERPA_tc_he2plus"
+        ]
+      }
+    },
+    "ERPA_tc_oplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence O+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_oplus",
+        "FIELDNAM": "erpa tc O+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc O+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc O+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_oplus_sum": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pitch-angle distributions triple coincidence O+ - summed over energy",
+        "COMPONENT_0": "ERPA_tc_oplus",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "erpa tc O+ - summed over energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "FUNCT": "spdf_sum_over_row",
+        "LABLAXIS": "erpa tc O+ - summed over energy",
+        "SCALETYP": "log",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc O+ - summed over energy",
+        "x_DEPEND": [
+          "SECTOR_angle"
+        ],
+        "COMPONENTS": [
+          "ERPA_tc_oplus"
+        ]
+      }
+    },
+    "ERPA_tc_o6plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence O6+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_o6plus",
+        "FIELDNAM": "erpa tc O6+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc O6+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc O6+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_o6plus_sum": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pitch-angle distributions triple coincidence O6+ - summed over energy",
+        "COMPONENT_0": "ERPA_tc_o6plus",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "erpa tc O6+ - summed over energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "FUNCT": "spdf_sum_over_row",
+        "LABLAXIS": "erpa tc O6+ - summed over energy",
+        "SCALETYP": "log",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc O6+ - summed over energy",
+        "x_DEPEND": [
+          "SECTOR_angle"
+        ],
+        "COMPONENTS": [
+          "ERPA_tc_o6plus"
+        ]
+      }
+    },
+    "ERPA_tc_c5plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence C5+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_c5plus",
+        "FIELDNAM": "erpa tc C5+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc C5+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc C5+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_c5plus_sum": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pitch-angle distributions triple coincidence C5+ - summed over energy",
+        "COMPONENT_0": "ERPA_tc_c5plus",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "erpa tc C5+ - summed over energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "FUNCT": "spdf_sum_over_row",
+        "LABLAXIS": "erpa tc C5+ - summed over energy",
+        "SCALETYP": "log",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc C5+ - summed over energy",
+        "x_DEPEND": [
+          "SECTOR_angle"
+        ],
+        "COMPONENTS": [
+          "ERPA_tc_c5plus"
+        ]
+      }
+    },
+    "ERPA_tc_fe10plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence Fe10+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_fe10plus",
+        "FIELDNAM": "erpa tc Fe10+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc Fe10+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc Fe10+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_fe10plus_sum": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pitch-angle distributions triple coincidence Fe10+ - summed over energy",
+        "COMPONENT_0": "ERPA_tc_fe10plus",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "erpa tc Fe10+ - summed over energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "FUNCT": "spdf_sum_over_row",
+        "LABLAXIS": "erpa tc Fe10+ - summed over energy",
+        "SCALETYP": "log",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc Fe10+ - summed over energy",
+        "x_DEPEND": [
+          "SECTOR_angle"
+        ],
+        "COMPONENTS": [
+          "ERPA_tc_fe10plus"
+        ]
+      }
+    },
+    "ERPA_tc_cplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence C+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_cplus",
+        "FIELDNAM": "erpa tc C+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc C+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc C+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_nplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence N+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_nplus",
+        "FIELDNAM": "erpa tc N+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc N+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc N+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_o2plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence O2+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_o2plus",
+        "FIELDNAM": "erpa tc O2+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc O2+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc O2+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_o7plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence O7+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_o7plus",
+        "FIELDNAM": "erpa tc O7+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc O7+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc O7+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_o8plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence O8+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_o8plus",
+        "FIELDNAM": "erpa tc O8+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc O8+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc O8+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_c4plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence C4+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_c4plus",
+        "FIELDNAM": "erpa tc C4+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc C4+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc C4+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_c6plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence C6+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_c6plus",
+        "FIELDNAM": "erpa tc C6+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc C6+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc C6+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_fe8plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence Fe8+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_fe8plus",
+        "FIELDNAM": "erpa tc Fe8+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc Fe8+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc Fe8+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_fe9plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence Fe9+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_fe9plus",
+        "FIELDNAM": "erpa tc Fe9+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc Fe9+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc Fe9+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_tc_fe16plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions triple coincidence Fe16+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_tc_fe16plus",
+        "FIELDNAM": "erpa tc Fe16+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa tc Fe16+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa tc Fe16+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_dc_hplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions double coincidence H+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_dc_hplus",
+        "FIELDNAM": "erpa dc H+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa dc H+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa dc H+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_dc_hplus_sum": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pitch-angle distributions double coincidence H+ - summed over energy",
+        "COMPONENT_0": "ERPA_dc_hplus",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "erpa dc H+ - summed over energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "FUNCT": "spdf_sum_over_row",
+        "LABLAXIS": "erpa dc H+ - summed over energy",
+        "SCALETYP": "log",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa dc H+ - summed over energy",
+        "x_DEPEND": [
+          "SECTOR_angle"
+        ],
+        "COMPONENTS": [
+          "ERPA_dc_hplus"
+        ]
+      }
+    },
+    "ERPA_dc_heplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions double coincidence He+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_dc_heplus",
+        "FIELDNAM": "erpa dc He+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa dc He+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa dc He+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_dc_heplus_sum": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pitch-angle distributions double coincidence He+ - summed over energy",
+        "COMPONENT_0": "ERPA_dc_heplus",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "erpa dc He+ - summed over energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "FUNCT": "spdf_sum_over_row",
+        "LABLAXIS": "erpa dc He+ - summed over energy",
+        "SCALETYP": "log",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa dc He+ - summed over energy",
+        "x_DEPEND": [
+          "SECTOR_angle"
+        ],
+        "COMPONENTS": [
+          "ERPA_dc_heplus"
+        ]
+      }
+    },
+    "ERPA_dc_he2plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions double coincidence He2+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_dc_he2plus",
+        "FIELDNAM": "erpa dc He2+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa dc He2+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa dc He2+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_dc_he2plus_sum": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pitch-angle distributions double coincidence He2+ - summed over energy",
+        "COMPONENT_0": "ERPA_dc_he2plus",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "erpa dc He2+ - summed over energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "FUNCT": "spdf_sum_over_row",
+        "LABLAXIS": "erpa dc He2+ - summed over energy",
+        "SCALETYP": "log",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa dc He2+ - summed over energy",
+        "x_DEPEND": [
+          "SECTOR_angle"
+        ],
+        "COMPONENTS": [
+          "ERPA_dc_he2plus"
+        ]
+      }
+    },
+    "ERPA_dc_oplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions double coincidence O+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_dc_oplus",
+        "FIELDNAM": "erpa dc O+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa dc O+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa dc O+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_dc_oplus_sum": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pitch-angle distributions double coincidence O+ - summed over energy",
+        "COMPONENT_0": "ERPA_dc_oplus",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "erpa dc O+ - summed over energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "FUNCT": "spdf_sum_over_row",
+        "LABLAXIS": "erpa dc O+ - summed over energy",
+        "SCALETYP": "log",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa dc O+ - summed over energy",
+        "x_DEPEND": [
+          "SECTOR_angle"
+        ],
+        "COMPONENTS": [
+          "ERPA_dc_oplus"
+        ]
+      }
+    },
+    "ERPA_dc_o6plus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions double coincidence O6+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_dc_o6plus",
+        "FIELDNAM": "erpa dc O6+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa dc O6+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa dc O6+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "ERPA_dc_o6plus_sum": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pitch-angle distributions double coincidence O6+ - summed over energy",
+        "COMPONENT_0": "ERPA_dc_o6plus",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "erpa dc O6+ - summed over energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "FUNCT": "spdf_sum_over_row",
+        "LABLAXIS": "erpa dc O6+ - summed over energy",
+        "SCALETYP": "log",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa dc O6+ - summed over energy",
+        "x_DEPEND": [
+          "SECTOR_angle"
+        ],
+        "COMPONENTS": [
+          "ERPA_dc_o6plus"
+        ]
+      }
+    },
+    "ERPA_dc_cplus": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12,
+          32
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy-resolved pitch-angle distributions double coincidence C+",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "SECTOR_angle",
+        "DEPEND_2": "eoq",
+        "DISPLAY_TYPE": "default_dimensionx=SECTOR_angle,y=eoq,z=ERPA_dc_cplus",
+        "FIELDNAM": "erpa dc C+",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "erpa dc C+",
+        "UNITS": "s^3/km^6",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "s^3/km^6",
+        "x_LABLAXIS": "erpa dc C+",
+        "x_DEPEND": [
+          "SECTOR_angle",
+          "eoq"
+        ]
+      }
+    },
+    "eoq": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          32
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "MaxWrittenRec": -1,
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": 0.0,
+        "RecVariance": "VARY",
+        "SparseRecords": "PREV"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy per charge",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "eoq",
+        "FIELDNAM": "Energy per charge",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.4",
+        "LABLAXIS": "Energy per charge",
+        "SCALEMAX": 230.0,
+        "SCALEMIN": 6.0,
+        "SCALETYP": "linear",
+        "UNITS": "keV/e",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "keV/e",
+        "x_LABLAXIS": "Energy per charge",
+        "x_DEPEND": [
+          "eoq"
+        ]
+      }
+    },
+    "SECTOR_index": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          12
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sector index",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Sector index",
+        "FILLVAL": -9,
+        "FORMAT": "i2",
+        "LABLAXIS": "Sector index",
+        "SCALEMAX": 12,
+        "SCALEMIN": 1,
+        "SCALETYP": "linear",
+        "UNITS": "sector index",
+        "VALIDMAX": 12,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sector index",
+        "x_LABLAXIS": "Sector index"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "SECTOR_angle": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          12
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 0.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sector angle",
+        "FIELDNAM": "Sector angle",
+        "FILLVAL": -9,
+        "FORMAT": "f5.1",
+        "LABLAXIS": "Sector",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 360,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Sector"
+      },
+      "VarData": [
+        7.5,
+        22.5,
+        37.5,
+        52.5,
+        67.5,
+        82.5,
+        97.5,
+        112.5,
+        127.5,
+        142.5,
+        157.5,
+        172.5
+      ]
+    }
+  }
+}

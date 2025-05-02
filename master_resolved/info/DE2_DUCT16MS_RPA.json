@@ -1,0 +1,552 @@
+{
+  "CDFFileInfo": {
+    "File": "de2_duct16ms_rpa_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/de2_duct16ms_rpa_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "DE-2 RPA 1/64-sec Total Ion Density",
+    "Project": "DE>Dynamics Explorer",
+    "Source_name": "DE>Dynamics Explorer",
+    "Discipline": "Space Physics>Magnetospheric  Ionospheric Interactions",
+    "Descriptor": "duct16ms> Duct 16ms ",
+    "Data_type": "rpa>Retarding PotentialAnalyzer",
+    "Data_version": "1",
+    "Text": "The Retarding Potential Analyzer (RPA) measured the bulk ion velocity in the direction of the spacecraft motion, the constituent ion concentrations, and the ion temperature along the satellite path. These parameters were derived from a least squares fit to the ion number flux vs energy curve obtained by sweeping or stepping the voltage applied to the internal retarding grids of the RPA. In addition, a separate wide aperture sensor, a duct sensor, was flown to measure the spectral characteristics of iregularities in the total ion concentration. The measured parameters obtained from this investigation were important to the understanding of mechanisms that influence the plasma; i.e., to understand the coupling between the solar wind and the earth's atmosphere. The measurements were made with a multigridded planar retarding potential analyzer very similar in concept and geometry to the instruments carried on the AE satellites. The retarding potential was variable in the range from approximately +32 to 0 volts. The details of this voltage trace, and whether it was continuous or stepped, depended on the operating mode of the instrument. Specific parameters deduced from these measurements were ion temperature; vehicle potential; ram component of the ion drift velocity; the ion and electron concentration irregularity spectrum; and the concentration of H+, He+, O+, and Fe+, and of molecular ions near perigee. Additional details are in W. B. Hanson et al., Space Sci. Instrum., v. 5, n. 4, p. 503, 1981.\nIt includes the DUCT portion of the high resolutiondata from the Dynamics Explorer 2 (DE-2) Retarding Potential Analyzer (RPA) for the whole DE-2 mission time period in ASCII format. This version was generated at NSSDC from the PI-provided binary data (SPIO-00232). The DUCT files include RPA measurements of the total ion concentration every 64 times per second. Due to a failure in the instrument memory system RPA data are not available from 81317 06:26:40 UT to 82057 13:16:00 UT. This data set is based on the revised version of the RPA files that was submitted by the PI team in June of 1995. The revised RPA data include a correction to the spacecraft potential.",
+    "ADID_ref": "NSSD0241",
+    "Logical_source": "de2_duct16ms_rpa",
+    "Logical_file_id": "de2_duct16ms_rpa_00000000_v01",
+    "Logical_source_description": "16-msec total ion densities",
+    "PI_name": "Rod Heelis",
+    "PI_affiliation": "University of Texas, Dallas",
+    "NSSDC_id": "SPIO-00120",
+    "Mission_group": "Dynamics Explorer\n!___Magnetospheric Data\n!___ITM Data including Earth Imaging and Ground-Based",
+    "Instrument_type": "Particles (space)",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/DE2/RPA/PT0.016S",
+    "DOI": "https://doi.org/10.48322/aab6-jj49"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "NSSDC standard-reference time value. ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D.",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "ionDensity": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Total ion (number) density in cm-3",
+        "DEPEND_0": "Epoch_den",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Ion Density",
+        "FILLVAL": -1e-31,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "Total ion density",
+        "SCALETYP": "log",
+        "UNITS": "cm-3",
+        "VALIDMAX": 6000000.0,
+        "VALIDMIN": 1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm-3",
+        "x_LABLAXIS": "Total ion density"
+      }
+    },
+    "numDensity": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of ion density measurements per data file",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Number of density measurements",
+        "FILLVAL": -1,
+        "FORMAT": "i4",
+        "LABLAXIS": "n",
+        "UNITS": " ",
+        "VALIDMAX": 1000,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "n"
+      }
+    },
+    "Epoch_wb1": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "NSSDC standard-reference time value (wide-band 1). ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D.  wide-band 1",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "Epoch_wb2": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "NSSDC standard-reference time value (wide-band 2). ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D.  wide-band 2",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "Epoch_wb3": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "NSSDC standard-reference time value (wide-band 3). ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D.  wide-band 3",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "Epoch_wb4": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "NSSDC standard-reference time value (wide-band 4). ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D.  wide-band 4",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "Epoch_wb5": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "NSSDC standard-reference time value (wide-band 5). ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D.  wide-band 5",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "Epoch_wb6": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "NSSDC standard-reference time value (wide-band 6). ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D.  wide-band 6",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "wb1": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectral power in wide band filter 1 (630 - 1700 Hz)",
+        "DEPEND_0": "Epoch_wb1",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Spec. power filter 1",
+        "FILLVAL": 0.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "SP WBF 1",
+        "SCALETYP": "log",
+        "UNITS": "1/Hz",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 1e-18,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/Hz",
+        "x_LABLAXIS": "SP WBF 1"
+      }
+    },
+    "wb2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectral power in wide band filter 2 (86 - 233 Hz)",
+        "DEPEND_0": "Epoch_wb2",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Spec. power filter 2",
+        "FILLVAL": 0.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "SP WBF 2",
+        "SCALETYP": "log",
+        "UNITS": "1/Hz",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 1e-18,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/Hz",
+        "x_LABLAXIS": "SP WBF 2"
+      }
+    },
+    "wb3": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectral power in wide band filter 3 (1700 - 4600 Hz)",
+        "DEPEND_0": "Epoch_wb3",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Spec. power filter 3",
+        "FILLVAL": 0.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "SP WBF 3",
+        "SCALETYP": "log",
+        "UNITS": "1/Hz",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 1e-18,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/Hz",
+        "x_LABLAXIS": "SP WBF 3"
+      }
+    },
+    "wb4": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectral power in wide band filter 4 (233 - 630 Hz)",
+        "DEPEND_0": "Epoch_wb4",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Spec. power filter 4",
+        "FILLVAL": 0.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "SP WBF 4",
+        "SCALETYP": "log",
+        "UNITS": "1/Hz",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 1e-18,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/Hz",
+        "x_LABLAXIS": "SP WBF 4"
+      }
+    },
+    "wb5": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectral power in wide band filter 5 (4600 - 12400 Hz)",
+        "DEPEND_0": "Epoch_wb5",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Spec. power filter 5",
+        "FILLVAL": 0.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "SP WBF 5",
+        "SCALETYP": "log",
+        "UNITS": "1/Hz",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 1e-18,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/Hz",
+        "x_LABLAXIS": "SP WBF 5"
+      }
+    },
+    "wb6": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spectral power in wide band filter 6 (32 - 86 Hz)",
+        "DEPEND_0": "Epoch_wb6",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Spec. power filter 6",
+        "FILLVAL": 0.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "SP WBF 6",
+        "SCALETYP": "log",
+        "UNITS": "1/Hz",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 1e-18,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/Hz",
+        "x_LABLAXIS": "SP WBF 6"
+      }
+    },
+    "Epoch_den": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "NSSDC standard-reference time value (ion density). ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D. den",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "glat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geographic Latitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Geographic Latitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "Geog Latitude",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Geog Latitude"
+      }
+    },
+    "glon": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geographic Longitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Geographic Longitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "Geog Longitude",
+        "UNITS": "deg",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Geog Longitude"
+      }
+    },
+    "ilat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Invariant Latitude in degrees",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Invariant Latitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "Inv Lat",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Inv Lat"
+      }
+    },
+    "mlt": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic Local Time",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Mag. Local Time",
+        "FILLVAL": 0.0,
+        "FORMAT": "f5.2",
+        "LABLAXIS": "MLT",
+        "UNITS": "hr",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "hr",
+        "x_LABLAXIS": "MLT"
+      }
+    },
+    "alt": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Altitude in km",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Altitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Altitude",
+        "UNITS": "km",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "Altitude"
+      }
+    }
+  }
+}

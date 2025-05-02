@@ -1,0 +1,886 @@
+{
+  "CDFFileInfo": {
+    "File": "gps_roti15min_jpl_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/gps_roti15min_jpl_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "GPS ROTI index 15min maps",
+    "Project": "GPS>Global Positioning System",
+    "Source_name": "GPS>Global Positioning System",
+    "Discipline": "Space Physics>Magnetospheric  Ionospheric Interactions",
+    "Descriptor": "roti15min> ROTI index 15 minute",
+    "Data_type": "JPL>Jet Propulsion Lab.",
+    "Data_version": "1",
+    "TEXT": "The ROTI index is the standard deviation of the Rate of change of TEC (ROT) during a 5-minute interval. TEC is the Total Electron Content measured between a GPS satellite and ground receiver station.",
+    "ADID_ref": " ",
+    "Logical_source": "gps_roti15min_jpl",
+    "Logical_file_id": "gps_roti15min_jpl_00000000_v01",
+    "Logical_source_description": "GPS-deduced ROTI index: standard deviation of rate of change of Total Electron Content (TEC) in a 5 min interval every 15 min; world maps and movies",
+    "PI_name": "Xiaoqing Pi",
+    "PI_affiliation": "Jet Propulsion Laboratory",
+    "NSSDC_id": " ",
+    "Mission_group": "GPS\n!___Magnetospheric Data\n!___ITM Data including Earth Imaging and Ground-Based",
+    "Instrument_type": "Imaging and Remote Sensing (ITM/Earth)",
+    "LINK_TEXT": "JPL Iono Group: ",
+    "LINK_TITLE": "JPL Ionospheric and Atmospheric Remote Sensing",
+    "HTTP_LINK": "https://iono.jpl.nasa.gov/",
+    "cdawlib_idl_row_notranspose": "FALSE",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/IGS/GPS_Receiver/ROTI/PT15M",
+    "DOI": "https://doi.org/10.48322/v9pw-wd37"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "NSSDC standard-reference time value. ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D.",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "rotimed": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "ROTI, Unmapped Image",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ROTI unmapped",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f5.3",
+        "LABLAXIS": "med",
+        "UNITS": " ",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "med",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ]
+      }
+    },
+    "rotimedM": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "ROTI, world map, cyl proj, median in 2.5 x 5 deg bins, expandable thumbnails  ",
+        "COMPONENT_0": "rotimed",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimensionTHUMBSIZE>250>MAP_PROJ>8>x=lat,y=lon",
+        "FIELDNAM": "ROTI Cyl Proj",
+        "FILLVAL": 0.0,
+        "FORMAT": "f5.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "med",
+        "UNITS": " ",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "med",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ],
+        "COMPONENTS": [
+          "rotimed"
+        ]
+      }
+    },
+    "rotimedM_Movie": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "-----> world map, cyl proj, movie",
+        "COMPONENT_0": "rotimed",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimensionMAP_PROJ>8>x=lat,y=lon",
+        "FIELDNAM": "ROTI Movie Cyl Proj",
+        "FILLVAL": 0.0,
+        "FORMAT": "f5.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "med",
+        "UNITS": " ",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "med",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ],
+        "COMPONENTS": [
+          "rotimed"
+        ]
+      }
+    },
+    "rotimedM_North": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "-----> North polar proj., expandable thumbnails",
+        "COMPONENT_0": "rotimed",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimensionTHUMBSIZE>250>MAP_PROJ>6>CENTERPOLE>NORTH>x=lat,y=lon",
+        "FIELDNAM": "ROTI N Pol",
+        "FILLVAL": 0.0,
+        "FORMAT": "f5.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "med",
+        "UNITS": " ",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "med",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ],
+        "COMPONENTS": [
+          "rotimed"
+        ]
+      }
+    },
+    "rotimedM_NMovie": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "-----> North polar proj., movie",
+        "COMPONENT_0": "rotimed",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimensionMAP_PROJ>6>CENTERPOLE>NORTH>x=lat,y=lon",
+        "FIELDNAM": "ROTI Movie N Pol",
+        "FILLVAL": 0.0,
+        "FORMAT": "f5.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "med",
+        "UNITS": " ",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "med",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ],
+        "COMPONENTS": [
+          "rotimed"
+        ]
+      }
+    },
+    "rotimedM_South": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "-----> South polar proj., expandable thumbnails",
+        "COMPONENT_0": "rotimed",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimensionTHUMBSIZE>250>MAP_PROJ>6>CENTERPOLE>SOUTH>x=lat,y=lon",
+        "FIELDNAM": "ROTI S Pol",
+        "FILLVAL": 0.0,
+        "FORMAT": "f5.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "med",
+        "UNITS": " ",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "med",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ],
+        "COMPONENTS": [
+          "rotimed"
+        ]
+      }
+    },
+    "rotimedM_SMovie": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "-----> South polar proj., movie",
+        "COMPONENT_0": "rotimed",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimensionMAP_PROJ>6>CENTERPOLE>SOUTH>x=lat,y=lon",
+        "FIELDNAM": "ROTI Movie S Pol",
+        "FILLVAL": 0.0,
+        "FORMAT": "f5.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "med",
+        "UNITS": " ",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "med",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ],
+        "COMPONENTS": [
+          "rotimed"
+        ]
+      }
+    },
+    "lat": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          72
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "latitude",
+        "FIELDNAM": "latitude",
+        "FORMAT": "f6.1",
+        "LABLAXIS": "latitude",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "latitude"
+      },
+      "VarData": [
+        -90.0,
+        -87.5,
+        -85.0,
+        -82.5,
+        -80.0,
+        -77.5,
+        -75.0,
+        -72.5,
+        -70.0,
+        -67.5,
+        -65.0,
+        -62.5,
+        -60.0,
+        -57.5,
+        -55.0,
+        -52.5,
+        -50.0,
+        -47.5,
+        -45.0,
+        -42.5,
+        -40.0,
+        -37.5,
+        -35.0,
+        -32.5,
+        -30.0,
+        -27.5,
+        -25.0,
+        -22.5,
+        -20.0,
+        -17.5,
+        -15.0,
+        -12.5,
+        -10.0,
+        -7.5,
+        -5.0,
+        -2.5,
+        0.0,
+        2.5,
+        5.0,
+        7.5,
+        10.0,
+        12.5,
+        15.0,
+        17.5,
+        20.0,
+        22.5,
+        25.0,
+        27.5,
+        30.0,
+        32.5,
+        35.0,
+        37.5,
+        40.0,
+        42.5,
+        45.0,
+        47.5,
+        50.0,
+        52.5,
+        55.0,
+        57.5,
+        60.0,
+        62.5,
+        65.0,
+        67.5,
+        70.0,
+        72.5,
+        75.0,
+        77.5,
+        80.0,
+        82.5,
+        85.0,
+        87.5
+      ]
+    },
+    "lon": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          72
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "longitude",
+        "FIELDNAM": "longitude",
+        "FORMAT": "f6.1",
+        "LABLAXIS": "longitude",
+        "UNITS": "deg",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "longitude"
+      },
+      "VarData": [
+        -180.0,
+        -175.0,
+        -170.0,
+        -165.0,
+        -160.0,
+        -155.0,
+        -150.0,
+        -145.0,
+        -140.0,
+        -135.0,
+        -130.0,
+        -125.0,
+        -120.0,
+        -115.0,
+        -110.0,
+        -105.0,
+        -100.0,
+        -95.0,
+        -90.0,
+        -85.0,
+        -80.0,
+        -75.0,
+        -70.0,
+        -65.0,
+        -60.0,
+        -55.0,
+        -50.0,
+        -45.0,
+        -40.0,
+        -35.0,
+        -30.0,
+        -25.0,
+        -20.0,
+        -15.0,
+        -10.0,
+        -5.0,
+        0.0,
+        5.0,
+        10.0,
+        15.0,
+        20.0,
+        25.0,
+        30.0,
+        35.0,
+        40.0,
+        45.0,
+        50.0,
+        55.0,
+        60.0,
+        65.0,
+        70.0,
+        75.0,
+        80.0,
+        85.0,
+        90.0,
+        95.0,
+        100.0,
+        105.0,
+        110.0,
+        115.0,
+        120.0,
+        125.0,
+        130.0,
+        135.0,
+        140.0,
+        145.0,
+        150.0,
+        155.0,
+        160.0,
+        165.0,
+        170.0,
+        175.0
+      ]
+    },
+    "roticnt": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "Number of points per bin, Unmapped Image",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "num, unmapped image",
+        "FILLVAL": 0,
+        "FORMAT": "i3",
+        "LABLAXIS": "num",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "num",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ]
+      }
+    },
+    "roticntM": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "Number of points per bin, world map, expandable thumbnails",
+        "COMPONENT_0": "roticnt",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimensionTHUMBSIZE>250>MAP_PROJ>8>x=lat,y=lon",
+        "FIELDNAM": "cnts, Cyl Image",
+        "FILLVAL": 0,
+        "FORMAT": "i3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "num",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "num",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ],
+        "COMPONENTS": [
+          "roticnt"
+        ]
+      }
+    },
+    "roticntM_Movie": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "-----> world map, movie",
+        "COMPONENT_0": "roticnt",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimensionMAP_PROJ>8>x=lat,y=lon",
+        "FIELDNAM": "cnts, Movie Cyl Image",
+        "FILLVAL": 0,
+        "FORMAT": "i3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "num",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "num",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ],
+        "COMPONENTS": [
+          "roticnt"
+        ]
+      }
+    },
+    "roticntM_North": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "-----> North polar proj., expandable thumbnails",
+        "COMPONENT_0": "roticnt",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimensionTHUMBSIZE>250>MAP_PROJ>6>CENTERPOLE>NORTH>x=lat,y=lon",
+        "FIELDNAM": "cnts, N Pol Image",
+        "FILLVAL": 0,
+        "FORMAT": "i3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "num",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "num",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ],
+        "COMPONENTS": [
+          "roticnt"
+        ]
+      }
+    },
+    "roticntM_NMovie": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "-----> North polar proj., movie",
+        "COMPONENT_0": "roticnt",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimensionMAP_PROJ>6>CENTERPOLE>NORTH>x=lat,y=lon",
+        "FIELDNAM": "cnts. Movie N Pol.",
+        "FILLVAL": 0,
+        "FORMAT": "i3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "num",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "num",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ],
+        "COMPONENTS": [
+          "roticnt"
+        ]
+      }
+    },
+    "roticntM_South": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "-----> South polar proj., expandable thumbnails",
+        "COMPONENT_0": "roticnt",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimensionTHUMBSIZE>250>MAP_PROJ>6>CENTERPOLE>SOUTH>x=lat,y=lon",
+        "FIELDNAM": "cnts, S Pol. Image",
+        "FILLVAL": 0,
+        "FORMAT": "i3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "num",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "num",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ],
+        "COMPONENTS": [
+          "roticnt"
+        ]
+      }
+    },
+    "roticntM_SMovie": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          72,
+          72
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "-----> South polar proj., movie",
+        "COMPONENT_0": "roticnt",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "lat",
+        "DEPEND_2": "lon",
+        "DISPLAY_TYPE": "default_dimensionMAP_PROJ>6>CENTERPOLE>SOUTH>x=lat,y=lon",
+        "FIELDNAM": "cnts, Movie S Pol.",
+        "FILLVAL": 0,
+        "FORMAT": "i3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "num",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "num",
+        "x_DEPEND": [
+          "lat",
+          "lon"
+        ],
+        "COMPONENTS": [
+          "roticnt"
+        ]
+      }
+    }
+  }
+}
