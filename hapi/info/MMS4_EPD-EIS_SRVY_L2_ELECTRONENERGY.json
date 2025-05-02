@@ -6,10 +6,7 @@
     "stopDate": "2025-03-05T23:59:57Z",
     "sampleStartDate": "2025-03-04T00:00:02Z",
     "sampleStopDate": "2025-03-04T23:59:57Z",
-    "cadence": "PT2.42S",
-    "x_cadence_fraction": 0.12023771622625491,
-    "x_cadence_note": "Cadence based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/mms/mms4/epd-eis/srvy/l2/electronenergy/2015/09/mms4_epd-eis_srvy_l2_electronenergy_20150901_v3.0.0.cdf. This most common cadence occurred for 12.0238% of the 1133 timesteps. Cadence = 2420000076 [ns] = PT2.42S.",
-    "maxRequestDuration": "P49DT23H55M50S",
+    "maxRequestDuration": "PT4319750S",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EPD-EIS_SRVY_L2_ELECTRONENERGY",
     "contact": "B. Mauk @ JHU/APL",
     "parameters": [
@@ -30,12 +27,13 @@
         "description": "Total Exposure Time for Accumulation",
         "fill": "-1e+31",
         "units": "s",
+        "x_label": "DT",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "Duration",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -45,12 +43,13 @@
         "description": "---> Instrument Deadtime",
         "fill": "-1e+31",
         "units": "s",
+        "x_label": "Deadtime",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "Deadtime",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -60,10 +59,11 @@
         "description": "---> Instrument Large Pixel in Use",
         "fill": "-128",
         "units": ".",
+        "x_label": "LargePixel",
         "x_cdf_FORMAT": "I1",
         "x_cdf_FIELDNAM": "LargePixel",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -73,10 +73,11 @@
         "description": "---> Spin",
         "fill": "65535",
         "units": ".",
+        "x_label": "Spin",
         "x_cdf_FORMAT": "I10",
         "x_cdf_FIELDNAM": "Spin",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -86,10 +87,11 @@
         "description": "---> Sector",
         "fill": "-128",
         "units": ".",
+        "x_label": "Sector",
         "x_cdf_FORMAT": "I2",
         "x_cdf_FIELDNAM": "Sector",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -99,10 +101,11 @@
         "description": "---> Quality Word",
         "fill": "4294967295",
         "units": ".",
+        "x_label": "Quality",
         "x_cdf_FORMAT": "I10",
         "x_cdf_FIELDNAM": "Quality",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -112,19 +115,22 @@
         "description": "MMS4 ElectronEnergy-Survey electron_P5_counts_t0 [data available beginning on 2019/12/20]",
         "fill": "-1e+31",
         "units": null,
-        "x_label": [
-          "MMS40EXC01 e- 37keVcounts",
-          "MMS40EXC02 e- 57keVcounts",
-          "MMS40EXC03 e- 89keVcounts",
-          "MMS40EXC04 e- 160keVcounts",
-          "MMS40EXC05 e- 388keVcounts"
+        "x_label": "Counts",
+        "x_labelComponents": [
+          [
+            "MMS40EXC01 e- 37keVcounts",
+            "MMS40EXC02 e- 57keVcounts",
+            "MMS40EXC03 e- 89keVcounts",
+            "MMS40EXC04 e- 160keVcounts",
+            "MMS40EXC05 e- 388keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_counts_t0",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -140,6 +146,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -153,19 +160,22 @@
         "description": "---> electron_P5_counts_t1",
         "fill": "-1e+31",
         "units": null,
-        "x_label": [
-          "MMS41EXC01 e- 37keVcounts",
-          "MMS41EXC02 e- 57keVcounts",
-          "MMS41EXC03 e- 89keVcounts",
-          "MMS41EXC04 e- 160keVcounts",
-          "MMS41EXC05 e- 388keVcounts"
+        "x_label": "Counts",
+        "x_labelComponents": [
+          [
+            "MMS41EXC01 e- 37keVcounts",
+            "MMS41EXC02 e- 57keVcounts",
+            "MMS41EXC03 e- 89keVcounts",
+            "MMS41EXC04 e- 160keVcounts",
+            "MMS41EXC05 e- 388keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_counts_t1",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -181,6 +191,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -194,19 +205,22 @@
         "description": "---> electron_P5_counts_t2",
         "fill": "-1e+31",
         "units": null,
-        "x_label": [
-          "MMS42EXC01 e- 37keVcounts",
-          "MMS42EXC02 e- 57keVcounts",
-          "MMS42EXC03 e- 89keVcounts",
-          "MMS42EXC04 e- 160keVcounts",
-          "MMS42EXC05 e- 388keVcounts"
+        "x_label": "Counts",
+        "x_labelComponents": [
+          [
+            "MMS42EXC01 e- 37keVcounts",
+            "MMS42EXC02 e- 57keVcounts",
+            "MMS42EXC03 e- 89keVcounts",
+            "MMS42EXC04 e- 160keVcounts",
+            "MMS42EXC05 e- 388keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_counts_t2",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -222,6 +236,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -235,19 +250,22 @@
         "description": "---> electron_P5_counts_t3",
         "fill": "-1e+31",
         "units": null,
-        "x_label": [
-          "MMS43EXC01 e- 37keVcounts",
-          "MMS43EXC02 e- 57keVcounts",
-          "MMS43EXC03 e- 89keVcounts",
-          "MMS43EXC04 e- 160keVcounts",
-          "MMS43EXC05 e- 388keVcounts"
+        "x_label": "Counts",
+        "x_labelComponents": [
+          [
+            "MMS43EXC01 e- 37keVcounts",
+            "MMS43EXC02 e- 57keVcounts",
+            "MMS43EXC03 e- 89keVcounts",
+            "MMS43EXC04 e- 160keVcounts",
+            "MMS43EXC05 e- 388keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_counts_t3",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -263,6 +281,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -276,19 +295,22 @@
         "description": "---> electron_P5_counts_t4",
         "fill": "-1e+31",
         "units": null,
-        "x_label": [
-          "MMS44EXC01 e- 37keVcounts",
-          "MMS44EXC02 e- 57keVcounts",
-          "MMS44EXC03 e- 89keVcounts",
-          "MMS44EXC04 e- 160keVcounts",
-          "MMS44EXC05 e- 388keVcounts"
+        "x_label": "Counts",
+        "x_labelComponents": [
+          [
+            "MMS44EXC01 e- 37keVcounts",
+            "MMS44EXC02 e- 57keVcounts",
+            "MMS44EXC03 e- 89keVcounts",
+            "MMS44EXC04 e- 160keVcounts",
+            "MMS44EXC05 e- 388keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_counts_t4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -304,6 +326,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -317,19 +340,22 @@
         "description": "---> electron_P5_counts_t5",
         "fill": "-1e+31",
         "units": null,
-        "x_label": [
-          "MMS45EXC01 e- 37keVcounts",
-          "MMS45EXC02 e- 57keVcounts",
-          "MMS45EXC03 e- 89keVcounts",
-          "MMS45EXC04 e- 160keVcounts",
-          "MMS45EXC05 e- 388keVcounts"
+        "x_label": "Counts",
+        "x_labelComponents": [
+          [
+            "MMS45EXC01 e- 37keVcounts",
+            "MMS45EXC02 e- 57keVcounts",
+            "MMS45EXC03 e- 89keVcounts",
+            "MMS45EXC04 e- 160keVcounts",
+            "MMS45EXC05 e- 388keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_counts_t5",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -345,6 +371,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -358,19 +385,22 @@
         "description": "MMS4 ElectronEnergy-Survey electron_P5_cps_t0 [data available beginning on 2019/12/20]",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS40EXC01 e- 37keVcps",
-          "MMS40EXC02 e- 57keVcps",
-          "MMS40EXC03 e- 89keVcps",
-          "MMS40EXC04 e- 160keVcps",
-          "MMS40EXC05 e- 388keVcps"
+        "x_label": "CPS",
+        "x_labelComponents": [
+          [
+            "MMS40EXC01 e- 37keVcps",
+            "MMS40EXC02 e- 57keVcps",
+            "MMS40EXC03 e- 89keVcps",
+            "MMS40EXC04 e- 160keVcps",
+            "MMS40EXC05 e- 388keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_cps_t0",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -386,6 +416,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -399,19 +430,22 @@
         "description": "---> electron_P5_cps_t1",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS41EXC01 e- 37keVcps",
-          "MMS41EXC02 e- 57keVcps",
-          "MMS41EXC03 e- 89keVcps",
-          "MMS41EXC04 e- 160keVcps",
-          "MMS41EXC05 e- 388keVcps"
+        "x_label": "CPS",
+        "x_labelComponents": [
+          [
+            "MMS41EXC01 e- 37keVcps",
+            "MMS41EXC02 e- 57keVcps",
+            "MMS41EXC03 e- 89keVcps",
+            "MMS41EXC04 e- 160keVcps",
+            "MMS41EXC05 e- 388keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_cps_t1",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -427,6 +461,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -440,19 +475,22 @@
         "description": "---> electron_P5_cps_t2",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS42EXC01 e- 37keVcps",
-          "MMS42EXC02 e- 57keVcps",
-          "MMS42EXC03 e- 89keVcps",
-          "MMS42EXC04 e- 160keVcps",
-          "MMS42EXC05 e- 388keVcps"
+        "x_label": "CPS",
+        "x_labelComponents": [
+          [
+            "MMS42EXC01 e- 37keVcps",
+            "MMS42EXC02 e- 57keVcps",
+            "MMS42EXC03 e- 89keVcps",
+            "MMS42EXC04 e- 160keVcps",
+            "MMS42EXC05 e- 388keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_cps_t2",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -468,6 +506,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -481,19 +520,22 @@
         "description": "---> electron_P5_cps_t3",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS43EXC01 e- 37keVcps",
-          "MMS43EXC02 e- 57keVcps",
-          "MMS43EXC03 e- 89keVcps",
-          "MMS43EXC04 e- 160keVcps",
-          "MMS43EXC05 e- 388keVcps"
+        "x_label": "CPS",
+        "x_labelComponents": [
+          [
+            "MMS43EXC01 e- 37keVcps",
+            "MMS43EXC02 e- 57keVcps",
+            "MMS43EXC03 e- 89keVcps",
+            "MMS43EXC04 e- 160keVcps",
+            "MMS43EXC05 e- 388keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_cps_t3",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -509,6 +551,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -522,19 +565,22 @@
         "description": "---> electron_P5_cps_t4",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS44EXC01 e- 37keVcps",
-          "MMS44EXC02 e- 57keVcps",
-          "MMS44EXC03 e- 89keVcps",
-          "MMS44EXC04 e- 160keVcps",
-          "MMS44EXC05 e- 388keVcps"
+        "x_label": "CPS",
+        "x_labelComponents": [
+          [
+            "MMS44EXC01 e- 37keVcps",
+            "MMS44EXC02 e- 57keVcps",
+            "MMS44EXC03 e- 89keVcps",
+            "MMS44EXC04 e- 160keVcps",
+            "MMS44EXC05 e- 388keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_cps_t4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -550,6 +596,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -563,19 +610,22 @@
         "description": "---> electron_P5_cps_t5",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS45EXC01 e- 37keVcps",
-          "MMS45EXC02 e- 57keVcps",
-          "MMS45EXC03 e- 89keVcps",
-          "MMS45EXC04 e- 160keVcps",
-          "MMS45EXC05 e- 388keVcps"
+        "x_label": "CPS",
+        "x_labelComponents": [
+          [
+            "MMS45EXC01 e- 37keVcps",
+            "MMS45EXC02 e- 57keVcps",
+            "MMS45EXC03 e- 89keVcps",
+            "MMS45EXC04 e- 160keVcps",
+            "MMS45EXC05 e- 388keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_cps_t5",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -591,6 +641,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -604,19 +655,22 @@
         "description": "MMS4 ElectronEnergy-Survey electron_P5_flux_t0 [data available beginning on 2019/12/20]",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS40EXC01 e- 37keVintensity",
-          "MMS40EXC02 e- 57keVintensity",
-          "MMS40EXC03 e- 89keVintensity",
-          "MMS40EXC04 e- 160keVintensity",
-          "MMS40EXC05 e- 388keVintensity"
+        "x_label": "Intensity",
+        "x_labelComponents": [
+          [
+            "MMS40EXC01 e- 37keVintensity",
+            "MMS40EXC02 e- 57keVintensity",
+            "MMS40EXC03 e- 89keVintensity",
+            "MMS40EXC04 e- 160keVintensity",
+            "MMS40EXC05 e- 388keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_flux_t0",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -632,6 +686,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -645,19 +700,22 @@
         "description": "---> electron_P5_flux_t1",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS41EXC01 e- 37keVintensity",
-          "MMS41EXC02 e- 57keVintensity",
-          "MMS41EXC03 e- 89keVintensity",
-          "MMS41EXC04 e- 160keVintensity",
-          "MMS41EXC05 e- 388keVintensity"
+        "x_label": "Intensity",
+        "x_labelComponents": [
+          [
+            "MMS41EXC01 e- 37keVintensity",
+            "MMS41EXC02 e- 57keVintensity",
+            "MMS41EXC03 e- 89keVintensity",
+            "MMS41EXC04 e- 160keVintensity",
+            "MMS41EXC05 e- 388keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_flux_t1",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -673,6 +731,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -686,19 +745,22 @@
         "description": "---> electron_P5_flux_t2",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS42EXC01 e- 37keVintensity",
-          "MMS42EXC02 e- 57keVintensity",
-          "MMS42EXC03 e- 89keVintensity",
-          "MMS42EXC04 e- 160keVintensity",
-          "MMS42EXC05 e- 388keVintensity"
+        "x_label": "Intensity",
+        "x_labelComponents": [
+          [
+            "MMS42EXC01 e- 37keVintensity",
+            "MMS42EXC02 e- 57keVintensity",
+            "MMS42EXC03 e- 89keVintensity",
+            "MMS42EXC04 e- 160keVintensity",
+            "MMS42EXC05 e- 388keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_flux_t2",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -714,6 +776,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -727,19 +790,22 @@
         "description": "---> electron_P5_flux_t3",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS43EXC01 e- 37keVintensity",
-          "MMS43EXC02 e- 57keVintensity",
-          "MMS43EXC03 e- 89keVintensity",
-          "MMS43EXC04 e- 160keVintensity",
-          "MMS43EXC05 e- 388keVintensity"
+        "x_label": "Intensity",
+        "x_labelComponents": [
+          [
+            "MMS43EXC01 e- 37keVintensity",
+            "MMS43EXC02 e- 57keVintensity",
+            "MMS43EXC03 e- 89keVintensity",
+            "MMS43EXC04 e- 160keVintensity",
+            "MMS43EXC05 e- 388keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_flux_t3",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -755,6 +821,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -768,19 +835,22 @@
         "description": "---> electron_P5_flux_t4",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS44EXC01 e- 37keVintensity",
-          "MMS44EXC02 e- 57keVintensity",
-          "MMS44EXC03 e- 89keVintensity",
-          "MMS44EXC04 e- 160keVintensity",
-          "MMS44EXC05 e- 388keVintensity"
+        "x_label": "Intensity",
+        "x_labelComponents": [
+          [
+            "MMS44EXC01 e- 37keVintensity",
+            "MMS44EXC02 e- 57keVintensity",
+            "MMS44EXC03 e- 89keVintensity",
+            "MMS44EXC04 e- 160keVintensity",
+            "MMS44EXC05 e- 388keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_flux_t4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -796,6 +866,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -809,19 +880,22 @@
         "description": "---> electron_P5_flux_t5",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS45EXC01 e- 37keVintensity",
-          "MMS45EXC02 e- 57keVintensity",
-          "MMS45EXC03 e- 89keVintensity",
-          "MMS45EXC04 e- 160keVintensity",
-          "MMS45EXC05 e- 388keVintensity"
+        "x_label": "Intensity",
+        "x_labelComponents": [
+          [
+            "MMS45EXC01 e- 37keVintensity",
+            "MMS45EXC02 e- 57keVintensity",
+            "MMS45EXC03 e- 89keVintensity",
+            "MMS45EXC04 e- 160keVintensity",
+            "MMS45EXC05 e- 388keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P5_flux_t5",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -837,6 +911,7 @@
               200.0,
               400.0
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -850,19 +925,22 @@
         "description": "MMS4 ElectronEnergy-Survey electron_P4_counts_t0 [data available from 2016/09/29 to 2019/12/19]",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "MMS40EXC01 e- 37keVcounts",
-          "MMS40EXC02 e- 57keVcounts",
-          "MMS40EXC03 e- 89keVcounts",
-          "MMS40EXC04 e- 160keVcounts",
-          "MMS40EXC05 e- 388keVcounts"
+        "x_label": "electron_P4_counts_t0",
+        "x_labelComponents": [
+          [
+            "MMS40EXC01 e- 37keVcounts",
+            "MMS40EXC02 e- 57keVcounts",
+            "MMS40EXC03 e- 89keVcounts",
+            "MMS40EXC04 e- 160keVcounts",
+            "MMS40EXC05 e- 388keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_counts_t0",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -878,6 +956,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -891,19 +970,22 @@
         "description": "---> electron_P4_counts_t1",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "MMS41EXC01 e- 37keVcounts",
-          "MMS41EXC02 e- 57keVcounts",
-          "MMS41EXC03 e- 89keVcounts",
-          "MMS41EXC04 e- 160keVcounts",
-          "MMS41EXC05 e- 388keVcounts"
+        "x_label": "electron_P4_counts_t1",
+        "x_labelComponents": [
+          [
+            "MMS41EXC01 e- 37keVcounts",
+            "MMS41EXC02 e- 57keVcounts",
+            "MMS41EXC03 e- 89keVcounts",
+            "MMS41EXC04 e- 160keVcounts",
+            "MMS41EXC05 e- 388keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_counts_t1",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -919,6 +1001,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -932,19 +1015,22 @@
         "description": "---> electron_P4_counts_t2",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "MMS42EXC01 e- 37keVcounts",
-          "MMS42EXC02 e- 57keVcounts",
-          "MMS42EXC03 e- 89keVcounts",
-          "MMS42EXC04 e- 160keVcounts",
-          "MMS42EXC05 e- 388keVcounts"
+        "x_label": "electron_P4_counts_t2",
+        "x_labelComponents": [
+          [
+            "MMS42EXC01 e- 37keVcounts",
+            "MMS42EXC02 e- 57keVcounts",
+            "MMS42EXC03 e- 89keVcounts",
+            "MMS42EXC04 e- 160keVcounts",
+            "MMS42EXC05 e- 388keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_counts_t2",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -960,6 +1046,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -973,19 +1060,22 @@
         "description": "---> electron_P4_counts_t3",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "MMS43EXC01 e- 37keVcounts",
-          "MMS43EXC02 e- 57keVcounts",
-          "MMS43EXC03 e- 89keVcounts",
-          "MMS43EXC04 e- 160keVcounts",
-          "MMS43EXC05 e- 388keVcounts"
+        "x_label": "electron_P4_counts_t3",
+        "x_labelComponents": [
+          [
+            "MMS43EXC01 e- 37keVcounts",
+            "MMS43EXC02 e- 57keVcounts",
+            "MMS43EXC03 e- 89keVcounts",
+            "MMS43EXC04 e- 160keVcounts",
+            "MMS43EXC05 e- 388keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_counts_t3",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1001,6 +1091,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1014,19 +1105,22 @@
         "description": "---> electron_P4_counts_t4",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "MMS44EXC01 e- 37keVcounts",
-          "MMS44EXC02 e- 57keVcounts",
-          "MMS44EXC03 e- 89keVcounts",
-          "MMS44EXC04 e- 160keVcounts",
-          "MMS44EXC05 e- 388keVcounts"
+        "x_label": "electron_P4_counts_t4",
+        "x_labelComponents": [
+          [
+            "MMS44EXC01 e- 37keVcounts",
+            "MMS44EXC02 e- 57keVcounts",
+            "MMS44EXC03 e- 89keVcounts",
+            "MMS44EXC04 e- 160keVcounts",
+            "MMS44EXC05 e- 388keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_counts_t4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1042,6 +1136,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1055,19 +1150,22 @@
         "description": "---> electron_P4_counts_t5",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "MMS45EXC01 e- 37keVcounts",
-          "MMS45EXC02 e- 57keVcounts",
-          "MMS45EXC03 e- 89keVcounts",
-          "MMS45EXC04 e- 160keVcounts",
-          "MMS45EXC05 e- 388keVcounts"
+        "x_label": "electron_P4_counts_t5",
+        "x_labelComponents": [
+          [
+            "MMS45EXC01 e- 37keVcounts",
+            "MMS45EXC02 e- 57keVcounts",
+            "MMS45EXC03 e- 89keVcounts",
+            "MMS45EXC04 e- 160keVcounts",
+            "MMS45EXC05 e- 388keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_counts_t5",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1083,6 +1181,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1096,19 +1195,22 @@
         "description": "MMS4 ElectronEnergy-Survey electron_P4_cps_t0 [data available from 2016/09/29 to 2019/12/19]",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS40EXC01 e- 37keVcps",
-          "MMS40EXC02 e- 57keVcps",
-          "MMS40EXC03 e- 89keVcps",
-          "MMS40EXC04 e- 160keVcps",
-          "MMS40EXC05 e- 388keVcps"
+        "x_label": "electron_P4_cps_t0",
+        "x_labelComponents": [
+          [
+            "MMS40EXC01 e- 37keVcps",
+            "MMS40EXC02 e- 57keVcps",
+            "MMS40EXC03 e- 89keVcps",
+            "MMS40EXC04 e- 160keVcps",
+            "MMS40EXC05 e- 388keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_cps_t0",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1124,6 +1226,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1137,19 +1240,22 @@
         "description": "---> electron_P4_cps_t1",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS41EXC01 e- 37keVcps",
-          "MMS41EXC02 e- 57keVcps",
-          "MMS41EXC03 e- 89keVcps",
-          "MMS41EXC04 e- 160keVcps",
-          "MMS41EXC05 e- 388keVcps"
+        "x_label": "electron_P4_cps_t1",
+        "x_labelComponents": [
+          [
+            "MMS41EXC01 e- 37keVcps",
+            "MMS41EXC02 e- 57keVcps",
+            "MMS41EXC03 e- 89keVcps",
+            "MMS41EXC04 e- 160keVcps",
+            "MMS41EXC05 e- 388keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_cps_t1",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1165,6 +1271,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1178,19 +1285,22 @@
         "description": "---> electron_P4_cps_t2",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS42EXC01 e- 37keVcps",
-          "MMS42EXC02 e- 57keVcps",
-          "MMS42EXC03 e- 89keVcps",
-          "MMS42EXC04 e- 160keVcps",
-          "MMS42EXC05 e- 388keVcps"
+        "x_label": "electron_P4_cps_t2",
+        "x_labelComponents": [
+          [
+            "MMS42EXC01 e- 37keVcps",
+            "MMS42EXC02 e- 57keVcps",
+            "MMS42EXC03 e- 89keVcps",
+            "MMS42EXC04 e- 160keVcps",
+            "MMS42EXC05 e- 388keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_cps_t2",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1206,6 +1316,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1219,19 +1330,22 @@
         "description": "---> electron_P4_cps_t3",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS43EXC01 e- 37keVcps",
-          "MMS43EXC02 e- 57keVcps",
-          "MMS43EXC03 e- 89keVcps",
-          "MMS43EXC04 e- 160keVcps",
-          "MMS43EXC05 e- 388keVcps"
+        "x_label": "electron_P4_cps_t3",
+        "x_labelComponents": [
+          [
+            "MMS43EXC01 e- 37keVcps",
+            "MMS43EXC02 e- 57keVcps",
+            "MMS43EXC03 e- 89keVcps",
+            "MMS43EXC04 e- 160keVcps",
+            "MMS43EXC05 e- 388keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_cps_t3",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1247,6 +1361,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1260,19 +1375,22 @@
         "description": "---> electron_P4_cps_t4",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS44EXC01 e- 37keVcps",
-          "MMS44EXC02 e- 57keVcps",
-          "MMS44EXC03 e- 89keVcps",
-          "MMS44EXC04 e- 160keVcps",
-          "MMS44EXC05 e- 388keVcps"
+        "x_label": "electron_P4_cps_t4",
+        "x_labelComponents": [
+          [
+            "MMS44EXC01 e- 37keVcps",
+            "MMS44EXC02 e- 57keVcps",
+            "MMS44EXC03 e- 89keVcps",
+            "MMS44EXC04 e- 160keVcps",
+            "MMS44EXC05 e- 388keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_cps_t4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1288,6 +1406,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1301,19 +1420,22 @@
         "description": "---> electron_P4_cps_t5",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS45EXC01 e- 37keVcps",
-          "MMS45EXC02 e- 57keVcps",
-          "MMS45EXC03 e- 89keVcps",
-          "MMS45EXC04 e- 160keVcps",
-          "MMS45EXC05 e- 388keVcps"
+        "x_label": "electron_P4_cps_t5",
+        "x_labelComponents": [
+          [
+            "MMS45EXC01 e- 37keVcps",
+            "MMS45EXC02 e- 57keVcps",
+            "MMS45EXC03 e- 89keVcps",
+            "MMS45EXC04 e- 160keVcps",
+            "MMS45EXC05 e- 388keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_cps_t5",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1329,6 +1451,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1342,19 +1465,22 @@
         "description": "MMS4 ElectronEnergy-Survey electron_P4_flux_t0 [data available from 2016/09/29 to 2019/12/19]",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS40EXC01 e- 37keVintensity",
-          "MMS40EXC02 e- 57keVintensity",
-          "MMS40EXC03 e- 89keVintensity",
-          "MMS40EXC04 e- 160keVintensity",
-          "MMS40EXC05 e- 388keVintensity"
+        "x_label": "electron_P4_flux_t0",
+        "x_labelComponents": [
+          [
+            "MMS40EXC01 e- 37keVintensity",
+            "MMS40EXC02 e- 57keVintensity",
+            "MMS40EXC03 e- 89keVintensity",
+            "MMS40EXC04 e- 160keVintensity",
+            "MMS40EXC05 e- 388keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_flux_t0",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1370,6 +1496,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1383,19 +1510,22 @@
         "description": "---> electron_P4_flux_t1",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS41EXC01 e- 37keVintensity",
-          "MMS41EXC02 e- 57keVintensity",
-          "MMS41EXC03 e- 89keVintensity",
-          "MMS41EXC04 e- 160keVintensity",
-          "MMS41EXC05 e- 388keVintensity"
+        "x_label": "electron_P4_flux_t1",
+        "x_labelComponents": [
+          [
+            "MMS41EXC01 e- 37keVintensity",
+            "MMS41EXC02 e- 57keVintensity",
+            "MMS41EXC03 e- 89keVintensity",
+            "MMS41EXC04 e- 160keVintensity",
+            "MMS41EXC05 e- 388keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_flux_t1",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1411,6 +1541,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1424,19 +1555,22 @@
         "description": "---> electron_P4_flux_t2",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS42EXC01 e- 37keVintensity",
-          "MMS42EXC02 e- 57keVintensity",
-          "MMS42EXC03 e- 89keVintensity",
-          "MMS42EXC04 e- 160keVintensity",
-          "MMS42EXC05 e- 388keVintensity"
+        "x_label": "electron_P4_flux_t2",
+        "x_labelComponents": [
+          [
+            "MMS42EXC01 e- 37keVintensity",
+            "MMS42EXC02 e- 57keVintensity",
+            "MMS42EXC03 e- 89keVintensity",
+            "MMS42EXC04 e- 160keVintensity",
+            "MMS42EXC05 e- 388keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_flux_t2",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1452,6 +1586,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1465,19 +1600,22 @@
         "description": "---> electron_P4_flux_t3",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS43EXC01 e- 37keVintensity",
-          "MMS43EXC02 e- 57keVintensity",
-          "MMS43EXC03 e- 89keVintensity",
-          "MMS43EXC04 e- 160keVintensity",
-          "MMS43EXC05 e- 388keVintensity"
+        "x_label": "electron_P4_flux_t3",
+        "x_labelComponents": [
+          [
+            "MMS43EXC01 e- 37keVintensity",
+            "MMS43EXC02 e- 57keVintensity",
+            "MMS43EXC03 e- 89keVintensity",
+            "MMS43EXC04 e- 160keVintensity",
+            "MMS43EXC05 e- 388keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_flux_t3",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1493,6 +1631,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1506,19 +1645,22 @@
         "description": "---> electron_P4_flux_t4",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS44EXC01 e- 37keVintensity",
-          "MMS44EXC02 e- 57keVintensity",
-          "MMS44EXC03 e- 89keVintensity",
-          "MMS44EXC04 e- 160keVintensity",
-          "MMS44EXC05 e- 388keVintensity"
+        "x_label": "electron_P4_flux_t4",
+        "x_labelComponents": [
+          [
+            "MMS44EXC01 e- 37keVintensity",
+            "MMS44EXC02 e- 57keVintensity",
+            "MMS44EXC03 e- 89keVintensity",
+            "MMS44EXC04 e- 160keVintensity",
+            "MMS44EXC05 e- 388keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_flux_t4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1534,6 +1676,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1547,19 +1690,22 @@
         "description": "---> electron_P4_flux_t5",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS45EXC01 e- 37keVintensity",
-          "MMS45EXC02 e- 57keVintensity",
-          "MMS45EXC03 e- 89keVintensity",
-          "MMS45EXC04 e- 160keVintensity",
-          "MMS45EXC05 e- 388keVintensity"
+        "x_label": "electron_P4_flux_t5",
+        "x_labelComponents": [
+          [
+            "MMS45EXC01 e- 37keVintensity",
+            "MMS45EXC02 e- 57keVintensity",
+            "MMS45EXC03 e- 89keVintensity",
+            "MMS45EXC04 e- 160keVintensity",
+            "MMS45EXC05 e- 388keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_flux_t5",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1575,6 +1721,7 @@
               159.8,
               387.7
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1588,19 +1735,22 @@
         "description": "MMS4 ElectronEnergy-Survey electron_P3_counts_t0 [data available from 2015/07/02 to 2016/09/28]",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "MMS40EXC01 e- 40keVcounts",
-          "MMS40EXC02 e- 70keVcounts",
-          "MMS40EXC03 e- 116keVcounts",
-          "MMS40EXC04 e- 231keVcounts",
-          "MMS40EXC05 e- 662keVcounts"
+        "x_label": "electron_P3_counts_t0",
+        "x_labelComponents": [
+          [
+            "MMS40EXC01 e- 40keVcounts",
+            "MMS40EXC02 e- 70keVcounts",
+            "MMS40EXC03 e- 116keVcounts",
+            "MMS40EXC04 e- 231keVcounts",
+            "MMS40EXC05 e- 662keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_counts_t0",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1616,6 +1766,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1629,19 +1780,22 @@
         "description": "---> electron_P3_counts_t1",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "MMS41EXC01 e- 40keVcounts",
-          "MMS41EXC02 e- 70keVcounts",
-          "MMS41EXC03 e- 116keVcounts",
-          "MMS41EXC04 e- 231keVcounts",
-          "MMS41EXC05 e- 662keVcounts"
+        "x_label": "electron_P3_counts_t1",
+        "x_labelComponents": [
+          [
+            "MMS41EXC01 e- 40keVcounts",
+            "MMS41EXC02 e- 70keVcounts",
+            "MMS41EXC03 e- 116keVcounts",
+            "MMS41EXC04 e- 231keVcounts",
+            "MMS41EXC05 e- 662keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_counts_t1",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1657,6 +1811,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1670,19 +1825,22 @@
         "description": "---> electron_P3_counts_t2",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "MMS42EXC01 e- 40keVcounts",
-          "MMS42EXC02 e- 70keVcounts",
-          "MMS42EXC03 e- 116keVcounts",
-          "MMS42EXC04 e- 231keVcounts",
-          "MMS42EXC05 e- 662keVcounts"
+        "x_label": "electron_P3_counts_t2",
+        "x_labelComponents": [
+          [
+            "MMS42EXC01 e- 40keVcounts",
+            "MMS42EXC02 e- 70keVcounts",
+            "MMS42EXC03 e- 116keVcounts",
+            "MMS42EXC04 e- 231keVcounts",
+            "MMS42EXC05 e- 662keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_counts_t2",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1698,6 +1856,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1711,19 +1870,22 @@
         "description": "---> electron_P3_counts_t3",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "MMS43EXC01 e- 40keVcounts",
-          "MMS43EXC02 e- 70keVcounts",
-          "MMS43EXC03 e- 116keVcounts",
-          "MMS43EXC04 e- 231keVcounts",
-          "MMS43EXC05 e- 662keVcounts"
+        "x_label": "electron_P3_counts_t3",
+        "x_labelComponents": [
+          [
+            "MMS43EXC01 e- 40keVcounts",
+            "MMS43EXC02 e- 70keVcounts",
+            "MMS43EXC03 e- 116keVcounts",
+            "MMS43EXC04 e- 231keVcounts",
+            "MMS43EXC05 e- 662keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_counts_t3",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1739,6 +1901,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1752,19 +1915,22 @@
         "description": "---> electron_P3_counts_t4",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "MMS44EXC01 e- 40keVcounts",
-          "MMS44EXC02 e- 70keVcounts",
-          "MMS44EXC03 e- 116keVcounts",
-          "MMS44EXC04 e- 231keVcounts",
-          "MMS44EXC05 e- 662keVcounts"
+        "x_label": "electron_P3_counts_t4",
+        "x_labelComponents": [
+          [
+            "MMS44EXC01 e- 40keVcounts",
+            "MMS44EXC02 e- 70keVcounts",
+            "MMS44EXC03 e- 116keVcounts",
+            "MMS44EXC04 e- 231keVcounts",
+            "MMS44EXC05 e- 662keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_counts_t4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1780,6 +1946,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1793,19 +1960,22 @@
         "description": "---> electron_P3_counts_t5",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "MMS45EXC01 e- 40keVcounts",
-          "MMS45EXC02 e- 70keVcounts",
-          "MMS45EXC03 e- 116keVcounts",
-          "MMS45EXC04 e- 231keVcounts",
-          "MMS45EXC05 e- 662keVcounts"
+        "x_label": "electron_P3_counts_t5",
+        "x_labelComponents": [
+          [
+            "MMS45EXC01 e- 40keVcounts",
+            "MMS45EXC02 e- 70keVcounts",
+            "MMS45EXC03 e- 116keVcounts",
+            "MMS45EXC04 e- 231keVcounts",
+            "MMS45EXC05 e- 662keVcounts"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_counts_t5",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1821,6 +1991,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1834,19 +2005,22 @@
         "description": "MMS4 ElectronEnergy-Survey electron_P3_cps_t0 [data available from 2015/07/02 to 2016/09/28]",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS40EXC01 e- 40keVcps",
-          "MMS40EXC02 e- 70keVcps",
-          "MMS40EXC03 e- 116keVcps",
-          "MMS40EXC04 e- 231keVcps",
-          "MMS40EXC05 e- 662keVcps"
+        "x_label": "electron_P3_cps_t0",
+        "x_labelComponents": [
+          [
+            "MMS40EXC01 e- 40keVcps",
+            "MMS40EXC02 e- 70keVcps",
+            "MMS40EXC03 e- 116keVcps",
+            "MMS40EXC04 e- 231keVcps",
+            "MMS40EXC05 e- 662keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_cps_t0",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1862,6 +2036,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1875,19 +2050,22 @@
         "description": "---> electron_P3_cps_t1",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS41EXC01 e- 40keVcps",
-          "MMS41EXC02 e- 70keVcps",
-          "MMS41EXC03 e- 116keVcps",
-          "MMS41EXC04 e- 231keVcps",
-          "MMS41EXC05 e- 662keVcps"
+        "x_label": "electron_P3_cps_t1",
+        "x_labelComponents": [
+          [
+            "MMS41EXC01 e- 40keVcps",
+            "MMS41EXC02 e- 70keVcps",
+            "MMS41EXC03 e- 116keVcps",
+            "MMS41EXC04 e- 231keVcps",
+            "MMS41EXC05 e- 662keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_cps_t1",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1903,6 +2081,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1916,19 +2095,22 @@
         "description": "---> electron_P3_cps_t2",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS42EXC01 e- 40keVcps",
-          "MMS42EXC02 e- 70keVcps",
-          "MMS42EXC03 e- 116keVcps",
-          "MMS42EXC04 e- 231keVcps",
-          "MMS42EXC05 e- 662keVcps"
+        "x_label": "electron_P3_cps_t2",
+        "x_labelComponents": [
+          [
+            "MMS42EXC01 e- 40keVcps",
+            "MMS42EXC02 e- 70keVcps",
+            "MMS42EXC03 e- 116keVcps",
+            "MMS42EXC04 e- 231keVcps",
+            "MMS42EXC05 e- 662keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_cps_t2",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1944,6 +2126,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1957,19 +2140,22 @@
         "description": "---> electron_P3_cps_t3",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS43EXC01 e- 40keVcps",
-          "MMS43EXC02 e- 70keVcps",
-          "MMS43EXC03 e- 116keVcps",
-          "MMS43EXC04 e- 231keVcps",
-          "MMS43EXC05 e- 662keVcps"
+        "x_label": "electron_P3_cps_t3",
+        "x_labelComponents": [
+          [
+            "MMS43EXC01 e- 40keVcps",
+            "MMS43EXC02 e- 70keVcps",
+            "MMS43EXC03 e- 116keVcps",
+            "MMS43EXC04 e- 231keVcps",
+            "MMS43EXC05 e- 662keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_cps_t3",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -1985,6 +2171,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -1998,19 +2185,22 @@
         "description": "---> electron_P3_cps_t4",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS44EXC01 e- 40keVcps",
-          "MMS44EXC02 e- 70keVcps",
-          "MMS44EXC03 e- 116keVcps",
-          "MMS44EXC04 e- 231keVcps",
-          "MMS44EXC05 e- 662keVcps"
+        "x_label": "electron_P3_cps_t4",
+        "x_labelComponents": [
+          [
+            "MMS44EXC01 e- 40keVcps",
+            "MMS44EXC02 e- 70keVcps",
+            "MMS44EXC03 e- 116keVcps",
+            "MMS44EXC04 e- 231keVcps",
+            "MMS44EXC05 e- 662keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_cps_t4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -2026,6 +2216,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -2039,19 +2230,22 @@
         "description": "---> electron_P3_cps_t5",
         "fill": "-1e+31",
         "units": "1/s",
-        "x_label": [
-          "MMS45EXC01 e- 40keVcps",
-          "MMS45EXC02 e- 70keVcps",
-          "MMS45EXC03 e- 116keVcps",
-          "MMS45EXC04 e- 231keVcps",
-          "MMS45EXC05 e- 662keVcps"
+        "x_label": "electron_P3_cps_t5",
+        "x_labelComponents": [
+          [
+            "MMS45EXC01 e- 40keVcps",
+            "MMS45EXC02 e- 70keVcps",
+            "MMS45EXC03 e- 116keVcps",
+            "MMS45EXC04 e- 231keVcps",
+            "MMS45EXC05 e- 662keVcps"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_cps_t5",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -2067,6 +2261,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -2080,19 +2275,22 @@
         "description": "MMS4 ElectronEnergy-Survey electron_P3_flux_t0 [data available from 2015/07/02 to 2016/09/28]",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS40EXC01 e- 40keVintensity",
-          "MMS40EXC02 e- 70keVintensity",
-          "MMS40EXC03 e- 116keVintensity",
-          "MMS40EXC04 e- 231keVintensity",
-          "MMS40EXC05 e- 662keVintensity"
+        "x_label": "electron_P3_flux_t0",
+        "x_labelComponents": [
+          [
+            "MMS40EXC01 e- 40keVintensity",
+            "MMS40EXC02 e- 70keVintensity",
+            "MMS40EXC03 e- 116keVintensity",
+            "MMS40EXC04 e- 231keVintensity",
+            "MMS40EXC05 e- 662keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_flux_t0",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -2108,6 +2306,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -2121,19 +2320,22 @@
         "description": "---> electron_P3_flux_t1",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS41EXC01 e- 40keVintensity",
-          "MMS41EXC02 e- 70keVintensity",
-          "MMS41EXC03 e- 116keVintensity",
-          "MMS41EXC04 e- 231keVintensity",
-          "MMS41EXC05 e- 662keVintensity"
+        "x_label": "electron_P3_flux_t1",
+        "x_labelComponents": [
+          [
+            "MMS41EXC01 e- 40keVintensity",
+            "MMS41EXC02 e- 70keVintensity",
+            "MMS41EXC03 e- 116keVintensity",
+            "MMS41EXC04 e- 231keVintensity",
+            "MMS41EXC05 e- 662keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_flux_t1",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -2149,6 +2351,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -2162,19 +2365,22 @@
         "description": "---> electron_P3_flux_t2",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS42EXC01 e- 40keVintensity",
-          "MMS42EXC02 e- 70keVintensity",
-          "MMS42EXC03 e- 116keVintensity",
-          "MMS42EXC04 e- 231keVintensity",
-          "MMS42EXC05 e- 662keVintensity"
+        "x_label": "electron_P3_flux_t2",
+        "x_labelComponents": [
+          [
+            "MMS42EXC01 e- 40keVintensity",
+            "MMS42EXC02 e- 70keVintensity",
+            "MMS42EXC03 e- 116keVintensity",
+            "MMS42EXC04 e- 231keVintensity",
+            "MMS42EXC05 e- 662keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_flux_t2",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -2190,6 +2396,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -2203,19 +2410,22 @@
         "description": "---> electron_P3_flux_t3",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS43EXC01 e- 40keVintensity",
-          "MMS43EXC02 e- 70keVintensity",
-          "MMS43EXC03 e- 116keVintensity",
-          "MMS43EXC04 e- 231keVintensity",
-          "MMS43EXC05 e- 662keVintensity"
+        "x_label": "electron_P3_flux_t3",
+        "x_labelComponents": [
+          [
+            "MMS43EXC01 e- 40keVintensity",
+            "MMS43EXC02 e- 70keVintensity",
+            "MMS43EXC03 e- 116keVintensity",
+            "MMS43EXC04 e- 231keVintensity",
+            "MMS43EXC05 e- 662keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_flux_t3",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -2231,6 +2441,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -2244,19 +2455,22 @@
         "description": "---> electron_P3_flux_t4",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS44EXC01 e- 40keVintensity",
-          "MMS44EXC02 e- 70keVintensity",
-          "MMS44EXC03 e- 116keVintensity",
-          "MMS44EXC04 e- 231keVintensity",
-          "MMS44EXC05 e- 662keVintensity"
+        "x_label": "electron_P3_flux_t4",
+        "x_labelComponents": [
+          [
+            "MMS44EXC01 e- 40keVintensity",
+            "MMS44EXC02 e- 70keVintensity",
+            "MMS44EXC03 e- 116keVintensity",
+            "MMS44EXC04 e- 231keVintensity",
+            "MMS44EXC05 e- 662keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_flux_t4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -2272,6 +2486,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -2285,19 +2500,22 @@
         "description": "---> electron_P3_flux_t5",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
-        "x_label": [
-          "MMS45EXC01 e- 40keVintensity",
-          "MMS45EXC02 e- 70keVintensity",
-          "MMS45EXC03 e- 116keVintensity",
-          "MMS45EXC04 e- 231keVintensity",
-          "MMS45EXC05 e- 662keVintensity"
+        "x_label": "electron_P3_flux_t5",
+        "x_labelComponents": [
+          [
+            "MMS45EXC01 e- 40keVintensity",
+            "MMS45EXC02 e- 70keVintensity",
+            "MMS45EXC03 e- 116keVintensity",
+            "MMS45EXC04 e- 231keVintensity",
+            "MMS45EXC05 e- 662keVintensity"
+          ]
         ],
         "x_format": ".8g",
         "x_fractionDigits": "8",
         "x_cdf_FORMAT": "G22.8",
         "x_cdf_FIELDNAM": "mms4_epd_eis_srvy_l2_electronenergy_electron_P3_flux_t5",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           5
@@ -2313,6 +2531,7 @@
               230.9,
               661.9
             ],
+            "x_label": "Energy",
             "units": "keV",
             "unitsSchema": "VOUnits1.1",
             "x_unitsOriginal": "keV"
@@ -2326,12 +2545,13 @@
         "description": "mms4_epd_eis_srvy_l2_electronenergy_dump_P3_counts_t0",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t0",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T0 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2341,12 +2561,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_counts_t1",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t1",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T1 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2356,12 +2577,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_counts_t2",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t2",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T2 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2371,12 +2593,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_counts_t3",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t3",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T3 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2386,12 +2609,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_counts_t4",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t4",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T4 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2401,12 +2625,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_counts_t5",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t5",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T5 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2416,12 +2641,13 @@
         "description": "mms4_epd_eis_srvy_l2_electronenergy_dump_P4_counts_t0",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t0",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T0 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2431,12 +2657,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_counts_t1",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t1",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T1 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2446,12 +2673,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_counts_t2",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t2",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T2 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2461,12 +2689,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_counts_t3",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t3",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T3 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2476,12 +2705,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_counts_t4",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t4",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T4 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2491,12 +2721,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_counts_t5",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t5",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T5 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2506,12 +2737,13 @@
         "description": "mms4_epd_eis_srvy_l2_electronenergy_dump_P5_counts_t0",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t0",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T0 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2521,12 +2753,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_counts_t1",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t1",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T1 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2536,12 +2769,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_counts_t2",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t2",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T2 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2551,12 +2785,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_counts_t3",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t3",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T3 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2566,12 +2801,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_counts_t4",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t4",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T4 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2581,12 +2817,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_counts_t5",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "dump_counts_t5",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T5 Dump counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2596,12 +2833,13 @@
         "description": "mms4_epd_eis_srvy_l2_electronenergy_dump_P3_cps_t0",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t0",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T0 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2611,12 +2849,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_cps_t1",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t1",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T1 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2626,12 +2865,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_cps_t2",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t2",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T2 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2641,12 +2881,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_cps_t3",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t3",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T3 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2656,12 +2897,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_cps_t4",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t4",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T4 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2671,12 +2913,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_cps_t5",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t5",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T5 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2686,12 +2929,13 @@
         "description": "mms4_epd_eis_srvy_l2_electronenergy_dump_P4_cps_t0",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t0",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T0 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2701,12 +2945,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_cps_t1",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t1",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T1 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2716,12 +2961,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_cps_t2",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t2",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T2 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2731,12 +2977,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_cps_t3",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t3",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T3 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2746,12 +2993,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_cps_t4",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t4",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T4 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2761,12 +3009,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_cps_t5",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t5",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T5 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2776,12 +3025,13 @@
         "description": "mms4_epd_eis_srvy_l2_electronenergy_dump_P5_cps_t0",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t0",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T0 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2791,12 +3041,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_cps_t1",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t1",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T1 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2806,12 +3057,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_cps_t2",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t2",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T2 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2821,12 +3073,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_cps_t3",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t3",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T3 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2836,12 +3089,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_cps_t4",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t4",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T4 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2851,12 +3105,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_cps_t5",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "dump_cps_t5",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T5 Dump cps",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2866,12 +3121,13 @@
         "description": "mms4_epd_eis_srvy_l2_electronenergy_dump_P3_flux_t0",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t0",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T0 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2881,12 +3137,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_flux_t1",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t1",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T1 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2896,12 +3153,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_flux_t2",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t2",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T2 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2911,12 +3169,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_flux_t3",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t3",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T3 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2926,12 +3185,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_flux_t4",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t4",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T4 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2941,12 +3201,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P3_flux_t5",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t5",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T5 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2956,12 +3217,13 @@
         "description": "mms4_epd_eis_srvy_l2_electronenergy_dump_P4_flux_t0",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t0",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T0 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2971,12 +3233,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_flux_t1",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t1",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T1 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -2986,12 +3249,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_flux_t2",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t2",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T2 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3001,12 +3265,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_flux_t3",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t3",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T3 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3016,12 +3281,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_flux_t4",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t4",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T4 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3031,12 +3297,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P4_flux_t5",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t5",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T5 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3046,12 +3313,13 @@
         "description": "mms4_epd_eis_srvy_l2_electronenergy_dump_P5_flux_t0",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t0",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T0 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3061,12 +3329,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_flux_t1",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t1",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T1 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3076,12 +3345,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_flux_t2",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t2",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T2 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3091,12 +3361,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_flux_t3",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t3",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T3 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3106,12 +3377,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_flux_t4",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t4",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T4 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3121,12 +3393,13 @@
         "description": "---> mms4_epd_eis_srvy_l2_electronenergy_dump_P5_flux_t5",
         "fill": "-1e+31",
         "units": "1/(cm^2 s sr keV)",
+        "x_label": "dump_flux_t5",
         "x_format": ".17g",
         "x_fractionDigits": "17",
         "x_cdf_FORMAT": "G",
         "x_cdf_FIELDNAM": "MMS4 T5 Dump intensity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3136,12 +3409,13 @@
         "description": "Pitch Angle for Telescope 0 MMS4",
         "fill": "-1e+31",
         "units": "deg",
+        "x_label": "PA T0 MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "PitchAngle T0 MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3151,12 +3425,13 @@
         "description": "---> Pitch Angle for Telescope 1 MMS4",
         "fill": "-1e+31",
         "units": "deg",
+        "x_label": "PA T1 MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "PitchAngle T1 MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3166,12 +3441,13 @@
         "description": "---> Pitch Angle for Telescope 2 MMS4",
         "fill": "-1e+31",
         "units": "deg",
+        "x_label": "PA T2 MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "PitchAngle T2 MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3181,12 +3457,13 @@
         "description": "---> Pitch Angle for Telescope 3 MMS4",
         "fill": "-1e+31",
         "units": "deg",
+        "x_label": "PA T3 MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "PitchAngle T2 MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3196,12 +3473,13 @@
         "description": "---> Pitch Angle for Telescope 4 MMS4",
         "fill": "-1e+31",
         "units": "deg",
+        "x_label": "PA T4 MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "PitchAngle T2 MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3211,12 +3489,13 @@
         "description": "---> Pitch Angle for Telescope 5 MMS4",
         "fill": "-1e+31",
         "units": "deg",
+        "x_label": "PA T5 MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "PitchAngle T1 MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3226,17 +3505,20 @@
         "description": "Look Direction for Telescope 0 MMS4",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "LookT0_x",
-          "LookT0_y",
-          "LookT0_z"
+        "x_label": "Look T0 MMS4",
+        "x_labelComponents": [
+          [
+            "LookT0_x",
+            "LookT0_y",
+            "LookT0_z"
+          ]
         ],
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Look Vector T0 MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -3249,17 +3531,20 @@
         "description": "---> Look Direction for Telescope 1 MMS4",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "LookT1_x",
-          "LookT1_y",
-          "LookT1_z"
+        "x_label": "Look T1 MMS4",
+        "x_labelComponents": [
+          [
+            "LookT1_x",
+            "LookT1_y",
+            "LookT1_z"
+          ]
         ],
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Look Vector T1 MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -3272,17 +3557,20 @@
         "description": "---> Look Direction for Telescope 2 MMS4",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "LookT2_x",
-          "LookT2_y",
-          "LookT2_z"
+        "x_label": "Look T2 MMS4",
+        "x_labelComponents": [
+          [
+            "LookT2_x",
+            "LookT2_y",
+            "LookT2_z"
+          ]
         ],
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Look Vector T2 MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -3295,17 +3583,20 @@
         "description": "---> Look Direction for Telescope 3 MMS4",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "LookT3_x",
-          "LookT3_y",
-          "LookT3_z"
+        "x_label": "Look T3 MMS4",
+        "x_labelComponents": [
+          [
+            "LookT3_x",
+            "LookT3_y",
+            "LookT3_z"
+          ]
         ],
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Look Vector T3 MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -3318,17 +3609,20 @@
         "description": "---> Look Direction for Telescope 4 MMS4",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "LookT4_x",
-          "LookT4_y",
-          "LookT4_z"
+        "x_label": "Look T4 MMS4",
+        "x_labelComponents": [
+          [
+            "LookT4_x",
+            "LookT4_y",
+            "LookT4_z"
+          ]
         ],
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Look Vector T4 MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -3341,17 +3635,20 @@
         "description": "---> Look Direction for Telescope 5 MMS4",
         "fill": "-1e+31",
         "units": ".",
-        "x_label": [
-          "LookT5_x",
-          "LookT5_y",
-          "LookT5_z"
+        "x_label": "Look T5 MMS4",
+        "x_labelComponents": [
+          [
+            "LookT5_x",
+            "LookT5_y",
+            "LookT5_z"
+          ]
         ],
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Look Vector T5 MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -3364,18 +3661,21 @@
         "description": "Magnetic Field BCS MMS4",
         "fill": "-1e+31",
         "units": "nT",
-        "x_label": [
-          "Bx",
-          "By",
-          "Bz",
-          "Br"
+        "x_label": "B MMS4",
+        "x_labelComponents": [
+          [
+            "Bx",
+            "By",
+            "Bz",
+            "Br"
+          ]
         ],
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Mag Field MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           4
@@ -3388,17 +3688,20 @@
         "description": "---> Spacecraft position GSE MMS4",
         "fill": "-1e+31",
         "units": "km",
-        "x_label": [
-          "Xgse",
-          "Ygse",
-          "Zgse"
+        "x_label": "Pos GSE MMS4",
+        "x_labelComponents": [
+          [
+            "Xgse",
+            "Ygse",
+            "Zgse"
+          ]
         ],
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "GSE Position MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -3411,17 +3714,20 @@
         "description": "---> Spacecraft position in GSM coordinates MMS4",
         "fill": "-1e+31",
         "units": "km",
-        "x_label": [
-          "Xgsm",
-          "Ygsm",
-          "Zgsm"
+        "x_label": "Pos GSM MMS4",
+        "x_labelComponents": [
+          [
+            "Xgsm",
+            "Ygsm",
+            "Zgsm"
+          ]
         ],
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "GSM Position MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -3434,17 +3740,20 @@
         "description": "---> Spacecraft-Moon vector in GSE coordinates MMS4",
         "fill": "-1e+31",
         "units": "km",
-        "x_label": [
-          "MoonXgse",
-          "MoonYgse",
-          "MoonZgse"
+        "x_label": "SC to Moon MMS4",
+        "x_labelComponents": [
+          [
+            "MoonXgse",
+            "MoonYgse",
+            "MoonZgse"
+          ]
         ],
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "SC to Moon GSE MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -3457,12 +3766,13 @@
         "description": "Transformation Matrix BCS to GSE Frame MMS4",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "SC to GSE Matrix MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Transformation Matrix BCS to GSE MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           9
@@ -3475,12 +3785,13 @@
         "description": "---> Transformation Matrix GSE to GSM Frame MMS4",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "GSE to GSM Matrix MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Transformation Matrix BCS to GSE MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           9
@@ -3493,12 +3804,13 @@
         "description": "Spacecraft Position: Radius MMS4",
         "fill": "-1e+31",
         "units": "km",
+        "x_label": "Radius MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Position Radius MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3508,12 +3820,13 @@
         "description": "---> Dipole L-shell MMS4",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "L MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Dipole L MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3523,12 +3836,13 @@
         "description": "---> Latitude in GSE Frame MMS4",
         "fill": "-1e+31",
         "units": "deg",
+        "x_label": "GSELat MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "GSE Latitude MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3538,12 +3852,13 @@
         "description": "---> Longitude in GSE Frame MMS4",
         "fill": "-1e+31",
         "units": "deg",
+        "x_label": "GSELon MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "GSE Longitude MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3553,12 +3868,13 @@
         "description": "---> Latitude in GSM Frame MMS4",
         "fill": "-1e+31",
         "units": "deg",
+        "x_label": "GSMLat MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "GSM Latitude MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3568,12 +3884,13 @@
         "description": "---> Longitude in GSM Frame MMS4",
         "fill": "-1e+31",
         "units": "deg",
+        "x_label": "GSMLon MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "GSM Longitude MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3583,12 +3900,13 @@
         "description": "---> Latitude in SM Frame MMS4",
         "fill": "-1e+31",
         "units": "deg",
+        "x_label": "SMLat MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "SM Latitude MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3598,12 +3916,13 @@
         "description": "---> Longitude in SM Frame MMS4",
         "fill": "-1e+31",
         "units": "deg",
+        "x_label": "SMLon MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "SM Longitude MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3613,12 +3932,13 @@
         "description": "Orbit number MMS4",
         "fill": "-1e+31",
         "units": ".",
+        "x_label": "Orbit MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Orbit Num MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3628,12 +3948,13 @@
         "description": "Solid State Energy Detector 0 Count Rate MMS4",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "SSD0 MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "SSD0 Rate MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3643,12 +3964,13 @@
         "description": "---> Solid State Energy Detector 1 Count Rate MMS4",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "SSD1 MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "SSD1 Rate MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3658,12 +3980,13 @@
         "description": "---> Solid State Energy Detector 2 Count Rate MMS4",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "SSD2 MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "SSD2 Rate MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3673,12 +3996,13 @@
         "description": "---> Solid State Energy Detector 3 Count Rate MMS4",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "SSD3 MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "SSD3 Rate MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3688,12 +4012,13 @@
         "description": "---> Solid State Energy Detector 4 Count Rate MMS4",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "SSD4 MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "SSD4 Rate MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3703,12 +4028,13 @@
         "description": "---> Solid State Energy Detector 5 Count Rate MMS4",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "SSD5 MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "SSD5 Rate MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3718,12 +4044,13 @@
         "description": "Valid Events Processed per second MMS4",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "VEP MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Valid Events Processed MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -3733,12 +4060,13 @@
         "description": "---> Valid Electron Events per second MMS4",
         "fill": "-1e+31",
         "units": "1/s",
+        "x_label": "VEE MMS4",
         "x_format": ".5e",
         "x_fractionDigits": "5",
         "x_cdf_FORMAT": "e12.5",
         "x_cdf_FIELDNAM": "Valid Electron Events MMS4",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       }
     ]

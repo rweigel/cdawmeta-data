@@ -6,10 +6,7 @@
     "stopDate": "2025-02-24T08:43:02Z",
     "sampleStartDate": "2025-02-24T08:38:23Z",
     "sampleStopDate": "2025-02-24T08:40:32Z",
-    "cadence": "PT0.03S",
-    "x_cadence_fraction": 0.9700465597516813,
-    "x_cadence_note": "Cadence based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/mms/mms3/fpi/brst/l2/des-dist/2015/09/mms3_fpi_brst_l2_des-dist_20150901121114_v3.3.0.cdf. This most common cadence occurred for 97.0047% of the 18751 timesteps. Cadence = 30000000 [ns] = PT0.03S.",
-    "maxRequestDuration": "PT1H47M30S",
+    "maxRequestDuration": "PT6450S",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_BRST_L2_DES-DIST",
     "contact": "J. Burch, C. Pollock @ SwRI, NASA/GSFC",
     "parameters": [
@@ -30,7 +27,8 @@
         "description": "[CDAWeb List/Download/Create ONLY] MMS3 FPI/DES burst sky-map instrument distribution",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -123,7 +121,7 @@
         "x_cdf_FORMAT": "E12.2",
         "x_cdf_FIELDNAM": "FPI3/DES Electron SkyMap",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -135,10 +133,11 @@
         "name": "mms3_des_dist_brst1_even",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 10.9 eV (E1/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 10.9 eV (E1/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 10.9 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -236,7 +235,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst1_even(*,*,1)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -248,10 +247,11 @@
         "name": "mms3_des_dist_brst1_odd",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 12.4 eV (E1/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 12.4 eV (E1/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 12.4 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -349,7 +349,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst1_odd(*,*,1)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -361,10 +361,11 @@
         "name": "mms3_des_dist_brst1_evenodd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - ~11.6 eV (E1 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - ~11.6 eV (E1 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap (E/ ~11.6 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -461,7 +462,7 @@
         "x_cdf_COMPONENTS": [
           "mms3_des_dist_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst1_evenodd_movie(*,*,1)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -473,10 +474,11 @@
         "name": "mms3_des_dist_brst1_even_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 10.9 eV (E1/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 10.9 eV (E1/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 10.9 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -574,7 +576,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst1_even_movie(*,*,1)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -586,10 +588,11 @@
         "name": "mms3_des_dist_brst1_odd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 12.4 eV (E1/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 12.4 eV (E1/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 12.4 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -687,7 +690,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst1_odd_movie(*,*,1)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -699,10 +702,11 @@
         "name": "mms3_des_dist_brst6_even",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 37.9 eV (E6/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 37.9 eV (E6/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 37.9 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -800,7 +804,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst6_even(*,*,6)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -812,10 +816,11 @@
         "name": "mms3_des_dist_brst6_odd",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 42.9 eV (E6/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 42.9 eV (E6/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 42.9 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -913,7 +918,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst6_odd(*,*,6)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -925,10 +930,11 @@
         "name": "mms3_des_dist_brst6_evenodd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - ~40.4 eV (E6 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - ~40.4 eV (E6 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap ~40.4 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -1025,7 +1031,7 @@
         "x_cdf_COMPONENTS": [
           "mms3_des_dist_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst6_evenodd_movie(*,*,6)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -1037,10 +1043,11 @@
         "name": "mms3_des_dist_brst6_even_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 37.9 eV (E6/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 37.9 eV (E6/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap at 37.9 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -1138,7 +1145,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst6_even_movie(*,*,6)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -1150,10 +1157,11 @@
         "name": "mms3_des_dist_brst6_odd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 42.9 eV (E6/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 42.9 eV (E6/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap at 42.9 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -1251,7 +1259,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst6_odd_movie(*,*,6)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -1263,10 +1271,11 @@
         "name": "mms3_des_dist_brst9_even",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 80.0 eV (E9/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 80.0 eV (E9/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 80.0 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -1364,7 +1373,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst9_even(*,*,9)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -1376,10 +1385,11 @@
         "name": "mms3_des_dist_brst9_odd",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 90.6 eV (E9/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 90.6 eV (E9/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 90.6 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -1477,7 +1487,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst9_odd(*,*,9)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -1489,10 +1499,11 @@
         "name": "mms3_des_dist_brst9_evenodd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - ~85 eV (E9 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - ~85 eV (E9 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap ~85 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -1589,7 +1600,7 @@
         "x_cdf_COMPONENTS": [
           "mms3_des_dist_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst9_evenodd_movie(*,*,9)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -1601,10 +1612,11 @@
         "name": "mms3_des_dist_brst9_even_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 80.0 eV (E9/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 80.0 eV (E9/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap at 80.0 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -1702,7 +1714,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst9_even_movie(*,*,9)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -1714,10 +1726,11 @@
         "name": "mms3_des_dist_brst9_odd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 90.6 eV (E9/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 90.6 eV (E9/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 90.6 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -1815,7 +1828,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst9_odd_movie(*,*,9)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -1827,10 +1840,11 @@
         "name": "mms3_des_dist_brst12_even",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 169 eV (E12/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 169 eV (E12/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 169 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -1928,7 +1942,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst12_even(*,*,12)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -1940,10 +1954,11 @@
         "name": "mms3_des_dist_brst12_odd",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 191 eV (E12/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 191 eV (E12/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 191 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -2041,7 +2056,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst12_odd(*,*,12)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -2053,10 +2068,11 @@
         "name": "mms3_des_dist_brst12_evenodd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - ~180 eV (E12 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - ~180 eV (E12 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap ~180 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -2153,7 +2169,7 @@
         "x_cdf_COMPONENTS": [
           "mms3_des_dist_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst12_evenodd_movie(*,*,12)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -2165,10 +2181,11 @@
         "name": "mms3_des_dist_brst12_even_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 169 eV (E12/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 169 eV (E12/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 169 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -2266,7 +2283,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst12_even_movie(*,*,12)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -2278,10 +2295,11 @@
         "name": "mms3_des_dist_brst12_odd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 191 eV (E12/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 191 eV (E12/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 191 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -2379,7 +2397,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst12_odd_movie(*,*,12)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -2391,10 +2409,11 @@
         "name": "mms3_des_dist_brst14_even",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 277 eV (E14/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 277 eV (E14/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 277 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -2492,7 +2511,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst14_even(*,*,14)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -2504,10 +2523,11 @@
         "name": "mms3_des_dist_brst14_odd",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 314 eV (E14/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 314 eV (E14/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 314 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -2605,7 +2625,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst14_odd(*,*,14)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -2617,10 +2637,11 @@
         "name": "mms3_des_dist_brst14_evenodd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - ~295 eV (E14 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - ~295 eV (E14 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap ~295 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -2717,7 +2738,7 @@
         "x_cdf_COMPONENTS": [
           "mms3_des_dist_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst14_evenodd_movie(*,*,14)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -2729,10 +2750,11 @@
         "name": "mms3_des_dist_brst14_even_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 277 eV (E14/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 277 eV (E14/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 277 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -2830,7 +2852,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst14_even_movie(*,*,14)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -2842,10 +2864,11 @@
         "name": "mms3_des_dist_brst14_odd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 314 eV (E14/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 314 eV (E14/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 314 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -2943,7 +2966,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst14_odd_movie(*,*,14)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -2955,10 +2978,11 @@
         "name": "mms3_des_dist_brst16_even",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 456 eV (E16/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 456 eV (E16/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 SkyMap 456 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -3056,7 +3080,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst16_even(*,*,16)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -3068,10 +3092,11 @@
         "name": "mms3_des_dist_brst16_odd",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 517 eV (E16/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 517 eV (E16/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 SkyMap 517 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -3169,7 +3194,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst16_odd(*,*,16)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -3181,10 +3206,11 @@
         "name": "mms3_des_dist_brst16_evenodd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - ~485 eV (E16 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - ~485 eV (E16 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap ~485 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -3281,7 +3307,7 @@
         "x_cdf_COMPONENTS": [
           "mms3_des_dist_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst16_evenodd_movie(*,*,16)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -3293,10 +3319,11 @@
         "name": "mms3_des_dist_brst16_even_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 456 eV (E16/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 456 eV (E16/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 SkyMap 456 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -3394,7 +3421,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst16_even_movie(*,*,16)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -3406,10 +3433,11 @@
         "name": "mms3_des_dist_brst16_odd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 517 eV (E16/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 517 eV (E16/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 SkyMap 517 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -3507,7 +3535,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst16_odd_movie(*,*,16)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -3519,10 +3547,11 @@
         "name": "mms3_des_dist_brst18_even",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 750 eV (E18/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 750 eV (E18/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 750 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -3620,7 +3649,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst18_even(*,*,18)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -3632,10 +3661,11 @@
         "name": "mms3_des_dist_brst18_odd",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 850 eV (E18/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 850 eV (E18/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 850 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -3733,7 +3763,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst18_odd(*,*,18)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -3745,10 +3775,11 @@
         "name": "mms3_des_dist_brst18_evenodd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - ~800 eV (E18 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - ~800 eV (E18 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap ~800 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -3845,7 +3876,7 @@
         "x_cdf_COMPONENTS": [
           "mms3_des_dist_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst18_evenodd_movie(*,*,18)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -3857,10 +3888,11 @@
         "name": "mms3_des_dist_brst18_even_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 750 eV (E18/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 750 eV (E18/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 750 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -3958,7 +3990,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst18_even_movie(*,*,18)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -3970,10 +4002,11 @@
         "name": "mms3_des_dist_brst18_odd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 850 eV (E18/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 850 eV (E18/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 850 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -4071,7 +4104,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst18_odd_movie(*,*,18)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -4083,10 +4116,11 @@
         "name": "mms3_des_dist_brst20_even",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 1230 eV (E20/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 1230 eV (E20/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 1230 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -4184,7 +4218,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst20_even(*,*,20)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -4196,10 +4230,11 @@
         "name": "mms3_des_dist_brst20_odd",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 1400 eV (E20/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 1400 eV (E20/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 1400 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -4297,7 +4332,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst20_odd(*,*,20)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -4309,10 +4344,11 @@
         "name": "mms3_des_dist_brst20_evenodd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - ~1310 eV (E20 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - ~1310 eV (E20 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap ~1310 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -4409,7 +4445,7 @@
         "x_cdf_COMPONENTS": [
           "mms3_des_dist_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst20_evenodd_movie(*,*,20)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -4421,10 +4457,11 @@
         "name": "mms3_des_dist_brst20_even_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 1230 eV (E20/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 1230 eV (E20/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 1230 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -4522,7 +4559,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst20_even_movie(*,*,20)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -4534,10 +4571,11 @@
         "name": "mms3_des_dist_brst20_odd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 1400 eV (E20/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 1400 eV (E20/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 1400 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -4635,7 +4673,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst20_odd_movie(*,*,20)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -4647,10 +4685,11 @@
         "name": "mms3_des_dist_brst23_even",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 2600 eV (E23/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 2600 eV (E23/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 2600 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -4748,7 +4787,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst23_even(*,*,23)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -4760,10 +4799,11 @@
         "name": "mms3_des_dist_brst23_odd",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 2950 eV (E23/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 2950 eV (E23/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 2950 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -4861,7 +4901,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst23_odd(*,*,23)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -4873,10 +4913,11 @@
         "name": "mms3_des_dist_brst23_evenodd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - ~2770 eV (E23 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - ~2770 eV (E23 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap ~2770 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -4973,7 +5014,7 @@
         "x_cdf_COMPONENTS": [
           "mms3_des_dist_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst23_evenodd_movie(*,*,23)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -4985,10 +5026,11 @@
         "name": "mms3_des_dist_brst23_even_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 2600 eV (E23/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 2600 eV (E23/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 2600 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -5086,7 +5128,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst23_even_movie(*,*,23)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -5098,10 +5140,11 @@
         "name": "mms3_des_dist_brst23_odd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 2950 eV (E23/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 2950 eV (E23/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 2950 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -5199,7 +5242,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst23_odd_movie(*,*,23)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -5211,10 +5254,11 @@
         "name": "mms3_des_dist_brst26_even",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 5490 eV (E26/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 5490 eV (E26/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 5490 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -5312,7 +5356,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst26_even(*,*,26)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -5324,10 +5368,11 @@
         "name": "mms3_des_dist_brst26_odd",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 6210 eV (E26/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 6210 eV (E26/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 6210 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -5425,7 +5470,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst26_odd(*,*,26)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -5437,10 +5482,11 @@
         "name": "mms3_des_dist_brst26_evenodd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - ~5840 eV (E26 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - ~5840 eV (E26 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap ~5840 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -5537,7 +5583,7 @@
         "x_cdf_COMPONENTS": [
           "mms3_des_dist_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst26_evenodd_movie(*,*,26)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -5549,10 +5595,11 @@
         "name": "mms3_des_dist_brst26_even_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 5490 eV (E26/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 5490 eV (E26/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 5490 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -5650,7 +5697,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst26_even_movie(*,*,26)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -5662,10 +5709,11 @@
         "name": "mms3_des_dist_brst26_odd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 6210 eV (E26/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 6210 eV (E26/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 6210 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -5763,7 +5811,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst26_odd_movie(*,*,26)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -5775,10 +5823,11 @@
         "name": "mms3_des_dist_brst32_even",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 24400 eV (E32/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 24400 eV (E32/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 24400 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -5876,7 +5925,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst32_even(*,*,32)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -5888,10 +5937,11 @@
         "name": "mms3_des_dist_brst32_odd",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 27600 eV (E32/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "MMS3 FPI/DES burst sky-map instrument distribution - 27600 eV (E32/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 27600 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -5989,7 +6039,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst32_odd(*,*,32)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -6001,10 +6051,11 @@
         "name": "mms3_des_dist_brst32_evenodd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - ~26000 eV (E32 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - ~26000 eV (E32 even-odd). This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap ~26000 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -6101,7 +6152,7 @@
         "x_cdf_COMPONENTS": [
           "mms3_des_dist_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst32_evenodd_movie(*,*,32)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -6113,10 +6164,11 @@
         "name": "mms3_des_dist_brst32_even_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 24400 eV (E32/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 24400 eV (E32/even). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 24400 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -6214,7 +6266,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst32_even_movie(*,*,32)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -6226,10 +6278,11 @@
         "name": "mms3_des_dist_brst32_odd_movie",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Movie - 27600 eV (E32/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Movie - 27600 eV (E32/odd). This variable is a 'virtual' variable that is computed using the function apply_filter_flag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_des_dist_brst', 'mms3_des_steptable_parity_brst']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "DES3 Electron SkyMap 27600 eV",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -6327,7 +6380,7 @@
           "mms3_des_dist_brst",
           "mms3_des_steptable_parity_brst"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionxsz=2,ysz=4> x=mms3_des_phi_brst, y=mms3_des_theta_brst, z=mms3_des_dist_brst32_odd_movie(*,*,32)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -6342,7 +6395,8 @@
         "description": "[List/Create only in CDAWeb] 1-sigma error: MMS3 FPI/DES burst sky-map instrument distribution",
         "fill": "-1e+31",
         "units": "phase-space density",
-        "x_label": [
+        "x_label": "mms3_des_disterr_brst",
+        "x_labelComponents": [
           [
             "sector00",
             "sector01",
@@ -6435,7 +6489,7 @@
         "x_cdf_FORMAT": "E12.2",
         "x_cdf_FIELDNAM": "MMS3 FPI/DES brstSkyMap distErr",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -6450,10 +6504,11 @@
         "description": "MMS3 FPI/DES vector of data-quality indicators at burst-start time",
         "fill": "4294967295",
         "units": "32-bit error flags",
+        "x_label": "FPI3/DES errFlags",
         "x_cdf_FORMAT": "I10",
         "x_cdf_FIELDNAM": "MMS3 FPI/DES dataQuality errorFlags",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -6463,10 +6518,11 @@
         "description": "---> MMS3 FPI/DES compression lossless/lossy indicator at survey-start time",
         "fill": "255",
         "units": "0, 1",
+        "x_label": "FPI3/DES compressFlag",
         "x_cdf_FORMAT": "I2",
         "x_cdf_FIELDNAM": "MMS3 FPI/DES compression flag",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -6476,10 +6532,11 @@
         "description": "---> MMS3 FPI/DES step table parity, this burst",
         "fill": "255",
         "units": "0, 1",
+        "x_label": "FPI3/DES stepTbl par",
         "x_cdf_FORMAT": "I2",
         "x_cdf_FIELDNAM": "MMS3 FPI/DES step table parity",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -6489,10 +6546,11 @@
         "description": "---> MMS3 FPI/DES Del-Phi (obs spin-phase) count at burst-start time",
         "fill": "65535",
         "units": "del-phi counts",
+        "x_label": "FPI3/DES DelPhi cnt",
         "x_cdf_FORMAT": "I6",
         "x_cdf_FIELDNAM": "MMS3 FPI/DES start Del-Phi count",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -6502,12 +6560,13 @@
         "description": "---> MMS3 FPI/DES Del-Phi (obs spin-phase) angle at burst-start time",
         "fill": "-1e+31",
         "units": "deg",
+        "x_label": "FPI3/DES DelPhi ang",
         "x_format": ".2e",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "E12.2",
         "x_cdf_FIELDNAM": "MMS3 FPI/DES start Del-Phi angle",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -6517,6 +6576,7 @@
         "description": "MMS3 FPI/DES burst average f1 count values",
         "fill": "-1e+31",
         "units": "s^3/cm^6",
+        "x_label": "avg 1-count level",
         "x_format": ".2e",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "E12.2",
@@ -6627,7 +6687,7 @@
         "x_cdf_FORMAT": "E12.2",
         "x_cdf_FIELDNAM": "MMS3 FPI/DES microsecond offsets",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32,
@@ -6642,10 +6702,11 @@
         "description": "---> MMS3 FPI/DES sector de-Spin P value, this burst",
         "fill": "255",
         "units": "00-32",
+        "x_label": "FPI3/DES deSpin P",
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "MMS3 FPI/DES sector de-Spin P",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -6655,46 +6716,49 @@
         "description": "MMS3 FPI/DES burst sky-map instrument azimuthal angles",
         "fill": "-1e+31",
         "units": "deg",
-        "x_label": [
-          "sector00",
-          "sector01",
-          "sector02",
-          "sector03",
-          "sector04",
-          "sector05",
-          "sector06",
-          "sector07",
-          "sector08",
-          "sector09",
-          "sector10",
-          "sector11",
-          "sector12",
-          "sector13",
-          "sector14",
-          "sector15",
-          "sector16",
-          "sector17",
-          "sector18",
-          "sector19",
-          "sector20",
-          "sector21",
-          "sector22",
-          "sector23",
-          "sector24",
-          "sector25",
-          "sector26",
-          "sector27",
-          "sector28",
-          "sector29",
-          "sector30",
-          "sector31"
+        "x_label": "Phi",
+        "x_labelComponents": [
+          [
+            "sector00",
+            "sector01",
+            "sector02",
+            "sector03",
+            "sector04",
+            "sector05",
+            "sector06",
+            "sector07",
+            "sector08",
+            "sector09",
+            "sector10",
+            "sector11",
+            "sector12",
+            "sector13",
+            "sector14",
+            "sector15",
+            "sector16",
+            "sector17",
+            "sector18",
+            "sector19",
+            "sector20",
+            "sector21",
+            "sector22",
+            "sector23",
+            "sector24",
+            "sector25",
+            "sector26",
+            "sector27",
+            "sector28",
+            "sector29",
+            "sector30",
+            "sector31"
+          ]
         ],
         "x_format": ".2e",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "E12.2",
         "x_cdf_FIELDNAM": "FPI/DES Phi/Sector",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32
@@ -6737,6 +6801,7 @@
               30,
               31
             ],
+            "x_label": "FPI sect ind",
             "units": "00-31"
           }
         ]
@@ -6748,12 +6813,13 @@
         "description": "MMS FPI/DES burst sky-map parity 0/1 energies",
         "fill": "-1e+31",
         "units": "eV",
+        "x_label": "Energy",
         "x_format": ".2e",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "E12.2",
         "x_cdf_FIELDNAM": "MMS/FPI Stepped Energy",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32

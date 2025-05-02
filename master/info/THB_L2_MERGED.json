@@ -1,0 +1,1600 @@
+{
+  "id": "THB_L2_MERGED",
+  "url": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/thb_l2_merged_00000000_v01.json",
+  "data-file": "./data/master/info/THB_L2_MERGED.json",
+  "data": {
+    "thb_l2_merged_00000000_v01.cdf": {
+      "CDFFileInfo": [
+        {
+          "FileVersion": "3.9.0"
+        },
+        {
+          "Format": "SINGLE"
+        },
+        {
+          "Majority": "ROW"
+        },
+        {
+          "Encoding": "NETWORK"
+        }
+      ],
+      "CDFglobalAttributes": [
+        {
+          "Project": [
+            {
+              "0": "THEMIS"
+            }
+          ]
+        },
+        {
+          "Source_name": [
+            {
+              "0": "THB>Themis Probe B"
+            }
+          ]
+        },
+        {
+          "Discipline": [
+            {
+              "0": "Space Physics>Magnetospheric Science"
+            }
+          ]
+        },
+        {
+          "Data_type": [
+            {
+              "0": "MERGED"
+            }
+          ]
+        },
+        {
+          "Descriptor": [
+            {
+              "0": "L2>L2 DATA"
+            }
+          ]
+        },
+        {
+          "Data_version": [
+            {
+              "0": "1"
+            }
+          ]
+        },
+        {
+          "PI_name": [
+            {
+              "0": "N. Papatashvilli, J.H. King"
+            }
+          ]
+        },
+        {
+          "PI_affiliation": [
+            {
+              "0": "SPDF, NASA/GSFC"
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "0": "ThemisB merged ESA, FGM, spacecraft position data"
+            }
+          ]
+        },
+        {
+          "TEXT": [
+            {
+              "0": "THEMIS-B: Electrostatic Analyzer (ESA): Electron/Ion Ground-Calculated Energy Fluxes (ions: 5 eV to 25 keV) electrons: 6 eV to 30 keV) and Moments (density, velocity, pressure, and temperature). Includes FULL, REDUCED and BURST modes. FULL: high angular resolution, low (few min) time resolution. REDUCED: degraded angular resolution, high (approx. 3 sec) time resolution. BURST: high angular resolution, high time resolution; only short bursts of data. Note that angular resolution affects moments since they are obtained integrating over the mode-specific angular distribution. Moment Data Quality flags (0: good data; non-zero flags are totals of values; 1: missing S/C potential, 2: Counter saturation, 4: Solar Wind not in Solar Wind Mode, or Solar Wind Mode, not in Solar Wind, 8: (Reduced Mode only) slow survey mode+flows, 16: electron density Gt 2*ion density, 32: ion density Gt 2*electron density, 64: Spacecraft Maneuver)."
+            },
+            {
+              "1": "1. Retrieval of CDF files from CDAWeb of of ESA L2 'good' quality, 'full mode, 'ion plasma data [density (N), thermal speed(W), flow velocity GSE Cartesian components (Vx,Vy, Vz)], starting 9/1/2010 when the spacecraft are mostly in the moon's vicinity.  'Full mode' means as determined from 3-sec high-angular-resolution distributions taken once every 96s (Fast Survey Scan - FSS) or 384s (Slow Survey Scan - SSS), where FSS and SSS are mutually exclusively used for several contiguous hours during each of most days.  Data retrieval was followed by creation of ASCII version with N, W, and Vi, and with |V|(flow speed) as computed by us from the Vi."
+            },
+            {
+              "2": "1a.  Despike the plasma data.  A modest number of ESA L2 data points appear to be single-point spurious spikes.  We have attempted to delete these as follows.  We test a point using its two predecessors and two followers. We require that the 1st and last of these 5 points be within 60 mins of each other. The first two and last two points in a data segment separated from its neighbors by intervals of >60 min go untested by the algorithms discussed here.  We visually scanned output data looking for obvious spikes thereby missed, and deleted these.  Any record having a declared spike in any of its physical parameters is rejected. For a parameter value to be declared a spike, it must satisfy two criteria.   Let P represent the value of the physical parameter being tested. Define <P> as the mean value of parameter P over the 1st, 2nd, 4th, and 5th points of the current set, and let sigma(P) be the RMS deviation in this average.  The first test for a spike is to have |P-<P>| > 20 * sigma(P).  As the second test, for P = V, Vi (i = x, y, z), N, W, we require |P-<P>| > k * <P> where k = 0.1, 0.1, 0.3, 0.6 for P = V, Vi, N, W respectively.  For Themis B and C, these tests eliminated 64 and 51 96s or 384s ESA L2 points, respectively, over the interval September 3, 2010 - January 29, 2011."
+            },
+            {
+              "3": "1b.  In addition to retrieving ESA N, W and Vi values from CDAWeb, we also retrieved the ESA ion mode flag, where the values are 0 and 1.  Zero denotes a magnetospheric mode and one a solar wind mode.  The magnetosphere mode involves taking measurements over much broader ranges in energy and look direction than for the solar wind mode.  This optimizes observations of hot, subsonic non-solar wind plasma and of cooler supersonically flowing solar wind plasma.  Usually, but not always, ESA is set to the solar wind mode when the spacecraft is in the solar wind.  Moments of ESA magnetosphere-mode data taken while in the solar wind are not reliable.  For further details, see the ESA documentation accessible through the UCB URL given above. "
+            },
+            {
+              "4": "2. Retrieval of 1-min spacecraft position (GSE) data from SSCWeb"
+            },
+            {
+              "5": "3. Retrieval of 29-min lunar position (GSE) data from SSCWeb"
+            },
+            {
+              "6": "4. Calculation of moon-centered 1-min spacecraft positions by interpolating 29-min data to 1-min resolution, taking differences between the geocentric spacecraft and moon positions, and changing units from Re to Rm (Moon radii, = 1737 km)."
+            },
+            {
+              "7": "5. Merger of geocentric and selenocentric spacecraft position data and plasma data, interpolating the 1-min position data to the times of the plasma data"
+            },
+            {
+              "8": "6. Retrieval of CDF files of 3-sec magnetic field FGM data in GSE coordinates from CDAWeb and conversion to ASCII."
+            },
+            {
+              "9": "7. Merger of plasma/position data and magnetic field data.  To each 96s or 384s plasma/position record, we add the 3-s magnetic field data whose time tag is closest to that of the plasma data (because, as noted above, the plasma parameters are based on high-angular-resolution ion plasma distributions each determined over three seconds."
+            },
+            {
+              "10": "8. Creation of FTPBrowser interfaces to these data for (a) plots and listings [http://ftpbrowser.gsfc.nasa.gov/themisb_mrg.html] and (b) parameter value occurrence distributions and other statistics, with filtering [http://ftpbrowser.gsfc.nasa.gov/themisb_mrg_d.html].(These interfaces will soon be LunaSOX-accessible at https://lunasox.gsfc.nasa.gov/Data_browser.html.)"
+            }
+          ]
+        },
+        {
+          "Instrument_type": [
+            {
+              "0": "Particles (space)"
+            },
+            {
+              "1": "Plasma and Solar Wind"
+            }
+          ]
+        },
+        {
+          "Mission_group": [
+            {
+              "0": "THEMIS"
+            },
+            {
+              "1": "ARTEMIS"
+            }
+          ]
+        },
+        {
+          "Logical_source": [
+            {
+              "0": "thb_l2_merged"
+            }
+          ]
+        },
+        {
+          "Logical_file_id": [
+            {
+              "0": "thb_l2_merged_00000000_v01"
+            }
+          ]
+        },
+        {
+          "Logical_source_description": [
+            {
+              "0": "This data set contains ARTEMIS P1(THEMIS B) plasma parameters from the Electrostatic Analyzer (ESA), magnetic field data from the FGM instrument, and geocentric and selenocentric spacecraft position data. The data are at 96s or 384s resolution. For more details see "
+            },
+            {
+              "1": "https://spdf.gsfc.nasa.gov/pub/data/themis/thb/l2/merged/ascii/00readme_themisb.txt"
+            }
+          ]
+        },
+        {
+          "Time_resolution": [
+            {
+              "0": "96second or 384second"
+            }
+          ]
+        },
+        {
+          "Rules_of_use": [
+            {
+              "0": "Open Data for Scientific Use"
+            }
+          ]
+        },
+        {
+          "Generated_by": [
+            {
+              "0": "THEMIS SOC"
+            }
+          ]
+        },
+        {
+          "Generation_date": [
+            {
+              "0": "Thu Sep  4 15:07:27 2008"
+            }
+          ]
+        },
+        {
+          "Acknowledgement": [
+            {
+              "0": "NASA Contract NAS5-02099"
+            }
+          ]
+        },
+        {
+          "MODS": [
+            {
+              "0": "Rev- 2006-09-18"
+            }
+          ]
+        },
+        {
+          "ADID_ref": [
+            {
+              "0": "NSSD0110"
+            }
+          ]
+        },
+        {
+          "LINK_TEXT": [
+            {
+              "0": "Merged"
+            },
+            {
+              "1": "ESA"
+            },
+            {
+              "2": "ESA"
+            },
+            {
+              "3": "FGM"
+            },
+            {
+              "4": "FGM"
+            }
+          ]
+        },
+        {
+          "LINK_TITLE": [
+            {
+              "0": "Data product detailed description"
+            },
+            {
+              "1": "Instrument description including data modes, products and caveats"
+            },
+            {
+              "2": "Processing history and the THEMIS mission website including TDAS s/w"
+            },
+            {
+              "3": "Instrument description including data modes, products and caveats"
+            },
+            {
+              "4": "Processing history and the THEMIS mission website including TDAS s/w"
+            }
+          ]
+        },
+        {
+          "HTTP_LINK": [
+            {
+              "0": "https://spdf.gsfc.nasa.gov/pub/data/themis/thb/l2/merged/ascii/00readme_themisb.txt"
+            },
+            {
+              "1": "http://themis.ssl.berkeley.edu/instrument_esa.shtml"
+            },
+            {
+              "2": "http://themis.ssl.berkeley.edu/esa_proc_history.shtml"
+            },
+            {
+              "3": "http://themis.ssl.berkeley.edu/instrument_fgm.shtml"
+            },
+            {
+              "4": "http://themis.ssl.berkeley.edu/fgm_proc_history.shtml"
+            }
+          ]
+        },
+        {
+          "File_naming_convention": [
+            {
+              "0": "source_descriptor_datatype"
+            }
+          ]
+        },
+        {
+          "Caveats": [
+            {
+              "0": "See THEMIS website for caveats"
+            }
+          ]
+        },
+        {
+          "Validity": [
+            {
+              "0": "to be validated"
+            }
+          ]
+        },
+        {
+          "Validator": [
+            {
+              "0": "tbd"
+            }
+          ]
+        },
+        {
+          "Validate": [
+            {
+              "0": "Compatible with the ISTP CDF Standards"
+            }
+          ]
+        },
+        {
+          "Inst_mod": [
+            {
+              "0": "THM>xxxx"
+            }
+          ]
+        },
+        {
+          "Parents": [
+            {
+              "0": "xxxx"
+            }
+          ]
+        },
+        {
+          "Inst_settings": [
+            {
+              "0": "Not used"
+            }
+          ]
+        },
+        {
+          "Software_version": [
+            {
+              "0": "xxxx"
+            }
+          ]
+        },
+        {
+          "Sc_pot_source": [
+            {
+              "0": "None"
+            }
+          ]
+        },
+        {
+          "spase_DatasetResourceID": [
+            {
+              "0": "spase://NASA/NumericalData/THEMIS/B/ESA.FGM/PT96S"
+            }
+          ]
+        },
+        {
+          "DOI": [
+            {
+              "0": "https://doi.org/10.48322/kyn5-0772"
+            }
+          ]
+        }
+      ],
+      "CDFVariables": [
+        {
+          "Epoch": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_EPOCH"
+                },
+                {
+                  "NumElements": 1
+                },
+                {
+                  "NumDims": 0
+                },
+                {
+                  "RecVariance": "VARY"
+                },
+                {
+                  "PadValue": "0000-01-01T00:00:00.000"
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "FILLVAL": "9999-12-31T23:59:59.999"
+                },
+                {
+                  "UNITS": "DD-MMM-YYYY_hr:mm"
+                },
+                {
+                  "VAR_TYPE": "support_data"
+                },
+                {
+                  "CATDESC": "Epoch Time"
+                },
+                {
+                  "FIELDNAM": "Epoch Time"
+                },
+                {
+                  "VALIDMIN": "2007-01-01T00:00:00.000"
+                },
+                {
+                  "VALIDMAX": "2050-12-31T23:59:59.000"
+                },
+                {
+                  "SCALEMIN": "2007-01-01T00:00:00.000"
+                },
+                {
+                  "SCALEMAX": "2050-12-31T23:59:59.000"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "thb_fgs_btotal": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_FLOAT"
+                },
+                {
+                  "NumElements": 1
+                },
+                {
+                  "NumDims": 0
+                },
+                {
+                  "RecVariance": "VARY"
+                },
+                {
+                  "PadValue": -1e+30
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "DISPLAY_TYPE": "time_series"
+                },
+                {
+                  "FILLVAL": -1e+31
+                },
+                {
+                  "FORMAT": "f8.2"
+                },
+                {
+                  "UNITS": "1/N SUM |B|, nT"
+                },
+                {
+                  "DEPEND_0": "Epoch"
+                },
+                {
+                  "VAR_TYPE": "data"
+                },
+                {
+                  "PROPERTY": "scalar"
+                },
+                {
+                  "SC_ID": "b"
+                },
+                {
+                  "CATDESC": "FGS (spin-resolution/~3 sec) magnetic field B magnitude "
+                },
+                {
+                  "FIELDNAM": "FGS-B Magnetic Field, nT units"
+                },
+                {
+                  "VALIDMIN": 0.0
+                },
+                {
+                  "VALIDMAX": 25000.0
+                },
+                {
+                  "TENSOR_ORDER": "0"
+                },
+                {
+                  "SI_CONVERSION": "1e-9>T"
+                },
+                {
+                  "LABLAXIS": "FGS-B B_total"
+                },
+                {
+                  "DICT_KEY": "magnetic_field"
+                },
+                {
+                  "VAR_NOTES": "Units are in nanotesla"
+                },
+                {
+                  "AVG_TYPE": "standard"
+                },
+                {
+                  "SCALE_TYP": "linear"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "thb_fgs_gse": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_FLOAT"
+                },
+                {
+                  "NumElements": 1
+                },
+                {
+                  "NumDims": 1
+                },
+                {
+                  "DimSizes": [
+                    3
+                  ]
+                },
+                {
+                  "RecVariance": "VARY"
+                },
+                {
+                  "DimVariances": [
+                    "VARY"
+                  ]
+                },
+                {
+                  "PadValue": -1e+30
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "DISPLAY_TYPE": "time_series"
+                },
+                {
+                  "FILLVAL": -1e+31
+                },
+                {
+                  "FORMAT": "f8.2"
+                },
+                {
+                  "UNITS": "nT"
+                },
+                {
+                  "DEPEND_0": "Epoch"
+                },
+                {
+                  "VAR_TYPE": "data"
+                },
+                {
+                  "PROPERTY": "vector"
+                },
+                {
+                  "SC_ID": "b"
+                },
+                {
+                  "CATDESC": "FGS magnetic  field B in XYZ GSE Coordinates"
+                },
+                {
+                  "FIELDNAM": "BXYZ GSE Coordinate, nT units"
+                },
+                {
+                  "VALIDMIN": [
+                    -25000.0,
+                    -25000.0,
+                    -25000.0
+                  ]
+                },
+                {
+                  "VALIDMAX": [
+                    25000.0,
+                    25000.0,
+                    25000.0
+                  ]
+                },
+                {
+                  "TENSOR_ORDER": "1"
+                },
+                {
+                  "SI_CONVERSION": "1e-9>T"
+                },
+                {
+                  "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic"
+                },
+                {
+                  "DEPEND_1": "thb_fgs_compno"
+                },
+                {
+                  "DICT_KEY": "magnetic_field>vector_GSE"
+                },
+                {
+                  "REPRESENTATION_1": "Rep_xyz"
+                },
+                {
+                  "VAR_NOTES": "Units are in nanotesla"
+                },
+                {
+                  "LABL_PTR_1": "thb_fgs_labl"
+                },
+                {
+                  "AVG_TYPE": "standard"
+                },
+                {
+                  "SCALE_TYP": "linear"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "thb_peif_densityQ": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_REAL4"
+                },
+                {
+                  "NumElements": 1
+                },
+                {
+                  "NumDims": 0
+                },
+                {
+                  "RecVariance": "VARY"
+                },
+                {
+                  "PadValue": -1e+30
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "DISPLAY_TYPE": "time_series"
+                },
+                {
+                  "FILLVAL": -1e+31
+                },
+                {
+                  "FORMAT": "f7.2"
+                },
+                {
+                  "UNITS": "n/cc"
+                },
+                {
+                  "DEPEND_0": "Epoch"
+                },
+                {
+                  "VAR_TYPE": "data"
+                },
+                {
+                  "PROPERTY": "scalar"
+                },
+                {
+                  "SC_ID": "b"
+                },
+                {
+                  "CATDESC": "(Good data only) ESA Full (High Angular Resolution, few minute time res.) Mode, Ion Density "
+                },
+                {
+                  "FIELDNAM": "N_ion Full ESA-B"
+                },
+                {
+                  "VALIDMIN": 0.0
+                },
+                {
+                  "VALIDMAX": 10000000000.0
+                },
+                {
+                  "TENSOR_ORDER": 0
+                },
+                {
+                  "SI_CONVERSION": "1.0e6>m^-3"
+                },
+                {
+                  "LABLAXIS": "N_ion Full ESA-B"
+                },
+                {
+                  "SCALETYP": "log"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "thb_peif_vthermalQ": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_REAL4"
+                },
+                {
+                  "NumElements": 1
+                },
+                {
+                  "NumDims": 0
+                },
+                {
+                  "RecVariance": "VARY"
+                },
+                {
+                  "PadValue": -1e+30
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "DISPLAY_TYPE": "time_series"
+                },
+                {
+                  "FILLVAL": -1e+31
+                },
+                {
+                  "FORMAT": "f7.1"
+                },
+                {
+                  "UNITS": "km/s"
+                },
+                {
+                  "DEPEND_0": "Epoch"
+                },
+                {
+                  "VAR_TYPE": "data"
+                },
+                {
+                  "PROPERTY": "scalar"
+                },
+                {
+                  "SC_ID": "b"
+                },
+                {
+                  "CATDESC": "-----Ion Thermal Velocity "
+                },
+                {
+                  "FIELDNAM": "Vth_ion Full ESA-B"
+                },
+                {
+                  "VALIDMIN": 0.0
+                },
+                {
+                  "VALIDMAX": 10000000000.0
+                },
+                {
+                  "TENSOR_ORDER": 0
+                },
+                {
+                  "SI_CONVERSION": "1.0e3>m s^-1"
+                },
+                {
+                  "LABLAXIS": "Vth_ion Full ESA-B"
+                },
+                {
+                  "SCALETYP": "log"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "thb_peif_vflowspeedQ": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_REAL4"
+                },
+                {
+                  "NumElements": 1
+                },
+                {
+                  "NumDims": 0
+                },
+                {
+                  "RecVariance": "VARY"
+                },
+                {
+                  "PadValue": -1e+30
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "DISPLAY_TYPE": "time_series"
+                },
+                {
+                  "FILLVAL": -1e+31
+                },
+                {
+                  "FORMAT": "f8.1"
+                },
+                {
+                  "UNITS": "km/s"
+                },
+                {
+                  "DEPEND_0": "Epoch"
+                },
+                {
+                  "VAR_TYPE": "data"
+                },
+                {
+                  "PROPERTY": "scalar"
+                },
+                {
+                  "SC_ID": "b"
+                },
+                {
+                  "CATDESC": "-----Plasma flow speed "
+                },
+                {
+                  "FIELDNAM": "Vth_ion Full ESA-B"
+                },
+                {
+                  "VALIDMIN": 0.0
+                },
+                {
+                  "VALIDMAX": 10000.0
+                },
+                {
+                  "TENSOR_ORDER": 0
+                },
+                {
+                  "SI_CONVERSION": "1.0e3>m s^-1"
+                },
+                {
+                  "LABLAXIS": "Vth_ion Full ESA-B"
+                },
+                {
+                  "SCALETYP": "log"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "thb_peif_velocity_gseQ": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_REAL4"
+                },
+                {
+                  "NumElements": 1
+                },
+                {
+                  "NumDims": 1
+                },
+                {
+                  "DimSizes": [
+                    3
+                  ]
+                },
+                {
+                  "RecVariance": "VARY"
+                },
+                {
+                  "DimVariances": [
+                    "VARY"
+                  ]
+                },
+                {
+                  "PadValue": -1e+30
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "DISPLAY_TYPE": "time_series"
+                },
+                {
+                  "FILLVAL": -1e+31
+                },
+                {
+                  "FORMAT": "f8.1"
+                },
+                {
+                  "UNITS": "km/s"
+                },
+                {
+                  "DEPEND_0": "Epoch"
+                },
+                {
+                  "VAR_TYPE": "data"
+                },
+                {
+                  "PROPERTY": "vector"
+                },
+                {
+                  "SC_ID": "b"
+                },
+                {
+                  "CATDESC": "-----Ion Velocity Vector in GSE "
+                },
+                {
+                  "FIELDNAM": "Ion Velocity Vector in GSE"
+                },
+                {
+                  "VALIDMIN": [
+                    -10000.0,
+                    -10000.0,
+                    -10000.0
+                  ]
+                },
+                {
+                  "VALIDMAX": [
+                    10000.0,
+                    10000.0,
+                    10000.0
+                  ]
+                },
+                {
+                  "TENSOR_ORDER": 1
+                },
+                {
+                  "SI_CONVERSION": "1.0e3>m s^-1"
+                },
+                {
+                  "SCALETYP": "linear"
+                },
+                {
+                  "COORDINATE_SYSTEM": "GSE"
+                },
+                {
+                  "DEPEND_1": "thb_peif_velocity_gse_compno"
+                },
+                {
+                  "REPRESENTATION_1": "Rep_xyz_gse"
+                },
+                {
+                  "LABL_PTR_1": "thb_peif_velocity_gse_labl"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "XYZ_GSE": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_REAL4"
+                },
+                {
+                  "NumElements": 1
+                },
+                {
+                  "NumDims": 1
+                },
+                {
+                  "DimSizes": [
+                    3
+                  ]
+                },
+                {
+                  "RecVariance": "VARY"
+                },
+                {
+                  "DimVariances": [
+                    "VARY"
+                  ]
+                },
+                {
+                  "PadValue": -1e+30
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "DISPLAY_TYPE": "time_series"
+                },
+                {
+                  "FILLVAL": -1e+31
+                },
+                {
+                  "FORMAT": "f9.3"
+                },
+                {
+                  "UNITS": "Re"
+                },
+                {
+                  "DEPEND_0": "Epoch"
+                },
+                {
+                  "VAR_TYPE": "data"
+                },
+                {
+                  "CATDESC": "XYZ in GSE coordinates (time-series)"
+                },
+                {
+                  "FIELDNAM": "XYZ_GSE"
+                },
+                {
+                  "VALIDMIN": -10000.0
+                },
+                {
+                  "VALIDMAX": 10000.0
+                },
+                {
+                  "SCALEMIN": -10000.0
+                },
+                {
+                  "SCALEMAX": 10000.0
+                },
+                {
+                  "DEPEND_1": "cartesian"
+                },
+                {
+                  "DICT_KEY": "."
+                },
+                {
+                  "VAR_NOTES": "."
+                },
+                {
+                  "LABL_PTR_1": "xyz_lbl"
+                },
+                {
+                  "AVG_TYPE": "."
+                },
+                {
+                  "MONOTON": "FALSE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "XYZ_SSE": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_REAL4"
+                },
+                {
+                  "NumElements": 1
+                },
+                {
+                  "NumDims": 1
+                },
+                {
+                  "DimSizes": [
+                    3
+                  ]
+                },
+                {
+                  "RecVariance": "VARY"
+                },
+                {
+                  "DimVariances": [
+                    "VARY"
+                  ]
+                },
+                {
+                  "PadValue": -1e+30
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "DISPLAY_TYPE": "time_series"
+                },
+                {
+                  "FILLVAL": -1e+31
+                },
+                {
+                  "FORMAT": "f9.3"
+                },
+                {
+                  "UNITS": "Rm"
+                },
+                {
+                  "DEPEND_0": "Epoch"
+                },
+                {
+                  "VAR_TYPE": "data"
+                },
+                {
+                  "CATDESC": "XYZ in SSE coordinates (time-series)"
+                },
+                {
+                  "FIELDNAM": "XYZ_SSE"
+                },
+                {
+                  "VALIDMIN": -10000.0
+                },
+                {
+                  "VALIDMAX": 10000.0
+                },
+                {
+                  "SCALEMIN": -10000.0
+                },
+                {
+                  "SCALEMAX": 10000.0
+                },
+                {
+                  "DEPEND_1": "cartesian"
+                },
+                {
+                  "DICT_KEY": "."
+                },
+                {
+                  "VAR_NOTES": "."
+                },
+                {
+                  "LABL_PTR_1": "xyz_lbl"
+                },
+                {
+                  "AVG_TYPE": "."
+                },
+                {
+                  "MONOTON": "FALSE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "thb_fgs_compno": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_INT4"
+                },
+                {
+                  "NumElements": 1
+                },
+                {
+                  "NumDims": 1
+                },
+                {
+                  "DimSizes": [
+                    3
+                  ]
+                },
+                {
+                  "RecVariance": "NOVARY"
+                },
+                {
+                  "DimVariances": [
+                    "VARY"
+                  ]
+                },
+                {
+                  "NumWrittenRecords": 1
+                },
+                {
+                  "PadValue": -2147483647
+                },
+                {
+                  "BlockingFactor": 1
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "FILLVAL": -2147483648
+                },
+                {
+                  "FORMAT": "i2"
+                },
+                {
+                  "VAR_TYPE": "metadata"
+                },
+                {
+                  "CATDESC": "XYZ Component Number"
+                },
+                {
+                  "FIELDNAM": "thb_fgs_dsl_compno"
+                },
+                {
+                  "VALIDMIN": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                {
+                  "VALIDMAX": [
+                    3,
+                    3,
+                    3
+                  ]
+                },
+                {
+                  "SCALETYP": "linear"
+                },
+                {
+                  "DICT_KEY": "number"
+                },
+                {
+                  "LABL_PTR_1": "thb_fgs_labl"
+                }
+              ]
+            },
+            {
+              "VarData": [
+                1,
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "thb_fgs_labl": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_CHAR"
+                },
+                {
+                  "NumElements": 8
+                },
+                {
+                  "NumDims": 1
+                },
+                {
+                  "DimSizes": [
+                    3
+                  ]
+                },
+                {
+                  "RecVariance": "NOVARY"
+                },
+                {
+                  "DimVariances": [
+                    "VARY"
+                  ]
+                },
+                {
+                  "NumWrittenRecords": 1
+                },
+                {
+                  "PadValue": " "
+                },
+                {
+                  "BlockingFactor": 1
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "FORMAT": "a8"
+                },
+                {
+                  "VAR_TYPE": "metadata"
+                },
+                {
+                  "CATDESC": "thb_fgs_dsl_labl"
+                },
+                {
+                  "FIELDNAM": "thb_fgs_dsl_labl"
+                },
+                {
+                  "DICT_KEY": "label"
+                }
+              ]
+            },
+            {
+              "VarData": [
+                "Bx FGS-B",
+                "By FGS-B",
+                "Bz FGS-B"
+              ]
+            }
+          ]
+        },
+        {
+          "thb_peif_velocity_gse_compno": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_INT4"
+                },
+                {
+                  "NumElements": 1
+                },
+                {
+                  "NumDims": 1
+                },
+                {
+                  "DimSizes": [
+                    3
+                  ]
+                },
+                {
+                  "RecVariance": "NOVARY"
+                },
+                {
+                  "DimVariances": [
+                    "VARY"
+                  ]
+                },
+                {
+                  "NumWrittenRecords": 1
+                },
+                {
+                  "PadValue": -2147483647
+                },
+                {
+                  "BlockingFactor": 1
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "FILLVAL": -2147483648
+                },
+                {
+                  "FORMAT": "i2"
+                },
+                {
+                  "VAR_TYPE": "metadata"
+                },
+                {
+                  "CATDESC": "thb_peif_velocity_gse_compno"
+                },
+                {
+                  "FIELDNAM": "thb_peif_velocity_gse_compno"
+                },
+                {
+                  "VALIDMIN": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                {
+                  "VALIDMAX": [
+                    3,
+                    3,
+                    3
+                  ]
+                },
+                {
+                  "DICT_KEY": "number"
+                },
+                {
+                  "LABL_PTR_1": "thb_peif_velocity_gse_labl"
+                }
+              ]
+            },
+            {
+              "VarData": [
+                1,
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "thb_peif_velocity_gse_labl": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_CHAR"
+                },
+                {
+                  "NumElements": 21
+                },
+                {
+                  "NumDims": 1
+                },
+                {
+                  "DimSizes": [
+                    3
+                  ]
+                },
+                {
+                  "RecVariance": "NOVARY"
+                },
+                {
+                  "DimVariances": [
+                    "VARY"
+                  ]
+                },
+                {
+                  "NumWrittenRecords": 1
+                },
+                {
+                  "PadValue": " "
+                },
+                {
+                  "BlockingFactor": 1
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "FORMAT": "a21"
+                },
+                {
+                  "VAR_TYPE": "metadata"
+                },
+                {
+                  "CATDESC": "ESA Ion Velocity GSE"
+                },
+                {
+                  "FIELDNAM": "ESA Ion Velocity GSE"
+                },
+                {
+                  "DICT_KEY": "label"
+                }
+              ]
+            },
+            {
+              "VarData": [
+                "Vx_ion GSE Full ESA-B",
+                "Vy_ion GSE Full ESA-B",
+                "Vz_ion GSE Full ESA-B"
+              ]
+            }
+          ]
+        },
+        {
+          "xyz_lbl": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_CHAR"
+                },
+                {
+                  "NumElements": 1
+                },
+                {
+                  "NumDims": 1
+                },
+                {
+                  "DimSizes": [
+                    3
+                  ]
+                },
+                {
+                  "RecVariance": "NOVARY"
+                },
+                {
+                  "DimVariances": [
+                    "VARY"
+                  ]
+                },
+                {
+                  "NumWrittenRecords": 1
+                },
+                {
+                  "PadValue": " "
+                },
+                {
+                  "BlockingFactor": 1
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "DISPLAY_TYPE": "TIME_SERIES"
+                },
+                {
+                  "FORMAT": "a2"
+                },
+                {
+                  "VAR_TYPE": "metadata"
+                },
+                {
+                  "CATDESC": "Labels for XYZ."
+                },
+                {
+                  "FIELDNAM": "Labels for XYZ."
+                },
+                {
+                  "DICT_KEY": "label"
+                },
+                {
+                  "VAR_NOTES": "."
+                },
+                {
+                  "AVG_TYPE": "."
+                }
+              ]
+            },
+            {
+              "VarData": [
+                "x",
+                "y",
+                "z"
+              ]
+            }
+          ]
+        },
+        {
+          "cartesian": [
+            {
+              "VarDescription": [
+                {
+                  "DataType": "CDF_CHAR"
+                },
+                {
+                  "NumElements": 1
+                },
+                {
+                  "NumDims": 1
+                },
+                {
+                  "DimSizes": [
+                    3
+                  ]
+                },
+                {
+                  "RecVariance": "NOVARY"
+                },
+                {
+                  "DimVariances": [
+                    "VARY"
+                  ]
+                },
+                {
+                  "NumWrittenRecords": 1
+                },
+                {
+                  "PadValue": " "
+                },
+                {
+                  "BlockingFactor": 1
+                }
+              ]
+            },
+            {
+              "VarAttributes": [
+                {
+                  "DISPLAY_TYPE": "TIME_SERIES"
+                },
+                {
+                  "FORMAT": "a2"
+                },
+                {
+                  "VAR_TYPE": "metadata"
+                },
+                {
+                  "CATDESC": "Components in Cartesian Coord."
+                },
+                {
+                  "FIELDNAM": "Components in Cartesian Coord."
+                },
+                {
+                  "DICT_KEY": "label"
+                },
+                {
+                  "VAR_NOTES": "."
+                },
+                {
+                  "AVG_TYPE": "."
+                }
+              ]
+            },
+            {
+              "VarData": [
+                "x",
+                "y",
+                "z"
+              ]
+            }
+          ]
+        }
+      ],
+      "EmptyAttributes": [
+        {
+          "VariableAttributes": [
+            "VIRTUAL",
+            "FUNCT",
+            "COMPONENT_0",
+            "COMPONENT_1"
+          ]
+        }
+      ]
+    }
+  },
+  "request": {
+    "url": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/thb_l2_merged_00000000_v01.json",
+    "log": "\n  status_code: 200\n  from_cache:  False\n  revalidated: False\n  is_expired:  False\n  timeout:     30\n  max_retries: 5\n  user headers: None\n  cached_session_options: None\n  cache_key:   50d34cda2d93eee9\n  cache_file:  ./data/CachedSession/master/50d34cda2d93eee9.json\n  cache_file_stat: \n    st_atime: Sat, 26 Apr 2025 14:23:15.726125 GMT\n    st_mtime: Sat, 26 Apr 2025 14:23:15.728755 GMT\n    st_ctime: Sat, 26 Apr 2025 14:23:15.728755 GMT\n  Request Headers:\n    User-Agent: python-requests/2.31.0\n    Accept-Encoding: gzip, deflate, br\n    Accept: */*\n    Connection: keep-alive\n  Response Headers:\n    Date: Sat, 26 Apr 2025 14:23:15 GMT\n    Server: Apache\n    Content-Security-Policy: frame-ancestors 'self' *.gsfc.nasa.gov;\n    Access-Control-Allow-Origin: *\n    Access-Control-Allow-Methods: GET\n    Last-Modified: Thu, 27 Mar 2025 22:21:21 GMT\n    ETag: \"412b-6315a5f9aa530\"\n    Accept-Ranges: bytes\n    Content-Length: 16683\n    Keep-Alive: timeout=5, max=100\n    Connection: Keep-Alive\n    Content-Type: application/json",
+    "diff": null,
+    "file": "./data/CachedSession/master/50d34cda2d93eee9.json",
+    "file-header": {
+      "Date": "Sat, 26 Apr 2025 14:23:15 GMT",
+      "Server": "Apache",
+      "Content-Security-Policy": "frame-ancestors 'self' *.gsfc.nasa.gov;",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET",
+      "Last-Modified": "Thu, 27 Mar 2025 22:21:21 GMT",
+      "ETag": "\"412b-6315a5f9aa530\"",
+      "Accept-Ranges": "bytes",
+      "Content-Length": "16683",
+      "Keep-Alive": "timeout=5, max=100",
+      "Connection": "Keep-Alive",
+      "Content-Type": "application/json"
+    }
+  }
+}

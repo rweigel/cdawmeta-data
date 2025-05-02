@@ -6,10 +6,7 @@
     "stopDate": "2024-10-09T04:17:10Z",
     "sampleStartDate": "2024-10-08T18:11:48Z",
     "sampleStopDate": "2024-10-08T23:59:55Z",
-    "cadence": "PT55.924138S",
-    "x_cadence_fraction": 0.21271393643031786,
-    "x_cadence_note": "Cadence based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/psp/sweap/spi/l3/spi_sf0a_l3_mom/2018/psp_swp_spi_sf0a_l3_mom_20181002_v04.cdf. This most common cadence occurred for 21.2714% of the 174 timesteps. Cadence = 55924138496 [ns] = PT55.924138S.",
-    "maxRequestDuration": "P12DT2H5M50S",
+    "maxRequestDuration": "PT1044350S",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPI_SF0A_L3_MOM",
     "contact": "J. Kasper @ Univ. of Michigan",
     "parameters": [
@@ -30,10 +27,11 @@
         "description": "Quality Flag",
         "fill": "65535",
         "units": null,
+        "x_label": "Quality Flag",
         "x_cdf_FORMAT": "I10",
         "x_cdf_FIELDNAM": "Quality Flag",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -43,12 +41,13 @@
         "description": "Partial Moment Density",
         "fill": "NaN",
         "units": "cm^-3",
+        "x_label": "Density",
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Density",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -58,17 +57,20 @@
         "description": "Partial Moment Velocity in Instrument Coordinates",
         "fill": "NaN",
         "units": "km/s",
-        "x_label": [
-          "Vx Inst",
-          "Vy Inst",
-          "Vz Inst"
+        "x_label": "Vx;Vy;Vz",
+        "x_labelComponents": [
+          [
+            "Vx Inst",
+            "Vy Inst",
+            "Vz Inst"
+          ]
         ],
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Velocity (Instrument)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -81,17 +83,20 @@
         "description": "Partial Moment Velocity in Spacecraft Coordinates",
         "fill": "NaN",
         "units": "km/s",
-        "x_label": [
-          "Vx SC",
-          "Vy SC",
-          "Vz SC"
+        "x_label": "Vx;Vy;Vz",
+        "x_labelComponents": [
+          [
+            "Vx SC",
+            "Vy SC",
+            "Vz SC"
+          ]
         ],
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Velocity (Spacecraft)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -104,17 +109,20 @@
         "description": "Partial Moment Velocity in RTN Coordinates and Sun reference frame",
         "fill": "NaN",
         "units": "km/s",
-        "x_label": [
-          "Vx RTN",
-          "Vy RTN",
-          "Vz RTN"
+        "x_label": "Vx;Vy;Vz",
+        "x_labelComponents": [
+          [
+            "Vx RTN",
+            "Vy RTN",
+            "Vz RTN"
+          ]
         ],
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Velocity (RTN_SUN)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -127,20 +135,23 @@
         "description": "Partial Moment Temperature Tensor in instrument frame",
         "fill": "NaN",
         "units": "eV",
-        "x_label": [
-          "Txx",
-          "Tyy",
-          "Tzz",
-          "Txy",
-          "Txz",
-          "Tyz"
+        "x_label": "Txx;Tyy;Tzz;Txy;Txz;Tyz",
+        "x_labelComponents": [
+          [
+            "Txx",
+            "Tyy",
+            "Tzz",
+            "Txy",
+            "Txz",
+            "Tyz"
+          ]
         ],
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Temperature Tensor (Instrument)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           6
@@ -153,12 +164,13 @@
         "description": "Average of Trace of Partial Moment Temperature Tensor",
         "fill": "NaN",
         "units": "eV",
+        "x_label": "Temperature",
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Temperature",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -168,12 +180,13 @@
         "description": "Differential Energy Flux vs Energy",
         "fill": "NaN",
         "units": "eV/cm2-s-ster-eV",
+        "x_label": "Eflux vs Energy",
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Eflux vs Energy",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           32
@@ -186,12 +199,13 @@
         "description": "Differential Energy Flux vs Theta",
         "fill": "NaN",
         "units": "eV/cm2-s-ster-eV",
+        "x_label": "Eflux vs Theta",
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Eflux vs Theta",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           8
@@ -204,12 +218,13 @@
         "description": "Differential Energy Flux vs Phi",
         "fill": "NaN",
         "units": "eV/cm2-s-ster-eV",
+        "x_label": "Eflux vs Phi",
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Eflux vs Phi",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           8
@@ -222,12 +237,13 @@
         "description": "Spacecraft Distance to the Sun",
         "fill": "NaN",
         "units": "km",
+        "x_label": "Sun Distance",
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Sun Distance",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -237,12 +253,13 @@
         "description": "Spacecraft Distance to Venus",
         "fill": "NaN",
         "units": "km",
+        "x_label": "Venus Distance",
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Venus Distance",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch"
       },
       {
@@ -252,17 +269,20 @@
         "description": "Spacecraft Velocity in RTN Coordinates and Sun reference frame",
         "fill": "NaN",
         "units": "km/s",
-        "x_label": [
-          "SC Vx RTN",
-          "SC Vy RTN",
-          "SC Vz RTN"
+        "x_label": "Vx;Vy;Vz",
+        "x_labelComponents": [
+          [
+            "SC Vx RTN",
+            "SC Vy RTN",
+            "SC Vz RTN"
+          ]
         ],
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Spacecraft Velocity (RTN_SUN)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -275,18 +295,21 @@
         "description": "Quaternion for Rotating from Spacecraft to RTN Coordinates",
         "fill": "NaN",
         "units": null,
-        "x_label": [
-          "Q1",
-          "Q2",
-          "Q3",
-          "Q4"
+        "x_label": "Q1;Q2;Q3;Q4",
+        "x_labelComponents": [
+          [
+            "Q1",
+            "Q2",
+            "Q3",
+            "Q4"
+          ]
         ],
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Quaternion",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           4
@@ -299,17 +322,20 @@
         "description": "Magnetic Field in Spacecraft Coordinates",
         "fill": "NaN",
         "units": "nT",
-        "x_label": [
-          "Bx SC",
-          "By SC",
-          "Bz SC"
+        "x_label": "Bx;By;Bz",
+        "x_labelComponents": [
+          [
+            "Bx SC",
+            "By SC",
+            "Bz SC"
+          ]
         ],
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Magnetic Field (Spacecraft)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3
@@ -322,17 +348,20 @@
         "description": "Magnetic Field in Instrument Coordinates",
         "fill": "NaN",
         "units": "nT",
-        "x_label": [
-          "Bx Inst",
-          "By Inst",
-          "Bz Inst"
+        "x_label": "Bx;By;Bz",
+        "x_labelComponents": [
+          [
+            "Bx Inst",
+            "By Inst",
+            "Bz Inst"
+          ]
         ],
         "x_format": ".4e",
         "x_fractionDigits": "4",
         "x_cdf_FORMAT": "E12.4",
         "x_cdf_FIELDNAM": "Magnetic Field (Instrument)",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           3

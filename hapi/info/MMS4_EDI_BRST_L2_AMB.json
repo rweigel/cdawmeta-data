@@ -7,9 +7,6 @@
       "stopDate": "2018-06-11T07:43:24Z",
       "sampleStartDate": "2016-09-21T18:16:34Z",
       "sampleStopDate": "2016-09-21T18:16:35Z",
-      "cadence": "PT1.000012S",
-      "x_cadence_fraction": 0.5526992287917738,
-      "x_cadence_note": "Cadence based on variable 'epoch_timetag' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/mms/mms4/edi/brst/l2/amb/2015/09/mms4_edi_brst_l2_amb_20150902133904_v3.2.1.cdf. This most common cadence occurred for 55.2699% of the 215 timesteps. Cadence = 1000012000 [ns] = PT1.000012S.",
       "maxRequestDuration": "PT50S",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDI_BRST_L2_AMB",
       "contact": "Roy Torbert, Hans Vaith @ UNH",
@@ -31,6 +28,7 @@
           "description": "Optics state",
           "fill": "255",
           "units": null,
+          "x_label": "Optics State",
           "x_cdf_FORMAT": "I4",
           "x_cdf_FIELDNAM": "Optics state",
           "x_cdf_VIRTUAL": false,
@@ -43,6 +41,7 @@
           "description": "---> GDU1 energy",
           "fill": "65535",
           "units": "eV",
+          "x_label": "GDU1 Energy",
           "x_cdf_FORMAT": "I4",
           "x_cdf_FIELDNAM": "GDU1 Energy",
           "x_cdf_VIRTUAL": false,
@@ -55,6 +54,7 @@
           "description": "---> GDU2 energy",
           "fill": "65535",
           "units": "eV",
+          "x_label": "GDU2 Energy",
           "x_cdf_FORMAT": "I4",
           "x_cdf_FIELDNAM": "GDU2 Energy",
           "x_cdf_VIRTUAL": false,
@@ -71,9 +71,6 @@
       "stopDate": "2018-06-11T07:43:24Z",
       "sampleStartDate": "2016-09-21T18:16:34Z",
       "sampleStopDate": "2016-09-21T18:16:35Z",
-      "cadence": "PT0.000976563S",
-      "x_cadence_fraction": 0.5000012520063402,
-      "x_cadence_note": "Cadence based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/mms/mms4/edi/brst/l2/amb/2015/09/mms4_edi_brst_l2_amb_20150902133904_v3.2.1.cdf. This most common cadence occurred for 50.0001% of the 199680 timesteps. Cadence = 976563 [ns] = PT0.000976563S.",
       "maxRequestDuration": "PT50S",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDI_BRST_L2_AMB",
       "contact": "Roy Torbert, Hans Vaith @ UNH",
@@ -95,21 +92,23 @@
           "description": "Flux for electrons with trajectories given by Traj-1 0PA",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux1 0PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "0 degree electron flux1",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
           "name": "mms4_edi_flux1_0_brst_l2_noerr",
           "type": "double",
           "x_cdf_DataType": "CDF_FLOAT",
-          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-1 0PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux1_0_brst_l2']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-1 0PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux1_0_brst_l2']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux1 0PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
@@ -119,7 +118,7 @@
           "x_cdf_COMPONENTS": [
             "mms4_edi_flux1_0_brst_l2"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimensionnoerrorbars",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -129,12 +128,13 @@
           "description": "---> Error for flux1 0-degree pitch angle electron flux.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-2",
+          "x_label": "Err Elec Flux1 0PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "Flux1 error for 0PA electrons",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -144,21 +144,23 @@
           "description": "Flux for electrons with trajectories given by Traj-2 0PA",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux2 0PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "0 degree electron flux2",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
           "name": "mms4_edi_flux2_0_brst_l2_noerr",
           "type": "double",
           "x_cdf_DataType": "CDF_FLOAT",
-          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-2 0PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux2_0_brst_l2']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-2 0PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux2_0_brst_l2']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux2 0PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
@@ -168,7 +170,7 @@
           "x_cdf_COMPONENTS": [
             "mms4_edi_flux2_0_brst_l2"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimensionnoerrorbars",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -178,12 +180,13 @@
           "description": "---> Error for flux2 0-degree pitch angle electron flux.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-2",
+          "x_label": "Err Elec Flux2 0PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "Flux2 error for 0PA electrons",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -193,21 +196,23 @@
           "description": "Flux for electrons with trajectories given by Traj-3 0PA",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux3 0PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "0 degree electron flux3",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
           "name": "mms4_edi_flux3_0_brst_l2_noerr",
           "type": "double",
           "x_cdf_DataType": "CDF_FLOAT",
-          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-3 0PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux3_0_brst_l2']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-3 0PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux3_0_brst_l2']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux3 0PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
@@ -217,7 +222,7 @@
           "x_cdf_COMPONENTS": [
             "mms4_edi_flux3_0_brst_l2"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimensionnoerrorbars",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -227,12 +232,13 @@
           "description": "---> Error for flux3 0-degree pitch angle electron flux.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-2",
+          "x_label": "Err Elec Flux3 0PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "Flux3 error for 0PA electrons",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -242,21 +248,23 @@
           "description": "Flux for electrons with trajectories given by Traj-4 0PA",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux4 0PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "0 degree electron flux4",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
           "name": "mms4_edi_flux4_0_brst_l2_noerr",
           "type": "double",
           "x_cdf_DataType": "CDF_FLOAT",
-          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-4 0PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux4_0_brst_l2']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-4 0PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux4_0_brst_l2']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux4 0PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
@@ -266,7 +274,7 @@
           "x_cdf_COMPONENTS": [
             "mms4_edi_flux4_0_brst_l2"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimensionnoerrorbars",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -276,12 +284,13 @@
           "description": "---> Error for flux4 0-degree pitch angle electron flux.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-2",
+          "x_label": "Err Elec Flux4 0PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "Flux4 error for 0PA electrons",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -291,21 +300,23 @@
           "description": "Flux for electrons with trajectories given by Traj-1 180PA",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux1 180PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "180 degree electron flux1",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
           "name": "mms4_edi_flux1_180_brst_l2_noerr",
           "type": "double",
           "x_cdf_DataType": "CDF_FLOAT",
-          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-1 180PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux1_180_brst_l2']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-1 180PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux1_180_brst_l2']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux1 180PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
@@ -315,7 +326,7 @@
           "x_cdf_COMPONENTS": [
             "mms4_edi_flux1_180_brst_l2"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimensionnoerrorbars",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -325,12 +336,13 @@
           "description": "---> Error for flux1 180-degree pitch angle electron flux.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-2",
+          "x_label": "Error Elec Flux1 180PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "Flux1 error for 180PA electrons",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -340,21 +352,23 @@
           "description": "Flux for electrons with trajectories given by traj2 180PA",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux2 180PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "180 degree electron flux2",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
           "name": "mms4_edi_flux2_180_brst_l2_noerr",
           "type": "double",
           "x_cdf_DataType": "CDF_FLOAT",
-          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-2 180PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux2_180_brst_l2']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-2 180PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux2_180_brst_l2']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux2 180PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
@@ -364,7 +378,7 @@
           "x_cdf_COMPONENTS": [
             "mms4_edi_flux2_180_brst_l2"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimensionnoerrorbars",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -374,12 +388,13 @@
           "description": "---> Error for flux2 180-degree pitch angle electron flux.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-2",
+          "x_label": "Error Elec Flux2 180PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "Flux2 error for 180PA electrons",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -389,21 +404,23 @@
           "description": "Flux for electrons with trajectories given by traj3 180PA",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux3 180PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "180 degree electron flux3",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
           "name": "mms4_edi_flux3_180_brst_l2_noerr",
           "type": "double",
           "x_cdf_DataType": "CDF_FLOAT",
-          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-3 180PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux3_180_brst_l2']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-3 180PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux3_180_brst_l2']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux3 180PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
@@ -413,7 +430,7 @@
           "x_cdf_COMPONENTS": [
             "mms4_edi_flux3_180_brst_l2"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimensionnoerrorbars",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -423,12 +440,13 @@
           "description": "---> Error for flux3 180-degree pitch angle electron flux.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-2",
+          "x_label": "Error Elec Flux3 180PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "Flux3 error for 180PA electrons",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -438,21 +456,23 @@
           "description": "Flux for electrons with trajectories given by traj4 180PA",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux4 180PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "180 degree electron flux4",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
           "name": "mms4_edi_flux4_180_brst_l2_noerr",
           "type": "double",
           "x_cdf_DataType": "CDF_FLOAT",
-          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-4 180PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux4_180_brst_l2']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-4 180PA. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms4_edi_flux4_180_brst_l2']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-1",
+          "x_label": "Elec Flux4 180PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
@@ -462,7 +482,7 @@
           "x_cdf_COMPONENTS": [
             "mms4_edi_flux4_180_brst_l2"
           ],
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimensionnoerrorbars",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -472,12 +492,13 @@
           "description": "---> Error for flux4 180-degree pitch angle electron flux.",
           "fill": "-1e+31",
           "units": "cm^-2 s^-2",
+          "x_label": "Error Elec Flux4 180PA",
           "x_format": ".5e",
           "x_fractionDigits": "5",
           "x_cdf_FORMAT": "E12.5",
           "x_cdf_FIELDNAM": "Flux4 error for 180PA electrons",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch"
         },
         {
@@ -496,7 +517,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory1 0PA GSE",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -518,7 +539,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory2 0PA GSE",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -540,7 +561,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory3 0PA GSE",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -562,7 +583,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory4 0PA GSE",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -584,7 +605,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory1 180PA GSE",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -606,7 +627,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory2 180PA GSE",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -628,7 +649,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory3 180PA GSE",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -650,7 +671,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory4 180PA GSE",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -672,7 +693,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory1 0PA GSM",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -694,7 +715,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory2 0PA GSM",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -716,7 +737,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory3 0PA GSM",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -738,7 +759,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory4 0PA GSM",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -760,7 +781,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory1 180PA GSM",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -782,7 +803,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory2 180PA GSM",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -804,7 +825,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory3 180PA GSM",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -826,7 +847,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory4 180PA GSM",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -848,7 +869,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory1 0PA DBCS",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -870,7 +891,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory2 0PA DBCS",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -892,7 +913,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory3 0PA DBCS",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -914,7 +935,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory4 0PA DBCS",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -936,7 +957,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory1 180PA DBCS",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -958,7 +979,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory2 180PA DBCS",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -980,7 +1001,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory3 180PA DBCS",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2
@@ -1002,7 +1023,7 @@
           "x_cdf_FORMAT": "F9.4",
           "x_cdf_FIELDNAM": "Electron trajectory4 180PA DBCS",
           "x_cdf_VIRTUAL": false,
-          "x_cdf_DISPLAY_TYPE": "time_series",
+          "x_cdf_DISPLAY_TYPE": "default_dimension",
           "x_cdf_DEPEND_0": "Epoch",
           "size": [
             2

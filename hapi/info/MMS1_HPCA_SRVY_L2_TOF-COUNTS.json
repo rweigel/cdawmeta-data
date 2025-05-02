@@ -3,13 +3,10 @@
   "title": "MMS Level L2> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
   "info": {
     "startDate": "2018-11-15T00:00:00Z",
-    "stopDate": "2025-01-25T23:59:59Z",
-    "sampleStartDate": "2025-01-24T00:00:00Z",
-    "sampleStopDate": "2025-01-24T23:59:59Z",
-    "cadence": "PT0.625S",
-    "x_cadence_fraction": 0.9251307528116536,
-    "x_cadence_note": "Cadence based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/mms/mms1/hpca/srvy/l2/tof-counts/2018/11/mms1_hpca_srvy_l2_tof-counts_20181115000000_v4.1.0.cdf. This most common cadence occurred for 92.5131% of the 74115 timesteps. Cadence = 625000000 [ns] = PT0.625S.",
-    "maxRequestDuration": "P49DT23H59M10S",
+    "stopDate": "2025-03-27T23:59:59Z",
+    "sampleStartDate": "2025-03-26T00:00:00Z",
+    "sampleStopDate": "2025-03-26T23:59:59Z",
+    "maxRequestDuration": "PT4319950S",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_HPCA_SRVY_L2_TOF-COUNTS",
     "contact": "J. Burch, S. Fuselier @ SWRI",
     "parameters": [
@@ -30,20 +27,23 @@
         "description": "TOF Counts for all angles, across all energies",
         "fill": "65535",
         "units": null,
-        "x_label": [
-          "Energy 3.21425",
-          "Energy 12.0167",
-          "Energy 45.0507",
-          "Energy 168.833",
-          "Energy 632.809",
-          "Energy 2371.97",
-          "Energy 8890.78",
-          "Energy 29319.6"
+        "x_label": "Counts",
+        "x_labelComponents": [
+          [
+            "Energy 3.21425",
+            "Energy 12.0167",
+            "Energy 45.0507",
+            "Energy 168.833",
+            "Energy 632.809",
+            "Energy 2371.97",
+            "Energy 8890.78",
+            "Energy 29319.6"
+          ]
         ],
         "x_cdf_FORMAT": "I2",
         "x_cdf_FIELDNAM": "Counts",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionTHUMBSIZE>60>xsz=2,ysz=2>x=mms1_hpca_tof_energy,y=mms1_hpca_tof_bin_index,z=mms1_hpca_tof_counts",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           8,
@@ -63,6 +63,7 @@
               8890.780273,
               29319.599609
             ],
+            "x_label": "Energy",
             "units": "eV/q"
           },
           {
@@ -198,6 +199,7 @@
               252,
               254
             ],
+            "x_label": "Bin Index",
             "units": null
           }
         ]
@@ -206,7 +208,7 @@
         "name": "mms1_hpca_tof_counts_allA_atE",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT2",
-        "description": "---> Spectrograms all angles, at selected energies. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms1_hpca_tof_counts']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms all angles, at selected energies. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms1_hpca_tof_counts']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "65535",
         "units": null,
         "x_label": [
@@ -358,7 +360,7 @@
         "x_cdf_COMPONENTS": [
           "mms1_hpca_tof_counts"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensiony=mms1_hpca_tof_energy,z=mms1_hpca_tof_counts_allA_atE(*,1),z=mms1_hpca_tof_counts_allA_atE(*,2),z=mms1_hpca_tof_counts_allA_atE(*,3),z=mms1_hpca_tof_counts_allA_atE(*,4),z=mms1_hpca_tof_counts_allA_atE(*,5),z=mms1_hpca_tof_counts_allA_atE(*,10),z=mms1_hpca_tof_counts_allA_atE(*,15),z=mms1_hpca_tof_counts_allA_atE(*,20),z=mms1_hpca_tof_counts_allA_atE(*,25),z=mms1_hpca_tof_counts_allA_atE(*,30),z=mms1_hpca_tof_counts_allA_atE(*,35),z=mms1_hpca_tof_counts_allA_atE(*,120)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           8,
@@ -378,6 +380,7 @@
               8890.780273,
               29319.599609
             ],
+            "x_label": "Energy",
             "units": "eV/q"
           },
           {
@@ -513,6 +516,7 @@
               252,
               254
             ],
+            "x_label": "Bin Index",
             "units": null
           }
         ]
@@ -521,7 +525,7 @@
         "name": "mms1_hpca_tof_counts_allE_atA",
         "type": "integer",
         "x_cdf_DataType": "CDF_UINT2",
-        "description": "---> Spectrograms at select angles, for all energies. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms1_hpca_tof_counts']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Spectrograms at select angles, for all energies. This variable is a 'virtual' variable that is computed using the function alternate_view (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms1_hpca_tof_counts']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "65535",
         "units": null,
         "x_label": [
@@ -673,7 +677,7 @@
         "x_cdf_COMPONENTS": [
           "mms1_hpca_tof_counts"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensiony=mms1_hpca_tof_bin_index,z=mms1_hpca_tof_counts_allE_atA(1,*),z=mms1_hpca_tof_counts_allE_atA(2,*),z=mms1_hpca_tof_counts_allE_atA(3,*),z=mms1_hpca_tof_counts_allE_atA(4,*),z=mms1_hpca_tof_counts_allE_atA(5,*),z=mms1_hpca_tof_counts_allE_atA(6,*),z=mms1_hpca_tof_counts_allE_atA(7,*),z=mms1_hpca_tof_counts_allE_atA(8,*)",
         "x_cdf_DEPEND_0": "Epoch",
         "size": [
           8,
@@ -693,6 +697,7 @@
               8890.780273,
               29319.599609
             ],
+            "x_label": "Energy",
             "units": "eV/q"
           },
           {
@@ -828,6 +833,7 @@
               252,
               254
             ],
+            "x_label": "Bin Index",
             "units": null
           }
         ]

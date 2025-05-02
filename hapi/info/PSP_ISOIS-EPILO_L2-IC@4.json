@@ -6,10 +6,7 @@
     "stopDate": "2024-12-10T21:41:28Z",
     "sampleStartDate": "2024-12-09T00:15:46Z",
     "sampleStopDate": "2024-12-09T21:01:17Z",
-    "cadence": "PT19M59.999955S",
-    "x_cadence_fraction": 0.48,
-    "x_cadence_note": "Cadence based on variable 'Epoch_ChanT' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/psp/isois/epilo/l2/ic/2018/psp_isois-epilo_l2-ic_20180928_v21.cdf. This most common cadence occurred for 48.0000% of the 12 timesteps. Cadence = 1199999955000 [ns] = PT19M59.999955S.",
-    "maxRequestDuration": "P43DT5H55M50S",
+    "maxRequestDuration": "PT3736550S",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPILO_L2-IC",
     "contact": "David McComas @ Princeton University",
     "parameters": [
@@ -45,7 +42,7 @@
         "x_cdf_FORMAT": "I3",
         "x_cdf_FIELDNAM": "Quality_Flag_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionscatter>nobar>use_labl",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           10
@@ -66,6 +63,7 @@
               8,
               9
             ],
+            "x_label": "QF",
             "units": null
           }
         ]
@@ -74,9 +72,10 @@
         "name": "H_CountRate_ChanT_avg",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> H count rate channel T (IonTOF). This variable is a 'virtual' variable that is computed using the function spdf_3d_to_2d_avg_over_col (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['H_CountRate_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> H count rate channel T (IonTOF). This variable is a 'virtual' variable that is computed using the function spdf_3d_to_2d_avg_over_col (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['H_CountRate_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "counts/sec",
+        "x_label": "H rate chanT avg",
         "x_format": ".3f",
         "x_fractionDigits": "3",
         "x_cdf_FORMAT": "F14.3",
@@ -86,7 +85,7 @@
         "x_cdf_COMPONENTS": [
           "H_CountRate_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           80,
@@ -97,9 +96,10 @@
         "name": "H_Flux_ChanT_avg",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> H flux channel T (IonTOF). This variable is a 'virtual' variable that is computed using the function spdf_3d_to_2d_avg_over_col (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['H_Flux_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> H flux channel T (IonTOF). This variable is a 'virtual' variable that is computed using the function spdf_3d_to_2d_avg_over_col (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['H_Flux_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(keV/nuc)!E-1!N",
+        "x_label": "H flux chanT avg",
         "x_format": ".2f",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "F20.2",
@@ -109,7 +109,7 @@
         "x_cdf_COMPONENTS": [
           "H_Flux_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           80,
@@ -123,92 +123,95 @@
         "description": "---> H counts channel T (IonTOF)",
         "fill": "-9223372036854775808",
         "units": "counts",
-        "x_label": [
-          "L00",
-          "L01",
-          "L02",
-          "L03",
-          "L04",
-          "L05",
-          "L06",
-          "L07",
-          "L08",
-          "L09",
-          "L10",
-          "L11",
-          "L12",
-          "L13",
-          "L14",
-          "L15",
-          "L16",
-          "L17",
-          "L18",
-          "L19",
-          "L20",
-          "L21",
-          "L22",
-          "L23",
-          "L24",
-          "L25",
-          "L26",
-          "L27",
-          "L28",
-          "L29",
-          "L30",
-          "L31",
-          "L32",
-          "L33",
-          "L34",
-          "L35",
-          "L36",
-          "L37",
-          "L38",
-          "L39",
-          "L40",
-          "L41",
-          "L42",
-          "L43",
-          "L44",
-          "L45",
-          "L46",
-          "L47",
-          "L48",
-          "L49",
-          "L50",
-          "L51",
-          "L52",
-          "L53",
-          "L54",
-          "L55",
-          "L56",
-          "L57",
-          "L58",
-          "L59",
-          "L60",
-          "L61",
-          "L62",
-          "L63",
-          "L64",
-          "L65",
-          "L66",
-          "L67",
-          "L68",
-          "L69",
-          "L70",
-          "L71",
-          "L72",
-          "L73",
-          "L74",
-          "L75",
-          "L76",
-          "L77",
-          "L78",
-          "L79"
+        "x_label": "H counts chanT",
+        "x_labelComponents": [
+          [
+            "L00",
+            "L01",
+            "L02",
+            "L03",
+            "L04",
+            "L05",
+            "L06",
+            "L07",
+            "L08",
+            "L09",
+            "L10",
+            "L11",
+            "L12",
+            "L13",
+            "L14",
+            "L15",
+            "L16",
+            "L17",
+            "L18",
+            "L19",
+            "L20",
+            "L21",
+            "L22",
+            "L23",
+            "L24",
+            "L25",
+            "L26",
+            "L27",
+            "L28",
+            "L29",
+            "L30",
+            "L31",
+            "L32",
+            "L33",
+            "L34",
+            "L35",
+            "L36",
+            "L37",
+            "L38",
+            "L39",
+            "L40",
+            "L41",
+            "L42",
+            "L43",
+            "L44",
+            "L45",
+            "L46",
+            "L47",
+            "L48",
+            "L49",
+            "L50",
+            "L51",
+            "L52",
+            "L53",
+            "L54",
+            "L55",
+            "L56",
+            "L57",
+            "L58",
+            "L59",
+            "L60",
+            "L61",
+            "L62",
+            "L63",
+            "L64",
+            "L65",
+            "L66",
+            "L67",
+            "L68",
+            "L69",
+            "L70",
+            "L71",
+            "L72",
+            "L73",
+            "L74",
+            "L75",
+            "L76",
+            "L77",
+            "L78",
+            "L79"
+          ]
         ],
         "x_cdf_FORMAT": "I10",
         "x_cdf_FIELDNAM": "H_Counts_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           80,
@@ -222,94 +225,97 @@
         "description": "---> H count rate channel T (IonTOF)",
         "fill": "-1e+31",
         "units": "counts/sec",
-        "x_label": [
-          "L00",
-          "L01",
-          "L02",
-          "L03",
-          "L04",
-          "L05",
-          "L06",
-          "L07",
-          "L08",
-          "L09",
-          "L10",
-          "L11",
-          "L12",
-          "L13",
-          "L14",
-          "L15",
-          "L16",
-          "L17",
-          "L18",
-          "L19",
-          "L20",
-          "L21",
-          "L22",
-          "L23",
-          "L24",
-          "L25",
-          "L26",
-          "L27",
-          "L28",
-          "L29",
-          "L30",
-          "L31",
-          "L32",
-          "L33",
-          "L34",
-          "L35",
-          "L36",
-          "L37",
-          "L38",
-          "L39",
-          "L40",
-          "L41",
-          "L42",
-          "L43",
-          "L44",
-          "L45",
-          "L46",
-          "L47",
-          "L48",
-          "L49",
-          "L50",
-          "L51",
-          "L52",
-          "L53",
-          "L54",
-          "L55",
-          "L56",
-          "L57",
-          "L58",
-          "L59",
-          "L60",
-          "L61",
-          "L62",
-          "L63",
-          "L64",
-          "L65",
-          "L66",
-          "L67",
-          "L68",
-          "L69",
-          "L70",
-          "L71",
-          "L72",
-          "L73",
-          "L74",
-          "L75",
-          "L76",
-          "L77",
-          "L78",
-          "L79"
+        "x_label": "H rate chanT",
+        "x_labelComponents": [
+          [
+            "L00",
+            "L01",
+            "L02",
+            "L03",
+            "L04",
+            "L05",
+            "L06",
+            "L07",
+            "L08",
+            "L09",
+            "L10",
+            "L11",
+            "L12",
+            "L13",
+            "L14",
+            "L15",
+            "L16",
+            "L17",
+            "L18",
+            "L19",
+            "L20",
+            "L21",
+            "L22",
+            "L23",
+            "L24",
+            "L25",
+            "L26",
+            "L27",
+            "L28",
+            "L29",
+            "L30",
+            "L31",
+            "L32",
+            "L33",
+            "L34",
+            "L35",
+            "L36",
+            "L37",
+            "L38",
+            "L39",
+            "L40",
+            "L41",
+            "L42",
+            "L43",
+            "L44",
+            "L45",
+            "L46",
+            "L47",
+            "L48",
+            "L49",
+            "L50",
+            "L51",
+            "L52",
+            "L53",
+            "L54",
+            "L55",
+            "L56",
+            "L57",
+            "L58",
+            "L59",
+            "L60",
+            "L61",
+            "L62",
+            "L63",
+            "L64",
+            "L65",
+            "L66",
+            "L67",
+            "L68",
+            "L69",
+            "L70",
+            "L71",
+            "L72",
+            "L73",
+            "L74",
+            "L75",
+            "L76",
+            "L77",
+            "L78",
+            "L79"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
         "x_cdf_FORMAT": "F14.3",
         "x_cdf_FIELDNAM": "H_CountRate_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           80,
@@ -323,94 +329,97 @@
         "description": "---> H flux channel T (IonTOF)",
         "fill": "-1e+31",
         "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(keV/nuc)!E-1!N",
-        "x_label": [
-          "L00",
-          "L01",
-          "L02",
-          "L03",
-          "L04",
-          "L05",
-          "L06",
-          "L07",
-          "L08",
-          "L09",
-          "L10",
-          "L11",
-          "L12",
-          "L13",
-          "L14",
-          "L15",
-          "L16",
-          "L17",
-          "L18",
-          "L19",
-          "L20",
-          "L21",
-          "L22",
-          "L23",
-          "L24",
-          "L25",
-          "L26",
-          "L27",
-          "L28",
-          "L29",
-          "L30",
-          "L31",
-          "L32",
-          "L33",
-          "L34",
-          "L35",
-          "L36",
-          "L37",
-          "L38",
-          "L39",
-          "L40",
-          "L41",
-          "L42",
-          "L43",
-          "L44",
-          "L45",
-          "L46",
-          "L47",
-          "L48",
-          "L49",
-          "L50",
-          "L51",
-          "L52",
-          "L53",
-          "L54",
-          "L55",
-          "L56",
-          "L57",
-          "L58",
-          "L59",
-          "L60",
-          "L61",
-          "L62",
-          "L63",
-          "L64",
-          "L65",
-          "L66",
-          "L67",
-          "L68",
-          "L69",
-          "L70",
-          "L71",
-          "L72",
-          "L73",
-          "L74",
-          "L75",
-          "L76",
-          "L77",
-          "L78",
-          "L79"
+        "x_label": "H flux chanT",
+        "x_labelComponents": [
+          [
+            "L00",
+            "L01",
+            "L02",
+            "L03",
+            "L04",
+            "L05",
+            "L06",
+            "L07",
+            "L08",
+            "L09",
+            "L10",
+            "L11",
+            "L12",
+            "L13",
+            "L14",
+            "L15",
+            "L16",
+            "L17",
+            "L18",
+            "L19",
+            "L20",
+            "L21",
+            "L22",
+            "L23",
+            "L24",
+            "L25",
+            "L26",
+            "L27",
+            "L28",
+            "L29",
+            "L30",
+            "L31",
+            "L32",
+            "L33",
+            "L34",
+            "L35",
+            "L36",
+            "L37",
+            "L38",
+            "L39",
+            "L40",
+            "L41",
+            "L42",
+            "L43",
+            "L44",
+            "L45",
+            "L46",
+            "L47",
+            "L48",
+            "L49",
+            "L50",
+            "L51",
+            "L52",
+            "L53",
+            "L54",
+            "L55",
+            "L56",
+            "L57",
+            "L58",
+            "L59",
+            "L60",
+            "L61",
+            "L62",
+            "L63",
+            "L64",
+            "L65",
+            "L66",
+            "L67",
+            "L68",
+            "L69",
+            "L70",
+            "L71",
+            "L72",
+            "L73",
+            "L74",
+            "L75",
+            "L76",
+            "L77",
+            "L78",
+            "L79"
+          ]
         ],
         "x_format": ".2f",
         "x_fractionDigits": "2",
         "x_cdf_FORMAT": "F20.2",
         "x_cdf_FIELDNAM": "H_Flux_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           80,
@@ -424,7 +433,8 @@
         "description": "HCI flow direction ChanT - no plot",
         "fill": "-1e+31",
         "units": null,
-        "x_label": [
+        "x_label": "Direction [x,y,z] HCI",
+        "x_labelComponents": [
           [
             "L00",
             "L01",
@@ -518,7 +528,7 @@
         "x_cdf_FORMAT": "F6.3",
         "x_cdf_FIELDNAM": "HCI_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           80,
@@ -529,13 +539,16 @@
         "name": "HCI_ChanT_L00",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 00 - stack plot. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 00 - stack plot. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "x HCI",
-          "y HCI",
-          "z HCI"
+        "x_label": "Flow direction ChanT L00",
+        "x_labelComponents": [
+          [
+            "x HCI",
+            "y HCI",
+            "z HCI"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -546,7 +559,7 @@
         "x_cdf_COMPONENTS": [
           "HCI_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=HCI_ChanT(1,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -560,6 +573,7 @@
               2.0,
               3.0
             ],
+            "x_label": "HCI directions index",
             "units": "{H, C, I]"
           }
         ]
@@ -568,13 +582,16 @@
         "name": "HCI_ChanT_L11",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 11. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 11. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "x HCI",
-          "y HCI",
-          "z HCI"
+        "x_label": "Flow direction ChanT L11",
+        "x_labelComponents": [
+          [
+            "x HCI",
+            "y HCI",
+            "z HCI"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -585,7 +602,7 @@
         "x_cdf_COMPONENTS": [
           "HCI_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=HCI_ChanT(12,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -599,6 +616,7 @@
               2.0,
               3.0
             ],
+            "x_label": "HCI directions index",
             "units": "{H, C, I]"
           }
         ]
@@ -607,13 +625,16 @@
         "name": "HCI_ChanT_L22",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 22. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 22. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "x HCI",
-          "y HCI",
-          "z HCI"
+        "x_label": "Flow direction ChanT L22",
+        "x_labelComponents": [
+          [
+            "x HCI",
+            "y HCI",
+            "z HCI"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -624,7 +645,7 @@
         "x_cdf_COMPONENTS": [
           "HCI_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=HCI_ChanT(23,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -638,6 +659,7 @@
               2.0,
               3.0
             ],
+            "x_label": "HCI directions index",
             "units": "{H, C, I]"
           }
         ]
@@ -646,13 +668,16 @@
         "name": "HCI_ChanT_L33",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 33. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 33. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "x HCI",
-          "y HCI",
-          "z HCI"
+        "x_label": "Flow direction ChanT L33",
+        "x_labelComponents": [
+          [
+            "x HCI",
+            "y HCI",
+            "z HCI"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -663,7 +688,7 @@
         "x_cdf_COMPONENTS": [
           "HCI_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=HCI_ChanT(34,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -677,6 +702,7 @@
               2.0,
               3.0
             ],
+            "x_label": "HCI directions index",
             "units": "{H, C, I]"
           }
         ]
@@ -685,13 +711,16 @@
         "name": "HCI_ChanT_L44",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 44. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 44. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "x HCI",
-          "y HCI",
-          "z HCI"
+        "x_label": "Flow direction ChanT L44",
+        "x_labelComponents": [
+          [
+            "x HCI",
+            "y HCI",
+            "z HCI"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -702,7 +731,7 @@
         "x_cdf_COMPONENTS": [
           "HCI_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=HCI_ChanT(45,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -716,6 +745,7 @@
               2.0,
               3.0
             ],
+            "x_label": "HCI directions index",
             "units": "{H, C, I]"
           }
         ]
@@ -724,13 +754,16 @@
         "name": "HCI_ChanT_L55",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 55. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 55. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "x HCI",
-          "y HCI",
-          "z HCI"
+        "x_label": "Flow direction ChanT L55",
+        "x_labelComponents": [
+          [
+            "x HCI",
+            "y HCI",
+            "z HCI"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -741,7 +774,7 @@
         "x_cdf_COMPONENTS": [
           "HCI_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=HCI_ChanT(56,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -755,6 +788,7 @@
               2.0,
               3.0
             ],
+            "x_label": "HCI directions index",
             "units": "{H, C, I]"
           }
         ]
@@ -763,13 +797,16 @@
         "name": "HCI_ChanT_L66",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 66. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 66. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "x HCI",
-          "y HCI",
-          "z HCI"
+        "x_label": "Flow direction ChanT L66",
+        "x_labelComponents": [
+          [
+            "x HCI",
+            "y HCI",
+            "z HCI"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -780,7 +817,7 @@
         "x_cdf_COMPONENTS": [
           "HCI_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=HCI_ChanT(67,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -794,6 +831,7 @@
               2.0,
               3.0
             ],
+            "x_label": "HCI directions index",
             "units": "{H, C, I]"
           }
         ]
@@ -802,13 +840,16 @@
         "name": "HCI_ChanT_L77",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 77. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 77. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['HCI_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "x HCI",
-          "y HCI",
-          "z HCI"
+        "x_label": "Flow direction ChanT L77",
+        "x_labelComponents": [
+          [
+            "x HCI",
+            "y HCI",
+            "z HCI"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -819,7 +860,7 @@
         "x_cdf_COMPONENTS": [
           "HCI_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=HCI_ChanT(78,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -833,6 +874,7 @@
               2.0,
               3.0
             ],
+            "x_label": "HCI directions index",
             "units": "{H, C, I]"
           }
         ]
@@ -844,12 +886,13 @@
         "description": "HCI Heliocentric distance ChanT",
         "fill": "-1e+31",
         "units": "AU",
+        "x_label": "HCI_R_ChanT",
         "x_format": ".3f",
         "x_fractionDigits": "3",
         "x_cdf_FORMAT": "F5.3",
         "x_cdf_FIELDNAM": "HCI_R_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT"
       },
       {
@@ -859,12 +902,13 @@
         "description": "HCI latitude ChanT",
         "fill": "-1e+31",
         "units": "degrees",
+        "x_label": "HCI latitude ChanT",
         "x_format": ".1f",
         "x_fractionDigits": "1",
         "x_cdf_FORMAT": "F6.1",
         "x_cdf_FIELDNAM": "HCI_Lat_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT"
       },
       {
@@ -874,12 +918,13 @@
         "description": "HCI longitude ChanT",
         "fill": "-1e+31",
         "units": "degrees",
+        "x_label": "HCI longitude ChanT",
         "x_format": ".1f",
         "x_fractionDigits": "1",
         "x_cdf_FORMAT": "F5.1",
         "x_cdf_FIELDNAM": "HCI_Lon_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT"
       },
       {
@@ -889,12 +934,13 @@
         "description": "HGC Heliocentric distance ChanT",
         "fill": "-1e+31",
         "units": "AU",
+        "x_label": "HGC_R_ChanT",
         "x_format": ".3f",
         "x_fractionDigits": "3",
         "x_cdf_FORMAT": "F5.3",
         "x_cdf_FIELDNAM": "HGC_R_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT"
       },
       {
@@ -904,12 +950,13 @@
         "description": "HGC latitude ChanT",
         "fill": "-1e+31",
         "units": "degrees",
+        "x_label": "HGC latitude ChanT",
         "x_format": ".1f",
         "x_fractionDigits": "1",
         "x_cdf_FORMAT": "F6.1",
         "x_cdf_FIELDNAM": "HGC_Lat_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT"
       },
       {
@@ -919,12 +966,13 @@
         "description": "HGC longitude ChanT",
         "fill": "-1e+31",
         "units": "degrees",
+        "x_label": "HGC longitude ChanT",
         "x_format": ".1f",
         "x_fractionDigits": "1",
         "x_cdf_FORMAT": "F5.1",
         "x_cdf_FIELDNAM": "HGC_Lon_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT"
       },
       {
@@ -934,94 +982,97 @@
         "description": "Pitch angle ChanT",
         "fill": "-1e+31",
         "units": "degree",
-        "x_label": [
-          "L00",
-          "L01",
-          "L02",
-          "L03",
-          "L04",
-          "L05",
-          "L06",
-          "L07",
-          "L08",
-          "L09",
-          "L10",
-          "L11",
-          "L12",
-          "L13",
-          "L14",
-          "L15",
-          "L16",
-          "L17",
-          "L18",
-          "L19",
-          "L20",
-          "L21",
-          "L22",
-          "L23",
-          "L24",
-          "L25",
-          "L26",
-          "L27",
-          "L28",
-          "L29",
-          "L30",
-          "L31",
-          "L32",
-          "L33",
-          "L34",
-          "L35",
-          "L36",
-          "L37",
-          "L38",
-          "L39",
-          "L40",
-          "L41",
-          "L42",
-          "L43",
-          "L44",
-          "L45",
-          "L46",
-          "L47",
-          "L48",
-          "L49",
-          "L50",
-          "L51",
-          "L52",
-          "L53",
-          "L54",
-          "L55",
-          "L56",
-          "L57",
-          "L58",
-          "L59",
-          "L60",
-          "L61",
-          "L62",
-          "L63",
-          "L64",
-          "L65",
-          "L66",
-          "L67",
-          "L68",
-          "L69",
-          "L70",
-          "L71",
-          "L72",
-          "L73",
-          "L74",
-          "L75",
-          "L76",
-          "L77",
-          "L78",
-          "L79"
+        "x_label": "PA",
+        "x_labelComponents": [
+          [
+            "L00",
+            "L01",
+            "L02",
+            "L03",
+            "L04",
+            "L05",
+            "L06",
+            "L07",
+            "L08",
+            "L09",
+            "L10",
+            "L11",
+            "L12",
+            "L13",
+            "L14",
+            "L15",
+            "L16",
+            "L17",
+            "L18",
+            "L19",
+            "L20",
+            "L21",
+            "L22",
+            "L23",
+            "L24",
+            "L25",
+            "L26",
+            "L27",
+            "L28",
+            "L29",
+            "L30",
+            "L31",
+            "L32",
+            "L33",
+            "L34",
+            "L35",
+            "L36",
+            "L37",
+            "L38",
+            "L39",
+            "L40",
+            "L41",
+            "L42",
+            "L43",
+            "L44",
+            "L45",
+            "L46",
+            "L47",
+            "L48",
+            "L49",
+            "L50",
+            "L51",
+            "L52",
+            "L53",
+            "L54",
+            "L55",
+            "L56",
+            "L57",
+            "L58",
+            "L59",
+            "L60",
+            "L61",
+            "L62",
+            "L63",
+            "L64",
+            "L65",
+            "L66",
+            "L67",
+            "L68",
+            "L69",
+            "L70",
+            "L71",
+            "L72",
+            "L73",
+            "L74",
+            "L75",
+            "L76",
+            "L77",
+            "L78",
+            "L79"
+          ]
         ],
         "x_format": ".1f",
         "x_fractionDigits": "1",
         "x_cdf_FORMAT": "F5.1",
         "x_cdf_FIELDNAM": "PA_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           80
@@ -1112,6 +1163,7 @@
               78,
               79
             ],
+            "x_label": "Look Bin",
             "units": "Direction_number"
           }
         ]
@@ -1123,7 +1175,8 @@
         "description": "RTN flow direction ChanT - no plot",
         "fill": "-1e+31",
         "units": null,
-        "x_label": [
+        "x_label": "Direction [R,T,N]",
+        "x_labelComponents": [
           [
             "L00",
             "L01",
@@ -1217,7 +1270,7 @@
         "x_cdf_FORMAT": "F6.3",
         "x_cdf_FIELDNAM": "RTN_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           80,
@@ -1228,13 +1281,16 @@
         "name": "RTN_ChanT_L00",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 00 - stack plot. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 00 - stack plot. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "R",
-          "T",
-          "N"
+        "x_label": "Flow direction ChanT L00",
+        "x_labelComponents": [
+          [
+            "R",
+            "T",
+            "N"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -1245,7 +1301,7 @@
         "x_cdf_COMPONENTS": [
           "RTN_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=RTN_ChanT(1,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -1259,6 +1315,7 @@
               2.0,
               3.0
             ],
+            "x_label": "RTN directions index",
             "units": "{R, T, N]"
           }
         ]
@@ -1267,13 +1324,16 @@
         "name": "RTN_ChanT_L11",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 11. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 11. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "R",
-          "T",
-          "N"
+        "x_label": "Flow direction ChanT L11",
+        "x_labelComponents": [
+          [
+            "R",
+            "T",
+            "N"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -1284,7 +1344,7 @@
         "x_cdf_COMPONENTS": [
           "RTN_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=RTN_ChanT(12,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -1298,6 +1358,7 @@
               2.0,
               3.0
             ],
+            "x_label": "RTN directions index",
             "units": "{R, T, N]"
           }
         ]
@@ -1306,13 +1367,16 @@
         "name": "RTN_ChanT_L22",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 22. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 22. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "R",
-          "T",
-          "N"
+        "x_label": "Flow direction ChanT L22",
+        "x_labelComponents": [
+          [
+            "R",
+            "T",
+            "N"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -1323,7 +1387,7 @@
         "x_cdf_COMPONENTS": [
           "RTN_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=RTN_ChanT(23,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -1337,6 +1401,7 @@
               2.0,
               3.0
             ],
+            "x_label": "RTN directions index",
             "units": "{R, T, N]"
           }
         ]
@@ -1345,13 +1410,16 @@
         "name": "RTN_ChanT_L33",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 33. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 33. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "R",
-          "T",
-          "N"
+        "x_label": "Flow direction ChanT L33",
+        "x_labelComponents": [
+          [
+            "R",
+            "T",
+            "N"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -1362,7 +1430,7 @@
         "x_cdf_COMPONENTS": [
           "RTN_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=RTN_ChanT(34,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -1376,6 +1444,7 @@
               2.0,
               3.0
             ],
+            "x_label": "RTN directions index",
             "units": "{R, T, N]"
           }
         ]
@@ -1384,13 +1453,16 @@
         "name": "RTN_ChanT_L44",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 44. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 44. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "R",
-          "T",
-          "N"
+        "x_label": "Flow direction ChanT L44",
+        "x_labelComponents": [
+          [
+            "R",
+            "T",
+            "N"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -1401,7 +1473,7 @@
         "x_cdf_COMPONENTS": [
           "RTN_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=RTN_ChanT(45,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -1415,6 +1487,7 @@
               2.0,
               3.0
             ],
+            "x_label": "RTN directions index",
             "units": "{R, T, N]"
           }
         ]
@@ -1423,13 +1496,16 @@
         "name": "RTN_ChanT_L55",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 55. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 55. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "R",
-          "T",
-          "N"
+        "x_label": "Flow direction ChanT L55",
+        "x_labelComponents": [
+          [
+            "R",
+            "T",
+            "N"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -1440,7 +1516,7 @@
         "x_cdf_COMPONENTS": [
           "RTN_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=RTN_ChanT(56,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -1454,6 +1530,7 @@
               2.0,
               3.0
             ],
+            "x_label": "RTN directions index",
             "units": "{R, T, N]"
           }
         ]
@@ -1462,13 +1539,16 @@
         "name": "RTN_ChanT_L66",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 66. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 66. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "R",
-          "T",
-          "N"
+        "x_label": "Flow direction ChanT L66",
+        "x_labelComponents": [
+          [
+            "R",
+            "T",
+            "N"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -1479,7 +1559,7 @@
         "x_cdf_COMPONENTS": [
           "RTN_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=RTN_ChanT(67,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -1493,6 +1573,7 @@
               2.0,
               3.0
             ],
+            "x_label": "RTN directions index",
             "units": "{R, T, N]"
           }
         ]
@@ -1501,13 +1582,16 @@
         "name": "RTN_ChanT_L77",
         "type": "double",
         "x_cdf_DataType": "CDF_FLOAT",
-        "description": "---> Look direction 77. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that not all COMPONENTS are time series and so their values are not available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Look direction 77. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['RTN_ChanT']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
         "fill": "-1e+31",
         "units": "[-1, 1]",
-        "x_label": [
-          "R",
-          "T",
-          "N"
+        "x_label": "Flow direction ChanT L77",
+        "x_labelComponents": [
+          [
+            "R",
+            "T",
+            "N"
+          ]
         ],
         "x_format": ".3f",
         "x_fractionDigits": "3",
@@ -1518,7 +1602,7 @@
         "x_cdf_COMPONENTS": [
           "RTN_ChanT"
         ],
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimensionNOBAR>use_labl>y=RTN_ChanT(78,*)",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           3
@@ -1532,6 +1616,7 @@
               2.0,
               3.0
             ],
+            "x_label": "RTN directions index",
             "units": "{R, T, N]"
           }
         ]
@@ -1543,94 +1628,97 @@
         "description": "Nominal Parker Spiral angle ChanT",
         "fill": "-1e+31",
         "units": "degree",
-        "x_label": [
-          "L00",
-          "L01",
-          "L02",
-          "L03",
-          "L04",
-          "L05",
-          "L06",
-          "L07",
-          "L08",
-          "L09",
-          "L10",
-          "L11",
-          "L12",
-          "L13",
-          "L14",
-          "L15",
-          "L16",
-          "L17",
-          "L18",
-          "L19",
-          "L20",
-          "L21",
-          "L22",
-          "L23",
-          "L24",
-          "L25",
-          "L26",
-          "L27",
-          "L28",
-          "L29",
-          "L30",
-          "L31",
-          "L32",
-          "L33",
-          "L34",
-          "L35",
-          "L36",
-          "L37",
-          "L38",
-          "L39",
-          "L40",
-          "L41",
-          "L42",
-          "L43",
-          "L44",
-          "L45",
-          "L46",
-          "L47",
-          "L48",
-          "L49",
-          "L50",
-          "L51",
-          "L52",
-          "L53",
-          "L54",
-          "L55",
-          "L56",
-          "L57",
-          "L58",
-          "L59",
-          "L60",
-          "L61",
-          "L62",
-          "L63",
-          "L64",
-          "L65",
-          "L66",
-          "L67",
-          "L68",
-          "L69",
-          "L70",
-          "L71",
-          "L72",
-          "L73",
-          "L74",
-          "L75",
-          "L76",
-          "L77",
-          "L78",
-          "L79"
+        "x_label": "SA",
+        "x_labelComponents": [
+          [
+            "L00",
+            "L01",
+            "L02",
+            "L03",
+            "L04",
+            "L05",
+            "L06",
+            "L07",
+            "L08",
+            "L09",
+            "L10",
+            "L11",
+            "L12",
+            "L13",
+            "L14",
+            "L15",
+            "L16",
+            "L17",
+            "L18",
+            "L19",
+            "L20",
+            "L21",
+            "L22",
+            "L23",
+            "L24",
+            "L25",
+            "L26",
+            "L27",
+            "L28",
+            "L29",
+            "L30",
+            "L31",
+            "L32",
+            "L33",
+            "L34",
+            "L35",
+            "L36",
+            "L37",
+            "L38",
+            "L39",
+            "L40",
+            "L41",
+            "L42",
+            "L43",
+            "L44",
+            "L45",
+            "L46",
+            "L47",
+            "L48",
+            "L49",
+            "L50",
+            "L51",
+            "L52",
+            "L53",
+            "L54",
+            "L55",
+            "L56",
+            "L57",
+            "L58",
+            "L59",
+            "L60",
+            "L61",
+            "L62",
+            "L63",
+            "L64",
+            "L65",
+            "L66",
+            "L67",
+            "L68",
+            "L69",
+            "L70",
+            "L71",
+            "L72",
+            "L73",
+            "L74",
+            "L75",
+            "L76",
+            "L77",
+            "L78",
+            "L79"
+          ]
         ],
         "x_format": ".1f",
         "x_fractionDigits": "1",
         "x_cdf_FORMAT": "F5.1",
         "x_cdf_FIELDNAM": "SA_ChanT",
         "x_cdf_VIRTUAL": false,
-        "x_cdf_DISPLAY_TYPE": "time_series",
+        "x_cdf_DISPLAY_TYPE": "default_dimension",
         "x_cdf_DEPEND_0": "Epoch_ChanT",
         "size": [
           80
@@ -1721,6 +1809,7 @@
               78,
               79
             ],
+            "x_label": "Look Bin",
             "units": "Direction_number"
           }
         ]
