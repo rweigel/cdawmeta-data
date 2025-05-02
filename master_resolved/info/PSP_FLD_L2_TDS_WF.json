@@ -1,0 +1,5055 @@
+{
+  "CDFFileInfo": {
+    "File": "psp_fld_l2_tds_wf_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/psp_fld_l2_tds_wf_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "PSP FIELDS TDS Wave-Form Level-2 Science Telemetry",
+    "Project": "LWS>Living With a Star",
+    "Source_name": "PSP_FLD>Parker Solar Probe - FIELDS Instrument Suite",
+    "Data_type": "L2>Science Telemetry Data",
+    "Descriptor": "TDS_WF>Time Domain Sampler Waveform Bursts",
+    "Discipline": "Solar Physics>Heliospheric Physics\nSpace Physics>Interplanetary Studies",
+    "Data_version": " ",
+    "TEXT": "PSP FIELDS TDS_WF Science Telemetry Data",
+    "MODS": " ",
+    "Logical_file_id": "psp_fld_l2_tds_wf_00000000_v01",
+    "Logical_source": "psp_fld_l2_tds_wf",
+    "Logical_source_description": "PSP FIELDS TDS Wave-Form Burst Science Telemetry",
+    "PI_name": "Stuart D. Bale (bale@berkeley.edu)",
+    "PI_affiliation": "UC Berkeley Space Sciences Laboratory",
+    "Instrument_type": "Electric Fields (space)\nMagnetic Fields (space)",
+    "Mission_group": "Parker Solar Probe (PSP)",
+    "Dependencies": "None",
+    "File_naming_convention": "source_datatype_descriptor_yyyyMMdd",
+    "Acknowledgement": "Produced by the PSP/FIELDS team at the University of Minnesota.",
+    "Generated_by": "University of Minnesota",
+    "LINK_TITLE": " Data Link",
+    "spase_DatasetResourceID": " ",
+    "Time_resolution": "variable",
+    "Rules_of_use": "For PSP team use.",
+    "HTTP_LINK": "http://fields.ssl.berkeley.edu/data/",
+    "LINK_TEXT": "PSP/FIELDS SOC",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "epoch": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Corrected UTC time of the start of the collected wave-form burst in TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "FORMAT": "I22",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2038-12-31T23:58:59.999998208",
+        "SCALEMIN": "2018-08-01T12:00:00.000000000",
+        "TIME_BASE": "MET",
+        "UNITS": "ns",
+        "VALIDMAX": "2049-12-31T23:58:59.999998208",
+        "VALIDMIN": "2009-12-31T23:59:59.999998080",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the high-gain V1 sensor (Ch1) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst V1",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V1",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain V2 sensor (Ch2) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V2",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the high-gain V2 sensor (Ch2) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V2",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain V3 sensor (Ch3) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V3",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V3",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the high-gain V3 sensor (Ch3) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst V3",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V3",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain V4 sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V4",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the high-gain V4 sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V4",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain V5 sensor (Ch5) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V5",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V5",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the high-gain V5 sensor (Ch5) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst V5",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V5",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1V2_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain difference of V1-V2 (Ch3) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1V2_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V1-V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V1-V2",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1V2_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the high-gain difference of V1-V2 (Ch3) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1V2_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1V2_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst V1-V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V1-V2",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1V2_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3V4_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain difference of V3-V4 (Ch1) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3V4_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V3-V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V3-V4",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3V4_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the high-gain difference of V3-V4 (Ch1) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3V4_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3V4_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst V3-V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V3-V4",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3V4_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1234_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain sum of V1+V2+V3+V4 (Ch2) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1234_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V1+V2+V3+V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V1+V2+V3+V4",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1234_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the high-gain sum of V1+V2+V3+V4 (Ch2) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1234_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1234_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst V1+V2+V3+V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V1+V2+V3+V4",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1234_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Engineering_nT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering nT)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Engineering_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Burst SCM",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Engineering_nT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain SCM MF sensor (Ch5) NOT corrected for frequency response (engineering nT)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Engineering_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Burst SCM",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Engineering_nT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering nT)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Engineering_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Burst SCM",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst SCM",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain SCM MF sensor (Ch5) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst SCM",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst SCM",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain V1 sensor (Ch3) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V1",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V1",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain V2 sensor (Ch5) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V2",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain V3 sensor (Ch1) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V3",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V3",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain V4 sensor (Ch2) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V4",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain V5 sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V5",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V5",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Engineering_nT_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the high-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering nT)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Engineering_nT",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Engineering_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Burst SCM",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Engineering_nT"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Engineering_nT_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the high-gain SCM MF sensor (Ch5) NOT corrected for frequency response (engineering nT)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Engineering_nT",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Engineering_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Burst SCM",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Engineering_nT"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Engineering_nT_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the low-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering nT)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Engineering_nT",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Engineering_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Burst SCM",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f"
+        ],
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Engineering_nT"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the high-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst SCM",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the high-gain SCM MF sensor (Ch5) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst SCM",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the low-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst SCM",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1LG_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the low-gain V1 sensor (Ch3) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1LG_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst V1",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V1",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1LG_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2LG_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the low-gain V2 sensor (Ch5) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2LG_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V2",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2LG_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3LG_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the low-gain V3 sensor (Ch1) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3LG_Engineering_mV",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst V3",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V3",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f"
+        ],
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3LG_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4LG_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the low-gain V4 sensor (Ch2) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4LG_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V4",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4LG_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5LG_Engineering_mV_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series for the low-gain V5 sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5LG_Engineering_mV",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst V5",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "VIRTUAL": "true",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V5",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5LG_Engineering_mV"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Physical_Units_Valid_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] Flag indicates that frequency corrected physical units are available for burst time series",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Physical_Units_Valid_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain V1 sensor (Ch1) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V1",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V1",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain V2 sensor (Ch2) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V2",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain V3 sensor (Ch3) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V3",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V3",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain V4 sensor (Ch4) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V4",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain V5 sensor (Ch5) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V5",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V5",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1V2_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain difference of V1-V2 (Ch3) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1V2_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V1-V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V1-V2",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3V4_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain difference of V3-V4 (Ch1) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3V4_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V3-V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V3-V4",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1234_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain sum of V1+V2+V3+V4 (Ch2) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1234_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V1+V2+V3+V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V1+V2+V3+V4",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Physical_nT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain SCM MF sensor (Ch4) corrected for frequency response (physical nT)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Physical_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Burst SCM",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Physical_nT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain SCM MF sensor (Ch5) corrected for frequency response (physical nT)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Physical_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Burst SCM",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Physical_nT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain SCM MF sensor (Ch4) corrected for frequency response (physical nT)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Physical_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Burst SCM",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain SCM MF sensor (Ch4) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst SCM",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain SCM MF sensor (Ch5) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst SCM",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain SCM MF sensor (Ch4) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst SCM",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1LG_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain V1 sensor (Ch3) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1LG_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V1",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V1",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2LG_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain V2 sensor (Ch5) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2LG_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V2",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3LG_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain V3 sensor (Ch1) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3LG_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V3",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V3",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4LG_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain V4 sensor (Ch2) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4LG_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V4",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5LG_Physical_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the low-gain V5 sensor (Ch4) corrected for frequency response (physical mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5LG_Physical_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V5",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V5",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SWEAP_Counts": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] The TDS wave-form burst time series for SWEAP (Ch0) - the values are positive integers (GE 0) returned as a real from the SWEAP particle count channel (counts)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SWEAP_Counts",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.1",
+        "LABLAXIS": "Burst SWEAP",
+        "SCALEMAX": 100.0,
+        "SCALEMIN": 0.0,
+        "SPDF_NOTE": "use the virtual variable *_f below",
+        "UNITS": "Counts",
+        "VALIDMAX": 200.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "Counts",
+        "x_LABLAXIS": "Burst SWEAP",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SWEAP_Counts_f": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The TDS wave-form burst time series for SWEAP (Ch0) - the values are positive integers (GE 0) returned as a real from the SWEAP particle count channel (counts)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SWEAP_Counts",
+        "DEPEND_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SWEAP_Counts",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.1",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Burst SWEAP",
+        "SCALEMAX": 100.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "Counts",
+        "VALIDMAX": 200.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "Counts",
+        "x_LABLAXIS": "Burst SWEAP",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SWEAP_Counts"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_N_Bursts_Today": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Total count of TDS multi-channel wave-form bursts in this CDF (records)",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_N_Bursts_Today",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I8",
+        "LABLAXIS": "Count",
+        "SCALEMAX": 20000,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 100000,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Count"
+      },
+      "VarData": [
+        514
+      ]
+    },
+    "PSP_FLD_L2_TDS_WF_Version": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst telemetry format version number",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Version",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I4",
+        "LABLAXIS": "Version",
+        "SCALEMAX": 10,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 999,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Version"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Start_Time_ASCII": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 26,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Corrected UTC time of the start of the burst in an easy to read 26 character string",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Start_Time_ASCII",
+        "FORMAT": "A",
+        "LABLAXIS": "Burst Time",
+        "UNITS": "None",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Burst Time"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_ID": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Event number for this burst",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_ID",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I12",
+        "LABLAXIS": "Burst ID",
+        "SCALEMAX": 4000000000,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 4000000000,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Burst ID"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Quality": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Overall quality for this burst (arbitrary units - used for burst selection)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Quality",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I12",
+        "LABLAXIS": "Burst Quality",
+        "SCALEMAX": 4000000000,
+        "SCALEMIN": 0,
+        "UNITS": "Arbitrary",
+        "VALIDMAX": 4000000000,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Arbitrary",
+        "x_LABLAXIS": "Burst Quality"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Quality_Algorithm_Name": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 20,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[LIST/CREATIONs only] ASCII string giving the flight software algorithm in use for burst quality determination",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Quality_Algorithm_Name",
+        "FORMAT": "A",
+        "LABLAXIS": "Trigger",
+        "UNITS": "None",
+        "VAR_TYPE": "data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Trigger"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Type_Name": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 8,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[LIST/CREATIONs only] Indicates that the burst is a Quality, Honesty or Promptly burst (8 character string)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Type_Name",
+        "FORMAT": "A",
+        "LABLAXIS": "Burst Type",
+        "UNITS": "None",
+        "VAR_TYPE": "data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Burst Type"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_N_Samples_per_Channel": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of samples per channel",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_N_Samples_per_Channel",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I8",
+        "LABLAXIS": "N Samples",
+        "SCALEMAX": 262144,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 262144,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "N Samples"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_N_Samples_per_Channel_MAX": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Maximum number of samples allowed per channel (always 262,144)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_N_Samples_per_Channel_MAX",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I8",
+        "LABLAXIS": "N Samples MAX",
+        "SCALEMAX": 262144,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 262144,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "N Samples MAX"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Start_Time_UR8": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Corrected UTC time of the start of the burst in traditional TMlib UR8 time (days)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Start_Time_UR8",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F20.9",
+        "LABLAXIS": "Start UR8",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": 21184.0,
+        "SCALEMIN": 13726.0,
+        "UNITS": "days",
+        "VALIDMAX": 24837.0,
+        "VALIDMIN": 10227.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "days",
+        "x_LABLAXIS": "Start UR8"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Start_Time_UNIX": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time of the start of the burst in UNIX time derived from the corrected UTC (seconds)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Start_Time_UNIX",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F24.6",
+        "LABLAXIS": "UNIX time",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": 4000000000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "seconds",
+        "VALIDMAX": 4000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "seconds",
+        "x_LABLAXIS": "UNIX time"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Start_Time_TT2000": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Burst start time in corrected UTC TT2000 time (ns)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Start_Time_TT2000",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "FORMAT": "I22",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2038-12-31T23:58:59.999998208",
+        "SCALEMIN": "2018-08-01T12:00:00.000000000",
+        "UNITS": "ns",
+        "VALIDMAX": "2049-12-31T23:58:59.999998208",
+        "VALIDMIN": "2009-12-31T23:59:59.999998080",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Corrected (UTC-based) absolute time for each of the time series samples (ns)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "FILLVAL": "2000-01-01T11:58:54.816000001",
+        "FORMAT": "I22",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2038-12-31T23:58:59.999998208",
+        "SCALEMIN": "2018-08-01T12:00:00.000000000",
+        "SPDF_NOTE": "Turns out the fillvalue is actually -999999999, so changed the fillvalue for this value accordingly",
+        "UNITS": "ns",
+        "VALIDMAX": "2049-12-31T23:58:59.999998208",
+        "VALIDMIN": "2009-12-31T23:59:59.999998080",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000_f": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flattened Corrected (UTC-based) absolute time for each of the time series samples (ns)",
+        "COMPONENT_0": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "FILLVAL": "2000-01-01T11:58:54.816000001",
+        "FORMAT": "I22",
+        "FUNCT": "flatten_data",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2038-12-31T23:58:59.999998208",
+        "SCALEMIN": "2018-08-01T12:00:00.000000000",
+        "SPDF_NOTE": "Turns out the fillvalue is actually -999999999, so changed the fillvalue for this value accordingly",
+        "UNITS": "ns",
+        "VALIDMAX": "2049-12-31T23:58:59.999998208",
+        "VALIDMIN": "2009-12-31T23:59:59.999998080",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "Epoch",
+        "COMPONENTS": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Total_SWEAP_Counts": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The total number of SWEAP particle counts in this TDS wave-form burst time series (Ch0) - the value is a positive integer (GE 0) returned as a real8 from the SWEAP particle counting channel (counts)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Total_SWEAP_Counts",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.1",
+        "LABLAXIS": "SWEAP Counts",
+        "SCALEMAX": 10000000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "Counts",
+        "VALIDMAX": 20000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Counts",
+        "x_LABLAXIS": "SWEAP Counts"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Total_SWEAP_Counting_Rate": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The observed SWEAP particle counting rate (Ch0) during this burst (counts per second)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Total_SWEAP_Counting_Rate",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.1",
+        "LABLAXIS": "SWEAP CPS",
+        "SCALEMAX": 10000000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "CPS",
+        "VALIDMAX": 20000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "CPS",
+        "x_LABLAXIS": "SWEAP CPS"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SWEAP_Status": {
+      "VarDescription": {
+        "DataType": "CDF_INT8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -9223372036854775807,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SWEAP Status word (coded)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SWEAP_Status",
+        "FILLVAL": -9223372036854775808,
+        "FORMAT": "z8",
+        "LABLAXIS": "SWEAP Status",
+        "SCALEMAX": 4294967295,
+        "SCALEMIN": 0,
+        "UNITS": "counts",
+        "VALIDMAX": 4294967295,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "SWEAP Status"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SWEAP_Electron_Mask": {
+      "VarDescription": {
+        "DataType": "CDF_INT8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -9223372036854775807,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SWEAP SWEAP electron anode selection mask (coded)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SWEAP_Electron_Mask",
+        "FILLVAL": -9223372036854775808,
+        "FORMAT": "z8",
+        "LABLAXIS": "SWEAP e Mask",
+        "SCALEMAX": 4294967295,
+        "SCALEMIN": 0,
+        "UNITS": "counts",
+        "VALIDMAX": 4294967295,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "SWEAP e Mask"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SWEAP_Ion_Mask": {
+      "VarDescription": {
+        "DataType": "CDF_INT8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -9223372036854775807,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SWEAP SWEAP ion anode selection mask (coded)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SWEAP_Ion_Mask",
+        "FILLVAL": -9223372036854775808,
+        "FORMAT": "z8",
+        "LABLAXIS": "SWEAP ion Mask",
+        "SCALEMAX": 4294967295,
+        "SCALEMIN": 0,
+        "UNITS": "counts",
+        "VALIDMAX": 4294967295,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "SWEAP ion Mask"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SWEAP_Start": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time since the last SWEAP sweep start (seconds)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SWEAP_Start",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F10.3",
+        "LABLAXIS": "SWEAP Start",
+        "SCALEMAX": 250.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "s",
+        "VALIDMAX": 250.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "s",
+        "x_LABLAXIS": "SWEAP Start"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_All_Channels_Exist_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that all six burst channels exist for this burst",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_All_Channels_Exist_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SWEAP_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for the SWEAP particle counter",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SWEAP_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1V2_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1V2_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3V4_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3V4_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1234_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1234_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM5_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_SCM4LG_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1LG_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1LG_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2LG_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V2LG_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3LG_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V3LG_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4LG_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V4LG_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5LG_Exists_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that this TDS burst exists for this sensor",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V5LG_Exists_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Trigger_Source_Name": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 8,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The current burst trigger channel source number (8 character string)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Trigger_Source_Name",
+        "FORMAT": "A",
+        "LABLAXIS": "Trigger",
+        "UNITS": "None",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Trigger"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Trigger_Threshold_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The current burst trigger threshold (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Trigger_Threshold_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Trigger",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "mV",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Trigger"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Trigger_Position": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The desired time/location of the burst trigger after the start of the burst (s)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Trigger_Position",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.6",
+        "LABLAXIS": "Trigger",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "s",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s",
+        "x_LABLAXIS": "Trigger"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SC_Thrusting_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Indicates thrusting coming or happening now",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SC_Thrusting_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SC_TWTA_On_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Indicates a spacecraft traveling wave-tube amplifier is on",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SC_TWTA_On_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SCM_Cal_On_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Indicates the internal calbration cycle of the SCM is on",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SCM_Cal_On_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_DFB_Bursting_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Indicates the FIELDS DFB is producing a high-rate burst now",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_DFB_Bursting_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Bursts_Suppressed_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Indicates the FIELDS burst suppression flag is on",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Bursts_Suppressed_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Down_Sampling_State": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Indicates that TDS down-sampling is in use",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Down_Sampling_State",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Sample_Speed": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Possibly down-sampled sample rate of the TDS (Samples/second)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Sample_Speed",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F18.1",
+        "LABLAXIS": "TDS Sa/s",
+        "SCALEMAX": 20000000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "Sa/s",
+        "VALIDMAX": 20000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Sa/s",
+        "x_LABLAXIS": "TDS Sa/s"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Sample_Period": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Possibly down-sampled sample period of the TDS samples (seconds/sample)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Sample_Period",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F18.9",
+        "LABLAXIS": "TDS s/Sa",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "s",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s",
+        "x_LABLAXIS": "TDS s/Sa"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Period": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Burst duration period of this TDS burst (seconds/burst)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Period",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F18.6",
+        "LABLAXIS": "TDS s/burst",
+        "SCALEMAX": 10.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "s",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s",
+        "x_LABLAXIS": "TDS s/burst"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Nyquist_Frequency": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Burst Nyquist frequency (Hz)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Nyquist_Frequency",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F18.1",
+        "LABLAXIS": "Nyquist",
+        "SCALEMAX": 20000000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "Hz",
+        "VALIDMAX": 20000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "Nyquist"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Frequency_Resolution": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Burst frequency resolution and lowest frequency (Hz)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Frequency_Resolution",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F18.1",
+        "LABLAXIS": "Frequency Resolution",
+        "SCALEMAX": 20000000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "Hz",
+        "VALIDMAX": 20000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "Frequency Resolution"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Low_Pass_Filters_Match_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that all five analog channels have matching LPFs",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Low_Pass_Filters_Match_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Low_Pass_Filter": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Low-Pass filter value in use for this burst (Hz)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Low_Pass_Filter",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F18.1",
+        "LABLAXIS": "TDS LPF",
+        "SCALEMAX": 20000000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "Hz",
+        "VALIDMAX": 20000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "TDS LPF"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_TM_Xmit_Sequence_Number": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The sequence number this wave-form burst was sent from FIELDS2",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_TM_Xmit_Sequence_Number",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I10",
+        "LABLAXIS": "Xmit Sequence",
+        "SCALEMAX": 16777215,
+        "SCALEMIN": 0,
+        "UNITS": "count",
+        "VALIDMAX": 16777215,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "count",
+        "x_LABLAXIS": "Xmit Sequence"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_DFB_Voltages_Valid_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that all V1234 antenna voltages from the DFB are are valid",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_DFB_Voltages_Valid_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_DFB_Voltage_V1": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The DFB DC voltage measurement from the V1 sensor (Volts)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_DFB_Voltage_V1",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "V1DC",
+        "SCALEMAX": 200.0,
+        "SCALEMIN": -200.0,
+        "UNITS": "V",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "V1DC"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_DFB_Voltage_V2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The DFB DC voltage measurement from the V2 sensor (Volts)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_DFB_Voltage_V2",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "V2DC",
+        "SCALEMAX": 200.0,
+        "SCALEMIN": -200.0,
+        "UNITS": "V",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "V2DC"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_DFB_Voltage_V3": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The DFB DC voltage measurement from the V3 sensor (Volts)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_DFB_Voltage_V3",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "V3DC",
+        "SCALEMAX": 200.0,
+        "SCALEMIN": -200.0,
+        "UNITS": "V",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "V3DC"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_DFB_Voltage_V4": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "The DFB DC voltage measurement from the V4 sensor (Volts)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_DFB_Voltage_V4",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "V4DC",
+        "SCALEMAX": 200.0,
+        "SCALEMIN": -200.0,
+        "UNITS": "V",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V",
+        "x_LABLAXIS": "V4DC"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SC_Reaction_Wheel_Speeds_Valid_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that all of the four reaction wheel speeds are valid",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SC_Reaction_Wheel_Speeds_All_Valid_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SC_Reaction_Wheel_Speed_RW1": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Indicates the rotational speed of the 1st reaction wheel (revolutions per second)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SC_Reaction_Wheel_Speed_RW1",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RW1",
+        "SCALEMAX": 200.0,
+        "SCALEMIN": -200.0,
+        "UNITS": "RPS",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "RPS",
+        "x_LABLAXIS": "RW1"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SC_Reaction_Wheel_Speed_RW2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Indicates the rotational speed of the 2nd reaction wheel (revolutions per second)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SC_Reaction_Wheel_Speed_RW2",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RW2",
+        "SCALEMAX": 200.0,
+        "SCALEMIN": -200.0,
+        "UNITS": "RPS",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "RPS",
+        "x_LABLAXIS": "RW2"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SC_Reaction_Wheel_Speed_RW3": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Indicates the rotational speed of the 3rd reaction wheel (revolutions per second)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SC_Reaction_Wheel_Speed_RW3",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RW3",
+        "SCALEMAX": 200.0,
+        "SCALEMIN": -200.0,
+        "UNITS": "RPS",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "RPS",
+        "x_LABLAXIS": "RW3"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SC_Reaction_Wheel_Speed_RW4": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Indicates the rotational speed of the 4th reaction wheel (revolutions per second)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SC_Reaction_Wheel_Speed_RW4",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RW4",
+        "SCALEMAX": 200.0,
+        "SCALEMIN": -200.0,
+        "UNITS": "RPS",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "RPS",
+        "x_LABLAXIS": "RW4"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Saturation_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Indicates that at least one analog channel had at least one sample saturated at the plus or minus limit",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Saturation_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_V1_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the high-gain V1 sensor (Ch1) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_V1_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak V1",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak V1"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_V2_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the high-gain V2 sensor (Ch2) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_V2_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak V2"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_V3_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the high-gain V3 sensor (Ch3) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_V3_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak V3",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak V3"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_V4_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the high-gain V4 sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_V4_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak V4"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_V5_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the high-gain V5 sensor (Ch5) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_V5_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak V5",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak V5"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_V1V2_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the high-gain difference of V1-V2 (Ch3) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_V1V2_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak V1-V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak V1-V2"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_V3V4_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the high-gain difference of V3-V4 (Ch1) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_V3V4_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak V3-V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak V3-V4"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_V1234_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the high-gain sum of V1+V2+V3+V4 (Ch2) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_V1234_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak V1+V2+V3+V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak V1+V2+V3+V4"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_SCM4_Engineering_nT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the high-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering nT)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_SCM4_Engineering_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Peak SCM"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_SCM5_Engineering_nT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the high-gain SCM MF sensor (Ch5) NOT corrected for frequency response (engineering nT)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_SCM5_Engineering_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Peak SCM"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_SCM4LG_Engineering_nT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the low-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering nT)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_SCM4LG_Engineering_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Peak SCM"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_SCM4_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the high-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_SCM4_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak SCM"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_SCM5_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the high-gain SCM MF sensor (Ch5) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_SCM5_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak SCM"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_SCM4LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the low-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_SCM4LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak SCM"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_V1LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the low-gain V1 sensor (Ch3) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_V1LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak V1",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak V1"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_V2LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the low-gain V2 sensor (Ch5) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_V2LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak V2"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_V3LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the low-gain V3 sensor (Ch1) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_V3LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak V3",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak V3"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_V4LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the low-gain V4 sensor (Ch2) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_V4LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak V4"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Peak_V5LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series peak for the low-gain V5 sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Peak_V5LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Peak V5",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Peak V5"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_V1_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the high-gain V1 sensor (Ch1) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_V1_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS V1",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS V1"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_V2_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the high-gain V2 sensor (Ch2) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_V2_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS V2"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_V3_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the high-gain V3 sensor (Ch3) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_V3_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS V3",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS V3"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_V4_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the high-gain V4 sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_V4_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS V4"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_V5_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the high-gain V5 sensor (Ch5) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_V5_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS V5",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS V5"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_V1V2_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the high-gain difference of V1-V2 (Ch3) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_V1V2_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS V1-V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS V1-V2"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_V3V4_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the high-gain difference of V3-V4 (Ch1) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_V3V4_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS V3-V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS V3-V4"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_V1234_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the high-gain sum of V1+V2+V3+V4 (Ch2) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_V1234_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS V1+V2+V3+V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS V1+V2+V3+V4"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_SCM4_Engineering_nT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the high-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering nT)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_SCM4_Engineering_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "RMS SCM"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_SCM5_Engineering_nT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the high-gain SCM MF sensor (Ch5) NOT corrected for frequency response (engineering nT)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_SCM5_Engineering_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "RMS SCM"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_SCM4LG_Engineering_nT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the low-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering nT)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_SCM4LG_Engineering_nT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "nT",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "RMS SCM"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_SCM4_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the high-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_SCM4_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS SCM"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_SCM5_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the high-gain SCM MF sensor (Ch5) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_SCM5_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS SCM"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_SCM4LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the low-gain SCM MF sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_SCM4LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS SCM",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS SCM"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_V1LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the low-gain V1 sensor (Ch3) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_V1LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS V1",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS V1"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_V2LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the low-gain V2 sensor (Ch5) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_V2LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS V2",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS V2"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_V3LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the low-gain V3 sensor (Ch1) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_V3LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS V3",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS V3"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_V4LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the low-gain V4 sensor (Ch2) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_V4LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS V4",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS V4"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_RMS_V5LG_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TDS wave-form burst time series RMS for the low-gain V5 sensor (Ch4) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_RMS_V5LG_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "RMS V5",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "all fill, turned off for now",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "RMS V5"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SC_Solar_Distance_Known_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that the S/C provided solar distance is known (0 means not known; 1 means known)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SC_Solar_Distance_Known_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SC_Solar_Distance_Valid_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates that the S/C provided solar distance is valid (0 means not valid; 1 means valid)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SC_Solar_Distance_Valid_Flag",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SC_Solar_Distance_Direction": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 255,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flag indicates the S/C direction to/fron the sun (0 means falling; 1 means climbing)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SC_Solar_Distance_Direction",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Flag",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "Flag"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_SC_Solar_Distance": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Value is the S/C provided distance to the sun at the time of this burst",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_SC_Solar_Distance",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.3",
+        "LABLAXIS": "S/C-Sun",
+        "SCALEMAX": 160000000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "km",
+        "VALIDMAX": 200000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "S/C-Sun"
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] Relative time for the time series samples - starting at zero and counting up (s)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.9",
+        "LABLAXIS": "Time",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "s",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "s",
+        "x_LABLAXIS": "Time",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    },
+    "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1_Engineering_mV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          262144
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] TDS wave-form burst time series for the high-gain V1 sensor (Ch1) NOT corrected for frequency response (engineering mV)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PSP_FLD_L2_TDS_WF_Burst_Time_Series_V1_Engineering_mV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "Burst V1",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SPDF_NOTE": "Use the *_f virtual variable to plot/list as a time_series",
+        "UNITS": "mV",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": -100000.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "mV",
+        "x_LABLAXIS": "Burst V1",
+        "x_DEPEND": [
+          "PSP_FLD_L2_TDS_WF_Burst_Time_Series_Times_TT2000"
+        ]
+      }
+    }
+  }
+}

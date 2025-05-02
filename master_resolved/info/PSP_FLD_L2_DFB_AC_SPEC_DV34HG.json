@@ -1,0 +1,202 @@
+{
+  "CDFFileInfo": {
+    "File": "psp_fld_l2_dfb_ac_spec_dv34hg_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/psp_fld_l2_dfb_ac_spec_dv34hg_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "PSP FIELDS Digital Fields Board (DFB), dV34hg data. ",
+    "Project": "PSP",
+    "Discipline": "Solar Physics>Heliospheric Physics\nSolar Physics>Interplanetary Studies",
+    "Source_name": "PSP>Parker Solar Probe",
+    "Descriptor": "DFB_AC_SPEC_DV34HG>Digital Fields Board AC Spectra dV34hg",
+    "Data_type": "L2>Level 2 Data",
+    "Data_version": " ",
+    "TEXT": "PSP FIELDS Digital Fields Board (DFB), dV34hg data. \nThe DFB is the low frequency (< 75 kHz) component of the FIELDS experiment on the Parker Solar Probe spacecraft [1]. For a full description of the FIELDS experiment, see [2]. For a description of the DFB, see [3].\nDFB AC spectra data consist of power spectral densities as a function of frequency and time.  These spectra are averaged in both frequency and time as described in [3]. The spectra have pseudo-logarithmically spaced frequency bins, with the bin central frequencies reported in the metadata. The AC spectra are duty-cycled such that spectral averaging takes place over the first 1/8 of any given NYs (assuming a 1 NYs data cadence).  Less data are averaged by 2^N for cadences faster than 1 NYs by 2^N.  For cadences slower than 1 NYs, the first 1/8 of each NYs of data included are averaged together to form the reported data.  \nThe Level 2 data products contained in this data file have been calibrated for (i) the Hanning window used in the spectral calculation, (ii) DFB in-band gain, (iii) DFB analog filter gain response, (iv) DFB digital filter gain response, (v) the search coil preamplifier response (when applicable), (vi) the bandwidth of each spectral bin.  Note that compensation for the DFB digital filters will introduce a non-physical positively sloped power trend at high frequencies when the non-corrected signal is dominated by noise.  This effect should be examined carefully when determining spectral slopes and features at the highest frequencies.  Calibrations for the FIELDS preamplifiers have not been implemented, as the preamplifier response is flat and equal to 1 through the DFB frequency range.  Corrections for plasma sheath impedance gain and antenna effective length have not been applied to voltage sensor data (these corrections will be applied in Level 3 DFB data), therefore units for all voltage sensor quantities are Volts^2/Hz.  Units for all magnetic field quantities are nT^2/Hz.\nThe Level 2 voltage data products contained in this data file are in sensor coordinates (e.g. dV12, dV34 for voltage measurements). For solar orbits 1 and 2, the search coil magnetometer spectral data is rotated into a non-intuitive coordinate system (d,e,f). For solar orbits 3 and beyond, magnetic field data products are in u,v,w search coil magnetometer sensor coordinates.  \nTo rotate from d,e,f into u,v,w search coil sensor coordinates, use the following matrix as (IDL notation) spectra_uvw_3vector = R ## spectra_def_3vector.  \nR =  [ [ 0.46834856  , -0.81336422    ,  0.34509170]\n       [-0.66921924  , -0.071546954   ,  0.73961249]\n       [-0.57688408  , -0.57733845    , -0.57782790]  ]\nTime resolution of the DFB AC spectral data can vary by multiples of 2^N.  During encounter (when PSP is within 0.25 AU of the Sun), the DFB AC spectra data is typically reported each 1 NYsecond [2].  Timestamps correspond to the center time of each window. \nReferences: \n1. Fox, N.J., Velli, M.C., Bale, S.D. et al. Space Sci Rev (2016) 204: 7. https://doi.org/10.1007/s1121401502116 \n2. Bale, S.D., Goetz, K., Harvey, P.R. et al. Space Sci Rev (2016) 204: 49. https://doi.org/10.1007/s1121401602445 \n3. Malaspina, D.M., Ergun, R.E., Bolton, M. et al. (2016) JGR Space Physics, 121, 5088-5096. https://doi.org/10.1002/2016JA022344",
+    "MODS": "Version 1",
+    "Logical_file_id": "psp_fld_l2_dfb_ac_spec_dV34hg",
+    "Logical_source": "psp_fld_l2_dfb_ac_spec_dV34hg",
+    "Logical_source_description": "PSP FIELDS Level 2 DFB AC Spectra of dV34 High Gain (HG) Channel (DV34HG)",
+    "PI_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+    "PI_affiliation": "UC Berkeley Space Sciences Laboratory",
+    "Mission_group": "Parker Solar Probe (PSP)",
+    "Parents": " ",
+    "Dependencies": "None",
+    "Instrument_type": "Electric Fields (space)",
+    "Generation_date": " ",
+    "Generated_by": "PSP FIELDS SOC",
+    "HTTP_LINK": "http://fields.ssl.berkeley.edu/data/",
+    "LINK_TEXT": "PSP/FIELDS SOC",
+    "LINK_TITLE": " Data Link",
+    "svn_version": " ",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/ParkerSolarProbe/FIELDS/DFB/Level2/AC/Spectra/DV34/HighGain/PT0.873813S",
+    "DOI": "https://doi.org/10.48322/52bj-8b73"
+  },
+  "CDFVariables": {
+    "epoch_ac_spec_dV34hg": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time for the DV34HG spectra data",
+        "FIELDNAM": "epoch_ac_spec_dV34hg",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "FORMAT": "I22",
+        "LABLAXIS": "epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2019-07-25T00:00:00.000000000",
+        "SCALEMIN": "2019-07-24T00:00:00.000000000",
+        "UNITS": "ns",
+        "VALIDMAX": "2050-01-01T00:00:00.000000000",
+        "VALIDMIN": "2010-01-01T00:00:00.000000000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "epoch"
+      }
+    },
+    "psp_fld_l2_dfb_ac_spec_dV34hg_frequency_bins": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          54
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Frequency bins for channel DV34HG",
+        "DEPEND_0": "epoch_ac_spec_dV34hg",
+        "FIELDNAM": "psp_fld_l2_dfb_ac_spec_dV34hg_frequency_bins",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.1",
+        "LABLAXIS": "frequency",
+        "SCALETYP": "log",
+        "UNITS": "Hz",
+        "VALIDMAX": 72656.2,
+        "VALIDMIN": 366.2,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "frequency"
+      }
+    },
+    "psp_fld_l2_dfb_ac_spec_dV34hg": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          54
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "L2 Power Spectra for channel DV34HG",
+        "DEPEND_0": "epoch_ac_spec_dV34hg",
+        "DEPEND_1": "psp_fld_l2_dfb_ac_spec_dV34hg_frequency_bins",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "psp_fld_l2_dfb_ac_spec_dV34hg",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F12.3",
+        "LABLAXIS": "PSD",
+        "SCALETYP": "log",
+        "UNITS": "V^2/Hz",
+        "VALIDMAX": 122880.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "V^2/Hz",
+        "x_LABLAXIS": "PSD",
+        "x_DEPEND": [
+          "psp_fld_l2_dfb_ac_spec_dV34hg_frequency_bins"
+        ]
+      }
+    },
+    "psp_fld_l2_dfb_ac_spec_dV34hg_saturation_flags": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "L2 Saturation flags (1 = spectra saturated, 0 = spectra unsaturated)",
+        "DEPEND_0": "epoch_ac_spec_dV34hg",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "psp_fld_l2_dfb_ac_spec_dV34hg_saturation_flags",
+        "FILLVAL": -32768,
+        "FORMAT": "I8",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null
+      }
+    },
+    "epoch_quality_flags": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time for the FIELDS quality flag",
+        "FIELDNAM": "epoch_quality_flags",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "FORMAT": "I22",
+        "LABLAXIS": "epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2019-07-25T00:00:00.000000000",
+        "SCALEMIN": "2019-07-24T00:00:00.000000000",
+        "UNITS": "ns",
+        "VALIDMAX": "2050-01-01T00:00:00.000000000",
+        "VALIDMIN": "2010-01-01T00:00:00.000000000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "epoch"
+      }
+    },
+    "psp_fld_l2_quality_flags": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "FIELDS quality flag",
+        "DEPEND_0": "epoch_quality_flags",
+        "FIELDNAM": "quality_flags",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I10",
+        "LABLAXIS": "flag",
+        "UNITS": "None",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "FIELDS quality flags. This is a bitwise variable, meaning that multiple flags can be set for a single time, by adding flag values. Current flagged values are: 1: FIELDS antenna bias sweep, 2: PSP thruster firing, 4: SCM Calibration, 8: PSP rotations for MAG calibration (MAG rolls), 16: FIELDS MAG calibration sequence, 32: SWEAP SPC in electron mode, 64: PSP Solar limb sensor (SLS) test. 128: PSP spacecraft is off umbra pointing. 256: High frequency noise affecting RFS and TDS receivers. 512: Antennas driven towards the FIELDS power supply rails. A value of zero corresponds to no set flags. Not all flags are relevant to all FIELDS data products, refer to notes in the CDF metadata and on the FIELDS SOC website for information on how the various flags impact FIELDS data. For more information on the quality flags describing high frequency noise and antennas driven to the rails, see release notes for PSP/FIELDS releases 8 and 9. Additional flagged items may be added in the future.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "None",
+        "x_LABLAXIS": "flag"
+      }
+    }
+  }
+}

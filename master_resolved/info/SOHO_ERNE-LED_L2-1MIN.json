@@ -1,0 +1,519 @@
+{
+  "CDFFileInfo": {
+    "File": "soho_erne-led_l2-1min_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/soho_erne-led_l2-1min_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Source_name": "SOHO>Solar Heliospheric Observatory",
+    "Discipline": "Solar Physics>Heliospheric Physics",
+    "Data_type": "L2-1MIN>Level2 1 minute resolution",
+    "Descriptor": "ERNE-LED>Low Energy Detector",
+    "Data_version": " ",
+    "Time_resolution": "1 minute",
+    "TEXT": "Description of the ERNE instrument and scientific scope can \nbe found on the ERNE homepage https://srl.utu.fi/projects/erne/ \nand on the SOHO homepage http://sohowww.nascom.nasa.gov/ \nDescription of the ERNE-LED Level2 data, including caveats,\nactual energy ranges of proton and He-4 channels,\nand status word description, is available at \nhttps://export.srl.utu.fi/export_data_description.txt\nReference:\nTorsti, J., Valtonen, E., Lumme, M., et al. 1995: \nEnergetic particle experiment ERNE. Sol Phys 162, 505-531.\nhttps://doi.org/10.1007/BF00733438\nThe data was created from the original ASCII dataset at https://export.srl.utu.fi/",
+    "MODS": " ",
+    "File_naming_convention": "source_descriptor_datatype_yyyyMMdd",
+    "Logical_file_id": "soho_erne-led_l2-1min_19960507_v01",
+    "Logical_source": "soho_erne-led_l2-1min",
+    "Logical_source_description": "SOHO ERNE-LED Level2 1 minute data",
+    "PI_name": "Rami Vainio (rami.vainio@utu.fi)",
+    "PI_affiliation": "Space Research Laboratory\nDepartment of Physics and Astronomy\nFI-20014 University of Turku\nFinland",
+    "Mission_group": "SOHO",
+    "Instrument_type": "Energetic Particle Detector",
+    "LINK_TEXT": "SOHO ERNE-LED 1 minute data available at",
+    "LINK_TITLE": "SOHO/ERNE Export data archive",
+    "HTTP_LINK": "https://export.srl.utu.fi/",
+    "Parents": " ",
+    "Generated_by": "Andriy Koval at SPDF from original ASCII files at \nhttps://export.srl.utu.fi/",
+    "spase_DatasetResourceID": "spase://ESA/NumericalData/SOHO/ERNE/LED/CDF/PT1M",
+    "DOI": "https://doi.org/10.48322/0cna-yt27"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Start time, number of milliseconds since 01-Jan-0000 00:00:00.000",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "TIME_BASE": "0 AD",
+        "UNITS": "ms",
+        "VALIDMAX": "2050-01-01T00:00:00.000",
+        "VALIDMIN": "1995-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "est": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967295,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Status word, see TEXT",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Status word",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I10",
+        "LABLAXIS": "Status word",
+        "UNITS": " ",
+        "VALIDMAX": 65535,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Status word"
+      }
+    },
+    "PL": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          10
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton intensity in 10 energy ranges (nominal 1.3-13 MeV)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "P_energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=PL,z=P_energy",
+        "FIELDNAM": "Proton intensity in 10 energy ranges",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.2",
+        "LABLAXIS": "Proton intensity",
+        "SCALETYP": "log",
+        "UNITS": "(cm^2 s sr MeV)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 s sr MeV)^-1",
+        "x_LABLAXIS": "Proton intensity",
+        "x_DEPEND": [
+          "P_energy"
+        ]
+      }
+    },
+    "AL": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          10
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "He-4 intensity in 10 energy ranges (nominal 1.3-13 MeV/n)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "He_energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=AL,z=He_energy",
+        "FIELDNAM": "He-4 intensity in 10 energy ranges",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.2",
+        "LABLAXIS": "He-4 intensity",
+        "SCALETYP": "log",
+        "UNITS": "(cm^2 s sr MeV/n)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 s sr MeV/n)^-1",
+        "x_LABLAXIS": "He-4 intensity",
+        "x_DEPEND": [
+          "He_energy"
+        ]
+      }
+    },
+    "PLC": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          10
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483648,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton count rate in 10 energy ranges (nominal 1.3-13 MeV)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "P_energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=PLC,z=P_energy",
+        "FIELDNAM": "Proton count rate in 10 energy ranges",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I11",
+        "LABLAXIS": "Proton rate",
+        "UNITS": "counts/min",
+        "VALIDMAX": 100000,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts/min",
+        "x_LABLAXIS": "Proton rate",
+        "x_DEPEND": [
+          "P_energy"
+        ]
+      }
+    },
+    "ALC": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          10
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483648,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "He-4 count rate in 10 energy ranges (nominal 1.3-13 MeV/n)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "He_energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=ALC,z=He_energy",
+        "FIELDNAM": "He-4 count rate in 10 energy ranges",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I11",
+        "LABLAXIS": "He-4 rate",
+        "UNITS": "counts/min",
+        "VALIDMAX": 100000,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts/min",
+        "x_LABLAXIS": "He-4 rate",
+        "x_DEPEND": [
+          "He_energy"
+        ]
+      }
+    },
+    "P_energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          10
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton energy channels",
+        "DELTA_MINUS_VAR": "P_energy_delta",
+        "DELTA_PLUS_VAR": "P_energy_delta",
+        "FIELDNAM": "Proton energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.2",
+        "LABL_PTR_1": "P_E_label",
+        "UNITS": "MeV",
+        "VALIDMAX": 20.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXES": [
+          [
+            "1.3 - 1.6 MeV",
+            "1.6 - 2.0 MeV",
+            "2.0 - 2.5 MeV",
+            "2.5 - 3.2 MeV",
+            "3.2 - 4.0 MeV",
+            "4.0 - 5.0 MeV",
+            "5.0 - 6.4 MeV",
+            "6.4 - 8.0 MeV",
+            "8.0 - 10  MeV",
+            "10  - 13  MeV"
+          ]
+        ]
+      },
+      "VarData": [
+        1.45,
+        1.8,
+        2.25,
+        2.85,
+        3.6,
+        4.5,
+        5.7,
+        7.2,
+        9.0,
+        11.5
+      ]
+    },
+    "P_energy_delta": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          10
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Half width of proton channels",
+        "FIELDNAM": "Half width of proton channels",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F5.2",
+        "LABL_PTR_1": "P_E_label",
+        "UNITS": "MeV",
+        "VALIDMAX": 2.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXES": [
+          [
+            "1.3 - 1.6 MeV",
+            "1.6 - 2.0 MeV",
+            "2.0 - 2.5 MeV",
+            "2.5 - 3.2 MeV",
+            "3.2 - 4.0 MeV",
+            "4.0 - 5.0 MeV",
+            "5.0 - 6.4 MeV",
+            "6.4 - 8.0 MeV",
+            "8.0 - 10  MeV",
+            "10  - 13  MeV"
+          ]
+        ]
+      },
+      "VarData": [
+        0.15,
+        0.2,
+        0.25,
+        0.35,
+        0.4,
+        0.5,
+        0.7,
+        0.8,
+        1.0,
+        1.5
+      ]
+    },
+    "P_E_label": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          10
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 13,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Label for proton energy channels",
+        "FIELDNAM": "Label for proton energy channels",
+        "FORMAT": "A13",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "1.3 - 1.6 MeV",
+        "1.6 - 2.0 MeV",
+        "2.0 - 2.5 MeV",
+        "2.5 - 3.2 MeV",
+        "3.2 - 4.0 MeV",
+        "4.0 - 5.0 MeV",
+        "5.0 - 6.4 MeV",
+        "6.4 - 8.0 MeV",
+        "8.0 - 10  MeV",
+        "10  - 13  MeV"
+      ]
+    },
+    "He_energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          10
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "He-4 energy channels",
+        "DELTA_MINUS_VAR": "He_energy_delta",
+        "DELTA_PLUS_VAR": "He_energy_delta",
+        "FIELDNAM": "He-4 energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.2",
+        "LABL_PTR_1": "He_E_label",
+        "UNITS": "MeV/n",
+        "VALIDMAX": 20.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV/n",
+        "x_LABLAXES": [
+          [
+            "1.3 - 1.6 MeV/n",
+            "1.6 - 2.0 MeV/n",
+            "2.0 - 2.5 MeV/n",
+            "2.5 - 3.2 MeV/n",
+            "3.2 - 4.0 MeV/n",
+            "4.0 - 5.0 MeV/n",
+            "5.0 - 6.4 MeV/n",
+            "6.4 - 8.0 MeV/n",
+            "8.0 - 10  MeV/n",
+            "10  - 13  MeV/n"
+          ]
+        ]
+      },
+      "VarData": [
+        1.45,
+        1.8,
+        2.25,
+        2.85,
+        3.6,
+        4.5,
+        5.7,
+        7.2,
+        9.0,
+        11.5
+      ]
+    },
+    "He_energy_delta": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          10
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Half width of He-4 channels",
+        "FIELDNAM": "Half width of He-4 channels",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F5.2",
+        "LABL_PTR_1": "He_E_label",
+        "UNITS": "MeV/n",
+        "VALIDMAX": 2.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV/n",
+        "x_LABLAXES": [
+          [
+            "1.3 - 1.6 MeV/n",
+            "1.6 - 2.0 MeV/n",
+            "2.0 - 2.5 MeV/n",
+            "2.5 - 3.2 MeV/n",
+            "3.2 - 4.0 MeV/n",
+            "4.0 - 5.0 MeV/n",
+            "5.0 - 6.4 MeV/n",
+            "6.4 - 8.0 MeV/n",
+            "8.0 - 10  MeV/n",
+            "10  - 13  MeV/n"
+          ]
+        ]
+      },
+      "VarData": [
+        0.15,
+        0.2,
+        0.25,
+        0.35,
+        0.4,
+        0.5,
+        0.7,
+        0.8,
+        1.0,
+        1.5
+      ]
+    },
+    "He_E_label": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          10
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 15,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Label for He-4 energy channels",
+        "FIELDNAM": "Label for He-4 energy channels",
+        "FORMAT": "A15",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "1.3 - 1.6 MeV/n",
+        "1.6 - 2.0 MeV/n",
+        "2.0 - 2.5 MeV/n",
+        "2.5 - 3.2 MeV/n",
+        "3.2 - 4.0 MeV/n",
+        "4.0 - 5.0 MeV/n",
+        "5.0 - 6.4 MeV/n",
+        "6.4 - 8.0 MeV/n",
+        "8.0 - 10  MeV/n",
+        "10  - 13  MeV/n"
+      ]
+    }
+  }
+}

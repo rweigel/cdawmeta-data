@@ -1,0 +1,2333 @@
+{
+  "CDFFileInfo": {
+    "File": "wi_plsp_3dp_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/wi_plsp_3dp_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Data_type": "PLSP>PESA (proton/ion electro-static analyzer) Low - Spectra Protons",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Source_name": "WIND>Wind Interplanetary Plasma Laboratory",
+    "Logical_source_description": "Ion omnidirectional fluxes 0.4-3 keV and moments, often at ~24 second resolution, PESA Low, Wind 3DP",
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "TEXT": "Wind 3dp, PESA Low (~24 sec resolution) energy spectra with ion moments ",
+    "PI_name": "R. Lin/S. Bale",
+    "PI_affiliation": "UC Berkeley",
+    "Instrument_type": "Particles (space)\nPlasma and Solar Wind",
+    "Mission_group": "Wind\n!___Interplanetary Data near 1 AU",
+    "Data_version": "1",
+    "Descriptor": "3DP>3-D PLASMA ANALYZER",
+    "ADID_ref": "NSSD0143",
+    "Logical_source": "wi_plsp_3dp",
+    "Logical_file_id": "wi_plsp_3dp_00000000_v01",
+    "alt_logical_source": "Wind_3DP_Ion-Omni-Fluxes-Moms-PLSP_24sec_cdf_cdaweb",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Wind/3DP/PLSP/PT24S",
+    "DOI": "https://doi.org/10.48322/c4mf-9n52",
+    "LINK_TEXT": " \nWind 3DP ",
+    "LINK_TITLE": "Caveats for the correct use of Wind 3DP datasets\nhome page at UCB (with plotting and digital data)",
+    "HTTP_LINK": "https://spdf.gsfc.nasa.gov/pub/data/wind/3dp/wind3dp_caveats.pdf\nhttp://sprg.ssl.berkeley.edu/wind3dp/"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time, Centered",
+        "DICT_KEY": "time",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "e12.0",
+        "LABLAXIS": "Epoch",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T23:59:59.999",
+        "VALIDMIN": "1992-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "FLUX": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[FLUX] Proton number flux, 15 energy channels populated approximately 0.4-3 keV [spectrogram]",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_good",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f12.2",
+        "LABLAXIS": "Proton_No_Flux",
+        "SCALETYP": "log",
+        "UNITS": "#/cm^2-ster-eV-sec",
+        "VALIDMAX": 99999997952,
+        "VALIDMIN": 1000.0,
+        "VAR_NOTES": "Proton number flux in 14 energy channels populated from about 0.6 keV to about 10 keV.  Channel energies vary with time, keeping the peak flux in channel 10.  Channel 15 is the lowest energy channel.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cm^2-ster-eV-sec",
+        "x_LABLAXIS": "Proton_No_Flux",
+        "x_DEPEND": [
+          "ENERGY_good"
+        ]
+      }
+    },
+    "FLUX_STACKED": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As stacked plot",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX,z=ENERGY",
+        "FIELDNAM": "Proton_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f12.2",
+        "LABLAXIS": "Proton_No_Flux",
+        "SCALETYP": "log",
+        "UNITS": "#/cm^2-ster-eV-sec",
+        "VALIDMAX": 99999997952,
+        "VALIDMIN": 1000.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "#/cm^2-ster-eV-sec",
+        "x_LABLAXIS": "Proton_No_Flux",
+        "x_DEPEND": [
+          "ENERGY"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "ENERGY": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Time-variable energy in each of 15 channels",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Energy",
+        "FILLVAL": "NaN",
+        "FORMAT": "f9.2",
+        "LABL_PTR_1": "label_energy",
+        "SCALETYP": "log",
+        "UNITS": "eV",
+        "VALIDMAX": 6000.0,
+        "VALIDMIN": 200.0,
+        "VAR_NOTES": "Energy, for 14 channels ~0.6 to ~10 KeV",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXES": [
+          [
+            "E_Channel_1",
+            "E_Channel_2",
+            "E_Channel_3",
+            "E_Channel_4",
+            "E_Channel_5",
+            "E_Channel_6",
+            "E_Channel_7",
+            "E_Channel_8",
+            "E_Channel_9",
+            "E_Channel_10",
+            "E_Channel_11",
+            "E_Channel_12",
+            "E_Channel_13",
+            "E_Channel_14",
+            "E_Channel_15"
+          ]
+        ]
+      }
+    },
+    "ENERGY_good": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Time-variable energy in each of 15 channels",
+        "COMPONENT_0": "ENERGY",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Energy",
+        "FILLVAL": 0.0,
+        "FORMAT": "f9.2",
+        "LABL_PTR_1": "label_energy",
+        "SCALETYP": "log",
+        "UNITS": "eV",
+        "VALIDMAX": 6000.0,
+        "VALIDMIN": 200.0,
+        "VAR_NOTES": "Energy, for 14 channels ~0.6 to ~10 KeV",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "eV",
+        "x_LABLAXES": [
+          [
+            "E_Channel_1",
+            "E_Channel_2",
+            "E_Channel_3",
+            "E_Channel_4",
+            "E_Channel_5",
+            "E_Channel_6",
+            "E_Channel_7",
+            "E_Channel_8",
+            "E_Channel_9",
+            "E_Channel_10",
+            "E_Channel_11",
+            "E_Channel_12",
+            "E_Channel_13",
+            "E_Channel_14",
+            "E_Channel_15"
+          ]
+        ],
+        "COMPONENTS": [
+          "ENERGY"
+        ]
+      }
+    },
+    "MOM.P.TIME": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Mom.P.TIME. Unix time, seconds since January 1, 1970",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Mom.P.TIME UNIX time, sec since 1-1-70",
+        "FILLVAL": "NaN",
+        "FORMAT": "g13.2",
+        "LABLAXIS": "time",
+        "UNITS": "sec since 1-1-70",
+        "VALIDMAX": 1500000000.0,
+        "VALIDMIN": 100000000.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec since 1-1-70",
+        "x_LABLAXIS": "time"
+      }
+    },
+    "MOM.P.SC_POT": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[DO NOT USE / NOT POPULATED?] [P.SC_POT] Spacecraft potential estimated from proton ONLY measurements",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "spacecraft potential",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MOM.P.SC_POT",
+        "FILLVAL": "NaN",
+        "FORMAT": "f10.2",
+        "LABLAXIS": "S/C_Pot_(proton)",
+        "SCALETYP": "linear",
+        "UNITS": "eV",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "S/C_Pot_(proton)"
+      }
+    },
+    "MOM.P.SC_CURRENT": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[P.SC_CURRENT?] Current contribution to the spacecraft from thermal protons",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "current",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MOM.P.SC_CURRENT",
+        "FILLVAL": "NaN",
+        "FORMAT": "g13.2",
+        "LABLAXIS": "S/C_Currnt_(proton)",
+        "SCALETYP": "linear",
+        "UNITS": "#/cm2-sec",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 10000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cm2-sec",
+        "x_LABLAXIS": "S/C_Currnt_(proton)"
+      }
+    },
+    "MOM.P.MAGF": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.MAGF] magnetic field vector interpolated (linearly) to the time of the PESA Low distribution, in GSE cartesian components",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnetic Field Vector, cartesian",
+        "FILLVAL": "NaN",
+        "FORMAT": "f9.2",
+        "LABL_PTR_1": "label_P_mag",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXES": [
+          [
+            "BX_GSE",
+            "BY_GSE",
+            "BZ_GSE"
+          ]
+        ]
+      }
+    },
+    "MOM.P.DENSITY": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.DENSITY] Proton number density",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton number density",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Proton_No_Density",
+        "UNITS": "#/cm3",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cm3",
+        "x_LABLAXIS": "Proton_No_Density"
+      }
+    },
+    "MOM.P.AVGTEMP": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.AVGTEMP] Average proton temperature",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Average proton temperature",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Tavg_Protons",
+        "SCALETYP": "linear",
+        "UNITS": "eV",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "Tavg_Protons"
+      }
+    },
+    "MOM.P.VTHERMAL": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.VTHERMAL] Proton most probable speed",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton most probable speed",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Most Probable Speed Protons",
+        "UNITS": "km/sec",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/sec",
+        "x_LABLAXIS": "Most Probable Speed Protons"
+      }
+    },
+    "MOM.P.VELOCITY": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.VELOCITY] Proton Flow Velocity, GSE cartesian",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton Bulk Flow Velocity, cartesian",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "label_P_velocity",
+        "UNITS": "km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXES": [
+          [
+            "Proton_VX_GSE",
+            "Proton_VY_GSE",
+            "Proton_VZ_GSE"
+          ]
+        ]
+      }
+    },
+    "MOM.P.FLUX": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.FLUX] Proton total number flux - cartesian GSE",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton total number flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "g13.2",
+        "LABL_PTR_1": "label_P_flux_mom",
+        "UNITS": "#/cm2-sec",
+        "VALIDMAX": 99999997952,
+        "VALIDMIN": -99999997952,
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cm2-sec",
+        "x_LABLAXES": [
+          [
+            "proton_No_flux_XGSE",
+            "proton_No_flux_YGSE",
+            "proton_No_flux_ZGSE"
+          ]
+        ]
+      }
+    },
+    "MOM.P.PTENS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[P.PTENS] Proton Pressure Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton Pressure Tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "label_P_ptens",
+        "UNITS": "eV/cm^3",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm^3",
+        "x_LABLAXES": [
+          [
+            "Proton_PTENS_XX",
+            "Proton_PTENS_YY",
+            "Proton_PTENS_ZZ",
+            "Proton_PTENS_XY",
+            "Proton_PTENS_XZ",
+            "Proton_PTENS_YZ"
+          ]
+        ]
+      }
+    },
+    "MOM.P.MFTENS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.MFTENS] Proton Momentum Flux Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton Momentum Flux Tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "f10.2",
+        "LABL_PTR_1": "label_P_mftens",
+        "UNITS": "eV/cm^3",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": -1000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm^3",
+        "x_LABLAXES": [
+          [
+            "proton_MFTEN_XX",
+            "proton_MFTEN_YY",
+            "proton_MFTEN_ZZ",
+            "proton_MFTEN_XY",
+            "proton_MFTEN_XZ",
+            "proton_MFTEN_ZZ"
+          ]
+        ]
+      }
+    },
+    "MOM.P.EFLUX": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.EFLUX] Proton eflux ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton eflux",
+        "FILLVAL": "NaN",
+        "FORMAT": "e14.5",
+        "LABL_PTR_1": "label_P_eflux",
+        "UNITS": " ",
+        "VALIDMAX": 224090000000.0,
+        "VALIDMIN": -1922660000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "proton_eflux-X",
+            "proton_eflux-Y",
+            "proton_eflux-Z"
+          ]
+        ]
+      }
+    },
+    "MOM.P.T3": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.T3] Proton Temperature eigenvalues after diagonalization of tensor, calculated in the GSE coordinate basis.  The elements correspond to:  XX, YY, ZZ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton Temp Tensor diagonals",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "label_P_t3",
+        "UNITS": "eV",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXES": [
+          [
+            "proton_Temp_Eigen-X",
+            "proton_Temp_Eigen-Y",
+            "proton_Temp_Eigen-Z"
+          ]
+        ]
+      }
+    },
+    "MOM.P.SYMM": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[P.SYMM] Symmetry direction of proton pressure tensor, calculated in the GSE coordinate basis.  The elements correspond to:  XX, YY, ZZ and are defined by the largest eigenvalue in .T3",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "pressure",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Symmetry direction, proton pressure tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.2",
+        "LABL_PTR_1": "label_P_symm",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": -10.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "proton_SymDir_X",
+            "proton_SymDir_Y",
+            "proton_SymDir_Z"
+          ]
+        ]
+      }
+    },
+    "MOM.P.SYMM_THETA": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.SYMM_THETA] Proton symmetry direction, latitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton symmetry direction, latitude",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABLAXIS": "proton_Sym_Lat",
+        "UNITS": "Degrees",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "proton_Sym_Lat"
+      }
+    },
+    "MOM.P.SYMM_PHI": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.SYMM_PHI] Proton symmetry direction, longitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton symmetry direction, longitude",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.2",
+        "LABLAXIS": "P_Sym_Long",
+        "UNITS": "Degrees",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "P_Sym_Long"
+      }
+    },
+    "MOM.P.SYMM_ANG": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.SYMM_ANG] Angle between proton symmetry direction and the magnetic field vector",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Angle of proton symmetry direction to B",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Ang_proton_SymDir-B",
+        "UNITS": "Degrees",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "Ang_proton_SymDir-B"
+      }
+    },
+    "MOM.P.MAGT3": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.SYMM_MAGT3] Proton temperature tensor... rotated into a field-aligned coordinate basis and then taking the diagonal elements only",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MOM.P.SYMM_MAGT3",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "MOM.P.MAGT3_LABL_1",
+        "UNITS": " ",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "The elements then correspond to:  Perp_1, Perp_2, Parallel (with respect to .MAGF). Let V = .VELOCITY, B = .MAGF, then: Perp_1 = (B x V) x B, Perp_2 = (B x V) and Then T_perp = (MAGT3[0] + MAGT3[1])/2. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "proton_MagT3_X",
+            "proton_MagT3_Y",
+            "proton_MagT3_Z"
+          ]
+        ]
+      }
+    },
+    "MOM.P.ERANGE": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[P.ERANGE] Proton energy range used to compute the moments",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton energy  range",
+        "FILLVAL": "NaN",
+        "FORMAT": "f9.2",
+        "LABL_PTR_1": "label_P_erange",
+        "UNITS": "eV",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXES": [
+          [
+            "proton_Erange1",
+            "proton_Erange2"
+          ]
+        ]
+      }
+    },
+    "MOM.P.MASS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.MASS] Proton mass of species",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton mass of species",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.2",
+        "LABLAXIS": "proton_mass",
+        "UNITS": "eV/(km/s)^2",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/(km/s)^2",
+        "x_LABLAXIS": "proton_mass"
+      }
+    },
+    "MOM.P.VALID": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.VALID] Proton Validity flag; 1=OK",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton validity flag; 1=OK",
+        "FILLVAL": -32768,
+        "FORMAT": "i3",
+        "LABLAXIS": "proton_Valid",
+        "UNITS": "(1=OK)",
+        "VALIDMAX": 2,
+        "VALIDMIN": -1,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(1=OK)",
+        "x_LABLAXIS": "proton_Valid"
+      }
+    },
+    "MOM.P.VEL_MAG": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[P.VEL_MAG] Proton flow speed",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton flow velocity; magnitude",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABLAXIS": "proton_FlowVel",
+        "UNITS": "km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "proton_FlowVel"
+      }
+    },
+    "MOM.P.VEL_TH": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.VEL_TH] Proton flow velocity; latitude/theta",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton flow velocity; latitude",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABLAXIS": "proton_FlowVel_Lat",
+        "UNITS": "Degrees",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": -100.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "proton_FlowVel_Lat"
+      }
+    },
+    "MOM.P.VEL_PHI": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.VELPHI] Proton flow velocity; longitude/phi",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton flow velocity; longitude",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABLAXIS": "proton_FlowVel_Long",
+        "UNITS": "Degrees",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "proton_FlowVel_Long"
+      }
+    },
+    "MOM.P.TEMP2": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[P.TEMP2] Undocumented temperature correction",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MOM.P.TEMP2",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABLAXIS": "proton_Temp2",
+        "UNITS": "eV",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "proton_Temp2"
+      }
+    },
+    "MOM.A.TIME": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[MOM.A.TIME UNIX] time, seconds since January 1, 1970",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MOM.A.TIME UNIX time, sec since 1-1-70",
+        "FILLVAL": "NaN",
+        "FORMAT": "g13.2",
+        "LABLAXIS": "time",
+        "UNITS": "sec since 1-1-70",
+        "VALIDMAX": 1500000000.0,
+        "VALIDMIN": 900000000.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec since 1-1-70",
+        "x_LABLAXIS": "time"
+      }
+    },
+    "MOM.A.SC_POT": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[DO NOT USE / NOT POPULATED] [A.SC_POT]  Spacecraft potential estimated from alpha ONLY measurements ",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MOM.A.SC_POT",
+        "FILLVAL": "NaN",
+        "FORMAT": "f10.2",
+        "LABLAXIS": "S/C_Pot_(alpha)",
+        "UNITS": "eV",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "S/C_Pot_(alpha)"
+      }
+    },
+    "MOM.A.SC_CURRENT": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[A.SC_CURRENT]  Current contribution to the spacecraft from thermal alphas",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MOM.A.SC_CURRENT",
+        "FILLVAL": "NaN",
+        "FORMAT": "f10.2",
+        "LABLAXIS": "S/C_Currnt_(alpha)",
+        "UNITS": "#/cm2-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cm2-sec",
+        "x_LABLAXIS": "S/C_Currnt_(alpha)"
+      }
+    },
+    "MOM.A.MAGF": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.MAGF] magnetic field vector interpolated (linearly) to the time of the PESA Low distribution, in GSE cartesian components",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnetic Field Vector, cartesian",
+        "FILLVAL": "NaN",
+        "FORMAT": "f9.2",
+        "LABL_PTR_1": "label_A_mag",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXES": [
+          [
+            "BX_GSE",
+            "BY_GSE",
+            "BZ_GSE"
+          ]
+        ]
+      }
+    },
+    "MOM.A.DENSITY": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.DENSITY]  Alpha number density",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha number density",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Alpha_No_Density",
+        "UNITS": "#/cm3",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cm3",
+        "x_LABLAXIS": "Alpha_No_Density"
+      }
+    },
+    "MOM.A.AVGTEMP": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.AVGTEMP] Average alpha temperature",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Average alpha temperature",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Tavg_Alphas ",
+        "UNITS": "eV",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "Tavg_Alphas "
+      }
+    },
+    "MOM.A.VTHERMAL": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.VTHERMAL] Alpha most probable speed",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha most probable speed",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Most Probable Speed Alphas",
+        "UNITS": "km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Most Probable Speed Alphas"
+      }
+    },
+    "MOM.A.VELOCITY": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.VELOCITY] Alpha Flow Velocity, GSE cartesian",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha Bulk Flow Velocity, cartesian",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "label_A_velocity",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXES": [
+          [
+            "Alpha_VX_GSE",
+            "Alpha_VY_GSE",
+            "Alpha_VZ_GSE"
+          ]
+        ]
+      }
+    },
+    "MOM.A.FLUX": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [P.FLUX] Alpha total number flux - cartesian GSE",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha total number flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "g13.2",
+        "LABL_PTR_1": "label_A_flux_mom",
+        "UNITS": "#/cm2-sec",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": -1000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cm2-sec",
+        "x_LABLAXES": [
+          [
+            "Alpha_No_Flux_XGSE",
+            "Alpha_No_Flux_YGSE",
+            "Alpha_No_Flux_ZGSE"
+          ]
+        ]
+      }
+    },
+    "MOM.A.PTENS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[A.PTENS] Alpha Pressure Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha Pressure Tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "label_A_ptens",
+        "UNITS": "eV/cm^3",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": -100.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm^3",
+        "x_LABLAXES": [
+          [
+            "Alpha_PTENS_XX",
+            "Alpha_PTENS_YY",
+            "Alpha_PTENS_ZZ",
+            "Alpha_PTENS_XY",
+            "Alpha_PTENS_XZ",
+            "Alpha_PTENS_ZZ"
+          ]
+        ]
+      }
+    },
+    "MOM.A.MFTENS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.MFTENS] Alpha Momentum Flux Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha Momentum Flux Tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "f10.2",
+        "LABL_PTR_1": "label_A_mftens",
+        "UNITS": "eV/cm^3",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": -10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/cm^3",
+        "x_LABLAXES": [
+          [
+            "Alpha_MFlux_XX",
+            "Alpha_MFlux_YY",
+            "Alpha_MFlux_ZZ",
+            "Alpha_MFlux_XY",
+            "Alpha_MFlux_XZ",
+            "Alpha_MFlux_ZZ"
+          ]
+        ]
+      }
+    },
+    "MOM.A.EFLUX": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.EFLUX] Alpha eflux ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha eflux",
+        "FILLVAL": "NaN",
+        "FORMAT": "e14.5",
+        "LABL_PTR_1": "label_A_eflux",
+        "UNITS": " ",
+        "VALIDMAX": 19145200000.0,
+        "VALIDMIN": -105420000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Alpha_eflux-X",
+            "Alpha_eflux-Y",
+            "Alpha_eflux-Z"
+          ]
+        ]
+      }
+    },
+    "MOM.A.T3": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.T3] Alpha Temperature eigenvalues after diagonalization of tensor, calculated in the GSE coordinate basis.  The elements correspond to:  XX, YY, ZZ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha Temp Tensor diagonals",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "label_A_t3",
+        "UNITS": "eV",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXES": [
+          [
+            "Alpha_Temp_Eigen-X",
+            "Alpha_Temp_Eigen-Y",
+            "Alpha_Temp_Eigen-Z"
+          ]
+        ]
+      }
+    },
+    "MOM.A.SYMM": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[A.SYMM] Symmetry direction of alpha pressure tensor, calculated in the GSE coordinate basis.  The elements correspond to:  XX, YY, ZZ and are defined by the largest eigenvalue in .T3",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "pressure",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Symmetry direction, alpha pressure tensor",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.2",
+        "LABL_PTR_1": "label_A_symm",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": -10.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Alpha_SymDir_X",
+            "Alpha_SymDir_Y",
+            "Alpha_SymDir_Z"
+          ]
+        ]
+      }
+    },
+    "MOM.A.SYMM_THETA": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.SYMM_THETA] Alpha symmetry direction, latitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha symmetry direction, latitude",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Alpha_Symm_Lat",
+        "UNITS": "Degrees",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": -100.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "Alpha_Symm_Lat"
+      }
+    },
+    "MOM.A.SYMM_PHI": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.SYMM_PHI] Alpha symmetry direction, longitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha symmetry direction, longitude",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Alpha_Symm_Long",
+        "UNITS": "Degrees",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "Alpha_Symm_Long"
+      }
+    },
+    "MOM.A.SYMM_ANG": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.SYMM_ANG] Angle between alpha symmetry direction and magnetic field vector",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Angle of alpha symmetry direction to B",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Alpha_SymDir-B",
+        "UNITS": "Degrees",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "Alpha_SymDir-B"
+      }
+    },
+    "MOM.A.MAGT3": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.SYMM_MAGT3] Alpha temperature tensor... rotated into a field-aligned coordinate basis and then taking the diagonal elements only",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MOM.A.SYMM_MAGT3",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "label_P_mag",
+        "UNITS": " ",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "The elements then correspond to:  Perp_1, Perp_2, Parallel (with respect to .MAGF). Let V = .VELOCITY, B = .MAGF, then: Perp_1 = (B x V) x B, Perp_2 = (B x V) and Then T_perp = (MAGT3[0] + MAGT3[1])/2. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "BX_GSE",
+            "BY_GSE",
+            "BZ_GSE"
+          ]
+        ]
+      }
+    },
+    "MOM.A.ERANGE": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[A.ERANGE] Alpha energy range used to compute the moments",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha energy range",
+        "FILLVAL": "NaN",
+        "FORMAT": "f9.2",
+        "LABL_PTR_1": "label_A_erange",
+        "UNITS": "eV",
+        "VALIDMAX": 20000.0,
+        "VALIDMIN": 1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXES": [
+          [
+            "Alpha_Erange1",
+            "Alpha_Erange2"
+          ]
+        ]
+      }
+    },
+    "MOM.A.MASS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.MASS] Alpha mass of species",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha mass of species",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Alpha_mass",
+        "UNITS": "eV/(km/s)^2",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV/(km/s)^2",
+        "x_LABLAXIS": "Alpha_mass"
+      }
+    },
+    "MOM.A.VALID": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.VALID] Alpha validity flag; 1=OK",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha validity flag; 1=OK",
+        "FILLVAL": -32768,
+        "FORMAT": "i3",
+        "LABLAXIS": "Alpha_Validity",
+        "UNITS": "(1=OK)",
+        "VALIDMAX": 2,
+        "VALIDMIN": -1,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(1=OK)",
+        "x_LABLAXIS": "Alpha_Validity"
+      }
+    },
+    "MOM.A.VEL_MAG": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[A.VEL_MAG] Alpha flow speed",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha flow velocity; magnitude",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Alpha_FlowVel",
+        "UNITS": "km/s",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Alpha_FlowVel"
+      }
+    },
+    "MOM.A.VEL_TH": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.VEL_TH] Alpha flow velocity, latitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha flow velocity, latitude",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Alpha_FlowVel_Lat",
+        "UNITS": "Degrees",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": -100.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "Alpha_FlowVel_Lat"
+      }
+    },
+    "MOM.A.VEL_PHI": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [A.VEL_PHI] Alpha flow velocity, longitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha flow velocity, longitude",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Alpha_FlowVel_Long",
+        "UNITS": "Degrees",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "Alpha_FlowVel_Long"
+      }
+    },
+    "label_energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for energy channels",
+        "FIELDNAM": "label for energy channels",
+        "FORMAT": "a12",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "E_Channel_1",
+        "E_Channel_2",
+        "E_Channel_3",
+        "E_Channel_4",
+        "E_Channel_5",
+        "E_Channel_6",
+        "E_Channel_7",
+        "E_Channel_8",
+        "E_Channel_9",
+        "E_Channel_10",
+        "E_Channel_11",
+        "E_Channel_12",
+        "E_Channel_13",
+        "E_Channel_14",
+        "E_Channel_15"
+      ]
+    },
+    "label_P_velocity": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 13,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for proton velocity",
+        "FIELDNAM": "label for proton velocity",
+        "FORMAT": "a13",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Proton_VX_GSE",
+        "Proton_VY_GSE",
+        "Proton_VZ_GSE"
+      ]
+    },
+    "label_P_flux_mom": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 19,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for total number flux",
+        "FIELDNAM": "label for total number flux",
+        "FORMAT": "a19",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "proton_No_flux_XGSE",
+        "proton_No_flux_YGSE",
+        "proton_No_flux_ZGSE"
+      ]
+    },
+    "label_P_ptens": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 15,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for tens",
+        "FIELDNAM": "label for tens",
+        "FORMAT": "a15",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Proton_PTENS_XX",
+        "Proton_PTENS_YY",
+        "Proton_PTENS_ZZ",
+        "Proton_PTENS_XY",
+        "Proton_PTENS_XZ",
+        "Proton_PTENS_YZ"
+      ]
+    },
+    "label_P_mftens": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 15,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for tens",
+        "FIELDNAM": "label for tens",
+        "FORMAT": "a15",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "proton_MFTEN_XX",
+        "proton_MFTEN_YY",
+        "proton_MFTEN_ZZ",
+        "proton_MFTEN_XY",
+        "proton_MFTEN_XZ",
+        "proton_MFTEN_ZZ"
+      ]
+    },
+    "label_P_t3": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 19,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for proton T3",
+        "FIELDNAM": "label for proton T3",
+        "FORMAT": "a19",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "proton_Temp_Eigen-X",
+        "proton_Temp_Eigen-Y",
+        "proton_Temp_Eigen-Z"
+      ]
+    },
+    "label_P_eflux": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for proton eflux",
+        "FIELDNAM": "label for proton eflux",
+        "FORMAT": "a14",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "proton_eflux-X",
+        "proton_eflux-Y",
+        "proton_eflux-Z"
+      ]
+    },
+    "label_P_erange": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for erange",
+        "FIELDNAM": "label for erange",
+        "FORMAT": "a14",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "proton_Erange1",
+        "proton_Erange2"
+      ]
+    },
+    "label_P_mag": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 6,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for mag",
+        "FIELDNAM": "label for mag",
+        "FORMAT": "a16",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "BX_GSE",
+        "BY_GSE",
+        "BZ_GSE"
+      ]
+    },
+    "label_P_symm": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 15,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for symm",
+        "FIELDNAM": "label for symm",
+        "FORMAT": "a15",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "proton_SymDir_X",
+        "proton_SymDir_Y",
+        "proton_SymDir_Z"
+      ]
+    },
+    "label_A_t3": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 18,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for t3",
+        "FIELDNAM": "label for t3",
+        "FORMAT": "a16",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Alpha_Temp_Eigen-X",
+        "Alpha_Temp_Eigen-Y",
+        "Alpha_Temp_Eigen-Z"
+      ]
+    },
+    "label_A_velocity": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for alpha velocity",
+        "FIELDNAM": "label for alpha velocity",
+        "FORMAT": "a11",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Alpha_VX_GSE",
+        "Alpha_VY_GSE",
+        "Alpha_VZ_GSE"
+      ]
+    },
+    "label_A_ptens": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for tens",
+        "FIELDNAM": "label for tens",
+        "FORMAT": "a11",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Alpha_PTENS_XX",
+        "Alpha_PTENS_YY",
+        "Alpha_PTENS_ZZ",
+        "Alpha_PTENS_XY",
+        "Alpha_PTENS_XZ",
+        "Alpha_PTENS_ZZ"
+      ]
+    },
+    "label_A_mag": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 6,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for mag",
+        "FIELDNAM": "label for mag",
+        "FORMAT": "a11",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "BX_GSE",
+        "BY_GSE",
+        "BZ_GSE"
+      ]
+    },
+    "label_A_flux_mom": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 19,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for mom flux",
+        "FIELDNAM": "label for mom flux",
+        "FORMAT": "a19",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Alpha_No_Flux_XGSE",
+        "Alpha_No_Flux_YGSE",
+        "Alpha_No_Flux_ZGSE"
+      ]
+    },
+    "label_A_mftens": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 16,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for tens",
+        "FIELDNAM": "label for tens",
+        "FORMAT": "a11",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Alpha_MFlux_XX",
+        "Alpha_MFlux_YY",
+        "Alpha_MFlux_ZZ",
+        "Alpha_MFlux_XY",
+        "Alpha_MFlux_XZ",
+        "Alpha_MFlux_ZZ"
+      ]
+    },
+    "label_A_eflux": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 13,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for alpha eflux",
+        "FIELDNAM": "label for alpha eflux",
+        "FORMAT": "a13",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Alpha_eflux-X",
+        "Alpha_eflux-Y",
+        "Alpha_eflux-Z"
+      ]
+    },
+    "label_A_symm": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 16,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for symm",
+        "FIELDNAM": "label for symm",
+        "FORMAT": "a11",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Alpha_SymDir_X",
+        "Alpha_SymDir_Y",
+        "Alpha_SymDir_Z"
+      ]
+    },
+    "label_A_erange": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 16,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label for erange",
+        "FIELDNAM": "label for erange",
+        "FORMAT": "a11",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Alpha_Erange1",
+        "Alpha_Erange2"
+      ]
+    },
+    "MOM.P.MAGT3_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "MOM.P.MAGT3_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "MOM.P.MAGT3_LABL_1",
+        "FORMAT": "a14",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "proton_MagT3_X",
+        "proton_MagT3_Y",
+        "proton_MagT3_Z"
+      ]
+    },
+    "TIME": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "UNIX time; seconds since January 1, 1970",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "time",
+        "FIELDNAM": "UNIX  time",
+        "FILLVAL": "NaN",
+        "FORMAT": "g12.0",
+        "LABLAXIS": "Time",
+        "UNITS": "sec since 1-1-70",
+        "VALIDMAX": 20000000000000.0,
+        "VALIDMIN": 1.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "sec since 1-1-70",
+        "x_LABLAXIS": "Time"
+      }
+    }
+  }
+}

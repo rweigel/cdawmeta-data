@@ -1,0 +1,1681 @@
+{
+  "CDFFileInfo": {
+    "File": "wi_ehpd_3dp_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/wi_ehpd_3dp_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Data_type": "EHPD>EESA High Pitch Distributions and Moments",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Source_name": "WIND>Wind Interplanetary Plasma Laboratory",
+    "Logical_source_description": "Electron energy-angle distributions 100 eV - 30 keV, often at 24 sec, EESA High, Wind 3DP",
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "TEXT": "Wind 3dp, EESA High electron pitch angle distributions\nNote per Lynn Wilson Jan 2015 wrt time resolution: 24 sec timing changes and is not necessarily constant, depending on the mode that the instrument happens to be in.  Not only does the period/interval between each point change, the duration over which the data were taken can change as well.",
+    "PI_name": "R. Lin/S. Bale",
+    "PI_affiliation": "UC Berkeley",
+    "Instrument_type": "Particles (space)",
+    "Mission_group": "Wind\n!___Interplanetary Data near 1 AU",
+    "Data_version": "1",
+    "Descriptor": "3DP>3-D PLASMA ANALYZER",
+    "ADID_ref": "NSSD0143",
+    "Logical_source": "wi_ehpd_3dp",
+    "Logical_file_id": "wi_ehpd_3dp_00000000_v01",
+    "alt_logical_source": "Wind",
+    "cdawlib_idl_row_notranspose": "FALSE",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Wind/3DP/EESA_HIGH/PD/PT24S",
+    "DOI": "https://doi.org/10.48322/63fs-yr96",
+    "LINK_TEXT": " \nWind 3DP ",
+    "LINK_TITLE": "Caveats for the correct use of Wind 3DP datasets\nhome page at UCB (with plotting and digital data)",
+    "HTTP_LINK": "https://spdf.gsfc.nasa.gov/pub/data/wind/3dp/wind3dp_caveats.pdf\nhttp://sprg.ssl.berkeley.edu/wind3dp/"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Epoch",
+        "DICT_KEY": "time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "NaN",
+        "FORMAT": "e12.0",
+        "LABLAXIS": "Epoch",
+        "SCALETYP": "linear",
+        "UNITS": "ms",
+        "VALIDMAX": "2030-01-01T00:00:00.000",
+        "VALIDMIN": "1992-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "FLUX": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          8,
+          15
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "Electron number flux 100eV-30keV in 15 energy and 8 angle bins (as energy-pitch angle displays)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "PANGLE",
+        "DEPEND_2": "ENERGY_filled",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionTHUMBSIZE>166>xsz=4,ysz=8>x=PANGLE,y=ENERGY_filled,z=FLUX",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "LABLAXIS": "Electron_No_Flux",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "Electron_No_Flux",
+        "x_DEPEND": [
+          "PANGLE",
+          "ENERGY_filled"
+        ]
+      }
+    },
+    "FLUX_byE_atA": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          8,
+          15
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron number flux 100eV-30keV at 8 pitch angles as spectrograms by energy",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "PANGLE",
+        "DEPEND_2": "ENERGY_filled",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensiony=ENERGY_filled,z=FLUX_byE_atA(1,*), z=FLUX_byE_atA(2,*), z=FLUX_byE_atA(3,*), z=FLUX_byE_atA(4,*), z=FLUX_byE_atA(5,*), z=FLUX_byE_atA(6,*), z=FLUX_byE_atA(7,*), z=FLUX_byE_atA(8,*)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "alternate_view",
+        "LABL_PTR_1": "FLUX_PA_LABL",
+        "LABL_PTR_2": "FLUX_ENERGY_LABL",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXES": [
+          [
+            "ElecNoFLux_Bin1_Often~15deg",
+            "ElecNoFLux_Bin2_Often~35deg",
+            "ElecNoFLux_Bin3_Often~57deg",
+            "ElecNoFLux_Bin4_Often~80deg",
+            "ElecNoFLux_Bin5_Often~102deg",
+            "ElecNoFLux_Bin6_Often~123deg",
+            "ElecNoFLux_Bin7_Often~145deg",
+            "ElecNoFLux_Bin8_Often~165deg"
+          ],
+          [
+            "ElecNoFlux_Ch1_Often~27660eV",
+            "ElecNoFlux_Ch2_Often~18940eV",
+            "ElecNoFlux_Ch3_Often~12970eV",
+            "ElecNoFlux_Ch4_Often~8875eV",
+            "ElecNoFlux_Ch5_Often~6076eV",
+            "ElecNoFlux_Ch6_Often~4161eV",
+            "ElecNoFlux_Ch7_Often~2849eV",
+            "ElecNoFlux_Ch8_Often~1952eV",
+            "ElecNoFlux_Ch9_Often~1339eV",
+            "ElecNoFlux_Ch10_Often~920.3eV",
+            "ElecNoFlux_Ch11_Often~634.4eV",
+            "ElecNoFlux_Ch12_Often~432.7eV",
+            "ElecNoFlux_Ch13_Often~292.0eV",
+            "ElecNoFlux_Ch14_Often~200.1eV",
+            "ElecNoFlux_Ch15_Often~136.8eV"
+          ]
+        ],
+        "x_DEPEND": [
+          "PANGLE",
+          "ENERGY_filled"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byE_atA_stackPA0": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron number flux 100eV-30keV as a stack_plot of 15 energies at the Bin1 angle (often ~15 deg",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_filled",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byE_atA_stackPA0(0,*)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFLux_Bin1_Often~15deg",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFLux_Bin1_Often~15deg",
+        "x_DEPEND": [
+          "ENERGY_filled"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byE_atA_stackPA1": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack_plot at the Bin2 angle (often ~35 deg)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_filled",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byE_atA_stackPA1(1,*)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFLux_Bin2_Often~35deg",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFLux_Bin2_Often~35deg",
+        "x_DEPEND": [
+          "ENERGY_filled"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byE_atA_stackPA2": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack_plot  at the Bin3 angle (often ~57 deg)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_filled",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byE_atA_stackPA2(2,*)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFLux_Bin3_Often~57deg",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFLux_Bin3_Often~57deg",
+        "x_DEPEND": [
+          "ENERGY_filled"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byE_atA_stackPA3": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack_plot at the Bin4 angle (often ~80 deg)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_filled",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byE_atA_stackPA3(3,*)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFLux_Bin4_Often~80deg",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFLux_Bin4_Often~80deg",
+        "x_DEPEND": [
+          "ENERGY_filled"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byE_atA_stackPA4": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack_plot at the Bin5 angle (often ~102 deg)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_filled",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byE_atA_stackPA4(4,*)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFLux_Bin5_Often~102deg",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFLux_Bin5_Often~102deg",
+        "x_DEPEND": [
+          "ENERGY_filled"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byE_atA_stackPA5": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack_plot at the Bin6 angle (often ~123 deg)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_filled",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byE_atA_stackPA5(5,*)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFLux_Bin6_Often~123deg",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFLux_Bin6_Often~123deg",
+        "x_DEPEND": [
+          "ENERGY_filled"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byE_atA_stackPA6": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack_plot at the Bin7 angle (often ~145 deg)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_filled",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byE_atA_stackPA6(6,*)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFLux_Bin7_Often~145deg",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFLux_Bin7_Often~145deg",
+        "x_DEPEND": [
+          "ENERGY_filled"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byE_atA_stackPA7": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack_plot at the Bin8 angle (often ~165 deg)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY_filled",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byE_atA_stackPA7(7,*)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFLux_Bin8_Often~165deg",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFLux_Bin8_Often~165deg",
+        "x_DEPEND": [
+          "ENERGY_filled"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byA_atE": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          8,
+          15
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron number flux 100eV-30KeV at 8 select energies as spectrograms by pitch angle",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "PANGLE",
+        "DEPEND_2": "ENERGY_filled",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensiony=PANGLE,z=FLUX_byA_atE(*,1), z=FLUX_byA_atE(*,3), z=FLUX_byA_atE(*,5), z=FLUX_byA_atE(*,7), z=FLUX_byA_atE(*,9), z=FLUX_byA_atE(*,11), z=FLUX_byA_atE(*,13), z=FLUX_byA_atE(*,15)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "alternate_view",
+        "LABL_PTR_1": "FLUX_PA_LABL",
+        "LABL_PTR_2": "FLUX_ENERGY_LABL",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXES": [
+          [
+            "ElecNoFLux_Bin1_Often~15deg",
+            "ElecNoFLux_Bin2_Often~35deg",
+            "ElecNoFLux_Bin3_Often~57deg",
+            "ElecNoFLux_Bin4_Often~80deg",
+            "ElecNoFLux_Bin5_Often~102deg",
+            "ElecNoFLux_Bin6_Often~123deg",
+            "ElecNoFLux_Bin7_Often~145deg",
+            "ElecNoFLux_Bin8_Often~165deg"
+          ],
+          [
+            "ElecNoFlux_Ch1_Often~27660eV",
+            "ElecNoFlux_Ch2_Often~18940eV",
+            "ElecNoFlux_Ch3_Often~12970eV",
+            "ElecNoFlux_Ch4_Often~8875eV",
+            "ElecNoFlux_Ch5_Often~6076eV",
+            "ElecNoFlux_Ch6_Often~4161eV",
+            "ElecNoFlux_Ch7_Often~2849eV",
+            "ElecNoFlux_Ch8_Often~1952eV",
+            "ElecNoFlux_Ch9_Often~1339eV",
+            "ElecNoFlux_Ch10_Often~920.3eV",
+            "ElecNoFlux_Ch11_Often~634.4eV",
+            "ElecNoFlux_Ch12_Often~432.7eV",
+            "ElecNoFlux_Ch13_Often~292.0eV",
+            "ElecNoFlux_Ch14_Often~200.1eV",
+            "ElecNoFlux_Ch15_Often~136.8eV"
+          ]
+        ],
+        "x_DEPEND": [
+          "PANGLE",
+          "ENERGY_filled"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byA_atE_stackE0": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron number flux 100eV-30keV as a stack_plot of 8 pitch angles at the Ch1 energy (often ~28000 eV)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "PANGLE",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byA_atE_stackE0(*,0)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFlux_Ch1_Often~28000eV",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFlux_Ch1_Often~28000eV",
+        "x_DEPEND": [
+          "PANGLE"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byA_atE_stackE2": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack plot at the Ch3 energy (often ~13000 eV)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "PANGLE",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byA_atE_stackE2(*,2)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFlux_Ch3_Often~13000eV",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFlux_Ch3_Often~13000eV",
+        "x_DEPEND": [
+          "PANGLE"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byA_atE_stackE4": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack plot at the Ch5 energy (often ~6100 eV)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "PANGLE",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byA_atE_stackE4(*,4)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFlux_Ch5_Often~6100eV",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFlux_Ch5_Often~6100eV",
+        "x_DEPEND": [
+          "PANGLE"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byA_atE_stackE6": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack plot at the Ch7 energy (often ~2900 eV)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "PANGLE",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byA_atE_stackE6(*,6)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFlux_Ch7_Often~2900eV",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFlux_Ch7_Often~2900eV",
+        "x_DEPEND": [
+          "PANGLE"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byA_atE_stackE8": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack plot at the Ch9 energy (often ~1300eV)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "PANGLE",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byA_atE_stackE8(*,8)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFlux_Ch9_Often~1300eV",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFlux_Ch9_Often~1300eV",
+        "x_DEPEND": [
+          "PANGLE"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byA_atE_stackE10": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack plot at the Ch11 energy (often ~630 eV)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "PANGLE",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byA_atE_stackE10(*,10)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFlux_Ch11_Often~630eV",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFlux_Ch11_Often~630eV",
+        "x_DEPEND": [
+          "PANGLE"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byA_atE_stackE12": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack plot at the Ch13 energy (often ~300 eV)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "PANGLE",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byA_atE_stackE12(*,12)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFlux_Ch13_Often~300eV",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFlux_Ch13_Often~300eV",
+        "x_DEPEND": [
+          "PANGLE"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "FLUX_byA_atE_stackE14": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> As a stack plot at the Ch15 energy (often ~140 eV)",
+        "COMPONENT_0": "FLUX",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "PANGLE",
+        "DICT_KEY": "particle_flux",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=FLUX_byA_atE_stackE14(*,14)",
+        "FIELDNAM": "Electron_No_Flux",
+        "FILLVAL": "NaN",
+        "FORMAT": "f7.3",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecNoFlux_Ch15_Often~140eV",
+        "SCALETYP": "log",
+        "UNITS": "#/cm2-ster-eV-sec",
+        "VALIDMAX": 100000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/cm2-ster-eV-sec",
+        "x_LABLAXIS": "ElecNoFlux_Ch15_Often~140eV",
+        "x_DEPEND": [
+          "PANGLE"
+        ],
+        "COMPONENTS": [
+          "FLUX"
+        ]
+      }
+    },
+    "PANGLE": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time-varying pitch angles for 8 angular bins",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Pitch Angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "APPROX_PITCH_LABELS",
+        "SCALETYP": "linear",
+        "UNITS": "Deg",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Deg",
+        "x_UNITS_VO": "deg",
+        "x_LABLAXES": [
+          [
+            "PitchAngBin1_Often~15_deg",
+            "PitchAngBin2_Often~35_deg",
+            "PitchAngBin3_Often~57_deg",
+            "PitchAngBin4_Often~80_deg",
+            "PitchAngBin5_Often~102_deg",
+            "PitchAngBin6_Often~123_deg",
+            "PitchAngBin7_Often~145_deg",
+            "PitchAngBin8_Often~165_deg"
+          ]
+        ]
+      }
+    },
+    "ENERGY": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Time-varying electron energies for 15 channels",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Energy",
+        "FILLVAL": "NaN",
+        "FORMAT": "f9.2",
+        "LABL_PTR_1": "APPROX_ENERGY_LABELS",
+        "SCALETYP": "log",
+        "UNITS": "eV",
+        "VALIDMAX": 40000.0,
+        "VALIDMIN": 100.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "eV",
+        "x_LABLAXES": [
+          [
+            "EnergyCh1_Often~27660eV",
+            "EnergyCh2_Often~18940eV",
+            "EnergyCh3_Often~12970eV",
+            "EnergyCh4_Often~8875eV",
+            "EnergyCh5_Often~6076eV",
+            "EnergyCh6_Often~4161eV",
+            "EnergyCh7_Often~2849eV",
+            "EnergyCh8_Often~1952eV",
+            "EnergyCh9_Often~1339eV",
+            "EnergyCh10_Often~920.3eV",
+            "EnergyCh11_Often~634.4eV",
+            "EnergyCh12_Often~432.7eV",
+            "EnergyCh13_Often~292.0eV",
+            "EnergyCh14_Often~200.1eV",
+            "EnergyCh15_Often~136.8eV"
+          ]
+        ]
+      }
+    },
+    "ENERGY_filled": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Time-varying electron energies for 15 channels",
+        "COMPONENT_0": "ENERGY",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Energy",
+        "FILLVAL": "NaN",
+        "FORMAT": "f10.2",
+        "FUNCT": "fix_sparse",
+        "LABL_PTR_1": "APPROX_ENERGY_LABELS",
+        "SCALETYP": "log",
+        "UNITS": "eV",
+        "VALIDMAX": 40000.0,
+        "VALIDMIN": 100.0,
+        "VAR_NOTES": "Uses fix-sparse to fill in nan energy values",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV",
+        "x_LABLAXES": [
+          [
+            "EnergyCh1_Often~27660eV",
+            "EnergyCh2_Often~18940eV",
+            "EnergyCh3_Often~12970eV",
+            "EnergyCh4_Often~8875eV",
+            "EnergyCh5_Often~6076eV",
+            "EnergyCh6_Often~4161eV",
+            "EnergyCh7_Often~2849eV",
+            "EnergyCh8_Often~1952eV",
+            "EnergyCh9_Often~1339eV",
+            "EnergyCh10_Often~920.3eV",
+            "EnergyCh11_Often~634.4eV",
+            "EnergyCh12_Often~432.7eV",
+            "EnergyCh13_Often~292.0eV",
+            "EnergyCh14_Often~200.1eV",
+            "EnergyCh15_Often~136.8eV"
+          ]
+        ],
+        "COMPONENTS": [
+          "ENERGY"
+        ]
+      }
+    },
+    "APPROX_PITCH_LABELS": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 26,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "APPROX_PITCH_LABELS",
+        "DICT_KEY": "label",
+        "FIELDNAM": "APPROX_PITCH_LABELS",
+        "FORMAT": "a26",
+        "VAR_NOTES": "Per Lynn Wilson Jan 2015: The pitch-angles can vary wildly and should probably not be displayed as the approximate values below.  I say this because there are times when the zeroth element pitch-angle can exceed 30 degrees.  This happens when the detector ...look direction... never comes close to the magnetic field direction.  It does not happen very often, but it does happen often enough to be wary of the ...approximate... values list below.",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "PitchAngBin1_Often~15_deg",
+        "PitchAngBin2_Often~35_deg",
+        "PitchAngBin3_Often~57_deg",
+        "PitchAngBin4_Often~80_deg",
+        "PitchAngBin5_Often~102_deg",
+        "PitchAngBin6_Often~123_deg",
+        "PitchAngBin7_Often~145_deg",
+        "PitchAngBin8_Often~165_deg"
+      ]
+    },
+    "APPROX_ENERGY_LABELS": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 30,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "APPROX_ENERGY_LABELS",
+        "DICT_KEY": "label",
+        "FIELDNAM": "APPROX_ENERGY_LABELS",
+        "FORMAT": "a30",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "EnergyCh1_Often~27660eV",
+        "EnergyCh2_Often~18940eV",
+        "EnergyCh3_Often~12970eV",
+        "EnergyCh4_Often~8875eV",
+        "EnergyCh5_Often~6076eV",
+        "EnergyCh6_Often~4161eV",
+        "EnergyCh7_Often~2849eV",
+        "EnergyCh8_Often~1952eV",
+        "EnergyCh9_Often~1339eV",
+        "EnergyCh10_Often~920.3eV",
+        "EnergyCh11_Often~634.4eV",
+        "EnergyCh12_Often~432.7eV",
+        "EnergyCh13_Often~292.0eV",
+        "EnergyCh14_Often~200.1eV",
+        "EnergyCh15_Often~136.8eV"
+      ]
+    },
+    "FLUX_PA_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 28,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flux labels by pitch angle",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Flux labels by pitch angle",
+        "FORMAT": "a28",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "ElecNoFLux_Bin1_Often~15deg",
+        "ElecNoFLux_Bin2_Often~35deg",
+        "ElecNoFLux_Bin3_Often~57deg",
+        "ElecNoFLux_Bin4_Often~80deg",
+        "ElecNoFLux_Bin5_Often~102deg",
+        "ElecNoFLux_Bin6_Often~123deg",
+        "ElecNoFLux_Bin7_Often~145deg",
+        "ElecNoFLux_Bin8_Often~165deg"
+      ]
+    },
+    "FLUX_ENERGY_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          15
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 29,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Flux labels by energy",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Flux labels by energy",
+        "FORMAT": "a29",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "ElecNoFlux_Ch1_Often~27660eV",
+        "ElecNoFlux_Ch2_Often~18940eV",
+        "ElecNoFlux_Ch3_Often~12970eV",
+        "ElecNoFlux_Ch4_Often~8875eV",
+        "ElecNoFlux_Ch5_Often~6076eV",
+        "ElecNoFlux_Ch6_Often~4161eV",
+        "ElecNoFlux_Ch7_Often~2849eV",
+        "ElecNoFlux_Ch8_Often~1952eV",
+        "ElecNoFlux_Ch9_Often~1339eV",
+        "ElecNoFlux_Ch10_Often~920.3eV",
+        "ElecNoFlux_Ch11_Often~634.4eV",
+        "ElecNoFlux_Ch12_Often~432.7eV",
+        "ElecNoFlux_Ch13_Often~292.0eV",
+        "ElecNoFlux_Ch14_Often~200.1eV",
+        "ElecNoFlux_Ch15_Often~136.8eV"
+      ]
+    },
+    "INTEG_T": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "integ_t",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "integ_t",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.2",
+        "LABLAXIS": "integ_t",
+        "UNITS": " ",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "No Values - never used",
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "integ_t"
+      }
+    },
+    "EDENS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "EDENS",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "EDENS",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "EDENS",
+        "UNITS": " ",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "No Values - never used",
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "EDENS"
+      }
+    },
+    "TEMP": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TEMP",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TEMP",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "TEMP_LABL_1",
+        "UNITS": " ",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": -100.0,
+        "VAR_NOTES": "No Values - never used",
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": " "
+      }
+    },
+    "QP": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "QP",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "QP",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "QP",
+        "UNITS": " ",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": -10.0,
+        "VAR_NOTES": "No Values - never used",
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "QP"
+      }
+    },
+    "QM": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "QM",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "QM",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "QM",
+        "UNITS": " ",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": -10.0,
+        "VAR_NOTES": "No Values - never used",
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "QM"
+      }
+    },
+    "QT": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "QT",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "QT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "QT",
+        "UNITS": " ",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": -10.0,
+        "VAR_NOTES": "No Values - never used",
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "QT"
+      }
+    },
+    "REDF": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          32
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "REDF",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "REDF",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "REDF_LABEL",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "No Values - never used",
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": " "
+      }
+    },
+    "VSW": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SW Velocity vector (from ions and ground-based processing)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VSW",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "VSW_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "km/sec",
+        "VALIDMAX": [
+          3000.0,
+          3000.0,
+          3000.0
+        ],
+        "VALIDMIN": [
+          -3000.0,
+          -3000.0,
+          -3000.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/sec",
+        "x_LABLAXES": [
+          [
+            "VSWion_x_GSE",
+            "VSWion_y_GSE",
+            "VSWion_z_GSE"
+          ]
+        ]
+      }
+    },
+    "MAGF": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Vector magnetic field",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MAGF",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABL_PTR_1": "MAGF_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": [
+          500.0,
+          500.0,
+          500.0
+        ],
+        "VALIDMIN": [
+          -500.0,
+          -500.0,
+          -500.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXES": [
+          [
+            "Bx_GSE",
+            "By_GSE",
+            "Bz_GSE"
+          ]
+        ]
+      }
+    },
+    "TEMP_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 6,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Temp labels",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Temp labels",
+        "FORMAT": "a6",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Temp 1",
+        "Temp 2",
+        "Temp 3",
+        "Temp 4",
+        "Temp 5",
+        "Temp 6"
+      ]
+    },
+    "VSW_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "VSW_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "VSW_LABL_1",
+        "FORMAT": "a12",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "VSWion_x_GSE",
+        "VSWion_y_GSE",
+        "VSWion_z_GSE"
+      ]
+    },
+    "MAGF_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 6,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "MAGF_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "MAGF_LABL_1",
+        "FORMAT": "a7",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Bx_GSE",
+        "By_GSE",
+        "Bz_GSE"
+      ]
+    },
+    "REDF_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          32
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 7,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "REDF labels",
+        "DICT_KEY": "label",
+        "FIELDNAM": "REDF labels",
+        "FORMAT": "a7",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "RedF  1",
+        "RedF  2",
+        "RedF  3",
+        "RedF  4",
+        "RedF  5",
+        "RedF  6",
+        "RedF  7",
+        "RedF  8",
+        "RedF  9",
+        "RedF 10",
+        "RedF 11",
+        "RedF 12",
+        "RedF 13",
+        "RedF 14",
+        "RedF 15",
+        "RedF 16",
+        "RedF 17",
+        "RedF 18",
+        "RedF 19",
+        "RedF 20",
+        "RedF 21",
+        "RedF 22",
+        "RedF 23",
+        "RedF 24",
+        "RedF 25",
+        "RedF 26",
+        "RedF 27",
+        "RedF 28",
+        "RedF 29",
+        "RedF 30",
+        "RedF 31",
+        "RedF 32"
+      ]
+    },
+    "TIME": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "UNIX Time (secs since 1 Jan 1970)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Time",
+        "FILLVAL": "NaN",
+        "FORMAT": "g12.0",
+        "LABLAXIS": "Time",
+        "UNITS": "sec",
+        "VALIDMAX": 20000000000000.0,
+        "VALIDMIN": 1.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "Time"
+      }
+    }
+  }
+}

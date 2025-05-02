@@ -1,0 +1,471 @@
+{
+  "CDFFileInfo": {
+    "File": "bar_7a_l2_fspc_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/bar_7a_l2_fspc_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "File_naming_convention": "source_datatype_descriptor",
+    "Data_type": "l2>Level-2",
+    "PI_name": "Robyn Millan",
+    "PI_affiliation": "Dartmouth College",
+    "Mission_group": "Balloons",
+    "Project": "LWS>Living With a Star>BARREL",
+    "Source_name": "bar_7A",
+    "Data_version": " ",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "HTTP_LINK": "http://barreldata.ucsc.edu/data_products/",
+    "LINK_TITLE": "BARREL Data Repository",
+    "LINK_TEXT": "Access to all releases of BARREL data and links to the Science Operation Center tools.",
+    "Generation_date": " ",
+    "Generated_by": " ",
+    "Rules_of_use": "BARREL will make all its scientific data products quickly and publicly available but all users are expected to read and follow the \"BARREL Mission Data Usage Policy\" which can be found here: http://www.dartmouth.edu/~barrel/documents/data.use.policy.pdf",
+    "Logical_source_description": "BARREL Fast Time Resolution Bremsstrahlung X-ray Spectra",
+    "TEXT": "Six channels of fast time resolution (50ms) Bremsstrahlung X-rays detected with a NaI Scintillator. Each channel is separated in its own variable (e.g. FSPC1, FSPC2, etc). Nominal energy range covered by the 6 channels is 0 - 1.5MeV.",
+    "Instrument_type": "Electron Precipitation Bremsstrahlung",
+    "Descriptor": "FSPC>Fast Spectra",
+    "Time_resolution": "50ms",
+    "Logical_source": "bar_7A_l2_fspc",
+    "Logical_file_id": " ",
+    "spase_DatasetResourceID": " ",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Default time",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "REFERENCE_POSITION": "Rotation Earth Geoid",
+        "SCALETYP": "linear",
+        "TIME_BASE": "J2000",
+        "TIME_SCALE": "Terrestrial Time",
+        "UNITS": "ns",
+        "VALIDMAX": "2019-10-15T09:04:54.724999936",
+        "VALIDMIN": "2009-09-19T00:00:05.978849280",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "FrameGroup": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "DPU Frame Counter",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FrameGroup",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I10",
+        "LABLAXIS": "Frame",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 4294967294,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Frame"
+      }
+    },
+    "Quality": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Data Quality Flag",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Quality",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I10",
+        "LABLAXIS": "Q",
+        "SCALETYP": "linear",
+        "UNITS": "0 means no issues",
+        "VALIDMAX": 4294967294,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "32bit flag used to indicate data quality. Bit 0 = Low altitude (below 20km); Bit 1 = No GPS; Bit 2 = External ephemeris used; Bit 3 = Gain shift.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "0 means no issues",
+        "x_LABLAXIS": "Q"
+      }
+    },
+    "FSPC1a": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Fast spectra (50ms) ch. 1a",
+        "DELTA_MINUS_VAR": "cnt_error1a",
+        "DELTA_PLUS_VAR": "cnt_error1a",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FSPC1a",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I5",
+        "LABLAXIS": "FSPC 1b",
+        "SCALETYP": "log",
+        "UNITS": "cnts/50ms",
+        "VALIDMAX": 10000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Nominal FSPC1a energy range is 0keV - 48.8keV. The calibrated energy range for each channel is tracked in the variable FSPC_Edges.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cnts/50ms",
+        "x_LABLAXIS": "FSPC 1b"
+      }
+    },
+    "cnt_error1a": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count error based on Poisson statistics.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "cnt_error1a",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F9.3",
+        "LABLAXIS": "Count Error",
+        "SCALETYP": "linear",
+        "UNITS": "cnts/50ms",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Error only valid for large count values.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "cnts/50ms",
+        "x_LABLAXIS": "Count Error"
+      }
+    },
+    "FSPC1b": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Fast spectra (50ms) ch. 1b",
+        "DELTA_MINUS_VAR": "cnt_error1b",
+        "DELTA_PLUS_VAR": "cnt_error1b",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FSPC1b",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I5",
+        "LABLAXIS": "FSPC 1b",
+        "SCALETYP": "log",
+        "UNITS": "cnts/50ms",
+        "VALIDMAX": 10000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Nominal FSPC1b energy range is 48.8keV - 97.6keV. The calibrated energy range for each channel is tracked in the variable FSPC_Edges.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cnts/50ms",
+        "x_LABLAXIS": "FSPC 1b"
+      }
+    },
+    "cnt_error1b": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count error based on Poisson statistics.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "cnt_error1b",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F9.3",
+        "LABLAXIS": "Count Error",
+        "SCALETYP": "linear",
+        "UNITS": "cnts/50ms",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Error only valid for large count values.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "cnts/50ms",
+        "x_LABLAXIS": "Count Error"
+      }
+    },
+    "FSPC1c": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Fast spectra (50ms) ch. 1c",
+        "DELTA_MINUS_VAR": "cnt_error1c",
+        "DELTA_PLUS_VAR": "cnt_error1c",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FSPC1c",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I5",
+        "LABLAXIS": "FSPC 1c",
+        "SCALETYP": "log",
+        "UNITS": "cnts/50ms",
+        "VALIDMAX": 10000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Nominal FSPC1c energy range is 97.6keV - 183keV. The calibrated energy range for each channel is tracked in the variable FSPC_Edges.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cnts/50ms",
+        "x_LABLAXIS": "FSPC 1c"
+      }
+    },
+    "cnt_error1c": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count error based on Poisson statistics.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "cnt_error1c",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F9.3",
+        "LABLAXIS": "Count Error",
+        "SCALETYP": "linear",
+        "UNITS": "cnts/50ms",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Error only valid for large count values.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "cnts/50ms",
+        "x_LABLAXIS": "Count Error"
+      }
+    },
+    "FSPC2": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Fast spectra (50ms) ch. 2",
+        "DELTA_MINUS_VAR": "cnt_error2",
+        "DELTA_PLUS_VAR": "cnt_error2",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FSPC2",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I5",
+        "LABLAXIS": "FSPC 2",
+        "SCALETYP": "log",
+        "UNITS": "cnts/50ms",
+        "VALIDMAX": 10000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Nominal FSPC2 energy range is 183keV - 561keV. The calibrated energy range for each channel is tracked in the variable FSPC_Edges.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cnts/50ms",
+        "x_LABLAXIS": "FSPC 2"
+      }
+    },
+    "cnt_error2": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count error based on Poisson statistics.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "cnt_error2",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F9.3",
+        "LABLAXIS": "Count Error",
+        "SCALETYP": "linear",
+        "UNITS": "cnts/50ms",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Error only valid for large count values.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "cnts/50ms",
+        "x_LABLAXIS": "Count Error"
+      }
+    },
+    "FSPC3": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Fast spectra (50ms) ch. 3",
+        "DELTA_MINUS_VAR": "cnt_error3",
+        "DELTA_PLUS_VAR": "cnt_error3",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FSPC3",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I5",
+        "LABLAXIS": "FSPC 3",
+        "SCALETYP": "log",
+        "UNITS": "cnts/50ms",
+        "VALIDMAX": 10000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Nominal FSPC2 energy range is 561keV - 854keV. The calibrated energy range for each channel is tracked in the variable FSPC_Edges.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cnts/50ms",
+        "x_LABLAXIS": "FSPC 3"
+      }
+    },
+    "cnt_error3": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count error based on Poisson statistics.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "cnt_error3",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F9.3",
+        "LABLAXIS": "Count Error",
+        "SCALETYP": "linear",
+        "UNITS": "cnts/50ms",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Error only valid for large count values.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "cnts/50ms",
+        "x_LABLAXIS": "Count Error"
+      }
+    },
+    "FSPC4": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Fast spectra (50ms) ch. 4",
+        "DELTA_MINUS_VAR": "cnt_error4",
+        "DELTA_PLUS_VAR": "cnt_error4",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FSPC4",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I5",
+        "LABLAXIS": "FSPC 4",
+        "SCALETYP": "log",
+        "UNITS": "cnts/50ms",
+        "VALIDMAX": 10000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Nominal FSPC2 energy range is 854keV - 1510keV. The calibrated energy range for each channel is tracked in the variable FSPC_Edges.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "cnts/50ms",
+        "x_LABLAXIS": "FSPC 4"
+      }
+    },
+    "cnt_error4": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count error based on Poisson statistics.",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "cnt_error4",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F9.3",
+        "LABLAXIS": "Count Error",
+        "SCALETYP": "linear",
+        "UNITS": "cnts/50ms",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Error only valid for large count values.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "cnts/50ms",
+        "x_LABLAXIS": "Count Error"
+      }
+    },
+    "FSPC_Edges": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Fast Spectrum Channel Boundaries",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "FSPC_Edges",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.3",
+        "LABLAXIS": "FSPC_Edges",
+        "SCALETYP": "linear",
+        "UNITS": "keV",
+        "VALIDMAX": 2000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Each element of the array represents the boundaries that separate each energy channel. That is, FSPC1a lies between elements 0 and 1, FSPC1b between 1 and 2, FSPC1c between 2 and 3, FSPC2 between 3 and 4, FSPC2 between 4 and 5, and FSPC4 between 5 and 6. These energy levels are not standardized and is calculated for each record.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "FSPC_Edges"
+      }
+    }
+  }
+}

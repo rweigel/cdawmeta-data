@@ -1,0 +1,1816 @@
+{
+  "CDFFileInfo": {
+    "File": "i2_av_odg_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/i2_av_odg_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISIS>International Satellite for Ionosphere Studies\nNSSDC>Archived Data",
+    "Discipline": "Space Physics>Ionospheric Science",
+    "Source_name": "ISIS-2>International Satellite for Ionosphere Studies 2",
+    "Data_type": "AV>Average Ionogram",
+    "Descriptor": "ODG>Ouagadougou",
+    "Data_version": "1",
+    "TITLE": "Topside Sounder Ionogram",
+    "TEXT": "A 7-track ISIS 2 analog telemetry tape from Ottawa (#561) has been \ndigitized using the GSFC facilities of the Data Evaluation Laboratory \n(DEL) within the Mission Operations and Data Systems Directorate (Code \n500) at Goddard.  The digitization was performed using an A/D \nconverter board and software device driver compatible with the OS/2 \noperating system used by the 486-based Programmable Telemetry \nProcessor (PTP) associated software has been installed on their PTP \nand de-bugged so that we now have a working system for making digital \nISIS ionograms directly from the telemetry tapes.  Earlier, we \nsuccessfully digitized the PCM and NASA 36 bit time-code data from \nthis same tape. The ionograms were digitized at the rate of 40,000 \n16-bit samples/sec. This sample rate is higher than the Nyquist \nfrequency of 30 kHz appropriate for the post-detection ISIS 2 \nsounder-receiver video output which extends from DC to 15 kHz (see p. \n50 of the 1971 ISIS 2 report by Daniels).  The sample frequency of 40 \nkHz provides a measurement every 25 microseconds corresponding to an \napparent range (ct/2) interval of 3.747 km.  With the ISIS 2 prf of 45 \nsounder pulses/s, there are (1/45)/(2.5**(-5)) = 888.89 samples \nbetween each of the approximately 1015 sounder pulses per ionogram \n(including the fixed-frequency portion) or nearly 10**6 16-bit \nsamples/ionogram (approximately 1.8 MBytes) for just the \nsounder-receiver video data. Adding header information, and the pcm \ndata containing data from the other instruments, yields about 2 MBytes \nof data for the 22.5 s period corresponding to one ionogram. Two steps \nwere taken in order to reduce this large volume of nearly 2 \nMBytes/ionogram.  First, every four 25 microsecond samples following \nthe sounder pulse were averaged.  Second, the 16 bit samples were \nreduced to 8 bit samples.  The first step decreased the apparent-range \nresolution to 15 km, but yielded high-quality ionograms because of the \nimproved S/N due to the averaging. ",
+    "MODS": "created April 1995",
+    "ADID_ref": "NSSD0110",
+    "Logical_file_id": "I2_AV_ODG_yyyydddhhmmss_V01",
+    "Logical_source": "I2_AV_ODG",
+    "Logical_source_description": "ISIS-2 Topside Sounder Ionogram over Ouagadougou, Burkina Faso (lat/lon=14/359)",
+    "PI_name": "R.F. Benson",
+    "PI_affiliation": "NASA GSFC",
+    "Mission_group": "ISIS\n!___ITM Data including Earth Imaging and Ground-Based",
+    "Instrument_type": "Imaging and Remote Sensing (ITM/Earth)",
+    "TEXT_supplement_1": " ",
+    "NSSDC_id": "spio-00208",
+    "alt_logical_source": "ISIS2_Topside-Sounder_Ionogram-Averages-ODG-14N359E_0.03sec_cdf",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/ISIS2/SFS/AverageIonogram/Ouagadougou/PT22S",
+    "DOI": " ",
+    "LINK_TEXT": "More information available at the",
+    "LINK_TITLE": "ISIS/Alouette Topside Sounder Data Restoration Project site.",
+    "HTTP_LINK": "https://spdf.gsfc.nasa.gov/isis/isis-status.html"
+  },
+  "CDFVariables": {
+    "satellite": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "sat.-ID: 1=AL1, 2=AL2, 3=ISIS1, 4=ISIS2",
+        "DICT_KEY": "flag>spacecraft ",
+        "FIELDNAM": "satellite ID",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "s/c_ID",
+        "SCALEMAX": 4,
+        "SCALEMIN": 1,
+        "UNITS": " ",
+        "VALIDMAX": 4,
+        "VALIDMIN": 1,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "s/c_ID"
+      }
+    },
+    "station_id": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "telemetry station code",
+        "DICT_KEY": "label",
+        "FIELDNAM": "telemetry station code",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABLAXIS": "station",
+        "SCALEMAX": 99,
+        "SCALEMIN": 1,
+        "UNITS": " ",
+        "VALIDMAX": 99,
+        "VALIDMIN": 1,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "station"
+      }
+    },
+    "power_code": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "trans. power code: 1=Prim(400W) 2=Sec(400W)",
+        "DICT_KEY": "flag",
+        "FIELDNAM": "transmitter power code",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "T_power",
+        "SCALEMAX": 2,
+        "SCALEMIN": 1,
+        "UNITS": " ",
+        "VALIDMAX": 2,
+        "VALIDMIN": 1,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "T_power"
+      }
+    },
+    "s/r_code": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "sounder/receiver code: 0=off, 1=on",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "sounder/receiver code",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "s/r_code",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "s/r_code"
+      }
+    },
+    "f_range_code": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "swept-f range code: 0=normal, 1=extended ",
+        "DICT_KEY": "flag>instrument",
+        "FIELDNAM": "swept frequency range code",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "f_range",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "f_range"
+      }
+    },
+    "DMODE": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "DMODE (transm. on/off for alternate frame pairs): 0=off, 1=on",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "DMODE code",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "DMODE",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "DMODE"
+      }
+    },
+    "GMODE": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "GMODE (transmission of alternate frames  of swept and fixed frequency ): 0=off, 1=on",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "GMODE code",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "GMODE",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "GMODE"
+      }
+    },
+    "mixed_mode": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "sounder mixed mode: 0=off, 1=on",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "sounder mixed mode",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "s_m_mode",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "s_m_mode"
+      }
+    },
+    "AIT_mode": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "AIT mode (automatic sounder operation every 3 min): 0=off, 1=on",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "AIT mode",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "AIT",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "AIT"
+      }
+    },
+    "fix_freq": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "fixed frequency code: 1=0.25, 2=0.48, 3=1.00, 4=1.95, 5=4.00, 6=9.303 MHz",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "fixed frequency code (0-6)",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "f_code",
+        "SCALEMAX": 6,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 6,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "f_code"
+      }
+    },
+    "year": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Year corresponding to Ionogram",
+        "DICT_KEY": "time",
+        "FIELDNAM": "Year",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABLAXIS": "year",
+        "SCALEMAX": 83,
+        "SCALEMIN": 62,
+        "UNITS": " ",
+        "VALIDMAX": 84,
+        "VALIDMIN": 62,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "year"
+      }
+    },
+    "doy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Day of Year for Ionogram",
+        "DICT_KEY": "time",
+        "FIELDNAM": "Day of Year",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I3",
+        "LABLAXIS": "DOY",
+        "SCALEMAX": 366,
+        "SCALEMIN": 1,
+        "UNITS": " ",
+        "VALIDMAX": 366,
+        "VALIDMIN": 1,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "DOY"
+      }
+    },
+    "hr": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Hour Ionogram measured",
+        "DICT_KEY": "time>hour",
+        "FIELDNAM": "Hour",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABLAXIS": "Hour",
+        "SCALEMAX": 24,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 24,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Hour"
+      }
+    },
+    "min": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Minute of hour Ionogram measured",
+        "DICT_KEY": "time>minute",
+        "FIELDNAM": "Minute",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABLAXIS": "min",
+        "SCALEMAX": 60,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 60,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "min"
+      }
+    },
+    "sec": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Second of minute Ionogram measured",
+        "DICT_KEY": "time>second",
+        "FIELDNAM": "Second",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.4",
+        "LABLAXIS": "second",
+        "SCALEMAX": 60.0,
+        "SCALEMIN": 0.0,
+        "UNITS": " ",
+        "VALIDMAX": 60.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "second"
+      }
+    },
+    "LMT": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Local Mean Time (hh,mm)",
+        "DICT_KEY": "time>local_mean",
+        "FIELDNAM": "Local Mean Time (hh,mm)",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABL_PTR_1": "label_LMT",
+        "SCALEMAX": [
+          24,
+          60
+        ],
+        "SCALEMIN": [
+          0,
+          0
+        ],
+        "UNIT_PTR": "unit_LMT",
+        "VALIDMAX": [
+          24,
+          60
+        ],
+        "VALIDMIN": [
+          0,
+          0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": [
+          "hrs",
+          "min"
+        ],
+        "x_LABLAXES": [
+          [
+            "LMT(hh)",
+            "LMT(mm)"
+          ]
+        ]
+      }
+    },
+    "label_LMT": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 7,
+        "NumWrittenRecords": 1,
+        "PadValue": "       ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label for Local Mean Time",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Label for LMT",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "LMT(hh)",
+        "LMT(mm)"
+      ]
+    },
+    "unit_LMT": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 3,
+        "NumWrittenRecords": 1,
+        "PadValue": "   ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Units for Local Mean Time",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Units for LMT",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "hrs",
+        "min"
+      ]
+    },
+    "geo_coord": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "geographic coordinates (Lat,Long,Hgt)",
+        "DICT_KEY": "position>geographic",
+        "FIELDNAM": "geog coord (Lat,Long,Hgt)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABL_PTR_1": "label_geo",
+        "SCALEMAX": [
+          90.0,
+          360.0,
+          10000.0
+        ],
+        "SCALEMIN": [
+          -90.0,
+          0.0,
+          0.0
+        ],
+        "UNIT_PTR": "unit_geo",
+        "VALIDMAX": [
+          90.0,
+          360.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          -90.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": [
+          "deg",
+          "deg",
+          "km"
+        ],
+        "x_LABLAXES": [
+          [
+            "latitude",
+            "longitude",
+            "height"
+          ]
+        ]
+      }
+    },
+    "label_geo": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 9,
+        "NumWrittenRecords": 1,
+        "PadValue": "         ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label for geographic/magnetic position",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Label for geog coord",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "latitude",
+        "longitude",
+        "height"
+      ]
+    },
+    "unit_geo": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 3,
+        "NumWrittenRecords": 1,
+        "PadValue": "   ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Units for geographic/magnetic position",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Units for geog coord",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "deg",
+        "deg",
+        "km"
+      ]
+    },
+    "GMLMT": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Geomagnetic Local Time (HHMM)",
+        "DICT_KEY": "time>magnetic_local_mean",
+        "FIELDNAM": "Geomagnetic Local Time (hh,mm)",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I2",
+        "LABL_PTR_1": "label_GMLMT",
+        "SCALEMAX": [
+          24,
+          60
+        ],
+        "SCALEMIN": [
+          0,
+          0
+        ],
+        "UNIT_PTR": "unit_LMT",
+        "VALIDMAX": [
+          24,
+          60
+        ],
+        "VALIDMIN": [
+          0,
+          0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": [
+          "hrs",
+          "min"
+        ],
+        "x_LABLAXES": [
+          [
+            "GMLMT(hh)",
+            "GMLMT(mm)"
+          ]
+        ]
+      }
+    },
+    "label_GMLMT": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 9,
+        "NumWrittenRecords": 1,
+        "PadValue": "         ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label for Geomagnetic Local Mean Time",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Label for GMLMT",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "GMLMT(hh)",
+        "GMLMT(mm)"
+      ]
+    },
+    "GMLAT": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "geomagnetic latitude",
+        "DICT_KEY": "position>geomagnetic",
+        "FIELDNAM": "geom latitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "geom_lat",
+        "SCALEMAX": 90.0,
+        "SCALEMIN": -90.0,
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "geom_lat"
+      }
+    },
+    "GMLONG": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "geomagnetic longitude",
+        "DICT_KEY": "position>geomagnetic",
+        "FIELDNAM": "geom longitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "geom_long",
+        "SCALEMAX": 180.0,
+        "SCALEMIN": -180.0,
+        "UNITS": "deg",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": -180.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "geom_long"
+      }
+    },
+    "INV_LAT": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "invariant latitude",
+        "DICT_KEY": "position>geomagnetic",
+        "FIELDNAM": "inv latitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "inv_lat",
+        "SCALEMAX": 90.0,
+        "SCALEMIN": -90.0,
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "inv_lat"
+      }
+    },
+    "DIP": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Dip angle of mag field direction",
+        "DICT_KEY": "angle>geomagnetic_inlination",
+        "FIELDNAM": "magnetic inclination",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i3",
+        "LABLAXIS": "DIP",
+        "SCALEMAX": 90,
+        "SCALEMIN": -90,
+        "UNITS": "deg",
+        "VALIDMAX": 90,
+        "VALIDMIN": -90,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "DIP"
+      }
+    },
+    "CHI": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Solar Zenith Angle",
+        "DICT_KEY": "angle",
+        "FIELDNAM": "Solar Zenith Angle",
+        "FILLVAL": -2147483648,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "CHI",
+        "SCALEMAX": 180,
+        "SCALEMIN": 0,
+        "UNITS": "deg",
+        "VALIDMAX": 180,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "CHI"
+      }
+    },
+    "L": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "L shell (McIlwain parameter)",
+        "DICT_KEY": "position",
+        "FIELDNAM": "L shell (McIlwain parameter)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "L",
+        "SCALEMAX": 180.0,
+        "SCALEMIN": 0.0,
+        "UNITS": " ",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "L"
+      }
+    },
+    "sun": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "spacecraft in(=1)/out(=2) sunlight         ",
+        "DICT_KEY": "flag",
+        "FIELDNAM": "spacecraft in/out sunlight",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "sun",
+        "SCALEMAX": 2,
+        "SCALEMIN": 1,
+        "UNITS": " ",
+        "VALIDMAX": 2,
+        "VALIDMIN": 1,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "sun"
+      }
+    },
+    "CEP": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "CEP instrument on(1)/off(0) status",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "Cyl. Electrost. Probe",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "CEP",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "CEP"
+      }
+    },
+    "VLF": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "VLF instrument on(1)/off(0) status",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "0.05-30 kHz VLF receiver",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "VLF",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "VLF"
+      }
+    },
+    "RPA": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "RPA instrument on(1)/off(0) status",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "Retarding Potential Analyzer",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "RPA",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "RPA"
+      }
+    },
+    "IMS": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "IMS instrument on(1)/off(0) status",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "Ion Mass Spectrometer",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "IMS",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "IMS"
+      }
+    },
+    "SPS": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "SPS instrument on(1)/off(0) status",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "Soft Particle Spectrometer",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "SPS",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "SPS"
+      }
+    },
+    "EPD": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "EPD instrument on(1)/off(0) status",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "Energetic Particle Detector",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "EPD",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "EPD"
+      }
+    },
+    "RLP": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "RLP instrument on(1)/off(0) status",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "Red Line Photometer",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "RLP",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "RLP"
+      }
+    },
+    "ASP": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "ASP instrument on(1)/off(0) status",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": "Auroral Scanning Photometer",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "ASP",
+        "SCALEMAX": 1,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "ASP"
+      }
+    },
+    "swept_start": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "scan line number of start of swept portion",
+        "DICT_KEY": "number>frame_offset",
+        "FIELDNAM": "start of swept portion",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I5",
+        "LABLAXIS": "swept_start",
+        "SCALEMAX": 10000,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 10000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "seperates the fixed and swept portions ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "swept_start"
+      }
+    },
+    "Time_mark": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL8",
+        "DimSizes": [
+          22
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "msec after frame sync",
+        "DICT_KEY": "time>millisecond",
+        "FIELDNAM": "msec after frame sync",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F10.3",
+        "LABLAXIS": "T_mark",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": 30000.0,
+        "SCALEMIN": 3000.0,
+        "UNITS": "ms",
+        "VALIDMAX": 30000.0,
+        "VALIDMIN": 3000.0,
+        "VAR_NOTES": "time of frequency markers ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "T_mark"
+      }
+    },
+    "freq_mark": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL8",
+        "DimSizes": [
+          22
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "frequency markers for sounder",
+        "DEPEND_1": "Time_mark",
+        "DICT_KEY": "frequency",
+        "DISPLAY_TYPE": "default_dimensionx=time_mark,y=freq_mark",
+        "FIELDNAM": "frequency markers for sounder",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e11.2",
+        "LABLAXIS": "freq",
+        "SCALEMAX": 20.0,
+        "SCALEMIN": 0.1,
+        "UNITS": "MHz",
+        "VALIDMAX": 25.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "MHz",
+        "x_LABLAXIS": "freq",
+        "x_DEPEND": [
+          "Time_mark"
+        ]
+      }
+    },
+    "vh_num": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "number of delay times for this ionogram",
+        "DICT_KEY": "number",
+        "FIELDNAM": "number of delay times",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I3",
+        "LABLAXIS": "N_vh",
+        "SCALEMAX": 223,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 230,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "N_vh"
+      }
+    },
+    "f_num": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "number of frequency steps for this ionogram",
+        "DICT_KEY": "number",
+        "FIELDNAM": "number of frequency steps",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I6",
+        "LABLAXIS": "N_f",
+        "SCALEMAX": 4000,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 4000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "N_f"
+      }
+    },
+    "delay_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL8",
+        "DimSizes": [
+          223
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "delay time for sounder response",
+        "DICT_KEY": "time>delay",
+        "FIELDNAM": "delay time",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f9.2",
+        "LABLAXIS": "Delay time",
+        "SCALEMAX": 0.0,
+        "SCALEMIN": 23.0,
+        "SCALETYP": "linear",
+        "UNITS": "msec",
+        "VALIDMAX": 30.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "Delay time"
+      }
+    },
+    "v_height": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL8",
+        "DimSizes": [
+          223
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "virtual height corresponding to delay time",
+        "DEPEND_1": "delay_time",
+        "DICT_KEY": "position>height",
+        "FIELDNAM": "Apparent Range",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f9.2",
+        "LABLAXIS": "V_height",
+        "SCALEMAX": 0.0,
+        "SCALEMIN": 3333.33,
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": 3333.33,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "V_height",
+        "x_DEPEND": [
+          "delay_time"
+        ]
+      },
+      "VarData": [
+        0.0,
+        15.0,
+        30.0,
+        45.0,
+        60.0,
+        75.0,
+        90.0,
+        105.0,
+        120.0,
+        135.0,
+        150.0,
+        165.0,
+        180.0,
+        195.0,
+        210.0,
+        225.0,
+        240.0,
+        255.0,
+        270.0,
+        285.0,
+        300.0,
+        315.0,
+        330.0,
+        345.0,
+        360.0,
+        375.0,
+        390.0,
+        405.0,
+        420.0,
+        435.0,
+        450.0,
+        465.0,
+        480.0,
+        495.0,
+        510.0,
+        525.0,
+        540.0,
+        555.0,
+        570.0,
+        585.0,
+        600.0,
+        615.0,
+        630.0,
+        645.0,
+        660.0,
+        675.0,
+        690.0,
+        705.0,
+        720.0,
+        735.0,
+        750.0,
+        765.0,
+        780.0,
+        795.0,
+        810.0,
+        825.0,
+        840.0,
+        855.0,
+        870.0,
+        885.0,
+        900.0,
+        915.0,
+        930.0,
+        945.0,
+        960.0,
+        975.0,
+        990.0,
+        1005.0,
+        1020.0,
+        1035.0,
+        1050.0,
+        1065.0,
+        1080.0,
+        1095.0,
+        1110.0,
+        1125.0,
+        1140.0,
+        1155.0,
+        1170.0,
+        1185.0,
+        1200.0,
+        1215.0,
+        1230.0,
+        1245.0,
+        1260.0,
+        1275.0,
+        1290.0,
+        1305.0,
+        1320.0,
+        1335.0,
+        1350.0,
+        1365.0,
+        1380.0,
+        1395.0,
+        1410.0,
+        1425.0,
+        1440.0,
+        1455.0,
+        1470.0,
+        1485.0,
+        1500.0,
+        1515.0,
+        1530.0,
+        1545.0,
+        1560.0,
+        1575.0,
+        1590.0,
+        1605.0,
+        1620.0,
+        1635.0,
+        1650.0,
+        1665.0,
+        1680.0,
+        1695.0,
+        1710.0,
+        1725.0,
+        1740.0,
+        1755.0,
+        1770.0,
+        1785.0,
+        1800.0,
+        1815.0,
+        1830.0,
+        1845.0,
+        1860.0,
+        1875.0,
+        1890.0,
+        1905.0,
+        1920.0,
+        1935.0,
+        1950.0,
+        1965.0,
+        1980.0,
+        1995.0,
+        2010.0,
+        2025.0,
+        2040.0,
+        2055.0,
+        2070.0,
+        2085.0,
+        2100.0,
+        2115.0,
+        2130.0,
+        2145.0,
+        2160.0,
+        2175.0,
+        2190.0,
+        2205.0,
+        2220.0,
+        2235.0,
+        2250.0,
+        2265.0,
+        2280.0,
+        2295.0,
+        2310.0,
+        2325.0,
+        2340.0,
+        2355.0,
+        2370.0,
+        2385.0,
+        2400.0,
+        2415.0,
+        2430.0,
+        2445.0,
+        2460.0,
+        2475.0,
+        2490.0,
+        2505.0,
+        2520.0,
+        2535.0,
+        2550.0,
+        2565.0,
+        2580.0,
+        2595.0,
+        2610.0,
+        2625.0,
+        2640.0,
+        2655.0,
+        2670.0,
+        2685.0,
+        2700.0,
+        2715.0,
+        2730.0,
+        2745.0,
+        2760.0,
+        2775.0,
+        2790.0,
+        2805.0,
+        2820.0,
+        2835.0,
+        2850.0,
+        2865.0,
+        2880.0,
+        2895.0,
+        2910.0,
+        2925.0,
+        2940.0,
+        2955.0,
+        2970.0,
+        2985.0,
+        3000.0,
+        3015.0,
+        3030.0,
+        3045.0,
+        3060.0,
+        3075.0,
+        3090.0,
+        3105.0,
+        3120.0,
+        3135.0,
+        3150.0,
+        3165.0,
+        3180.0,
+        3195.0,
+        3210.0,
+        3225.0,
+        3240.0,
+        3255.0,
+        3270.0,
+        3285.0,
+        3300.0,
+        3315.0,
+        3330.0
+      ]
+    },
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time",
+        "DICT_KEY": "time>Epoch",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2000-01-01T00:00:00.000",
+        "SCALEMIN": "1969-01-01T00:00:00.000",
+        "UNITS": "ms",
+        "VALIDMAX": "2000-01-01T00:00:00.000",
+        "VALIDMIN": "1969-01-01T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "ampl": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          223
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Sounder amplitude at 223 virtual heights for fixed & swept frequency",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "v_height",
+        "DICT_KEY": "ratio>sounder_amplitude",
+        "DISPLAY_TYPE": "default_dimensionmax_panel_time>90000",
+        "FIELDNAM": "Apparent Range",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "Relative Amplitude",
+        "SCALEMAX": 255,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Relative Amplitude",
+        "x_DEPEND": [
+          "v_height"
+        ]
+      }
+    },
+    "freq": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Interpolated fixed & sweep frequencies",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "frequency",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "interpolated frequencies",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e11.2",
+        "LABLAXIS": "frequency",
+        "SCALEMAX": 25.0,
+        "SCALEMIN": 0.1,
+        "UNITS": "MHz",
+        "VALIDMAX": 25.0,
+        "VALIDMIN": 0.1,
+        "VAR_NOTES": "This variable could be used as x-axis on amplitude spectrograms if fixed part is subtracted.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "MHz",
+        "x_LABLAXIS": "frequency"
+      }
+    },
+    "height": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Altitude",
+        "COMPONENT_0": "geo_coord",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "height",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "height",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f6.1",
+        "LABLAXIS": "Satellite Altitude",
+        "SCALEMAX": 4000.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "km",
+        "VALIDMAX": 4000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Virtual variable.",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "height_isis",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "Satellite Altitude",
+        "COMPONENTS": [
+          "geo_coord"
+        ]
+      }
+    },
+    "FH": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Electron Gyrofrequency",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "frequency",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Electron Gyrofrequency",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.3",
+        "LABLAXIS": "Electron Gyrofrequency",
+        "SCALEMAX": 100.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "MHz",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "MHz",
+        "x_LABLAXIS": "Electron Gyrofrequency"
+      }
+    }
+  }
+}

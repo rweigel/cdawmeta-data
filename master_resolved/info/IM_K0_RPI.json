@@ -1,0 +1,1890 @@
+{
+  "CDFFileInfo": {
+    "File": "im_k0_rpi_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/im_k0_rpi_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "IMAGE>Imager for Magnetopause-to-Aurora Global Exploration",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Descriptor": "RPI>Radio Plasma Imager",
+    "PI_name": "B.W. Reinisch",
+    "PI_affiliation": "UMLCAR",
+    "Instrument_type": "Imaging and Remote Sensing (Magnetosphere/Earth)\nRadio and Plasma Waves (space)",
+    "Source_name": "IMAGE>Imager for Magnetopause to Aurora Global Exploration",
+    "Data_type": "K0>Key Parameters",
+    "Data_version": "1",
+    "TEXT": "TBD",
+    "Logical_file_id": "im_k0_rpi_00000000_v01",
+    "Logical_source": "im_k0_rpi",
+    "Logical_source_description": "RPI Plasmagram/Echomap, Key Parameters, IMAGE Radio Plasma Imager (RPI)",
+    "Mission_group": "IMAGE\n!___Magnetospheric Data\n!___ITM Data including Earth Imaging and Ground-Based",
+    "MODS": "Master with plasmagram vv's re-integrated with data CDFs 12/6/00 REM; \nSKTEditor review and corrections applied to master 12/6/00 REM;",
+    "alt_logical_source": "IMAGE_RPI_Key-Parameters-K0_cdf",
+    "cdawlib_idl_row_notranspose": "TRUE",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/IMAGE/RPI/PT24H",
+    "DOI": "https://doi.org/10.48322/0kry-rn33",
+    "LINK_TEXT": "IMAGE\nDescription of the ",
+    "LINK_TITLE": "Science Center\nProgram Specifications",
+    "HTTP_LINK": "http://image.gsfc.nasa.gov\nhttp://image.gsfc.nasa.gov/rpi/rpi_spec_cdf.html"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Plasmagram Time",
+        "DICT_KEY": "time>epoch",
+        "FIELDNAM": "Time Line",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F16.1",
+        "LABLAXIS": "Epoch",
+        "UNITS": "ms",
+        "VALIDMAX": "0000-01-01T00:00:00.001",
+        "VALIDMIN": "0000-01-01T00:00:00.001",
+        "VAR_NOTES": "The time in EPOCH refers to the beginning of the plasmagram. Use Duration_ms to obtain stop time of the run.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "Duration_ms": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Offset from Epoch time to the end of the measurement run.",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "time>range_absolute",
+        "FIELDNAM": "Measurement Duration",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I10",
+        "LABLAXIS": "End",
+        "UNITS": "ms",
+        "VALIDMAX": 4294967294,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Time in ms between start and stop of the measurement run. ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "End"
+      }
+    },
+    "NadirMET": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Nadir crossing MET is the reference MET that uniquely identifies all RPI measurements.",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Nadir crossing MET",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I10",
+        "LABLAXIS": "Nadir MET",
+        "UNITS": "0.1 s",
+        "VALIDMAX": 4294967294,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "MET of the last Nadir crossing before  the measurement starts. ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "0.1 s",
+        "x_LABLAXIS": "Nadir MET"
+      }
+    },
+    "StartMET": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Measurement start MET.",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Start MET",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I10",
+        "LABLAXIS": "Start MET",
+        "UNITS": "0.1 s",
+        "VALIDMAX": 4294967294,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Start MET is derived using the Nadir crossing MET and the time offset from the first packet header. Might not be unique due to telemetry losses.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "0.1 s",
+        "x_LABLAXIS": "Start MET"
+      }
+    },
+    "OpMode": {
+      "VarDescription": {
+        "DataType": "CDF_UCHAR",
+        "NumDims": 0,
+        "NumElements": 13,
+        "PadValue": "             ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Operating Mode Name",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Operating Mode",
+        "FILLVAL": "             ",
+        "FORMAT": "a10",
+        "LABLAXIS": "Op Mode",
+        "UNITS": "(code=TBD)",
+        "VAR_NOTES": "values: Calibration, Sounding, Thermal Noise, Relaxation, Whistler, Test Pattern; time-varying character data",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "(code=TBD)",
+        "x_LABLAXIS": "Op Mode"
+      }
+    },
+    "NumDopplers": {
+      "VarDescription": {
+        "DataType": "CDF_UINT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 65534,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of Dopplers",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Number of Dopplers",
+        "FILLVAL": 65535,
+        "FORMAT": "I3",
+        "LABLAXIS": "NumDopplers",
+        "UNITS": "s",
+        "VALIDMAX": 256,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "s",
+        "x_LABLAXIS": "NumDopplers"
+      }
+    },
+    "RepetitionRate": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pulse Repetition Rate",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Pulse Repetition Rate",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F4.1",
+        "LABLAXIS": "PulseRepRate",
+        "UNITS": "Hz",
+        "VALIDMAX": 50.0,
+        "VALIDMIN": 0.5,
+        "VAR_NOTES": "0.5 pps (1 pulse every 2 sec), 1 pps, 2 pps, 4 pps, 10 pps, 20 pps, 50 pps.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "PulseRepRate"
+      }
+    },
+    "XmtrAntenna": {
+      "VarDescription": {
+        "DataType": "CDF_UCHAR",
+        "NumDims": 0,
+        "NumElements": 15,
+        "PadValue": "               ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Xmtr Antenna Setting Name",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Xmtr Antenna Setting",
+        "FILLVAL": "               ",
+        "FORMAT": "a15",
+        "LABLAXIS": "Xmtr Antenna Set",
+        "UNITS": "(codes 1-8)",
+        "VAR_NOTES": "values (numbers sequence only):  1= Radio Silence (no Tx), 2= X antenna only, 3= Y antenna only, 4= X+Y Linearly polarized, 5= X+Y Right Circularly Polarized, 6= X+Y Left Circularly Polarized, 7= X+Y Right/Left Alternated, 8= X+Y Lin/Lin90 Alternated.; time-varying character data",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "(codes 1-8)",
+        "x_LABLAXIS": "Xmtr Antenna Set"
+      }
+    },
+    "Couplers": {
+      "VarDescription": {
+        "DataType": "CDF_UCHAR",
+        "NumDims": 0,
+        "NumElements": 3,
+        "PadValue": "   ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Coupler Mode Name",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Coupler Mode",
+        "FILLVAL": "   ",
+        "FORMAT": "a3",
+        "LABLAXIS": "Coupler Mode",
+        "UNITS": "(0=off,1=on)",
+        "VAR_NOTES": "values (numbers sequence only):  0= OFF (untuned), 1= ON (tuned)",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "(0=off,1=on)",
+        "x_LABLAXIS": "Coupler Mode"
+      }
+    },
+    "Waveform": {
+      "VarDescription": {
+        "DataType": "CDF_UCHAR",
+        "NumDims": 0,
+        "NumElements": 24,
+        "PadValue": "                        ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Waveform Operating Mode Name",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Waveform OpMode",
+        "FILLVAL": "                        ",
+        "FORMAT": "a24",
+        "LABLAXIS": "Wave Op Mode",
+        "UNITS": "(codes=1-9)",
+        "VAR_NOTES": "values (numbers sequence only):  1= 16-chip complementary, 2= FM Chirp, 3= Staggered Pulse Sequence, 4= Long Pulse, 5= Short Pulse, 6= 0.5 s Pulse7= 1.95 s Pulse, 8= 8-chip complementary9= 4-chip complementary.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "(codes=1-9)",
+        "x_LABLAXIS": "Wave Op Mode"
+      }
+    },
+    "BaseGain": {
+      "VarDescription": {
+        "DataType": "CDF_UCHAR",
+        "NumDims": 0,
+        "NumElements": 18,
+        "PadValue": "                  ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Base Gain",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Base Gain",
+        "FILLVAL": "             ",
+        "FORMAT": "a18",
+        "LABLAXIS": "Base Gain",
+        "UNITS": " ",
+        "VALIDMAX": "16",
+        "VALIDMIN": "0",
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Base Gain"
+      }
+    },
+    "GainControl": {
+      "VarDescription": {
+        "DataType": "CDF_UCHAR",
+        "NumDims": 0,
+        "NumElements": 9,
+        "PadValue": "         ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Gain Control Name",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Gain Control",
+        "FILLVAL": "         ",
+        "FORMAT": "a9",
+        "LABLAXIS": "Gain Control",
+        "UNITS": "(0=fixed, 1=auto)",
+        "VAR_NOTES": "0= Fixed Gain, 1= Auto Gain. ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "(0=fixed, 1=auto)",
+        "x_LABLAXIS": "Gain Control"
+      }
+    },
+    "FreqSearch": {
+      "VarDescription": {
+        "DataType": "CDF_UCHAR",
+        "NumDims": 0,
+        "NumElements": 18,
+        "PadValue": "                  ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Search of quiet frequencies enabled",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Frequency Search Enabled",
+        "FILLVAL": "                  ",
+        "FORMAT": "a18",
+        "LABLAXIS": "Freq Search",
+        "UNITS": " ",
+        "VAR_NOTES": "0= Search of quiet frequencies disabled, 1= Search of quiet frequencies enabled. ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Freq Search"
+      }
+    },
+    "PeakPower": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Peak Power Constraint",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Peak Power Constraint",
+        "FILLVAL": -32768,
+        "FORMAT": "I3",
+        "LABLAXIS": "Peak Power Constraint",
+        "UNITS": "Watts",
+        "VALIDMAX": 120,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Total RPI Peak Power Consumption Constraint. ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Watts",
+        "x_LABLAXIS": "Peak Power Constraint"
+      }
+    },
+    "Amplitude22": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "Echo Amplitude Image [nV] - Plasmagram - linear (frequency vs. range, standard display/orientation)",
+        "COMPONENT_0": "Amplitude",
+        "COMPONENT_1": "ProgramSpecs",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DEPEND_2": "Range",
+        "DISPLAY_TYPE": "default_dimensionx=Frequency,y=Range,z=Amplitude22,labl=NumFreqs,labl=NumRanges,labl=Waveform,labl=OpMode,labl=PeakPower,labl=ProgramSpecs(24),labl=RepetitionRate,labl=XmtrAntenna,labl=FreqSearch,labl=BaseGain,labl=GainControl,labl=ProgramSpecs(1)",
+        "FIELDNAM": "Echo amplitude (plasmagram - linear)",
+        "FILLVAL": 255,
+        "FORMAT": "I4",
+        "LABLAXIS": "Echo Amplitude",
+        "UNITS": "3/4 dBnV/m",
+        "VALIDMAX": 254,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "flip_image",
+        "x_UNITS": "3/4 dBnV/m",
+        "x_LABLAXIS": "Echo Amplitude",
+        "x_DEPEND": [
+          "Frequency",
+          "Range"
+        ],
+        "COMPONENTS": [
+          "Amplitude",
+          "ProgramSpecs"
+        ]
+      }
+    },
+    "Amplitude22M": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": " ---> Movie - linear (frequency vs. range)",
+        "COMPONENT_0": "Amplitude",
+        "COMPONENT_1": "ProgramSpecs",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DEPEND_2": "Range",
+        "DISPLAY_TYPE": "default_dimensionx=Frequency,y=Range,z=Amplitude22M,labl=NumFreqs,labl=NumRanges,labl=Waveform,labl=OpMode,labl=PeakPower,labl=ProgramSpecs(24),labl=RepetitionRate,labl=XmtrAntenna,labl=FreqSearch,labl=BaseGain,labl=GainControl,labl=ProgramSpecs(1)",
+        "FIELDNAM": "Echo amplitude (plasmagram - linear)",
+        "FILLVAL": 255,
+        "FORMAT": "I4",
+        "LABLAXIS": "Echo Amplitude",
+        "UNITS": "3/4 dBnV/m",
+        "VALIDMAX": 254,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "flip_image",
+        "x_UNITS": "3/4 dBnV/m",
+        "x_LABLAXIS": "Echo Amplitude",
+        "x_DEPEND": [
+          "Frequency",
+          "Range"
+        ],
+        "COMPONENTS": [
+          "Amplitude",
+          "ProgramSpecs"
+        ]
+      }
+    },
+    "Amplitude2": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": " ---> Plasmagram - linear (range vs frequency) ",
+        "COMPONENT_0": "Amplitude",
+        "COMPONENT_1": "ProgramSpecs",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Range",
+        "DEPEND_2": "Frequency",
+        "DISPLAY_TYPE": "default_dimensionx=Range,y=Frequency,z=Amplitude2,labl=NumFreqs,labl=NumRanges,labl=Waveform,labl=OpMode,labl=PeakPower,labl=ProgramSpecs(24),labl=RepetitionRate,labl=XmtrAntenna,labl=FreqSearch,labl=BaseGain,labl=GainControl,labl=ProgramSpecs(1)",
+        "FIELDNAM": "Echo amplitude (plasmagram - linear)",
+        "FILLVAL": 255,
+        "FORMAT": "I4",
+        "LABLAXIS": "Echo Amplitude",
+        "UNITS": "3/4 dBnV/m",
+        "VALIDMAX": 254,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "3/4 dBnV/m",
+        "x_LABLAXIS": "Echo Amplitude",
+        "x_DEPEND": [
+          "Range",
+          "Frequency"
+        ],
+        "COMPONENTS": [
+          "Amplitude",
+          "ProgramSpecs"
+        ]
+      }
+    },
+    "Amplitude2M": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": " ---> Movie - linear (range vs. frequency)",
+        "COMPONENT_0": "Amplitude",
+        "COMPONENT_1": "ProgramSpecs",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Range",
+        "DEPEND_2": "Frequency",
+        "DISPLAY_TYPE": "default_dimensionx=Range,y=Frequency,z=Amplitude2M,labl=NumFreqs,labl=NumRanges,labl=Waveform,labl=OpMode,labl=PeakPower,labl=ProgramSpecs(24),labl=RepetitionRate,labl=XmtrAntenna,labl=FreqSearch,labl=BaseGain,labl=GainControl,labl=ProgramSpecs(1)",
+        "FIELDNAM": "Echo amplitude (plasmagram - linear)",
+        "FILLVAL": 255,
+        "FORMAT": "I4",
+        "LABLAXIS": "Echo Amplitude",
+        "UNITS": "3/4 dBnV/m",
+        "VALIDMAX": 254,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "3/4 dBnV/m",
+        "x_LABLAXIS": "Echo Amplitude",
+        "x_DEPEND": [
+          "Range",
+          "Frequency"
+        ],
+        "COMPONENTS": [
+          "Amplitude",
+          "ProgramSpecs"
+        ]
+      }
+    },
+    "Amplitude3": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": " ---> Plasmagram - range vs. log frequency",
+        "COMPONENT_0": "Amplitude",
+        "COMPONENT_1": "ProgramSpecs",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Range",
+        "DEPEND_2": "Frequency_log",
+        "DISPLAY_TYPE": "default_dimensionx=Range,y=Frequency_log,z=Amplitude3,labl=NumFreqs,labl=NumRanges,labl=Waveform,labl=OpMode,labl=PeakPower,labl=ProgramSpecs(24),labl=RepetitionRate,labl=XmtrAntenna,labl=FreqSearch,labl=BaseGain,labl=GainControl,labl=ProgramSpecs(1)",
+        "FIELDNAM": "Echo amplitude (plasmagram - log)",
+        "FILLVAL": 255,
+        "FORMAT": "I4",
+        "LABLAXIS": "Echo Amplitude",
+        "UNITS": "3/4 dBnV/m",
+        "VALIDMAX": 254,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "3/4 dBnV/m",
+        "x_LABLAXIS": "Echo Amplitude",
+        "x_DEPEND": [
+          "Range",
+          "Frequency_log"
+        ],
+        "COMPONENTS": [
+          "Amplitude",
+          "ProgramSpecs"
+        ]
+      }
+    },
+    "Amplitude3M": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": " ---> Movie - range vs. log frequency",
+        "COMPONENT_0": "Amplitude",
+        "COMPONENT_1": "ProgramSpecs",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Range",
+        "DEPEND_2": "Frequency_log",
+        "DISPLAY_TYPE": "default_dimensionx=Range,y=Frequency_log,z=Amplitude3M,labl=NumFreqs,labl=NumRanges,labl=Waveform,labl=OpMode,labl=PeakPower,labl=ProgramSpecs(24),labl=RepetitionRate,labl=XmtrAntenna,labl=FreqSearch,labl=BaseGain,labl=GainControl,labl=ProgramSpecs(1)",
+        "FIELDNAM": "Echo amplitude (plasmagram - log)",
+        "FILLVAL": 255,
+        "FORMAT": "I4",
+        "LABLAXIS": "Echo Amplitude",
+        "UNITS": "3/4 dBnV/m",
+        "VALIDMAX": 254,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "3/4 dBnV/m",
+        "x_LABLAXIS": "Echo Amplitude",
+        "x_DEPEND": [
+          "Range",
+          "Frequency_log"
+        ],
+        "COMPONENTS": [
+          "Amplitude",
+          "ProgramSpecs"
+        ]
+      }
+    },
+    "Amplitude4": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": " ---> Plasmagram - log frequency vs. range",
+        "COMPONENT_0": "Amplitude",
+        "COMPONENT_1": "ProgramSpecs",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency_log",
+        "DEPEND_2": "Range",
+        "DISPLAY_TYPE": "default_dimensionx=Frequency_log,y=Range,z=Amplitude4,labl=NumFreqs,labl=NumRanges,labl=Waveform,labl=OpMode,labl=PeakPower,labl=ProgramSpecs(24),labl=RepetitionRate,labl=XmtrAntenna,labl=FreqSearch,labl=BaseGain,labl=GainControl,labl=ProgramSpecs(1)",
+        "FIELDNAM": "Echo amplitude (plasmagram - log)",
+        "FILLVAL": 255,
+        "FORMAT": "I4",
+        "LABLAXIS": "Echo Amplitude",
+        "UNITS": "3/4 dBnV/m",
+        "VALIDMAX": 254,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "flip_image",
+        "x_UNITS": "3/4 dBnV/m",
+        "x_LABLAXIS": "Echo Amplitude",
+        "x_DEPEND": [
+          "Frequency_log",
+          "Range"
+        ],
+        "COMPONENTS": [
+          "Amplitude",
+          "ProgramSpecs"
+        ]
+      }
+    },
+    "Amplitude4M": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": " ---> Movie - log frequency vs. range",
+        "COMPONENT_0": "Amplitude",
+        "COMPONENT_1": "ProgramSpecs",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency_log",
+        "DEPEND_2": "Range",
+        "DISPLAY_TYPE": "default_dimensionx=Frequency_log,y=Range,z=Amplitude4M,labl=NumFreqs,labl=NumRanges,labl=Waveform,labl=OpMode,labl=PeakPower,labl=ProgramSpecs(24),labl=RepetitionRate,labl=XmtrAntenna,labl=FreqSearch,labl=BaseGain,labl=GainControl,labl=ProgramSpecs(1)",
+        "FIELDNAM": "Echo amplitude (plasmagram - log)",
+        "FILLVAL": 255,
+        "FORMAT": "I4",
+        "LABLAXIS": "Echo Amplitude",
+        "UNITS": "3/4 dBnV/m",
+        "VALIDMAX": 254,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "flip_image",
+        "x_UNITS": "3/4 dBnV/m",
+        "x_LABLAXIS": "Echo Amplitude",
+        "x_DEPEND": [
+          "Frequency_log",
+          "Range"
+        ],
+        "COMPONENTS": [
+          "Amplitude",
+          "ProgramSpecs"
+        ]
+      }
+    },
+    "AmplitudeF": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "Plain images (x=frequency, y=range, no scales)",
+        "COMPONENT_0": "Amplitude",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Range",
+        "DEPEND_2": "Frequency",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Echo Amplitude (x=frq,y=rng)",
+        "FILLVAL": 255,
+        "FORMAT": "i4",
+        "LABLAXIS": "Echo Amplitude",
+        "UNITS": "3/4 dBnV/m",
+        "VALIDMAX": 254,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "flip_image",
+        "x_UNITS": "3/4 dBnV/m",
+        "x_LABLAXIS": "Echo Amplitude",
+        "x_DEPEND": [
+          "Range",
+          "Frequency"
+        ],
+        "COMPONENTS": [
+          "Amplitude"
+        ]
+      }
+    },
+    "AmplitudeFM": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": " ---> Movie (x=frequency, y=range, no scales)",
+        "COMPONENT_0": "Amplitude",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Range",
+        "DEPEND_2": "Frequency",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Echo amplitude (x=frq,y=rng)",
+        "FILLVAL": 255,
+        "FORMAT": "i4",
+        "LABLAXIS": "Echo Amplitude",
+        "UNITS": "3/4 dBnV/m",
+        "VALIDMAX": 254,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "flip_image",
+        "x_UNITS": "3/4 dBnV/m",
+        "x_LABLAXIS": "Echo Amplitude",
+        "x_DEPEND": [
+          "Range",
+          "Frequency"
+        ],
+        "COMPONENTS": [
+          "Amplitude"
+        ]
+      }
+    },
+    "Amplitude": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": " ---> Images (x=range, y=frequency, no scales)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DEPEND_2": "Range",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Echo Amplitude (x=rng,y=frq)",
+        "FILLVAL": 255,
+        "FORMAT": "i4",
+        "LABLAXIS": "Echo Amplitude",
+        "UNITS": "3/4 dBnV/m",
+        "VALIDMAX": 254,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "x_UNITS": "3/4 dBnV/m",
+        "x_LABLAXIS": "Echo Amplitude",
+        "x_DEPEND": [
+          "Frequency",
+          "Range"
+        ]
+      }
+    },
+    "AmplitudeM": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": " ---> Movie (x=range, y=frequency, no scales)",
+        "COMPONENT_0": "Amplitude",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DEPEND_2": "Range",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Echo amplitude (x=rng,y=frq)",
+        "FILLVAL": 255,
+        "FORMAT": "i4",
+        "LABLAXIS": "Echo Amplitude",
+        "UNITS": "3/4 dBnV/m",
+        "VALIDMAX": 254,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "3/4 dBnV/m",
+        "x_LABLAXIS": "Echo Amplitude",
+        "x_DEPEND": [
+          "Frequency",
+          "Range"
+        ],
+        "COMPONENTS": [
+          "Amplitude"
+        ]
+      }
+    },
+    "MPA": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Most Probable Amplitude",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Most probable amplitude",
+        "FILLVAL": 255,
+        "FORMAT": "I3",
+        "LABLAXIS": "Most Probable Amplitude",
+        "SCALEMAX": 254,
+        "SCALEMIN": 0,
+        "UNITS": "3/4 dBnv/m",
+        "VALIDMAX": 67,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Most probable amplitude ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "3/4 dBnv/m",
+        "x_LABLAXIS": "Most Probable Amplitude",
+        "x_DEPEND": [
+          "Frequency"
+        ]
+      }
+    },
+    "ProgramSpecs": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          25
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Program Specifications (25 values/epoch) [NO PLOT - LISTING ONLY]",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Program Specifications",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABL_PTR_1": "ProgSpec_lbl",
+        "UNITS": " ",
+        "UNIT_PTR": "ProgSpec_units",
+        "VALIDMAX": 32767,
+        "VALIDMIN": -32767,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Schedule #",
+            "Program #",
+            "Low Freq.",
+            "Coarse Freq.",
+            "Upper Freq.",
+            "Freq. step",
+            "# of fine steps",
+            "Tx Waveform",
+            "Tx Antenna options",
+            "# Integrated Reps.",
+            "Pulse Rep. Rate",
+            "Operating Mode",
+            "Power Limit",
+            "Start Range",
+            "Range Res.",
+            "No. of range bins",
+            "Base Gain",
+            "Frequency search",
+            "No. ranges stored",
+            "Bottom rng. window",
+            "Top rng. window",
+            "Databin Format",
+            "Threshold cleaning",
+            "Spare",
+            "Flight s/w vers."
+          ]
+        ]
+      }
+    },
+    "ProgSpec_lbl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          25
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 18,
+        "NumWrittenRecords": 1,
+        "PadValue": "                  ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "DICT_KEY": "label>",
+        "FIELDNAM": "Program spec. label",
+        "FORMAT": "A18",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Schedule #",
+        "Program #",
+        "Low Freq.",
+        "Coarse Freq.",
+        "Upper Freq.",
+        "Freq. step",
+        "# of fine steps",
+        "Tx Waveform",
+        "Tx Antenna options",
+        "# Integrated Reps.",
+        "Pulse Rep. Rate",
+        "Operating Mode",
+        "Power Limit",
+        "Start Range",
+        "Range Res.",
+        "No. of range bins",
+        "Base Gain",
+        "Frequency search",
+        "No. ranges stored",
+        "Bottom rng. window",
+        "Top rng. window",
+        "Databin Format",
+        "Threshold cleaning",
+        "Spare",
+        "Flight s/w vers."
+      ]
+    },
+    "ProgSpec_units": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          25
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 8,
+        "NumWrittenRecords": 1,
+        "PadValue": "        ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "DICT_KEY": "label>",
+        "FIELDNAM": "Program spec. units",
+        "FORMAT": "A8",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "",
+        "",
+        "1kHz",
+        "1% 100Hz",
+        "1kHz",
+        "100Hz",
+        "",
+        "",
+        "",
+        "2 **",
+        "",
+        "",
+        "Watts",
+        "1Mm",
+        "1Km",
+        "",
+        "",
+        "",
+        "",
+        "1Mm",
+        "1Mm",
+        "",
+        "%",
+        "",
+        ""
+      ]
+    },
+    "Azimuth": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "Echo Azimuth angle images (x=range, y=frequency, no scales)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DEPEND_2": "Range",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Echo azimuth angle (x=rng,y=frq)",
+        "FILLVAL": 255,
+        "FORMAT": "i4",
+        "LABLAXIS": "Azimuth",
+        "UNITS": "360/254 deg.",
+        "VALIDMAX": 254,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Values 0 to 254 cover 0 to 360 degrees",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": "360/254 deg.",
+        "x_LABLAXIS": "Azimuth",
+        "x_DEPEND": [
+          "Frequency",
+          "Range"
+        ]
+      }
+    },
+    "Zenith": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "Echo Zenith angle images (x=range, y=frequency, no scales)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DEPEND_2": "Range",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Echo zenith angle (x=rng,y=frq)",
+        "FILLVAL": 255,
+        "FORMAT": "i4",
+        "LABLAXIS": "Zenith",
+        "UNITS": "deg.",
+        "VALIDMAX": 180,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "metadata",
+        "x_UNITS": "deg.",
+        "x_LABLAXIS": "Zenith",
+        "x_DEPEND": [
+          "Frequency",
+          "Range"
+        ]
+      }
+    },
+    "DopplerNumber": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          256,
+          128
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "CATDESC": "Echo Doppler Number image (x=range, y=frequency, no scales)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency",
+        "DEPEND_2": "Range",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Echo Doppler number (x=rng,y=frq)",
+        "FILLVAL": 255,
+        "FORMAT": "i4",
+        "LABLAXIS": "Doppler Number",
+        "UNITS": "steps",
+        "VALIDMAX": 128,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": "steps",
+        "x_LABLAXIS": "Doppler Number",
+        "x_DEPEND": [
+          "Frequency",
+          "Range"
+        ]
+      }
+    },
+    "DopplerTranslation": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          256
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Doppler Number to frequency translation",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency_No",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Doppler Translation",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.1",
+        "LABLAXIS": "Doppler No->Freq",
+        "UNITS": "Hz",
+        "VALIDMAX": 200.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Translates Doppler Number to an actual Doppler Frequency. The entries are  calculated from program parameters. ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "Doppler No->Freq",
+        "x_DEPEND": [
+          "Frequency_No"
+        ]
+      }
+    },
+    "Frequency_No": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          256
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -32767,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Frequency_No",
+        "DICT_KEY": "number",
+        "FIELDNAM": "Frequency_No",
+        "FILLVAL": -1,
+        "FORMAT": "i4",
+        "LABLAXIS": "Freq No",
+        "SCALETYP": "LINEAR",
+        "VALIDMAX": 256,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Freq No"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256
+      ]
+    },
+    "Range_No": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          128
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -32767,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Range_No",
+        "DICT_KEY": "number",
+        "FIELDNAM": "Range_No",
+        "FILLVAL": -1,
+        "FORMAT": "i4",
+        "LABLAXIS": "Range No",
+        "SCALETYP": "LINEAR",
+        "VALIDMAX": 128,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Range No"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128
+      ]
+    },
+    "NumFreqs": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Actual number of frequencies being measured",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Number of Frequencies measured",
+        "FILLVAL": -32768,
+        "FORMAT": "I4",
+        "LABLAXIS": "No. Freq. Meas.",
+        "UNITS": " ",
+        "VALIDMAX": 256,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Detailed plasmagram picture has the original number of frequencies as specified by RPI measurement parameters. Frequency axis varies from plasmagram to plasmagram. Plasmagram *thumbnails* have a fixed frequency axis. The original plasmagram data often requires transformation into thumbnail format by averaging. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "No. Freq. Meas."
+      }
+    },
+    "Frequency": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          256
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Measured frequency values",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency_No",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Frequency values measured",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F16.1",
+        "LABLAXIS": "Frequency",
+        "SCALETYP": "LINEAR",
+        "UNITS": "kHz",
+        "VALIDMAX": 3000.0,
+        "VALIDMIN": 3.0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "data",
+        "x_UNITS": "kHz",
+        "x_LABLAXIS": "Frequency",
+        "x_DEPEND": [
+          "Frequency_No"
+        ]
+      }
+    },
+    "Frequency_log": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          256
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Measured frequency values",
+        "COMPONENT_0": "Frequency",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Frequency_No",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Frequency values measured",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.2",
+        "LABLAXIS": "Frequency",
+        "SCALETYP": "LOG",
+        "UNITS": "kHz",
+        "VALIDMAX": 3000.0,
+        "VALIDMIN": 3.0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "kHz",
+        "x_LABLAXIS": "Frequency",
+        "x_DEPEND": [
+          "Frequency_No"
+        ],
+        "COMPONENTS": [
+          "Frequency"
+        ]
+      }
+    },
+    "NumRanges": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Actual number of ranges being measured",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Number of ranges measured",
+        "FILLVAL": 255,
+        "FORMAT": "I4",
+        "LABLAXIS": "No. Ranges Meas.",
+        "UNITS": " ",
+        "VALIDMAX": 128,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Number of Ranges, depending on program setting and processing. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "No. Ranges Meas."
+      }
+    },
+    "Range": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          128
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Measured range values",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Range_No",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Range values measured",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.2",
+        "LABLAXIS": "Range",
+        "SCALETYP": "LINEAR",
+        "UNITS": "Re",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Range readings",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Re",
+        "x_LABLAXIS": "Range",
+        "x_DEPEND": [
+          "Range_No"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,431 @@
+{
+  "CDFFileInfo": {
+    "File": "dynamo-2_desa_nx02a-esa-flux_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/dynamo-2_desa_nx02a-esa-flux_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "SPDF> Space Physics Data Facility",
+    "Source_name": "Dynamo-2",
+    "Discipline": "Space Physics>Ionospheric Science",
+    "Descriptor": "ESA-FLUX>esa flux ",
+    "Data_type": "DESA>Dual Electrostatic Analyzer NX-02A",
+    "Data_version": "01",
+    "PI_name": "G. Collinson",
+    "PI_affiliation": "NASA GSFC / Catholic University of America",
+    "Logical_source_description": "Standard Resolution (15% DE/E) data (0.5eV to 1keV) ",
+    "Logical_source": "dynamo-2_desa_nx02a-esa-flux",
+    "Logical_file_id": "dynamo-2_desa_nx02a-esa-flux_00000000_v01",
+    "Mission_group": "Sounding Rockets",
+    "Instrument_type": "Plasma and Solar Wind",
+    "MODS": " ",
+    "TEXT": "The DYNAMO-2 Dual Electrostatic Analyzer (DESA) instrument consisted of a single boom-mounted prototype sensor (DESA-NX-02A), and a main electronics box (MEB). The instrument was flown primarily as an engineering test flight of the DESA sensor and was only flown aboard the second of the two DYNAMO-2 rockets (35.357). The instrument had a single fixed field-of-view looking up towards space along the spin-axis of the rocket. For full details of the instrument, see Collinson et al., (2022). The instrument was configured as a low-energy photoelectron spectrometer.",
+    "HTTP_LINK": "https://doi.org/10.1029/2022GL098209",
+    "LINK_TEXT": "Collinson, G. A., Glocer, A., Chornay, D., Michell, R., Pfaff, R., Cameron, T., et al. (2022). Rocket measurements of electron energy spectra from Earth's photoelectron production layer. Geophysical Research Letters, 49, e2022GL098209",
+    "LINK_TITLE": "https://doi.org/10.1029/2022GL098209",
+    "spase_DatasetResourceID": " ",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time since 0 AD",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T00:00:00.000",
+        "VALIDMIN": "1990-01-01T00:00:00.000",
+        "VAR_NOTES": "Interval-centered time tag",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "DESA_NX_02A_ESA_L1A_COUNTS": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          52
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time/energy spectrogram of raw counts of electrons from the single detector of the DESA-NX-02A sensor",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "energy_static",
+        "FIELDNAM": "DESA_COUNTS",
+        "FILLVAL": -999,
+        "FORMAT": "i8",
+        "LABLAXIS": "DESA_COUNTS",
+        "UNITS": "Counts",
+        "VALIDMAX": 10000,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Counts",
+        "x_LABLAXIS": "DESA_COUNTS",
+        "x_DEPEND": [
+          "energy_static"
+        ]
+      }
+    },
+    "DESA_NX_02A_ESA_L2_DEF": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "DimSizes": [
+          52
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time/energy spectrogram of Differential Energy Flux of electrons",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "energy_static",
+        "FIELDNAM": "DESA_DEF",
+        "FILLVAL": "NaN",
+        "FORMAT": "f13.1",
+        "LABLAXIS": "DESA_DEF",
+        "SCALEMAX": 1000000000.0,
+        "SCALEMIN": 10000.0,
+        "SCALETYP": "log",
+        "UNITS": "eV cm-2 s -1 sr-1 eV-1",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_NOTES": "Data are corrected for background counts and then converted to Differential Energy Flux as per Collinson et al., The Geometric Factor of electrostatic plasma analyzers, Rev. Sci. Instrum., 2012",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV cm-2 s -1 sr-1 eV-1",
+        "x_LABLAXIS": "DESA_DEF",
+        "x_DEPEND": [
+          "energy_static"
+        ]
+      }
+    },
+    "DESA_NX_02A_ESA_L2_DEF_SC_POT_CORRECTED": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "DimSizes": [
+          52
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time/energy spectrogram of Differential Energy Flux of electrons,corrected for the potential of the spacecraft from active pulses of the DYNAMO-2 Langmuir Probe.",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "energy",
+        "FIELDNAM": "DESA_DEF_SC_POT_CORRECTED",
+        "FILLVAL": "NaN",
+        "FORMAT": "f13.1",
+        "LABLAXIS": "DESA_DEF_SC_POT_CORRECTED",
+        "SCALEMAX": 1000000000.0,
+        "SCALEMIN": 10000.0,
+        "SCALETYP": "log",
+        "UNITS": "eV cm-2 s -1 sr-1 eV-1",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_NOTES": "Data are corrected for background counts and then converted to Differential Energy Flux as per Collinson et al., The Geometric Factor of electrostatic plasma analyzers, Rev. Sci. Instrum., 2012. Data are corrected for the spacecraft potential according to Louiville’s theorem.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV cm-2 s -1 sr-1 eV-1",
+        "x_LABLAXIS": "DESA_DEF_SC_POT_CORRECTED",
+        "x_DEPEND": [
+          "energy"
+        ]
+      }
+    },
+    "DESA_NX_02A_ALTITUDE": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Altitude above sea level during operation of the DYNAMO-2 DESA-NX-02A instrument",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "DESA_ALT",
+        "FILLVAL": "NaN",
+        "FORMAT": "f8.1",
+        "LABLAXIS": "Altitude",
+        "UNITS": "m",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "{Data Author: S. Martin, ADNET Systems, Inc. on contract to NASA/Goddard Space Flight Center, steven.c.martin@nasa.gov}",
+        "VAR_TYPE": "data",
+        "x_UNITS": "m",
+        "x_LABLAXIS": "Altitude"
+      }
+    },
+    "DESA_NX_02A_LATITUDE": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Latitude during operation of the DYNAMO-2 DESA-NX-02A Instrument",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "DESA_LAT",
+        "FILLVAL": "NaN",
+        "FORMAT": "f11.7",
+        "LABLAXIS": "Latitude",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": "{Data Author: S. Martin, ADNET Systems, Inc. on contract to NASA/Goddard Space Flight Center, steven.c.martin@nasa.gov}",
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Latitude"
+      }
+    },
+    "DESA_NX_02A_LONGITUDE": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geographic Longitude during operation of the DYNAMO-2 DESA-NX-02A Instrument.",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "DESA_LON",
+        "FILLVAL": "NaN",
+        "FORMAT": "f11.7",
+        "LABLAXIS": "Longitude",
+        "UNITS": "deg",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_NOTES": "{Data Author: S. Martin, ADNET Systems, Inc. on contract to NASA/Goddard Space Flight Center, steven.c.martin@nasa.gov}",
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Longitude"
+      }
+    },
+    "energy": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "DimSizes": [
+          52
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "energies per scan",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "energyIndex",
+        "FIELDNAM": "Energy",
+        "FILLVAL": "NaN",
+        "FORMAT": "f9.2",
+        "LABLAXIS": "Energy",
+        "UNITS": "eV",
+        "VALIDMAX": 1200.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "Energy",
+        "x_DEPEND": [
+          "energyIndex"
+        ]
+      }
+    },
+    "energy_static": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          52
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "FIELDNAM": "Energy",
+        "FORMAT": "f9.2",
+        "LABLAXIS": "Energy",
+        "UNITS": "eV",
+        "VALIDMAX": 1011.92,
+        "VALIDMIN": 0.52,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        0.52,
+        0.59,
+        0.67,
+        0.76,
+        0.91,
+        1.06,
+        1.21,
+        1.41,
+        1.75,
+        2.0,
+        2.32,
+        2.69,
+        3.14,
+        3.63,
+        4.23,
+        4.87,
+        5.68,
+        6.55,
+        7.61,
+        9.56,
+        11.09,
+        12.85,
+        14.88,
+        17.25,
+        19.99,
+        23.18,
+        26.86,
+        31.11,
+        36.08,
+        41.83,
+        48.48,
+        56.19,
+        65.11,
+        75.49,
+        87.48,
+        101.32,
+        117.38,
+        136.16,
+        157.9,
+        182.86,
+        212.02,
+        245.63,
+        284.67,
+        330.14,
+        382.53,
+        443.32,
+        513.99,
+        595.54,
+        690.43,
+        800.14,
+        927.41,
+        1011.92
+      ]
+    },
+    "energyIndex": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          52
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -32767,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "FIELDNAM": "energyIndex",
+        "FORMAT": "i2",
+        "LABLAXIS": "energyIndex",
+        "VALIDMAX": 52,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "energyIndex"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52
+      ]
+    }
+  }
+}

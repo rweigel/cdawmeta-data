@@ -1,0 +1,406 @@
+{
+  "CDFFileInfo": {
+    "File": "rbsp-b_magnetometer_uvw_emfisis-l2_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/rbsp-b_magnetometer_uvw_emfisis-l2_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "RBSP>Radiation Belt Storm Probes",
+    "Source_name": "RBSP-B>Radiation Belt Storm Probes B",
+    "Discipline": "Solar Physics>Heliospheric Physics\nSpace Physics>Magnetospheric Science",
+    "Data_type": "L2>Level 2",
+    "Descriptor": "EMFISIS>Electric and Magnetic Field Instrument",
+    "File_naming_convention": "source_datatype_descriptor",
+    "Data_version": "1",
+    "PI_name": "Craig Kletzing",
+    "PI_affiliation": "University of Iowa",
+    "TEXT": " ",
+    "Instrument_type": "Magnetic Fields (space)",
+    "Mission_group": "Van Allen Probes (RBSP)",
+    "Logical_source": "rbsp-b_magnetometer_uvw_emfisis-l2",
+    "Logical_file_id": "rbsp-b_magnetometer_uvw_emfisis-l2_00000000_v01",
+    "Logical_source_description": "Fluxgate magnetometer data",
+    "Time_resolution": "1 second",
+    "Rules_of_use": " ",
+    "Generated_by": " ",
+    "Generation_date": " ",
+    "SPICE_kernels_used": " ",
+    "LINK_TEXT": " \nEMFISIS data and services\nVan Allen Probes",
+    "LINK_TITLE": "Current EMFISIS/MAG Issues, Caveats and Production Release Notes\nat Iowa\nScience Gateway (including Mission Rules of the Road for Data Usage)",
+    "HTTP_LINK": "http://emfisis.physics.uiowa.edu/data/mag_release_notes\nhttp://emfisis.physics.uiowa.edu/\nhttp://rbspgway.jhuapl.edu/",
+    "RBSP_APID": "0x292",
+    "RBSP_dataType": "Magnetometer",
+    "RBSP_mag_header": " ",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/RBSP/B/EMFISIS/MAGNETOMETER/L2/UVW",
+    "DOI": "https://doi.org/10.48322/66f8-6c92"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Default time",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "Time",
+        "MONOTON": "INCREASE",
+        "SCALETYP": "linear",
+        "UNITS": "ns",
+        "VALIDMAX": "2029-12-31T23:59:57.999000000",
+        "VALIDMIN": "1990-01-01T00:00:00.000000000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "Time"
+      }
+    },
+    "Epoch_centered": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "BIN_LOCATION": 0.5,
+        "CATDESC": "If this variable is populated, it contains the Epoch tagged at the center of each interval, not the start. This is the correct time tag method, but was implemented late in the mission, so is not defuault",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "Time",
+        "MONOTON": "INCREASE",
+        "SCALETYP": "linear",
+        "TIME_BASE": "J2000",
+        "UNITS": "ns",
+        "VALIDMAX": "2029-12-31T23:59:59.999000000",
+        "VALIDMIN": "1990-01-01T00:00:00.000000000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "Time"
+      }
+    },
+    "Mag_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 8,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Mag_LABL_1",
+        "FIELDNAM": "Mag_LABL_1",
+        "FORMAT": "A23",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Bx_UVW",
+        "By_UVW",
+        "Bz_UVW"
+      ]
+    },
+    "Mag": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetometer vector in UVW",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Mag",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "Mag_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": [
+          65500.0,
+          65500.0,
+          65500.0
+        ],
+        "VALIDMIN": [
+          -65500.0,
+          -65500.0,
+          -65500.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXES": [
+          [
+            "Bx_UVW",
+            "By_UVW",
+            "Bz_UVW"
+          ]
+        ]
+      }
+    },
+    "Magnitude": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Average magnitude (average of |B| values in the interval)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Magnitude",
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 65500.0,
+        "VALIDMIN": -65500.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "Magnitude"
+      }
+    },
+    "delta": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Latitude (angle delta) of the field vector (where (0,0) is the positive Bx direction)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "delta",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "delta",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "delta"
+      }
+    },
+    "lambda": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Longitude (angle lambda) of the field vector (where (0,0) is the positive Bx direction)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "delta",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "lambda",
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "lambda"
+      }
+    },
+    "range_flag": {
+      "VarDescription": {
+        "DataType": "CDF_BYTE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "range_flag",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "range_flag",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "range-flag",
+        "SCALETYP": "linear",
+        "VALIDMAX": 3,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "range-flag"
+      }
+    },
+    "partition": {
+      "VarDescription": {
+        "DataType": "CDF_BYTE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> partition",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "MET partition",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "partition",
+        "SCALETYP": "linear",
+        "VALIDMAX": 100,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "partition"
+      }
+    },
+    "MET": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> MET",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "MET",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "MET",
+        "SCALETYP": "linear",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "MET"
+      }
+    },
+    "calState": {
+      "VarDescription": {
+        "DataType": "CDF_BYTE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> calState_flag",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "calState_flag",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "calState",
+        "SCALETYP": "linear",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "calState"
+      }
+    },
+    "magInvalid": {
+      "VarDescription": {
+        "DataType": "CDF_BYTE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> magInvalid_flag",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "magInvalid_flag",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "magInvalid",
+        "SCALETYP": "linear",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "magInvalid"
+      }
+    },
+    "magFill": {
+      "VarDescription": {
+        "DataType": "CDF_BYTE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> magFill_flag",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "magFill_flag",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "magFill",
+        "SCALETYP": "linear",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "magFill"
+      }
+    },
+    "coordinates_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 8,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Mag_LABL_1",
+        "FIELDNAM": "Mag_LABL_1",
+        "FORMAT": "A23",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "X_UVW   ",
+        "Y_UVW   ",
+        "Z_UVW   "
+      ]
+    }
+  }
+}

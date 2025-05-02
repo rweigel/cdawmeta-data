@@ -1,0 +1,416 @@
+{
+  "CDFFileInfo": {
+    "File": "elb_l1_epdif_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/elb_l1_epdif_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "Electron Losses and Fields INvestigation",
+    "Source_name": "elb>Electron Losses and Fields INvestigation-B",
+    "Discipline": "Space Physics>Magnetospheric Science\nSpace Physics>Interplanetary Studies",
+    "Data_type": "EPD Ion",
+    "Descriptor": "L1>L1 Data",
+    "File_naming_convention": "source_datatype_descriptor",
+    "Data_version": " ",
+    "PI_name": "V. Angelopoulos",
+    "PI_affiliation": "UCLA, IGPP/EPSS",
+    "TEXT": "The Electron Losses and Fields Investigation (ELFIN) mission is a space weather mission using three scientific instruments in a 3U+ CubeSat. The instruments measure wave and particle data.",
+    "Instrument_type": "Particles (space)",
+    "Mission_group": "Smallsats/Cubesats",
+    "Logical_source": "elb_l1_epdif",
+    "Logical_file_id": " ",
+    "Logical_source_description": "[UNCALIBRATED RAW DATA ONLY] Energetic Partical Detector Energy Particles, Ions>keV ",
+    "Time_resolution": "16 sectors/spin (dependent on spinper)",
+    "Rules_of_use": "Open Data for Scientific Use",
+    "Generated_by": " ",
+    "Generation_date": " ",
+    "Acknowledgement": "NASA, NSF ",
+    "MODS": " ",
+    "ADID_ref": "xxx",
+    "LINK_TEXT": "http://elfin.igpp.ucla.edu",
+    "LINK_TITLE": "Electron Losses and Fields INvestigation-B EPD file",
+    "HTTP_LINK": "http://elfin.igpp.ucla.edu",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/ELFIN/B/EPD/L1/ion/PT0.264S",
+    "DOI": "https://doi.org/10.48322/0ETJ-J292"
+  },
+  "CDFVariables": {
+    "elb_pif_time": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PIF Time in TT2000",
+        "FIELDNAM": "Time since J2000",
+        "RESOLUTION": "1s",
+        "TIME_BASE": "J2000",
+        "UNITS": "ns",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns"
+      }
+    },
+    "elb_pif": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[ADC UNITS ONLY] L1 EPD Ion counts, Fast Mode",
+        "DEPEND_0": "elb_pif_time",
+        "DEPEND_1": "elb_pif_energies_mean",
+        "DISPLAY_TYPE": "default_dimensionscatter>nobar",
+        "FIELDNAM": "Ion Counts",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "Ion counts/sector",
+        "SCALETYP": "log",
+        "UNITS": "raw counts",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": -1000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "raw counts",
+        "x_LABLAXIS": "Ion counts/sector",
+        "x_DEPEND": [
+          "elb_pif_energies_mean"
+        ]
+      }
+    },
+    "elb_pif_8": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> just bottom eight energies",
+        "COMPONENT_0": "elb_pif",
+        "DEPEND_0": "elb_pif_time",
+        "DEPEND_1": "elb_pif_energies_mean",
+        "DISPLAY_TYPE": "default_dimensionscatter>nobar>y=elb_pif_energies_mean(0),y=elb_pif_energies_mean(1),y=elb_pif_energies_mean(2),y=elb_pif_energies_mean(3),y=elb_pif_energies_mean(5),y=elb_pif_energies_mean(4),y=elb_pif_energies_mean(6),y=elb_pif_energies_mean(7)",
+        "FIELDNAM": "Ion Counts",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "Ion counts/sector",
+        "SCALETYP": "log",
+        "UNITS": "raw counts",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "raw counts",
+        "x_LABLAXIS": "Ion counts/sector",
+        "x_DEPEND": [
+          "elb_pif_energies_mean"
+        ],
+        "COMPONENTS": [
+          "elb_pif"
+        ]
+      }
+    },
+    "elb_pif_top8": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> just top eight energies",
+        "COMPONENT_0": "elb_pif",
+        "DEPEND_0": "elb_pif_time",
+        "DEPEND_1": "elb_pif_energies_mean",
+        "DISPLAY_TYPE": "default_dimensionscatter>nobar>y=elb_pif_energies_mean(8),y=elb_pif_energies_mean(9),y=elb_pif_energies_mean(10),y=elb_pif_energies_mean(11),y=elb_pif_energies_mean(12),y=elb_pif_energies_mean(13),y=elb_pif_energies_mean(14),y=elb_pif_energies_mean(15)",
+        "FIELDNAM": "Ion Counts",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "Ion counts/sector",
+        "SCALETYP": "log",
+        "UNITS": "raw counts",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "raw counts",
+        "x_LABLAXIS": "Ion counts/sector",
+        "x_DEPEND": [
+          "elb_pif_energies_mean"
+        ],
+        "COMPONENTS": [
+          "elb_pif"
+        ]
+      }
+    },
+    "elb_pif_energies_mean": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Central energy bins associated with each of 16 EPD ion channels",
+        "FIELDNAM": "elb_pif_energies_mean",
+        "FILLVAL": 0.0,
+        "FORMAT": "F12.8",
+        "LABLAXIS": "Central ion energy bins",
+        "UNITS": "keV",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Central ion energy bins"
+      },
+      "VarData": [
+        63.24549866,
+        97.979599,
+        138.56399536,
+        183.30299377,
+        238.11799622,
+        305.20498657,
+        385.1619873,
+        520.47998047,
+        752.99401855,
+        1081.67004395,
+        1529.70996094,
+        2121.32006836,
+        2893.95996094,
+        3728.61010742,
+        4906.12011719,
+        6500.0
+      ]
+    },
+    "elb_pif_energies_min": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Min energy bins associated with each of 16 EPD ion channels",
+        "FIELDNAM": "elb_pif_energies_min",
+        "FILLVAL": 0.0,
+        "FORMAT": "F12.8",
+        "LABLAXIS": "Min Ion energy bins",
+        "UNITS": "keV",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Min Ion energy bins"
+      },
+      "VarData": [
+        50.0,
+        80.0,
+        120.0,
+        160.0,
+        210.0,
+        270.0,
+        345.0,
+        430.0,
+        630.0,
+        900.0,
+        1300.0,
+        1800.0,
+        2500.0,
+        3350.0,
+        4150.0,
+        5800.0
+      ]
+    },
+    "elb_pif_energies_max": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Max energy bins for each of 16 EPD ion channels",
+        "FIELDNAM": "elb_pif_energies_max",
+        "FILLVAL": 0.0,
+        "FORMAT": "F12.8",
+        "LABLAXIS": "Max energy bins",
+        "UNITS": "keV",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Max energy bins"
+      },
+      "VarData": [
+        80.0,
+        120.0,
+        160.0,
+        210.0,
+        270.0,
+        345.0,
+        430.0,
+        630.0,
+        900.0,
+        1300.0,
+        1800.0,
+        2500.0,
+        3350.0,
+        4150.0,
+        5800.0,
+        8000.0
+      ]
+    },
+    "elb_pif_sectnum": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sector Number",
+        "DEPEND_0": "elb_pif_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "elb_pif_sectnum",
+        "FILLVAL": 0,
+        "FORMAT": "i2",
+        "LABLAXIS": "Sector Number",
+        "UNITS": "num sector",
+        "VALIDMAX": 16,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "num sector",
+        "x_LABLAXIS": "Sector Number"
+      }
+    },
+    "elb_pif_nspinsinsum": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "number spins in sum",
+        "DEPEND_0": "elb_pif_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "elb_pif_nspinsinsum",
+        "FILLVAL": 0,
+        "FORMAT": "i2",
+        "LABLAXIS": "Number Spins in sum",
+        "VALIDMAX": 16,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Number Spins in sum"
+      }
+    },
+    "elb_pif_nsectors": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of Sectors",
+        "DEPEND_0": "elb_pif_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "elb_pif_nsectors",
+        "FILLVAL": 0,
+        "FORMAT": "i2",
+        "LABLAXIS": "Number Spins in sum",
+        "VALIDMAX": 16,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Number Spins in sum"
+      }
+    },
+    "elb_pif_spinper": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spin Period",
+        "DEPEND_0": "elb_pif_time",
+        "FIELDNAM": "elb_pif_spinper",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "spinper",
+        "UNITS": "sec",
+        "VALIDMAX": 40.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "spinper"
+      }
+    }
+  }
+}

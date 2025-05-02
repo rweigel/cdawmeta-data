@@ -1,0 +1,835 @@
+{
+  "CDFFileInfo": {
+    "File": "wi_h0_swe_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/wi_h0_swe_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISTP",
+    "Source_name": "WIND>Wind Interplanetary Plasma Laboratory",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Data_type": "H0>6 - 12 sec solar wind electron moments",
+    "Descriptor": "SWE>Solar Wind Experiment",
+    "Data_version": "1",
+    "PI_name": "K. Ogilvie",
+    "PI_affiliation": "GSFC Code 692",
+    "TEXT": "Explanatory notes:\nThe electron moments included in this data set are derived from the velocity moments integration of solar wind electron distributions measured by the WIND/SWE VEIS instrument (see Ogilvie et al., \"SWE, a comprehensive plasma instrument for the WIND spacecraft\", Space Sci. Rev., 71, 55, 1955). Moments parameters are computed from 3s measurements which are spaced either 6s or 12s in time.  Plots should therefore not exceed a time range of 2 or 3 hours in order to display the details of this high resolution data.  The moments parameters which will be of value to most users of this data set are the electron temperature, the electron temperature anisotropy, and the electron heat flux vector. These quantities are reliable and citable with caution, meaning that the PI advises that the user should discuss their interpretation with a member of the SWE science team before publishing. \nThe following comments are intended to aid in the use and interpretation of the prime quantities of this data set, the electron temperature, the electron temperature anisotropy, and the electron heat flux. (All vector quantities are in GSE coordinates.) The temperature and temperature anisotropy are normalized to the derived electron density and, therefore, are not sensitive to  the uncertainty in the density determination as discussed below. The electron temperature is derived from the pressure tensor divided by the electron density and the Boltzmann constant. The three eigenvalues of the diagonalized temperature tensor are the temperature parallel to the tensor principal axis and the two perpendicular components of the temperature. The temperature anisotropy is defined here as the ratio of the parallel temperature to the average of the two perpendicular temperature components. The electron temperature is one-third of the trace of the diagonalized temperature\ntensor. Also included is the unit vector along the principal axis of the pressure tensor as well as the cosine of the angle between the principal axis and the magnetic field vector. An indication that the principal axis has been uniquely defined is that the temperature anisotropy is significantly different from unity and that the principal axis and the magnetic field are nearly parallel or anti-parallel.\nThe heat flux vector included here is significant only when the magnitude rises above the noise level, i.e., above the level 0.002 to 0.005 ergs/cm/cm/s.  The heat flux may be low in magnitude either due to a nearly isotropic distribution, due to electron counter-streaming, or due to a  low counting rate of the instrument. An indicator of a significant net heat flux is that the heat flux direction should track with the magnetic field direction. For this purpose, the cosine of the angle between the heat flux vector and the magnetic field is included, and should be close to  -1 or  +1 in order for the heat flux to be significant. In some cases it will be necessary to use electron pitch angle distributions (available on request from the SWE team) to decide whether low electron flux or counterstreaming account for a low net heat flux. It is also strongly recommended that 3s magnetic field data from the WIND/MFI experiment (not included in this data set) be used in\nconjunction with the SWE electron heat flux data to ensure a correct interpretation of the heat flux.\nThe electron density and electron bulk flow velocity are also included in this data set but no claim is made for their accuracy. The electron flow velocity is usually within 10% to 20% of the solar wind flow velocity derived from the SWE Faraday cup experiment and which are found in the SWE key parameter data set. The electron density, however,  cannot be absolutely determined due to the spacecraft potential and the fact that the electron instrument response has varied over time. The electron density determination includes a first order attempt to determine the spacecraft potential by imposing the charge neutrality condition on the derived electron density and Faraday cup ion density. The electron density will be within a few percent of the solar wind density derived from the Faraday cup early in the mission (1994-1997), while later in the mission (1998 and onward), depending on the state of the instrument,  there will be times when the derived electron density\nmay be as much as a factor 2 too low. Although the electron density is not derived absolutely, relative changes in electron density can usually be relied on. Both the electron density and electron flow speed track with variations in the ion density and ion flow speed, respectively. However, the user is strongly advised to use the SWE ion key parameters for the bulk plasma density and flow speed. ",
+    "Instrument_type": "Plasma and Solar Wind",
+    "Logical_source": "wi_h0_swe",
+    "Logical_file_id": "wi_h0_swe_00000000_v01",
+    "Logical_source_description": "Wind SWE (Solar Wind Experiment), 6 - 12 sec Solar Wind Electron Moments",
+    "Time_resolution": "6 seconds or 12 seconds, depending on TM rate",
+    "MODS": "Skeleton created 1/19/2000\nStarted again 3/13/2001",
+    "alt_logical_source": "Wind_SWE_Electron-Moments-H0_6sec_cdf",
+    "Mission_group": "Wind\n!___Interplanetary Data near 1 AU",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Wind/SWE/H0/PT06S",
+    "DOI": "https://doi.org/10.48322/2jxp-7x36"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Default time",
+        "DICT_KEY": "time",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Time (UT)",
+        "VALIDMAX": "2010-12-31T00:00:00.000",
+        "VALIDMIN": "1990-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Time (UT)"
+      }
+    },
+    "time_PB5": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time, centered, in GSFC PB5 format (yr, day, ms)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "time>pb5",
+        "FIELDNAM": "Time_PB5",
+        "FILLVAL": -2147483648,
+        "FORM_PTR": "format_time",
+        "LABL_PTR_1": "label_PB5",
+        "UNIT_PTR": "unit_time",
+        "VALIDMAX": [
+          2020,
+          366,
+          86399999
+        ],
+        "VALIDMIN": [
+          1994,
+          303,
+          0
+        ],
+        "VAR_TYPE": "support_data",
+        "x_UNITS": [
+          "year",
+          "day",
+          "msec"
+        ],
+        "x_LABLAXES": [
+          [
+            "Year",
+            "Day of Year (Jan 1 = Day 1)",
+            "Elapsed milliseconds of Day"
+          ]
+        ]
+      }
+    },
+    "Te": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron Temperature, Te",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimensionNOAUTO",
+        "FIELDNAM": "Electron Temperature, Te",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "Te",
+        "SCALEMAX": 1000000.0,
+        "SCALEMIN": 10000.0,
+        "SCALETYP": "log",
+        "UNITS": "Deg K",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_NOTES": "Te = (trace of pressure tensor)/(electron density * Boltzman constant)/3 = (2*Te_perp + Te_para)/3",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Deg K",
+        "x_LABLAXIS": "Te"
+      }
+    },
+    "Te_anisotropy": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Temperature anisotropy = Te_para / Te_perp",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "anisotropy>temperature",
+        "DISPLAY_TYPE": "default_dimensionNOAUTO",
+        "FIELDNAM": "Temperature anisotropy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F4.2",
+        "LABLAXIS": "Anis",
+        "SCALEMAX": 2.0,
+        "SCALEMIN": 0.5,
+        "VALIDMAX": 2.0,
+        "VALIDMIN": 0.5,
+        "VAR_NOTES": "Te_perp = average of the perpendicular elements of the temperature tensor.  Te_para = parallel component of the temperature tensor.",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Anis"
+      }
+    },
+    "average_energy": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron average energy",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "energy",
+        "DISPLAY_TYPE": "default_dimensionNOAUTO",
+        "FIELDNAM": "Electron average energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F4.1",
+        "LABLAXIS": "E avg",
+        "SCALEMAX": 75.0,
+        "SCALEMIN": 0.0,
+        "UNITS": "eV",
+        "VALIDMAX": 75.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Average energy = (3/2)Boltzmann constant * Te",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "E avg"
+      }
+    },
+    "pa_press_tensor": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Principle axis of pressure tensor - unit vector",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimensionSCATTER>NOAUTO",
+        "FIELDNAM": "Principle axis of pressure tensor -unit vector",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.3",
+        "LABL_PTR_1": "pa_press_tensor_LABL",
+        "SCALEMAX": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "SCALEMIN": [
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "UNIT_PTR": "pa_press_tensor_axis",
+        "VALIDMAX": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "VALIDMIN": [
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "X GSE",
+          "Y GSE",
+          "Z GSE"
+        ],
+        "x_LABLAXES": [
+          [
+            "Press. P.A.",
+            "Press. P.A.",
+            "Press. P.A."
+          ]
+        ]
+      }
+    },
+    "pa_dot_B": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pressure tensor principle axis dot magnetic field unit vector",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "pressure",
+        "DISPLAY_TYPE": "default_dimensionSCATTER>NOAUTO",
+        "FIELDNAM": "Press. tensor PA  dot B unit vector",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.3",
+        "LABLAXIS": "PA dot B",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": -1.0,
+        "SCALETYP": "linear",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": -1.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "PA dot B"
+      }
+    },
+    "pa_press_tensor_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 11,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "pa_press_tensor_LABL",
+        "DICT_KEY": "label",
+        "FIELDNAM": "pa_press_tensor_LABL",
+        "FORMAT": "a5",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Press. P.A.",
+        "Press. P.A.",
+        "Press. P.A."
+      ]
+    },
+    "pa_press_tensor_axis": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 5,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "pa_press_tensor_axis",
+        "DICT_KEY": "label",
+        "FIELDNAM": "pa_press_tensor_axis",
+        "FORMAT": "a5",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "X GSE",
+        "Y GSE",
+        "Z GSE"
+      ]
+    },
+    "heat_flux_magn": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron heat flux magnitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "energy",
+        "DISPLAY_TYPE": "default_dimensionNOAUTO",
+        "FIELDNAM": "heat flux magnitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.4",
+        "LABLAXIS": "Heat Flux, Q",
+        "SCALEMAX": 0.03,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "ergs/(cm^2 s)",
+        "VALIDMAX": 0.03,
+        "VALIDMIN": 0.001,
+        "VAR_TYPE": "data",
+        "x_UNITS": "ergs/(cm^2 s)",
+        "x_LABLAXIS": "Heat Flux, Q"
+      }
+    },
+    "heat_flux_el": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron heat flux elevation",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimensionNOAUTO",
+        "FIELDNAM": "heat flux elevation",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "Q_elev_GSE",
+        "SCALEMAX": 90.0,
+        "SCALEMIN": -90.0,
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "Q_elev_GSE"
+      }
+    },
+    "heat_flux_az": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron heat flux azimuth",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimensionNOAUTO",
+        "FIELDNAM": "heat flux azimuth",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "Q_azim_GSE",
+        "SCALEMAX": 360.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "degrees ",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees ",
+        "x_LABLAXIS": "Q_azim_GSE"
+      }
+    },
+    "Q_dot_B": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Heat flux dot B unit vector",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "energy",
+        "DISPLAY_TYPE": "default_dimensionSCATTER>NOAUTO",
+        "FIELDNAM": "Heat flux dot B unit vector",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.3",
+        "LABLAXIS": "Q dot B",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": -1.0,
+        "SCALETYP": "linear",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": -1.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Q dot B"
+      }
+    },
+    "sc_position": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spacecraft Position (GSE)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "position",
+        "DISPLAY_TYPE": "default_dimensionNOAUTO",
+        "FIELDNAM": "Spacecraft Position (GSE)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.1",
+        "LABL_PTR_1": "label_sc_pos",
+        "SCALEMAX": [
+          220.0,
+          220.0,
+          220.0
+        ],
+        "SCALEMIN": [
+          -220.0,
+          -220.0,
+          -220.0
+        ],
+        "UNITS": "Earth Radii",
+        "VALIDMAX": [
+          220.0,
+          220.0,
+          220.0
+        ],
+        "VALIDMIN": [
+          -220.0,
+          -220.0,
+          -220.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "Earth Radii",
+        "x_LABLAXES": [
+          [
+            "SC_X_GSE",
+            "SC_Y_GSE",
+            "SC_Z_GSE"
+          ]
+        ]
+      }
+    },
+    "el_bulk_vel_magn": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron bulk velocity - magnitude ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimensionNOAUTO",
+        "FIELDNAM": "el_bulk_vel_magnitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F5.0",
+        "LABLAXIS": "Ue magnitude",
+        "SCALEMAX": 1000.0,
+        "SCALEMIN": 200.0,
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 200.0,
+        "VAR_NOTES": "See the global attribute TEXT.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXIS": "Ue magnitude"
+      }
+    },
+    "el_bulk_vel_el": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron bulk velocity - elevation ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimensionNOAUTO",
+        "FIELDNAM": "el_bulk_vel_elevation",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F5.0",
+        "LABLAXIS": "Ue_elev_GSE",
+        "SCALEMAX": 90.0,
+        "SCALEMIN": -90.0,
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": "See the global attribute TEXT.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "Ue_elev_GSE"
+      }
+    },
+    "el_bulk_vel_az": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron bulk velocity - azimuth ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle",
+        "DISPLAY_TYPE": "default_dimensionNOAUTO",
+        "FIELDNAM": "el_bulk_vel_azimuth",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F5.0",
+        "LABLAXIS": "Ue_azim_GSE",
+        "SCALEMAX": 360.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "See the global attribute TEXT.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "Ue_azim_GSE"
+      }
+    },
+    "el_density": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron density",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density",
+        "DISPLAY_TYPE": "default_dimensionNOAUTO",
+        "FIELDNAM": "Electron density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABLAXIS": "Electron Density",
+        "SCALEMAX": 100.0,
+        "SCALEMIN": 0.1,
+        "SCALETYP": "log",
+        "UNITS": "/cc",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.1,
+        "VAR_NOTES": "See the global attribute TEXT.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "/cc",
+        "x_LABLAXIS": "Electron Density"
+      }
+    },
+    "sc_pot": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spacecraft Potential",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "potential",
+        "DISPLAY_TYPE": "default_dimensionNOAUTO",
+        "FIELDNAM": "Spacecraft Potential",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F5.0",
+        "LABLAXIS": "SC_Potential",
+        "SCALEMAX": 20.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "Volts",
+        "VALIDMAX": 20.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Forst-order estimate only; se the global attribute TEXT.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Volts",
+        "x_LABLAXIS": "SC_Potential"
+      }
+    },
+    "label_sc_pos": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 10,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label_sc_pos",
+        "DICT_KEY": "label",
+        "FIELDNAM": "label_sc_pos",
+        "FORMAT": "a11",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "SC_X_GSE",
+        "SC_Y_GSE",
+        "SC_Z_GSE"
+      ]
+    },
+    "unit_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 10,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Units for Time_PB5",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Units for Time_PB5",
+        "FORMAT": "a11",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "year",
+        "day",
+        "msec"
+      ]
+    },
+    "format_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 10,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Format for Time_PB5",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Format for Time_PB5",
+        "FORMAT": "a11",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "I4        ",
+        "I3        ",
+        "I8        "
+      ]
+    },
+    "label_PB5": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 27,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Label for Time_PB5 (Jan 1 = Day 1)",
+        "DICT_KEY": "label",
+        "FIELDNAM": "Label for Time_PB5",
+        "FORMAT": "a18",
+        "VAR_NOTES": "Jan 1 = Day 1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Year",
+        "Day of Year (Jan 1 = Day 1)",
+        "Elapsed milliseconds of Day"
+      ]
+    },
+    "flag": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Quality Flag, yet to be defined",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag",
+        "DISPLAY_TYPE": "default_dimensionSCATTER>NOAUTO",
+        "FIELDNAM": "Quality Flag yet to be defined",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "Quality Flag",
+        "VALIDMAX": 9,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Quality Flag"
+      }
+    },
+    "major_fr_rec": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "major frame record number",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "major_frame_record _number",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I5",
+        "LABLAXIS": "Major Fr. No.",
+        "VALIDMAX": 1900,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Major Fr. No."
+      }
+    },
+    "major_fr_spin_number": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Major frame spin number",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "major_frame_spin_number",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "Major Fr. Spin No.",
+        "VALIDMAX": 7,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Major Fr. Spin No."
+      }
+    }
+  }
+}

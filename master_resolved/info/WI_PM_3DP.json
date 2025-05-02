@@ -1,0 +1,697 @@
+{
+  "CDFFileInfo": {
+    "File": "wi_pm_3dp_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/wi_pm_3dp_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Data_type": "PM>PESA (On-Board) Ion Moments @ Spin Resolution (version 3), Wind 3DP",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Source_name": "WIND>Wind Interplanetary Plasma Laboratory",
+    "Logical_source_description": " Ion moments (computed on-board) @ 3 second (spin) resolution, PESA LOW, Wind 3DP",
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "TEXT": "Wind 3dp, PESA LOW 1 spin resolution ion (proton and alpha) moments (computed on spacecraft)",
+    "PI_name": "R. Lin/S. Bale",
+    "PI_affiliation": "UC Berkeley",
+    "Instrument_type": "Plasma and Solar Wind",
+    "Mission_group": "Wind\n!___Interplanetary Data near 1 AU",
+    "Data_version": "1",
+    "Descriptor": "3DP>3-D PLASMA ANALYZER",
+    "ADID_ref": "NSSD0143",
+    "MODS": "Version 3 Product, August 2005",
+    "Logical_source": "wi_pm_3dp",
+    "Logical_file_id": "wi_pm_3dp_00000000_v01",
+    "alt_logical_source": "Wind_3DP_Ion-Moments-Onboard-PM_3sec_cdf",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Wind/3DP/PM/PT03S",
+    "DOI": "https://doi.org/10.48322/s8e6-aw08",
+    "LINK_TEXT": " \nWind 3DP ",
+    "LINK_TITLE": "Caveats for the correct use of Wind 3DP datasets\nhome page at UCB (with plotting and digital data)",
+    "HTTP_LINK": "https://spdf.gsfc.nasa.gov/pub/data/wind/3dp/wind3dp_caveats.pdf\nhttp://sprg.ssl.berkeley.edu/wind3dp/"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time, Centered",
+        "DICT_KEY": "time",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "e12.0",
+        "LABLAXIS": "Epoch",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T23:59:59.999",
+        "VALIDMIN": "1992-01-01T00:00:00.000",
+        "VAR_NOTES": "Time is centered, confirmed for 3DP by P.Schroeder 2005 Nov 07",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "SPIN": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "On-board spin count",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "Number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Spin Count",
+        "FORMAT": "i6",
+        "LABLAXIS": "Spin_Count",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 32767,
+        "VALIDMIN": -32768,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Spin_Count"
+      }
+    },
+    "P_DENS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton number density [values fill-noisy 5/19/2009-5/11/2010; 3/8-5/15/2012] ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton number density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Dens_Protn_s/c",
+        "SCALETYP": "linear",
+        "UNITS": "#/cm3",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Proton number density values are fill for time period 5/20/2009-5/11/2010; noisy 3/8/2012 04:37 to 5/15/2012 22:45]",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cm3",
+        "x_LABLAXIS": "Dens_Protn_s/c"
+      }
+    },
+    "P_VELS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Proton velocity vector (GSE)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton velocity vector",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "P_VELS_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "km/sec",
+        "VALIDMAX": [
+          4000.0,
+          4000.0,
+          4000.0
+        ],
+        "VALIDMIN": [
+          -4000.0,
+          -4000.0,
+          -4000.0
+        ],
+        "VAR_NOTES": "Proton velocity vector values are noisy for time period 5/15/2009-5/11/2010 and 3/8/2012 04:37 to 5/15/2012 22:45",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/sec",
+        "x_LABLAXES": [
+          [
+            "VXGSE_Protn_s/c",
+            "VYGSE_Protn_s/c",
+            "VZGSE_Protn_s/c"
+          ]
+        ]
+      }
+    },
+    "P_TENS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Residual Variance in Proton Velocity (6 components in instrument coords)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "P_TENS",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "P_TENS_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "(Instrmt Coords)",
+        "VALIDMAX": [
+          20000.0,
+          20000.0,
+          20000.0,
+          20000.0,
+          20000.0,
+          20000.0
+        ],
+        "VALIDMIN": [
+          -20000.0,
+          -20000.0,
+          -20000.0,
+          -20000.0,
+          -20000.0,
+          -20000.0
+        ],
+        "VAR_NOTES": "Residual Variance in Proton Velocity values are noisy for time period 5/15/2009-5/11/2010 and 3/8/2012 04:37 to 5/15/2012 22:45",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(Instrmt Coords)",
+        "x_LABLAXES": [
+          [
+            "ResVar_PrtnV_XX",
+            "ResVar_PrtnV_YY",
+            "ResVar_PrtnV_ZZ",
+            "ResVar_PrtnV_XY",
+            "ResVar_PrtnV_XZ",
+            "ResVar_PrtnV_YZ"
+          ]
+        ]
+      }
+    },
+    "P_TEMP": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Proton temperature",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton temperature",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Temp_Protn_s/c",
+        "SCALETYP": "linear",
+        "UNITS": "eV",
+        "VALIDMAX": 500.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Proton temperature values are noisy for time period 5/15/2009-5/11/2010 and 3/8/2012 04:37 to 5/15/2012 22:45",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "Temp_Protn_s/c"
+      }
+    },
+    "A_DENS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha number density [values fill-noisy 5/19/2009-5/11/2010; 3/8-5/15/2012]",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha number density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Dens_Alpha_s/c",
+        "SCALETYP": "linear",
+        "UNITS": "#/cm3",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Alpha number density values are fill for time period 5/15/2009-5/11/2010; noisy 3/8/2012 04:37 to 5/15/2012 22:45",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cm3",
+        "x_LABLAXIS": "Dens_Alpha_s/c"
+      }
+    },
+    "A_VELS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Alpha velocity vector (GSE)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha velocity vector",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "A_VELS_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "km/sec",
+        "VALIDMAX": [
+          4000.0,
+          4000.0,
+          4000.0
+        ],
+        "VALIDMIN": [
+          -4000.0,
+          -4000.0,
+          -4000.0
+        ],
+        "VAR_NOTES": "Alpha velocity vector values are noisy for time period 5/15/2009-5/11/2010 and 3/8/2012 04:37 to 5/15/2012 22:45",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/sec",
+        "x_LABLAXES": [
+          [
+            "VXGSE_Alpha_s/c",
+            "VYGSE_Alpha_s/c",
+            "VZGSE_Alpha_s/c"
+          ]
+        ]
+      }
+    },
+    "A_TENS": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Residual Variance in Alpha Velocity (6 components in instrument coords)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "A_TENS",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABL_PTR_1": "A_TENS_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "(Instrmt Coords)",
+        "VALIDMAX": [
+          20000.0,
+          20000.0,
+          20000.0,
+          20000.0,
+          20000.0,
+          20000.0
+        ],
+        "VALIDMIN": [
+          -20000.0,
+          -20000.0,
+          -20000.0,
+          -20000.0,
+          -20000.0,
+          -20000.0
+        ],
+        "VAR_NOTES": "Residual Variance in Alpha Velocity values are noisy for time period 5/15/2009-5/11/2010 and 3/8/2012 04:37 to 5/15/2012 22:45",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(Instrmt Coords)",
+        "x_LABLAXES": [
+          [
+            "ResVar_AlphaV_XX",
+            "ResVar_AlphaV_YY",
+            "ResVar_AlphaV_ZZ",
+            "ResVar_AlphaV_XY",
+            "ResVar_AlphaV_XZ",
+            "ResVar_AlphaV_YZ"
+          ]
+        ]
+      }
+    },
+    "A_TEMP": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Alpha temperature",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha temperature",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Temp_Alpha_s/c",
+        "SCALETYP": "linear",
+        "UNITS": "eV",
+        "VALIDMAX": 500.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Alpha temperature values are noisy for time period 5/15/2009-5/11/2010 and 3/8/2012 04:37 to 5/15/2012 22:45",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "Temp_Alpha_s/c"
+      }
+    },
+    "E_RANGE": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy range of moments computation",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "Energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "E_RANGE",
+        "FORMAT": "f9.2",
+        "LABL_PTR_1": "E_RANGE_LABL_1",
+        "SCALETYP": "linear",
+        "UNITS": "eV",
+        "VALIDMAX": [
+          20000.0,
+          20000.0,
+          20000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXES": [
+          [
+            "Lower_E_Bound",
+            "Upper_E_Bound"
+          ]
+        ]
+      }
+    },
+    "VC": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "VC (compression diagnostic)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "VC",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VC",
+        "FORMAT": "i6",
+        "LABLAXIS": "VC",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 20000,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "VC"
+      }
+    },
+    "GAP": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Gap flag (0=no gap, 1=gap)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "GAP",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GAP",
+        "FORMAT": "i1",
+        "LABLAXIS": "Gap_Flag",
+        "SCALETYP": "linear",
+        "UNITS": "(0=No Gap)",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(0=No Gap)",
+        "x_LABLAXIS": "Gap_Flag"
+      }
+    },
+    "VALID": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Data quality flag (1=good, 0=bad)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "VALID",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "VALID",
+        "FORMAT": "i1",
+        "LABLAXIS": "DQ_Flag",
+        "SCALETYP": "linear",
+        "UNITS": "(1=good)",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(1=good)",
+        "x_LABLAXIS": "DQ_Flag"
+      }
+    },
+    "TIME": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Unix Time (since 1970/01/01)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "time",
+        "FIELDNAM": "Time",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e12.0",
+        "LABLAXIS": "Unix Time",
+        "UNITS": "ms",
+        "VALIDMAX": 10000000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Unix Time"
+      }
+    },
+    "P_VELS_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 24,
+        "NumWrittenRecords": 1,
+        "PadValue": "                        ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "P_VELS_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "P_VELS_LABL_1",
+        "FORMAT": "a24",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "VXGSE_Protn_s/c",
+        "VYGSE_Protn_s/c",
+        "VZGSE_Protn_s/c"
+      ]
+    },
+    "P_TENS_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": "                    ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "P_TENS_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "P_TENS_LABL_1",
+        "FORMAT": "a20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "ResVar_PrtnV_XX",
+        "ResVar_PrtnV_YY",
+        "ResVar_PrtnV_ZZ",
+        "ResVar_PrtnV_XY",
+        "ResVar_PrtnV_XZ",
+        "ResVar_PrtnV_YZ"
+      ]
+    },
+    "A_VELS_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 24,
+        "NumWrittenRecords": 1,
+        "PadValue": "                        ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "A_VELS_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "A_VELS_LABL_1",
+        "FORMAT": "a24",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "VXGSE_Alpha_s/c",
+        "VYGSE_Alpha_s/c",
+        "VZGSE_Alpha_s/c"
+      ]
+    },
+    "A_TENS_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": "                    ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "A_TENS_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "A_TENS_LABL_1",
+        "FORMAT": "a20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "ResVar_AlphaV_XX",
+        "ResVar_AlphaV_YY",
+        "ResVar_AlphaV_ZZ",
+        "ResVar_AlphaV_XY",
+        "ResVar_AlphaV_XZ",
+        "ResVar_AlphaV_YZ"
+      ]
+    },
+    "E_RANGE_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": "                    ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "E_RANGE_LABL_1",
+        "DICT_KEY": "label",
+        "FIELDNAM": "E_RANGE_LABL_1",
+        "FORMAT": "a20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Lower_E_Bound",
+        "Upper_E_Bound"
+      ]
+    }
+  }
+}

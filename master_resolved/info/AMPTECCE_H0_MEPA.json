@@ -1,0 +1,5689 @@
+{
+  "CDFFileInfo": {
+    "File": "amptecce_h0_mepa_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/amptecce_h0_mepa_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Logical_source_description": "AMPTE CCE MEPA High Time Resolution Energetic Particles",
+    "Generation_date": " ",
+    "Descriptor": "EPI>Energetic Particles",
+    "Logical_source": "AMPTE-CCE_H0_MEPA",
+    "Logical_file_id": "amptecce_h0_mepa_00000000_v01",
+    "PI_affiliation": "JHU/APL",
+    "Source_name": "AMPTE-CCE>Active Magnetospheric Particle Tracer Explorers Charge Composition Explorer",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Mission_group": "AMPTE",
+    "LINK_TITLE": "JHU/APL AMPTE/CCE Science Data Center (SDC)",
+    "Project": "AMPTE",
+    "Data_type": "H0>High Resolution data",
+    "Data_version": " ",
+    "TEXT": "This dataset contains high time resolution MEPA rate channel data. MEPA is a particle telescope with an ION head and a TOF head. The TOF head can measure species and energy, while the ION head only measures the energy of the ions, which are mostly protons. In fact, the counts in the ION head are all assumed to be protons up to 1830 keV. The ION head has 10 energy channels, and so the first 8 channels (that are all below 1830 keV) are assumed to be all protons, and the 2 channels above this are assumed to be all alphas. The TOF head has 9 energy channels that are generic (ions of any species are counted) and some species specific channels for protons, helium, oxygen, and iron. The AMPTE data was divided into records, with each record holding data from 4 spins. In any record, all the TOF species channels are always present, but only one of either a) the 10 ION head channels or b) 9 TOF generic channels are present. The majority of records have the ION head channels. The AMPTE spacecraft had a spin period of about 6 seconds. The exact spin period varies slightly and is included in the data. MEPA data is sectored into 32 directions per spin. Nearly all channels are reported as sectored values, but to conserve telemetry, many channels are only read out every other spin, or every fourth spin. In this data, all values are summed so that they are reported every fourth spin. Note that in the original AMPTE datesets, there was a timing problem which required that 19.75 seconds (one Major Frame of telemetry) be added to time values extracted from the processing system. This correction has already been made in the particle data in this dataset.",
+    "PI_name": "D. McEntire",
+    "HTTP_LINK": "http://sd-www.jhuapl.edu/AMPTE",
+    "Instrument_type": "Particles (space)",
+    "LINK_TEXT": "MEPA information and data available at",
+    "Time_resolution": "0.1875 sec",
+    "Acknowledgement": "JHUAPL is acknowledged for its role in restoring and providing AMPTE/MEPA data.",
+    "Generated_by": " ",
+    "Instrument": "MPEA>Medium Engery Particle Analyzer",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/AMPTE-CCE/MEPA/PT0.1875S",
+    "DOI": "https://doi.org/10.48322/zz7m-pv06"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "2000-01-01T00:00:00.000000000",
+        "LABLAXIS": "time",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1989-01-11T00:00:09.045221507",
+        "SCALEMIN": "1989-01-10T19:01:24.225827515",
+        "UNITS": "nanoseconds since J2000",
+        "VALIDMAX": "1989-01-11T00:00:09.045221507",
+        "VALIDMIN": "1989-01-10T19:01:24.225827515",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nanoseconds since J2000",
+        "x_LABLAXIS": "time"
+      }
+    },
+    "SpinPeriod": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SpinPeriod",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SpinPeriod",
+        "FILLVAL": -1.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "SpinPeriod",
+        "SCALEMAX": 20.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "seconds",
+        "VALIDMAX": 20.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "seconds",
+        "x_LABLAXIS": "SpinPeriod"
+      }
+    },
+    "Sector": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SECTOR",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Sector",
+        "FILLVAL": -1.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "Sector",
+        "SCALEMAX": 31.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "sector",
+        "VALIDMAX": 31.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "sector",
+        "x_LABLAXIS": "Sector"
+      }
+    },
+    "Gain": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Gain",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Gain",
+        "FILLVAL": -1.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "Gain",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "unitless",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "unitless",
+        "x_LABLAXIS": "Gain"
+      }
+    },
+    "ION_protons_COUNTS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ION_protons: counts per sector (spectrogram) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "DELTA_MINUS_VAR": "ION_protons_E_dlo",
+        "DELTA_PLUS_VAR": "ION_protons_E_dhi",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ION_protons_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_protons_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "ION_protons: counts per sector (spectrogram) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "ION_protons",
+        "LABL_PTR_1": "ION_protons_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "ION_protons",
+        "x_LABLAXES": [
+          [
+            "ION_0_P_COUNTS",
+            "ION_1_P_COUNTS",
+            "ION_2_P_COUNTS",
+            "ION_3_P_COUNTS",
+            "ION_4_P_COUNTS",
+            "ION_5_P_COUNTS",
+            "ION_6_P_COUNTS",
+            "ION_7_P_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "ION_protons_E"
+        ]
+      }
+    },
+    "ION_protons_CPS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> ION_protons: counts per second per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "ION_protons_E_dlo",
+        "DELTA_PLUS_VAR": "ION_protons_E_dhi",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ION_protons_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_protons_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "ION_protons: counts per second per sector (spectrogram) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "ION_protons",
+        "LABL_PTR_1": "ION_protons_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "ION_protons",
+        "x_LABLAXES": [
+          [
+            "ION_0_P_CPS",
+            "ION_1_P_CPS",
+            "ION_2_P_CPS",
+            "ION_3_P_CPS",
+            "ION_4_P_CPS",
+            "ION_5_P_CPS",
+            "ION_6_P_CPS",
+            "ION_7_P_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "ION_protons_E"
+        ]
+      }
+    },
+    "ION_protons_INTEN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> ION_protons: differential intensity per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "ION_protons_E_dlo",
+        "DELTA_PLUS_VAR": "ION_protons_E_dhi",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ION_protons_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_protons_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "ION_protons: differential intensity per sector (spectrogram) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "ION_protons_DiffInt",
+        "LABL_PTR_1": "ION_protons_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "ION_protons_DiffInt",
+        "x_LABLAXES": [
+          [
+            "ION_0_P_INTEN",
+            "ION_1_P_INTEN",
+            "ION_2_P_INTEN",
+            "ION_3_P_INTEN",
+            "ION_4_P_INTEN",
+            "ION_5_P_INTEN",
+            "ION_6_P_INTEN",
+            "ION_7_P_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "ION_protons_E"
+        ]
+      }
+    },
+    "ION_protons_COUNTS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ION_protons: counts per sector (stack_plot) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "COMPONENT_0": "ION_protons_COUNTS",
+        "DELTA_MINUS_VAR": "ION_protons_E_dlo",
+        "DELTA_PLUS_VAR": "ION_protons_E_dhi",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ION_protons_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "ION_protons_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "ION_protons: counts per sector (stack_plot) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "ION_protons",
+        "LABL_PTR_1": "ION_protons_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "ION_protons",
+        "x_LABLAXES": [
+          [
+            "ION_0_P_COUNTS",
+            "ION_1_P_COUNTS",
+            "ION_2_P_COUNTS",
+            "ION_3_P_COUNTS",
+            "ION_4_P_COUNTS",
+            "ION_5_P_COUNTS",
+            "ION_6_P_COUNTS",
+            "ION_7_P_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "ION_protons_E"
+        ],
+        "COMPONENTS": [
+          "ION_protons_COUNTS"
+        ]
+      }
+    },
+    "ION_protons_CPS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> ION_protons: counts per second per sector (stack_plot)",
+        "COMPONENT_0": "ION_protons_CPS",
+        "DELTA_MINUS_VAR": "ION_protons_E_dlo",
+        "DELTA_PLUS_VAR": "ION_protons_E_dhi",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ION_protons_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "ION_protons_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "ION_protons: counts per second per sector (stack_plot) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "ION_protons",
+        "LABL_PTR_1": "ION_protons_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "ION_protons",
+        "x_LABLAXES": [
+          [
+            "ION_0_P_CPS",
+            "ION_1_P_CPS",
+            "ION_2_P_CPS",
+            "ION_3_P_CPS",
+            "ION_4_P_CPS",
+            "ION_5_P_CPS",
+            "ION_6_P_CPS",
+            "ION_7_P_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "ION_protons_E"
+        ],
+        "COMPONENTS": [
+          "ION_protons_CPS"
+        ]
+      }
+    },
+    "ION_protons_INTEN_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> ION_protons: differential intensity per sector (stack_plot)",
+        "COMPONENT_0": "ION_protons_INTEN",
+        "DELTA_MINUS_VAR": "ION_protons_E_dlo",
+        "DELTA_PLUS_VAR": "ION_protons_E_dhi",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ION_protons_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "ION_protons_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "ION_protons: differential intensity per sector (stack_plot) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "ION_protons_DiffInt",
+        "LABL_PTR_1": "ION_protons_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "ION_protons_DiffInt",
+        "x_LABLAXES": [
+          [
+            "ION_0_P_INTEN",
+            "ION_1_P_INTEN",
+            "ION_2_P_INTEN",
+            "ION_3_P_INTEN",
+            "ION_4_P_INTEN",
+            "ION_5_P_INTEN",
+            "ION_6_P_INTEN",
+            "ION_7_P_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "ION_protons_E"
+        ],
+        "COMPONENTS": [
+          "ION_protons_INTEN"
+        ]
+      }
+    },
+    "ION_protons_COUNTS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": "              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the ION_protons_COUNTS channels",
+        "FIELDNAM": "ION_protons_COUNTS_names",
+        "FORMAT": "a14",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "ION_0_P_COUNTS",
+        "ION_1_P_COUNTS",
+        "ION_2_P_COUNTS",
+        "ION_3_P_COUNTS",
+        "ION_4_P_COUNTS",
+        "ION_5_P_COUNTS",
+        "ION_6_P_COUNTS",
+        "ION_7_P_COUNTS"
+      ]
+    },
+    "ION_protons_E": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "channel names",
+        "FIELDNAM": "ION_protons_E",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Energy",
+        "SCALEMAX": 1350.0,
+        "SCALEMIN": 25.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 1350.0,
+        "VALIDMIN": 25.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        29.15,
+        41.23,
+        64.42,
+        111.95,
+        207.45,
+        392.3,
+        734.85,
+        1161.9
+      ]
+    },
+    "ION_protons_E_dlo": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "energy (low) for ION_protons_COUNTS",
+        "FIELDNAM": "ION_protons_E_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "ION_protons_E_dlo",
+        "SCALEMAX": 1350.0,
+        "SCALEMIN": 25.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 1350.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "ION_protons_E_dlo"
+      },
+      "VarData": [
+        4.15,
+        7.23,
+        14.42,
+        28.95,
+        56.45,
+        107.3,
+        194.85,
+        161.9
+      ]
+    },
+    "ION_protons_E_dhi": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "energy (high) for ION_protons_COUNTS",
+        "FIELDNAM": "ION_protons_E_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "ION_protons_E_dhi",
+        "SCALEMAX": 1350.0,
+        "SCALEMIN": 25.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 1350.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "ION_protons_E_dhi"
+      },
+      "VarData": [
+        4.85,
+        8.77,
+        18.58,
+        39.05,
+        77.55,
+        147.7,
+        265.15,
+        188.1
+      ]
+    },
+    "ION_protons_CPS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 11,
+        "NumWrittenRecords": 1,
+        "PadValue": "           ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the ION_protons_CPS channels",
+        "FIELDNAM": "ION_protons_CPS_names",
+        "FORMAT": "a11",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "ION_0_P_CPS",
+        "ION_1_P_CPS",
+        "ION_2_P_CPS",
+        "ION_3_P_CPS",
+        "ION_4_P_CPS",
+        "ION_5_P_CPS",
+        "ION_6_P_CPS",
+        "ION_7_P_CPS"
+      ]
+    },
+    "ION_protons_INTEN_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 13,
+        "NumWrittenRecords": 1,
+        "PadValue": "             ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the ION_protons_INTEN channels",
+        "FIELDNAM": "ION_protons_INTEN_names",
+        "FORMAT": "a13",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "ION_0_P_INTEN",
+        "ION_1_P_INTEN",
+        "ION_2_P_INTEN",
+        "ION_3_P_INTEN",
+        "ION_4_P_INTEN",
+        "ION_5_P_INTEN",
+        "ION_6_P_INTEN",
+        "ION_7_P_INTEN"
+      ]
+    },
+    "ION_protons_Edrift": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Actual ION_protons channel midpoint energies at the middle of this day",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ION_protons_channel_no",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "ION_protons_Edrift",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "ION_protons_Edrift",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "ION_protons_Edrift",
+        "x_DEPEND": [
+          "ION_protons_channel_no"
+        ]
+      }
+    },
+    "ION_protons_channel_no": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ION_protons_channel_no",
+        "FIELDNAM": "ION_protons_channel_no",
+        "FILLVAL": -32768,
+        "FORMAT": "i2",
+        "LABLAXIS": "No",
+        "SCALEMAX": 8,
+        "SCALEMIN": 1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 8,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "No"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "ION_protons_Edrift_dlo": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from lower to mid energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_protons_Edrift_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "ION_protons_Edrift_dlo",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "ION_protons_Edrift_dlo"
+      }
+    },
+    "ION_protons_Edrift_dhi": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from mid to upper energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_protons_Edrift_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "ION_protons_Edrift_dhi",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "ION_protons_Edrift_dhi"
+      }
+    },
+    "ION_helium_COUNTS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ION_helium:  counts per sector (spectrogram) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "DELTA_MINUS_VAR": "ION_helium_E_dlo",
+        "DELTA_PLUS_VAR": "ION_helium_E_dhi",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ION_helium_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_helium_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "ION_helium:  counts per sector (spectrogram) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "ION_helium",
+        "LABL_PTR_1": "ION_helium_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "ION_helium",
+        "x_LABLAXES": [
+          [
+            "ION_8_HE_COUNTS",
+            "ION_9_HE_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "ION_helium_E"
+        ]
+      }
+    },
+    "ION_helium_CPS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> ION_helium: counts per second per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "ION_helium_E_dlo",
+        "DELTA_PLUS_VAR": "ION_helium_E_dhi",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ION_helium_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_helium_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "ION_helium: counts per second per sector (spectrogram) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "ION_helium",
+        "LABL_PTR_1": "ION_helium_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "ION_helium",
+        "x_LABLAXES": [
+          [
+            "ION_8_HE_CPS",
+            "ION_9_HE_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "ION_helium_E"
+        ]
+      }
+    },
+    "ION_helium_INTEN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> ION_helium: differential intensity per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "ION_helium_E_dlo",
+        "DELTA_PLUS_VAR": "ION_helium_E_dhi",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ION_helium_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_helium_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "ION_helium: differential intensity per sector (spectrogram) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "ION_helium_DiffInt",
+        "LABL_PTR_1": "ION_helium_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "ION_helium_DiffInt",
+        "x_LABLAXES": [
+          [
+            "ION_8_HE_INTEN",
+            "ION_9_HE_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "ION_helium_E"
+        ]
+      }
+    },
+    "ION_helium_COUNTS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ION_helium:  counts per sector (stack_plot) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "COMPONENT_0": "ION_helium_COUNTS",
+        "DELTA_MINUS_VAR": "ION_helium_E_dlo",
+        "DELTA_PLUS_VAR": "ION_helium_E_dhi",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ION_helium_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "ION_helium_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "ION_helium:  counts per sector (stack_plot) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "ION_helium",
+        "LABL_PTR_1": "ION_helium_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "ION_helium",
+        "x_LABLAXES": [
+          [
+            "ION_8_HE_COUNTS",
+            "ION_9_HE_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "ION_helium_E"
+        ],
+        "COMPONENTS": [
+          "ION_helium_COUNTS"
+        ]
+      }
+    },
+    "ION_helium_CPS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> ION_helium: counts per second per sector (stack_plot)",
+        "COMPONENT_0": "ION_helium_CPS",
+        "DELTA_MINUS_VAR": "ION_helium_E_dlo",
+        "DELTA_PLUS_VAR": "ION_helium_E_dhi",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ION_helium_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "ION_helium_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "ION_helium: counts per second per sector (stack_plot) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "ION_helium",
+        "LABL_PTR_1": "ION_helium_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "ION_helium",
+        "x_LABLAXES": [
+          [
+            "ION_8_HE_CPS",
+            "ION_9_HE_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "ION_helium_E"
+        ],
+        "COMPONENTS": [
+          "ION_helium_CPS"
+        ]
+      }
+    },
+    "ION_helium_INTEN_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> ION_helium: differential intensity per sector (stack_plot)",
+        "COMPONENT_0": "ION_helium_INTEN",
+        "DELTA_MINUS_VAR": "ION_helium_E_dlo",
+        "DELTA_PLUS_VAR": "ION_helium_E_dhi",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "ION_helium_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "ION_helium_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "ION_helium: differential intensity per sector (stack_plot) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "ION_helium_DiffInt",
+        "LABL_PTR_1": "ION_helium_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "ION_helium_DiffInt",
+        "x_LABLAXES": [
+          [
+            "ION_8_HE_INTEN",
+            "ION_9_HE_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "ION_helium_E"
+        ],
+        "COMPONENTS": [
+          "ION_helium_INTEN"
+        ]
+      }
+    },
+    "ION_helium_COUNTS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 15,
+        "NumWrittenRecords": 1,
+        "PadValue": "               ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the ION_helium_COUNTS channels",
+        "FIELDNAM": "ION_helium_COUNTS_names",
+        "FORMAT": "a15",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "ION_8_HE_COUNTS",
+        "ION_9_HE_COUNTS"
+      ]
+    },
+    "ION_helium_E": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "channel names",
+        "FIELDNAM": "ION_helium_E",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Energy",
+        "SCALEMAX": 6050.0,
+        "SCALEMIN": 1790.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 6050.0,
+        "VALIDMIN": 1790.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        2050.98,
+        3770.61
+      ]
+    },
+    "ION_helium_E_dlo": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "energy (low) for ION_helium_COUNTS",
+        "FIELDNAM": "ION_helium_E_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "ION_helium_E_dlo",
+        "SCALEMAX": 6050.0,
+        "SCALEMIN": 1790.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 6050.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "ION_helium_E_dlo"
+      },
+      "VarData": [
+        260.98,
+        1420.61
+      ]
+    },
+    "ION_helium_E_dhi": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "energy (high) for ION_helium_COUNTS",
+        "FIELDNAM": "ION_helium_E_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "ION_helium_E_dhi",
+        "SCALEMAX": 6050.0,
+        "SCALEMIN": 1790.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 6050.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "ION_helium_E_dhi"
+      },
+      "VarData": [
+        299.02,
+        2279.39
+      ]
+    },
+    "ION_helium_CPS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": "            ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the ION_helium_CPS channels",
+        "FIELDNAM": "ION_helium_CPS_names",
+        "FORMAT": "a12",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "ION_8_HE_CPS",
+        "ION_9_HE_CPS"
+      ]
+    },
+    "ION_helium_INTEN_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": "              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the ION_helium_INTEN channels",
+        "FIELDNAM": "ION_helium_INTEN_names",
+        "FORMAT": "a14",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "ION_8_HE_INTEN",
+        "ION_9_HE_INTEN"
+      ]
+    },
+    "ION_helium_Edrift": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Actual ION_helium channel midpoint energies at the middle of this day",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_helium_Edrift",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "ION_helium_Edrift",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "ION_helium_Edrift"
+      }
+    },
+    "ION_helium_Edrift_dlo": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from lower to mid energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_helium_Edrift_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "ION_helium_Edrift_dlo",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "ION_helium_Edrift_dlo"
+      }
+    },
+    "ION_helium_Edrift_dhi": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from mid to upper energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ION_helium_Edrift_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "ION_helium_Edrift_dhi",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "ION_helium_Edrift_dhi"
+      }
+    },
+    "Epoch_1": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Epoch_1",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Epoch_1",
+        "FILLVAL": "2000-01-01T00:00:00.000000000",
+        "LABLAXIS": "time",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1989-01-11T00:00:09.045221507",
+        "SCALEMIN": "1989-01-10T16:58:57.090849757",
+        "UNITS": "nanoseconds since J2000",
+        "VALIDMAX": "1989-01-11T00:00:09.045221507",
+        "VALIDMIN": "1989-01-10T16:58:57.090849757",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nanoseconds since J2000",
+        "x_LABLAXIS": "time"
+      }
+    },
+    "SpinPeriod_1": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SpinPeriod_1",
+        "DEPEND_0": "Epoch_1",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SpinPeriod_1",
+        "FILLVAL": -1.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "SpinPeriod_1",
+        "SCALEMAX": 20.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "seconds",
+        "VALIDMAX": 20.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "seconds",
+        "x_LABLAXIS": "SpinPeriod_1"
+      }
+    },
+    "Sector_1": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SECTOR_1",
+        "DEPEND_0": "Epoch_1",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Sector_1",
+        "FILLVAL": -1.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "Sector_1",
+        "SCALEMAX": 31.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "sector",
+        "VALIDMAX": 31.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "sector",
+        "x_LABLAXIS": "Sector_1"
+      }
+    },
+    "Gain_1": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Gain_1",
+        "DEPEND_0": "Epoch_1",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Gain_1",
+        "FILLVAL": -1.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "Gain_1",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "unitless",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "unitless",
+        "x_LABLAXIS": "Gain_1"
+      }
+    },
+    "MCP1": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Micro-channel plate 1:  count rate from counts summed over 4 spins",
+        "DEPEND_0": "Epoch_1",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MCP1",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e12.5",
+        "FULL_CATDESC": "Micro-channel plate 1:  count rate from counts summed over 4 spins",
+        "LABLAXIS": "MCP1",
+        "SCALEMAX": 50000.0,
+        "SCALEMIN": 0.1,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 8323070.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "MCP1"
+      }
+    },
+    "MCP2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Micro-channel plate 2",
+        "DEPEND_0": "Epoch_1",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MCP2",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e12.5",
+        "FULL_CATDESC": "Micro-channel plate 2: count rate from counts summed over 4 spins",
+        "LABLAXIS": "MCP2",
+        "SCALEMAX": 50000.0,
+        "SCALEMIN": 0.1,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 8323070.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "MCP2"
+      }
+    },
+    "MCP3": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Micro-channel plate 3",
+        "DEPEND_0": "Epoch_1",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MCP3",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e12.5",
+        "FULL_CATDESC": "Micro-channel plate 3: count rate from counts summed over 4 spins",
+        "LABLAXIS": "MCP3",
+        "SCALEMAX": 50000.0,
+        "SCALEMIN": 0.1,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 8323070.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "MCP3"
+      }
+    },
+    "SSD": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Solid state detector",
+        "DEPEND_0": "Epoch_1",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SSD",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e12.5",
+        "FULL_CATDESC": "Solid state detector: count rate from counts summed over 4 spins",
+        "LABLAXIS": "SSD",
+        "SCALEMAX": 50000.0,
+        "SCALEMIN": 0.1,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 8323070.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "SSD"
+      }
+    },
+    "TOF_protons_COUNTS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_protons: counts per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "DELTA_MINUS_VAR": "TOF_protons_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_protons_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_protons_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_protons_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_protons: counts per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_protons",
+        "LABL_PTR_1": "TOF_protons_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "TOF_protons",
+        "x_LABLAXES": [
+          [
+            "TOF_P_0_COUNTS",
+            "TOF_P_1_COUNTS",
+            "TOF_P_2_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_protons_E"
+        ]
+      }
+    },
+    "TOF_protons_CPS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_protons: counts per second per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "TOF_protons_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_protons_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_protons_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_protons_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_protons: counts per second per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_protons",
+        "LABL_PTR_1": "TOF_protons_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "TOF_protons",
+        "x_LABLAXES": [
+          [
+            "TOF_P_0_CPS",
+            "TOF_P_1_CPS",
+            "TOF_P_2_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_protons_E"
+        ]
+      }
+    },
+    "TOF_protons_INTEN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_protons: differential intensity per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "TOF_protons_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_protons_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_protons_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_protons_INTEN",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_protons: differential intensity per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_protons_DiffInt",
+        "LABL_PTR_1": "TOF_protons_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "TOF_protons_DiffInt",
+        "x_LABLAXES": [
+          [
+            "TOF_P_0_INTEN",
+            "TOF_P_1_INTEN",
+            "TOF_P_2_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_protons_E"
+        ]
+      }
+    },
+    "TOF_protons_COUNTS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_protons: counts per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "COMPONENT_0": "TOF_protons_COUNTS",
+        "DELTA_MINUS_VAR": "TOF_protons_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_protons_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_protons_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_protons_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_protons: counts per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_protons",
+        "LABL_PTR_1": "TOF_protons_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "TOF_protons",
+        "x_LABLAXES": [
+          [
+            "TOF_P_0_COUNTS",
+            "TOF_P_1_COUNTS",
+            "TOF_P_2_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_protons_E"
+        ],
+        "COMPONENTS": [
+          "TOF_protons_COUNTS"
+        ]
+      }
+    },
+    "TOF_protons_CPS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_protons: counts per second per sector (stack_plot)",
+        "COMPONENT_0": "TOF_protons_CPS",
+        "DELTA_MINUS_VAR": "TOF_protons_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_protons_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_protons_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_protons_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_protons: counts per second per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_protons",
+        "LABL_PTR_1": "TOF_protons_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "TOF_protons",
+        "x_LABLAXES": [
+          [
+            "TOF_P_0_CPS",
+            "TOF_P_1_CPS",
+            "TOF_P_2_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_protons_E"
+        ],
+        "COMPONENTS": [
+          "TOF_protons_CPS"
+        ]
+      }
+    },
+    "TOF_protons_INTEN_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_protons: differential intensity per sector (stack_plot)",
+        "COMPONENT_0": "TOF_protons_INTEN",
+        "DELTA_MINUS_VAR": "TOF_protons_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_protons_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_protons_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_protons_INTEN",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_protons: differential intensity per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_protons_DiffInt",
+        "LABL_PTR_1": "TOF_protons_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "TOF_protons_DiffInt",
+        "x_LABLAXES": [
+          [
+            "TOF_P_0_INTEN",
+            "TOF_P_1_INTEN",
+            "TOF_P_2_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_protons_E"
+        ],
+        "COMPONENTS": [
+          "TOF_protons_INTEN"
+        ]
+      }
+    },
+    "TOF_protons_COUNTS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": "              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_protons_COUNTS channels",
+        "FIELDNAM": "TOF_protons_COUNTS_names",
+        "FORMAT": "a14",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_P_0_COUNTS",
+        "TOF_P_1_COUNTS",
+        "TOF_P_2_COUNTS"
+      ]
+    },
+    "TOF_protons_E": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "channel names",
+        "FIELDNAM": "TOF_protons_E",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Energy",
+        "SCALEMAX": 1500.0,
+        "SCALEMIN": 56.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 1500.0,
+        "VALIDMIN": 56.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        103.15,
+        337.64,
+        948.68
+      ]
+    },
+    "TOF_protons_E_dlo": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_protons_E_dlo",
+        "FIELDNAM": "TOF_protons_E_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "TOF_protons_E_dlo",
+        "SCALEMAX": 1500.0,
+        "SCALEMIN": 56.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 1500.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_protons_E_dlo"
+      },
+      "VarData": [
+        47.15,
+        147.64,
+        348.68
+      ]
+    },
+    "TOF_protons_E_dhi": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_protons_E_dhi",
+        "FIELDNAM": "TOF_protons_E_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "TOF_protons_E_dhi",
+        "SCALEMAX": 1500.0,
+        "SCALEMIN": 56.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 1500.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_protons_E_dhi"
+      },
+      "VarData": [
+        86.85,
+        262.36,
+        551.32
+      ]
+    },
+    "TOF_protons_CPS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 11,
+        "NumWrittenRecords": 1,
+        "PadValue": "           ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_protons_CPS channels",
+        "FIELDNAM": "TOF_protons_CPS_names",
+        "FORMAT": "a11",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_P_0_CPS",
+        "TOF_P_1_CPS",
+        "TOF_P_2_CPS"
+      ]
+    },
+    "TOF_protons_INTEN_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 13,
+        "NumWrittenRecords": 1,
+        "PadValue": "             ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_protons_INTEN channels",
+        "FIELDNAM": "TOF_protons_INTEN_names",
+        "FORMAT": "a13",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_P_0_INTEN",
+        "TOF_P_1_INTEN",
+        "TOF_P_2_INTEN"
+      ]
+    },
+    "TOF_protons_Edrift": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Actual TOF_protons channel midpoint energies at the middle of this day",
+        "DEPEND_0": "Epoch_1",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_protons_Edrift",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "TOF_protons_Edrift",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_protons_Edrift"
+      }
+    },
+    "TOF_protons_Edrift_dlo": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from lower to mid energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_protons_Edrift_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "TOF_protons_Edrift_dlo",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_protons_Edrift_dlo"
+      }
+    },
+    "TOF_protons_Edrift_dhi": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from mid to upper energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_protons_Edrift_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "TOF_protons_Edrift_dhi",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_protons_Edrift_dhi"
+      }
+    },
+    "TOF_helium_COUNTS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_helium: counts per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "DELTA_MINUS_VAR": "TOF_helium_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_helium_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_helium_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_helium_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_helium: counts per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_helium",
+        "LABL_PTR_1": "TOF_helium_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "TOF_helium",
+        "x_LABLAXES": [
+          [
+            "TOF_HE_0_COUNTS",
+            "TOF_HE_1_COUNTS",
+            "TOF_HE_2_COUNTS",
+            "TOF_HE_3_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_helium_E"
+        ]
+      }
+    },
+    "TOF_helium_CPS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_helium: counts per second per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "TOF_helium_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_helium_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_helium_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_helium_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_helium: counts per second per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_helium",
+        "LABL_PTR_1": "TOF_helium_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "TOF_helium",
+        "x_LABLAXES": [
+          [
+            "TOF_HE_0_CPS",
+            "TOF_HE_1_CPS",
+            "TOF_HE_2_CPS",
+            "TOF_HE_3_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_helium_E"
+        ]
+      }
+    },
+    "TOF_helium_INTEN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_helium: differential intensity per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "TOF_helium_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_helium_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_helium_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_helium_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_helium: differential intensity per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_helium_DiffInt",
+        "LABL_PTR_1": "TOF_helium_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "TOF_helium_DiffInt",
+        "x_LABLAXES": [
+          [
+            "TOF_HE_0_INTEN",
+            "TOF_HE_1_INTEN",
+            "TOF_HE_2_INTEN",
+            "TOF_HE_3_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_helium_E"
+        ]
+      }
+    },
+    "TOF_helium_COUNTS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_helium: counts per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "COMPONENT_0": "TOF_helium_COUNTS",
+        "DELTA_MINUS_VAR": "TOF_helium_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_helium_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_helium_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_helium_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_helium: counts per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_helium",
+        "LABL_PTR_1": "TOF_helium_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "TOF_helium",
+        "x_LABLAXES": [
+          [
+            "TOF_HE_0_COUNTS",
+            "TOF_HE_1_COUNTS",
+            "TOF_HE_2_COUNTS",
+            "TOF_HE_3_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_helium_E"
+        ],
+        "COMPONENTS": [
+          "TOF_helium_COUNTS"
+        ]
+      }
+    },
+    "TOF_helium_CPS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_helium: counts per second per sector (stack_plot)",
+        "COMPONENT_0": "TOF_helium_CPS",
+        "DELTA_MINUS_VAR": "TOF_helium_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_helium_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_helium_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_helium_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_helium: counts per second per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_helium",
+        "LABL_PTR_1": "TOF_helium_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "TOF_helium",
+        "x_LABLAXES": [
+          [
+            "TOF_HE_0_CPS",
+            "TOF_HE_1_CPS",
+            "TOF_HE_2_CPS",
+            "TOF_HE_3_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_helium_E"
+        ],
+        "COMPONENTS": [
+          "TOF_helium_CPS"
+        ]
+      }
+    },
+    "TOF_helium_INTEN_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_helium: differential intensity per sector (stack_plot)",
+        "COMPONENT_0": "TOF_helium_INTEN",
+        "DELTA_MINUS_VAR": "TOF_helium_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_helium_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_helium_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_helium_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_helium: differential intensity per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_helium_DiffInt",
+        "LABL_PTR_1": "TOF_helium_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "TOF_helium_DiffInt",
+        "x_LABLAXES": [
+          [
+            "TOF_HE_0_INTEN",
+            "TOF_HE_1_INTEN",
+            "TOF_HE_2_INTEN",
+            "TOF_HE_3_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_helium_E"
+        ],
+        "COMPONENTS": [
+          "TOF_helium_INTEN"
+        ]
+      }
+    },
+    "TOF_helium_COUNTS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 15,
+        "NumWrittenRecords": 1,
+        "PadValue": "               ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_helium_COUNTS channels",
+        "FIELDNAM": "TOF_helium_COUNTS_names",
+        "FORMAT": "a15",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_HE_0_COUNTS",
+        "TOF_HE_1_COUNTS",
+        "TOF_HE_2_COUNTS",
+        "TOF_HE_3_COUNTS"
+      ]
+    },
+    "TOF_helium_E": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "channel names",
+        "FIELDNAM": "TOF_helium_E",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Energy",
+        "SCALEMAX": 4000.0,
+        "SCALEMIN": 72.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 4000.0,
+        "VALIDMIN": 72.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        131.45,
+        403.98,
+        1136.66,
+        2756.81
+      ]
+    },
+    "TOF_helium_E_dlo": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_helium_E_dlo",
+        "FIELDNAM": "TOF_helium_E_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "TOF_helium_E_dlo",
+        "SCALEMAX": 4000.0,
+        "SCALEMIN": 72.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 4000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_helium_E_dlo"
+      },
+      "VarData": [
+        59.45,
+        163.98,
+        456.66,
+        856.81
+      ]
+    },
+    "TOF_helium_E_dhi": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_helium_E_dhi",
+        "FIELDNAM": "TOF_helium_E_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "TOF_helium_E_dhi",
+        "SCALEMAX": 4000.0,
+        "SCALEMIN": 72.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 4000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_helium_E_dhi"
+      },
+      "VarData": [
+        108.55,
+        276.02,
+        763.34,
+        1243.19
+      ]
+    },
+    "TOF_helium_CPS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": "            ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_helium_CPS channels",
+        "FIELDNAM": "TOF_helium_CPS_names",
+        "FORMAT": "a12",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_HE_0_CPS",
+        "TOF_HE_1_CPS",
+        "TOF_HE_2_CPS",
+        "TOF_HE_3_CPS"
+      ]
+    },
+    "TOF_helium_INTEN_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": "              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_helium_INTEN channels",
+        "FIELDNAM": "TOF_helium_INTEN_names",
+        "FORMAT": "a14",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_HE_0_INTEN",
+        "TOF_HE_1_INTEN",
+        "TOF_HE_2_INTEN",
+        "TOF_HE_3_INTEN"
+      ]
+    },
+    "TOF_helium_Edrift": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Actual TOF_helium channel midpoint energies at the middle of this day",
+        "DEPEND_0": "Epoch_1",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_helium_Edrift",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "TOF_helium_Edrift",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_helium_Edrift"
+      }
+    },
+    "TOF_helium_Edrift_dlo": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from lower to mid energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_helium_Edrift_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "TOF_helium_Edrift_dlo",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_helium_Edrift_dlo"
+      }
+    },
+    "TOF_helium_Edrift_dhi": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from mid to upper energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_helium_Edrift_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "TOF_helium_Edrift_dhi",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_helium_Edrift_dhi"
+      }
+    },
+    "TOF_oxygen_COUNTS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_oxygen: counts per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "DELTA_MINUS_VAR": "TOF_oxygen_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_oxygen_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_oxygen_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_oxygen_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_oxygen: counts per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_oxygen",
+        "LABL_PTR_1": "TOF_oxygen_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "TOF_oxygen",
+        "x_LABLAXES": [
+          [
+            "TOF_OX_0_COUNTS",
+            "TOF_OX_1_COUNTS",
+            "TOF_OX_2_COUNTS",
+            "TOF_OX_3_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_oxygen_E"
+        ]
+      }
+    },
+    "TOF_oxygen_CPS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_oxygen: counts per second per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "TOF_oxygen_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_oxygen_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_oxygen_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_oxygen_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_oxygen: counts per second per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1  midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_oxygen",
+        "LABL_PTR_1": "TOF_oxygen_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "TOF_oxygen",
+        "x_LABLAXES": [
+          [
+            "TOF_OX_0_CPS",
+            "TOF_OX_1_CPS",
+            "TOF_OX_2_CPS",
+            "TOF_OX_3_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_oxygen_E"
+        ]
+      }
+    },
+    "TOF_oxygen_INTEN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_oxygen: differential intensity per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "TOF_oxygen_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_oxygen_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_oxygen_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_oxygen_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_oxygen: differential intensity per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1  midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_oxygen_DiffInt",
+        "LABL_PTR_1": "TOF_oxygen_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "TOF_oxygen_DiffInt",
+        "x_LABLAXES": [
+          [
+            "TOF_OX_0_INTEN",
+            "TOF_OX_1_INTEN",
+            "TOF_OX_2_INTEN",
+            "TOF_OX_3_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_oxygen_E"
+        ]
+      }
+    },
+    "TOF_oxygen_COUNTS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_oxygen: counts per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "COMPONENT_0": "TOF_oxygen_COUNTS",
+        "DELTA_MINUS_VAR": "TOF_oxygen_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_oxygen_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_oxygen_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_oxygen_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_oxygen: counts per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_oxygen",
+        "LABL_PTR_1": "TOF_oxygen_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "TOF_oxygen",
+        "x_LABLAXES": [
+          [
+            "TOF_OX_0_COUNTS",
+            "TOF_OX_1_COUNTS",
+            "TOF_OX_2_COUNTS",
+            "TOF_OX_3_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_oxygen_E"
+        ],
+        "COMPONENTS": [
+          "TOF_oxygen_COUNTS"
+        ]
+      }
+    },
+    "TOF_oxygen_CPS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_oxygen: counts per second per sector (stack_plot)",
+        "COMPONENT_0": "TOF_oxygen_CPS",
+        "DELTA_MINUS_VAR": "TOF_oxygen_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_oxygen_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_oxygen_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_oxygen_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_oxygen: counts per second per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1  midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_oxygen",
+        "LABL_PTR_1": "TOF_oxygen_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "TOF_oxygen",
+        "x_LABLAXES": [
+          [
+            "TOF_OX_0_CPS",
+            "TOF_OX_1_CPS",
+            "TOF_OX_2_CPS",
+            "TOF_OX_3_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_oxygen_E"
+        ],
+        "COMPONENTS": [
+          "TOF_oxygen_CPS"
+        ]
+      }
+    },
+    "TOF_oxygen_INTEN_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_oxygen: differential intensity per sector (stack_plot)",
+        "COMPONENT_0": "TOF_oxygen_INTEN",
+        "DELTA_MINUS_VAR": "TOF_oxygen_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_oxygen_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_oxygen_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_oxygen_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_oxygen: differential intensity per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1  midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_oxygen_DiffInt",
+        "LABL_PTR_1": "TOF_oxygen_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "TOF_oxygen_DiffInt",
+        "x_LABLAXES": [
+          [
+            "TOF_OX_0_INTEN",
+            "TOF_OX_1_INTEN",
+            "TOF_OX_2_INTEN",
+            "TOF_OX_3_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_oxygen_E"
+        ],
+        "COMPONENTS": [
+          "TOF_oxygen_INTEN"
+        ]
+      }
+    },
+    "TOF_oxygen_COUNTS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 15,
+        "NumWrittenRecords": 1,
+        "PadValue": "               ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_oxygen_COUNTS channels",
+        "FIELDNAM": "TOF_oxygen_COUNTS_names",
+        "FORMAT": "a15",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_OX_0_COUNTS",
+        "TOF_OX_1_COUNTS",
+        "TOF_OX_2_COUNTS",
+        "TOF_OX_3_COUNTS"
+      ]
+    },
+    "TOF_oxygen_E": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "channel names",
+        "FIELDNAM": "TOF_oxygen_E",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Energy",
+        "SCALEMAX": 5000.0,
+        "SCALEMIN": 137.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 5000.0,
+        "VALIDMIN": 137.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        223.62,
+        576.33,
+        1453.0,
+        3405.88
+      ]
+    },
+    "TOF_oxygen_E_dlo": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_oxygen_E_dlo",
+        "FIELDNAM": "TOF_oxygen_E_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "TOF_oxygen_E_dlo",
+        "SCALEMAX": 5000.0,
+        "SCALEMIN": 137.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 5000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_oxygen_E_dlo"
+      },
+      "VarData": [
+        86.62,
+        211.32,
+        543.0,
+        1085.88
+      ]
+    },
+    "TOF_oxygen_E_dhi": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_oxygen_E_dhi",
+        "FIELDNAM": "TOF_oxygen_E_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "TOF_oxygen_E_dhi",
+        "SCALEMAX": 5000.0,
+        "SCALEMIN": 137.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 5000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_oxygen_E_dhi"
+      },
+      "VarData": [
+        141.38,
+        333.67,
+        867.0,
+        1594.12
+      ]
+    },
+    "TOF_oxygen_CPS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": "            ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_oxygen_CPS channels",
+        "FIELDNAM": "TOF_oxygen_CPS_names",
+        "FORMAT": "a12",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_OX_0_CPS",
+        "TOF_OX_1_CPS",
+        "TOF_OX_2_CPS",
+        "TOF_OX_3_CPS"
+      ]
+    },
+    "TOF_oxygen_INTEN_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": "              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_oxygen_INTEN channels",
+        "FIELDNAM": "TOF_oxygen_INTEN_names",
+        "FORMAT": "a14",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_OX_0_INTEN",
+        "TOF_OX_1_INTEN",
+        "TOF_OX_2_INTEN",
+        "TOF_OX_3_INTEN"
+      ]
+    },
+    "TOF_oxygen_Edrift": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Actual TOF_oxygen channel midpoint energies at the middle of this day",
+        "DEPEND_0": "Epoch_1",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_oxygen_Edrift",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "TOF_oxygen_Edrift",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_oxygen_Edrift"
+      }
+    },
+    "TOF_oxygen_Edrift_dlo": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from lower to mid energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_oxygen_Edrift_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "TOF_oxygen_Edrift_dlo",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_oxygen_Edrift_dlo"
+      }
+    },
+    "TOF_oxygen_Edrift_dhi": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from mid to upper energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_oxygen_Edrift_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "TOF_oxygen_Edrift_dhi",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_oxygen_Edrift_dhi"
+      }
+    },
+    "TOF_iron_COUNTS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_iron: counts per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "DELTA_MINUS_VAR": "TOF_iron_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_iron_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_iron_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_iron_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_iron: counts per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_iron",
+        "LABL_PTR_1": "TOF_iron_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "TOF_iron",
+        "x_LABLAXES": [
+          [
+            "TOF_FE_0_COUNTS",
+            "TOF_FE_1_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_iron_E"
+        ]
+      }
+    },
+    "TOF_iron_CPS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_iron: counts per second per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "TOF_iron_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_iron_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_iron_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_iron_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_iron: counts per second per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_iron",
+        "LABL_PTR_1": "TOF_iron_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "TOF_iron",
+        "x_LABLAXES": [
+          [
+            "TOF_FE_0_CPS",
+            "TOF_FE_1_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_iron_E"
+        ]
+      }
+    },
+    "TOF_iron_INTEN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_iron: differential intensity per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "TOF_iron_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_iron_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_iron_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_iron_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_iron: differential intensity per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_iron_DiffInt",
+        "LABL_PTR_1": "TOF_iron_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "TOF_iron_DiffInt",
+        "x_LABLAXES": [
+          [
+            "TOF_FE_0_INTEN",
+            "TOF_FE_1_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_iron_E"
+        ]
+      }
+    },
+    "TOF_iron_COUNTS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_iron: counts per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "COMPONENT_0": "TOF_iron_COUNTS",
+        "DELTA_MINUS_VAR": "TOF_iron_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_iron_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_iron_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_iron_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_iron: counts per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_iron",
+        "LABL_PTR_1": "TOF_iron_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "TOF_iron",
+        "x_LABLAXES": [
+          [
+            "TOF_FE_0_COUNTS",
+            "TOF_FE_1_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_iron_E"
+        ],
+        "COMPONENTS": [
+          "TOF_iron_COUNTS"
+        ]
+      }
+    },
+    "TOF_iron_CPS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_iron: counts per second per sector (stack_plot)",
+        "COMPONENT_0": "TOF_iron_CPS",
+        "DELTA_MINUS_VAR": "TOF_iron_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_iron_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_iron_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_iron_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_iron: counts per second per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_iron",
+        "LABL_PTR_1": "TOF_iron_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "TOF_iron",
+        "x_LABLAXES": [
+          [
+            "TOF_FE_0_CPS",
+            "TOF_FE_1_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_iron_E"
+        ],
+        "COMPONENTS": [
+          "TOF_iron_CPS"
+        ]
+      }
+    },
+    "TOF_iron_INTEN_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_iron: differential intensity per sector (stack_plot)",
+        "COMPONENT_0": "TOF_iron_INTEN",
+        "DELTA_MINUS_VAR": "TOF_iron_E_dlo",
+        "DELTA_PLUS_VAR": "TOF_iron_E_dhi",
+        "DEPEND_0": "Epoch_1",
+        "DEPEND_1": "TOF_iron_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_iron_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_iron: differential intensity per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_iron_DiffInt",
+        "LABL_PTR_1": "TOF_iron_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "TOF_iron_DiffInt",
+        "x_LABLAXES": [
+          [
+            "TOF_FE_0_INTEN",
+            "TOF_FE_1_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_iron_E"
+        ],
+        "COMPONENTS": [
+          "TOF_iron_INTEN"
+        ]
+      }
+    },
+    "TOF_iron_COUNTS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 15,
+        "NumWrittenRecords": 1,
+        "PadValue": "               ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_iron_COUNTS channels",
+        "FIELDNAM": "TOF_iron_COUNTS_names",
+        "FORMAT": "a15",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_FE_0_COUNTS",
+        "TOF_FE_1_COUNTS"
+      ]
+    },
+    "TOF_iron_E": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "channel names",
+        "FIELDNAM": "TOF_iron_E",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Energy",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": 900.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 2000.0,
+        "VALIDMIN": 900.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        1098.18,
+        1637.07
+      ]
+    },
+    "TOF_iron_E_dlo": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_iron_E_dlo",
+        "FIELDNAM": "TOF_iron_E_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "TOF_iron_E_dlo",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": 900.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 2000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_iron_E_dlo"
+      },
+      "VarData": [
+        198.18,
+        297.07
+      ]
+    },
+    "TOF_iron_E_dhi": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_iron_E_dhi",
+        "FIELDNAM": "TOF_iron_E_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "TOF_iron_E_dhi",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": 900.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 2000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_iron_E_dhi"
+      },
+      "VarData": [
+        241.82,
+        362.93
+      ]
+    },
+    "TOF_iron_CPS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": "            ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_iron_CPS channels",
+        "FIELDNAM": "TOF_iron_CPS_names",
+        "FORMAT": "a12",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_FE_0_CPS",
+        "TOF_FE_1_CPS"
+      ]
+    },
+    "TOF_iron_INTEN_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": "              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_iron_INTEN channels",
+        "FIELDNAM": "TOF_iron_INTEN_names",
+        "FORMAT": "a14",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_FE_0_INTEN",
+        "TOF_FE_1_INTEN"
+      ]
+    },
+    "TOF_iron_Edrift": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Actual TOF_iron channel midpoint energies at the middle of this day",
+        "DEPEND_0": "Epoch_1",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_iron_Edrift",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "TOF_iron_Edrift",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_iron_Edrift"
+      }
+    },
+    "TOF_iron_Edrift_dlo": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from lower to mid energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_iron_Edrift_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "TOF_iron_Edrift_dlo",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_iron_Edrift_dlo"
+      }
+    },
+    "TOF_iron_Edrift_dhi": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from mid to upper energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_iron_Edrift_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "TOF_iron_Edrift_dhi",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_iron_Edrift_dhi"
+      }
+    },
+    "Epoch_2": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Epoch_2",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Epoch_2",
+        "FILLVAL": "2000-01-01T00:00:00.000000000",
+        "LABLAXIS": "time",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1989-01-10T23:58:59.545296132",
+        "SCALEMIN": "1989-01-10T16:58:57.090849757",
+        "UNITS": "nanoseconds since J2000",
+        "VALIDMAX": "1989-01-10T23:58:59.545296132",
+        "VALIDMIN": "1989-01-10T16:58:57.090849757",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nanoseconds since J2000",
+        "x_LABLAXIS": "time"
+      }
+    },
+    "SpinPeriod_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SpinPeriod_2",
+        "DEPEND_0": "Epoch_2",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SpinPeriod_2",
+        "FILLVAL": -1.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "SpinPeriod_2",
+        "SCALEMAX": 20.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "seconds",
+        "VALIDMAX": 20.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "seconds",
+        "x_LABLAXIS": "SpinPeriod_2"
+      }
+    },
+    "Sector_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SECTOR_2",
+        "DEPEND_0": "Epoch_2",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Sector_2",
+        "FILLVAL": -1.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "Sector_2",
+        "SCALEMAX": 31.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "sector",
+        "VALIDMAX": 31.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "sector",
+        "x_LABLAXIS": "Sector_2"
+      }
+    },
+    "Gain_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Gain_2",
+        "DEPEND_0": "Epoch_2",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Gain_2",
+        "FILLVAL": -1.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "Gain_2",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "unitless",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "unitless",
+        "x_LABLAXIS": "Gain_2"
+      }
+    },
+    "TOF_all_ions_COUNTS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_all_ions: counts per sector (spectrogram) with each sector being a sum from 4 spins; TOF records only; the time given is the SECTOR_2 midpoint in spin 2 out of 0,1,2,3",
+        "DELTA_MINUS_VAR": "TOF_all_ions_T_dlo",
+        "DELTA_PLUS_VAR": "TOF_all_ions_T_dhi",
+        "DEPEND_0": "Epoch_2",
+        "DEPEND_1": "TOF_all_ions_T",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_all_ions_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_all_ions: counts per sector (spectrogram) with each sector being a sum from 4 spins; TOF records only; the time given is the SECTOR_2 midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_all_ions",
+        "LABL_PTR_1": "TOF_all_ions_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "TOF_all_ions",
+        "x_LABLAXES": [
+          [
+            "TOF_1_COUNTS",
+            "TOF_2_COUNTS",
+            "TOF_3_COUNTS",
+            "TOF_4_COUNTS",
+            "TOF_5_COUNTS",
+            "TOF_6_COUNTS",
+            "TOF_7_COUNTS",
+            "TOF_8_COUNTS",
+            "TOF_9_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_all_ions_T"
+        ]
+      }
+    },
+    "TOF_all_ions_CPS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_all_ions: counts per second per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "TOF_all_ions_T_dlo",
+        "DELTA_PLUS_VAR": "TOF_all_ions_T_dhi",
+        "DEPEND_0": "Epoch_2",
+        "DEPEND_1": "TOF_all_ions_T",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_all_ions_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_all_ions: counts per second per sector (spectrogram) with each sector being a sum from 4 spins; TOF records only; the time given is the SECTOR_2 midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_all_ions",
+        "LABL_PTR_1": "TOF_all_ions_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "TOF_all_ions",
+        "x_LABLAXES": [
+          [
+            "TOF_1_CPS",
+            "TOF_2_CPS",
+            "TOF_3_CPS",
+            "TOF_4_CPS",
+            "TOF_5_CPS",
+            "TOF_6_CPS",
+            "TOF_7_CPS",
+            "TOF_8_CPS",
+            "TOF_9_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_all_ions_T"
+        ]
+      }
+    },
+    "TOF_all_ions_INTEN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_all_ions: differential intensity per sector (spectrogram)",
+        "DELTA_MINUS_VAR": "TOF_all_ions_T_dlo",
+        "DELTA_PLUS_VAR": "TOF_all_ions_T_dhi",
+        "DEPEND_0": "Epoch_2",
+        "DEPEND_1": "TOF_all_ions_T",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TOF_all_ions_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_all_ions: differential intensity per sector (spectrogram) with each sector being a sum from 4 spins; TOF records only; the time given is the SECTOR_2 midpoint in spin 2 out of 0,1,2,3",
+        "LABLAXIS": "TOF_all_ions_DiffInt",
+        "LABL_PTR_1": "TOF_all_ions_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "TOF_all_ions_DiffInt",
+        "x_LABLAXES": [
+          [
+            "TOF_1_INTEN",
+            "TOF_2_INTEN",
+            "TOF_3_INTEN",
+            "TOF_4_INTEN",
+            "TOF_5_INTEN",
+            "TOF_6_INTEN",
+            "TOF_7_INTEN",
+            "TOF_8_INTEN",
+            "TOF_9_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_all_ions_T"
+        ]
+      }
+    },
+    "TOF_all_ions_COUNTS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_all_ions: counts per sector (stack_plot) with each sector being a sum from 4 spins; TOF records only; the time given is the SECTOR_2 midpoint in spin 2 out of 0,1,2,3",
+        "COMPONENT_0": "TOF_all_ions_COUNTS",
+        "DELTA_MINUS_VAR": "TOF_all_ions_T_dlo",
+        "DELTA_PLUS_VAR": "TOF_all_ions_T_dhi",
+        "DEPEND_0": "Epoch_2",
+        "DEPEND_1": "TOF_all_ions_T",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_all_ions_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_all_ions: counts per sector (stack_plot) with each sector being a sum from 4 spins; TOF records only; the time given is the SECTOR_2 midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_all_ions",
+        "LABL_PTR_1": "TOF_all_ions_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "TOF_all_ions",
+        "x_LABLAXES": [
+          [
+            "TOF_1_COUNTS",
+            "TOF_2_COUNTS",
+            "TOF_3_COUNTS",
+            "TOF_4_COUNTS",
+            "TOF_5_COUNTS",
+            "TOF_6_COUNTS",
+            "TOF_7_COUNTS",
+            "TOF_8_COUNTS",
+            "TOF_9_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_all_ions_T"
+        ],
+        "COMPONENTS": [
+          "TOF_all_ions_COUNTS"
+        ]
+      }
+    },
+    "TOF_all_ions_CPS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_all_ions: counts per second per sector (stack_plot)",
+        "COMPONENT_0": "TOF_all_ions_CPS",
+        "DELTA_MINUS_VAR": "TOF_all_ions_T_dlo",
+        "DELTA_PLUS_VAR": "TOF_all_ions_T_dhi",
+        "DEPEND_0": "Epoch_2",
+        "DEPEND_1": "TOF_all_ions_T",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_all_ions_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_all_ions: counts per second per sector (stack_plot) with each sector being a sum from 4 spins; TOF records only; the time given is the SECTOR_2 midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_all_ions",
+        "LABL_PTR_1": "TOF_all_ions_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "TOF_all_ions",
+        "x_LABLAXES": [
+          [
+            "TOF_1_CPS",
+            "TOF_2_CPS",
+            "TOF_3_CPS",
+            "TOF_4_CPS",
+            "TOF_5_CPS",
+            "TOF_6_CPS",
+            "TOF_7_CPS",
+            "TOF_8_CPS",
+            "TOF_9_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_all_ions_T"
+        ],
+        "COMPONENTS": [
+          "TOF_all_ions_CPS"
+        ]
+      }
+    },
+    "TOF_all_ions_INTEN_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> TOF_all_ions: differential intensity per sector (stack_plot)",
+        "COMPONENT_0": "TOF_all_ions_INTEN",
+        "DELTA_MINUS_VAR": "TOF_all_ions_T_dlo",
+        "DELTA_PLUS_VAR": "TOF_all_ions_T_dhi",
+        "DEPEND_0": "Epoch_2",
+        "DEPEND_1": "TOF_all_ions_T",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "TOF_all_ions_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "TOF_all_ions: differential intensity per sector (stack_plot) with each sector being a sum from 4 spins; TOF records only; the time given is the SECTOR_2 midpoint in spin 2 out of 0,1,2,3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "TOF_all_ions_DiffInt",
+        "LABL_PTR_1": "TOF_all_ions_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "TOF_all_ions_DiffInt",
+        "x_LABLAXES": [
+          [
+            "TOF_1_INTEN",
+            "TOF_2_INTEN",
+            "TOF_3_INTEN",
+            "TOF_4_INTEN",
+            "TOF_5_INTEN",
+            "TOF_6_INTEN",
+            "TOF_7_INTEN",
+            "TOF_8_INTEN",
+            "TOF_9_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "TOF_all_ions_T"
+        ],
+        "COMPONENTS": [
+          "TOF_all_ions_INTEN"
+        ]
+      }
+    },
+    "TOF_all_ions_COUNTS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": "            ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_all_ions_COUNTS channels",
+        "FIELDNAM": "TOF_all_ions_COUNTS_names",
+        "FORMAT": "a12",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_1_COUNTS",
+        "TOF_2_COUNTS",
+        "TOF_3_COUNTS",
+        "TOF_4_COUNTS",
+        "TOF_5_COUNTS",
+        "TOF_6_COUNTS",
+        "TOF_7_COUNTS",
+        "TOF_8_COUNTS",
+        "TOF_9_COUNTS"
+      ]
+    },
+    "TOF_all_ions_T": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "channel names",
+        "FIELDNAM": "TOF_all_ions_T",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Energy",
+        "SCALEMAX": 6000.0,
+        "SCALEMIN": 50.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 6000.0,
+        "VALIDMIN": 50.0,
+        "VAR_NOTES": "REM changed name/units from time to energy",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        56.57,
+        80.8,
+        133.22,
+        230.37,
+        413.28,
+        748.33,
+        1352.77,
+        2095.71,
+        3794.73
+      ]
+    },
+    "TOF_all_ions_T_dlo": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_all_ions_T_dlo",
+        "FIELDNAM": "TOF_all_ions_T_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "TOF_all_ions_T_dlo",
+        "SCALEMAX": 6000.0,
+        "SCALEMIN": 50.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 6000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "REM changed name/units from time to energy",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_all_ions_T_dlo"
+      },
+      "VarData": [
+        6.57,
+        16.8,
+        31.22,
+        56.37,
+        108.28,
+        188.33,
+        352.77,
+        265.71,
+        1394.73
+      ]
+    },
+    "TOF_all_ions_T_dhi": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF_all_ions_T_dhi",
+        "FIELDNAM": "TOF_all_ions_T_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "TOF_all_ions_T_dhi",
+        "SCALEMAX": 6000.0,
+        "SCALEMIN": 50.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 6000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "REM changed name/units from time to energy",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "TOF_all_ions_T_dhi"
+      },
+      "VarData": [
+        7.43,
+        21.2,
+        40.78,
+        74.63,
+        146.72,
+        251.67,
+        477.23,
+        304.29,
+        2205.27
+      ]
+    },
+    "TOF_all_ions_CPS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 9,
+        "NumWrittenRecords": 1,
+        "PadValue": "         ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_all_ions_CPS channels",
+        "FIELDNAM": "TOF_all_ions_CPS_names",
+        "FORMAT": "a9",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_1_CPS",
+        "TOF_2_CPS",
+        "TOF_3_CPS",
+        "TOF_4_CPS",
+        "TOF_5_CPS",
+        "TOF_6_CPS",
+        "TOF_7_CPS",
+        "TOF_8_CPS",
+        "TOF_9_CPS"
+      ]
+    },
+    "TOF_all_ions_INTEN_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 11,
+        "NumWrittenRecords": 1,
+        "PadValue": "           ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the TOF_all_ions_INTEN channels",
+        "FIELDNAM": "TOF_all_ions_INTEN_names",
+        "FORMAT": "a11",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "TOF_1_INTEN",
+        "TOF_2_INTEN",
+        "TOF_3_INTEN",
+        "TOF_4_INTEN",
+        "TOF_5_INTEN",
+        "TOF_6_INTEN",
+        "TOF_7_INTEN",
+        "TOF_8_INTEN",
+        "TOF_9_INTEN"
+      ]
+    },
+    "Epoch_3": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Epoch_3",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Epoch_3",
+        "FILLVAL": "2000-01-01T00:00:00.000000000",
+        "LABLAXIS": "time",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1989-01-11T00:00:14.855585277",
+        "SCALEMIN": "1989-01-10T19:01:12.605099976",
+        "UNITS": "nanoseconds since J2000",
+        "VALIDMAX": "1989-01-11T00:00:14.855585277",
+        "VALIDMIN": "1989-01-10T19:01:12.605099976",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nanoseconds since J2000",
+        "x_LABLAXIS": "time"
+      }
+    },
+    "SpinPeriod_3": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SpinPeriod_3",
+        "DEPEND_0": "Epoch_3",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "SpinPeriod_3",
+        "FILLVAL": -1.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "SpinPeriod_3",
+        "SCALEMAX": 20.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "seconds",
+        "VALIDMAX": 20.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "seconds",
+        "x_LABLAXIS": "SpinPeriod_3"
+      }
+    },
+    "Sector_3": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SECTOR_3",
+        "DEPEND_0": "Epoch_3",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Sector_3",
+        "FILLVAL": -1.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "Sector_3",
+        "SCALEMAX": 31.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "sector",
+        "VALIDMAX": 31.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "sector",
+        "x_LABLAXIS": "Sector_3"
+      }
+    },
+    "Gain_3": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Gain_3",
+        "DEPEND_0": "Epoch_3",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Gain_3",
+        "FILLVAL": -1.0,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "Gain_3",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "unitless",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "unitless",
+        "x_LABLAXIS": "Gain_3"
+      }
+    },
+    "HIRES_ION_protons_COUNTS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "HIRES_ION_protons: counts for every sector in every spin (spectrogram); ION records only; the time given is the midpoint of SECTOR_3",
+        "DELTA_MINUS_VAR": "HIRES_ION_protons_E_dlo",
+        "DELTA_PLUS_VAR": "HIRES_ION_protons_E_dhi",
+        "DEPEND_0": "Epoch_3",
+        "DEPEND_1": "HIRES_ION_protons_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "HIRES_ION_protons_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "HIRES_ION_protons: counts for every sector in every spin (spectrogram); ION records only; the time given is the midpoint of SECTOR_3",
+        "LABLAXIS": "HIRES_ION_protons",
+        "LABL_PTR_1": "HIRES_ION_protons_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "HIRES_ION_protons",
+        "x_LABLAXES": [
+          [
+            "HIRES_ION_0_P_COUNTS",
+            "HIRES_ION_2_P_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "HIRES_ION_protons_E"
+        ]
+      }
+    },
+    "HIRES_ION_protons_CPS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> HIRES_ION_protons: counts per second for every sector in every spin (spectrogram)",
+        "DELTA_MINUS_VAR": "HIRES_ION_protons_E_dlo",
+        "DELTA_PLUS_VAR": "HIRES_ION_protons_E_dhi",
+        "DEPEND_0": "Epoch_3",
+        "DEPEND_1": "HIRES_ION_protons_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "HIRES_ION_protons_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "HIRES_ION_protons: counts per second for every sector in every spin (spectrogram); ION records only; the time given is the midpoint of SECTOR_3",
+        "LABLAXIS": "HIRES_ION_protons",
+        "LABL_PTR_1": "HIRES_ION_protons_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "HIRES_ION_protons",
+        "x_LABLAXES": [
+          [
+            "HIRES_ION_0_P_CPS",
+            "HIRES_ION_2_P_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "HIRES_ION_protons_E"
+        ]
+      }
+    },
+    "HIRES_ION_protons_INTEN": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> HIRES_ION_protons: differential intensity for every sector in every spin (spectrogram)",
+        "DELTA_MINUS_VAR": "HIRES_ION_protons_E_dlo",
+        "DELTA_PLUS_VAR": "HIRES_ION_protons_E_dhi",
+        "DEPEND_0": "Epoch_3",
+        "DEPEND_1": "HIRES_ION_protons_E",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "HIRES_ION_protons_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "HIRES_ION_protons: differential intensity for every sector in every spin (spectrogram); ION records only; the time given is the midpoint of SECTOR_3",
+        "LABLAXIS": "HIRES_ION_protons_DiffInt",
+        "LABL_PTR_1": "HIRES_ION_protons_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "HIRES_ION_protons_DiffInt",
+        "x_LABLAXES": [
+          [
+            "HIRES_ION_0_P_INTEN",
+            "HIRES_ION_2_P_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "HIRES_ION_protons_E"
+        ]
+      }
+    },
+    "HIRES_ION_protons_COUNTS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "HIRES_ION_protons: counts for every sector in every spin (stack_plot); ION records only; the time given is the midpoint of SECTOR_3",
+        "COMPONENT_0": "HIRES_ION_protons_COUNTS",
+        "DELTA_MINUS_VAR": "HIRES_ION_protons_E_dlo",
+        "DELTA_PLUS_VAR": "HIRES_ION_protons_E_dhi",
+        "DEPEND_0": "Epoch_3",
+        "DEPEND_1": "HIRES_ION_protons_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "HIRES_ION_protons_COUNTS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "HIRES_ION_protons: counts for every sector in every spin (stack_plot); ION records only; the time given is the midpoint of SECTOR_3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "HIRES_ION_protons",
+        "LABL_PTR_1": "HIRES_ION_protons_COUNTS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts",
+        "x_LABLAXIS": "HIRES_ION_protons",
+        "x_LABLAXES": [
+          [
+            "HIRES_ION_0_P_COUNTS",
+            "HIRES_ION_2_P_COUNTS"
+          ]
+        ],
+        "x_DEPEND": [
+          "HIRES_ION_protons_E"
+        ],
+        "COMPONENTS": [
+          "HIRES_ION_protons_COUNTS"
+        ]
+      }
+    },
+    "HIRES_ION_protons_CPS_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> HIRES_ION_protons: counts per second for every sector in every spin (stack_plot)",
+        "COMPONENT_0": "HIRES_ION_protons_CPS",
+        "DELTA_MINUS_VAR": "HIRES_ION_protons_E_dlo",
+        "DELTA_PLUS_VAR": "HIRES_ION_protons_E_dhi",
+        "DEPEND_0": "Epoch_3",
+        "DEPEND_1": "HIRES_ION_protons_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "HIRES_ION_protons_CPS",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "HIRES_ION_protons: counts per second for every sector in every spin (stack_plot); ION records only; the time given is the midpoint of SECTOR_3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "HIRES_ION_protons",
+        "LABL_PTR_1": "HIRES_ION_protons_CPS_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "counts/sec",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "counts/sec",
+        "x_LABLAXIS": "HIRES_ION_protons",
+        "x_LABLAXES": [
+          [
+            "HIRES_ION_0_P_CPS",
+            "HIRES_ION_2_P_CPS"
+          ]
+        ],
+        "x_DEPEND": [
+          "HIRES_ION_protons_E"
+        ],
+        "COMPONENTS": [
+          "HIRES_ION_protons_CPS"
+        ]
+      }
+    },
+    "HIRES_ION_protons_INTEN_stack": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> HIRES_ION_protons: differential intensity for every sector in every spin (stack_plot)",
+        "COMPONENT_0": "HIRES_ION_protons_INTEN",
+        "DELTA_MINUS_VAR": "HIRES_ION_protons_E_dlo",
+        "DELTA_PLUS_VAR": "HIRES_ION_protons_E_dhi",
+        "DEPEND_0": "Epoch_3",
+        "DEPEND_1": "HIRES_ION_protons_E",
+        "DISPLAY_TYPE": "default_dimensionNOBAR",
+        "FIELDNAM": "HIRES_ION_protons_DiffInt",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e13.5",
+        "FULL_CATDESC": "HIRES_ION_protons: differential intensity for every sector in every spin (stack_plot); ION records only; the time given is the midpoint of SECTOR_3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "HIRES_ION_protons_DiffInt",
+        "LABL_PTR_1": "HIRES_ION_protons_INTEN_names",
+        "SCALEMAX": 10000.0,
+        "SCALEMIN": 0.001,
+        "SCALETYP": "log",
+        "UNITS": "1/(sec ster cm^2 keV)",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "1/(sec ster cm^2 keV)",
+        "x_LABLAXIS": "HIRES_ION_protons_DiffInt",
+        "x_LABLAXES": [
+          [
+            "HIRES_ION_0_P_INTEN",
+            "HIRES_ION_2_P_INTEN"
+          ]
+        ],
+        "x_DEPEND": [
+          "HIRES_ION_protons_E"
+        ],
+        "COMPONENTS": [
+          "HIRES_ION_protons_INTEN"
+        ]
+      }
+    },
+    "HIRES_ION_protons_COUNTS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": "                    ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the HIRES_ION_protons_COUNTS channels",
+        "FIELDNAM": "HIRES_ION_protons_COUNTS_names",
+        "FORMAT": "a20",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "HIRES_ION_0_P_COUNTS",
+        "HIRES_ION_2_P_COUNTS"
+      ]
+    },
+    "HIRES_ION_protons_E": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "channel names",
+        "FIELDNAM": "HIRES_ION_protons_E",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "Energy",
+        "SCALEMAX": 83.0,
+        "SCALEMIN": 25.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 83.0,
+        "VALIDMIN": 25.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        29.15,
+        64.42
+      ]
+    },
+    "HIRES_ION_protons_E_dlo": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "HIRES_ION_protons_E_dlo",
+        "FIELDNAM": "HIRES_ION_protons_E_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "HIRES_ION_protons_E_dlo",
+        "SCALEMAX": 83.0,
+        "SCALEMIN": 25.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 83.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "HIRES_ION_protons_E_dlo"
+      },
+      "VarData": [
+        4.15,
+        14.42
+      ]
+    },
+    "HIRES_ION_protons_E_dhi": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "HIRES_ION_protons_E_dhi",
+        "FIELDNAM": "HIRES_ION_protons_E_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f8.2",
+        "LABLAXIS": "HIRES_ION_protons_E_dhi",
+        "SCALEMAX": 83.0,
+        "SCALEMIN": 25.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 83.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "HIRES_ION_protons_E_dhi"
+      },
+      "VarData": [
+        4.85,
+        18.58
+      ]
+    },
+    "HIRES_ION_protons_CPS_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 17,
+        "NumWrittenRecords": 1,
+        "PadValue": "                 ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the HIRES_ION_protons_CPS channels",
+        "FIELDNAM": "HIRES_ION_protons_CPS_names",
+        "FORMAT": "a17",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "HIRES_ION_0_P_CPS",
+        "HIRES_ION_2_P_CPS"
+      ]
+    },
+    "HIRES_ION_protons_INTEN_names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 19,
+        "NumWrittenRecords": 1,
+        "PadValue": "                   ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "names of the HIRES_ION_protons_INTEN channels",
+        "FIELDNAM": "HIRES_ION_protons_INTEN_names",
+        "FORMAT": "a19",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "HIRES_ION_0_P_INTEN",
+        "HIRES_ION_2_P_INTEN"
+      ]
+    },
+    "HIRES_ION_protons_Edrift": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Actual HIRES_ION_protons channel midpoint energies at the middle of this day",
+        "DEPEND_0": "Epoch_3",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "HIRES_ION_protons_Edrift",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "HIRES_ION_protons_Edrift",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "HIRES_ION_protons_Edrift"
+      }
+    },
+    "HIRES_ION_protons_Edrift_dlo": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from lower to mid energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "HIRES_ION_protons_Edrift_dlo",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "HIRES_ION_protons_Edrift_dlo",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "HIRES_ION_protons_Edrift_dlo"
+      }
+    },
+    "HIRES_ION_protons_Edrift_dhi": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "delta from mid to upper energy bound for actual channel energy range at the middle of the day for the channels in the corresponding spectrum",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "HIRES_ION_protons_Edrift_dhi",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "F6.1",
+        "LABLAXIS": "HIRES_ION_protons_Edrift_dhi",
+        "SCALEMAX": 7000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 7000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "HIRES_ION_protons_Edrift_dhi"
+      }
+    },
+    "Epoch_4": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Epoch_4",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Epoch_4",
+        "FILLVAL": "2000-01-01T00:00:00.000000000",
+        "LABLAXIS": "time",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1989-01-11T00:00:03.325644671",
+        "SCALEMIN": "1989-01-10T16:58:57.000062823",
+        "UNITS": "nanoseconds since J2000",
+        "VALIDMAX": "1989-01-11T00:00:03.325644671",
+        "VALIDMIN": "1989-01-10T16:58:57.000062823",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nanoseconds since J2000",
+        "x_LABLAXIS": "time"
+      }
+    },
+    "spin_axis_dirn_in_GSE": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spacecraft spin axis as a unit vector in GSE evaluated once per record",
+        "DEPEND_0": "Epoch_4",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "spin_axis_dirn_in_GSE",
+        "FILLVAL": -9.999999680285692e+37,
+        "FORMAT": "f7.4",
+        "LABLAXIS": "Spin/Z axis Direction",
+        "LABL_PTR_1": "spin_axis_dirn_labl",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": -1.0,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": -1.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Spin/Z axis Direction",
+        "x_LABLAXES": [
+          [
+            "Spin Axis Xgse",
+            "Spin Axis Ygse",
+            "Spin Axis Zgse"
+          ]
+        ]
+      }
+    },
+    "spin_axis_dirn_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": "              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "spin_axis_dirn_labl",
+        "FIELDNAM": "spin_axis_dirn_labl",
+        "FORMAT": "a14",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Spin Axis Xgse",
+        "Spin Axis Ygse",
+        "Spin Axis Zgse"
+      ]
+    },
+    "MAG": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "MAG data in GSE interpolated to sector midpoints",
+        "DEPEND_0": "Epoch_4",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MAG",
+        "FILLVAL": -1e+38,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "B field (GSE)",
+        "LABL_PTR_1": "MAG_labl",
+        "SCALEMAX": 2000.0,
+        "SCALEMIN": -2000.0,
+        "SCALETYP": "linear",
+        "UNITS": "nT",
+        "VALIDMAX": 30000.0,
+        "VALIDMIN": -30000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B field (GSE)",
+        "x_LABLAXES": [
+          [
+            "BXgse",
+            "BYgse",
+            "BZgse"
+          ]
+        ]
+      }
+    },
+    "MAG_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 5,
+        "NumWrittenRecords": 1,
+        "PadValue": "     ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "MAG_labl",
+        "FIELDNAM": "MAG_labl",
+        "FORMAT": "a5",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "BXgse",
+        "BYgse",
+        "BZgse"
+      ]
+    }
+  }
+}

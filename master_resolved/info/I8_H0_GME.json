@@ -1,0 +1,1998 @@
+{
+  "CDFFileInfo": {
+    "File": "i8_h0_gme_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/i8_h0_gme_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISTP",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Source_name": "I8>IMP-8",
+    "Data_type": "H0>Definitive Data",
+    "Descriptor": "GME>Goddard Medium Energy Investigation",
+    "Data_version": "1",
+    "TITLE": "IMP-8 GME Flux Data",
+    "TEXT": "30-min avg flex I8 GME",
+    "MODS": "v0.1 (vv01) May/Aug97  orig 30-min design V0.2 (vv02) Nov97  split protons into  two vars by energies  (not needed virvars) V0.3 (vv03) Jul/Aug98  cleaned up var names & set up for virvars V0.4 (vv04) Aug98  defined virvars for  alternate views",
+    "ADID_ref": "TBD",
+    "Logical_file_id": "i8_h0_gme_00000000_v01",
+    "Logical_source": "i8_h0_gme",
+    "Logical_source_description": "IMP-8 GME 30-min Fluxes (SEP optimal bands)",
+    "PI_name": "R.E. McGuire",
+    "PI_affiliation": "SPDF/Code 612.4, NASA's GSFC",
+    "Mission_group": "IMP (All)\n!___Magnetospheric Data\n!___Interplanetary Data near 1 AU",
+    "Instrument_type": "Particles (space)",
+    "alt_logical_source": "IMP8_GME_Fluxes-Rates-H0_30min_cdf",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/IMP8/GME/PT30M",
+    "DOI": "https://doi.org/10.48322/m36p-0998",
+    "LINK_TEXT": "IMP-8 ",
+    "LINK_TITLE": "GME Home Page",
+    "HTTP_LINK": "//spdf.gsfc.nasa.gov/imp8_GME/GME_home.html"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time, centered,in NSSDC EPOCH format",
+        "DELTA_MINUS_VAR": "Epoch_delta_time",
+        "DELTA_PLUS_VAR": "Epoch_delta_time",
+        "DICT_KEY": "time>nssdc_epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T23:59:59.000",
+        "VALIDMIN": "1973-10-29T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "Epoch_delta_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Delta_time",
+        "DICT_KEY": "uncertainty>time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Delta_time",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Delta_time",
+        "UNITS": "ms",
+        "VALIDMAX": 3600000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Delta_time"
+      },
+      "VarData": [
+        900000.0
+      ]
+    },
+    "Proton_DIntn": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Spectrogram-Full List) Proton Diff Intens (no bckgrd subtract), 30 energies 0.5-500 MeV, spin-avg",
+        "DELTA_MINUS_VAR": "Proton_DIntn_Unc",
+        "DELTA_PLUS_VAR": "Proton_DIntn_Unc",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Proton_DIntn_Engy",
+        "DICT_KEY": "particle_flux>ion_differential",
+        "DISPLAY_TYPE": "default_dimensiony=Proton_DIntn_Engy,z=Proton_DIntn",
+        "FIELDNAM": "Proton DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.2",
+        "LABLAXIS": "dJ/dE",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/[cm2-s-sr-MeV]",
+        "x_LABLAXIS": "dJ/dE",
+        "x_DEPEND": [
+          "Proton_DIntn_Engy"
+        ]
+      }
+    },
+    "Proton_DIntn2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Stacked time-series) Proton Diff Intens (no bckgrd subtract), 8 energies 0.5-20 MeV, spin-avg",
+        "COMPONENT_0": "Proton_DIntn",
+        "DELTA_MINUS_VAR": "Proton_DIntn_Unc",
+        "DELTA_PLUS_VAR": "Proton_DIntn_Unc",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Proton_DIntn_Engy",
+        "DICT_KEY": "particle_flux>ion_differential",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=Proton_DIntn_Engy(1),y=Proton_DIntn_Engy(3),y=Proton_DIntn_Engy(5),y=Proton_DIntn_Engy(7),y=Proton_DIntn_Engy(9),y=Proton_DIntn_Engy(11),y=Proton_DIntn_Engy(13),y=Proton_DIntn_Engy(15),z=Proton_DIntn_Engy",
+        "FIELDNAM": "Proton DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABLAXIS": "dJ/dE",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "1/[cm2-s-sr-MeV]",
+        "x_LABLAXIS": "dJ/dE",
+        "x_DEPEND": [
+          "Proton_DIntn_Engy"
+        ],
+        "COMPONENTS": [
+          "Proton_DIntn"
+        ]
+      }
+    },
+    "Proton_DIntn3": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Stacked time-series) Proton Diff Intens (no bckgrd subtract), 8 energies 20-500 MeV, spin-avg",
+        "COMPONENT_0": "Proton_DIntn",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Proton_DIntn_Engy",
+        "DICT_KEY": "particle_flux>ion_differential",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=Proton_DIntn3(15),y=Proton_DIntn3(17),y=Proton_DIntn3(19),y=Proton_DIntn3(21),y=Proton_DIntn3(23),y=Proton_DIntn3(25),y=Proton_DIntn3(27),y=Proton_DIntn3(29),z=Proton_DIntn_Engy",
+        "FIELDNAM": "Proton DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABLAXIS": "dJ/dE",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "1/[cm2-s-sr-MeV]",
+        "x_LABLAXIS": "dJ/dE",
+        "x_DEPEND": [
+          "Proton_DIntn_Engy"
+        ],
+        "COMPONENTS": [
+          "Proton_DIntn"
+        ]
+      }
+    },
+    "Proton_DIntn4": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Individual time-series) Proton Diff Intens (no bckgrd subtract), spin-avg",
+        "COMPONENT_0": "Proton_DIntn",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Proton_DIntn_Engy",
+        "DICT_KEY": "particle_flux>ion_differential",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABL_PTR_1": "labels_ProtonFlux",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "1/[cm2-s-sr-MeV]",
+        "x_LABLAXES": [
+          [
+            "Proton  dJ/DE 0.88-1.15 MeV/n",
+            "Proton  dJ/DE 1.15-1.43 MeV/n",
+            "Proton  dJ/DE 1.43-1.79 MeV/n",
+            "Proton  dJ/DE 1.79-2.27 MeV/n",
+            "Proton  dJ/DE 2.27-3.03 MeV/n",
+            "Proton  dJ/DE 3.03-4.20 MeV/n",
+            "Proton  dJ/DE 4.20-4.94 MeV/n",
+            "Proton  dJ/DE 4.94-5.96 MeV/n",
+            "Proton  dJ/DE 5.96-7.25 MeV/n",
+            "Proton  dJ/DE 7.25-8.64 MeV/n",
+            "Proton  dJ/DE 8.65-11.1 MeV/n",
+            "Proton  dJ/DE 11.1-13.6 MeV/n",
+            "Proton  dJ/DE 13.6-16.1 MeV/n",
+            "Proton  dJ/DE 16.1-18.7 MeV/n",
+            "Proton  dJ/DE 18.7-22.5 MeV/n",
+            "Proton  dJ/DE 19.8-24.2 MeV/n",
+            "Proton  dJ/DE 24.2-28.7 MeV/n",
+            "Proton  dJ/DE 28.7-35.2 MeV/n",
+            "Proton  dJ/DE 35.2-42.9 MeV/n",
+            "Proton  dJ/DE 42.9-51.0 MeV/n",
+            "Proton  dJ/DE 51.0-63.2 MeV/n",
+            "Proton  dJ/DE 63.2-81.0 MeV/n",
+            "Proton  dJ/DE 87.0-92.5 MeV/n",
+            "Proton  dJ/DE 92.5-107 MeV/n",
+            "Proton  dJ/DE 107-121 MeV/n",
+            "Proton  dJ/DE 121-154 MeV/n",
+            "Proton  dJ/DE 154-178 MeV/n",
+            "Proton  dJ/DE 178-230 MeV/n",
+            "Proton  dJ/DE 230-327 MeV/n",
+            "Proton  dJ/DE 327-485 MeV/n"
+          ]
+        ],
+        "x_DEPEND": [
+          "Proton_DIntn_Engy"
+        ],
+        "COMPONENTS": [
+          "Proton_DIntn"
+        ]
+      }
+    },
+    "Proton_DIntn4_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Individual time-series) Proton Diff Intens (no bckgrd subtract), spin-avg, with error bars",
+        "COMPONENT_0": "Proton_DIntn",
+        "DELTA_MINUS_VAR": "Proton_DIntn_Unc",
+        "DELTA_PLUS_VAR": "Proton_DIntn_Unc",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Proton_DIntn_Engy",
+        "DICT_KEY": "particle_flux>ion_differential",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABL_PTR_1": "labels_ProtonFlux",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "1/[cm2-s-sr-MeV]",
+        "x_LABLAXES": [
+          [
+            "Proton  dJ/DE 0.88-1.15 MeV/n",
+            "Proton  dJ/DE 1.15-1.43 MeV/n",
+            "Proton  dJ/DE 1.43-1.79 MeV/n",
+            "Proton  dJ/DE 1.79-2.27 MeV/n",
+            "Proton  dJ/DE 2.27-3.03 MeV/n",
+            "Proton  dJ/DE 3.03-4.20 MeV/n",
+            "Proton  dJ/DE 4.20-4.94 MeV/n",
+            "Proton  dJ/DE 4.94-5.96 MeV/n",
+            "Proton  dJ/DE 5.96-7.25 MeV/n",
+            "Proton  dJ/DE 7.25-8.64 MeV/n",
+            "Proton  dJ/DE 8.65-11.1 MeV/n",
+            "Proton  dJ/DE 11.1-13.6 MeV/n",
+            "Proton  dJ/DE 13.6-16.1 MeV/n",
+            "Proton  dJ/DE 16.1-18.7 MeV/n",
+            "Proton  dJ/DE 18.7-22.5 MeV/n",
+            "Proton  dJ/DE 19.8-24.2 MeV/n",
+            "Proton  dJ/DE 24.2-28.7 MeV/n",
+            "Proton  dJ/DE 28.7-35.2 MeV/n",
+            "Proton  dJ/DE 35.2-42.9 MeV/n",
+            "Proton  dJ/DE 42.9-51.0 MeV/n",
+            "Proton  dJ/DE 51.0-63.2 MeV/n",
+            "Proton  dJ/DE 63.2-81.0 MeV/n",
+            "Proton  dJ/DE 87.0-92.5 MeV/n",
+            "Proton  dJ/DE 92.5-107 MeV/n",
+            "Proton  dJ/DE 107-121 MeV/n",
+            "Proton  dJ/DE 121-154 MeV/n",
+            "Proton  dJ/DE 154-178 MeV/n",
+            "Proton  dJ/DE 178-230 MeV/n",
+            "Proton  dJ/DE 230-327 MeV/n",
+            "Proton  dJ/DE 327-485 MeV/n"
+          ]
+        ],
+        "x_DEPEND": [
+          "Proton_DIntn_Engy"
+        ],
+        "COMPONENTS": [
+          "Proton_DIntn"
+        ]
+      }
+    },
+    "Proton_DIntn_Unc": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Individual time-series) Uncertainty, Proton Differential  Intensity",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Proton_DIntn_Engy",
+        "DICT_KEY": "uncertainty",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Unc, Proton DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABL_PTR_1": "d_labels_ProtonFlux",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/[cm2-s-sr-MeV]",
+        "x_LABLAXES": [
+          [
+            "DltProtn dJ/DE 0.88-1.15 MeV/n",
+            "DltProtn dJ/DE 1.15-1.43 MeV/n",
+            "DltProtn dJ/DE 1.43-1.79 MeV/n",
+            "DltProtn dJ/DE 1.79-2.27 MeV/n",
+            "DltProtn dJ/DE 2.27-3.03 MeV/n",
+            "DltProtn dJ/DE 3.03-4.20 MeV/n",
+            "DltProtn dJ/DE 4.20-4.94 MeV/n",
+            "DltProtn dJ/DE 4.94-5.96 MeV/n",
+            "DltProtn dJ/DE 5.96-7.25 MeV/n",
+            "DltProtn dJ/DE 7.25-8.64 MeV/n",
+            "DltProtn dJ/DE 8.65-11.1 MeV/n",
+            "DltProtn dJ/DE 11.1-13.6 MeV/n",
+            "DltProtn dJ/DE 13.6-16.1 MeV/n",
+            "DltProtn dJ/DE 16.1-18.7 MeV/n",
+            "DltProtn dJ/DE 18.7-22.5 MeV/n",
+            "DltProtn dJ/DE 19.8-24.2 MeV/n",
+            "DltProtn dJ/DE 24.2-28.7 MeV/n",
+            "DltProtn dJ/DE 28.7-35.2 MeV/n",
+            "DltProtn dJ/DE 35.2-42.9 MeV/n",
+            "DltProtn dJ/DE 42.9-51.0 MeV/n",
+            "DltProtn dJ/DE 51.0-63.2 MeV/n",
+            "DltProtn dJ/DE 63.2-81.0 MeV/n",
+            "DltProtn dJ/DE 87.0-92.5 MeV/n",
+            "DltProtn dJ/DE 92.5-107 MeV/n",
+            "DltProtn dJ/DE 107-121 MeV/n",
+            "DltProtn dJ/DE 121-154 MeV/n",
+            "DltProtn dJ/DE 154-178 MeV/n",
+            "DltProtn dJ/DE 178-230 MeV/n",
+            "DltProtn dJ/DE 230-327 MeV/n",
+            "DltProtn dJ/DE 327-485 MeV/n"
+          ]
+        ],
+        "x_DEPEND": [
+          "Proton_DIntn_Engy"
+        ]
+      }
+    },
+    "C_Rate": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "GME/LED C Singles Rate (C<200 ct/sec implies enhanced/variable background <20 MeV/nuc)",
+        "COMPONENT_0": "Singles_Rates",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "labels_SRates",
+        "DICT_KEY": "number>rate",
+        "DISPLAY_TYPE": "default_dimensiony=C_Rate(2) ",
+        "FIELDNAM": "GME C Rate",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABLAXIS": "C Rate",
+        "MONOTON": "FALSE",
+        "SCALETYP": "log",
+        "UNITS": "cts/sec",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "cts/sec",
+        "x_LABLAXIS": "C Rate",
+        "x_DEPEND": [
+          [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ]
+        ],
+        "COMPONENTS": [
+          "Singles_Rates"
+        ]
+      }
+    },
+    "Proton_DIntn_Engy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Energy",
+        "DELTA_MINUS_VAR": "Proton_DIntn_EngyMns",
+        "DELTA_PLUS_VAR": "Proton_DIntn_EngyPls",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "energy>ion",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton Energy (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.1",
+        "LABLAXIS": "Proton Energy",
+        "SCALETYP": "log",
+        "UNITS": "MeV",
+        "VALIDMAX": 600.0,
+        "VALIDMIN": 0.5,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Proton Energy"
+      },
+      "VarData": [
+        1.0,
+        1.3,
+        1.6,
+        2.0,
+        2.6,
+        3.6,
+        4.6,
+        5.4,
+        6.6,
+        7.9,
+        9.8,
+        12.3,
+        14.8,
+        17.4,
+        20.5,
+        21.9,
+        26.4,
+        31.8,
+        38.9,
+        46.8,
+        56.8,
+        71.6,
+        89.7,
+        99.5,
+        113.8,
+        136.5,
+        165.6,
+        202.3,
+        274.2,
+        398.2
+      ]
+    },
+    "Proton_DIntn_EngyPls": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Delta+, Proton Energy",
+        "DICT_KEY": "uncertainty>energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Delta+, Proton Energy (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.1",
+        "LABLAXIS": "Proton Energy",
+        "UNITS": "MeV",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Proton Energy"
+      },
+      "VarData": [
+        0.1,
+        0.2,
+        0.2,
+        0.2,
+        0.4,
+        0.6,
+        0.4,
+        0.5,
+        0.7,
+        0.7,
+        1.3,
+        1.3,
+        1.3,
+        1.4,
+        2.0,
+        2.3,
+        2.3,
+        3.4,
+        4.0,
+        4.2,
+        6.4,
+        9.4,
+        2.8,
+        7.5,
+        7.2,
+        17.5,
+        12.4,
+        27.7,
+        52.8,
+        86.8
+      ]
+    },
+    "Proton_Dintn_EngyMns": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Delta-, Proton Energy",
+        "DICT_KEY": "uncertainty>energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Delta-, Proton Energy (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.1",
+        "LABLAXIS": "Proton Energy",
+        "UNITS": "MeV",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Proton Energy"
+      },
+      "VarData": [
+        0.1,
+        0.1,
+        0.2,
+        0.2,
+        0.3,
+        0.5,
+        0.3,
+        0.5,
+        0.6,
+        0.7,
+        1.1,
+        1.2,
+        1.2,
+        1.2,
+        1.8,
+        2.1,
+        2.2,
+        3.1,
+        3.7,
+        3.9,
+        5.8,
+        8.4,
+        2.7,
+        7.0,
+        6.8,
+        15.5,
+        11.6,
+        24.3,
+        44.2,
+        71.2
+      ]
+    },
+    "labels_ProtonFlux": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 30,
+        "NumWrittenRecords": 1,
+        "PadValue": "                              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Flux Labels",
+        "DICT_KEY": "label>flux",
+        "FIELDNAM": "Proton Flux Labels",
+        "FORMAT": "A30",
+        "LABLAXIS": "Proton Flux Labels",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Proton Flux Labels"
+      },
+      "VarData": [
+        "Proton  dJ/DE 0.88-1.15 MeV/n",
+        "Proton  dJ/DE 1.15-1.43 MeV/n",
+        "Proton  dJ/DE 1.43-1.79 MeV/n",
+        "Proton  dJ/DE 1.79-2.27 MeV/n",
+        "Proton  dJ/DE 2.27-3.03 MeV/n",
+        "Proton  dJ/DE 3.03-4.20 MeV/n",
+        "Proton  dJ/DE 4.20-4.94 MeV/n",
+        "Proton  dJ/DE 4.94-5.96 MeV/n",
+        "Proton  dJ/DE 5.96-7.25 MeV/n",
+        "Proton  dJ/DE 7.25-8.64 MeV/n",
+        "Proton  dJ/DE 8.65-11.1 MeV/n",
+        "Proton  dJ/DE 11.1-13.6 MeV/n",
+        "Proton  dJ/DE 13.6-16.1 MeV/n",
+        "Proton  dJ/DE 16.1-18.7 MeV/n",
+        "Proton  dJ/DE 18.7-22.5 MeV/n",
+        "Proton  dJ/DE 19.8-24.2 MeV/n",
+        "Proton  dJ/DE 24.2-28.7 MeV/n",
+        "Proton  dJ/DE 28.7-35.2 MeV/n",
+        "Proton  dJ/DE 35.2-42.9 MeV/n",
+        "Proton  dJ/DE 42.9-51.0 MeV/n",
+        "Proton  dJ/DE 51.0-63.2 MeV/n",
+        "Proton  dJ/DE 63.2-81.0 MeV/n",
+        "Proton  dJ/DE 87.0-92.5 MeV/n",
+        "Proton  dJ/DE 92.5-107 MeV/n",
+        "Proton  dJ/DE 107-121 MeV/n",
+        "Proton  dJ/DE 121-154 MeV/n",
+        "Proton  dJ/DE 154-178 MeV/n",
+        "Proton  dJ/DE 178-230 MeV/n",
+        "Proton  dJ/DE 230-327 MeV/n",
+        "Proton  dJ/DE 327-485 MeV/n"
+      ]
+    },
+    "d_labels_ProtonFlux": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          30
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 30,
+        "NumWrittenRecords": 1,
+        "PadValue": "                              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton Flux Unc Labels",
+        "DICT_KEY": "label>flux",
+        "FIELDNAM": "Proton Flux Unc Labels",
+        "FORMAT": "A30",
+        "LABLAXIS": "Proton Flux Unc Labels",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Proton Flux Unc Labels"
+      },
+      "VarData": [
+        "DltProtn dJ/DE 0.88-1.15 MeV/n",
+        "DltProtn dJ/DE 1.15-1.43 MeV/n",
+        "DltProtn dJ/DE 1.43-1.79 MeV/n",
+        "DltProtn dJ/DE 1.79-2.27 MeV/n",
+        "DltProtn dJ/DE 2.27-3.03 MeV/n",
+        "DltProtn dJ/DE 3.03-4.20 MeV/n",
+        "DltProtn dJ/DE 4.20-4.94 MeV/n",
+        "DltProtn dJ/DE 4.94-5.96 MeV/n",
+        "DltProtn dJ/DE 5.96-7.25 MeV/n",
+        "DltProtn dJ/DE 7.25-8.64 MeV/n",
+        "DltProtn dJ/DE 8.65-11.1 MeV/n",
+        "DltProtn dJ/DE 11.1-13.6 MeV/n",
+        "DltProtn dJ/DE 13.6-16.1 MeV/n",
+        "DltProtn dJ/DE 16.1-18.7 MeV/n",
+        "DltProtn dJ/DE 18.7-22.5 MeV/n",
+        "DltProtn dJ/DE 19.8-24.2 MeV/n",
+        "DltProtn dJ/DE 24.2-28.7 MeV/n",
+        "DltProtn dJ/DE 28.7-35.2 MeV/n",
+        "DltProtn dJ/DE 35.2-42.9 MeV/n",
+        "DltProtn dJ/DE 42.9-51.0 MeV/n",
+        "DltProtn dJ/DE 51.0-63.2 MeV/n",
+        "DltProtn dJ/DE 63.2-81.0 MeV/n",
+        "DltProtn dJ/DE 87.0-92.5 MeV/n",
+        "DltProtn dJ/DE 92.5-107 MeV/n",
+        "DltProtn dJ/DE 107-121 MeV/n",
+        "DltProtn dJ/DE 121-154 MeV/n",
+        "DltProtn dJ/DE 154-178 MeV/n",
+        "DltProtn dJ/DE 178-230 MeV/n",
+        "DltProtn dJ/DE 230-327 MeV/n",
+        "DltProtn dJ/DE 327-485 MeV/n"
+      ]
+    },
+    "Alpha_DIntn": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          21
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Spectrogram-Full List) Alpha Diff Intens (no bckgrd subtract), 21 energies 1-80 MeV/nuc, spin-avg",
+        "DELTA_MINUS_VAR": "Alpha_DIntn_Unc",
+        "DELTA_PLUS_VAR": "Alpha_DIntn_Unc",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Alpha_DIntn_Engy",
+        "DICT_KEY": "particle_flux>ion_differential",
+        "DISPLAY_TYPE": "default_dimensiony=Alpha_DIntn_Engy,z=Alpha_DIntn",
+        "FIELDNAM": "Alpha DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABLAXIS": "dJ/dE",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV/nuc]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/[cm2-s-sr-MeV/nuc]",
+        "x_LABLAXIS": "dJ/dE",
+        "x_DEPEND": [
+          "Alpha_DIntn_Engy"
+        ]
+      }
+    },
+    "Alpha_DIntn2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          21
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Stacked time-series) Alpha Diff Intens (no bckgrd subtract), 7 energies 1-20 MeV/nuc, spin-avg",
+        "COMPONENT_0": "Alpha_DIntn",
+        "DELTA_MINUS_VAR": "Alpha_DIntn_Unc",
+        "DELTA_PLUS_VAR": "Alpha_DIntn_Unc",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Alpha_DIntn_Engy",
+        "DICT_KEY": "particle_flux>ion_differential",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=Alpha_DIntn2(0),y=Alpha_DIntn2(2),y=Alpha_DIntn2(4),y=Alpha_DIntn2(6),y=Alpha_DIntn2(8),y=Alpha_DIntn2(10),y=Alpha_DIntn2(12),z=Alpha_DIntn_Engy",
+        "FIELDNAM": "Alpha DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABLAXIS": "dJ/dE",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV/nuc]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "1/[cm2-s-sr-MeV/nuc]",
+        "x_LABLAXIS": "dJ/dE",
+        "x_DEPEND": [
+          "Alpha_DIntn_Engy"
+        ],
+        "COMPONENTS": [
+          "Alpha_DIntn"
+        ]
+      }
+    },
+    "Alpha_DIntn3": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          21
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Stacked time-series) Alpha Diff Intens (no bckgrd subtract), 4 energies 20-80 MeV/nuc, spin-avg",
+        "COMPONENT_0": "Alpha_DIntn",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Alpha_DIntn_Engy",
+        "DICT_KEY": "particle_flux>ion_differential",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=Alpha_DIntn3(14),y=Alpha_DIntn3(16),y=Alpha_DIntn3(18),y=Alpha_DIntn3(20),z=Alpha_DIntn_Engy",
+        "FIELDNAM": "Alpha DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABLAXIS": "dJ/dE",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV/nuc]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "1/[cm2-s-sr-MeV/nuc]",
+        "x_LABLAXIS": "dJ/dE",
+        "x_DEPEND": [
+          "Alpha_DIntn_Engy"
+        ],
+        "COMPONENTS": [
+          "Alpha_DIntn"
+        ]
+      }
+    },
+    "Alpha_DIntn4": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          21
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Individual time-series) Alpha Diff Intens (no bckgrd subtract), spin-avg",
+        "COMPONENT_0": "Alpha_DIntn",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Alpha_DIntn_Engy",
+        "DICT_KEY": "particle_flux>ion_differential",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABL_PTR_1": "labels_AlphaFlux",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV/nuc]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "1/[cm2-s-sr-MeV/nuc]",
+        "x_LABLAXES": [
+          [
+            "Alpha dJ/DE 1.14-1.36 MeV/n",
+            "Alpha dJ/DE 1.36-1.88 MeV/n",
+            "Alpha dJ/DE 1.88-2.37 MeV/n",
+            "Alpha dJ/DE 2.37-3.06 MeV/n",
+            "Alpha dJ/DE 3.06-3.98 MeV/n",
+            "Alpha dJ/DE 3.98-4.94 MeV/n",
+            "Alpha dJ/DE 4.94-5.91 MeV/n",
+            "Alpha dJ/DE 5.91-7.26 MeV/n",
+            "Alpha dJ/DE 7.26-8.63 MeV/n",
+            "Alpha dJ/DE 8.63-11.0 MeV/n",
+            "Alpha dJ/DE 11.0-13.6 MeV/n",
+            "Alpha dJ/DE 13.6-16.1 MeV/n",
+            "Alpha dJ/DE 16.1-18.7 MeV/n",
+            "Alpha dJ/DE 18.7-22.5 MeV/n",
+            "Alpha dJ/DE 19.5-24.2 MeV/n",
+            "Alpha dJ/DE 24.2-28.6 MeV/n",
+            "Alpha dJ/DE 28.6-35.2 MeV/n",
+            "Alpha dJ/DE 35.2-43.0 MeV/n",
+            "Alpha dJ/DE 43.0-51.0 MeV/n",
+            "Alpha dJ/DE 51.0-63.3 MeV/n",
+            "Alpha dJ/DE 63.3-81.0 MeV/n"
+          ]
+        ],
+        "x_DEPEND": [
+          "Alpha_DIntn_Engy"
+        ],
+        "COMPONENTS": [
+          "Alpha_DIntn"
+        ]
+      }
+    },
+    "Alpha_DIntn4_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          21
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Individual time-series) Alpha Diff Intens (no bckgrd subtract), spin-avg, with error bars",
+        "COMPONENT_0": "Alpha_DIntn",
+        "DELTA_MINUS_VAR": "Alpha_DIntn_Unc",
+        "DELTA_PLUS_VAR": "Alpha_DIntn_Unc",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Alpha_DIntn_Engy",
+        "DICT_KEY": "particle_flux>ion_differential",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABL_PTR_1": "labels_AlphaFlux",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV/nuc]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "1/[cm2-s-sr-MeV/nuc]",
+        "x_LABLAXES": [
+          [
+            "Alpha dJ/DE 1.14-1.36 MeV/n",
+            "Alpha dJ/DE 1.36-1.88 MeV/n",
+            "Alpha dJ/DE 1.88-2.37 MeV/n",
+            "Alpha dJ/DE 2.37-3.06 MeV/n",
+            "Alpha dJ/DE 3.06-3.98 MeV/n",
+            "Alpha dJ/DE 3.98-4.94 MeV/n",
+            "Alpha dJ/DE 4.94-5.91 MeV/n",
+            "Alpha dJ/DE 5.91-7.26 MeV/n",
+            "Alpha dJ/DE 7.26-8.63 MeV/n",
+            "Alpha dJ/DE 8.63-11.0 MeV/n",
+            "Alpha dJ/DE 11.0-13.6 MeV/n",
+            "Alpha dJ/DE 13.6-16.1 MeV/n",
+            "Alpha dJ/DE 16.1-18.7 MeV/n",
+            "Alpha dJ/DE 18.7-22.5 MeV/n",
+            "Alpha dJ/DE 19.5-24.2 MeV/n",
+            "Alpha dJ/DE 24.2-28.6 MeV/n",
+            "Alpha dJ/DE 28.6-35.2 MeV/n",
+            "Alpha dJ/DE 35.2-43.0 MeV/n",
+            "Alpha dJ/DE 43.0-51.0 MeV/n",
+            "Alpha dJ/DE 51.0-63.3 MeV/n",
+            "Alpha dJ/DE 63.3-81.0 MeV/n"
+          ]
+        ],
+        "x_DEPEND": [
+          "Alpha_DIntn_Engy"
+        ],
+        "COMPONENTS": [
+          "Alpha_DIntn"
+        ]
+      }
+    },
+    "Alpha_DIntn_Unc": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          21
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "(Individual time-series) Uncertainty, Alpha Differential Intensity",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Alpha_DIntn_Engy",
+        "DICT_KEY": "uncertainty>absolute",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Unc, Alpha DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABL_PTR_1": "d_labels_AlphaFlux",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV/nuc]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/[cm2-s-sr-MeV/nuc]",
+        "x_LABLAXES": [
+          [
+            "DltAlpha dJ/DE 1.14-1.36 MeV/n",
+            "DltAlpha dJ/DE 1.36-1.88 MeV/n",
+            "DltAlpha dJ/DE 1.88-2.37 MeV/n",
+            "DltAlpha dJ/DE 2.37-3.06 MeV/n",
+            "DltAlpha dJ/DE 3.06-3.98 MeV/n",
+            "DltAlpha dJ/DE 3.98-4.94 MeV/n",
+            "DltAlpha dJ/DE 4.94-5.91 MeV/n",
+            "DltAlpha dJ/DE 5.91-7.26 MeV/n",
+            "DltAlpha dJ/DE 7.26-8.63 MeV/n",
+            "DltAlpha dJ/DE 8.63-11.0 MeV/n",
+            "DltAlpha dJ/DE 11.0-13.6 MeV/n",
+            "DltAlpha dJ/DE 13.6-16.1 MeV/n",
+            "DltAlpha dJ/DE 16.1-18.7 MeV/n",
+            "DltAlpha dJ/DE 18.7-22.5 MeV/n",
+            "DltAlpha dJ/DE 19.5-24.2 MeV/n",
+            "DltAlpha dJ/DE 24.2-28.6 MeV/n",
+            "DltAlpha dJ/DE 28.6-35.2 MeV/n",
+            "DltAlpha dJ/DE 35.2-43.0 MeV/n",
+            "DltAlpha dJ/DE 43.0-51.0 MeV/n",
+            "DltAlpha dJ/DE 51.0-63.3 MeV/n",
+            "DltAlpha dJ/DE 63.3-81.0 MeV/n"
+          ]
+        ],
+        "x_DEPEND": [
+          "Alpha_DIntn_Engy"
+        ]
+      }
+    },
+    "Alpha_DIntn_Engy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          21
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha Energy",
+        "DELTA_MINUS_VAR": "Alpha_DIntn_EngyMns",
+        "DELTA_PLUS_VAR": "Alpha_DIntn_EngyPls",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "energy>ion",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Alpha Energy (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.1",
+        "LABLAXIS": "Alpha Energy",
+        "UNITS": "MeV/nuc",
+        "VALIDMAX": 600.0,
+        "VALIDMIN": 0.5,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV/nuc",
+        "x_LABLAXIS": "Alpha Energy"
+      },
+      "VarData": [
+        1.2,
+        1.6,
+        2.1,
+        2.7,
+        3.5,
+        4.4,
+        5.4,
+        6.6,
+        7.9,
+        9.7,
+        12.2,
+        14.8,
+        17.4,
+        20.5,
+        21.7,
+        26.3,
+        31.7,
+        38.9,
+        46.8,
+        56.8,
+        71.6
+      ]
+    },
+    "Alpha_DIntn_EngyPls": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          21
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Delta+, Alpha Energy",
+        "DICT_KEY": "uncertainty>energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Delta+, Alpha Energy (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.1",
+        "LABLAXIS": "Alpha Energy",
+        "UNITS": "MeV/nuc",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV/nuc",
+        "x_LABLAXIS": "Alpha Energy"
+      },
+      "VarData": [
+        0.1,
+        0.3,
+        0.3,
+        0.4,
+        0.5,
+        0.5,
+        0.5,
+        0.7,
+        0.7,
+        1.3,
+        1.4,
+        1.3,
+        1.4,
+        2.0,
+        2.5,
+        2.3,
+        3.5,
+        4.1,
+        4.2,
+        6.5,
+        9.4
+      ]
+    },
+    "Alpha_DIntn_EngyMns": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          21
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Delta-, Alpha Energy",
+        "DICT_KEY": "uncertainty>energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Delta-, Alpha Energy (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.1",
+        "LABLAXIS": "Alpha Energy",
+        "UNITS": "MeV/nuc",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV/nuc",
+        "x_LABLAXIS": "Alpha Energy"
+      },
+      "VarData": [
+        0.1,
+        0.2,
+        0.2,
+        0.3,
+        0.4,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        1.1,
+        1.2,
+        1.2,
+        1.2,
+        1.8,
+        2.2,
+        2.1,
+        3.1,
+        3.7,
+        3.8,
+        5.8,
+        8.3
+      ]
+    },
+    "labels_AlphaFlux": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          21
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 30,
+        "NumWrittenRecords": 1,
+        "PadValue": "                              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha Flux Labels",
+        "DICT_KEY": "label>flux",
+        "FIELDNAM": "Alpha Flux Labels",
+        "FORMAT": "A30",
+        "LABLAXIS": "Alpha Flux Labels",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Alpha Flux Labels"
+      },
+      "VarData": [
+        "Alpha dJ/DE 1.14-1.36 MeV/n",
+        "Alpha dJ/DE 1.36-1.88 MeV/n",
+        "Alpha dJ/DE 1.88-2.37 MeV/n",
+        "Alpha dJ/DE 2.37-3.06 MeV/n",
+        "Alpha dJ/DE 3.06-3.98 MeV/n",
+        "Alpha dJ/DE 3.98-4.94 MeV/n",
+        "Alpha dJ/DE 4.94-5.91 MeV/n",
+        "Alpha dJ/DE 5.91-7.26 MeV/n",
+        "Alpha dJ/DE 7.26-8.63 MeV/n",
+        "Alpha dJ/DE 8.63-11.0 MeV/n",
+        "Alpha dJ/DE 11.0-13.6 MeV/n",
+        "Alpha dJ/DE 13.6-16.1 MeV/n",
+        "Alpha dJ/DE 16.1-18.7 MeV/n",
+        "Alpha dJ/DE 18.7-22.5 MeV/n",
+        "Alpha dJ/DE 19.5-24.2 MeV/n",
+        "Alpha dJ/DE 24.2-28.6 MeV/n",
+        "Alpha dJ/DE 28.6-35.2 MeV/n",
+        "Alpha dJ/DE 35.2-43.0 MeV/n",
+        "Alpha dJ/DE 43.0-51.0 MeV/n",
+        "Alpha dJ/DE 51.0-63.3 MeV/n",
+        "Alpha dJ/DE 63.3-81.0 MeV/n"
+      ]
+    },
+    "d_labels_AlphaFlux": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          21
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 30,
+        "NumWrittenRecords": 1,
+        "PadValue": "                              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha Flux Unc Labels",
+        "DICT_KEY": "label>flux",
+        "FIELDNAM": "Alpha Flux Unc Labels",
+        "FORMAT": "A30",
+        "LABLAXIS": "Alpha Flux Unc Labels",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Alpha Flux Unc Labels"
+      },
+      "VarData": [
+        "DltAlpha dJ/DE 1.14-1.36 MeV/n",
+        "DltAlpha dJ/DE 1.36-1.88 MeV/n",
+        "DltAlpha dJ/DE 1.88-2.37 MeV/n",
+        "DltAlpha dJ/DE 2.37-3.06 MeV/n",
+        "DltAlpha dJ/DE 3.06-3.98 MeV/n",
+        "DltAlpha dJ/DE 3.98-4.94 MeV/n",
+        "DltAlpha dJ/DE 4.94-5.91 MeV/n",
+        "DltAlpha dJ/DE 5.91-7.26 MeV/n",
+        "DltAlpha dJ/DE 7.26-8.63 MeV/n",
+        "DltAlpha dJ/DE 8.63-11.0 MeV/n",
+        "DltAlpha dJ/DE 11.0-13.6 MeV/n",
+        "DltAlpha dJ/DE 13.6-16.1 MeV/n",
+        "DltAlpha dJ/DE 16.1-18.7 MeV/n",
+        "DltAlpha dJ/DE 18.7-22.5 MeV/n",
+        "DltAlpha dJ/DE 19.5-24.2 MeV/n",
+        "DltAlpha dJ/DE 24.2-28.6 MeV/n",
+        "DltAlpha dJ/DE 28.6-35.2 MeV/n",
+        "DltAlpha dJ/DE 35.2-43.0 MeV/n",
+        "DltAlpha dJ/DE 43.0-51.0 MeV/n",
+        "DltAlpha dJ/DE 51.0-63.3 MeV/n",
+        "DltAlpha dJ/DE 63.3-81.0 MeV/n"
+      ]
+    },
+    "Elec_Intn": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron Intensity, 0.3-18 MeV (no bckgrd subtract), spin-avg",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Elec DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABLAXIS": "Electrn .3-18 MeV",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/[cm2-s-sr-MeV]",
+        "x_LABLAXIS": "Electrn .3-18 MeV"
+      }
+    },
+    "Elec_Intn_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron Intensity, 0.3-18 MeV (no bckgrd subtract), spin-avg, with error bars",
+        "COMPONENT_0": "Elec_Intn",
+        "DELTA_MINUS_VAR": "Elec_Intn_Unc",
+        "DELTA_PLUS_VAR": "Elec_Intn_Unc",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Elec DIntn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABLAXIS": "Electrn .3-18 MeV",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "1/[cm2-s-sr-MeV]",
+        "x_LABLAXIS": "Electrn .3-18 MeV",
+        "COMPONENTS": [
+          "Elec_Intn"
+        ]
+      }
+    },
+    "Elec_Intn_Unc": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Unc, Electron Intensity, 0.3-18 MeV",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "uncertainty>absolute",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Unc, Elec Intn (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABLAXIS": "Delta Elec",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm**2-s-sr-MeV]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/[cm**2-s-sr-MeV]",
+        "x_LABLAXIS": "Delta Elec"
+      }
+    },
+    "Elec_BackIntn": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron Background Intensity, 0.3-18 MeV, spin-avg",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Elec Background (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABLAXIS": "EBckgrd .3-18 MeV",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/[cm2-s-sr-MeV]",
+        "x_LABLAXIS": "EBckgrd .3-18 MeV"
+      }
+    },
+    "Elec_BackIntn_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron Background Intensity, 0.3-18 MeV, spin-avg, with error bars",
+        "COMPONENT_0": "Elec_BackIntn",
+        "DELTA_MINUS_VAR": "Elec_BackIntn_Unc",
+        "DELTA_PLUS_VAR": "Elec_BackIntn_Unc",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Elec Background (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABLAXIS": "EBckgrd .3-18 MeV",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "1/[cm2-s-sr-MeV]",
+        "x_LABLAXIS": "EBckgrd .3-18 MeV",
+        "COMPONENTS": [
+          "Elec_BackIntn"
+        ]
+      }
+    },
+    "Elec_BackIntn_Unc": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Uncertainty, Electron Background  Intensity 0.3-18 MeV",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "uncertainty>absolute",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Unc, Elec Background (GME)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E9.3",
+        "LABLAXIS": "Delta Elec",
+        "SCALETYP": "log",
+        "UNITS": "1/[cm2-s-sr-MeV]",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/[cm2-s-sr-MeV]",
+        "x_LABLAXIS": "Delta Elec"
+      }
+    },
+    "Event_Rates": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          11
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "11 I8 GME Event Type Rates ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number>rate",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GME Event Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e9.2",
+        "LABL_PTR_1": "labels_EvRates",
+        "MONOTON": "FALSE",
+        "SCALETYP": "log",
+        "UNITS": "cts/sec",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cts/sec",
+        "x_LABLAXES": [
+          [
+            "A-B-C (P 0.5-4 MeV)",
+            "A&B1-B-C",
+            "A&B2-B-C",
+            "A.B-C (P 4-20 MeV)",
+            "A&B1.B-C",
+            "A&B2.B-C",
+            "DEF",
+            "DE-F-G (P 20-80 MeV)",
+            "DEF-G (I >80 MeV)",
+            "D&E1-F-G (A 20-80 MeV/n)",
+            "D&E2-F-G (Z>6 20-80 MeV/n)"
+          ]
+        ]
+      }
+    },
+    "Event_Rates_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          11
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "11 I8 GME Event Type Rates with error bars",
+        "COMPONENT_0": "Event_Rates",
+        "DELTA_MINUS_VAR": "Event_Rates_Unc",
+        "DELTA_PLUS_VAR": "Event_Rates_Unc",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number>rate",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GME Event Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e9.2",
+        "LABL_PTR_1": "labels_EvRates",
+        "MONOTON": "FALSE",
+        "SCALETYP": "log",
+        "UNITS": "cts/sec",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "cts/sec",
+        "x_LABLAXES": [
+          [
+            "A-B-C (P 0.5-4 MeV)",
+            "A&B1-B-C",
+            "A&B2-B-C",
+            "A.B-C (P 4-20 MeV)",
+            "A&B1.B-C",
+            "A&B2.B-C",
+            "DEF",
+            "DE-F-G (P 20-80 MeV)",
+            "DEF-G (I >80 MeV)",
+            "D&E1-F-G (A 20-80 MeV/n)",
+            "D&E2-F-G (Z>6 20-80 MeV/n)"
+          ]
+        ],
+        "COMPONENTS": [
+          "Event_Rates"
+        ]
+      }
+    },
+    "Event_Rates_Unc": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          11
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Uncertainty, 11 GME Event Type Rates",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number>rate",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Unc, Event Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e9.2",
+        "LABL_PTR_1": "d_labels_EvRates",
+        "MONOTON": "FALSE",
+        "SCALETYP": "log",
+        "UNITS": "cts/sec",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cts/sec",
+        "x_LABLAXES": [
+          [
+            "Delta A-B-C (P 0.5-4 MeV)",
+            "Delta A&B1-B-C",
+            "Delta A&B2-B-C",
+            "Delta A.B-C (P 4-20 MeV)",
+            "Delta A&B1.B-C",
+            "Delta A&B2.B-C",
+            "Delta DEF",
+            "Delta DE-F-G (P 20-80 MeV)",
+            "Delta DEF-G (I >80 MeV)",
+            "Delta D&E1-F-G (A 20-80 MeV/n)",
+            "Dlt D&E2-F-G (Z>6 20-80 MeV/n)"
+          ]
+        ]
+      }
+    },
+    "labels_EvRates": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          11
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 30,
+        "NumWrittenRecords": 1,
+        "PadValue": "                              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Event Type Rates",
+        "DICT_KEY": "label>rate",
+        "FIELDNAM": "Event Rate Labels",
+        "FORMAT": "A30",
+        "LABLAXIS": "Rate Labels",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Rate Labels"
+      },
+      "VarData": [
+        "A-B-C (P 0.5-4 MeV)",
+        "A&B1-B-C",
+        "A&B2-B-C",
+        "A.B-C (P 4-20 MeV)",
+        "A&B1.B-C",
+        "A&B2.B-C",
+        "DEF",
+        "DE-F-G (P 20-80 MeV)",
+        "DEF-G (I >80 MeV)",
+        "D&E1-F-G (A 20-80 MeV/n)",
+        "D&E2-F-G (Z>6 20-80 MeV/n)"
+      ]
+    },
+    "d_labels_EvRates": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          11
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 30,
+        "NumWrittenRecords": 1,
+        "PadValue": "                              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "D_EvRates",
+        "DICT_KEY": "label>rate",
+        "FIELDNAM": "D_EvRate labels",
+        "FORMAT": "A30",
+        "LABLAXIS": "Rates",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Rates"
+      },
+      "VarData": [
+        "Delta A-B-C (P 0.5-4 MeV)",
+        "Delta A&B1-B-C",
+        "Delta A&B2-B-C",
+        "Delta A.B-C (P 4-20 MeV)",
+        "Delta A&B1.B-C",
+        "Delta A&B2.B-C",
+        "Delta DEF",
+        "Delta DE-F-G (P 20-80 MeV)",
+        "Delta DEF-G (I >80 MeV)",
+        "Delta D&E1-F-G (A 20-80 MeV/n)",
+        "Dlt D&E2-F-G (Z>6 20-80 MeV/n)"
+      ]
+    },
+    "Singles_Rates": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "7 GME Singles Type Rates ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number>rate",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GME Singles Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e9.2",
+        "LABL_PTR_1": "labels_SRates",
+        "MONOTON": "FALSE",
+        "SCALETYP": "log",
+        "UNITS": "cts/sec",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cts/sec",
+        "x_LABLAXES": [
+          [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ]
+        ]
+      }
+    },
+    "Singles_Rates_errorbars": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "7 GME Singles Type Rates with error bars",
+        "COMPONENT_0": "Singles_Rates",
+        "DELTA_MINUS_VAR": "Singles_Rates_Unc",
+        "DELTA_PLUS_VAR": "Singles_Rates_Unc",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "number>rate",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GME Singles Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e9.2",
+        "LABL_PTR_1": "labels_SRates",
+        "MONOTON": "FALSE",
+        "SCALETYP": "log",
+        "UNITS": "cts/sec",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "FUNCT": "alternate_view",
+        "x_UNITS": "cts/sec",
+        "x_LABLAXES": [
+          [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ]
+        ],
+        "COMPONENTS": [
+          "Singles_Rates"
+        ]
+      }
+    },
+    "Singles_Rates_Unc": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Uncertainty, 7 GME Singles Rates",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "uncertainty>absolute",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Unc, Singles Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "e9.2",
+        "LABL_PTR_1": "d_labels_SRates",
+        "MONOTON": "FALSE",
+        "SCALETYP": "log",
+        "UNITS": "cts/sec",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cts/sec",
+        "x_LABLAXES": [
+          [
+            "Delta A",
+            "Delta B",
+            "Delta C",
+            "Delta D",
+            "Delta E",
+            "Delta F",
+            "Delta G"
+          ]
+        ]
+      }
+    },
+    "labels_SRates": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 30,
+        "NumWrittenRecords": 1,
+        "PadValue": "                              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Single Type Rates",
+        "DICT_KEY": "label>rate",
+        "FIELDNAM": "Single Rate Labels",
+        "FORMAT": "A30",
+        "LABLAXIS": "Rate Labels",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Rate Labels"
+      },
+      "VarData": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "d_labels_SRates": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 30,
+        "NumWrittenRecords": 1,
+        "PadValue": "                              ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "D_SRates",
+        "DICT_KEY": "label>rate",
+        "FIELDNAM": "D_SRate labels",
+        "FORMAT": "A30",
+        "LABLAXIS": "Rates",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Rates"
+      },
+      "VarData": [
+        "Delta A",
+        "Delta B",
+        "Delta C",
+        "Delta D",
+        "Delta E",
+        "Delta F",
+        "Delta G"
+      ]
+    }
+  }
+}

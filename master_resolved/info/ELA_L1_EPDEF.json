@@ -1,0 +1,370 @@
+{
+  "CDFFileInfo": {
+    "File": "ela_l1_epdef_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/ela_l1_epdef_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "Electron Losses and Fields INvestigation",
+    "Source_name": "ela>Electron Losses and Fields INvestigation-A",
+    "Discipline": "Space Physics>Magnetospheric Science\nSpace Physics>Interplanetary Studies",
+    "Data_type": "EPD Electron",
+    "Descriptor": "L1>L1 Data",
+    "File_naming_convention": "source_datatype_descriptor",
+    "Data_version": " ",
+    "PI_name": "V. Angelopoulos",
+    "PI_affiliation": "UCLA, IGPP/EPSS",
+    "TEXT": "The Electron Losses and Fields Investigation (ELFIN) mission is a space weather mission using three scientific instruments in a 3U+ CubeSat. The instruments measure wave and particle data.",
+    "Instrument_type": "Particles (space)",
+    "Mission_group": "Smallsats/Cubesats",
+    "Logical_source": "ela_l1_epdef",
+    "Logical_file_id": "ela_l1_epdef_00000000_v01",
+    "Logical_source_description": "Energetic Particle Detector, Counts, Electrons>keV [UNCALIBRATED RAW DATA] ",
+    "Time_resolution": "16 sectors/spin (dependent on spinper)",
+    "Rules_of_use": "Open Data for Scientific Use",
+    "Generated_by": "ELFIN SOC",
+    "Generation_date": " ",
+    "Acknowledgement": "NASA, NSF ",
+    "MODS": " ",
+    "ADID_ref": " ",
+    "LINK_TEXT": "http://elfin.igpp.ucla.edu",
+    "LINK_TITLE": "Electron Losses and Fields INvestigation-A EPD file",
+    "HTTP_LINK": "http://elfin.igpp.ucla.edu",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/ELFIN/A/EPD/L1/electron/PT0.2S",
+    "DOI": "https://doi.org/10.48322/jyaq-cq12"
+  },
+  "CDFVariables": {
+    "ela_pef_time": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PEF Time in TT2000",
+        "FIELDNAM": "Time since J2000",
+        "RESOLUTION": "1s",
+        "TIME_BASE": "J2000",
+        "UNITS": "ns",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns"
+      }
+    },
+    "ela_pef": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[ADC UNITS ONLY] L1 EPD Electron counts, Fast Mode - all 16 energies",
+        "DEPEND_0": "ela_pef_time",
+        "DEPEND_1": "ela_pef_energies_mean",
+        "DISPLAY_TYPE": "default_dimensionscatter>nobar",
+        "FIELDNAM": "Electron Counts",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "electron counts/sector",
+        "SCALETYP": "log",
+        "UNITS": "raw counts",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": -1000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "raw counts",
+        "x_LABLAXIS": "electron counts/sector",
+        "x_DEPEND": [
+          "ela_pef_energies_mean"
+        ]
+      }
+    },
+    "ela_pef_8": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> just bottom eight energies",
+        "COMPONENT_0": "ela_pef",
+        "DEPEND_0": "ela_pef_time",
+        "DEPEND_1": "ela_pef_energies_mean",
+        "DISPLAY_TYPE": "default_dimensionscatter>nobar>y=ela_pef_energies_mean(0),y=ela_pef_energies_mean(1),y=ela_pef_energies_mean(2),y=ela_pef_energies_mean(3),y=ela_pef_energies_mean(5),y=ela_pef_energies_mean(4),y=ela_pef_energies_mean(6),y=ela_pef_energies_mean(7)",
+        "FIELDNAM": "Electron Counts",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "Electron counts/sector",
+        "SCALETYP": "log",
+        "UNITS": "raw counts",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": -1000000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "raw counts",
+        "x_LABLAXIS": "Electron counts/sector",
+        "x_DEPEND": [
+          "ela_pef_energies_mean"
+        ],
+        "COMPONENTS": [
+          "ela_pef"
+        ]
+      }
+    },
+    "ela_pef_top8": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> just top eight energies ",
+        "COMPONENT_0": "ela_pef",
+        "DEPEND_0": "ela_pef_time",
+        "DEPEND_1": "ela_pef_energies_mean",
+        "DISPLAY_TYPE": "default_dimensionscatter>nobar>y=ela_pef_energies_mean(8),y=ela_pef_energies_mean(9),y=ela_pef_energies_mean(10),y=ela_pef_energies_mean(11),y=ela_pef_energies_mean(12),y=ela_pef_energies_mean(13),y=ela_pef_energies_mean(14),y=ela_pef_energies_mean(15)",
+        "FIELDNAM": "Electron Counts",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "Electron counts/sector",
+        "SCALETYP": "log",
+        "UNITS": "raw counts",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": -1000000.0,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "raw counts",
+        "x_LABLAXIS": "Electron counts/sector",
+        "x_DEPEND": [
+          "ela_pef_energies_mean"
+        ],
+        "COMPONENTS": [
+          "ela_pef"
+        ]
+      }
+    },
+    "ela_pef_energies_mean": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Central energy bins for each of 16 EPD electron channels",
+        "FIELDNAM": "ela_pef_energies_mean",
+        "FILLVAL": -128.0,
+        "FORMAT": "F12.8",
+        "LABLAXIS": "Central electron energy bins",
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 1.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Central electron energy bins"
+      },
+      "VarData": [
+        63.24549866,
+        97.979599,
+        138.56399536,
+        183.30299377,
+        238.11799622,
+        305.20498657,
+        385.1619873,
+        520.47998047,
+        752.99401855,
+        1081.67004395,
+        1529.70996094,
+        2121.32006836,
+        2893.95996094,
+        3728.61010742,
+        4906.12011719,
+        6500.0
+      ]
+    },
+    "ela_pef_energies_min": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Min energy bins associated with each of 16 EPD electron channels",
+        "FIELDNAM": "ela_pef_energies_min",
+        "FILLVAL": -128.0,
+        "FORMAT": "F12.8",
+        "LABLAXIS": "Min Electron energy bins",
+        "UNITS": "keV",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Min Electron energy bins"
+      },
+      "VarData": [
+        50.0,
+        80.0,
+        120.0,
+        160.0,
+        210.0,
+        270.0,
+        345.0,
+        430.0,
+        630.0,
+        900.0,
+        1300.0,
+        1800.0,
+        2500.0,
+        3350.0,
+        4150.0,
+        5800.0
+      ]
+    },
+    "ela_pef_sectnum": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sector Number",
+        "DEPEND_0": "ela_pef_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ela_pef_sectnum",
+        "FILLVAL": -128,
+        "FORMAT": "i2",
+        "LABLAXIS": "Sector Number",
+        "UNITS": "num sector",
+        "VALIDMAX": 16,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "num sector",
+        "x_LABLAXIS": "Sector Number"
+      }
+    },
+    "ela_pef_nspinsinsum": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "number spins in sum",
+        "DEPEND_0": "ela_pef_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ela_pef_spin_nspinsinsum",
+        "FILLVAL": -128,
+        "FORMAT": "i2",
+        "LABLAXIS": "Number Spins in Sum",
+        "UNITS": "num spins in sum",
+        "VALIDMAX": 16,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "num spins in sum",
+        "x_LABLAXIS": "Number Spins in Sum"
+      }
+    },
+    "ela_pef_nsectors": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of Sectors",
+        "DEPEND_0": "ela_pef_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "ela_pef_nsectors",
+        "FILLVAL": -128,
+        "FORMAT": "i2",
+        "LABLAXIS": "Number of sectors",
+        "UNITS": "num sectors",
+        "VALIDMAX": 32,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "num sectors",
+        "x_LABLAXIS": "Number of sectors"
+      }
+    },
+    "ela_pef_spinper": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "spinperiod",
+        "DEPEND_0": "ela_pef_time",
+        "FIELDNAM": "ela_pef_spinper",
+        "FILLVAL": "NaN",
+        "FORMAT": "F12.8",
+        "LABLAXIS": "spinper",
+        "UNITS": "sec",
+        "VALIDMAX": 3480.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "spinper"
+      }
+    }
+  }
+}

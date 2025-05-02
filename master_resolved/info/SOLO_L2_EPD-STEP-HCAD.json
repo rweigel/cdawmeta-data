@@ -1,0 +1,1501 @@
+{
+  "CDFFileInfo": {
+    "File": "solo_l2_epd-step-hcad_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/solo_l2_epd-step-hcad_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Project": "SOLO>Solar Orbiter",
+    "Source_name": "SOLO>Solar Orbiter",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Data_type": "L2>Level 2 Data",
+    "Descriptor": "EPD-STEP-HCAD>Energetic Particle Detector, SupraThermal Electrons and Protons, High Cadence",
+    "Data_version": " ",
+    "Software_version": " ",
+    "PI_name": "J. Rodriguez-Pacheco",
+    "PI_affiliation": "Space Research Group, Universidad de Alcala",
+    "TEXT": "Energetic Particle Detector (EPD). Instrument suite, part of the scientific payload aboard the Solar Orbiter mission, dedicated to the study of solar energetic particles. EPD measures electrons, protons and heavy ions with high temporal resolution over a wide energy range, from suprathermal energies to several hundreds of MeV/nucleon. It is composed of four units: SupraThermal Electrons and Protons (STEP), Electron Proton Telescope (EPT), Suprathermal Ion Spectrograph (SIS) and High Energy Telescope (HET).\nhttps://doi.org/10.1051/0004-6361/201935287",
+    "Instrument_type": "Particles (space)",
+    "Mission_group": "Solar Orbiter",
+    "Logical_source": "solo_L2_epd-step-hcad",
+    "Logical_source_description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, SupraThermal Electrons and Protons, High Cadence",
+    "Logical_file_id": " ",
+    "Rules_of_use": "See http://espada.uah.es/epd/EPD_data.php",
+    "Generated_by": "Space Research Group, Universidad de Alcala",
+    "Generation_date": " ",
+    "Acknowledgement": "See http://espada.uah.es/epd/EPD_data.php",
+    "MODS": " ",
+    "HTTP_LINK": "http://espada.uah.es/epd/EPD_data.php",
+    "Parents": " \n ",
+    "Data_product": "HCAD>High Cadence",
+    "LEVEL": "L2>Level 2 Data",
+    "SOOP_TYPE": "I_DEFAULT",
+    "OBS_ID": " ",
+    "TARGET_NAME": " ",
+    "TARGET_CLASS": "interplanetary_medium",
+    "TARGET_REGION": "heliosphere",
+    "TIME_MIN": " ",
+    "TIME_MAX": " ",
+    "spase_DatasetResourceID": " ",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "EPOCH": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CADENCE": "1 second, 5 seconds",
+        "CATDESC": "Nanoseconds since J2000",
+        "DELTA_PLUS_VAR": "DELTA_EPOCH",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "Time",
+        "SCALEMAX": "2020-08-01T00:00:00.000000000",
+        "SCALEMIN": "2020-07-31T00:00:00.000000000",
+        "SCALETYP": "linear",
+        "UNITS": "nanoseconds",
+        "VALIDMAX": "2050-01-01T00:00:00.000000000",
+        "VALIDMIN": "2000-01-01T00:00:00.000000000",
+        "VAR_NOTES": "Start of acquisition interval. Variable cadence: 5 s in far mode, 1 s in close mode ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nanoseconds",
+        "x_LABLAXIS": "Time"
+      }
+    },
+    "DELTA_EPOCH": {
+      "VarDescription": {
+        "DataType": "CDF_UINT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 4294967294,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Accumulation period in seconds",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "Delta epoch",
+        "FILLVAL": 4294967295,
+        "FORMAT": "I",
+        "LABLAXIS": "Delta epoch",
+        "SCALEMAX": 3600,
+        "SCALEMIN": 0,
+        "SCALETYP": "linear",
+        "UNITS": "seconds",
+        "VALIDMAX": 3600,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "seconds",
+        "x_LABLAXIS": "Delta epoch"
+      }
+    },
+    "Magnet_Rows_Flux": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnet channel flux for each row of pixels",
+        "DELTA_MINUS_VAR": "Magnet_Rows_Uncertainty",
+        "DELTA_PLUS_VAR": "Magnet_Rows_Uncertainty",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DEPEND_2": "Sector_Rows",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnet Flux (Rows)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Magnet Flux",
+        "LABL_PTR_1": "Bins_Text",
+        "LABL_PTR_2": "Row_Names",
+        "SCALEMAX": 470000.0,
+        "SCALEMIN": 6035.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Magnet Flux",
+        "x_LABLAXES": [
+          [
+            "0.0077 - 0.0112 MeV/n",
+            "0.0111 - 0.0200 MeV/n",
+            "0.0200 - 0.0351 MeV/n",
+            "0.0351 - 0.0654 MeV/n"
+          ],
+          [
+            "Row 1",
+            "Row 2",
+            "Row 3"
+          ]
+        ],
+        "x_DEPEND": [
+          "Bins_Low_Energy",
+          "Sector_Rows"
+        ]
+      }
+    },
+    "Magnet_Rows_Uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Uncertainty in magnet channel flux for each row of pixels",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DEPEND_2": "Sector_Rows",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnet Flux Uncert (Rows)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Magnet Flux Sigma",
+        "SCALEMAX": 235000.0,
+        "SCALEMIN": 6035.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Magnet Flux Sigma",
+        "x_DEPEND": [
+          "Bins_Low_Energy",
+          "Sector_Rows"
+        ]
+      }
+    },
+    "Magnet_Rows_Rate": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnet channel count rate for each row of pixels",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DEPEND_2": "Sector_Rows",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnet Count Rate (Rows)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Magnet Count Rate",
+        "LABL_PTR_1": "Bins_Text",
+        "LABL_PTR_2": "Row_Names",
+        "SCALEMAX": 4.0,
+        "SCALEMIN": 0.5,
+        "SCALETYP": "log",
+        "UNITS": "counts / s",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts / s",
+        "x_LABLAXIS": "Magnet Count Rate",
+        "x_LABLAXES": [
+          [
+            "0.0077 - 0.0112 MeV/n",
+            "0.0111 - 0.0200 MeV/n",
+            "0.0200 - 0.0351 MeV/n",
+            "0.0351 - 0.0654 MeV/n"
+          ],
+          [
+            "Row 1",
+            "Row 2",
+            "Row 3"
+          ]
+        ],
+        "x_DEPEND": [
+          "Bins_Low_Energy",
+          "Sector_Rows"
+        ]
+      }
+    },
+    "Integral_Rows_Flux": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Integral channel flux for each row of pixels",
+        "DELTA_MINUS_VAR": "Integral_Rows_Uncertainty",
+        "DELTA_PLUS_VAR": "Integral_Rows_Uncertainty",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DEPEND_2": "Sector_Rows",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Integral Flux (Rows)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Integral Flux",
+        "LABL_PTR_1": "Bins_Text",
+        "LABL_PTR_2": "Row_Names",
+        "SCALEMAX": 659100.0,
+        "SCALEMIN": 6057.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Integral Flux",
+        "x_LABLAXES": [
+          [
+            "0.0077 - 0.0112 MeV/n",
+            "0.0111 - 0.0200 MeV/n",
+            "0.0200 - 0.0351 MeV/n",
+            "0.0351 - 0.0654 MeV/n"
+          ],
+          [
+            "Row 1",
+            "Row 2",
+            "Row 3"
+          ]
+        ],
+        "x_DEPEND": [
+          "Bins_Low_Energy",
+          "Sector_Rows"
+        ]
+      }
+    },
+    "Integral_Rows_Uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Uncertainty in integral channel flux for each row of pixels",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DEPEND_2": "Sector_Rows",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Integral Flux Uncert (Rows)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Integral Flux Sigma",
+        "SCALEMAX": 269100.0,
+        "SCALEMIN": 6057.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Integral Flux Sigma",
+        "x_DEPEND": [
+          "Bins_Low_Energy",
+          "Sector_Rows"
+        ]
+      }
+    },
+    "Integral_Rows_Rate": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Integral channel count rate for each row of pixels",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DEPEND_2": "Sector_Rows",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Integral Count Rate (Rows)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Integral Count Rate",
+        "LABL_PTR_1": "Bins_Text",
+        "LABL_PTR_2": "Row_Names",
+        "SCALEMAX": 6.0,
+        "SCALEMIN": 0.5,
+        "SCALETYP": "log",
+        "UNITS": "counts / s",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts / s",
+        "x_LABLAXIS": "Integral Count Rate",
+        "x_LABLAXES": [
+          [
+            "0.0077 - 0.0112 MeV/n",
+            "0.0111 - 0.0200 MeV/n",
+            "0.0200 - 0.0351 MeV/n",
+            "0.0351 - 0.0654 MeV/n"
+          ],
+          [
+            "Row 1",
+            "Row 2",
+            "Row 3"
+          ]
+        ],
+        "x_DEPEND": [
+          "Bins_Low_Energy",
+          "Sector_Rows"
+        ]
+      }
+    },
+    "Magnet_Cols_Flux": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4,
+          5
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnet channel flux for each column of pixels",
+        "DELTA_MINUS_VAR": "Magnet_Cols_Uncertainty",
+        "DELTA_PLUS_VAR": "Magnet_Cols_Uncertainty",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DEPEND_2": "Sector_Columns",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnet Flux (Columns)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Magnet Flux",
+        "LABL_PTR_1": "Bins_Text",
+        "LABL_PTR_2": "Column_Names",
+        "SCALEMAX": 868800.0,
+        "SCALEMIN": 9204.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Magnet Flux",
+        "x_LABLAXES": [
+          [
+            "0.0077 - 0.0112 MeV/n",
+            "0.0111 - 0.0200 MeV/n",
+            "0.0200 - 0.0351 MeV/n",
+            "0.0351 - 0.0654 MeV/n"
+          ],
+          [
+            "Column 1",
+            "Column 2",
+            "Column 3",
+            "Column 4",
+            "Column 5"
+          ]
+        ],
+        "x_DEPEND": [
+          "Bins_Low_Energy",
+          "Sector_Columns"
+        ]
+      }
+    },
+    "Magnet_Cols_Uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4,
+          5
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Uncertainty in magnet channel flux for each column of pixels",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DEPEND_2": "Sector_Columns",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnet Flux Uncert (Columns)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Magnet Flux Sigma",
+        "SCALEMAX": 434400.0,
+        "SCALEMIN": 9204.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Magnet Flux Sigma",
+        "x_DEPEND": [
+          "Bins_Low_Energy",
+          "Sector_Columns"
+        ]
+      }
+    },
+    "Magnet_Cols_Rate": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4,
+          5
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnet channel count rate for each column of pixels",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DEPEND_2": "Sector_Columns",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Magnet Count Rate (Columns)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Magnet Count Rate",
+        "LABL_PTR_1": "Bins_Text",
+        "LABL_PTR_2": "Column_Names",
+        "SCALEMAX": 4.0,
+        "SCALEMIN": 0.5,
+        "SCALETYP": "log",
+        "UNITS": "counts / s",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts / s",
+        "x_LABLAXIS": "Magnet Count Rate",
+        "x_LABLAXES": [
+          [
+            "0.0077 - 0.0112 MeV/n",
+            "0.0111 - 0.0200 MeV/n",
+            "0.0200 - 0.0351 MeV/n",
+            "0.0351 - 0.0654 MeV/n"
+          ],
+          [
+            "Column 1",
+            "Column 2",
+            "Column 3",
+            "Column 4",
+            "Column 5"
+          ]
+        ],
+        "x_DEPEND": [
+          "Bins_Low_Energy",
+          "Sector_Columns"
+        ]
+      }
+    },
+    "Integral_Cols_Flux": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4,
+          5
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Integral channel flux for each column of pixels",
+        "DELTA_MINUS_VAR": "Integral_Cols_Uncertainty",
+        "DELTA_PLUS_VAR": "Integral_Cols_Uncertainty",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DEPEND_2": "Sector_Columns",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Integral Flux (Columns)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Integral Flux",
+        "LABL_PTR_1": "Bins_Text",
+        "LABL_PTR_2": "Column_Names",
+        "SCALEMAX": 862200.0,
+        "SCALEMIN": 9255.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Integral Flux",
+        "x_LABLAXES": [
+          [
+            "0.0077 - 0.0112 MeV/n",
+            "0.0111 - 0.0200 MeV/n",
+            "0.0200 - 0.0351 MeV/n",
+            "0.0351 - 0.0654 MeV/n"
+          ],
+          [
+            "Column 1",
+            "Column 2",
+            "Column 3",
+            "Column 4",
+            "Column 5"
+          ]
+        ],
+        "x_DEPEND": [
+          "Bins_Low_Energy",
+          "Sector_Columns"
+        ]
+      }
+    },
+    "Integral_Cols_Uncertainty": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4,
+          5
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Uncertainty in integral channel flux for each column of pixels",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DEPEND_2": "Sector_Columns",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Integral Flux Uncert (Columns)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Integral Flux Sigma",
+        "SCALEMAX": 431100.0,
+        "SCALEMIN": 9255.0,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "6.2415e16>particles/(s m^2 sr J)",
+        "UNITS": "particles / (s cm^2 sr MeV)",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "particles / (s cm^2 sr MeV)",
+        "x_LABLAXIS": "Integral Flux Sigma",
+        "x_DEPEND": [
+          "Bins_Low_Energy",
+          "Sector_Columns"
+        ]
+      }
+    },
+    "Integral_Cols_Rate": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4,
+          5
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Integral channel count rate for each column of pixels",
+        "DEPEND_0": "EPOCH",
+        "DEPEND_1": "Bins_Low_Energy",
+        "DEPEND_2": "Sector_Columns",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Integral Count Rate (Columns)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Integral Count Rate",
+        "LABL_PTR_1": "Bins_Text",
+        "LABL_PTR_2": "Column_Names",
+        "SCALEMAX": 4.0,
+        "SCALEMIN": 0.5,
+        "SCALETYP": "log",
+        "UNITS": "counts / s",
+        "VALIDMAX": 1.0000000200408773e+20,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "counts / s",
+        "x_LABLAXIS": "Integral Count Rate",
+        "x_LABLAXES": [
+          [
+            "0.0077 - 0.0112 MeV/n",
+            "0.0111 - 0.0200 MeV/n",
+            "0.0200 - 0.0351 MeV/n",
+            "0.0351 - 0.0654 MeV/n"
+          ],
+          [
+            "Column 1",
+            "Column 2",
+            "Column 3",
+            "Column 4",
+            "Column 5"
+          ]
+        ],
+        "x_DEPEND": [
+          "Bins_Low_Energy",
+          "Sector_Columns"
+        ]
+      }
+    },
+    "Bins_Low_Energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Lowest energy of each bin",
+        "DELTA_PLUS_VAR": "Bins_Width",
+        "FIELDNAM": "Bins Low Energy",
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Energy",
+        "LABL_PTR_1": "Bins_Text",
+        "SCALEMAX": 0.03506999835371971,
+        "SCALEMIN": 0.007662000134587288,
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.602e-13>J",
+        "UNITS": "MeV",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 9.999999974752427e-07,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Energy",
+        "x_LABLAXES": [
+          [
+            "0.0077 - 0.0112 MeV/n",
+            "0.0111 - 0.0200 MeV/n",
+            "0.0200 - 0.0351 MeV/n",
+            "0.0351 - 0.0654 MeV/n"
+          ]
+        ]
+      },
+      "VarData": [
+        0.007662000134587288,
+        0.011149999685585499,
+        0.019999999552965164,
+        0.03506999835371971
+      ]
+    },
+    "Bins_Width": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Width of each energy bin",
+        "FIELDNAM": "Bins Width",
+        "FORMAT": "G10.4",
+        "LABLAXIS": "Bin width",
+        "SI_CONVERSION": "1.602e-13>J",
+        "UNITS": "MeV",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXIS": "Bin width"
+      },
+      "VarData": [
+        0.003488000016659498,
+        0.008849999867379665,
+        0.015069999732077122,
+        0.03034999966621399
+      ]
+    },
+    "Bins_Text": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 25,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Text description of each energy bin",
+        "FIELDNAM": "Bins Text",
+        "FORMAT": "A25",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "0.0077 - 0.0112 MeV/n",
+        "0.0111 - 0.0200 MeV/n",
+        "0.0200 - 0.0351 MeV/n",
+        "0.0351 - 0.0654 MeV/n"
+      ]
+    },
+    "Sector_Rows": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 254,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sector Rows",
+        "FIELDNAM": "Sector Rows",
+        "FORMAT": "I",
+        "LABLAXIS": "Sector number",
+        "LABL_PTR_1": "Row_Names",
+        "SCALEMAX": 3,
+        "SCALEMIN": 1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 3,
+        "VALIDMIN": 1,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Sector number",
+        "x_LABLAXES": [
+          [
+            "Row 1",
+            "Row 2",
+            "Row 3"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "Row_Names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 5,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Row names",
+        "FIELDNAM": "Row names",
+        "FORMAT": "A5",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Row 1",
+        "Row 2",
+        "Row 3"
+      ]
+    },
+    "Sector_Columns": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_UINT1",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 254,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Sector Columns",
+        "FIELDNAM": "Sector Columns",
+        "FORMAT": "I",
+        "LABLAXIS": "Sector number",
+        "LABL_PTR_1": "Column_Names",
+        "SCALEMAX": 5,
+        "SCALEMIN": 1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 5,
+        "VALIDMIN": 1,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Sector number",
+        "x_LABLAXES": [
+          [
+            "Column 1",
+            "Column 2",
+            "Column 3",
+            "Column 4",
+            "Column 5"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "Column_Names": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 8,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Columns names",
+        "FIELDNAM": "Column names",
+        "FORMAT": "A8",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4",
+        "Column 5"
+      ]
+    },
+    "EPOCH_1": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CADENCE": "60 seconds",
+        "CATDESC": "Nanoseconds since J2000",
+        "FIELDNAM": "Epoch 1",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "Time",
+        "SCALEMAX": "2020-08-01T00:00:00.000000000",
+        "SCALEMIN": "2020-07-31T00:00:00.000000000",
+        "SCALETYP": "linear",
+        "UNITS": "nanoseconds",
+        "VALIDMAX": "2050-01-01T00:00:00.000000000",
+        "VALIDMIN": "2000-01-01T00:00:00.000000000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nanoseconds",
+        "x_LABLAXIS": "Time"
+      }
+    },
+    "EPOCH_2": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CADENCE": "1 hour",
+        "CATDESC": "Nanoseconds since J2000",
+        "FIELDNAM": "Epoch 2",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "Time",
+        "SCALEMAX": "2020-08-01T00:00:00.000000000",
+        "SCALEMIN": "2020-07-31T00:00:00.000000000",
+        "SCALETYP": "linear",
+        "UNITS": "nanoseconds",
+        "VALIDMAX": "2050-01-01T00:00:00.000000000",
+        "VALIDMIN": "2000-01-01T00:00:00.000000000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nanoseconds",
+        "x_LABLAXIS": "Time"
+      }
+    },
+    "RTN_Sector_Rows": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Particle flow direction (unit vector) in RTN coordinates",
+        "DEPEND_0": "EPOCH_1",
+        "DEPEND_1": "Sector_Rows",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Sector Rows flow direction RTN",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.3",
+        "LABL_PTR_1": "Row_Names",
+        "LABL_PTR_2": "RTN_Labels",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": -1.0,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": -1.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Row 1",
+            "Row 2",
+            "Row 3"
+          ],
+          [
+            "R",
+            "T",
+            "N"
+          ]
+        ],
+        "x_DEPEND": [
+          "Sector_Rows"
+        ]
+      }
+    },
+    "XYZ_Sector_Rows": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Particle flow direction (unit vector) in spacecraft XYZ coordinates",
+        "DEPEND_1": "Sector_Rows",
+        "FIELDNAM": "Sector Rows flow direction XYZ",
+        "FORMAT": "F6.3",
+        "LABL_PTR_1": "Row_Names",
+        "LABL_PTR_2": "XYZ_Labels",
+        "UNITS": " ",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": -1.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Row 1",
+            "Row 2",
+            "Row 3"
+          ],
+          [
+            "X",
+            "Y",
+            "Z"
+          ]
+        ],
+        "x_DEPEND": [
+          "Sector_Rows"
+        ]
+      },
+      "VarData": [
+        -0.886,
+        0.463,
+        0.0,
+        -0.819,
+        0.574,
+        0.0,
+        -0.738,
+        0.674,
+        0.0
+      ]
+    },
+    "RTN_Sector_Columns": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          5,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Particle flow direction (unit vector) in RTN coordinates",
+        "DEPEND_0": "EPOCH_1",
+        "DEPEND_1": "Sector_Columns",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Sector Cols flow direction RTN",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.3",
+        "LABL_PTR_1": "Column_Names",
+        "LABL_PTR_2": "RTN_Labels",
+        "SCALEMAX": 1.0,
+        "SCALEMIN": -1.0,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": -1.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Column 1",
+            "Column 2",
+            "Column 3",
+            "Column 4",
+            "Column 5"
+          ],
+          [
+            "R",
+            "T",
+            "N"
+          ]
+        ],
+        "x_DEPEND": [
+          "Sector_Columns"
+        ]
+      }
+    },
+    "XYZ_Sector_Columns": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          5,
+          3
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Particle flow direction (unit vector) in spacecraft XYZ coordinates",
+        "DEPEND_1": "Sector_Columns",
+        "FIELDNAM": "Sector Cols flow direction XYZ",
+        "FORMAT": "F6.3",
+        "LABL_PTR_1": "Column_Names",
+        "LABL_PTR_2": "XYZ_Labels",
+        "UNITS": " ",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": -1.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Column 1",
+            "Column 2",
+            "Column 3",
+            "Column 4",
+            "Column 5"
+          ],
+          [
+            "X",
+            "Y",
+            "Z"
+          ]
+        ],
+        "x_DEPEND": [
+          "Sector_Columns"
+        ]
+      },
+      "VarData": [
+        -0.777,
+        0.544,
+        0.315,
+        -0.808,
+        0.566,
+        0.163,
+        -0.819,
+        0.574,
+        0.0,
+        -0.808,
+        0.566,
+        -0.163,
+        -0.777,
+        0.544,
+        -0.315
+      ]
+    },
+    "HCI_R": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spacecraft radial distance from the Sun",
+        "DEPEND_0": "EPOCH_2",
+        "FIELDNAM": "S/C Radial Distance",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.4",
+        "LABLAXIS": "r",
+        "SCALEMAX": 1.2,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.495978E11>m",
+        "UNITS": "au",
+        "VALIDMAX": 1.2,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "au",
+        "x_LABLAXIS": "r"
+      }
+    },
+    "HCI_Lat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spacecraft heliocentric latitude (HCI)",
+        "DEPEND_0": "EPOCH_2",
+        "FIELDNAM": "S/C Latitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.2",
+        "LABLAXIS": "Latitude",
+        "SCALEMAX": 90.0,
+        "SCALEMIN": -90.0,
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "Latitude"
+      }
+    },
+    "HCI_Lon": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spacecraft heliocentric longitude (HCI)",
+        "DEPEND_0": "EPOCH_2",
+        "FIELDNAM": "S/C Longitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.2",
+        "LABLAXIS": "Longitude",
+        "SCALEMAX": 360.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "degrees",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "Longitude"
+      }
+    },
+    "QUALITY_FLAG": {
+      "VarDescription": {
+        "DataType": "CDF_UINT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Data quality flag",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "Quality flag",
+        "FILLVAL": 255,
+        "FORMAT": "I",
+        "LABLAXIS": "Quality flag",
+        "SCALEMAX": 4,
+        "SCALEMIN": 0,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 4,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "0:Bad, 1:Known problems, 2:Survey data, 3:Good, 4:Excellent",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Quality flag"
+      }
+    },
+    "QUALITY_BITMASK": {
+      "VarDescription": {
+        "DataType": "CDF_UINT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 65534,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Computer readable quality parameter",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "Quality bitmask",
+        "FILLVAL": 65535,
+        "FORMAT": "Z4",
+        "LABLAXIS": "Quality bitmask",
+        "SCALEMAX": 32767,
+        "SCALEMIN": 0,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 32767,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "TBD",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Quality bitmask"
+      }
+    },
+    "RTN_Labels": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Labels for vector components in RTN coordinates",
+        "FIELDNAM": "RTN Labels",
+        "FORMAT": "A1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "R",
+        "T",
+        "N"
+      ]
+    },
+    "XYZ_Labels": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Labels for vector components in spacecraft XYZ coordinates",
+        "FIELDNAM": "Spacecraft XYZ Labels",
+        "FORMAT": "A1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "X",
+        "Y",
+        "Z"
+      ]
+    }
+  }
+}

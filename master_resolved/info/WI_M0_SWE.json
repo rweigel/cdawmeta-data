@@ -1,0 +1,1505 @@
+{
+  "CDFFileInfo": {
+    "File": "wi_m0_swe_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/wi_m0_swe_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISTP",
+    "Source_name": "WIND>Wind Interplanetary Plasma Laboratory",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Data_type": "M0>9 sec electron pitch-angle distribution averages",
+    "Descriptor": "SWE>Solar Wind Experiment",
+    "File_naming_convention": "source_datatype_descriptor",
+    "Data_version": " ",
+    "PI_name": "K. Ogilvie",
+    "PI_affiliation": "NASA/GSFC",
+    "TEXT": "Explanatory notes: \nThe electron pitch-angle distribution averages included in this data set are derived from integrating the electron pitch-angle distributions measured by the Wind/SWE electron instrument (see Ogilvie et al., \"SWE, a comprehensive plasma instrument for the Wind spacecraft\", Space Sci. Rev., 71, 55, 1955).\nAverages of phase-space density (f) over key regions of the unit sphere     (the set of all possible electron velocity directions) are computed from 9s measurements which are usually separated by one or more 3s spin-periods.  These quantities are reliable and citable with caution, meaning that the PI advises that the user should discuss their interpretations with a member of the SWE science team before publishing.\nThe following comments are intended to aid in the use and interpretation of the averages reported in this data set.  We begin this analysis with a measure of f for each pitch-angle bin, six degrees in width, from 0 degrees (flux nearly parallel to B) to 180 degrees (flux nearly anti-parallel with B).  The f values for pitch-angles from 0-90 degrees (parallel streaming) are integrated (with angluar weighting and assumptions of gyrotropy) over this half-sphere, then averaged by dividing out the 2-pi solid angle of the half-sphere; the result being referred to as the 'f_para' average.  Similarly, the 'f_perp' (flux nearly perpendicular to B) average is the result of integrating f for pitch-angles from 60-120 degrees (a region also 2-pi in solid angle).  Next, the 'f_anti' (flux nearly anti-parallel to B) average covers the half-sphere of \"backward\" streaming electrons; having pitch-angles from 90-180 degrees.  Finally, the 'f_omni' (omni-directional) average provides the integral of f over the full sphere, divided by the full 4-pi solid angle; providing a measure of total electron flux into the region of observation. \nThe above analysis is carried out for each of 13 energy channels: E = 19.34, 38.68, 58.03, 77.37, 96.71, 116.1, 193.4, 290.1, 425.5, 580.3, 773.7, 1006., and 1238. eV.  For reference, the electron speeds (|V|, in cm/s) corresponding to these energies are reported in this data set.  Hence the data set reported here contains: f_para, f_perp, f_anti, f_omni (for each of 13 values of E), and the 13 values of |V| (constant, included for reference).",
+    "Instrument_type": "Plasma and Solar Wind",
+    "Mission_group": "Wind",
+    "Logical_source": "wi_m0_swe",
+    "Logical_file_id": "wi_m0_swe_00000000_v01",
+    "Logical_source_description": "Wind Solar Wind Experiment (SWE), 9 sec solar wind electron pitch-angle distribution averages",
+    "Time_resolution": "9 seconds",
+    "Generation_date": " ",
+    "MODS": "Skeleton created 5/25/2007",
+    "LINK_TEXT": "Additional information about instruments and parameters is available on the ",
+    "LINK_TITLE": "Wind Data Page",
+    "HTTP_LINK": "http://wind.nasa.gov/data.php",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Wind/SWE/M0/PT12S",
+    "DOI": "https://doi.org/10.48322/jsqc-vm88"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time at start of measurement interval.",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "MONOTON": "INCREASE",
+        "SCALETYP": "linear",
+        "VALIDMAX": "2029-12-31T23:59:59.999",
+        "VALIDMIN": "1990-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null
+      }
+    },
+    "Ve": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron speed",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "velocity>electron",
+        "FIELDNAM": "Ve",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABLAXIS": "Ve",
+        "SCALETYP": "linear",
+        "UNITS": "cm/s",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "electron speeds corresponding to fluxes",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "cm/s",
+        "x_LABLAXIS": "Ve"
+      }
+    },
+    "eV": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron energy",
+        "COMPONENT_0": "Ve",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "energy>electron",
+        "FIELDNAM": "Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.2",
+        "FUNCT": "convert_toeV",
+        "LABLAXIS": "Energy",
+        "SCALETYP": "linear",
+        "UNITS": "eV",
+        "VALIDMAX": 3500.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "electron speeds corresponding to fluxes",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "Energy",
+        "COMPONENTS": [
+          "Ve"
+        ]
+      }
+    },
+    "f_para": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron flux, parallel average",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_para",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABL_PTR_1": "f_para_LABL",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_para[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXES": [
+          [
+            "f_para @ chan[0]",
+            "f_para @ chan[1]",
+            "f_para @ chan[2]",
+            "f_para @ chan[3]",
+            "f_para @ chan[4]",
+            "f_para @ chan[5]",
+            "f_para @ chan[6]",
+            "f_para @ chan[7]",
+            "f_para @ chan[8]",
+            "f_para @ chan[9]",
+            "f_para @ chan[10]",
+            "f_para @ chan[11]",
+            "f_para @ chan[12]"
+          ]
+        ]
+      }
+    },
+    "f_para_all": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for all channels, by speed",
+        "COMPONENT_0": "f_para",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Ve",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_para at all chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_para[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_para at all chan.",
+        "x_DEPEND": [
+          "Ve"
+        ],
+        "COMPONENTS": [
+          "f_para"
+        ]
+      }
+    },
+    "f_para_even": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for even channels, by speed",
+        "COMPONENT_0": "f_para",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Ve",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_para_even(0),y=f_para_even(2),y=f_para_even(4),y=f_para_even(6),y=f_para_even(8),y=f_para_even(10),y=f_para_even(12)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_para at even chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_para[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_para at even chan.",
+        "x_DEPEND": [
+          "Ve"
+        ],
+        "COMPONENTS": [
+          "f_para"
+        ]
+      }
+    },
+    "f_para_odd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for odd channels, by speed",
+        "COMPONENT_0": "f_para",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Ve",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_para_odd(1),y=f_para_odd(3),y=f_para_odd(5),y=f_para_odd(7),y=f_para_odd(9),y=f_para_odd(11)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_para at odd chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_para[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_para at odd chan.",
+        "x_DEPEND": [
+          "Ve"
+        ],
+        "COMPONENTS": [
+          "f_para"
+        ]
+      }
+    },
+    "f_para_all_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for all channels, by energy",
+        "COMPONENT_0": "f_para_all",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "eV",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_para at all chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_para[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_para at all chan.",
+        "x_DEPEND": [
+          "eV"
+        ],
+        "COMPONENTS": [
+          "f_para_all"
+        ]
+      }
+    },
+    "f_para_even_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for even channels, by energy",
+        "COMPONENT_0": "f_para_even",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "eV",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_para_even(0),y=f_para_even(2),y=f_para_even(4),y=f_para_even(6),y=f_para_even(8),y=f_para_even(10),y=f_para_even(12)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_para at even chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_para[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_para at even chan.",
+        "x_DEPEND": [
+          "eV"
+        ],
+        "COMPONENTS": [
+          "f_para_even"
+        ]
+      }
+    },
+    "f_para_odd_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for odd channels, by energy",
+        "COMPONENT_0": "f_para_odd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "eV",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_para_odd(1),y=f_para_odd(3),y=f_para_odd(5),y=f_para_odd(7),y=f_para_odd(9),y=f_para_odd(11)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_para at odd chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_para[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_para at odd chan.",
+        "x_DEPEND": [
+          "eV"
+        ],
+        "COMPONENTS": [
+          "f_para_odd"
+        ]
+      }
+    },
+    "f_perp": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron flux, perpendicular average",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_perp",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABL_PTR_1": "f_perp_LABL",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_perp[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXES": [
+          [
+            "f_perp @ chan[0]",
+            "f_perp @ chan[1]",
+            "f_perp @ chan[2]",
+            "f_perp @ chan[3]",
+            "f_perp @ chan[4]",
+            "f_perp @ chan[5]",
+            "f_perp @ chan[6]",
+            "f_perp @ chan[7]",
+            "f_perp @ chan[8]",
+            "f_perp @ chan[9]",
+            "f_perp @ chan[10]",
+            "f_perp @ chan[11]",
+            "f_perp @ chan[12]"
+          ]
+        ]
+      }
+    },
+    "f_perp_all": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for all channels, by speed",
+        "COMPONENT_0": "f_perp",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Ve",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_perp",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_perp at all chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_perp[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_perp at all chan.",
+        "x_DEPEND": [
+          "Ve"
+        ],
+        "COMPONENTS": [
+          "f_perp"
+        ]
+      }
+    },
+    "f_perp_even": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for even channels, by speed",
+        "COMPONENT_0": "f_perp",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Ve",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_perp_even(0),y=f_perp_even(2),y=f_perp_even(4),y=f_perp_even(6),y=f_perp_even(8),y=f_perp_even(10),y=f_perp_even(12)",
+        "FIELDNAM": "f_perp",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_perp at even chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_perp[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_perp at even chan.",
+        "x_DEPEND": [
+          "Ve"
+        ],
+        "COMPONENTS": [
+          "f_perp"
+        ]
+      }
+    },
+    "f_perp_odd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for odd channels, by speed",
+        "COMPONENT_0": "f_perp",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Ve",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_perp_odd(1),y=f_perp_odd(3),y=f_perp_odd(5),y=f_perp_odd(7),y=f_perp_odd(9),y=f_perp_odd(11)",
+        "FIELDNAM": "f_perp",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_perp at odd chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_perp[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_perp at odd chan.",
+        "x_DEPEND": [
+          "Ve"
+        ],
+        "COMPONENTS": [
+          "f_perp"
+        ]
+      }
+    },
+    "f_perp_all_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for all channels, by energy",
+        "COMPONENT_0": "f_perp_all",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "eV",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_perp",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_perp at all chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_perp[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_perp at all chan.",
+        "x_DEPEND": [
+          "eV"
+        ],
+        "COMPONENTS": [
+          "f_perp_all"
+        ]
+      }
+    },
+    "f_perp_even_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for even channels, by energy",
+        "COMPONENT_0": "f_perp_even",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "eV",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_perp_even(0),y=f_perp_even(2),y=f_perp_even(4),y=f_perp_even(6),y=f_perp_even(8),y=f_perp_even(10),y=f_perp_even(12)",
+        "FIELDNAM": "f_perp",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_perp at even chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_perp[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_perp at even chan.",
+        "x_DEPEND": [
+          "eV"
+        ],
+        "COMPONENTS": [
+          "f_perp_even"
+        ]
+      }
+    },
+    "f_perp_odd_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for odd channels, by energy",
+        "COMPONENT_0": "f_perp_odd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "eV",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_perp_odd(1),y=f_perp_odd(3),y=f_perp_odd(5),y=f_perp_odd(7),y=f_perp_odd(9),y=f_perp_odd(11)",
+        "FIELDNAM": "f_perp",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_perp at odd chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_perp[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_perp at odd chan.",
+        "x_DEPEND": [
+          "eV"
+        ],
+        "COMPONENTS": [
+          "f_perp_odd"
+        ]
+      }
+    },
+    "f_anti": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron flux, anti-parallel average",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_anti",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABL_PTR_1": "f_anti_LABL",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_anti[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXES": [
+          [
+            "f_anti @ chan[0]",
+            "f_anti @ chan[1]",
+            "f_anti @ chan[2]",
+            "f_anti @ chan[3]",
+            "f_anti @ chan[4]",
+            "f_anti @ chan[5]",
+            "f_anti @ chan[6]",
+            "f_anti @ chan[7]",
+            "f_anti @ chan[8]",
+            "f_anti @ chan[9]",
+            "f_anti @ chan[10]",
+            "f_anti @ chan[11]",
+            "f_anti @ chan[12]"
+          ]
+        ]
+      }
+    },
+    "f_anti_all": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for all channels, by speed",
+        "COMPONENT_0": "f_anti",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Ve",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_anti",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_anti at all chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_anti[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_anti at all chan.",
+        "x_DEPEND": [
+          "Ve"
+        ],
+        "COMPONENTS": [
+          "f_anti"
+        ]
+      }
+    },
+    "f_anti_even": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for even channels, by speed",
+        "COMPONENT_0": "f_anti",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Ve",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_anti_even(0),y=f_anti_even(2),y=f_anti_even(4),y=f_anti_even(6),y=f_anti_even(8),y=f_anti_even(10),y=f_anti_even(12)",
+        "FIELDNAM": "f_anti",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_anti at even chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_anti[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_anti at even chan.",
+        "x_DEPEND": [
+          "Ve"
+        ],
+        "COMPONENTS": [
+          "f_anti"
+        ]
+      }
+    },
+    "f_anti_odd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for odd channels, by speed",
+        "COMPONENT_0": "f_anti",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Ve",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_anti_odd(1),y=f_anti_odd(3),y=f_anti_odd(5),y=f_anti_odd(7),y=f_anti_odd(9),y=f_anti_odd(11)",
+        "FIELDNAM": "f_anti",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_anti at odd chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_anti[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_anti at odd chan.",
+        "x_DEPEND": [
+          "Ve"
+        ],
+        "COMPONENTS": [
+          "f_anti"
+        ]
+      }
+    },
+    "f_anti_all_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for all channels, by energy",
+        "COMPONENT_0": "f_anti_all",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "eV",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_anti",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_anti at all chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_anti[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_anti at all chan.",
+        "x_DEPEND": [
+          "eV"
+        ],
+        "COMPONENTS": [
+          "f_anti_all"
+        ]
+      }
+    },
+    "f_anti_even_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for even channels, by energy",
+        "COMPONENT_0": "f_anti_even",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "eV",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_anti_even(0),y=f_anti_even(2),y=f_anti_even(4),y=f_anti_even(6),y=f_anti_even(8),y=f_anti_even(10),y=f_anti_even(12)",
+        "FIELDNAM": "f_anti",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_anti at even chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_anti[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_anti at even chan.",
+        "x_DEPEND": [
+          "eV"
+        ],
+        "COMPONENTS": [
+          "f_anti_even"
+        ]
+      }
+    },
+    "f_anti_odd_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for odd channels, by energy",
+        "COMPONENT_0": "f_anti_odd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "eV",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_anti_odd(1),y=f_anti_odd(3),y=f_anti_odd(5),y=f_anti_odd(7),y=f_anti_odd(9),y=f_anti_odd(11)",
+        "FIELDNAM": "f_anti",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_anti at odd chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_anti[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_anti at odd chan.",
+        "x_DEPEND": [
+          "eV"
+        ],
+        "COMPONENTS": [
+          "f_anti_odd"
+        ]
+      }
+    },
+    "f_omni": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron flux, omni-directional average",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_omni",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "LABL_PTR_1": "f_omni_LABL",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_omni[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXES": [
+          [
+            "f_omni @ chan[0]",
+            "f_omni @ chan[1]",
+            "f_omni @ chan[2]",
+            "f_omni @ chan[3]",
+            "f_omni @ chan[4]",
+            "f_omni @ chan[5]",
+            "f_omni @ chan[6]",
+            "f_omni @ chan[7]",
+            "f_omni @ chan[8]",
+            "f_omni @ chan[9]",
+            "f_omni @ chan[10]",
+            "f_omni @ chan[11]",
+            "f_omni @ chan[12]"
+          ]
+        ]
+      }
+    },
+    "f_omni_all": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for all channels, by speed",
+        "COMPONENT_0": "f_omni",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Ve",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_omni",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_omni at all chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_omni[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_omni at all chan.",
+        "x_DEPEND": [
+          "Ve"
+        ],
+        "COMPONENTS": [
+          "f_omni"
+        ]
+      }
+    },
+    "f_omni_even": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for even channels, by speed",
+        "COMPONENT_0": "f_omni",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Ve",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_omni_even(0),y=f_omni_even(2),y=f_omni_even(4),y=f_omni_even(6),y=f_omni_even(8),y=f_omni_even(10),y=f_omni_even(12)",
+        "FIELDNAM": "f_omni",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_omni at even chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_omni[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_omni at even chan.",
+        "x_DEPEND": [
+          "Ve"
+        ],
+        "COMPONENTS": [
+          "f_omni"
+        ]
+      }
+    },
+    "f_omni_odd": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for odd channels, by speed",
+        "COMPONENT_0": "f_omni",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Ve",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_omni_odd(1),y=f_omni_odd(3),y=f_omni_odd(5),y=f_omni_odd(7),y=f_omni_odd(9),y=f_omni_odd(11)",
+        "FIELDNAM": "f_omni",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_omni at odd chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_omni[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_omni at odd chan.",
+        "x_DEPEND": [
+          "Ve"
+        ],
+        "COMPONENTS": [
+          "f_omni"
+        ]
+      }
+    },
+    "f_omni_all_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for all channels, by energy",
+        "COMPONENT_0": "f_omni_all",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "eV",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "f_omni",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_omni at all chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_omni[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_omni at all chan.",
+        "x_DEPEND": [
+          "eV"
+        ],
+        "COMPONENTS": [
+          "f_omni_all"
+        ]
+      }
+    },
+    "f_omni_even_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for even channels, by energy",
+        "COMPONENT_0": "f_omni_even",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "eV",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_omni_even(0),y=f_omni_even(2),y=f_omni_even(4),y=f_omni_even(6),y=f_omni_even(8),y=f_omni_even(10),y=f_omni_even(12)",
+        "FIELDNAM": "f_omni",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_omni at even chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_omni[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_omni at even chan.",
+        "x_DEPEND": [
+          "eV"
+        ],
+        "COMPONENTS": [
+          "f_omni_even"
+        ]
+      }
+    },
+    "f_omni_odd_2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "--> stack plot for odd channels, by energy",
+        "COMPONENT_0": "f_omni_odd",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "eV",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=f_omni_odd(1),y=f_omni_odd(3),y=f_omni_odd(5),y=f_omni_odd(7),y=f_omni_odd(9),y=f_omni_odd(11)",
+        "FIELDNAM": "f_omni",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.5",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "f_omni at odd chan.",
+        "SCALETYP": "log",
+        "UNITS": "#/[cc*(cm/s)^3*str]",
+        "VALIDMAX": 1e-23,
+        "VALIDMIN": 1e-33,
+        "VAR_NOTES": "For each flux value, f_omni[i], Ve[i] gives the corresponding electron speed (cm/s).",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "#/[cc*(cm/s)^3*str]",
+        "x_LABLAXIS": "f_omni at odd chan.",
+        "x_DEPEND": [
+          "eV"
+        ],
+        "COMPONENTS": [
+          "f_omni_odd"
+        ]
+      }
+    },
+    "f_para_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 17,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "f_para_LABL",
+        "FIELDNAM": "f_para_LABL",
+        "FORMAT": "A18",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "f_para @ chan[0]",
+        "f_para @ chan[1]",
+        "f_para @ chan[2]",
+        "f_para @ chan[3]",
+        "f_para @ chan[4]",
+        "f_para @ chan[5]",
+        "f_para @ chan[6]",
+        "f_para @ chan[7]",
+        "f_para @ chan[8]",
+        "f_para @ chan[9]",
+        "f_para @ chan[10]",
+        "f_para @ chan[11]",
+        "f_para @ chan[12]"
+      ]
+    },
+    "f_perp_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 17,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "f_perp_LABL",
+        "FIELDNAM": "f_perp_LABL",
+        "FORMAT": "A18",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "f_perp @ chan[0]",
+        "f_perp @ chan[1]",
+        "f_perp @ chan[2]",
+        "f_perp @ chan[3]",
+        "f_perp @ chan[4]",
+        "f_perp @ chan[5]",
+        "f_perp @ chan[6]",
+        "f_perp @ chan[7]",
+        "f_perp @ chan[8]",
+        "f_perp @ chan[9]",
+        "f_perp @ chan[10]",
+        "f_perp @ chan[11]",
+        "f_perp @ chan[12]"
+      ]
+    },
+    "f_anti_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 17,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "f_anti_LABL",
+        "FIELDNAM": "f_anti_LABL",
+        "FORMAT": "A18",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "f_anti @ chan[0]",
+        "f_anti @ chan[1]",
+        "f_anti @ chan[2]",
+        "f_anti @ chan[3]",
+        "f_anti @ chan[4]",
+        "f_anti @ chan[5]",
+        "f_anti @ chan[6]",
+        "f_anti @ chan[7]",
+        "f_anti @ chan[8]",
+        "f_anti @ chan[9]",
+        "f_anti @ chan[10]",
+        "f_anti @ chan[11]",
+        "f_anti @ chan[12]"
+      ]
+    },
+    "f_omni_LABL": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          13
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 17,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "f_omni_LABL",
+        "FIELDNAM": "f_omni_LABL",
+        "FORMAT": "A18",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "f_omni @ chan[0]",
+        "f_omni @ chan[1]",
+        "f_omni @ chan[2]",
+        "f_omni @ chan[3]",
+        "f_omni @ chan[4]",
+        "f_omni @ chan[5]",
+        "f_omni @ chan[6]",
+        "f_omni @ chan[7]",
+        "f_omni @ chan[8]",
+        "f_omni @ chan[9]",
+        "f_omni @ chan[10]",
+        "f_omni @ chan[11]",
+        "f_omni @ chan[12]"
+      ]
+    }
+  }
+}

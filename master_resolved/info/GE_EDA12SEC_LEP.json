@@ -1,0 +1,622 @@
+{
+  "CDFFileInfo": {
+    "File": "ge_eda12sec_lep_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/ge_eda12sec_lep_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "Geotail Magnetic Field",
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Source_name": "GEOTAIL>Geomagnetic tail",
+    "Data_type": "EDA12SEC>Editor-A 12 second",
+    "Descriptor": "LEP>Low-Energy Particles",
+    "Data_version": "1",
+    "TEXT": "Editor-A data are only acquired with the real-time operation in \nUsuda Deep Space Center (UDSC),Japan, while the Editor-B data \nare 24-hours continuouslyrecorded in the onboard tape recorders \nand are dumpedover the NASA/JPL Deep Space Network (DSN) stations\n                                     \nPlease use the Editor-A LEP dataset prior to the Editor-B LEP \ndataset sinceplasma moments in the Editor-A data are more reliable. \n(Plasma moments inthe Editor-B are calculated onboard.)\n                                     \nThe ion energy analyzer (LEP-EAi) has two energy scan mode: \nRAM-A (60eV to 40 keV) and RAM-B (5 keV to 40 keV). \nThe energy scan mode is automatically selected onboard depending \non the incoming ion fluxes. At present, only the plasma moments \nin the RAM-A mode are plotted (listed) for the LEP-EAi data. \n(The LEP-EAi moments are presented by the solid lines in the plot.)\n                                     \nThe plasma moment data of the solar wind analyzer (LEP-SW) should be\nused only qualitatively. The LEP-SW plasma moments are plotted \n(listed) when the energy scan mode of LEP-EAi is RAM-B. (The \nLEP-SW moments are presented by the dotted lines in the plot.) \nJ.Geomag.Geoelectr.,46,669,1994",
+    "MODS": "Created by R. McGuire on 9/1/2003; Adapted from GE_K0_LEP",
+    "ADID_ref": "NSSD0087",
+    "Logical_file_id": "ge_eda12sec_lep_00000000_v01",
+    "Logical_source": "ge_eda12sec_lep",
+    "Logical_source_description": "Editor-A 12 second, Low-Energy Particles, Geotail",
+    "PI_name": "T. Mukai",
+    "PI_affiliation": "ISAS",
+    "Instrument_type": "Plasma and Solar Wind",
+    "TEXT_supplement_1": " ",
+    "LINK_TEXT": "12-sec LEP plasma moments data supplied by and also available at ",
+    "LINK_TITLE": "ISAS DARTS",
+    "HTTP_LINK": "https://darts.isas.jaxa.jp/stp/geotail/ascii.html",
+    "alt_logical_source": "Geotail_LEP_Ion-Moments-EditorA_12sec_cdf",
+    "Mission_group": "Geotail\n!___Magnetospheric Data\n!___Interplanetary Data near 1 AU",
+    "spase_DatasetResourceID": "spase://JAXA/NumericalData/Geotail/LEP/EDA/PT12S",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of milliseconds since the epoch",
+        "FIELDNAM": "Time Line",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "E14.8",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1995-12-05T00:00:00.000",
+        "SCALEMIN": "1995-12-04T00:00:00.000",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-12-31T00:00:00.000",
+        "VALIDMIN": "1994-11-12T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "Ni": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion Density (qualitative use only if Energy Scan Code = 2 = RAM-B/SW)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Ion Density",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "Ion Density Ni",
+        "MONOTON": "FALSE",
+        "UNITS": "1/cc (qual only if scan=2=SW)",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/cc (qual only if scan=2=SW)",
+        "x_LABLAXIS": "Ion Density Ni"
+      }
+    },
+    "T": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion Temperature in Satellite coordinates (qualitative use only if Energy Scan Code = 2 = RAM-B/SW)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Ion Temperature (s/c coords)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "i6",
+        "LABL_PTR_1": "label_T",
+        "MONOTON": "FALSE",
+        "UNITS": "eV (qual only if scan=2=SW)",
+        "VALIDMAX": [
+          15000,
+          15000
+        ],
+        "VALIDMIN": [
+          -10,
+          -10
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV (qual only if scan=2=SW)",
+        "x_LABLAXES": [
+          [
+            "Ion Temp Tyy (s/c)",
+            "Ion Temp Tzz (s/c)"
+          ]
+        ]
+      }
+    },
+    "Sensor": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 2,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "[NO PLOTS] Sensor",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Sensor",
+        "FILLVAL": "-1.0e+31",
+        "FORMAT": "a2",
+        "UNITS": "(1=EA=RAM-A,2=SW=RAM-B)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "(1=EA=RAM-A,2=SW=RAM-B)"
+      }
+    },
+    "scan_code": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Energy Scan Code (1 = Sensor Code EA = energy scan mode RAM-A, 2 = Sensor Code SW = energy scan mode RAM-B)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "scan code",
+        "FORMAT": "i1",
+        "LABLAXIS": "Energy Scan Code",
+        "MONOTON": "FALSE",
+        "UNITS": "(1=EA=RAM-A,2=SW=RAM-B)",
+        "VALIDMAX": 2,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(1=EA=RAM-A,2=SW=RAM-B)",
+        "x_LABLAXIS": "Energy Scan Code"
+      }
+    },
+    "VGSE": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion Velocity (GSE) (qualitative use only if Energy Scan Code = 2 = RAM-B/SW) ",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Ion Velocity (GSE) ",
+        "FILLVAL": -1e+31,
+        "FORMAT": "i6",
+        "LABL_PTR_1": "label_vgse",
+        "MONOTON": "FALSE",
+        "UNITS": "km/s (qual only if scan=2=SW)",
+        "VALIDMAX": [
+          2000,
+          2000,
+          2000
+        ],
+        "VALIDMIN": [
+          -2000,
+          -2000,
+          -2000
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s (qual only if scan=2=SW)",
+        "x_LABLAXES": [
+          [
+            "Ion Vx (GSE)",
+            "Ion Vy (GSE)",
+            "Ion Vz (GSE)"
+          ]
+        ]
+      }
+    },
+    "XYZGSE": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geotail position in GSE cartesian coordinates",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Geotail position (GSE)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.2",
+        "LABL_PTR_1": "label_xyzgse",
+        "MONOTON": "FALSE",
+        "UNITS": "Re",
+        "VALIDMAX": [
+          500.0,
+          500.0,
+          500.0
+        ],
+        "VALIDMIN": [
+          -500.0,
+          -500.0,
+          -500.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "Re",
+        "x_LABLAXES": [
+          [
+            "Geotail x(GSE)",
+            "Geotail y(GSE)",
+            "Geotail z(GSE)"
+          ]
+        ]
+      }
+    },
+    "VGSM": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion Velocity (GSM) (qualitative use only if Energy Scan Code = 2 = RAM-B/SW) ",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Ion Velocity (GSM) ",
+        "FILLVAL": -1e+31,
+        "FORMAT": "i6",
+        "LABL_PTR_1": "label_vgsm",
+        "MONOTON": "FALSE",
+        "UNITS": "km/s (qual only if scan=2=SW)",
+        "VALIDMAX": [
+          2000,
+          2000,
+          2000
+        ],
+        "VALIDMIN": [
+          -2000,
+          -2000,
+          -2000
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s (qual only if scan=2=SW)",
+        "x_LABLAXES": [
+          [
+            "Ion Vx (GSM)",
+            "Ion Vy (GSM)",
+            "Ion Vz (GSM)"
+          ]
+        ]
+      }
+    },
+    "XYZGSM": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geotail position in GSM cartesian coordinates",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Geotail position (GSM)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.2",
+        "LABL_PTR_1": "label_xyzgsm",
+        "MONOTON": "FALSE",
+        "UNITS": "Re",
+        "VALIDMAX": [
+          500.0,
+          500.0,
+          500.0
+        ],
+        "VALIDMIN": [
+          -500.0,
+          -500.0,
+          -500.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "Re",
+        "x_LABLAXES": [
+          [
+            "Geotail x(GSM)",
+            "Geotail y(GSM)",
+            "Geotail z(GSM)"
+          ]
+        ]
+      }
+    },
+    "VSM": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ion Velocity (SM) (qualitative use only if Energy Scan Code = 2 = RAM-B/SW) ",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Ion Velocity (SM) ",
+        "FILLVAL": -1e+31,
+        "FORMAT": "i6",
+        "LABL_PTR_1": "label_vgsm",
+        "MONOTON": "FALSE",
+        "UNITS": "km/s (qual only if scan=2=SW)",
+        "VALIDMAX": [
+          2000,
+          2000,
+          2000
+        ],
+        "VALIDMIN": [
+          -2000,
+          -2000,
+          -2000
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s (qual only if scan=2=SW)",
+        "x_LABLAXES": [
+          [
+            "Ion Vx (GSM)",
+            "Ion Vy (GSM)",
+            "Ion Vz (GSM)"
+          ]
+        ]
+      }
+    },
+    "XYZSM": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geotail position in SM cartesian coordinates",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Geotail position (SM)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.2",
+        "LABL_PTR_1": "label_xyzsm",
+        "MONOTON": "FALSE",
+        "UNITS": "Re",
+        "VALIDMAX": [
+          500.0,
+          500.0,
+          500.0
+        ],
+        "VALIDMIN": [
+          -500.0,
+          -500.0,
+          -500.0
+        ],
+        "VAR_TYPE": "data",
+        "x_UNITS": "Re",
+        "x_LABLAXES": [
+          [
+            "Geotail x(SM)",
+            "Geotail y(SM)",
+            "Geotail z(SM)"
+          ]
+        ]
+      }
+    },
+    "label_T": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 18,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "FIELDNAM": "Label for Ion Temperature",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Ion Temp Tyy (s/c)",
+        "Ion Temp Tzz (s/c)"
+      ]
+    },
+    "label_vgse": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "FIELDNAM": "Label for Velocity in GSE coordinates",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Ion Vx (GSE)",
+        "Ion Vy (GSE)",
+        "Ion Vz (GSE)"
+      ]
+    },
+    "label_xyzgse": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "FIELDNAM": "Label for XYZ in GSE coordinates",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Geotail x(GSE)",
+        "Geotail y(GSE)",
+        "Geotail z(GSE)"
+      ]
+    },
+    "label_vgsm": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "FIELDNAM": "Label for Velocity in GSM coordinates",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Ion Vx (GSM)",
+        "Ion Vy (GSM)",
+        "Ion Vz (GSM)"
+      ]
+    },
+    "label_xyzgsm": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "FIELDNAM": "Label for XYZ in GSM coordinates",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Geotail x(GSM)",
+        "Geotail y(GSM)",
+        "Geotail z(GSM)"
+      ]
+    },
+    "label_vsm": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "FIELDNAM": "Label for Velocity in SM coordinates",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Ion Vx (SM) ",
+        "Ion Vy (SM) ",
+        "Ion Vz (SM) "
+      ]
+    },
+    "label_xyzsm": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 13,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "FIELDNAM": "Label for XYZ in SM coordinates",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Geotail x(SM)",
+        "Geotail y(SM)",
+        "Geotail z(SM)"
+      ]
+    }
+  }
+}

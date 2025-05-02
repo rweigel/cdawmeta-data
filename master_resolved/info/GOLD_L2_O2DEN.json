@@ -1,0 +1,1384 @@
+{
+  "CDFFileInfo": {
+    "File": "gold_l2_o2den_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/gold_l2_o2den_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Data_revision": " ",
+    "Logical_source": "GOLD_L2_O2DEN",
+    "PI_name": "Richard Eastes",
+    "TEXT": "The GOLD mission of opportunity flies an ultraviolet (UV) imaging spectrograph on a geostationary satellite to measure densities and temperatures in Earth's thermosphere and ionosphere and to understand the global-scale response to forcing in the integrate Sun-Earth system. Visit 'https://gold.cs.ucf.edu' for more details.",
+    "Mission_group": "GOLD",
+    "Data_version": " ",
+    "Data_type": "APIDx? > GOLD Application ID 0x?: Level 2 Day Disk Science Data",
+    "Generation_date": " ",
+    "Instrument_type": "UV Imaging Spectrograph (Space)",
+    "PI_affiliation": "University of Colorado/LASP",
+    "Source_name": "GOLD>Global-scale Observations of the Limb and Disk",
+    "Data_cycle": " ",
+    "Acknowledgement": "This is a data product from the NASA Global-scale Observations of the Limb and Disk (GOLD) mission, an Heliophysics Explorer mission of opportunity launched in January 2018.  Responsibility of the mission science falls to the Principal Investigator, Dr. Richard Eastes at University of Colorado/LASP.  Validation of the L1B data products falls to the instrument lead investigators/scientists. * EUV  Dr. Bill McClintock Validation of the L2 data products falls to Computational Physics, Inc. * Dr. Jerry Lumpe  (https://gold.cs.ucf.edu/). Overall validation of the products is overseen by the GOLD Project Scientist Dr. Alan Burns. Users of these data should contact and acknowledge the Principal Investigator Dr. Richard Eastes and the party directly responsible for the data product and the NASA Explorers Project Office.",
+    "Logical_source_description": "GOLD O2DEN L2 Daily Fileof O2 density",
+    "Discipline": "Space Physics > Ionospheric Science",
+    "Logical_file_id": "GOLD_L2_O2DEN",
+    "Descriptor": "O2DEN>O2 density",
+    "Project": "NASA > GOLD",
+    "Software_version": " ",
+    "SPDF_NOTES": "change depend_1 from nzret to zret\nchange depend_2 nzdat to zdat\nchange depend_1 n_wavelength to central_wavelength",
+    "NC_KIND": "netCDF-4",
+    "NC_DIMENSIONS_G": " ",
+    "NC_STRINGS_G": "Data_revision Logical_source PI_name TEXT Mission_group Data_version Data_type Generation_date date_start Instrument_type PI_affiliation Source_name Data_cycle Acknowledgement Logical_source_description Discipline Logical_file_id date_end Descriptor Project Software_version",
+    "spase_DatasetResourceID": " ",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "spectral_width": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Width of each data channel",
+        "DEPEND_0": "time_utc",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Width of each data channel",
+        "FILLVAL": "NaN",
+        "FORMAT": "F10.3",
+        "LABLAXIS": "delta Lambda",
+        "NC_CHUNKSIZES": 1048576,
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "UNITS": "nm",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nm",
+        "x_LABLAXIS": "delta Lambda"
+      }
+    },
+    "o2den": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          31
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Retrieved O2 density",
+        "DEPEND_0": "time_utc",
+        "DEPEND_1": "zret",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Retrieved O2 density",
+        "FILLVAL": "NaN",
+        "FORMAT": "E10.3",
+        "LABLAXIS": "Retrieved O2",
+        "NC_CHUNKSIZES": [
+          1,
+          31
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,nzret",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT DEPEND_1 FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "SCALETYP": "log",
+        "UNITS": "mol/cm^3",
+        "VALIDMAX": 1000000000000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mol/cm^3",
+        "x_LABLAXIS": "Retrieved O2",
+        "x_DEPEND": [
+          "zret"
+        ]
+      }
+    },
+    "o2den_unc_ran": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          31
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Random uncertainty of retrieved O2 ",
+        "DEPEND_0": "time_utc",
+        "DEPEND_1": "zret",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Random uncertainty of retrieved O2 ",
+        "FILLVAL": "NaN",
+        "FORMAT": "E10.3",
+        "LABLAXIS": "O2 random uncert",
+        "NC_CHUNKSIZES": [
+          1,
+          31
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,nzret",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT DEPEND_1 FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "SCALETYP": "log",
+        "UNITS": "mol/cm^3",
+        "VALIDMAX": 1000000000000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mol/cm^3",
+        "x_LABLAXIS": "O2 random uncert",
+        "x_DEPEND": [
+          "zret"
+        ]
+      }
+    },
+    "o2den_unc_mod": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          31
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Model uncertainty of retrieved O2 ",
+        "DEPEND_0": "time_utc",
+        "DEPEND_1": "zret",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Model uncertainty of retrieved O2 ",
+        "FILLVAL": "NaN",
+        "FORMAT": "E10.3",
+        "LABLAXIS": "O2 Model Uncert",
+        "NC_CHUNKSIZES": [
+          1,
+          31
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,nzret",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT DEPEND_1 FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "SCALETYP": "log",
+        "UNITS": "mol/cm^3",
+        "VALIDMAX": 1000000000000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mol/cm^3",
+        "x_LABLAXIS": "O2 Model Uncert",
+        "x_DEPEND": [
+          "zret"
+        ]
+      }
+    },
+    "o2den_unc_sys": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          31
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Systematic uncertainty of retrieved O2 ",
+        "DEPEND_0": "time_utc",
+        "DEPEND_1": "zret",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Systematic uncertainty of retrieved O2 ",
+        "FILLVAL": "NaN",
+        "FORMAT": "E10.3",
+        "LABLAXIS": "O2 System Uncert",
+        "NC_CHUNKSIZES": [
+          1,
+          31
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,nzret",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT DEPEND_1 FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "UNITS": "mol/cm^3",
+        "VALIDMAX": 1000000000000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "mol/cm^3",
+        "x_LABLAXIS": "O2 System Uncert",
+        "x_DEPEND": [
+          "zret"
+        ]
+      }
+    },
+    "lon_ref": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Longitude at ZREF",
+        "DEPEND_0": "time_utc",
+        "DISPLAY_TYPE": "default_dimensionscatter",
+        "FIELDNAM": "Longitude at ZREF",
+        "FILLVAL": "NaN",
+        "FORMAT": "F10.3",
+        "LABLAXIS": "Longitude",
+        "NC_CHUNKSIZES": 5,
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "UNITS": "degrees",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "Longitude"
+      }
+    },
+    "temperature": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          31
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Assumed temperature profile",
+        "DEPEND_0": "time_utc",
+        "DEPEND_1": "zret",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Assumed temperature profile",
+        "FILLVAL": "NaN",
+        "FORMAT": "F10.3",
+        "LABLAXIS": "Temp",
+        "NC_CHUNKSIZES": [
+          1,
+          31
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,nzret",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT DEPEND_1 FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "SCALETYP": "linear",
+        "UNITS": "K",
+        "VALIDMAX": 1500.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "K",
+        "x_LABLAXIS": "Temp",
+        "x_DEPEND": [
+          "zret"
+        ]
+      }
+    },
+    "zret": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          31
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Retrieval geometric altitude grid ",
+        "DEPEND_0": "nzret",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Retrieval geometric altitude grid ",
+        "FILLVAL": "NaN",
+        "FORMAT": "F10.3",
+        "LABLAXIS": "Ret altitude grid",
+        "NC_CHUNKSIZES": 31,
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nzret",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "Ret altitude grid"
+      },
+      "VarData": [
+        250.0,
+        245.0,
+        240.0,
+        235.0,
+        230.0,
+        225.0,
+        220.0,
+        215.0,
+        210.0,
+        205.0,
+        200.0,
+        195.0,
+        190.0,
+        185.0,
+        180.0,
+        175.0,
+        170.0,
+        165.0,
+        160.0,
+        155.0,
+        150.0,
+        145.0,
+        140.0,
+        135.0,
+        130.0,
+        125.0,
+        120.0,
+        115.0,
+        110.0,
+        105.0,
+        100.0
+      ]
+    },
+    "time_utc": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 50,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "ISO 8601 formatted UTC timestamp",
+        "FIELDNAM": "Universal Time",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "FORMAT": "A50",
+        "LABLAXIS": "time_utc",
+        "NC_CHUNKSIZES": [
+          1,
+          50
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,max_string_len",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRING": "no",
+        "NC_STRINGS_V": "FORMAT TIME_BASE FIELDNAM LABLAXIS VAR_TYPE UNITS FILLVAL CATDESC",
+        "TIME_BASE": "J2000",
+        "UNITS": "s",
+        "VAR_NOTES": "SPDF changed fillval to the tt2000 standard instead of *",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "s",
+        "x_LABLAXIS": "time_utc"
+      }
+    },
+    "n_iter": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of iterations",
+        "DEPEND_0": "time_utc",
+        "FIELDNAM": "Number of iterations",
+        "FILLVAL": -999999999,
+        "NC_CHUNKSIZES": 5,
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FIELDNAM DEPEND_0 CATDESC VAR_TYPE",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      }
+    },
+    "convergence": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Retrieval convergence flag",
+        "DEPEND_0": "time_utc",
+        "FIELDNAM": "Retrieval convergence flag",
+        "FILLVAL": -999999999,
+        "NC_CHUNKSIZES": 5,
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FIELDNAM DEPEND_0 CATDESC VAR_TYPE",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      }
+    },
+    "input_l1c_file": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 50,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Corresponding Input L1C File",
+        "DEPEND_0": "time_utc",
+        "FIELDNAM": "Input L1C File",
+        "FILLVAL": "*",
+        "FORMAT": "A50",
+        "NC_CHUNKSIZES": [
+          1,
+          50
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,max_string_len",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRING": "no",
+        "NC_STRINGS_V": "FORMAT FILLVAL FIELDNAM DEPEND_0 CATDESC VAR_TYPE",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      }
+    },
+    "lat_ref": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Latitude at ZREF",
+        "DEPEND_0": "time_utc",
+        "DISPLAY_TYPE": "default_dimensionscatter",
+        "FIELDNAM": "Latitude at ZREF",
+        "FILLVAL": "NaN",
+        "FORMAT": "F10.3",
+        "LABLAXIS": "Latitude",
+        "NC_CHUNKSIZES": 5,
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "UNITS": "degrees",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "Latitude"
+      }
+    },
+    "normalization": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Normalization spectrum",
+        "DEPEND_0": "time_utc",
+        "DEPEND_1": "central_wavelength",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Normalization spectrum",
+        "FILLVAL": "NaN",
+        "FORMAT": "F10.3",
+        "LABLAXIS": "Norm Spec",
+        "NC_CHUNKSIZES": [
+          1,
+          2
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,n_wavelength",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT DEPEND_1 FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "UNITS": "Counts",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Counts",
+        "x_LABLAXIS": "Norm Spec",
+        "x_DEPEND": [
+          "central_wavelength"
+        ]
+      }
+    },
+    "o2den_dqi": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          31
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "O2 Data Quality Indicator. 0 indicates good data. See documentation for list of other values",
+        "DEPEND_0": "time_utc",
+        "DEPEND_1": "zret",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "O2 Data Quality Indicator",
+        "FILLVAL": -999999999,
+        "FORMAT": "I7",
+        "LABLAXIS": "O2 DQI",
+        "NC_CHUNKSIZES": [
+          1,
+          31
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,nzret",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT DEPEND_1 FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "UNITS": " ",
+        "VALIDMAX": 2147483647,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "O2 DQI",
+        "x_DEPEND": [
+          "zret"
+        ]
+      }
+    },
+    "channel": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 50,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Channel identifier (\"A\" or \"B\")",
+        "DEPEND_0": "time_utc",
+        "FIELDNAM": "Channel",
+        "FILLVAL": "*",
+        "FORMAT": "A50",
+        "NC_CHUNKSIZES": [
+          1,
+          50
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,max_string_len",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRING": "no",
+        "NC_STRINGS_V": "FORMAT FILLVAL FIELDNAM DEPEND_0 CATDESC VAR_TYPE",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      }
+    },
+    "central_wavelength": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Wavelength",
+        "DEPEND_0": "time_utc",
+        "DEPEND_1": "central_wavelength",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Wavelength",
+        "FILLVAL": "NaN",
+        "FORMAT": "F10.3",
+        "LABLAXIS": "Lam",
+        "NC_CHUNKSIZES": [
+          1,
+          2
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,n_wavelength",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT DEPEND_1 FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "UNITS": "nm",
+        "VALIDMAX": 400.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "nm",
+        "x_LABLAXIS": "Lam",
+        "x_DEPEND": [
+          "central_wavelength"
+        ]
+      }
+    },
+    "wavelength_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "wavelength label",
+        "FIELDNAM": "wavelength label",
+        "FORMAT": "A12",
+        "VAR_NOTES": "wavelength label ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Wavelength 1",
+        "Wavelength 2"
+      ]
+    },
+    "signal_to_noise": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Effective signal to noise above the atmosphere",
+        "DEPEND_0": "time_utc",
+        "DEPEND_1": "central_wavelength",
+        "DISPLAY_TYPE": "default_dimensionscatter>nobar",
+        "FIELDNAM": "Effective signal to noise above the atmosphere",
+        "FILLVAL": "NaN",
+        "FORMAT": "F10.3",
+        "LABLAXIS": "S/N",
+        "NC_CHUNKSIZES": [
+          1,
+          2
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,n_wavelength",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT DEPEND_1 FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "UNITS": " ",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "S/N",
+        "x_DEPEND": [
+          "central_wavelength"
+        ]
+      }
+    },
+    "zdat": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          27
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Measurement tangent altitude grid",
+        "DEPEND_0": "nzdat",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Measurement tangent altitude grid",
+        "FILLVAL": "NaN",
+        "FORMAT": "F10.3",
+        "LABLAXIS": "Meas Grid",
+        "NC_CHUNKSIZES": 27,
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nzdat",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "Meas Grid"
+      },
+      "VarData": [
+        300.0,
+        290.0,
+        280.0,
+        270.0,
+        260.0,
+        250.0,
+        241.0,
+        233.0,
+        225.0,
+        217.0,
+        209.0,
+        201.0,
+        193.0,
+        185.0,
+        177.0,
+        170.0,
+        164.0,
+        158.0,
+        152.0,
+        146.0,
+        140.0,
+        134.0,
+        128.0,
+        122.0,
+        116.0,
+        110.0,
+        104.0
+      ]
+    },
+    "dqi": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "File-level Data Quality Indicator. 0 indicates good data. See documentation for list of other values",
+        "DEPEND_0": "time_utc",
+        "FIELDNAM": "Data Quality Indicator",
+        "FILLVAL": -999999999,
+        "FORMAT": "I7",
+        "NC_CHUNKSIZES": 5,
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT FIELDNAM DEPEND_0 VAR_TYPE UNITS CATDESC",
+        "UNITS": " ",
+        "VALIDMAX": 2147483647,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null
+      }
+    },
+    "transmission_fit": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          2,
+          27
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Converged forward model fit to data - spectrogram for each wavelength",
+        "DEPEND_0": "time_utc",
+        "DEPEND_1": "central_wavelength",
+        "DEPEND_2": "zdat",
+        "DISPLAY_TYPE": "default_dimensiony=zdat,z=transmission_fit(^2,*)",
+        "FIELDNAM": "Converged forward model fit to data.",
+        "FILLVAL": "NaN",
+        "FORMAT": "F10.3",
+        "LABLAXIS": "Input Transmission Fit",
+        "LABL_PTR_1": "wavelength_labl",
+        "NC_CHUNKSIZES": [
+          1,
+          2,
+          27
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,n_wavelength,nzdat",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT DEPEND_1 FIELDNAM DEPEND_0 LABLAXIS DEPEND_2 UNITS VAR_TYPE DISPLAY_TYPE CATDESC",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Input Transmission Fit",
+        "x_LABLAXES": [
+          [
+            "Wavelength 1",
+            "Wavelength 2"
+          ]
+        ],
+        "x_DEPEND": [
+          "central_wavelength",
+          "zdat"
+        ]
+      }
+    },
+    "transmission": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          2,
+          27
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Input transmission profile - spectrogram for each wavelength",
+        "DEPEND_0": "time_utc",
+        "DEPEND_1": "central_wavelength",
+        "DEPEND_2": "zdat",
+        "DISPLAY_TYPE": "default_dimensiony=zdat,z=transmission(^2,*)",
+        "FIELDNAM": "Input transmission profile",
+        "FILLVAL": "NaN",
+        "FORMAT": "F10.3",
+        "LABLAXIS": "Input Transmission",
+        "LABL_PTR_1": "wavelength_labl",
+        "NC_CHUNKSIZES": [
+          1,
+          2,
+          27
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,n_wavelength,nzdat",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT DEPEND_1 FIELDNAM DEPEND_0 LABLAXIS DEPEND_2 UNITS VAR_TYPE DISPLAY_TYPE CATDESC",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Input Transmission",
+        "x_LABLAXES": [
+          [
+            "Wavelength 1",
+            "Wavelength 2"
+          ]
+        ],
+        "x_DEPEND": [
+          "central_wavelength",
+          "zdat"
+        ]
+      }
+    },
+    "o2_apriori": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          31
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "A priori O2 density",
+        "DEPEND_0": "time_utc",
+        "DEPEND_1": "zret",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "A priori O2 density",
+        "FILLVAL": "NaN",
+        "FORMAT": "E10.3",
+        "LABLAXIS": "A priori O2",
+        "NC_CHUNKSIZES": [
+          1,
+          31
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,nzret",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT DEPEND_1 FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "UNITS": "mol/cm^3",
+        "VALIDMAX": 1000000000000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "mol/cm^3",
+        "x_LABLAXIS": "A priori O2",
+        "x_DEPEND": [
+          "zret"
+        ]
+      }
+    },
+    "sza_ref": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Solar Zenith Angle at ZREF",
+        "DEPEND_0": "time_utc",
+        "DISPLAY_TYPE": "default_dimensionscatter",
+        "FIELDNAM": "Solar Zenith Angle at ZREF",
+        "FILLVAL": "NaN",
+        "FORMAT": "F10.3",
+        "LABLAXIS": "SZA",
+        "NC_CHUNKSIZES": 5,
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT FIELDNAM DEPEND_0 VAR_TYPE LABLAXIS UNITS DISPLAY_TYPE CATDESC",
+        "UNITS": "degrees",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "SZA"
+      }
+    },
+    "transmission_unc": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          2,
+          27
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Variance on input transmission data- spectrogram for each wavelength",
+        "DEPEND_0": "time_utc",
+        "DEPEND_1": "central_wavelength",
+        "DEPEND_2": "zdat",
+        "DISPLAY_TYPE": "default_dimensiony=zdat,z=transmission_unc(^2,*)",
+        "FIELDNAM": "Variance on input transmission data",
+        "FILLVAL": "NaN",
+        "FORMAT": "F10.3",
+        "LABLAXIS": "Input Transmission Variance",
+        "LABL_PTR_1": "wavelength_labl",
+        "NC_CHUNKSIZES": [
+          1,
+          2,
+          27
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,n_wavelength,nzdat",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRINGS_V": "FORMAT DEPEND_1 FIELDNAM DEPEND_0 LABLAXIS DEPEND_2 UNITS VAR_TYPE DISPLAY_TYPE CATDESC",
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Input Transmission Variance",
+        "x_LABLAXES": [
+          [
+            "Wavelength 1",
+            "Wavelength 2"
+          ]
+        ],
+        "x_DEPEND": [
+          "central_wavelength",
+          "zdat"
+        ]
+      }
+    },
+    "target_star": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 50,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Name of star",
+        "DEPEND_0": "time_utc",
+        "FIELDNAM": "Name of star",
+        "FILLVAL": "*",
+        "FORMAT": "A50",
+        "NC_CHUNKSIZES": [
+          1,
+          50
+        ],
+        "NC_DEFLATE": 6,
+        "NC_DIMENSIONS_V": "nevents,max_string_len",
+        "NC_SHUFFLE": "true",
+        "NC_STORAGE": "chunked",
+        "NC_STRING": "no",
+        "NC_STRINGS_V": "FORMAT FILLVAL FIELDNAM DEPEND_0 CATDESC VAR_TYPE",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      }
+    },
+    "nevents": {
+      "VarDescription": {
+        "DataType": "CDF_INT1",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -127,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "nevents",
+        "FIELDNAM": "nevents",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "nevents",
+        "NC_ADDED": "variable FILLVAL CATDESC FORMAT FIELDNAM LABLAXIS VAR_TYPE VALIDMIN VALIDMAX SCALETYP",
+        "SCALETYP": "linear",
+        "VALIDMAX": 127,
+        "VALIDMIN": -127,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "nevents"
+      }
+    },
+    "nzret": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT1",
+        "DimSizes": [
+          31
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -127,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "nevents",
+        "FIELDNAM": "nevents",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "nevents",
+        "NC_ADDED": "variable FILLVAL CATDESC FORMAT FIELDNAM LABLAXIS VAR_TYPE VALIDMIN VALIDMAX SCALETYP",
+        "SCALETYP": "linear",
+        "VALIDMAX": 127,
+        "VALIDMIN": -127,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "nevents"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    "n_wavelength": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT1",
+        "DimSizes": [
+          2
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -127,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "nevents",
+        "FIELDNAM": "nevents",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "nevents",
+        "NC_ADDED": "variable FILLVAL CATDESC FORMAT FIELDNAM LABLAXIS VAR_TYPE VALIDMIN VALIDMAX SCALETYP",
+        "SCALETYP": "linear",
+        "VALIDMAX": 127,
+        "VALIDMIN": -127,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "nevents"
+      },
+      "VarData": [
+        1,
+        2
+      ]
+    },
+    "max_string_len": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT1",
+        "DimSizes": [
+          50
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -127,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "n_wavelength",
+        "FIELDNAM": "n_wavelength",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "n_wavelength",
+        "NC_ADDED": "variable FILLVAL CATDESC FORMAT FIELDNAM LABLAXIS VAR_TYPE VALIDMIN VALIDMAX SCALETYP",
+        "SCALETYP": "linear",
+        "VALIDMAX": 127,
+        "VALIDMIN": -127,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "n_wavelength"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    "nzdat": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT1",
+        "DimSizes": [
+          27
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -127,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "max_string_len",
+        "FIELDNAM": "max_string_len",
+        "FILLVAL": -128,
+        "FORMAT": "I3",
+        "LABLAXIS": "max_string_len",
+        "NC_ADDED": "variable FILLVAL CATDESC FORMAT FIELDNAM LABLAXIS VAR_TYPE VALIDMIN VALIDMAX SCALETYP",
+        "SCALETYP": "linear",
+        "VALIDMAX": 127,
+        "VALIDMIN": -127,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "max_string_len"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  }
+}

@@ -1,0 +1,443 @@
+{
+  "CDFFileInfo": {
+    "File": "de2_62ms_vefimagb_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/de2_62ms_vefimagb_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "DE-2 IDM 0.25-sec ion drift",
+    "Project": "DE>Dynamics Explorer",
+    "Source_name": "DE>Dynamics Explorer",
+    "Discipline": "Space Physics>Magnetospheric  Ionospheric Interactions",
+    "Descriptor": "62ms> 62 ms ",
+    "Data_type": "VEFIMAGB> merged Vector Electric field instrument and Magnetometer",
+    "Data_version": "1",
+    "Text": "This data set is a combination of the VEFI and MAGB high resolution data sets in SPC coordinates submitted to NSSDC.  The following OA parameters have been added to the data set:  Model magnetic field in SPC coordinates, altitude of the satellite, geographic latitude and longitude, magnetic local time, and invariant latitude.  The VEFI data set is described in the file VEFIVOLDESC.SFD and the MAGB data set is described in the file MAGBVOLDESC.SFD, these files are portions of the SFDU metadata files submitted with the VEFI and MAGB data to NSSDC and are included in each volume of this data set.  This data set consists of daily files from day 81227 to day 83047.  Each file contains all the data available for a given day.  During the merging of the data sets it was found that although VEFI and MAGB should cover the same time spans, they do not, due perhaps to the fact that the original MAGB high resolution data set was created on the DE Sigma-9 using the DE telemetry tapes, while the VEFI high resolution data set was created on the DE MicroVAX system using the DE telemetry data base on optical disk.  In order to keep the largest amount of data possible, the merged data set includes all the available VEFI and MAGB data, for those times when VEFI data was available but MAGB was not (6.54%), a fill data value of 9999999. was given to the MAGB data and for those times when MAGB data was available but VEFI was not (6.87%), the fill data value was assigned to the VEFI data.  Times for which both VEFI and MAGB data were fill values in the original data sets were not included in the merged data set.  There were also times when certain OA parameters were fill values in the OA data base and they are therefore also fill values in this merged data set.  The model magnetic field had fill values for 8.55% of the data.  Statistics were not kept for the other OA parameters.  Each daily file contains a record per measurement.  The total number of records in each file varies depending on the amount of data available for a given day.  Each record of each daily file contains the following information:",
+    "ADID_ref": "NSSD0241",
+    "Logical_source": "de2_62ms_vefimagb",
+    "Logical_file_id": "de2_62ms_vefimagb_00000000_v01",
+    "Logical_source_description": "16-msec merged magnetic and electric field data ",
+    "PI_name": "Jim Slavin",
+    "PI_affiliation": "NASA/GSFC",
+    "NSSDC_id": "SPMS-00087",
+    "Mission_group": "Dynamics Explorer\n!___Magnetospheric Data\n!___ITM Data including Earth Imaging and Ground-Based",
+    "Instrument_type": "Particles (space)",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/DE2/MAGB-VEFI/CDF/PT0.062S",
+    "DOI": "https://doi.org/10.48322/ha70-4305"
+  },
+  "CDFVariables": {
+    "vtimeEpoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "NSSDC standard-reference time value. (vefi)",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D.(vefi)",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "mtimeEpoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CATDESC": "NSSDC standard-reference time value. (magb) ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Time since 0 A.D.(magb)",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "F14.0   ",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "1991-02-18T10:00:00.000",
+        "SCALEMIN": "1981-09-16T05:00:00.000",
+        "UNITS": "ms (UT) ",
+        "VALIDMAX": "1991-02-18T23:59:59.999",
+        "VALIDMIN": "1981-09-15T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms (UT) "
+      }
+    },
+    "vtime": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time of the VEFI measurement in tenths of milliseconds",
+        "DEPEND_0": "vtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "vtime (ms)",
+        "FILLVAL": -1,
+        "FORMAT": "i9",
+        "LABLAXIS": "vtime (ms)",
+        "UNITS": " ",
+        "VALIDMAX": 86400000,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "vtime (ms)"
+      }
+    },
+    "mtime": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time of the MAGB measurement in tenths of milliseconds",
+        "DEPEND_0": "mtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "mtime (ms)",
+        "FILLVAL": -1,
+        "FORMAT": "i9",
+        "LABLAXIS": "mtime (ms)",
+        "UNITS": " ",
+        "VALIDMAX": 86400000,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "mtime (ms)"
+      }
+    },
+    "ex": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "X-Component of the VEFI electric field in SPC coordinates",
+        "DEPEND_0": "vtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "EX",
+        "FILLVAL": -1e-31,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "EX",
+        "UNITS": "micro volts per meter ",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "micro volts per meter ",
+        "x_LABLAXIS": "EX"
+      }
+    },
+    "ey": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Y-Component of the VEFI electric field in SPC coordinates",
+        "DEPEND_0": "vtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "EY",
+        "FILLVAL": -1e-31,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "EY",
+        "UNITS": "micro volts per meter",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "micro volts per meter",
+        "x_LABLAXIS": "EY"
+      }
+    },
+    "bx": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "X-Component of the MAGB magnetic field in SPC coordinates",
+        "DEPEND_0": "mtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BX",
+        "FILLVAL": -1e-31,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "BX",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "BX"
+      }
+    },
+    "by": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Y-Component of the MAGB magnetic field in SPC coordinates",
+        "DEPEND_0": "mtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BY",
+        "FILLVAL": -1e-31,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "BY",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "BY"
+      }
+    },
+    "bz": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Z-Component of the MAGB magnetic field in SPC coordinates",
+        "DEPEND_0": "mtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BZ",
+        "FILLVAL": -1e-31,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "BZ",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "BZ"
+      }
+    },
+    "bxm": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "X-Component of the model magnetic field in SPC coordinates",
+        "DEPEND_0": "mtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXM",
+        "FILLVAL": -1e-31,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "BXM",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "BXM"
+      }
+    },
+    "bym": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Y-Component of the model magnetic field in SPC coordinates",
+        "DEPEND_0": "mtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BYM",
+        "FILLVAL": -1e-31,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "BYM",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "BYM"
+      }
+    },
+    "bzm": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Z-Component of the model magnetic field in SPC coordinates",
+        "DEPEND_0": "mtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BZM",
+        "FILLVAL": -1e-31,
+        "FORMAT": "e12.5",
+        "LABLAXIS": "BZ",
+        "UNITS": "nT",
+        "VALIDMAX": 10000000000.0,
+        "VALIDMIN": -10000000000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "BZ"
+      }
+    },
+    "glat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geographic Latitude in degrees",
+        "DEPEND_0": "vtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Geographic Latitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "Geog Latitude",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Geog Latitude"
+      }
+    },
+    "glon": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geographic Longitude in degrees",
+        "DEPEND_0": "vtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Geographic Longitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f6.2",
+        "LABLAXIS": "Geog Longitude",
+        "UNITS": "deg",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Geog Longitude"
+      }
+    },
+    "ilat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Invariant Latitude in degrees",
+        "DEPEND_0": "vtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Invariant Latitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Inv Lat",
+        "UNITS": "deg",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "Inv Lat"
+      }
+    },
+    "mlt": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic Local Time",
+        "DEPEND_0": "vtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Mag. Local Time",
+        "FILLVAL": 0.0,
+        "FORMAT": "f5.2",
+        "LABLAXIS": "MLT",
+        "UNITS": "hr",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "hr",
+        "x_LABLAXIS": "MLT"
+      }
+    },
+    "alt": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Altitude in km",
+        "DEPEND_0": "vtimeEpoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Altitude",
+        "FILLVAL": 0.0,
+        "FORMAT": "f7.2",
+        "LABLAXIS": "Altitude",
+        "UNITS": "km",
+        "VALIDMAX": 10000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "Altitude"
+      }
+    }
+  }
+}

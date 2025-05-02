@@ -1,0 +1,435 @@
+{
+  "CDFFileInfo": {
+    "File": "dscovr_at_pre_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/dscovr_at_pre_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "Preliminary DSCOVR 3-axis stabilized Attitude",
+    "Project": "DSCOVR>Deep Space Climate Observatory",
+    "Discipline": "Space Physics>Heliospheric Science",
+    "Source_name": "DSCOVR>Deep Space Climate Observatory",
+    "Data_version": "01",
+    "Logical_file_id": "dscovr_at_pre_20170803_v01",
+    "Data_type": "AT>Attitude",
+    "Descriptor": "PRE>Preliminary Data",
+    "Stabilization_Type": "3-axis",
+    "TEXT": "DSCOVR 3-axis stabilized preliminary Attitude data file.\nTime resolution varies.\nConvention: intrinsic rotations applied in Yaw, Pitch, Roll order\n 5 point Median Filter applied to DCM matrix",
+    "MODS": "8/29/2016 - Original Implementation",
+    "Logical_source": "dscovr_at_pre",
+    "Logical_source_description": "DSCOVR Preliminary Attitude",
+    "File_naming_convention": "source_datatype_descriptor_yyyyMMdd",
+    "Instrument_type": "Ephemeris/Attitude/Ancillary",
+    "Mission_group": "DSCOVR",
+    "PI_name": "A. Szabo",
+    "PI_affiliation": "NASA Goddard Space Flight Center",
+    "spase_DatasetResourceID": "spase://NOAA/NumericalData/DSCOVR/Ephemeris/Attitude/Preliminary/PT10S",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "9999-12-31T23:59:59.999",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time, Number of milliseconds since the epoch",
+        "FIELDNAM": "Time since 0 AD",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "E14.8",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "TIME_BASE": "0 AD",
+        "UNITS": "ms",
+        "VALIDMAX": "2065-02-11T00:00:00.000",
+        "VALIDMIN": "2015-02-11T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "Time_PB5": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time of observation in Year, Day, & milliseconds",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "PB5 Time",
+        "FILLVAL": -2147483647,
+        "FORM_PTR": "format_time",
+        "LABL_PTR_1": "label_time",
+        "UNIT_PTR": "unit_time",
+        "VALIDMAX": [
+          2065,
+          366,
+          86400000
+        ],
+        "VALIDMIN": [
+          2015,
+          0,
+          0
+        ],
+        "VAR_TYPE": "support_data",
+        "x_UNITS": [
+          "year",
+          "day",
+          "msec"
+        ],
+        "x_LABLAXES": [
+          [
+            "Year",
+            "Day of Year",
+            "Elapsed milliseconds of day"
+          ]
+        ]
+      }
+    },
+    "J2000_Yaw": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C yaw from J2000",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "J2000 yaw angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.8",
+        "LABLAXIS": "Yaw J2000",
+        "SCALEMAX": 3.14159,
+        "SCALEMIN": -3.14159,
+        "UNITS": "rad",
+        "VALIDMAX": 3.14159,
+        "VALIDMIN": -3.14159,
+        "VAR_NOTES": "The spacecraft yaw from J2000 coordinate system. Applied as the first intrinsic rotation and describes a counter-clockwise rotation about the spacecraft Z-axis (rad)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "rad",
+        "x_LABLAXIS": "Yaw J2000"
+      }
+    },
+    "J2000_Pitch": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C pitch from J2000",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "J2000 pitch angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.8",
+        "LABLAXIS": "Pitch J2000",
+        "SCALEMAX": 3.14159,
+        "SCALEMIN": -3.14159,
+        "UNITS": "rad",
+        "VALIDMAX": 3.14159,
+        "VALIDMIN": -3.14159,
+        "VAR_NOTES": "The spacecraft pitch from J2000 coordinate system. Applied as the second intrinsic rotation and describes a counter-clockwise rotation about the spacecraft Y-axis (rad)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "rad",
+        "x_LABLAXIS": "Pitch J2000"
+      }
+    },
+    "J2000_Roll": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C roll from J2000",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "J2000 roll angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.8",
+        "LABLAXIS": "Roll J2000",
+        "SCALEMAX": 3.14159,
+        "SCALEMIN": -3.14159,
+        "UNITS": "rad",
+        "VALIDMAX": 3.14159,
+        "VALIDMIN": -3.14159,
+        "VAR_NOTES": "The spacecraft roll from J2000 coordinate system. Applied as the third intrinsic rotation and describes a counter-clockwise rotation about the spacecraft X-axis (rad)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "rad",
+        "x_LABLAXIS": "Roll J2000"
+      }
+    },
+    "GCI_Yaw": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C yaw from epoch-of-date GCI",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GCI yaw angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.8",
+        "LABLAXIS": "Yaw GCI",
+        "SCALEMAX": 3.14159,
+        "SCALEMIN": -3.14159,
+        "UNITS": "rad",
+        "VALIDMAX": 3.14159,
+        "VALIDMIN": -3.14159,
+        "VAR_NOTES": "The spacecraft yaw from epoch-of-date GCI coordinate system. Applied as the first intrinsic rotation and describes a counter-clockwise rotation about the spacecraft Z-axis (rad)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "rad",
+        "x_LABLAXIS": "Yaw GCI"
+      }
+    },
+    "GCI_Pitch": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C pitch from epoch-of-date GCI",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GCI pitch angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.8",
+        "LABLAXIS": "Pitch GCI",
+        "SCALEMAX": 3.14159,
+        "SCALEMIN": -3.14159,
+        "UNITS": "rad",
+        "VALIDMAX": 3.14159,
+        "VALIDMIN": -3.14159,
+        "VAR_NOTES": "The spacecraft pitch from epoch-of-date GCI coordinate system. Applied as the second intrinsic rotation and describes a counter-clockwise rotation about the spacecraft Y-axis (rad)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "rad",
+        "x_LABLAXIS": "Pitch GCI"
+      }
+    },
+    "GCI_Roll": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C roll from epoch-of-date GCI",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GCI roll angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.8",
+        "LABLAXIS": "Roll GCI",
+        "SCALEMAX": 3.14159,
+        "SCALEMIN": -3.14159,
+        "UNITS": "rad",
+        "VALIDMAX": 3.14159,
+        "VALIDMIN": -3.14159,
+        "VAR_NOTES": "The spacecraft roll from epoch-of-date GCI coordinate system. Applied as the third intrinsic rotation and describes a counter-clockwise rotation about the spacecraft X-axis (rad)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "rad",
+        "x_LABLAXIS": "Roll GCI"
+      }
+    },
+    "GSE_Yaw": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C yaw from GSE",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GSE yaw angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.8",
+        "LABLAXIS": "Yaw GSE",
+        "SCALEMAX": 3.14159,
+        "SCALEMIN": -3.14159,
+        "UNITS": "rad",
+        "VALIDMAX": 3.14159,
+        "VALIDMIN": -3.14159,
+        "VAR_NOTES": "The spacecraft yaw from GSE coordinate system. Applied as the first intrinsic rotation and describes a counter-clockwise rotation about the spacecraft Z-axis (rad)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "rad",
+        "x_LABLAXIS": "Yaw GSE"
+      }
+    },
+    "GSE_Pitch": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C pitch from GSE",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GSE pitch angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.8",
+        "LABLAXIS": "Pitch GSE",
+        "SCALEMAX": 3.14159,
+        "SCALEMIN": -3.14159,
+        "UNITS": "rad",
+        "VALIDMAX": 3.14159,
+        "VALIDMIN": -3.14159,
+        "VAR_NOTES": "The spacecraft pitch from coordinate system GSE. Applied as the second intrinsic rotation and describes a counter-clockwise rotation about the spacecraft Y-axis (rad)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "rad",
+        "x_LABLAXIS": "Pitch GSE"
+      }
+    },
+    "GSE_Roll": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C roll from GSE",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "GSE roll angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F15.8",
+        "LABLAXIS": "Roll GSE",
+        "SCALEMAX": 3.14159,
+        "SCALEMIN": -3.14159,
+        "UNITS": "rad",
+        "VALIDMAX": 3.14159,
+        "VALIDMIN": -3.14159,
+        "VAR_NOTES": "The spacecraft roll from coordinate system GSE. Applied as the third intrinsic rotation and describes a counter-clockwise rotation about the spacecraft X-axis (rad)",
+        "VAR_TYPE": "data",
+        "x_UNITS": "rad",
+        "x_LABLAXIS": "Roll GSE"
+      }
+    },
+    "label_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 27,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Label for Time_PB5",
+        "FIELDNAM": "Label for Time_PB5",
+        "FORMAT": "A28",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Year",
+        "Day of Year",
+        "Elapsed milliseconds of day"
+      ]
+    },
+    "unit_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 4,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Units for Time_PB5",
+        "FIELDNAM": "Units for Time_PB5",
+        "FORMAT": "A6",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "year",
+        "day",
+        "msec"
+      ]
+    },
+    "format_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 2,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Format for Time_PB5",
+        "FIELDNAM": "Format for Time_PB5",
+        "FORMAT": "A3",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "I4",
+        "I3",
+        "I8"
+      ]
+    }
+  }
+}

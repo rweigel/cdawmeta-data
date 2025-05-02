@@ -1,0 +1,727 @@
+{
+  "CDFFileInfo": {
+    "File": "wi_h5_swe_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/wi_h5_swe_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISTP",
+    "Source_name": "WIND>Wind Interplanetary Plasma Laboratory",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Data_type": "H5>9 sec solar wind electron moments",
+    "Descriptor": "SWE>Solar Wind Experiment",
+    "File_naming_convention": "source_datatype_descriptor",
+    "Data_version": "1",
+    "PI_name": "K. Ogilvie",
+    "PI_affiliation": "NASA/GSFC",
+    "TEXT": "Explanatory notes: \nThe electron moments included in this data set are derived from quadrature integration of the solar wind electron distributions (w/ some fitting) measured by the Wind/SWE electron instrument (see Ogilvie et al., \"SWE, a comprehensive plasma instrument for the Wind spacecraft\", Space Sci. Rev., 71, 55, 1955).\nMoments parameters are computed from 9s measurements which are usually separated by one or more 3s spin-periods. These quantities are reliable and citable with caution, meaning that the PI advises that the user should discuss their interpretations with a member of the SWE science team before publishing.\nThe following comments are intended to aid in the use and interpretation of the prime quantities of this data set, the electron density, bulk-velocity and temperature.  We compensate for the limited nature of our observations under this instrument mode by combining electron observations with bulk-velocity estimates derived from corresponding ion observations.  The (13) energy channels over which observations are made are: E = 19.34, 38.68, 58.03, 77.37, 96.71, 116.1, 193.4, 290.1, 425.5, 580.3, 773.7, 1006., and 1238. eV; f(E,Az,El) [#/{cc*(cm/s)^3}] being obtained for each E, using an 8x6 grid of look-directions (Azimuth x Elevation, with ~45x9 deg. \"pixels\")--thus constituting an 'electron distribution'. \n A fitted Maxwellian model supplements the \"core\" regime of each distribution.  N_elec [#/cc] gives the density value derived for the full distribution, while NcElec [#/cc] gives that of the core.  U_eGSE and UceGSE [km/s, GSE], resp. supply the full and core bulk-velocity.  P_eGSE [erg/cc, GSE] has the [Pxx, Pxy, Pxz, Pyy, Pyz, Pzz] components of the derived pressure-tensor.  T_elec and TcElec [K], resp. provide the full and core total-temperatures; W_elec and WcElec [eV] specifying the corresponding thermal-energies.  Te_pal, Te_per, TecPal and TecPer [K] give resp. full and core parallel- and perpendicular-temperatures (wrt B), with Te_ani and TecAni [unitless] furnishing the perpendicular/parallel temperature-anisotropies for each regime.  Finally, Gyrtrp [unitless] indicates the derived electron gyrotropy.\nThe data set reported here contains: N_elec, NcElec, U_eGSE, UceGSE, P_eGSE, T_elec, TcElec, W_elec, WcElec, Te_pal, Te_per, TecPal, TecPer, Te_ani, TecAni, and Gyrtrp (as described above).",
+    "Instrument_type": "Plasma and Solar Wind",
+    "Mission_group": "Wind",
+    "Logical_source": "wi_h5_swe",
+    "Logical_file_id": "wi_h5_swe_00000000_v01",
+    "Logical_source_description": "Wind Solar Wind Experiment (SWE), 9 sec solar wind electron moments at 12 sec cadence",
+    "Time_resolution": "9 seconds",
+    "Generation_date": " ",
+    "MODS": "Skeleton created 12/10/2009.",
+    "LINK_TEXT": "Additional information about instruments and parameters is available on the ",
+    "LINK_TITLE": "Wind Data Page",
+    "HTTP_LINK": "http://wind.nasa.gov/data.php",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Wind/SWE/H5/PT12S",
+    "DOI": "https://doi.org/10.48322/chaz-z942"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Time at start of measurement interval",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "MONOTON": "INCREASE",
+        "SCALETYP": "linear",
+        "VALIDMAX": "2029-12-31T23:59:59.999",
+        "VALIDMIN": "1990-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null
+      }
+    },
+    "N_elec": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ne Electron density",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density>electron_number",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "N_elec",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ne",
+        "SCALETYP": "log",
+        "UNITS": "#/cc",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.1,
+        "VAR_NOTES": "Number-density from full solar wind electron distribution, including fitted core.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cc",
+        "x_LABLAXIS": "Ne"
+      }
+    },
+    "NcElec": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ne core Electron density",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density>electron_number_core",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "NcElec",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Ne core",
+        "SCALETYP": "log",
+        "UNITS": "#/cc",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.1,
+        "VAR_NOTES": "Number-density from fitted Maxwellian model supplementing the core regime of observed solar wind electron distribution.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/cc",
+        "x_LABLAXIS": "Ne core"
+      }
+    },
+    "U_eGSE": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ue (GSE, 3 comp.) Electron bulk-velocity",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "cartesian",
+        "DICT_KEY": "velocity>solar_wind_electron_GSE",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "U_eGSE",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "label_U_eGSE",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": [
+          0.0,
+          900.0,
+          900.0
+        ],
+        "VALIDMIN": [
+          -1800.0,
+          -900.0,
+          -900.0
+        ],
+        "VAR_NOTES": "Bulk-velocity from full solar wind electron distribution, including fitted core.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXES": [
+          [
+            "UeX (GSE)",
+            "UeY (GSE)",
+            "UeZ (GSE)"
+          ]
+        ],
+        "x_DEPEND": [
+          [
+            "X",
+            "Y",
+            "Z"
+          ]
+        ]
+      }
+    },
+    "UceGSE": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ue core (GSE, 3 comp.) Electron bulk-velocity",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "cartesian",
+        "DICT_KEY": "velocity>solar_wind_electron_GSE_core",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "UceGSE",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "label_UceGSE",
+        "SCALETYP": "linear",
+        "UNITS": "km/s",
+        "VALIDMAX": [
+          0.0,
+          900.0,
+          900.0
+        ],
+        "VALIDMIN": [
+          -1800.0,
+          -900.0,
+          -900.0
+        ],
+        "VAR_NOTES": "Bulk-velocity from fitted Maxwellian model supplementing the core regime of observed solar wind electron distribution.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km/s",
+        "x_LABLAXES": [
+          [
+            "UeX core (GSE)",
+            "UeY core (GSE)",
+            "UeZ core (GSE)"
+          ]
+        ],
+        "x_DEPEND": [
+          [
+            "X",
+            "Y",
+            "Z"
+          ]
+        ]
+      }
+    },
+    "P_eGSE": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pe (GSE, 6 comp.) Electron pressure-tensor",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "tensor",
+        "DICT_KEY": "pressure>electron_tensor_GSE",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "P_eGSE",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "label_P_eGSE",
+        "SCALETYP": "log",
+        "UNITS": "erg/cc",
+        "VALIDMAX": 1e-08,
+        "VALIDMIN": 1e-13,
+        "VAR_NOTES": "Pressure-tensor from full solar wind electron distribution, including fitted core.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "erg/cc",
+        "x_LABLAXES": [
+          [
+            "PeXX (GSE)",
+            "PeXY (GSE)",
+            "PeXZ (GSE)",
+            "PeYY (GSE)",
+            "PeYZ (GSE)",
+            "PeZZ (GSE)"
+          ]
+        ],
+        "x_DEPEND": [
+          [
+            "XX",
+            "XY",
+            "XZ",
+            "YY",
+            "YZ",
+            "ZZ"
+          ]
+        ]
+      }
+    },
+    "T_elec": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Te Electron total-temperature",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "T_elec",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Te",
+        "SCALETYP": "log",
+        "UNITS": "K",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_NOTES": "Total-temperature from full solar wind electron distribution, including fitted core.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "K",
+        "x_LABLAXIS": "Te"
+      }
+    },
+    "TcElec": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Te core Electron total-temperature",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature>electron_core",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TcElec",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Te core",
+        "SCALETYP": "log",
+        "UNITS": "K",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_NOTES": "Total-temperature from fitted Maxwellian model supplementing the core regime of observed solar wind electron distribution.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "K",
+        "x_LABLAXIS": "Te core"
+      }
+    },
+    "W_elec": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "We Electron average thermal-energy",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "energy>electron_average",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "W_elec",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "We",
+        "SCALETYP": "linear",
+        "UNITS": "eV",
+        "VALIDMAX": 75.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Average thermal-energy from full solar wind electron distribution, including fitted core.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "We"
+      }
+    },
+    "WcElec": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "We core Electron average thermal-energy",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "energy>electron_average_core",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "WcElec",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "We core",
+        "SCALETYP": "linear",
+        "UNITS": "eV",
+        "VALIDMAX": 75.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Average thermal-energy from fitted Maxwellian model supplementing the core regime of observed solar wind electron distribution.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "We core"
+      }
+    },
+    "Te_pal": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TePal Electron parallel-temperature",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature>electron_parallel",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Te_pal",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "TePal",
+        "SCALETYP": "log",
+        "UNITS": "K",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_NOTES": "Parallel-temperature (wrt B) from full solar wind electron distribution, including fitted core.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "K",
+        "x_LABLAXIS": "TePal"
+      }
+    },
+    "Te_per": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TePer Electron perpendicular-temperature",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature>electron_perpendicular",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Te_per",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "TePer",
+        "SCALETYP": "log",
+        "UNITS": "K",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_NOTES": "Perpendicular-temperature (wrt B) from full solar wind electron distribution, including fitted core.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "K",
+        "x_LABLAXIS": "TePer"
+      }
+    },
+    "TecPal": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TePal core Electron parallel-temperature",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature>electron_parallel_core",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TecPal",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "TePal core",
+        "SCALETYP": "log",
+        "UNITS": "K",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_NOTES": "Parallel-temperature (wrt B) from fitted Maxwellian model supplementing the core regime of observed solar wind electron distribution.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "K",
+        "x_LABLAXIS": "TePal core"
+      }
+    },
+    "TecPer": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TePer core Electron perpendicular-temperature",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature>electron_perpendicular_core",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TecPer",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "TePer core",
+        "SCALETYP": "log",
+        "UNITS": "K",
+        "VALIDMAX": 1000000.0,
+        "VALIDMIN": 10000.0,
+        "VAR_NOTES": "Perpendicular-temperature (wrt B) from fitted Maxwellian model supplementing the core regime of observed solar wind electron distribution.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "K",
+        "x_LABLAXIS": "TePer core"
+      }
+    },
+    "Te_ani": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Aniso_e Electron temperature-anisotropy (TePer/TePal)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "anisotropy>electron_temperature",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Te_ani",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Aniso_e",
+        "SCALETYP": "linear",
+        "UNITS": "unitless",
+        "VALIDMAX": 2.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Temperature-anisotropy (Te_per/Te_pal) from full solar wind electron distribution, including fitted core.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "unitless",
+        "x_LABLAXIS": "Aniso_e"
+      }
+    },
+    "TecAni": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Aniso_e core Electron temperature-anisotropy (TePer_core/TePal_core)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "anisotropy>electron_temperature_core",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TecAni",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Aniso_e core",
+        "SCALETYP": "linear",
+        "UNITS": "unitless",
+        "VALIDMAX": 2.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Temperature-anisotropy (TecPer/TecPal) from fitted Maxwellian model supplementing the core regime of observed solar wind electron distribution.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "unitless",
+        "x_LABLAXIS": "Aniso_e core"
+      }
+    },
+    "Gyrtrp": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Gyrtrp_e Electron gyrotropy",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "gyrotropy>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Gyrtrp",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Gyrtrp_e",
+        "SCALETYP": "linear",
+        "UNITS": "unitless",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": -1.0,
+        "VAR_NOTES": "Gyrotropy from full solar wind electron distribution, including fitted core.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "unitless",
+        "x_LABLAXIS": "Gyrtrp_e"
+      }
+    },
+    "label_U_eGSE": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label, Solar Wind Electron Bulk-Velocity, cartesian GSE",
+        "DICT_KEY": "label>velocity_solar_wind_electron_GSE",
+        "FIELDNAM": "label_U_eGSE",
+        "FORMAT": "A10",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "UeX (GSE)",
+        "UeY (GSE)",
+        "UeZ (GSE)"
+      ]
+    },
+    "label_UceGSE": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label, Solar Wind Electron Core Bulk-Velocity, cartesian GSE",
+        "DICT_KEY": "label>velocity_solar_wind_electron_GSE_core",
+        "FIELDNAM": "label_UceGSE",
+        "FORMAT": "A15",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "UeX core (GSE)",
+        "UeY core (GSE)",
+        "UeZ core (GSE)"
+      ]
+    },
+    "label_P_eGSE": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 20,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "label, Solar Wind Electron Pressure-Tensor, cartesian GSE",
+        "DICT_KEY": "label>pressure_electron_tensor_GSE",
+        "FIELDNAM": "label_P_eGSE",
+        "FORMAT": "A11",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "PeXX (GSE)",
+        "PeXY (GSE)",
+        "PeXZ (GSE)",
+        "PeYY (GSE)",
+        "PeYZ (GSE)",
+        "PeZZ (GSE)"
+      ]
+    },
+    "cartesian": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "3 Components in Cartesian Coord.",
+        "DICT_KEY": "label>vector_cartesian",
+        "FIELDNAM": "cartesian",
+        "FORMAT": "A2",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "X",
+        "Y",
+        "Z"
+      ]
+    },
+    "tensor": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 2,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "6 Components of Cartesian Tensor",
+        "DICT_KEY": "label>tensor_cartesian",
+        "FIELDNAM": "tensor",
+        "FORMAT": "A3",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "XX",
+        "XY",
+        "XZ",
+        "YY",
+        "YZ",
+        "ZZ"
+      ]
+    }
+  }
+}

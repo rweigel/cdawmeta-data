@@ -1,0 +1,491 @@
+{
+  "CDFFileInfo": {
+    "File": "isee-3_mag_1min_magnetic_field_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/isee-3_mag_1min_magnetic_field_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISEE>ISEE-3",
+    "Source_name": "ISEE-3>ISEE-3",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Data_type": "MAG_1min>ISEE-3 1-min averaged Magnetic Field",
+    "Data_version": "1",
+    "Descriptor": "magnetic_field>MAG - Vector Helium Magnetometer",
+    "PI_name": "Edward Smith",
+    "PI_affiliation": "JPL NASA",
+    "Mission_group": "ISEE",
+    "TEXT": "This data set contains averaged 1-minute magnetic field data converted from simple ASCII records. It was created at NSSDC from a more complex, multi-resolution data set (NSSDC ID = SPHE-00673; Old ID = 78-079A-02D) provided by the Principal Investigator team and now available from https://spdf.gsfc.nasa.gov/pub/data/isee/isee3/magnetic_fields/\nThe coordinate system for the B-field components is the JPL-defined I,S coordinate system (origin at the spacecraft): I is the unit vector in the direction of the ISEE-3 spin axis (positive in the northward direction), and S is the unit vector from the spacecraft to the sun. The z-axis is parallel to to I, the y-axis to the cross-product I x S, and the x-axis to Y x Z. The I,S coordinate system is approximately the same as the Solar Ecliptic (SE) system since the spacecraft z-axis (the spin axis) is maintained within 0.5 degree of perpendicular to the ecliptic plane. (SE is defined the same way as GSE, but with the spacecraft [point of observation] substituted for Earth).  \nFor years 1984-1990 we added spacecraft position in HGI coordinate\nThe HGI coordinates are Sun-centered and inertially fixed with respect to an  X-axis directed along the intersection line of theecliptic and solar equatorial  planes, and defines zero of the longitude, HGI_LONG. The solar equator plane  is inclined at 7.25degrees from the ecliptic. This direction was towards ecliptic  longitude of 74.367 deg on 1 January 1900 at 12:00 UT; because of the precession of the Earth\"s equator, this longitude increases by 1.4 deg/century.  The Z-axis is directed perpendicular to and northward of the solar equator, and the Y-axis completes the right-handed set.  The longitude, HGI_LONG increase from zero in the X-direction towards Y-direction.The latitude HG_LAT increases to +90 deg towards  the north pole, and to -90 deg towardsm south pole. \nNote that here present values averaged in 1-minute, e.g. <B>^2 may be not equal <B^2)>.",
+    "Instrument_type": "Magnetic Fields (space)",
+    "Logical_source": "isee-3_mag_1min_magnetic_field",
+    "Logical_file_id": "ISEE-3_mag_1min_magnetic_field_19831101_v01",
+    "Logical_source_description": "1 min averaged magnetic field",
+    "Time_resolution": "1 min",
+    "LINK_TEXT": "Above data in the form of ",
+    "LINK_TITLE": "ASCII files",
+    "HTTP_LINK": "https://spdf.gsfc.nasa.gov/pub/data/isee/isee3/magnetic_fields/1min_ascii_with_sw_speed/00readme.txt",
+    "File_naming_convention": "source_datatype_descriptor_yyyyMMdd",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/ISEE3/MAG/CDF/PT1M",
+    "DOI": "https://doi.org/10.48322/t0jh-af86"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Default time",
+        "DICT_KEY": "time",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "TIME_BASE": " ",
+        "UNITS": "ms",
+        "VALIDMAX": "3000-01-01T00:00:00.000",
+        "VALIDMIN": "1000-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms"
+      }
+    },
+    "B_comp": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "magnetic field vector",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field vector in IS_GPL system",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B_jpl-is",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "B_jpl-is, nT",
+        "LABL_PTR_1": "B_comp_labl",
+        "UNITS": "nT",
+        "VALIDMAX": 999.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B_jpl-is, nT",
+        "x_LABLAXES": [
+          [
+            "X",
+            "Y",
+            "Z"
+          ]
+        ]
+      }
+    },
+    "BB_comp": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "magnetic field crossproduct matrix",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field crossproduct matrix in IS_GPL system",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BxB_matr",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "BxB_matr, nT^2",
+        "LABL_PTR_1": "BB_comp_labl",
+        "UNITS": "nT^2",
+        "VALIDMAX": 99999.0,
+        "VALIDMIN": -99999.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT^2",
+        "x_LABLAXIS": "BxB_matr, nT^2",
+        "x_LABLAXES": [
+          [
+            "Bx^2",
+            "BxBy",
+            "BxBz",
+            "By^2",
+            "ByBz",
+            "Bz^2"
+          ]
+        ]
+      }
+    },
+    "B_comp_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "B_comp_labl",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "B_comp_labl",
+        "FIELDNAM": "B_comp_labl",
+        "FILLVAL": -1e+31,
+        "FORMAT": "a1",
+        "LABLAXIS": "B_comp",
+        "UNITS": " ",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "B_comp"
+      },
+      "VarData": [
+        "X",
+        "Y",
+        "Z"
+      ]
+    },
+    "BB_comp_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          6
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 4,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "BB_comp_labl",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "BB_comp_labl",
+        "FIELDNAM": "BB_comp_labl",
+        "FILLVAL": -1e+31,
+        "FORMAT": "a4",
+        "LABLAXIS": "BB_comp",
+        "UNITS": " ",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "BB_comp"
+      },
+      "VarData": [
+        "Bx^2",
+        "BxBy",
+        "BxBz",
+        "By^2",
+        "ByBz",
+        "Bz^2"
+      ]
+    },
+    "B_dir": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "magnetic field direction vector",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field direction vector in IS_GPL system",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "b_jpl-is_dir",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "B_jpl-is_direction",
+        "LABL_PTR_1": "B_dir_labl",
+        "UNITS": " ",
+        "VALIDMAX": 99.0,
+        "VALIDMIN": -100.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "B_jpl-is_direction",
+        "x_LABLAXES": [
+          [
+            "Bx/|B|",
+            "By/|B|",
+            "Bz/|B|"
+          ]
+        ]
+      }
+    },
+    "B_dir_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 6,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "B_dir_labl",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "B_dir_labl",
+        "FIELDNAM": "B_dir_labl",
+        "FILLVAL": -1e+31,
+        "FORMAT": "a6",
+        "LABLAXIS": "B_dir",
+        "UNITS": " ",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "B_dir"
+      },
+      "VarData": [
+        "Bx/|B|",
+        "By/|B|",
+        "Bz/|B|"
+      ]
+    },
+    "B_mag": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "magnetic field magnitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field magnitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B_tot",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "B_total, nT",
+        "UNITS": "nT",
+        "VALIDMAX": 999.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "B_total, nT"
+      }
+    },
+    "B2_avg": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "average of magnetic field square",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "magnetic field square",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "B^2 average",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "B^2_average, nT^2",
+        "UNITS": "nT^2",
+        "VALIDMAX": 99999.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT^2",
+        "x_LABLAXIS": "B^2_average, nT^2"
+      }
+    },
+    "sc_pos": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C coordinates, GSE",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "S/C coordinates, GSE",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "sc_pos",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "S/C GSE, Re",
+        "LABL_PTR_1": "sc_pos_labl",
+        "UNITS": "Re",
+        "VALIDMAX": 9999.0,
+        "VALIDMIN": -9999.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Re",
+        "x_LABLAXIS": "S/C GSE, Re",
+        "x_LABLAXES": [
+          [
+            "X_GSE",
+            "Y_GSE",
+            "Z_GSE"
+          ]
+        ]
+      }
+    },
+    "sc_pos_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 5,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "sc_pos_labl",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "sc_pos_labl",
+        "FIELDNAM": "sc_pos_labl",
+        "FILLVAL": -1e+31,
+        "FORMAT": "a1",
+        "LABLAXIS": "sc_pos",
+        "UNITS": " ",
+        "VALIDMAX": 1e+31,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "metadata",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "sc_pos"
+      },
+      "VarData": [
+        "X_GSE",
+        "Y_GSE",
+        "Z_GSE"
+      ]
+    },
+    "sc_r": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C helio-distance",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "S/C heliocentric distance",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "sc_r",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "S/C dist, AU",
+        "UNITS": "AU",
+        "VALIDMAX": 9.9,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "AU",
+        "x_LABLAXIS": "S/C dist, AU"
+      }
+    },
+    "sc_lat": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C helio-latitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "S/C heliocentric latitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "latitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "SC latitude, deg",
+        "UNITS": "deg",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "SC latitude, deg"
+      }
+    },
+    "sc_long": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C helio-longitude",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "S/C heliocentric longitude",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "longitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.2",
+        "LABLAXIS": "SC longitude, deg",
+        "UNITS": "deg",
+        "VALIDMAX": 400.0,
+        "VALIDMIN": -1000.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "SC longitude, deg"
+      }
+    }
+  }
+}

@@ -1,0 +1,1183 @@
+{
+  "CDFFileInfo": {
+    "File": "so_k0_cst_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/so_k0_cst_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Discipline": "Solar Physics>Heliospheric Physics",
+    "Source_name": "SOHO>Solar Heliospheric Observatory",
+    "Data_type": "K0>Key Parameter",
+    "Descriptor": "CST>Comprehensive Suprathermal and Energetic Particle Analyzer",
+    "Data_version": "1",
+    "TITLE": "SOHO_COSTEP Key Parameters ",
+    "TEXT": "Data: 5 minute averages Time tag = center of interval \nReferences                    1.Kunow, H., et al., COSTEP -   Comprehensive Suprathermal and  Energetic Particle Analyser for SOHO, in V. Domingo, editor, The SOHO Mission - Scientific and  Technical Aspects of the        Instruments, ESA SP-1104, pages 75 - 80, 1988 \n2.Kunow, H., et al., COSTEP -  Comprehensive Suprathermal and  Energetic Particle Analyser for SOHO - Scientific Goals and Data Description, Proc. First SOHO  Workshop, ESA SP-348,           pages 43 - 46, 1992 \n2.Mueller-Mellin, R., et al.,  COSTEP -                        Comprehensive Suprathermal and  Energetic Particle Analyser,    to be published in              Solar Physics, 1995\n 19 Dec 1996 Caveat: 1. The EPHIN E-detector developed gradually a noise problem during 1996 and was switched off logically on 1996-305-14.40. Check EPHIN status word >Ephin_Stat< bit 2 (2^2): if set to one: E detector  is on, if set to zero, E detector is off. When off, the channels E3000, P41 and H41 show zero intensity, the energy of the next lower channel E1300 is the average of E1300 and E3000, the width of channel E1300 is the sum of the  width E1300 and E3000; P25, and H25 are changed accordingly.  Note: the KPGS calulates correctly the new fluxes in channels E1300, P25, H25. Only their interpretation needs to be changed by the user. 2. The geometric factor for the counting rate channels can be changed either by ground command or autonomously by detecting high fluxes in the center segment of detector A. Check EPHIN status word >Ephin_Stat<bits 9,10,11,12,13,17,18,19,20,21: if set to one: large geometric factor, if set to zero: small geometric factor. Note: the KPGS software calculates correctly the fluxes. No action needed by the user.",
+    "MODS": " 15 Feb 1994    Version  1.0 \n 22 Nov 1994    Version  1.0                     Revision 1.0      new variables COVER, DQF, STATUS\n 28 Mar 1995    Version  1.0                     Revision 2.0      Energy ranges updated           \n 15 May 1995    Version  1.0                     Revision 3.0      Addition: TEXT                   Correction: E_Energy [4]                     P_Energy [2]                     P_Label             \n 28 Nov 1995  Version  1.0.                    Revision 4.0        Correction: # Var. from 24 to 25 Change: Descript. COST -> CST       Var_type data -> support_data         at: Epoch, PB5                   at:  E_energy,  E_delta          at:  P_energy,  P_delta          at: He_energy, He_delta          at: E_energy, E_delta  \n 19 Dec 1996  Version  7.0. EPHIN E, P and He channel values adapted to new investigations to geometry factors ",
+    "ADID_ref": "NSSD0194",
+    "Logical_file_id": "SO_K0_CST_00000000_V01",
+    "Logical_source": "SO_K0_CST",
+    "Logical_source_description": "SOHO ComprehensiveSuprathermal and  EnergeticParticle Analyser ",
+    "PI_name": "Horst Kunow",
+    "PI_affiliation": "University of Kiel, Germany",
+    "Mission_group": "SOHO\n!___Interplanetary Data near 1 AU",
+    "Instrument_type": "Particles (space)",
+    "TEXT_supplement_1": " ",
+    "NSSDC_id": "sphe-00276",
+    "alt_logical_source": "SOHO_COSTEP_Key-Parameters-K0_cdf",
+    "spase_DatasetResourceID": "spase://ESA/NumericalData/SOHO/COSTEP/KP/PT5M",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time",
+        "DICT_KEY": "time>epoch",
+        "FIELDNAM": "Time Line",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2020-01-01T00:00:00.000",
+        "SCALEMIN": "1994-01-01T00:00:00.000",
+        "UNITS": "ms",
+        "VALIDMAX": "2020-01-01T00:00:00.000",
+        "VALIDMIN": "1994-01-01T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "Time_PB5": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "unit_time",
+        "DICT_KEY": "time>PB5",
+        "FIELDNAM": "Time Line",
+        "FILLVAL": -2147483648,
+        "FORM_PTR": "format_time",
+        "LABL_PTR_1": "label_time",
+        "SCALEMAX": [
+          2020,
+          1,
+          0
+        ],
+        "SCALEMIN": [
+          1994,
+          1,
+          0
+        ],
+        "UNIT_PTR": "unit_time",
+        "VALIDMAX": [
+          2020,
+          1,
+          0
+        ],
+        "VALIDMIN": [
+          1994,
+          1,
+          0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": [
+          "year",
+          "day",
+          "msec"
+        ],
+        "x_LABLAXES": [
+          [
+            "Year",
+            "Day of Year (Jan 1 = Day 1)",
+            "Elapsed millisecond of day"
+          ]
+        ],
+        "x_DEPEND": [
+          [
+            "year",
+            "day",
+            "msec"
+          ]
+        ]
+      }
+    },
+    "label_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 27,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label for Time_PB5                      ",
+        "DICT_KEY": "label>time",
+        "FIELDNAM": "Label for Time_PB5",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Year",
+        "Day of Year (Jan 1 = Day 1)",
+        "Elapsed millisecond of day"
+      ]
+    },
+    "unit_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 4,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Units for Time_PB5                      ",
+        "DICT_KEY": "label>unit",
+        "FIELDNAM": "Units for Time_PB5",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "year",
+        "day",
+        "msec"
+      ]
+    },
+    "format_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 2,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Format for Time_PB5                     ",
+        "DICT_KEY": "label>format",
+        "FIELDNAM": "Format for Time_PB5",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "I4",
+        "I3",
+        "I8"
+      ]
+    },
+    "Electron": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Electron flux at 4 energies (0-10 MeV)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "E_Energy",
+        "DICT_KEY": "particle_flux>electron",
+        "DISPLAY_TYPE": "default_dimensiony=Electron,z=E_Energy",
+        "FIELDNAM": "Electron flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.5",
+        "LABLAXIS": "e- Flux",
+        "SCALEMAX": [
+          1000000.0,
+          1000000.0,
+          1000000.0,
+          1000000.0
+        ],
+        "SCALEMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "SCALETYP": "log",
+        "UNITS": "1/(cm**2 s sr MeV)",
+        "VALIDMAX": [
+          1000000.0,
+          1000000.0,
+          1000000.0,
+          1000000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(cm**2 s sr MeV)",
+        "x_LABLAXIS": "e- Flux",
+        "x_DEPEND": [
+          "E_Energy"
+        ]
+      }
+    },
+    "E_Energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Electron energy channels",
+        "DELTA_MINUS_VAR": "E_Delta",
+        "DELTA_PLUS_VAR": "E_Delta",
+        "DICT_KEY": "energy>electron",
+        "FIELDNAM": "e- energy",
+        "FORMAT": "f4.1",
+        "LABL_PTR_1": "E_Label",
+        "SCALEMAX": [
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "SCALEMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "UNITS": "MeV",
+        "VALIDMAX": [
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXES": [
+          [
+            "0.25- 0.70 MeV",
+            "0.67- 3.00 MeV",
+            "2.6 - 6.2 MeV",
+            "4.80-10.0 MeV"
+          ]
+        ]
+      },
+      "VarData": [
+        0.5,
+        1.8,
+        4.4,
+        7.4
+      ]
+    },
+    "E_Delta": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Width of electron channels",
+        "DICT_KEY": "uncertainty>electron_energy",
+        "FIELDNAM": "Width of electron channels",
+        "FORMAT": "f4.1",
+        "LABL_PTR_1": "E_Label",
+        "SCALEMAX": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "SCALEMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "UNITS": "MeV",
+        "VALIDMAX": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXES": [
+          [
+            "0.25- 0.70 MeV",
+            "0.67- 3.00 MeV",
+            "2.6 - 6.2 MeV",
+            "4.80-10.0 MeV"
+          ]
+        ]
+      },
+      "VarData": [
+        0.2,
+        1.2,
+        1.8,
+        2.6
+      ]
+    },
+    "E_Label": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 16,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Electron energy channel in MeV",
+        "DICT_KEY": "label>electron_energy_channel",
+        "FIELDNAM": "Electron energy channel in MeV",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "0.25- 0.70 MeV",
+        "0.67- 3.00 MeV",
+        "2.6 - 6.2 MeV",
+        "4.80-10.0 MeV"
+      ]
+    },
+    "Proton": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Proton flux at 7 energies (0-60MeV)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "P_Energy",
+        "DICT_KEY": "particle_flux>proton",
+        "DISPLAY_TYPE": "default_dimensiony=Proton,z=P_Energy",
+        "FIELDNAM": "Proton flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.5",
+        "LABLAXIS": "Proton Flux",
+        "SCALEMAX": [
+          100000000.0,
+          100000000.0,
+          100000000.0,
+          100000000.0,
+          100000000.0,
+          100000000.0,
+          100000000.0
+        ],
+        "SCALEMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "SCALETYP": "log",
+        "UNITS": "1/(cm**2 s sr MeV) ",
+        "VALIDMAX": [
+          100000000.0,
+          100000000.0,
+          100000000.0,
+          100000000.0,
+          100000000.0,
+          100000000.0,
+          100000000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(cm**2 s sr MeV) ",
+        "x_LABLAXIS": "Proton Flux",
+        "x_DEPEND": [
+          "P_Energy"
+        ]
+      }
+    },
+    "P_Energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Proton energy channels",
+        "DELTA_MINUS_VAR": "P_Delta",
+        "DELTA_PLUS_VAR": "P_Delta",
+        "DICT_KEY": "energy>proton",
+        "FIELDNAM": "Proton energy",
+        "FORMAT": "f5.2",
+        "LABL_PTR_1": "P_Label",
+        "SCALEMAX": [
+          60.0,
+          60.0,
+          60.0,
+          60.0,
+          60.0,
+          60.0,
+          60.0
+        ],
+        "SCALEMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "UNITS": "MeV",
+        "VALIDMAX": [
+          60.0,
+          60.0,
+          60.0,
+          60.0,
+          60.0,
+          60.0,
+          60.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXES": [
+          [
+            "0.31- 0.76 MeV",
+            "0.76- 1.97 MeV",
+            "1.97- 6.04 MeV",
+            "4.3 - 7.8  MeV",
+            "7.8 -25.0  MeV",
+            "25. -41.   MeV",
+            "41. -53.   MeV"
+          ]
+        ]
+      },
+      "VarData": [
+        0.54,
+        1.37,
+        4.01,
+        6.1,
+        16.4,
+        33.0,
+        47.0
+      ]
+    },
+    "P_Delta": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Width of proton channels",
+        "DICT_KEY": "uncertainty>proton_energy",
+        "FIELDNAM": "Width of proton channels",
+        "FORMAT": "f5.2",
+        "LABL_PTR_1": "P_Label",
+        "SCALEMAX": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "SCALEMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "UNITS": "MeV",
+        "VALIDMAX": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXES": [
+          [
+            "0.31- 0.76 MeV",
+            "0.76- 1.97 MeV",
+            "1.97- 6.04 MeV",
+            "4.3 - 7.8  MeV",
+            "7.8 -25.0  MeV",
+            "25. -41.   MeV",
+            "41. -53.   MeV"
+          ]
+        ]
+      },
+      "VarData": [
+        0.23,
+        0.61,
+        2.04,
+        1.75,
+        8.6,
+        8.0,
+        6.0
+      ]
+    },
+    "P_Label": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          7
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Proton energy channels in MeV",
+        "DICT_KEY": "label>proton_energy_channel",
+        "FIELDNAM": "Proton energy channels in MeV",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "0.31- 0.76 MeV",
+        "0.76- 1.97 MeV",
+        "1.97- 6.04 MeV",
+        "4.3 - 7.8  MeV",
+        "7.8 -25.0  MeV",
+        "25. -41.   MeV",
+        "41. -53.   MeV"
+      ]
+    },
+    "Helium": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Helium flux at 4 E/C (0-50Mev/n)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "He_Energy",
+        "DICT_KEY": "particle_flux>helium",
+        "DISPLAY_TYPE": "default_dimensiony=Helium,z=He_Energy",
+        "FIELDNAM": "Helium flux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f10.5",
+        "LABLAXIS": "He Flux",
+        "SCALEMAX": [
+          10000.0,
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "SCALEMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "SCALETYP": "log",
+        "UNITS": "1/(cm**2 s sr MeV/n)",
+        "VALIDMAX": [
+          10000.0,
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/(cm**2 s sr MeV/n)",
+        "x_LABLAXIS": "He Flux",
+        "x_DEPEND": [
+          "He_Energy"
+        ]
+      }
+    },
+    "He_Energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Helium energy channels",
+        "DELTA_MINUS_VAR": "He_Delta",
+        "DELTA_PLUS_VAR": "He_Delta",
+        "DICT_KEY": "energy>helium",
+        "FIELDNAM": "Helium energy",
+        "FORMAT": "f5.2",
+        "LABL_PTR_1": "He_Label",
+        "SCALEMAX": [
+          50.0,
+          50.0,
+          50.0,
+          50.0
+        ],
+        "SCALEMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "UNITS": "MeV/n",
+        "VALIDMAX": [
+          50.0,
+          50.0,
+          50.0,
+          50.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV/n",
+        "x_LABLAXES": [
+          [
+            "4.3- 7.8 MeV/n",
+            "7.8-25.  MeV/n",
+            "25. -41. MeV/n",
+            "41. -53. MeV/n"
+          ]
+        ]
+      },
+      "VarData": [
+        6.1,
+        16.4,
+        33.0,
+        47.0
+      ]
+    },
+    "He_Delta": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Width of Helium channels",
+        "DICT_KEY": "uncertainty>helium_energy",
+        "FIELDNAM": "Width of Helium channels",
+        "FORMAT": "f5.2",
+        "LABL_PTR_1": "He_Label",
+        "SCALEMAX": [
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "SCALEMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "UNITS": "MeV/n",
+        "VALIDMAX": [
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV/n",
+        "x_LABLAXES": [
+          [
+            "4.3- 7.8 MeV/n",
+            "7.8-25.  MeV/n",
+            "25. -41. MeV/n",
+            "41. -53. MeV/n"
+          ]
+        ]
+      },
+      "VarData": [
+        1.75,
+        8.6,
+        8.0,
+        6.0
+      ]
+    },
+    "He_Label": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 14,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Helium energy channel in MeV/n",
+        "DICT_KEY": "label>helium_energy_channel",
+        "FIELDNAM": "Helium energy channel in MeV/n",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "4.3- 7.8 MeV/n",
+        "7.8-25.  MeV/n",
+        "25. -41. MeV/n",
+        "41. -53. MeV/n"
+      ]
+    },
+    "Ephin_Cover": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "EPHIN analyzer data coverage (% avg  5 min int)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>percent_coverage_interval ",
+        "FIELDNAM": " EPHIN Interval coverage",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f5.1",
+        "LABLAXIS": "Cover",
+        "SCALEMAX": 110.0,
+        "SCALEMIN": 0.0,
+        "UNITS": " % ",
+        "VALIDMAX": 110.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": " % ",
+        "x_LABLAXIS": "Cover"
+      }
+    },
+    "Lion_Cover": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "LION analyzer data coverage (% avg  5 min int)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>percent_coverage_interval ",
+        "FIELDNAM": " LION Interval coverage",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f5.1",
+        "LABLAXIS": "Cover",
+        "SCALEMAX": 110.0,
+        "SCALEMIN": 0.0,
+        "UNITS": " % ",
+        "VALIDMAX": 110.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": " % ",
+        "x_LABLAXIS": "Cover"
+      }
+    },
+    "Rollang": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Roll angle",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "angle>roll ",
+        "FIELDNAM": " Roll angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f5.1",
+        "LABLAXIS": "R_Angl",
+        "SCALEMAX": 3.1,
+        "SCALEMIN": -3.1,
+        "UNITS": " SAT [rad] ",
+        "VALIDMAX": 3.1,
+        "VALIDMIN": -3.1,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": " SAT [rad] ",
+        "x_LABLAXIS": "R_Angl"
+      }
+    },
+    "Ephin_Stat": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "EPHIN observation status:  1.551.859.711 & 1.568.636.927 ok,  all other not ok",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>instrument_status ",
+        "FIELDNAM": " EPHIN observation status ",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I10",
+        "LABLAXIS": "STATUS",
+        "SCALEMAX": 2147483647,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 2147483647,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "STATUS"
+      }
+    },
+    "Lion_Stat": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "LION observation status:  0=ok, 1=bad=calibration on ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>instrument_status",
+        "FIELDNAM": " LION observation status ",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I10",
+        "LABLAXIS": "STATUS",
+        "SCALEMAX": 2147483647,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 2147483647,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "STATUS"
+      }
+    },
+    "Ephin_DQF": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "EPHIN Data Quality FlagGood/Poor (0=Good, 2=Fair, 4=Poor)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>quality ",
+        "FIELDNAM": "EPHIN Data Quality Flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "DQF",
+        "SCALEMAX": 5,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 5,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "DQF"
+      }
+    },
+    "Lion_DQF": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "LION Data Quality FlagGood/Poor (0=Good, 2=Fair, 4=Poor)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>quality",
+        "FIELDNAM": "LION Data Quality Flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "DQF",
+        "SCALEMAX": 5,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 5,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "DQF"
+      }
+    },
+    "PGF": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Post Gap Flag",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "flag>post_gap ",
+        "FIELDNAM": "Post Gap Flag",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I1",
+        "LABLAXIS": "Gap_Flag",
+        "SCALEMAX": 5,
+        "SCALEMIN": 0,
+        "UNITS": " ",
+        "VALIDMAX": 5,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Gap_Flag"
+      }
+    }
+  }
+}

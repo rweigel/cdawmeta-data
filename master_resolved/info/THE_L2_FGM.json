@@ -1,0 +1,3160 @@
+{
+  "CDFFileInfo": {
+    "File": "the_l2_fgm_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/the_l2_fgm_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "THEMIS",
+    "Source_name": "THE>Themis Probe E",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Data_type": "FGM",
+    "Descriptor": "L2>L2 DATA",
+    "Data_version": " ",
+    "PI_name": "V. Angelopoulos, U. Auster & K.H. Glassmeier and W. Baumjohann",
+    "PI_affiliation": "UCB, TUBS and IWF respectively, NASA NAS5-02099",
+    "TITLE": "Fluxgate Magnetometer Measurements",
+    "TEXT": "Sensor and electronics design provided by TUBS (Glassmeier, Auster) and IWF (Baumjohann, Magnes)",
+    "Instrument_type": "Magnetic Fields (space)",
+    "Mission_group": "THEMIS",
+    "Logical_source": "the_l2_fgm",
+    "Logical_file_id": "the_l2_fgm_00000000_v01",
+    "Logical_source_description": "Spacecraft-collected fluxgate magnetometer, Decimated TeleMetry High, DSL, GSE and GSM coordinates",
+    "Time_resolution": "1/4-1/128s",
+    "Rules_of_use": "Open Data for Scientific Use",
+    "Generated_by": "THEMIS SOC",
+    "Generation_date": " ",
+    "Acknowledgement": "NASA Contract NAS5-02099",
+    "MODS": " ",
+    "ADID_ref": "NSSD0110",
+    "LINK_TEXT": "THEMIS FGM \nHigher resolution data and analysis s/w from \nDetailed description of the ",
+    "LINK_TITLE": "Processing History\nTHEMIS mission website\nFGM instrument",
+    "HTTP_LINK": "http://themis.ssl.berkeley.edu/fgm_proc_history.shtml\nhttp://themis.ssl.berkeley.edu/\nhttp://themis.ssl.berkeley.edu/instrument_fgm.shtml",
+    "File_naming_convention": "source_descriptor_datatype",
+    "Caveats": "See THEMIS website for caveats",
+    "Validity": "to be validated",
+    "Validator": "tbd",
+    "Validate": "Compatible with the ISTP CDF Standards",
+    "Inst_mod": "THM>xxxx",
+    "Parents": "xxxx",
+    "Inst_settings": "Not used",
+    "Software_version": " ",
+    "spase_DatasetResourceID": "spase://DLR/NumericalData/THEMIS/E/FGM/PT0.0078125S",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "the_fgm_fgs_quality": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY",
+        "SparseRecords": "PREV"
+      },
+      "VarAttributes": {
+        "CATDESC": "FGM-FGS Data Quality (0: Good data, 1:boom not deployed, 2:in shadow, 3:uncorrected shadow, 4:noisy waveforms)",
+        "DEPEND_0": "the_fgs_epoch",
+        "DEPEND_EPOCH0": "the_fgs_epoch0",
+        "DEPEND_TIME": "the_fgs_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Data_Quality_Flag FGM-E fgs",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABLAXIS": "Data_Quality_Flag FGM-E fgs",
+        "PROPERTY": "scalar",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "TENSOR_ORDER": 0,
+        "VALIDMAX": 256,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Data_Quality_Flag FGM-E fgs"
+      }
+    },
+    "the_fgs_btotalQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "(Good data only) FGS magnetic field B magnitude ",
+        "COMPONENT_0": "the_fgs_btotal",
+        "COMPONENT_1": "the_fgm_fgs_quality",
+        "DEPEND_0": "the_fgs_epoch",
+        "DEPEND_EPOCH0": "the_fgs_epoch0",
+        "DEPEND_TIME": "the_fgs_time",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FGS-D Magnetic Field, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABLAXIS": "FGS-D B_total",
+        "PROPERTY": "scalar",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "0",
+        "UNITS": "nT",
+        "VALIDMAX": 25000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "FGS-D B_total",
+        "COMPONENTS": [
+          "the_fgs_btotal",
+          "the_fgm_fgs_quality"
+        ]
+      }
+    },
+    "the_fgs_gseQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGS (spin-resolution/~3 sec) magnetic  field B in XYZ GSE Coordinates",
+        "COMPONENT_0": "the_fgs_gse",
+        "COMPONENT_1": "the_fgm_fgs_quality",
+        "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic",
+        "DEPEND_0": "the_fgs_epoch",
+        "DEPEND_1": "the_fgs_compno",
+        "DEPEND_EPOCH0": "the_fgs_epoch0",
+        "DEPEND_TIME": "the_fgs_time",
+        "DICT_KEY": "magnetic_field>vector_GSE",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSE Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fgs_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSE",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT GSE",
+        "x_LABLAXES": [
+          [
+            "Bx FGS-D",
+            "By FGS-D",
+            "Bz FGS-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgs_compno"
+        ],
+        "COMPONENTS": [
+          "the_fgs_gse",
+          "the_fgm_fgs_quality"
+        ]
+      }
+    },
+    "the_fgs_gsmQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGS (spin-resolution/~3 sec) magnetic  field B in XYZ GSM Coordinates",
+        "COMPONENT_0": "the_fgs_gsm",
+        "COMPONENT_1": "the_fgm_fgs_quality",
+        "COORDINATE_SYSTEM": "GSM>Geocentric Solar Magnetic",
+        "DEPEND_0": "the_fgs_epoch",
+        "DEPEND_1": "the_fgs_compno",
+        "DEPEND_EPOCH0": "the_fgs_epoch0",
+        "DEPEND_TIME": "the_fgs_time",
+        "DICT_KEY": "magnetic_field>vector_GSM",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSM Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fgs_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSM",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT GSM",
+        "x_LABLAXES": [
+          [
+            "Bx FGS-D",
+            "By FGS-D",
+            "Bz FGS-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgs_compno"
+        ],
+        "COMPONENTS": [
+          "the_fgs_gsm",
+          "the_fgm_fgs_quality"
+        ]
+      }
+    },
+    "the_fgs_dslQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGS magnetic field B in DSL (Despun Spacecraft) Coordinates ",
+        "COMPONENT_0": "the_fgs_dsl",
+        "COMPONENT_1": "the_fgm_fgs_quality",
+        "COORDINATE_SYSTEM": "DSL>Despun Spacecraft",
+        "DEPEND_0": "the_fgs_epoch",
+        "DEPEND_1": "the_fgs_compno",
+        "DEPEND_EPOCH0": "the_fgs_epoch0",
+        "DEPEND_TIME": "the_fgs_time",
+        "DICT_KEY": "magnetic_field>vector_DSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fgs_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT DSL",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT DSL",
+        "x_LABLAXES": [
+          [
+            "Bx FGS-D",
+            "By FGS-D",
+            "Bz FGS-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgs_compno"
+        ],
+        "COMPONENTS": [
+          "the_fgs_dsl",
+          "the_fgm_fgs_quality"
+        ]
+      }
+    },
+    "the_fgs_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "XYZ Component Number",
+        "DICT_KEY": "number",
+        "FIELDNAM": "the_fgs_dsl_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "the_fgs_labl",
+        "SCALETYP": "linear",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Bx FGS-D",
+            "By FGS-D",
+            "Bz FGS-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "the_fgs_time": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "the_fgs, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "the_fgs_time",
+        "FILLVAL": -1e+30,
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "the_fgs_epoch0": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "EPOCH0 of THEMIS time base",
+        "FIELDNAM": "the_fgs_epoch0",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "timebase",
+        "UNITS": "msec",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_NOTES": "EPOCH of 01-Jan-1970 00:00:00",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "timebase"
+      },
+      "VarData": [
+        "1970-01-01T00:00:00.000"
+      ]
+    },
+    "the_fgs_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "the_fgs_epoch",
+        "COMPONENT_0": "the_fgs_epoch0",
+        "COMPONENT_1": "the_fgs_time",
+        "FIELDNAM": "the_fgs_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "the_fgs_epoch0",
+          "the_fgs_time"
+        ]
+      }
+    },
+    "the_fgs_btotal": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "(All Qualities data) FGS magnetic field B magnitude ",
+        "DEPEND_0": "the_fgs_epoch",
+        "DEPEND_EPOCH0": "the_fgs_epoch0",
+        "DEPEND_TIME": "the_fgs_time",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FGS-D Magnetic Field, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABLAXIS": "FGS-D B_total",
+        "PROPERTY": "scalar",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "0",
+        "UNITS": "nT (All Qs)",
+        "VALIDMAX": 25000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT (All Qs)",
+        "x_LABLAXIS": "FGS-D B_total"
+      }
+    },
+    "the_fgs_gse": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGS (spin-resolution/~3 sec) magnetic  field B in XYZ GSE Coordinates",
+        "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic",
+        "DEPEND_0": "the_fgs_epoch",
+        "DEPEND_1": "the_fgs_compno",
+        "DEPEND_EPOCH0": "the_fgs_epoch0",
+        "DEPEND_TIME": "the_fgs_time",
+        "DICT_KEY": "magnetic_field>vector_GSE",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSE Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "the_fgs_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSE (All Qs)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT GSE (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Bx FGS-D",
+            "By FGS-D",
+            "Bz FGS-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgs_compno"
+        ]
+      }
+    },
+    "the_fgs_gsm": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGS magnetic field B in XYZ GSM Coordinates",
+        "COORDINATE_SYSTEM": "GSM>Geocentric Solar Magnetic",
+        "DEPEND_0": "the_fgs_epoch",
+        "DEPEND_1": "the_fgs_compno",
+        "DEPEND_EPOCH0": "the_fgs_epoch0",
+        "DEPEND_TIME": "the_fgs_time",
+        "DICT_KEY": "magnetic_field>vector_GSM",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSM Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "the_fgs_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSM (All Qs)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT GSM (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Bx FGS-D",
+            "By FGS-D",
+            "Bz FGS-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgs_compno"
+        ]
+      }
+    },
+    "the_fgs_dsl": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGS magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates ",
+        "COORDINATE_SYSTEM": "DSL>Despun Spacecraft",
+        "DEPEND_0": "the_fgs_epoch",
+        "DEPEND_1": "the_fgs_compno",
+        "DEPEND_EPOCH0": "the_fgs_epoch0",
+        "DEPEND_TIME": "the_fgs_time",
+        "DICT_KEY": "magnetic_field>vector_DSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABEL_1": "the_fgs_labl",
+        "LABL_PTR_1": "the_fgs_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT DSL (All Qs)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT DSL (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Bx FGS-D",
+            "By FGS-D",
+            "Bz FGS-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgs_compno"
+        ]
+      }
+    },
+    "the_fgm_fgl_quality": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY",
+        "SparseRecords": "PREV"
+      },
+      "VarAttributes": {
+        "CATDESC": "FGM-FGL Data Quality (0: Good data, 1:boom not deployed, 2:in shadow, 3:uncorrected shadow, 4:noisy waveforms)",
+        "DEPEND_0": "the_fgl_epoch16",
+        "DEPEND_EPOCH0": "the_fgl_epoch0",
+        "DEPEND_TIME": "the_fgl_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Data_Quality_Flag FGM-E fgl",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABLAXIS": "Data_Quality_Flag FGM-E fgl",
+        "PROPERTY": "scalar",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "TENSOR_ORDER": 0,
+        "VALIDMAX": 256,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Data_Quality_Flag FGM-E fgl"
+      }
+    },
+    "the_fgl_btotalQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "(Good data only) FGL magnetic field B magnitude ",
+        "COMPONENT_0": "the_fgl_btotal",
+        "COMPONENT_1": "the_fgm_fgl_quality",
+        "DEPEND_0": "the_fgl_epoch16",
+        "DEPEND_EPOCH0": "the_fgl_epoch0",
+        "DEPEND_TIME": "the_fgl_time",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FGL-D Magnetic Field, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABLAXIS": "FGL-D B_total",
+        "PROPERTY": "scalar",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "0",
+        "UNITS": "nT",
+        "VALIDMAX": 25000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "FGL-D B_total",
+        "COMPONENTS": [
+          "the_fgl_btotal",
+          "the_fgm_fgl_quality"
+        ]
+      }
+    },
+    "the_fgl_gseQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGL (low-resolution/~0.25 sec) magnetic field B in XYZ GSE Coordinates",
+        "COMPONENT_0": "the_fgl_gse",
+        "COMPONENT_1": "the_fgm_fgl_quality",
+        "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic",
+        "DEPEND_0": "the_fgl_epoch16",
+        "DEPEND_1": "the_fgl_compno",
+        "DEPEND_EPOCH0": "the_fgl_epoch0",
+        "DEPEND_TIME": "the_fgl_time",
+        "DICT_KEY": "magnetic_field>vector_GSE",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSE Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fgl_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSE",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT GSE",
+        "x_LABLAXES": [
+          [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgl_compno"
+        ],
+        "COMPONENTS": [
+          "the_fgl_gse",
+          "the_fgm_fgl_quality"
+        ]
+      }
+    },
+    "the_fgl_gsmQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGL (low-resolution/~0.25 sec) magnetic field B in XYZ GSM Coordinates",
+        "COMPONENT_0": "the_fgl_gsm",
+        "COMPONENT_1": "the_fgm_fgl_quality",
+        "COORDINATE_SYSTEM": "GSM>Geocentric Solar Magnetic",
+        "DEPEND_0": "the_fgl_epoch16",
+        "DEPEND_1": "the_fgl_compno",
+        "DEPEND_EPOCH0": "the_fgl_epoch0",
+        "DEPEND_TIME": "the_fgl_time",
+        "DICT_KEY": "magnetic_field>vector_GSM",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSM Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fgl_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSM",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT GSM",
+        "x_LABLAXES": [
+          [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgl_compno"
+        ],
+        "COMPONENTS": [
+          "the_fgl_gsm",
+          "the_fgm_fgl_quality"
+        ]
+      }
+    },
+    "the_fgl_dslQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGL magnetic field B in DSL (Despun Spacecraft) Coordinates ",
+        "COMPONENT_0": "the_fgl_dsl",
+        "COMPONENT_1": "the_fgm_fgl_quality",
+        "COORDINATE_SYSTEM": "DSL>Despun Spacecraft",
+        "DEPEND_0": "the_fgl_epoch16",
+        "DEPEND_1": "the_fgl_compno",
+        "DEPEND_EPOCH0": "the_fgl_epoch0",
+        "DEPEND_TIME": "the_fgl_time",
+        "DICT_KEY": "magnetic_field>vector_DSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fgl_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT DSL",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT DSL",
+        "x_LABLAXES": [
+          [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgl_compno"
+        ],
+        "COMPONENTS": [
+          "the_fgl_dsl",
+          "the_fgm_fgl_quality"
+        ]
+      }
+    },
+    "the_fgl_sslQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGL magnetic field B in SSL (Spinning Spacecraft) Coordinates ",
+        "COMPONENT_0": "the_fgl_ssl",
+        "COMPONENT_1": "the_fgm_fgl_quality",
+        "COORDINATE_SYSTEM": "SSL>Spinning Spacecraft",
+        "DEPEND_0": "the_fgl_epoch16",
+        "DEPEND_1": "the_fgl_compno",
+        "DEPEND_EPOCH0": "the_fgl_epoch0",
+        "DEPEND_TIME": "the_fgl_time",
+        "DICT_KEY": "magnetic_field>vector_SSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ Spinning Spacecraft Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fgl_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT SSL",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT SSL",
+        "x_LABLAXES": [
+          [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgl_compno"
+        ],
+        "COMPONENTS": [
+          "the_fgl_ssl",
+          "the_fgm_fgl_quality"
+        ]
+      }
+    },
+    "the_fgl_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "XYZ Component Number",
+        "DICT_KEY": "number",
+        "FIELDNAM": "the_fgl_ssl_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "the_fgl_labl",
+        "SCALETYP": "linear",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "the_fgl_time": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "the_fgl, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "the_fgl_time",
+        "FILLVAL": -1e+30,
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "the_fgl_epoch0": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "EPOCH0 of THEMIS time base",
+        "FIELDNAM": "the_fgl_epoch0",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "timebase",
+        "UNITS": "msec",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_NOTES": "EPOCH of 01-Jan-1970 00:00:00",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "timebase"
+      },
+      "VarData": [
+        "1970-01-01T00:00:00.000"
+      ]
+    },
+    "the_fgl_epoch16": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH16",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "the_fgl_epoch16",
+        "COMPONENT_0": "the_fgl_epoch0",
+        "COMPONENT_1": "the_fgl_time",
+        "FIELDNAM": "the_fgl_epoch16",
+        "FILLVAL": "9999-12-31T23:59:59.999999999999",
+        "FUNCT": "comp_themis_epoch16",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2100-12-31T23:59:59.999999999999",
+        "VALIDMIN": "2001-01-01T00:00:00.000000000000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "the_fgl_epoch0",
+          "the_fgl_time"
+        ]
+      }
+    },
+    "the_fgl_btotal": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "(All Qualitities data) FGL magnetic field B magnitude ",
+        "DEPEND_0": "the_fgl_epoch16",
+        "DEPEND_EPOCH0": "the_fgl_epoch0",
+        "DEPEND_TIME": "the_fgl_time",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FGL-D Magnetic Field, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABLAXIS": "FGL-D B_total",
+        "PROPERTY": "scalar",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "0",
+        "UNITS": "nT (All Q's)",
+        "VALIDMAX": 25000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT (All Q's)",
+        "x_LABLAXIS": "FGL-D B_total"
+      }
+    },
+    "the_fgl_gse": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGL (low-resolution/~0.25 sec) field B in XYZ GSE Coordinates",
+        "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic",
+        "DEPEND_0": "the_fgl_epoch16",
+        "DEPEND_1": "the_fgl_compno",
+        "DEPEND_EPOCH0": "the_fgl_epoch0",
+        "DEPEND_TIME": "the_fgl_time",
+        "DICT_KEY": "magnetic_field>vector_GSE",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSE Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "the_fgl_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSE (All Q's)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT GSE (All Q's)",
+        "x_LABLAXES": [
+          [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgl_compno"
+        ]
+      }
+    },
+    "the_fgl_gsm": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGL magnetic field B in XYZ GSM Coordinates",
+        "COORDINATE_SYSTEM": "GSM>Geocentric Solar Magnetic",
+        "DEPEND_0": "the_fgl_epoch16",
+        "DEPEND_1": "the_fgl_compno",
+        "DEPEND_EPOCH0": "the_fgl_epoch0",
+        "DEPEND_TIME": "the_fgl_time",
+        "DICT_KEY": "magnetic_field>vector_GSM",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSM Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "the_fgl_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSM (All Q's)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT GSM (All Q's)",
+        "x_LABLAXES": [
+          [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgl_compno"
+        ]
+      }
+    },
+    "the_fgl_dsl": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGL magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates ",
+        "COORDINATE_SYSTEM": "DSL>Despun Spacecraft",
+        "DEPEND_0": "the_fgl_epoch16",
+        "DEPEND_1": "the_fgl_compno",
+        "DEPEND_EPOCH0": "the_fgl_epoch0",
+        "DEPEND_TIME": "the_fgl_time",
+        "DICT_KEY": "magnetic_field>vector_DSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "the_fgl_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT DSL (All Q's)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT DSL (All Q's)",
+        "x_LABLAXES": [
+          [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgl_compno"
+        ]
+      }
+    },
+    "the_fgl_ssl": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGL magnetic field B in XYZ SSL (Spinning Spacecraft) Coordinates",
+        "COORDINATE_SYSTEM": "SSL>Spinning Spacecraft",
+        "DEPEND_0": "the_fgl_epoch16",
+        "DEPEND_1": "the_fgl_compno",
+        "DEPEND_EPOCH0": "the_fgl_epoch0",
+        "DEPEND_TIME": "the_fgl_time",
+        "DICT_KEY": "magnetic_field>vector_SSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ Spinning Spacecraft Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABEL_1": "the_fgl_labl",
+        "LABL_PTR_1": "the_fgl_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT SSL (All Q's)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT SSL (All Q's)",
+        "x_LABLAXES": [
+          [
+            "Bx FGL-D",
+            "By FGL-D",
+            "Bz FGL-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgl_compno"
+        ]
+      }
+    },
+    "the_fgm_fgh_quality": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY",
+        "SparseRecords": "PREV"
+      },
+      "VarAttributes": {
+        "CATDESC": "FGM-FGH Data Quality (0: Good data, 1:boom not deployed, 2:in shadow, 3:uncorrected shadow, 4:noisy waveforms)",
+        "DEPEND_0": "the_fgh_epoch16",
+        "DEPEND_EPOCH0": "the_fgh_epoch0",
+        "DEPEND_TIME": "the_fgh_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Data_Quality_Flag FGM-E fgh",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABLAXIS": "Data_Quality_Flag FGM-E fgh",
+        "PROPERTY": "scalar",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "TENSOR_ORDER": 0,
+        "VALIDMAX": 256,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Data_Quality_Flag FGM-E fgh"
+      }
+    },
+    "the_fgh_btotalQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "(Good data only) FGH magnetic field B magnitude ",
+        "COMPONENT_0": "the_fgh_btotal",
+        "COMPONENT_1": "the_fgm_fgh_quality",
+        "DEPEND_0": "the_fgh_epoch16",
+        "DEPEND_EPOCH0": "the_fgh_epoch0",
+        "DEPEND_TIME": "the_fgh_time",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FGH-D Magnetic Field, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABLAXIS": "FGH-D B_total",
+        "PROPERTY": "scalar",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "0",
+        "UNITS": "nT",
+        "VALIDMAX": 25000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "FGH-D B_total",
+        "COMPONENTS": [
+          "the_fgh_btotal",
+          "the_fgm_fgh_quality"
+        ]
+      }
+    },
+    "the_fgh_gseQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGH (high-resolution/~0.008 sec) magnetic field B in XYZ GSE Coordinates",
+        "COMPONENT_0": "the_fgh_gse",
+        "COMPONENT_1": "the_fgm_fgh_quality",
+        "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic",
+        "DEPEND_0": "the_fgh_epoch16",
+        "DEPEND_1": "the_fgh_compno",
+        "DEPEND_EPOCH0": "the_fgh_epoch0",
+        "DEPEND_TIME": "the_fgh_time",
+        "DICT_KEY": "magnetic_field>vector_GSE",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSE Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fgh_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSE",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT GSE",
+        "x_LABLAXES": [
+          [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgh_compno"
+        ],
+        "COMPONENTS": [
+          "the_fgh_gse",
+          "the_fgm_fgh_quality"
+        ]
+      }
+    },
+    "the_fgh_gsmQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGH (high-resolution/~0.008 sec) magnetic field B in XYZ GSM Coordinates",
+        "COMPONENT_0": "the_fgh_gsm",
+        "COMPONENT_1": "the_fgm_fgh_quality",
+        "COORDINATE_SYSTEM": "GSM>Geocentric Solar Magnetic",
+        "DEPEND_0": "the_fgh_epoch16",
+        "DEPEND_1": "the_fgh_compno",
+        "DEPEND_EPOCH0": "the_fgh_epoch0",
+        "DEPEND_TIME": "the_fgh_time",
+        "DICT_KEY": "magnetic_field>vector_GSM",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSM Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fgh_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSM",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT GSM",
+        "x_LABLAXES": [
+          [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgh_compno"
+        ],
+        "COMPONENTS": [
+          "the_fgh_gsm",
+          "the_fgm_fgh_quality"
+        ]
+      }
+    },
+    "the_fgh_dslQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGH magnetic field B in DSL (Despun Spacecraft) Coordinates ",
+        "COMPONENT_0": "the_fgh_dsl",
+        "COMPONENT_1": "the_fgm_fgh_quality",
+        "COORDINATE_SYSTEM": "DSL>Despun Spacecraft",
+        "DEPEND_0": "the_fgh_epoch16",
+        "DEPEND_1": "the_fgh_compno",
+        "DEPEND_EPOCH0": "the_fgh_epoch0",
+        "DEPEND_TIME": "the_fgh_time",
+        "DICT_KEY": "magnetic_field>vector_DSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fgh_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT DSL",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT DSL",
+        "x_LABLAXES": [
+          [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgh_compno"
+        ],
+        "COMPONENTS": [
+          "the_fgh_dsl",
+          "the_fgm_fgh_quality"
+        ]
+      }
+    },
+    "the_fgh_sslQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGH magnetic field B in SSL (Spinning Spacecraft) Coordinates ",
+        "COMPONENT_0": "the_fgh_ssl",
+        "COMPONENT_1": "the_fgm_fgh_quality",
+        "COORDINATE_SYSTEM": "SSL>Spinning Spacecraft",
+        "DEPEND_0": "the_fgh_epoch16",
+        "DEPEND_1": "the_fgh_compno",
+        "DEPEND_EPOCH0": "the_fgh_epoch0",
+        "DEPEND_TIME": "the_fgh_time",
+        "DICT_KEY": "magnetic_field>vector_SSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ Spinning Spacecraft Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fgh_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT SSL",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT SSL",
+        "x_LABLAXES": [
+          [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgh_compno"
+        ],
+        "COMPONENTS": [
+          "the_fgh_ssl",
+          "the_fgm_fgh_quality"
+        ]
+      }
+    },
+    "the_fgh_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "XYZ Component Number",
+        "DICT_KEY": "number",
+        "FIELDNAM": "the_fgh_ssl_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABL_PTR_1": "the_fgh_labl",
+        "SCALETYP": "linear",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXES": [
+          [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ]
+        ]
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "the_fgh_time": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "the_fgh, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "the_fgh_time",
+        "FILLVAL": -1e+30,
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "the_fgh_epoch0": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "EPOCH0 of THEMIS time base",
+        "FIELDNAM": "the_fgh_epoch0",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "timebase",
+        "UNITS": "msec",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_NOTES": "EPOCH of 01-Jan-1970 00:00:00",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "timebase"
+      },
+      "VarData": [
+        "1970-01-01T00:00:00.000"
+      ]
+    },
+    "the_fgh_epoch16": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH16",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "the_fgh_epoch16",
+        "COMPONENT_0": "the_fgh_epoch0",
+        "COMPONENT_1": "the_fgh_time",
+        "FIELDNAM": "the_fgh_epoch16",
+        "FILLVAL": "9999-12-31T23:59:59.999999999999",
+        "FUNCT": "comp_themis_epoch16",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2100-12-31T23:59:59.999999999999",
+        "VALIDMIN": "2001-01-01T00:00:00.000000000000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "the_fgh_epoch0",
+          "the_fgh_time"
+        ]
+      }
+    },
+    "the_fgh_btotal": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "(All Qualities) FGH magnetic field B magnitude ",
+        "DEPEND_0": "the_fgh_epoch16",
+        "DEPEND_EPOCH0": "the_fgh_epoch0",
+        "DEPEND_TIME": "the_fgh_time",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FGH-D Magnetic Field, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABLAXIS": "FGH-D B_total",
+        "PROPERTY": "scalar",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "0",
+        "UNITS": "nT (All Qs)",
+        "VALIDMAX": 25000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT (All Qs)",
+        "x_LABLAXIS": "FGH-D B_total"
+      }
+    },
+    "the_fgh_gse": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGH (high-resolution/~0.008 sec) magnetic field B in XYZ GSE Coordinates",
+        "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic",
+        "DEPEND_0": "the_fgh_epoch16",
+        "DEPEND_1": "the_fgh_compno",
+        "DEPEND_EPOCH0": "the_fgh_epoch0",
+        "DEPEND_TIME": "the_fgh_time",
+        "DICT_KEY": "magnetic_field>vector_GSE",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSE Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "the_fgh_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSE (All Qs)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT GSE (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgh_compno"
+        ]
+      }
+    },
+    "the_fgh_gsm": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGH magnetic field B in XYZ GSM Coordinates",
+        "COORDINATE_SYSTEM": "GSM>Geocentric Solar Magnetic",
+        "DEPEND_0": "the_fgh_epoch16",
+        "DEPEND_1": "the_fgh_compno",
+        "DEPEND_EPOCH0": "the_fgh_epoch0",
+        "DEPEND_TIME": "the_fgh_time",
+        "DICT_KEY": "magnetic_field>vector_GSM",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSM Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "the_fgh_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSM (All Qs)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT GSM (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgh_compno"
+        ]
+      }
+    },
+    "the_fgh_dsl": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGH magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates",
+        "COORDINATE_SYSTEM": "DSL>Despun Spacecraft",
+        "DEPEND_0": "the_fgh_epoch16",
+        "DEPEND_1": "the_fgh_compno",
+        "DEPEND_EPOCH0": "the_fgh_epoch0",
+        "DEPEND_TIME": "the_fgh_time",
+        "DICT_KEY": "magnetic_field>vector_DSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "the_fgh_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT DSL (All Qs)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT DSL (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgh_compno"
+        ]
+      }
+    },
+    "the_fgh_ssl": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "----FGH magnetic field B in XYZ SSL (Spinning Spacecraft) Coordinates",
+        "COORDINATE_SYSTEM": "SSL>Spinning Spacecraft",
+        "DEPEND_0": "the_fgh_epoch16",
+        "DEPEND_1": "the_fgh_compno",
+        "DEPEND_EPOCH0": "the_fgh_epoch0",
+        "DEPEND_TIME": "the_fgh_time",
+        "DICT_KEY": "magnetic_field>vector_SSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ Spinning Spacecraft Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABEL_1": "the_fgh_labl",
+        "LABL_PTR_1": "the_fgh_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT SSL (All Qs)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT SSL (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Bx FGH-D",
+            "By FGH-D",
+            "Bz FGH-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fgh_compno"
+        ]
+      }
+    },
+    "the_fgm_fge_quality": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "MaxWrittenRec": -1,
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 0,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY",
+        "SparseRecords": "PREV"
+      },
+      "VarAttributes": {
+        "CATDESC": "FGM-FGE Data Quality (0: Good data, 1:boom not deployed, 2:in shadow, 3:uncorrected shadow, 4:noisy waveforms)",
+        "DEPEND_0": "the_fge_epoch16",
+        "DEPEND_EPOCH0": "the_fge_epoch0",
+        "DEPEND_TIME": "the_fge_time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Data_Quality_Flag FGM-E fge",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "LABLAXIS": "Data_Quality_Flag FGM-E fge",
+        "PROPERTY": "scalar",
+        "SCALETYP": "linear",
+        "SC_ID": "d",
+        "TENSOR_ORDER": 0,
+        "VALIDMAX": 256,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Data_Quality_Flag FGM-E fge"
+      }
+    },
+    "the_fge_btotalQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "(Good data only) FGE magnetic field B magnitude ",
+        "COMPONENT_0": "the_fge_btotal",
+        "COMPONENT_1": "the_fgm_fge_quality",
+        "DEPEND_0": "the_fge_epoch16",
+        "DEPEND_EPOCH0": "the_fge_epoch0",
+        "DEPEND_TIME": "the_fge_time",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FGE-D Magnetic Field, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABLAXIS": "FGE-D B_total",
+        "PROPERTY": "scalar",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "0",
+        "UNITS": "nT",
+        "VALIDMAX": 25000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT",
+        "x_LABLAXIS": "FGE-D B_total",
+        "COMPONENTS": [
+          "the_fge_btotal",
+          "the_fgm_fge_quality"
+        ]
+      }
+    },
+    "the_fge_gseQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGE (engineering mode) magnetic field B in XYZ GSE Coordinates",
+        "COMPONENT_0": "the_fge_gse",
+        "COMPONENT_1": "the_fgm_fge_quality",
+        "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic",
+        "DEPEND_0": "the_fge_epoch16",
+        "DEPEND_1": "the_fge_compno",
+        "DEPEND_EPOCH0": "the_fge_epoch0",
+        "DEPEND_TIME": "the_fge_time",
+        "DICT_KEY": "magnetic_field>vector_GSE",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSE Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fge_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSE",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT GSE",
+        "x_LABLAXES": [
+          [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fge_compno"
+        ],
+        "COMPONENTS": [
+          "the_fge_gse",
+          "the_fgm_fge_quality"
+        ]
+      }
+    },
+    "the_fge_gsmQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGE (engineering mode) magnetic field B in XYZ GSM Coordinates",
+        "COMPONENT_0": "the_fge_gsm",
+        "COMPONENT_1": "the_fgm_fge_quality",
+        "COORDINATE_SYSTEM": "GSM>Geocentric Solar Magnetic",
+        "DEPEND_0": "the_fge_epoch16",
+        "DEPEND_1": "the_fge_compno",
+        "DEPEND_EPOCH0": "the_fge_epoch0",
+        "DEPEND_TIME": "the_fge_time",
+        "DICT_KEY": "magnetic_field>vector_GSM",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSM Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fge_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSM",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT GSM",
+        "x_LABLAXES": [
+          [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fge_compno"
+        ],
+        "COMPONENTS": [
+          "the_fge_gsm",
+          "the_fgm_fge_quality"
+        ]
+      }
+    },
+    "the_fge_dslQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGE (engineering mode) magnetic field B in DSL Coordinates",
+        "COMPONENT_0": "the_fge_dsl",
+        "COMPONENT_1": "the_fgm_fge_quality",
+        "COORDINATE_SYSTEM": "DSL>Despun Spacecraft",
+        "DEPEND_0": "the_fge_epoch16",
+        "DEPEND_1": "the_fge_compno",
+        "DEPEND_EPOCH0": "the_fge_epoch0",
+        "DEPEND_TIME": "the_fge_time",
+        "DICT_KEY": "magnetic_field>vector_DSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ DSL Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fge_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT DSL",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT DSL",
+        "x_LABLAXES": [
+          [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fge_compno"
+        ],
+        "COMPONENTS": [
+          "the_fge_dsl",
+          "the_fgm_fge_quality"
+        ]
+      }
+    },
+    "the_fge_sslQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGE (engineering mode) magnetic field B in SSL Coordinates",
+        "COMPONENT_0": "the_fge_ssl",
+        "COMPONENT_1": "the_fgm_fge_quality",
+        "COORDINATE_SYSTEM": "SSL>Spinning Spacecraft",
+        "DEPEND_0": "the_fge_epoch16",
+        "DEPEND_1": "the_fge_compno",
+        "DEPEND_EPOCH0": "the_fge_epoch0",
+        "DEPEND_TIME": "the_fge_time",
+        "DICT_KEY": "magnetic_field>vector_SSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ SSL Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "FUNCT": "apply_fgm_qflag",
+        "LABL_PTR_1": "the_fge_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT SSL",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "nT SSL",
+        "x_LABLAXES": [
+          [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fge_compno"
+        ],
+        "COMPONENTS": [
+          "the_fge_ssl",
+          "the_fgm_fge_quality"
+        ]
+      }
+    },
+    "the_fge_compno": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "XYZ Component Number",
+        "DICT_KEY": "number",
+        "FIELDNAM": "the_fge_ssl_compno",
+        "FILLVAL": -2147483648,
+        "FORMAT": "i2",
+        "SCALETYP": "linear",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          1,
+          1,
+          1
+        ],
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        1,
+        2,
+        3
+      ]
+    },
+    "the_fge_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 8,
+        "NumWrittenRecords": 1,
+        "PadValue": "        ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "the_fge_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "the_fge_labl",
+        "FORMAT": "a8",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Bx FGE-D",
+        "By FGE-D",
+        "Bz FGE-D"
+      ]
+    },
+    "the_fge_time": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "the_fge, UTC, in seconds since 01-Jan-1970 00:00:00",
+        "FIELDNAM": "the_fge_time",
+        "FILLVAL": -1e+30,
+        "FORMAT": "F12.8",
+        "LABLAXIS": "UT",
+        "UNITS": "sec",
+        "VALIDMAX": 5000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Unleaped seconds",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "the_fge_epoch0": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "EPOCH0 of THEMIS time base",
+        "FIELDNAM": "the_fge_epoch0",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FORMAT": "E13.6",
+        "LABLAXIS": "timebase",
+        "UNITS": "msec",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_NOTES": "EPOCH of 01-Jan-1970 00:00:00",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "timebase"
+      },
+      "VarData": [
+        "1970-01-01T00:00:00.000"
+      ]
+    },
+    "the_fge_epoch16": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH16",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "the_fge_epoch16",
+        "COMPONENT_0": "the_fge_epoch0",
+        "COMPONENT_1": "the_fge_time",
+        "FIELDNAM": "the_fge_epoch16",
+        "FILLVAL": "9999-12-31T23:59:59.999999999999",
+        "FUNCT": "comp_themis_epoch16",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2100-12-31T23:59:59.999999999999",
+        "VALIDMIN": "2001-01-01T00:00:00.000000000000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "the_fge_epoch0",
+          "the_fge_time"
+        ]
+      }
+    },
+    "Rep_xyz": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Representation for xyz vector/tensor dimension",
+        "DICT_KEY": "label>representation",
+        "FIELDNAM": "Representation xyz",
+        "FORMAT": "a1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    "the_fge_btotal": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "(All Qualities) FGE (engineering) magnetic field B magnitude ",
+        "DEPEND_0": "the_fge_epoch16",
+        "DEPEND_EPOCH0": "the_fge_epoch0",
+        "DEPEND_TIME": "the_fge_time",
+        "DICT_KEY": "magnetic_field",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "FGE-D Magnetic Field, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABLAXIS": "FGE-D B_total",
+        "PROPERTY": "scalar",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "0",
+        "UNITS": "nT (All Qs)",
+        "VALIDMAX": 25000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT (All Qs)",
+        "x_LABLAXIS": "FGE-D B_total"
+      }
+    },
+    "the_fge_gse": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGE (engineering mode) magnetic field B in XYZ GSE Coordinates",
+        "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic",
+        "DEPEND_0": "the_fge_epoch16",
+        "DEPEND_1": "the_fge_compno",
+        "DEPEND_EPOCH0": "the_fge_epoch0",
+        "DEPEND_TIME": "the_fge_time",
+        "DICT_KEY": "magnetic_field>vector_GSE",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSE Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "the_fge_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSE (All Qs)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT GSE (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fge_compno"
+        ]
+      }
+    },
+    "the_fge_gsm": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGE magnetic field B in XYZ GSM Coordinates",
+        "COORDINATE_SYSTEM": "GSM>Geocentric Solar Magnetic",
+        "DEPEND_0": "the_fge_epoch16",
+        "DEPEND_1": "the_fge_compno",
+        "DEPEND_EPOCH0": "the_fge_epoch0",
+        "DEPEND_TIME": "the_fge_time",
+        "DICT_KEY": "magnetic_field>vector_GSM",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ GSM Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "the_fge_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT GSM (All Qs)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT GSM (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fge_compno"
+        ]
+      }
+    },
+    "the_fge_dsl": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGE magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates ",
+        "COORDINATE_SYSTEM": "DSL>Despun Spacecraft",
+        "DEPEND_0": "the_fge_epoch16",
+        "DEPEND_1": "the_fge_compno",
+        "DEPEND_EPOCH0": "the_fge_epoch0",
+        "DEPEND_TIME": "the_fge_time",
+        "DICT_KEY": "magnetic_field>vector_DSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ Despun Spacecraft Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "the_fge_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT DSL (All Qs)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT DSL (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fge_compno"
+        ]
+      }
+    },
+    "the_fge_ssl": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": "standard",
+        "CALIB_INPUT": "the_fgmcal.txt",
+        "CALIB_SOFTWARE": "fgm_calibrate, thm_cal_fgm, thm_cal_fit",
+        "CATDESC": "---- FGE magnetic field B in XYZ SSL (Spinning Spacecraft) Coordinates ",
+        "COORDINATE_SYSTEM": "SSL>Spinning Spacecraft",
+        "DEPEND_0": "the_fge_epoch16",
+        "DEPEND_1": "the_fge_compno",
+        "DEPEND_EPOCH0": "the_fge_epoch0",
+        "DEPEND_TIME": "the_fge_time",
+        "DICT_KEY": "magnetic_field>vector_SSL",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "BXYZ Spinning Spacecraft Coordinate, nT units",
+        "FILLVAL": -1e+30,
+        "FORMAT": "E13.6",
+        "LABL_PTR_1": "the_fge_labl",
+        "PROPERTY": "vector",
+        "REPRESENTATION_1": "Rep_xyz",
+        "SCALE_TYP": "linear",
+        "SC_ID": "d",
+        "SI_CONVERSION": "1e-9>T",
+        "TENSOR_ORDER": "1",
+        "UNITS": "nT SSL (All Qs)",
+        "VALIDMAX": [
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "VALIDMIN": [
+          -25000.0,
+          -25000.0,
+          -25000.0
+        ],
+        "VAR_NOTES": "Units are in nanotesla",
+        "VAR_TYPE": "data",
+        "x_UNITS": "nT SSL (All Qs)",
+        "x_LABLAXES": [
+          [
+            "Bx FGE-D",
+            "By FGE-D",
+            "Bz FGE-D"
+          ]
+        ],
+        "x_DEPEND": [
+          "the_fge_compno"
+        ]
+      }
+    },
+    "range_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "range_epoch",
+        "FIELDNAM": "range_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "UT",
+        "UNITS": "msec",
+        "VALIDMAX": "2101-01-01T00:00:00.000",
+        "VALIDMIN": "1899-12-31T15:33:20.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "the_fgl_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 8,
+        "NumWrittenRecords": 1,
+        "PadValue": "        ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "the_fgl_ssl_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "the_fgl_ssl_labl",
+        "FORMAT": "a8",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Bx FGL-D",
+        "By FGL-D",
+        "Bz FGL-D"
+      ]
+    },
+    "the_fgh_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 8,
+        "NumWrittenRecords": 1,
+        "PadValue": "        ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "the_fgh_ssl_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "the_fgh_ssl_labl",
+        "FORMAT": "a8",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Bx FGH-D",
+        "By FGH-D",
+        "Bz FGH-D"
+      ]
+    },
+    "the_fgs_labl": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 8,
+        "NumWrittenRecords": 1,
+        "PadValue": "        ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "the_fgs_dsl_labl",
+        "DICT_KEY": "label",
+        "FIELDNAM": "the_fgs_dsl_labl",
+        "FORMAT": "a8",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Bx FGS-D",
+        "By FGS-D",
+        "Bz FGS-D"
+      ]
+    }
+  }
+}

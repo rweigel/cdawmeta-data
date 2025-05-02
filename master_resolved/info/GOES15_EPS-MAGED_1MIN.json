@@ -1,0 +1,1499 @@
+{
+  "CDFFileInfo": {
+    "File": "goes15_eps-maged_1min_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/goes15_eps-maged_1min_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "NOAA/GOES",
+    "Source_name": "GOES15",
+    "Discipline": "Space Physics>Magnetospheric Science",
+    "Data_type": "1min",
+    "Descriptor": "EPS-MAGED>Energetic Particle Sensor - Magnetospheric Electron Detector",
+    "File_naming_convention": "source_descriptor_datatype",
+    "Data_version": " ",
+    "PI_name": "NOAA NGDC and SWPC",
+    "PI_affiliation": "sem.goes@noaa.gov",
+    "TEXT": "Data has been recast from original NOAA netCDF files by SPDF. DATA CAVEATS/WARNINGS: The MagED data may not be accurate at times due to instrument limitations such as dead time and proton contamination. Every effort is made to reduce these effects but uncertainties are inevitable. Additionally, the detectors may suffer from intermittent noise problems. Please contact Juan V. Rodriguez (sem.goes@noaa.gov) with questions or concerns.",
+    "Instrument_type": "Particles (space)",
+    "Mission_group": "GOES",
+    "Logical_source": "goes15_eps-maged_1min",
+    "Logical_file_id": "goes15_eps-maged_1min_00000000_v01",
+    "Logical_source_description": "GOES-15 EPS (Energetic Particle Sensor) MagED (Magnetospheric Electron Detector) 1 minute electron fluxes 40-475 keV",
+    "MODS": "Final release updates 8/23/2013 REM",
+    "LINK_TEXT": "Primary GOES ",
+    "LINK_TITLE": "archive and instrument documentation at NOAA National Geophysical Data Center (NGDC)",
+    "HTTP_LINK": "http://www.ngdc.noaa.gov/stp/satellite/goes/index.html",
+    "conventions": "GOES Space Weather",
+    "title": "GOES Magnetospheric Electron Detector",
+    "institution": "NOAA",
+    "source": "Satellite Insitu Observations",
+    "satellite_id": "GOES-15",
+    "instrument": "Magnetospheric Electron Detector",
+    "process-type": "Time averaged",
+    "process-level": "level 2",
+    "sample-time": "1",
+    "sample-unit": "minutes",
+    "creation_date": " ",
+    "start_date": " ",
+    "end_date": " ",
+    "records_present": " ",
+    "originating_agency": "DOC/NOAA/NCEP/NWS/SWPC",
+    "archiving_agency": "DOC/NOAA/NESDIS/NGDC",
+    "spase_DatasetResourceID": "spase://NOAA/NumericalData/GOES/15/EPS/MAGED/19ME15/PT1M",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Default time",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "REFERENCE_POSITION": "Rotating Earth Geoid",
+        "SCALETYP": "linear",
+        "TIME_BASE": "J2000",
+        "TIME_SCALE": "Terrestrial Time",
+        "UNITS": "ns",
+        "VALIDMAX": "2029-12-31T23:59:57.999000000",
+        "VALIDMIN": "1990-01-01T00:00:00.000000000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "time_tag": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Date and time for each observation",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "time_tag",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "time_tag",
+        "SCALETYP": "linear",
+        "UNITS": "ms",
+        "VALIDMAX": 3000000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "milliseconds since 1970-01-01 00:00:00.0 UTC using gregorian calendar",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "time_tag"
+      }
+    },
+    "dtc_cor_eflux_stack9": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Average Electron Flux in Telescope 9 (oriented 70+Y, pointing North or South depending on yaw state) for 5 energy bands 40-475 keV (as time-series plots; corrected for dead-time errors and other contamination sources)",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_stack9(8,*)",
+        "FIELDNAM": "ElecFlux_T9(70+Y,poNorS)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_T9(70+Y,poNorS)",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of XXX keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_T9(70+Y,poNorS)",
+        "x_DEPEND": [
+          "energy"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux_stack6": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron Flux in Telescope 6 (oriented 35+Y, pointing N or S)",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_stack6(5,*)",
+        "FIELDNAM": "ElecFlux_T6(35+Y,poNorS)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_T6(35+Y,poNorS)",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of XXX keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_T6(35+Y,poNorS)",
+        "x_DEPEND": [
+          "energy"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux_stack3": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron Flux in Telescope 3 (oriented 70-X, pointing equatorial E or W)",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_stack3(2,*)",
+        "FIELDNAM": "ElecFlux_T3(70-X,eqEorW)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_T3(70-X,eqEorW)",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of XXX keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_T3(70-X,eqEorW)",
+        "x_DEPEND": [
+          "energy"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux_stack4": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron Flux in Telescope 4 (oriented 35-X, pointing equatorial E or W)",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_stack4(3,*)",
+        "FIELDNAM": "ElecFlux_T4(35-X,eqEorW)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_T4(35-X,eqEorW)",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of XXX keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_T4(35-X,eqEorW)",
+        "x_DEPEND": [
+          "energy"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux_stack1": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron Flux in Telescope 1 (pointing AntiEarth)",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_stack1(0,*)",
+        "FIELDNAM": "ElecFlux_T1(0-AntiEarth)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_T1(0-AntiEarth)",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of XXX keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_T1(0-AntiEarth)",
+        "x_DEPEND": [
+          "energy"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux_stack2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron Flux in Telescope 2 (oriented 35+X, pointing equatorial W or E)",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_stack2(1,*)",
+        "FIELDNAM": "ElecFlux_T2(35+X,eqWorE)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_T2(35+X,eqWorE)",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of XXX keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_T2(35+X,eqWorE)",
+        "x_DEPEND": [
+          "energy"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux_stack5": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron Flux in Telescope 5 (oriented 70+X, pointing equatorial W or E)",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_stack5(4,*)",
+        "FIELDNAM": "ElecFlux_T5(70+X,eqWorE)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_T5(70+X,eqWorE)",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of XXX keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_T5(70+X,eqWorE)",
+        "x_DEPEND": [
+          "energy"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux_stack8": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron Flux in Telescope 8 (oriented 35-Y, pointing S or N)",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_stack8(7,*)",
+        "FIELDNAM": "ElecFlux_T8(35-Y,poSorN)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_T8(35-Y,poSorN)",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of XXX keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_T8(35-Y,poSorN)",
+        "x_DEPEND": [
+          "energy"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux_stack7": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron Flux in Telescope 7 (oriented 70-Y, pointing S or N)",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_stack7(6,*)",
+        "FIELDNAM": "ElecFlux_T7(70-Y,poSorN)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_T7(70-Y,poSorN)",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of XXX keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_T7(70-Y,poSorN)",
+        "x_DEPEND": [
+          "energy"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9,
+          5
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Spectrogram of Electron Flux by energy for each telescope",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "telescope_no_orig",
+        "DEPEND_2": "energy",
+        "DISPLAY_TYPE": "default_dimensiony=energy,z=dtc_cor_eflux(9,*),z=dtc_cor_eflux(6,*),z=dtc_cor_eflux(3,*),z=dtc_cor_eflux(4,*),z=dtc_cor_eflux(1,*),z=dtc_cor_eflux(2,*),z=dtc_cor_eflux(5,*),z=dtc_cor_eflux(8,*),z=dtc_cor_eflux(7,*)",
+        "FIELDNAM": "DTC_Avg_ElectronFlux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "DTC_EFlux",
+        "LABL_PTR_1": "flux_by_telescope_label",
+        "LABL_PTR_2": "flux_by_energy_label",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of XXX keV electrons measured by telescope N corrected for dead time errors but not other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "DTC_EFlux",
+        "x_LABLAXES": [
+          [
+            "ElecFlux_T1(0-AntiEarth)",
+            "ElecFlux_T2(35+X,eqWorE)",
+            "ElecFlux_T3(70-X,eqEorW)",
+            "ElecFlux_T4(35-X,eqEorW)",
+            "ElecFlux_T5(70+X,eqWorE)",
+            "ElecFlux_T6(35+Y,poNorS)",
+            "ElecFlux_T7(70-Y,poSorN)",
+            "ElecFlux_T8(35-Y,poSorN)",
+            "ElecFlux_T9(70+Y,poNorS)"
+          ],
+          [
+            "ElecFlux_40keV",
+            "ElecFlux_75keV",
+            "ElecFlux_150keV",
+            "ElecFlux_275keV",
+            "ElecFlux_475keV"
+          ]
+        ],
+        "x_DEPEND": [
+          "telescope_no_orig",
+          "energy"
+        ]
+      }
+    },
+    "dtc_cor_eflux_t_stack1": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Average Electron Flux at 40 keV for 9 directions ordered north to south (101 to 109) or south to north depending on yaw state in time-series plots; corrected for dead-time errors and other contamination sources",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "telescope_reordering",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_t_stack1(*,0)",
+        "FIELDNAM": "ElecFlux_40keV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_40keV",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of 40 keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_40keV",
+        "x_DEPEND": [
+          "telescope_reordering"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux_t_stack2": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron Flux at 75 keV",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "telescope_reordering",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_t_stack2(*,1)",
+        "FIELDNAM": "ElecFlux_75keV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_75keV",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of 75 keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_75keV",
+        "x_DEPEND": [
+          "telescope_reordering"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux_t_stack3": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron Flux at 150 keV",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "telescope_reordering",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_t_stack3(*,2)",
+        "FIELDNAM": "ElecFlux_150keV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_150keV",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of 150 keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_150keV",
+        "x_DEPEND": [
+          "telescope_reordering"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux_t_stack4": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron Flux at 275 keV",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "telescope_reordering",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_t_stack4(*,3)",
+        "FIELDNAM": "ElecFlux_275keV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_275keV",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of 275 keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_275keV",
+        "x_DEPEND": [
+          "telescope_reordering"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux_t_stack5": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electron Flux at 475 keV",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "telescope_reordering",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=dtc_cor_eflux_t_stack5(*,4)",
+        "FIELDNAM": "ElecFlux_475keV",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "make_stack_array",
+        "LABLAXIS": "ElecFlux_475keV",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-tN (XXX KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1tN(XXX keV)dtc",
+        "short_label": "e1tN dtc fx",
+        "DESCRIP": "Average flux of 475 keV electrons measured by telescope N corrected for dead time errors and other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "ElecFlux_475keV",
+        "x_DEPEND": [
+          "telescope_reordering"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_cor_eflux_t": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9,
+          5
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Spectrogram of Electron Flux by telescope for each energy",
+        "COMPONENT_0": "dtc_cor_eflux",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "telescope_reordering",
+        "DEPEND_2": "energy",
+        "DISPLAY_TYPE": "default_dimensiony=telescope_reordering,z=dtc_cor_eflux_t(*,1),z=dtc_cor_eflux_t(*,2),z=dtc_cor_eflux_t(*,3),z=dtc_cor_eflux_t(*,4),z=dtc_cor_eflux_t(*,5)",
+        "FIELDNAM": "DTC_Avg_ElectronFlux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "DTC_Eflux",
+        "LABL_PTR_1": "flux_by_telescope_label",
+        "LABL_PTR_2": "flux_by_energy_label",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "ignore_data",
+        "VIRTUAL": "true",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "DTC_Eflux",
+        "x_LABLAXES": [
+          [
+            "ElecFlux_T1(0-AntiEarth)",
+            "ElecFlux_T2(35+X,eqWorE)",
+            "ElecFlux_T3(70-X,eqEorW)",
+            "ElecFlux_T4(35-X,eqEorW)",
+            "ElecFlux_T5(70+X,eqWorE)",
+            "ElecFlux_T6(35+Y,poNorS)",
+            "ElecFlux_T7(70-Y,poSorN)",
+            "ElecFlux_T8(35-Y,poSorN)",
+            "ElecFlux_T9(70+Y,poNorS)"
+          ],
+          [
+            "ElecFlux_40keV",
+            "ElecFlux_75keV",
+            "ElecFlux_150keV",
+            "ElecFlux_275keV",
+            "ElecFlux_475keV"
+          ]
+        ],
+        "x_DEPEND": [
+          "telescope_reordering",
+          "energy"
+        ],
+        "COMPONENTS": [
+          "dtc_cor_eflux"
+        ]
+      }
+    },
+    "dtc_uncor_eflux": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9,
+          5
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron Fluxes uncorrected for contamination (as flux by energy spectrograms for each telescope in orientation order; corrected for dead-time errors)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "telescope_no_orig",
+        "DEPEND_2": "energy",
+        "DISPLAY_TYPE": "default_dimensiony=energy,z=dtc_uncor_eflux(9,*),z=dtc_uncor_eflux(6,*),z=dtc_uncor_eflux(3,*),z=dtc_uncor_eflux(4,*),z=dtc_uncor_eflux(1,*),z=dtc_uncor_eflux(2,*),z=dtc_uncor_eflux(5,*),z=dtc_uncor_eflux(8,*),z=dtc_uncor_eflux(7,*)",
+        "FIELDNAM": "DTC-UNCOR_Avg_ElectronFlux",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "DTC-UNCOR_EFlux",
+        "LABL_PTR_1": "fluxUNCOR_by_telescope_label",
+        "LABL_PTR_2": "fluxUNCOR_by_energy_label",
+        "SCALETYP": "log",
+        "UNITS": "e/(cm^2-s-sr-keV)",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.01,
+        "VAR_TYPE": "data",
+        "lin_log": "log",
+        "long_label": "electrons-ch1-t1 (40 KeV) dead time corrected",
+        "missing_value": "-99999",
+        "nominal_max": "10000000",
+        "nominal_min": "1",
+        "plot_label": "e1t1(40 keV)dtc",
+        "short_label": "e1t1 dtc fx",
+        "DESCRIP": "Average flux of 40 keV electrons measured by telescope 1 corrected for dead time errors but not other sources of contamination",
+        "x_UNITS": "e/(cm^2-s-sr-keV)",
+        "x_LABLAXIS": "DTC-UNCOR_EFlux",
+        "x_LABLAXES": [
+          [
+            "ElecFlux_T1(0-AntiEarth)_DTConly",
+            "ElecFlux_T2(35+X,eqWorE)_DTConly",
+            "ElecFlux_T3(70-X,eqEorW)_DTConly",
+            "ElecFlux_T4(35-X,eqEorW)_DTConly",
+            "ElecFlux_T5(70+X,eqWorE)_DTConly",
+            "ElecFlux_T6(35+Y,poNorS)_DTConly",
+            "ElecFlux_T7(70-Y,poSorN)_DTConly",
+            "ElecFlux_T8(35-Y,poSorN)_DTConly",
+            "ElecFlux_T9(70+Y,poNorS)_DTConly"
+          ],
+          [
+            "ElecFlux_40keV_DTCOnly",
+            "ElecFlux_75keV_DTCOnly",
+            "ElecFlux_150keV_DTCOnly",
+            "ElecFlux_275keV_DTCOnly",
+            "ElecFlux_475keV_DTCOnly"
+          ]
+        ],
+        "x_DEPEND": [
+          "telescope_no_orig",
+          "energy"
+        ]
+      }
+    },
+    "qual_flag": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9,
+          5
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [NO PLOTS] Quality flag (non-zero value indicates a telemetry processing issue)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "telescope_no_orig",
+        "DEPEND_2": "energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "---> quality_flag",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "quality_flag",
+        "LABL_PTR_1": "flux_by_telescope_label",
+        "LABL_PTR_2": "flux_by_energy_label",
+        "SCALETYP": "linear",
+        "UNITS": "(0=OK)",
+        "VALIDMAX": 4290000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "lin_log": "lin",
+        "long_label": "quality flag",
+        "missing_value": "99999",
+        "nominal_max": "4294967295",
+        "nominal_min": "0",
+        "plot_label": " ",
+        "short_label": "qf",
+        "DESCRIP": "Quality flag non-zero value indicates data quality issue.",
+        "x_UNITS": "(0=OK)",
+        "x_LABLAXIS": "quality_flag",
+        "x_LABLAXES": [
+          [
+            "ElecFlux_T1(0-AntiEarth)",
+            "ElecFlux_T2(35+X,eqWorE)",
+            "ElecFlux_T3(70-X,eqEorW)",
+            "ElecFlux_T4(35-X,eqEorW)",
+            "ElecFlux_T5(70+X,eqWorE)",
+            "ElecFlux_T6(35+Y,poNorS)",
+            "ElecFlux_T7(70-Y,poSorN)",
+            "ElecFlux_T8(35-Y,poSorN)",
+            "ElecFlux_T9(70+Y,poNorS)"
+          ],
+          [
+            "ElecFlux_40keV",
+            "ElecFlux_75keV",
+            "ElecFlux_150keV",
+            "ElecFlux_275keV",
+            "ElecFlux_475keV"
+          ]
+        ],
+        "x_DEPEND": [
+          "telescope_no_orig",
+          "energy"
+        ]
+      }
+    },
+    "num_pts": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          9,
+          5
+        ],
+        "DimVariances": [
+          "VARY",
+          "VARY"
+        ],
+        "NumDims": 2,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> [NO PLOTS] Data points per average",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "telescope_reordering",
+        "DEPEND_2": "energy",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "points/average",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "no_pts",
+        "LABL_PTR_1": "flux_by_telescope_label",
+        "LABL_PTR_2": "flux_by_energy_label",
+        "SCALETYP": "linear",
+        "UNITS": "points/avg",
+        "VALIDMAX": 150.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "lin_log": "lin",
+        "long_label": "points/average",
+        "missing_value": "0",
+        "nominal_max": "150",
+        "nominal_min": "0",
+        "plot_label": " ",
+        "short_label": "pts",
+        "DESCRIP": "Data points per average.",
+        "x_UNITS": "points/avg",
+        "x_LABLAXIS": "no_pts",
+        "x_LABLAXES": [
+          [
+            "ElecFlux_T1(0-AntiEarth)",
+            "ElecFlux_T2(35+X,eqWorE)",
+            "ElecFlux_T3(70-X,eqEorW)",
+            "ElecFlux_T4(35-X,eqEorW)",
+            "ElecFlux_T5(70+X,eqWorE)",
+            "ElecFlux_T6(35+Y,poNorS)",
+            "ElecFlux_T7(70-Y,poSorN)",
+            "ElecFlux_T8(35-Y,poSorN)",
+            "ElecFlux_T9(70+Y,poNorS)"
+          ],
+          [
+            "ElecFlux_40keV",
+            "ElecFlux_75keV",
+            "ElecFlux_150keV",
+            "ElecFlux_275keV",
+            "ElecFlux_475keV"
+          ]
+        ],
+        "x_DEPEND": [
+          "telescope_reordering",
+          "energy"
+        ]
+      }
+    },
+    "telescope_no_orig": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Telescope Nos in original order",
+        "FIELDNAM": "Telescope Nos in original order",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I8",
+        "LABLAXIS": "TelescopeNo",
+        "SCALEMAX": 10,
+        "SCALEMIN": 0,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 10,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Telescopes are loaded into array in original NOAA number order",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "TelescopeNo"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    "telescope_reordering": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Telescope Proxy Nos in order North to South or South to North",
+        "FIELDNAM": "Proxy_For_North/South_Direction",
+        "FILLVAL": -2147483648,
+        "FORMAT": "I8",
+        "LABLAXIS": "Proxy_For_N/S_or S/N_Direction",
+        "SCALEMAX": 110,
+        "SCALEMIN": 100,
+        "SCALETYP": "linear",
+        "UNITS": "(pseudo telescope no)",
+        "VALIDMAX": 110,
+        "VALIDMIN": 100,
+        "VAR_NOTES": "Telescopes are loaded into array in original NOAA number order but displayed in spectrogram/stack_plots in this alternate ordering approximately by pitch angle",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "(pseudo telescope no)",
+        "x_LABLAXIS": "Proxy_For_N/S_or S/N_Direction"
+      },
+      "VarData": [
+        105,
+        104,
+        107,
+        106,
+        103,
+        102,
+        109,
+        108,
+        101
+      ]
+    },
+    "energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Center energy",
+        "FIELDNAM": "Energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "Energy",
+        "SCALEMAX": 500.0,
+        "SCALEMIN": 10.0,
+        "SCALETYP": "log",
+        "UNITS": "keV",
+        "VALIDMAX": 4750.0,
+        "VALIDMIN": 10.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV",
+        "x_UNITS_VO": "keV",
+        "x_LABLAXIS": "Energy"
+      },
+      "VarData": [
+        40.0,
+        75.0,
+        150.0,
+        275.0,
+        475.0
+      ]
+    },
+    "time_tag_orbit": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Date and time for each west_longitude and inclination pair",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "time_tag_orbit",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "time_tag_orbit",
+        "SCALETYP": "linear",
+        "UNITS": "ms",
+        "VALIDMAX": 3000000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "milliseconds since 1970-01-01  00:00:00.0 UTC using gregorian calendar",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "time_tag_orbit"
+      }
+    },
+    "west_longitude": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "West longitude of satellite sub-orbit point",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "west_longitude",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f5.1",
+        "LABLAXIS": "west_longitude",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 360.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "West longitude of satellite sub-orbit point at the given date and time",
+        "VAR_TYPE": "data",
+        "lin_log": "lin",
+        "long_label": "west longitude",
+        "missing_value": "-99999",
+        "nominal_max": "140",
+        "nominal_min": "70",
+        "plot_label": "west longitude",
+        "short_label": "w long",
+        "DESCRIP": "West longitude of satellite sub-orbit point at the given date and time.",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "west_longitude"
+      }
+    },
+    "inclination": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Inclination -- the angle between the plane of the orbit and the equatorial plane measured counter-clockwise from true East",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "inclination",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f8.3",
+        "LABLAXIS": "inclination",
+        "SCALETYP": "linear",
+        "UNITS": "deg",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": -10.0,
+        "VAR_NOTES": "Inclination -- the angle between the plane of the orbit and the equatorial plane measured counter-clockwise from true East",
+        "VAR_TYPE": "data",
+        "lin_log": "lin",
+        "long_label": "inclination",
+        "missing_value": "-99999",
+        "nominal_max": "1",
+        "nominal_min": "0",
+        "plot_label": "inclination",
+        "short_label": "incl",
+        "DESCRIP": "Inclination -- the angle between the plane of the orbit and the equatorial plane measured counter-clockwise from true East.",
+        "x_UNITS": "deg",
+        "x_LABLAXIS": "inclination"
+      }
+    },
+    "flux_by_energy_label": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 15,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "flux_by_energy_label",
+        "FIELDNAM": "flux_by_energy_label",
+        "FORMAT": "A15",
+        "LABLAXIS": "flux_by_energy_label",
+        "VAR_NOTES": "Prev label style: 40keV_CorrAvg_ElecFlux",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "flux_by_energy_label"
+      },
+      "VarData": [
+        "ElecFlux_40keV",
+        "ElecFlux_75keV",
+        "ElecFlux_150keV",
+        "ElecFlux_275keV",
+        "ElecFlux_475keV"
+      ]
+    },
+    "fluxUNCOR_by_energy_label": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          5
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 23,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "fluxUNCOR_by_energy_label",
+        "FIELDNAM": "fluxUNCOR_by_energy_label",
+        "FORMAT": "A23",
+        "LABLAXIS": "fluxUNCOR_by_energy_label",
+        "VAR_NOTES": "Prev label style: 40keV_DTCOnlyAvg_ElecFlux",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "fluxUNCOR_by_energy_label"
+      },
+      "VarData": [
+        "ElecFlux_40keV_DTCOnly",
+        "ElecFlux_75keV_DTCOnly",
+        "ElecFlux_150keV_DTCOnly",
+        "ElecFlux_275keV_DTCOnly",
+        "ElecFlux_475keV_DTCOnly"
+      ]
+    },
+    "flux_by_telescope_label": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 24,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "flux_by_telescope_label",
+        "FIELDNAM": "flux_by_telescope_label",
+        "FORMAT": "A24",
+        "LABLAXIS": "flux_by_telescope_label",
+        "VAR_NOTES": "Prev label style: T1(0-AntiEarth)_CorrAvg_ElecFlux T2(35+X,eqW) T3(70-X,eqE) T4(35-X,eqE) T5(70+X,eqW) T6(35+Y,poN) T7(70-Y,poS) T8(35-Y,poS) T9(70+Y,poN)",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "flux_by_telescope_label"
+      },
+      "VarData": [
+        "ElecFlux_T1(0-AntiEarth)",
+        "ElecFlux_T2(35+X,eqWorE)",
+        "ElecFlux_T3(70-X,eqEorW)",
+        "ElecFlux_T4(35-X,eqEorW)",
+        "ElecFlux_T5(70+X,eqWorE)",
+        "ElecFlux_T6(35+Y,poNorS)",
+        "ElecFlux_T7(70-Y,poSorN)",
+        "ElecFlux_T8(35-Y,poSorN)",
+        "ElecFlux_T9(70+Y,poNorS)"
+      ]
+    },
+    "fluxUNCOR_by_telescope_label": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          9
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 32,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "fluxUNCOR_by_telescope_label",
+        "FIELDNAM": "fluxUNCOR_by_telescope_label",
+        "FORMAT": "A32",
+        "LABLAXIS": "fluxUNCOR_by_telescope_label",
+        "VAR_NOTES": "Prev label style: T1(0-AntiEarth)_DTCOnlyAvg_ElecFlux",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "fluxUNCOR_by_telescope_label"
+      },
+      "VarData": [
+        "ElecFlux_T1(0-AntiEarth)_DTConly",
+        "ElecFlux_T2(35+X,eqWorE)_DTConly",
+        "ElecFlux_T3(70-X,eqEorW)_DTConly",
+        "ElecFlux_T4(35-X,eqEorW)_DTConly",
+        "ElecFlux_T5(70+X,eqWorE)_DTConly",
+        "ElecFlux_T6(35+Y,poNorS)_DTConly",
+        "ElecFlux_T7(70-Y,poSorN)_DTConly",
+        "ElecFlux_T8(35-Y,poSorN)_DTConly",
+        "ElecFlux_T9(70+Y,poNorS)_DTConly"
+      ]
+    }
+  }
+}

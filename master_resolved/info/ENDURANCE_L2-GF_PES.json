@@ -1,0 +1,187 @@
+{
+  "CDFFileInfo": {
+    "File": "endurance_l2-gf_pes_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/endurance_l2-gf_pes_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "SPDF> Space Physics Data Facility",
+    "Source_name": "Endurance",
+    "Discipline": "Space Physics>Ionospheric Science",
+    "Descriptor": "PES>Photoelectron Spectrometer",
+    "Data_type": "L2-GF>Level 2 Geometric Factor Time Series",
+    "Data_version": "01",
+    "PI_name": "G. Collinson",
+    "PI_affiliation": "NASA GSFC / Catholic University of America ",
+    "Logical_source_description": "Variation of Geometric Factor of PES during operation",
+    "Logical_source": "endurance_l2-gf_pes",
+    "Logical_file_id": "endurance_l2-gf_pes_00000000_v01",
+    "Mission_group": "Sounding Rockets",
+    "Instrument_type": "Plasma and Solar Wind",
+    "MODS": " ",
+    "TEXT": "The Endurance PES instrument was comprised of 8 boom-mounted Dual Electrostatic Analyzer (DESA) sensors, and a main electronics box (MEB). Each DESA sensor had two look directions; A-side (looking down to Earth from launch to pitch-over maneuver, and then up to space until loss of signal (LOS)); and B-side (looking up to space from launch to pitch-over, and then down to Earth until loss of signal (LOS)). The sensors were synchronized by the MEB and cross-calibrated to look at approximately the same energy at the same time. A PES sweep consisted of 81 different steps and took 10 seconds. At each step, a voltage could be applied to the Electrostatic Analyzer (ESA) and/or the Retarding Potential Analyzer (RPA). Of these 81 steps; 3 (0, 1, 44) were used to take background counts with the ESA grounded, and to fire the SLP; 34 (2:9, 33, 56:80) were used to collect the standard resolution data measurement (15% DE/E, 10eV to 1keV) using the ESA alone; and 44 (10:32, 34:43, 45:55) were used to collect the high-resolution measurement (0.5% DE/E, 20.3 eV to 25.85 eV) using the ESA and RPA combined. These calibration data present the variation in Geometric Factor with PES operation during flight",
+    "HTTP_LINK": "https://doi.org/10.1007/s11214-022-00908-0 ",
+    "LINK_TEXT": "Collinson, G., Glocer, A., Pfaff, R. et al. The Endurance Rocket Mission. Space Sci Rev 218, 39 (2022). https://doi.org/10.1007/s11214-022-00908-0",
+    "LINK_TITLE": "https://doi.org/10.1007/s11214-022-00908-0 ",
+    "spase_DatasetResourceID": " ",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time start of avg interval",
+        "DICT_KEY": "time>Epoch_center_range",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "UNITS": "ms",
+        "VALIDMAX": "2050-01-01T00:00:00.000",
+        "VALIDMIN": "1994-01-01T00:00:00.000",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "step": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Photoelectron Spectrometer Energy Step",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PES Step",
+        "FILLVAL": -99,
+        "FORMAT": "i3",
+        "LABLAXIS": "PES Step",
+        "UNITS": " ",
+        "VALIDMAX": 81,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "PES Step"
+      }
+    },
+    "PES_A_GF": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Variation of geometric factor of PES all sensors, A-side during operation",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "sensor",
+        "FIELDNAM": "PES_A_GF",
+        "FILLVAL": "NaN",
+        "FORMAT": "e9.2",
+        "LABLAXIS": "PES_A_GF",
+        "UNITS": "cm^2 sr eV/eV)^-1",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 1e-05,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^2 sr eV/eV)^-1",
+        "x_LABLAXIS": "PES_A_GF",
+        "x_DEPEND": [
+          "sensor"
+        ]
+      }
+    },
+    "PES_B_GF": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Variation of geometric factor of PES all sensors, B-side during operation",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "sensor",
+        "FIELDNAM": "PES_B_GF",
+        "FILLVAL": "NaN",
+        "FORMAT": "e9.2",
+        "LABLAXIS": "PES_B_GF",
+        "UNITS": "cm^2 sr eV/eV)^-1",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 1e-05,
+        "VAR_TYPE": "data",
+        "x_UNITS": "cm^2 sr eV/eV)^-1",
+        "x_LABLAXIS": "PES_B_GF",
+        "x_DEPEND": [
+          "sensor"
+        ]
+      }
+    },
+    "sensor": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          8
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -32767,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "FIELDNAM": "sensor",
+        "FORMAT": "i2",
+        "LABLAXIS": "sensor",
+        "VALIDMAX": 8,
+        "VALIDMIN": 1,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "sensor"
+      },
+      "VarData": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  }
+}

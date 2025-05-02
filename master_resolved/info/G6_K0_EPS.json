@@ -1,0 +1,1031 @@
+{
+  "CDFFileInfo": {
+    "File": "g6_k0_eps_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/g6_k0_eps_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "TITLE": "3nd Beta version NOAA/SEL GOES_6 CDF Energetic Particle Flux",
+    "PROJECT": "ISTP>InternationalSolar-Terrestrial Physics",
+    "DISCIPLINE": "Space Physics>Magnetospheric Science",
+    "SOURCE_NAME": "GOES_6>Geostationary Operational Environmental Satellite 6",
+    "DESCRIPTOR": "EPS>Energetic Particle Sensor",
+    "DATA_TYPE": "K0>Key Parameter",
+    "DATA_VERSION": "2",
+    "TEXT": "The NOAA GOES satellites include 2 sensors: an Energetic Particle Sensor (EPS), and a Magnetometer (MAG).\nThe satellites are geostationary. For older satellites, inclination may be up to 15 deg.\nData sometimes contains errors. especially GOES-6 EPS & possibly both  GOES 6,7 magnetometers. \nThe EPS data are 5-min. averages, the MAG data are 1-min. averages. \nThe NOAA Space Environment Lab (SEL), Space Environ. Services Center (SESC) uses this data in real time for forecasting and monitoring. \nReference: GOES Spacecraft OperationsManual, Volume I, May 1980, Hughes RefNo. D5150 SCG 00169R\nGOES-8, with 3 electron sensors should launch in early 93: the IE variables will be defined post-launch.\nFor additional info., contact Dave Bouwer, NOAA/SEL, Mail Code R/E/SE, 325 Broadway, Boulder, CO 80303 USA (303)497-3899.\nSELVAX::DBOUWER or dbouwer@selvax.sel.bldrdoc.gov",
+    "MODS": " Version 2.0: 1st operational version,-db, 14 Jul 92\n Corrected S/C location error & added Geographic (not geodetic) & GEO S/C positions.  -db, 16 Feb 93\n Added unit_ptr to s/c position units fixed CATDES on SC_pos_sm, fixed GSn   -db, 20 Apr 93",
+    "ADID_ref": "NSSD0097",
+    "Logical_file_id": "G6_K0_EPS_19941228_V02",
+    "Logical_source": "G6_K0_EPS",
+    "Logical_source_description": "GOES 6 Energetic Particle Sensor, Key Parameters",
+    "PI_name": "H. Sauer",
+    "PI_affiliation": "NOAA",
+    "Mission_group": "GOES\n!___Magnetospheric Data",
+    "Instrument_type": "Particles (space)",
+    "TEXT_supplement_1": " ",
+    "NSSDC_id": "sphe-00409",
+    "alt_logical_source": "GOES6_EPS_Key-Parameters-K0_1min_cdf",
+    "spase_DatasetResourceID": "spase://NOAA/NumericalData/GOES/6/EPM/PT5M",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Time",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "SCALEMAX": "2000-12-31T21:53:08.504",
+        "SCALEMIN": "1992-07-31T21:25:39.352",
+        "UNITS": "ms",
+        "VALIDMAX": "2010-12-31T23:00:41.496",
+        "VALIDMIN": "1974-01-01T04:08:11.928",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "Time_PB5": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Time PB5",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Time PB5",
+        "FILLVAL": -2147483648,
+        "FORM_PTR": "format_time",
+        "LABL_PTR_1": "label_time",
+        "SCALEMAX": [
+          2000,
+          366,
+          86399000
+        ],
+        "SCALEMIN": [
+          1992,
+          214,
+          0
+        ],
+        "UNIT_PTR": "unit_time",
+        "VALIDMAX": [
+          2010,
+          365,
+          86399000
+        ],
+        "VALIDMIN": [
+          1974,
+          1,
+          0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": [
+          "year",
+          "day",
+          "msec"
+        ],
+        "x_LABLAXES": [
+          [
+            "Year",
+            "Day of Year (Jan 1 = Day 1)",
+            "Elapsed millisecond of day"
+          ]
+        ]
+      }
+    },
+    "E1": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Electon flux>2 MeV (protons >40 MeV), scalar",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Electron Count (E1)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.3",
+        "LABLAXIS": "e- Flux",
+        "MONOTON": "FALSE",
+        "SCALEMAX": 10000000.0,
+        "SCALEMIN": 1.0,
+        "SCALETYP": "LOG",
+        "UNITS": "Cnts/sec cm^2 Sr",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Cnts/sec cm^2 Sr",
+        "x_LABLAXIS": "e- Flux"
+      }
+    },
+    "P1": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Uncor. dif. Proton Flux (.6-4.2 MeV), scalar",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Proton Count",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.3",
+        "LABLAXIS": "P Flux",
+        "MONOTON": "FALSE",
+        "SCALEMAX": 100000.0,
+        "SCALEMIN": 0.1,
+        "SCALETYP": "LOG",
+        "UNITS": "Cnts/sec cm^2 Sr MeV",
+        "VALIDMAX": 10000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Cnts/sec cm^2 Sr MeV",
+        "x_LABLAXIS": "P Flux"
+      }
+    },
+    "IE": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "TBD",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Energy_range",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Electron Count - GOES-8: TBD",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.3",
+        "LABLAXIS": "TBD",
+        "MONOTON": "FALSE",
+        "SCALEMAX": [
+          1000000.0,
+          1000000.0,
+          1000000.0
+        ],
+        "SCALEMIN": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "SCALETYP": "LOG",
+        "UNITS": "TBD",
+        "VALIDMAX": [
+          10000000.0,
+          10000000.0,
+          10000000.0
+        ],
+        "VALIDMIN": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "TBD",
+        "x_LABLAXIS": "TBD",
+        "x_DEPEND": [
+          [
+            "Range 1 - TBD",
+            "Range 2 - TBD",
+            "Range 3 - TBD"
+          ]
+        ]
+      }
+    },
+    "SC_pos_ll": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "GOES 6 s/c position, Geographic, Polar Coordinates",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "s/c position Geographic.",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.0",
+        "LABL_PTR_1": "label_2",
+        "MONOTON": "FALSE",
+        "SCALEMAX": [
+          10.0,
+          360.0,
+          43000.0
+        ],
+        "SCALEMIN": [
+          -10.0,
+          180.0,
+          41000.0
+        ],
+        "SCALETYP": "linear",
+        "UNIT_PTR": "unit_sc",
+        "VALIDMAX": [
+          90.0,
+          360.0,
+          50000.0
+        ],
+        "VALIDMIN": [
+          -90.0,
+          0.0,
+          50.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": [
+          "deg",
+          "deg",
+          "km"
+        ],
+        "x_LABLAXES": [
+          [
+            "Geocen Lat.",
+            "E Longitude",
+            "Radius"
+          ]
+        ]
+      }
+    },
+    "SC_pos_eo": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "GOES 6 s/c position, Geographic, Cartesian Coordinates",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "cartesian",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "s/c position GEO",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.0",
+        "LABL_PTR_1": "label_1",
+        "MONOTON": "FALSE",
+        "SCALEMAX": [
+          50000.0,
+          50000.0,
+          50000.0
+        ],
+        "SCALEMIN": [
+          -50000.0,
+          -50000.0,
+          -50000.0
+        ],
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": [
+          50000.0,
+          50000.0,
+          50000.0
+        ],
+        "VALIDMIN": [
+          -50000.0,
+          -50000.0,
+          -50000.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXES": [
+          [
+            "GOES 6 GEO-x",
+            "GOES 6 GEO-y",
+            "GOES 6 GEO-z"
+          ]
+        ],
+        "x_DEPEND": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ]
+      }
+    },
+    "SC_pos_se": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "AVG_TYPE": " ",
+        "CATDESC": "GOES 6 s/c position, GSE x,y,z",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "cartesian",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimensioncoord=gse",
+        "FIELDNAM": "s/c position GSE",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.0",
+        "LABL_PTR_1": "label_3",
+        "MONOTON": "FALSE",
+        "SCALEMAX": [
+          50000.0,
+          50000.0,
+          50000.0
+        ],
+        "SCALEMIN": [
+          -50000.0,
+          -50000.0,
+          -50000.0
+        ],
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": [
+          50000.0,
+          50000.0,
+          50000.0
+        ],
+        "VALIDMIN": [
+          -50000.0,
+          -50000.0,
+          -50000.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXES": [
+          [
+            "GOES 6 GSE-x",
+            "GOES 6 GSE-y",
+            "GOES 6 GSE-z"
+          ]
+        ],
+        "x_DEPEND": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ]
+      }
+    },
+    "SC_pos_sm": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "ALLOW_BIN": "FALSE",
+        "AVG_TYPE": " ",
+        "CATDESC": "GOES 6 s/c position, GSM x,y,z",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "cartesian",
+        "DICT_KEY": " ",
+        "DISPLAY_TYPE": "default_dimensioncoord=gsm",
+        "FIELDNAM": "s/c position GSM",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F6.0",
+        "LABL_PTR_1": "label_4",
+        "MONOTON": "FALSE",
+        "SCALEMAX": [
+          50000.0,
+          50000.0,
+          50000.0
+        ],
+        "SCALEMIN": [
+          -50000.0,
+          -50000.0,
+          -50000.0
+        ],
+        "SCALETYP": "linear",
+        "UNITS": "km",
+        "VALIDMAX": [
+          50000.0,
+          50000.0,
+          50000.0
+        ],
+        "VALIDMIN": [
+          -50000.0,
+          -50000.0,
+          -50000.0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXES": [
+          [
+            "GOES 6 GSM-x",
+            "GOES 6 GSM-y",
+            "GOES 6 GSM-z"
+          ]
+        ],
+        "x_DEPEND": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ]
+      }
+    },
+    "EPS_stat": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "0=OK, 1=minor problems, 2=major problems, 3=missing data",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "FIELDNAM": "EPS Instrument Status",
+        "FILLVAL": -32768,
+        "FORMAT": "I2",
+        "LABLAXIS": "Inst. Status",
+        "MONOTON": "FALSE",
+        "SCALEMAX": 3,
+        "SCALEMIN": 0,
+        "SCALETYP": "LINEAR",
+        "UNITS": "Integer Table",
+        "VALIDMAX": 3,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Integer Table",
+        "x_LABLAXIS": "Inst. Status"
+      }
+    },
+    "label_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 27,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label for Time_PB5                      ",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Label for Time_PB5",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Year",
+        "Day of Year (Jan 1 = Day 1)",
+        "Elapsed millisecond of day"
+      ]
+    },
+    "unit_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 4,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Units for Time_PB5                      ",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Units for Time_PB5",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "year",
+        "day",
+        "msec"
+      ]
+    },
+    "format_time": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 2,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Format for Time_PB5                     ",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Format for Time_PB5",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "I4",
+        "I3",
+        "I8"
+      ]
+    },
+    "E1_flag": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "ISTP Definitions",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "FIELDNAM": "E1 Post-gap Flag",
+        "FILLVAL": -32768,
+        "FORMAT": "I1",
+        "LABLAXIS": "E1 Flag",
+        "MONOTON": "FALSE",
+        "SCALEMAX": 3,
+        "SCALEMIN": 0,
+        "SCALETYP": "LINEAR",
+        "UNITS": "Integer Table",
+        "VALIDMAX": 3,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Integer Table",
+        "x_LABLAXIS": "E1 Flag"
+      }
+    },
+    "IE_flag": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "ISTP Definitions (0=no gap)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "Energy_range",
+        "DICT_KEY": " ",
+        "FIELDNAM": "IE Post-gap Flag - GOES-8: TBD",
+        "FILLVAL": -32768,
+        "FORMAT": "I1",
+        "LABLAXIS": "IE Flag",
+        "MONOTON": "FALSE",
+        "SCALEMAX": [
+          3,
+          3,
+          3
+        ],
+        "SCALEMIN": [
+          0,
+          0,
+          0
+        ],
+        "SCALETYP": "LINEAR",
+        "UNITS": "Integer Table",
+        "VALIDMAX": [
+          3,
+          3,
+          3
+        ],
+        "VALIDMIN": [
+          0,
+          0,
+          0
+        ],
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": "Integer Table",
+        "x_LABLAXIS": "IE Flag",
+        "x_DEPEND": [
+          [
+            "Range 1 - TBD",
+            "Range 2 - TBD",
+            "Range 3 - TBD"
+          ]
+        ]
+      }
+    },
+    "Energy_range": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 13,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label for GOES8 Electrons               ",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Label for GOES8 Electrons",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Range 1 - TBD",
+        "Range 2 - TBD",
+        "Range 3 - TBD"
+      ]
+    },
+    "P1_flag": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "ISTP Definitions (0=no gap)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "FIELDNAM": "P1 Post-gap Flag",
+        "FILLVAL": -32768,
+        "FORMAT": "I1",
+        "LABLAXIS": "P1 Flag",
+        "MONOTON": "FALSE",
+        "SCALEMAX": 3,
+        "SCALEMIN": 0,
+        "SCALETYP": "LINEAR",
+        "UNITS": "Integer Table",
+        "VALIDMAX": 3,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Integer Table",
+        "x_LABLAXIS": "P1 Flag"
+      }
+    },
+    "cartesian": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label, S/C Position",
+        "DICT_KEY": "label>position",
+        "FIELDNAM": "Label, S/C Position",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    "label_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label, S/C Position",
+        "DICT_KEY": "label>position",
+        "FIELDNAM": "Label, S/C Position",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "GOES 6 GEO-x",
+        "GOES 6 GEO-y",
+        "GOES 6 GEO-z"
+      ]
+    },
+    "label_3": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label, S/C Position",
+        "DICT_KEY": "label>position",
+        "FIELDNAM": "Label, S/C Position",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "GOES 6 GSE-x",
+        "GOES 6 GSE-y",
+        "GOES 6 GSE-z"
+      ]
+    },
+    "label_4": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 12,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "Label, S/C Position",
+        "DICT_KEY": "label>position",
+        "FIELDNAM": "Label, S/C Position",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "GOES 6 GSM-x",
+        "GOES 6 GSM-y",
+        "GOES 6 GSM-z"
+      ]
+    },
+    "SC_flag": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "ISTP Definitions (0=no gap)",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "FIELDNAM": "Satl. Loc. Post-gap flag",
+        "FILLVAL": -32768,
+        "FORMAT": "I1",
+        "LABLAXIS": "S/C Pos. Flag",
+        "MONOTON": "FALSE",
+        "SCALEMAX": 3,
+        "SCALEMIN": 0,
+        "SCALETYP": "LINEAR",
+        "UNITS": "Integer Table",
+        "VALIDMAX": 3,
+        "VALIDMIN": 0,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Integer Table",
+        "x_LABLAXIS": "S/C Pos. Flag"
+      }
+    },
+    "EPS_rsrvd": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "TBD",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": " ",
+        "FIELDNAM": "RESERVED-TBD",
+        "FILLVAL": -32768,
+        "FORMAT": "I2",
+        "LABLAXIS": "TBD",
+        "MONOTON": "FALSE",
+        "SCALEMAX": 32767,
+        "SCALEMIN": -32768,
+        "SCALETYP": "LINEAR",
+        "UNITS": " ",
+        "VALIDMAX": 32767,
+        "VALIDMIN": -32768,
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "ignore_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "TBD"
+      }
+    },
+    "label_2": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 11,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "S/C Position, Geographic",
+        "DICT_KEY": "label>position",
+        "FIELDNAM": "S/C Position, Geographic",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "Geocen Lat.",
+        "E Longitude",
+        "Radius"
+      ]
+    },
+    "unit_sc": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          3
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 3,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "AVG_TYPE": " ",
+        "CATDESC": "S/C Position, Geographic units",
+        "DICT_KEY": "label>units",
+        "FIELDNAM": "S/C Position, Geographic units",
+        "VAR_NOTES": " ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "deg",
+        "deg",
+        "km"
+      ]
+    }
+  }
+}

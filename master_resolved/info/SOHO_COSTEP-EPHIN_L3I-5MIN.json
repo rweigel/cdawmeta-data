@@ -1,0 +1,555 @@
+{
+  "CDFFileInfo": {
+    "File": "soho_costep-ephin_l3i-5min_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/soho_costep-ephin_l3i-5min_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Source_name": "SOHO>Solar Heliospheric Observatory",
+    "Discipline": "Solar Physics>Heliospheric Physics",
+    "Data_type": "L3I-5MIN>Level3 5 minute intensities",
+    "Descriptor": "COSTEP-EPHIN>Electron Proton Helium Instrument",
+    "Data_version": " ",
+    "Time_resolution": "5 minutes",
+    "TEXT": "Description of the COSTEP-EPHIN instrument and scientific scope can be \nfound on the COSTEP homepage http://www.ieap.uni-kiel.de/et/ag-heber/costep/ \nand on the SOHO homepage http://sohowww.nascom.nasa.gov/\nDocumentation of the COSTEP-EPHIN Level3 data product, including energy ranges \nof Level3 channels and status flag description (see Section 5), is available at \nhttp://ulysses.physik.uni-kiel.de/costep/level3/l3i/DOCUMENTATION-COSTEP-EPHIN-L3-20220201.pdf\nThe data was created from the original ASCII dataset at https://soho.nascom.nasa.gov/data/archive.html",
+    "MODS": " ",
+    "File_naming_convention": "source_descriptor_datatype_yyyyMMdd",
+    "Logical_file_id": "soho_costep-ephin_l3i-5min_19950101_v01.01",
+    "Logical_source": "soho_costep-ephin_l3i-5min",
+    "Logical_source_description": "SOHO COSTEP-EPHIN Level3 intensity 5 minute data",
+    "PI_name": "Bernd Heber (heber@physik.uni-kiel.de)",
+    "PI_affiliation": "Christian Albrechts Universitat\nInstitute of Experimental and Applied Physics\nLeibnizstr. 11, 24118 Kiel, Germany",
+    "Mission_group": "SOHO",
+    "Instrument_type": "Energetic Particle Detector",
+    "LINK_TEXT": "SOHO COSTEP-EPHIN 5 minute data available at",
+    "LINK_TITLE": "the SOHO Archive",
+    "HTTP_LINK": "https://soho.nascom.nasa.gov/data/archive.html",
+    "Parents": " ",
+    "Generated_by": "Andriy Koval at SPDF from original ASCII files at \nhttps://soho.nascom.nasa.gov/data/archive.html",
+    "spase_DatasetResourceID": "spase://ESA/NumericalData/SOHO/COSTEP/EPHIN/CDF/PT5M",
+    "DOI": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Start time, number of milliseconds since 01-Jan-0000 00:00:00.000",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "TIME_BASE": "0 AD",
+        "UNITS": "ms",
+        "VALIDMAX": "2050-01-01T00:00:00.000",
+        "VALIDMIN": "1995-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "status": {
+      "VarDescription": {
+        "DataType": "CDF_UINT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 65535,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Status flag, see TEXT",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Status flag",
+        "FILLVAL": 65535,
+        "FORMAT": "I5",
+        "LABLAXIS": "Status flag",
+        "UNITS": " ",
+        "VALIDMAX": 255,
+        "VALIDMIN": 0,
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Status flag"
+      }
+    },
+    "accum_time": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Measurement accumulation time",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Accumulation time",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Accum time",
+        "UNITS": "s",
+        "VALIDMAX": 2000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s",
+        "x_LABLAXIS": "Accum time"
+      }
+    },
+    "P_int": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton intensity in 4 energy ranges (4.3-7.8, 7.8-25, 25-40.9, 40.9-53 MeV)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "P_energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=P_int,z=P_energy",
+        "FIELDNAM": "Proton intensity in 4 energy ranges",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "Proton intensity",
+        "SCALETYP": "log",
+        "UNITS": "(cm^2 s sr MeV)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 s sr MeV)^-1",
+        "x_LABLAXIS": "Proton intensity",
+        "x_DEPEND": [
+          "P_energy"
+        ]
+      }
+    },
+    "P_sys": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton systematic uncertainty in 4 energy ranges (4.3-7.8, 7.8-25, 25-40.9, 40.9-53 MeV)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "P_energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=P_sys,z=P_energy",
+        "FIELDNAM": "Proton systematic uncertainty in 4 energy ranges",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "p sys uncertainty",
+        "SCALETYP": "log",
+        "UNITS": "(cm^2 s sr MeV)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 s sr MeV)^-1",
+        "x_LABLAXIS": "p sys uncertainty",
+        "x_DEPEND": [
+          "P_energy"
+        ]
+      }
+    },
+    "P_stat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton statistical uncertainty in 4 energy ranges (4.3-7.8, 7.8-25, 25-40.9, 40.9-53 MeV)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "P_energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=P_stat,z=P_energy",
+        "FIELDNAM": "Proton statistical uncertainty in 4 energy ranges",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "p stat uncertainty",
+        "SCALETYP": "log",
+        "UNITS": "(cm^2 s sr MeV)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 s sr MeV)^-1",
+        "x_LABLAXIS": "p stat uncertainty",
+        "x_DEPEND": [
+          "P_energy"
+        ]
+      }
+    },
+    "P_energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton energy channels",
+        "DELTA_MINUS_VAR": "P_energy_delta",
+        "DELTA_PLUS_VAR": "P_energy_delta",
+        "FIELDNAM": "Proton energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F5.2",
+        "LABL_PTR_1": "P_E_label",
+        "UNITS": "MeV",
+        "VALIDMAX": 50.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXES": [
+          [
+            "4.3 - 7.8 MeV",
+            "7.8 - 25  MeV",
+            "25 - 40.9 MeV",
+            "40.9 - 53 MeV"
+          ]
+        ]
+      },
+      "VarData": [
+        6.05,
+        16.4,
+        32.95,
+        46.95
+      ]
+    },
+    "P_energy_delta": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Half width of proton channels",
+        "FIELDNAM": "Half width of proton channels",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F5.2",
+        "LABL_PTR_1": "P_E_label",
+        "UNITS": "MeV",
+        "VALIDMAX": 50.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV",
+        "x_LABLAXES": [
+          [
+            "4.3 - 7.8 MeV",
+            "7.8 - 25  MeV",
+            "25 - 40.9 MeV",
+            "40.9 - 53 MeV"
+          ]
+        ]
+      },
+      "VarData": [
+        1.75,
+        8.6,
+        7.95,
+        6.05
+      ]
+    },
+    "P_E_label": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 13,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Label for proton energy channels",
+        "FIELDNAM": "Label for proton energy channels",
+        "FORMAT": "A13",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "4.3 - 7.8 MeV",
+        "7.8 - 25  MeV",
+        "25 - 40.9 MeV",
+        "40.9 - 53 MeV"
+      ]
+    },
+    "He_int": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "He intensity in 4 energy ranges (4.3-7.8, 7.8-25, 25-40.9, 40.9-53 MeV/n)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "He_energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=He_int,z=He_energy",
+        "FIELDNAM": "He intensity in 4 energy ranges",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "He intensity",
+        "SCALETYP": "log",
+        "UNITS": "(cm^2 s sr MeV/n)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 s sr MeV/n)^-1",
+        "x_LABLAXIS": "He intensity",
+        "x_DEPEND": [
+          "He_energy"
+        ]
+      }
+    },
+    "He_sys": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "He systematic uncertainty in 4 energy ranges (4.3-7.8, 7.8-25, 25-40.9, 40.9-53 MeV/n)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "He_energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=He_sys,z=He_energy",
+        "FIELDNAM": "He systematic uncertainty in 4 energy ranges",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "He sys uncertainty",
+        "SCALETYP": "log",
+        "UNITS": "(cm^2 s sr MeV/n)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 s sr MeV/n)^-1",
+        "x_LABLAXIS": "He sys uncertainty",
+        "x_DEPEND": [
+          "He_energy"
+        ]
+      }
+    },
+    "He_stat": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "He statistical uncertainty in 4 energy ranges (4.3-7.8, 7.8-25, 25-40.9, 40.9-53 MeV/n)",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "He_energy",
+        "DISPLAY_TYPE": "default_dimensionNOBAR>y=He_stat,z=He_energy",
+        "FIELDNAM": "He statistical uncertainty in 4 energy ranges",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E11.4",
+        "LABLAXIS": "He stat uncertainty",
+        "SCALETYP": "log",
+        "UNITS": "(cm^2 s sr MeV/n)^-1",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "(cm^2 s sr MeV/n)^-1",
+        "x_LABLAXIS": "He stat uncertainty",
+        "x_DEPEND": [
+          "He_energy"
+        ]
+      }
+    },
+    "He_energy": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "He energy channels",
+        "DELTA_MINUS_VAR": "He_energy_delta",
+        "DELTA_PLUS_VAR": "He_energy_delta",
+        "FIELDNAM": "He energy",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F5.2",
+        "LABL_PTR_1": "He_E_label",
+        "UNITS": "MeV/n",
+        "VALIDMAX": 50.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV/n",
+        "x_LABLAXES": [
+          [
+            "4.3 - 7.8 MeV/n",
+            "7.8 - 25  MeV/n",
+            "25 - 40.9 MeV/n",
+            "40.9 - 53 MeV/n"
+          ]
+        ]
+      },
+      "VarData": [
+        6.05,
+        16.4,
+        32.95,
+        46.95
+      ]
+    },
+    "He_energy_delta": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_REAL4",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+31,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Half width of He channels",
+        "FIELDNAM": "Half width of He channels",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F5.2",
+        "LABL_PTR_1": "He_E_label",
+        "UNITS": "MeV/n",
+        "VALIDMAX": 50.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "MeV/n",
+        "x_LABLAXES": [
+          [
+            "4.3 - 7.8 MeV/n",
+            "7.8 - 25  MeV/n",
+            "25 - 40.9 MeV/n",
+            "40.9 - 53 MeV/n"
+          ]
+        ]
+      },
+      "VarData": [
+        1.75,
+        8.6,
+        7.95,
+        6.05
+      ]
+    },
+    "He_E_label": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          4
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 15,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Label for He energy channels",
+        "FIELDNAM": "Label for He energy channels",
+        "FORMAT": "A15",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        "4.3 - 7.8 MeV/n",
+        "7.8 - 25  MeV/n",
+        "25 - 40.9 MeV/n",
+        "40.9 - 53 MeV/n"
+      ]
+    }
+  }
+}

@@ -1,0 +1,400 @@
+{
+  "CDFFileInfo": {
+    "File": "vg1_pws_lr_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/vg1_pws_lr_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "NETWORK"
+  },
+  "CDFglobalAttributes": {
+    "Project": "VG1>Voyager 1",
+    "Source_name": "VG1>Voyager 1",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Data_type": "LR>LowRes",
+    "Descriptor": "PWS>Electric and Magnetic Field Instrument Suite and Integrated Science",
+    "File_naming_convention": "source_datatype_descriptor_yyyyMMdd",
+    "Leapseconds_kernel": " ",
+    "Spacecraft_clock_kernel": " ",
+    "PDS_start_time": " ",
+    "PDS_stop_time": " ",
+    "PDS_sclk_start_count": " ",
+    "PDS_sclk_stop_count": " ",
+    "Data_version": "1",
+    "PI_name": "Bill Kurth",
+    "PI_affiliation": "University of Iowa",
+    "TEXT": " ",
+    "Mission_group": "Voyager",
+    "Logical_source": "vg1_pws_lr",
+    "Logical_file_id": " ",
+    "Logical_source_description": "Lowrate Plasma Waves Instrument",
+    "Time_resolution": "1 second",
+    "Rules_of_use": " ",
+    "Acknowledgement": "Gurnett et al",
+    "LINK_TEXT": "Voyager 1 data",
+    "LINK_TITLE": "at Iowa",
+    "HTTP_LINK": "http://www-pw.physics.uiowa.edu/voyager/",
+    "Instrument_type": "Radio and Plasma Waves (space)\nPlasma and Solar Wind",
+    "spase_DatasetResourceID": "spase://NASA/NumericalData/Voyager1/PWS/CDF/PT4S",
+    "DOI": "https://doi.org/10.17189/wp0z-1c51"
+  },
+  "CDFVariables": {
+    "epoch": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Spacecraft measurement time",
+        "DICT_KEY": "time>epoch",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "Time",
+        "MONOTON": "INCREASE",
+        "SCALETYP": "linear",
+        "TIME_BASE": "J2000",
+        "UNITS": "ns",
+        "VALIDMAX": "2029-12-31T23:59:58.999000000",
+        "VALIDMIN": "1990-01-01T00:00:00.000000000",
+        "VAR_NOTES": "Spacecraft measurement time",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "Time"
+      }
+    },
+    "frequency": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "frequency channel labels",
+        "DEPEND_0": "epoch",
+        "FIELDNAM": "frequency",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E13.3",
+        "LABLAXIS": "Frequency",
+        "LABL_PTR_1": "Frequency_LABL_1",
+        "SCALEMAX": 100000.0,
+        "SCALEMIN": 8.0,
+        "SCALETYP": "log",
+        "UNITS": "Hz",
+        "VALIDMAX": 100000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "frequency channel labels",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "Frequency"
+      },
+      "VarData": [
+        10.0,
+        17.8,
+        31.1,
+        56.2,
+        100.0,
+        178.0,
+        311.0,
+        562.0,
+        1000.0,
+        1780.0,
+        3110.0,
+        5620.0,
+        10000.0,
+        17800.0,
+        31100.0,
+        56200.0
+      ]
+    },
+    "electric_field": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electric Field (spectrogram)",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "frequency",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "electric_field",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E13.3",
+        "LABLAXIS": "Voy1 Electric Field",
+        "SCALEMAX": 0.001,
+        "SCALEMIN": 1e-07,
+        "SCALETYP": "log",
+        "UNITS": "V/m",
+        "VALIDMAX": 0.01,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "calibrated E-field for 16 channels",
+        "VAR_TYPE": "data",
+        "x_UNITS": "V/m",
+        "x_LABLAXIS": "Voy1 Electric Field",
+        "x_DEPEND": [
+          "frequency"
+        ]
+      }
+    },
+    "electric_field_stack": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electric Field (stacked plots)",
+        "COMPONENT_0": "electric_field",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "frequency",
+        "DISPLAY_TYPE": "default_dimensiony=electric_field_stack(1),y=electric_field_stack(4), y=electric_field_stack(7), y=electric_field_stack(10), y=electric_field_stack(13), y=electric_field_stack(16), z=frequency",
+        "FIELDNAM": "electric_field",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E13.3",
+        "FUNCT": "alternate_view",
+        "LABLAXIS": "Voy1 Electric Field",
+        "SCALEMAX": 0.01,
+        "SCALEMIN": 1e-06,
+        "SCALETYP": "log",
+        "UNITS": "V/m",
+        "VALIDMAX": 0.01,
+        "VALIDMIN": 1e-06,
+        "VAR_NOTES": "calibrated E-field for 16 channels",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "V/m",
+        "x_LABLAXIS": "Voy1 Electric Field",
+        "x_DEPEND": [
+          "frequency"
+        ],
+        "COMPONENTS": [
+          "electric_field"
+        ]
+      }
+    },
+    "electric_field_timeseries": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "---> Electric Field (time series)",
+        "COMPONENT_0": "electric_field",
+        "DEPEND_0": "epoch",
+        "DEPEND_1": "frequency",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "electric_field",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E13.3",
+        "FUNCT": "alternate_view",
+        "LABL_PTR_1": "electric_field_timeseries_LABL_1",
+        "SCALEMAX": 0.01,
+        "SCALEMIN": 1e-10,
+        "SCALETYP": "log",
+        "UNITS": "V/m",
+        "VALIDMAX": 0.01,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "calibrated E-field for 16 channels",
+        "VAR_TYPE": "data",
+        "VIRTUAL": "true",
+        "x_UNITS": "V/m",
+        "x_LABLAXES": [
+          [
+            "Voy1 Electric Field at 10.0 Hz",
+            "Voy1 Electric Field at 17.8 Hz",
+            "Voy1 Electric Field at 31.1 Hz",
+            "Voy1 Electric Field at 56.2 Hz",
+            "Voy1 Electric Field at 100. Hz",
+            "Voy1 Electric Field at 178. Hz",
+            "Voy1 Electric Field at 311. Hz",
+            "Voy1 Electric Field at 562. Hz",
+            "Voy1 Electric Field at 1.00 kHz",
+            "Voy1 Electric Field at 1.78 kHz",
+            "Voy1 Electric Field at 3.11 kHz",
+            "Voy1 Electric Field at 5.62 kHz",
+            "Voy1 Electric Field at 10.0 kHz",
+            "Voy1 Electric Field at 17.8 kHz",
+            "Voy1 Electric Field at 31.1 kHz",
+            "Voy1 Electric Field at 56.2 kHz"
+          ]
+        ],
+        "x_DEPEND": [
+          "frequency"
+        ],
+        "COMPONENTS": [
+          "electric_field"
+        ]
+      }
+    },
+    "frequency_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 24,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "frequency_LABL_1",
+        "FIELDNAM": "frequency_LABL_1",
+        "FORMAT": "A25",
+        "LABLAXIS": "Frequency_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Frequency_LABL_1"
+      },
+      "VarData": [
+        "10.0                    ",
+        "17.8                    ",
+        "31.1                    ",
+        "56.2                    ",
+        "100.                    ",
+        "178.                    ",
+        "311.                    ",
+        "562.                    ",
+        "1.00k                   ",
+        "1.78k                   ",
+        "3.11k                   ",
+        "5.62k                   ",
+        "10.0k                   ",
+        "17.8k                   ",
+        "31.1k                   ",
+        "56.2k                   "
+      ]
+    },
+    "electric_field_timeseries_LABL_1": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 31,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "electric_field_timeseries_LABL_1",
+        "FIELDNAM": "electric_field_timeseries_LABL_1",
+        "FORMAT": "A31",
+        "LABLAXIS": "electric_field_timeseries_LABL_1",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "electric_field_timeseries_LABL_1"
+      },
+      "VarData": [
+        "Voy1 Electric Field at 10.0 Hz",
+        "Voy1 Electric Field at 17.8 Hz",
+        "Voy1 Electric Field at 31.1 Hz",
+        "Voy1 Electric Field at 56.2 Hz",
+        "Voy1 Electric Field at 100. Hz",
+        "Voy1 Electric Field at 178. Hz",
+        "Voy1 Electric Field at 311. Hz",
+        "Voy1 Electric Field at 562. Hz",
+        "Voy1 Electric Field at 1.00 kHz",
+        "Voy1 Electric Field at 1.78 kHz",
+        "Voy1 Electric Field at 3.11 kHz",
+        "Voy1 Electric Field at 5.62 kHz",
+        "Voy1 Electric Field at 10.0 kHz",
+        "Voy1 Electric Field at 17.8 kHz",
+        "Voy1 Electric Field at 31.1 kHz",
+        "Voy1 Electric Field at 56.2 kHz"
+      ]
+    },
+    "sc_mode": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 6,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Telemetry Mode (LIST/CDF subset only)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "sc_mode",
+        "FORMAT": "A6",
+        "LABLAXIS": "Telemetry Mode",
+        "UNITS": "mode",
+        "VAR_NOTES": "Telemetry (or instrument) mode, such as CR5A or UV5A",
+        "VAR_TYPE": "data",
+        "x_UNITS": "mode",
+        "x_LABLAXIS": "Telemetry Mode"
+      }
+    },
+    "sclk": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 15,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "S/C Clock (LIST/CDF subset only)",
+        "DEPEND_0": "epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "sc_clock",
+        "FORMAT": "A15",
+        "LABLAXIS": "S/C Clock",
+        "UNITS": " ",
+        "VAR_NOTES": "The spacecraft clock",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "S/C Clock"
+      }
+    }
+  }
+}
