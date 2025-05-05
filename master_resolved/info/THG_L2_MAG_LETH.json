@@ -57,7 +57,7 @@
         "DEPEND_1": "thg_mag_leth_compno",
         "DEPEND_EPOCH0": "thg_mag_leth_epoch0",
         "DEPEND_TIME": "thg_mag_leth_time",
-        "DISPLAY_TYPE": "bar_chart",
+        "DISPLAY_TYPE": "default_dimension",
         "FIELDNAM": "B in HEZ Components",
         "FILLVAL": "NaN",
         "FORMAT": "f7.1",
@@ -115,7 +115,7 @@
         "DEPEND_1": "thg_mag_leth_compno",
         "DEPEND_EPOCH0": "thg_mag_leth_epoch0",
         "DEPEND_TIME": "thg_mag_leth_time",
-        "DISPLAY_TYPE": "bar_charty=thg_magh_leth(0)",
+        "DISPLAY_TYPE": "default_dimensiony=thg_magh_leth(0)",
         "FIELDNAM": "H component of B",
         "FILLVAL": "NaN",
         "FORMAT": "f7.1",
@@ -130,6 +130,7 @@
         "STATION_LATITUDE": 49.6,
         "STATION_LONGITUDE": 247.1,
         "x_UNITS": "nT",
+        "x_LABLAXIS": "Magnetic North - H",
         "x_DEPEND": [
           "thg_mag_leth_compno"
         ],
@@ -159,7 +160,7 @@
         "DEPEND_1": "thg_mag_leth_compno",
         "DEPEND_EPOCH0": "thg_mag_leth_epoch0",
         "DEPEND_TIME": "thg_mag_leth_time",
-        "DISPLAY_TYPE": "bar_charty=thg_magd_leth(1)",
+        "DISPLAY_TYPE": "default_dimensiony=thg_magd_leth(1)",
         "FIELDNAM": "E component of B",
         "FILLVAL": "NaN",
         "FORMAT": "f7.1",
@@ -174,6 +175,7 @@
         "STATION_LATITUDE": 49.6,
         "STATION_LONGITUDE": 247.1,
         "x_UNITS": "nT",
+        "x_LABLAXIS": "Magnetic East - E",
         "x_DEPEND": [
           "thg_mag_leth_compno"
         ],
@@ -203,7 +205,7 @@
         "DEPEND_1": "thg_mag_leth_compno",
         "DEPEND_EPOCH0": "thg_mag_leth_epoch0",
         "DEPEND_TIME": "thg_mag_leth_time",
-        "DISPLAY_TYPE": "bar_charty=thg_magz_leth(2)",
+        "DISPLAY_TYPE": "default_dimensiony=thg_magz_leth(2)",
         "FIELDNAM": "Z component of B",
         "FILLVAL": "NaN",
         "FORMAT": "f7.1",
@@ -218,6 +220,7 @@
         "STATION_LATITUDE": 49.6,
         "STATION_LONGITUDE": 247.1,
         "x_UNITS": "nT",
+        "x_LABLAXIS": "Vertical Down - Z",
         "x_DEPEND": [
           "thg_mag_leth_compno"
         ],
@@ -355,7 +358,84 @@
         "VALIDMIN": 0.0,
         "VAR_NOTES": "Unleaped seconds",
         "VAR_TYPE": "support_data",
-        "x_UNITS": "sec"
+        "x_UNITS": "sec",
+        "x_LABLAXIS": "UT"
+      }
+    },
+    "thg_mag_leth_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "thg_mag_leth_epoch",
+        "COMPONENT_0": "thg_mag_leth_epoch0",
+        "COMPONENT_1": "thg_mag_leth_time",
+        "FIELDNAM": "thg_mag_leth_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "FUNCT": "comp_themis_epoch",
+        "LABLAXIS": "UT",
+        "VALIDMAX": "2100-12-31T23:59:59.999",
+        "VALIDMIN": "2001-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "VIRTUAL": "true",
+        "x_UNITS": null,
+        "x_LABLAXIS": "UT",
+        "COMPONENTS": [
+          "thg_mag_leth_epoch0",
+          "thg_mag_leth_time"
+        ]
+      }
+    },
+    "thg_mag_leth_epoch0": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "EPOCH0 of THEMIS TIME BASE",
+        "FIELDNAM": "thg_mag_leth_epoch0",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "timebase",
+        "UNITS": "msec",
+        "VALIDMAX": "2029-12-31T23:59:59.999",
+        "VALIDMIN": "1900-01-01T00:00:00.000",
+        "VAR_NOTES": "EPOCH of 01-Jan-1970 00:00:00",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "timebase"
+      },
+      "VarData": [
+        "1970-01-01T00:00:00.000"
+      ]
+    },
+    "range_epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "range_epoch",
+        "FIELDNAM": "range_epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "UT",
+        "UNITS": "msec",
+        "VALIDMAX": "2100-12-31T23:59:59.999",
+        "VALIDMIN": "2001-01-01T00:00:00.000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "msec",
+        "x_LABLAXIS": "UT"
       }
     }
   }
