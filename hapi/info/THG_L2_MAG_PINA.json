@@ -3,9 +3,9 @@
   "title": "Higher latitude chain (Lat 50.2, Long 263.9), Ground-based Vector Magnetic Field at Pinawa, Canada, 0.5 sec, CARISMA network - I. Mann (U Alberta)",
   "info": {
     "startDate": "2006-11-01T00:00:00Z",
-    "stopDate": "2025-04-29T23:59:59Z",
-    "sampleStartDate": "2025-04-28T00:00:00Z",
-    "sampleStopDate": "2025-04-28T23:59:59Z",
+    "stopDate": "2025-09-14T23:59:59Z",
+    "sampleStartDate": "2025-09-13T00:00:00Z",
+    "sampleStopDate": "2025-09-13T23:59:59Z",
     "maxRequestDuration": "PT4319950S",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THG_L2_MAG_PINA",
     "contact": "I. Mann @ U Alberta",
@@ -18,7 +18,13 @@
         "fill": null,
         "x_description": "thg_mag_pina_epoch",
         "x_cdf_NAME": "thg_mag_pina_epoch",
-        "x_cdf_DataType": "CDF_EPOCH"
+        "x_cdf_DataType": "CDF_EPOCH",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "comp_themis_epoch",
+        "x_cdf_COMPONENTS": [
+          "thg_mag_pina_epoch0",
+          "thg_mag_pina_time"
+        ]
       },
       {
         "name": "thg_mag_pina",
@@ -68,7 +74,7 @@
         "name": "thg_magh_pina",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> H - Local magnetic North component of B. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thg_mag_pina']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> H - Local magnetic North component of B",
         "fill": "-1e+30",
         "units": "nT",
         "x_label": "Magnetic North - H",
@@ -88,7 +94,7 @@
         "name": "thg_magd_pina",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> E - Local magnetic East component of B. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thg_mag_pina']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> E - Local magnetic East component of B",
         "fill": "-1e+30",
         "units": "nT",
         "x_label": "Magnetic East - E",
@@ -108,7 +114,7 @@
         "name": "thg_magz_pina",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "---> Z - Local vertical down component of B. This variable is a 'virtual' variable that is computed using the function make_stack_array (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thg_mag_pina']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "---> Z - Local vertical down component of B",
         "fill": "-1e+30",
         "units": "nT",
         "x_label": "Vertical Down - Z",

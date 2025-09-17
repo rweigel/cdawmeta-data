@@ -3,13 +3,13 @@
   "title": "Level2 Flux Gate Magnetometer Combined Fast/Slow Survey DC Magnetic Field for MMS Satellite Number 3 - J. Burch, C. Russell, W. Magnus (SWRI, UCLA, IWF)",
   "info": {
     "startDate": "2015-09-01T00:00:06Z",
-    "stopDate": "2025-03-27T23:59:59Z",
-    "sampleStartDate": "2025-03-25T00:00:07Z",
-    "sampleStopDate": "2025-03-26T00:00:00Z",
+    "stopDate": "2025-08-07T23:59:59Z",
+    "sampleStartDate": "2025-08-05T00:00:00Z",
+    "sampleStopDate": "2025-08-06T00:00:02Z",
     "cadence": "PT0.062501S",
     "x_cadence_fraction": 0.5420564843013956,
     "x_cadence_note": "Counts based on variable 'Epoch' in https://cdaweb.gsfc.nasa.gov/sp_phys/data/mms/mms3/fgm/srvy/l2/2015/09/mms3_fgm_srvy_l2_20150901_v4.18.0.cdf. The most common cadence, 62500752 [ns] = PT0.062501S, occurred for 54.2056% of the 593760 timesteps. ",
-    "maxRequestDuration": "PT4319650S",
+    "maxRequestDuration": "P50DT100S",
     "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FGM_SRVY_L2",
     "contact": "J. Burch, C. Russell, W. Magnus @ SWRI, UCLA, IWF",
     "parameters": [
@@ -21,13 +21,14 @@
         "fill": null,
         "x_description": "Interval centered time tag (TBC)",
         "x_cdf_NAME": "Epoch",
-        "x_cdf_DataType": "CDF_TIME_TT2000"
+        "x_cdf_DataType": "CDF_TIME_TT2000",
+        "x_cdf_VIRTUAL": false
       },
       {
         "name": "mms3_fgm_b_gse_srvy_l2_clean",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Magnetic field vector in Geocentric Solar Ecliptic (GSE) cartesian coordinates plus Btotal (8 or 16 S/s). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_fgm_b_gse_srvy_l2', 'mms3_fgm_flag_srvy_l2']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Magnetic field vector in Geocentric Solar Ecliptic (GSE) cartesian coordinates plus Btotal (8 or 16 S/s)",
         "fill": "-1e+31",
         "units": "nT",
         "x_label": [
@@ -80,7 +81,7 @@
         "name": "mms3_fgm_b_gsm_srvy_l2_clean",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Magnetic field vector in Geocentric Solar Magnetospheric (GSM) cartesian coordinates plus Btotal (8 or 16 S/s). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_fgm_b_gsm_srvy_l2', 'mms3_fgm_flag_srvy_l2']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Magnetic field vector in Geocentric Solar Magnetospheric (GSM) cartesian coordinates plus Btotal (8 or 16 S/s)",
         "fill": "-1e+31",
         "units": "nT",
         "x_label": [
@@ -133,7 +134,7 @@
         "name": "mms3_fgm_b_dmpa_srvy_l2_clean",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Magnetic field vector in Despun MPA-aligned cartesian coordinates plus Btotal (8 or 16 S/s). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_fgm_b_dmpa_srvy_l2', 'mms3_fgm_flag_srvy_l2']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Magnetic field vector in Despun MPA-aligned cartesian coordinates plus Btotal (8 or 16 S/s)",
         "fill": "-1e+31",
         "units": "nT",
         "x_label": [
@@ -186,7 +187,7 @@
         "name": "mms3_fgm_b_bcs_srvy_l2_clean",
         "type": "double",
         "x_cdf_DataType": "CDF_REAL4",
-        "description": "Magnetic field vector in Body Coordinate System cartesian coordinates plus Btotal (8 or 16 S/s). This variable is a 'virtual' variable that is computed using the function apply_esa_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['mms3_fgm_b_bcs_srvy_l2', 'mms3_fgm_flag_srvy_l2']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+        "description": "Magnetic field vector in Body Coordinate System cartesian coordinates plus Btotal (8 or 16 S/s)",
         "fill": "-1e+31",
         "units": "nT",
         "x_label": [
@@ -237,9 +238,9 @@
       },
       {
         "name": "mms3_fgm_flag_srvy_l2",
-        "type": "integer",
+        "type": "double",
         "x_cdf_DataType": "CDF_UINT4",
-        "description": "Quality Flag:  0 = No identified problems, non-zero = blank out the data",
+        "description": "Quality Flag:  0 = No identified problems, non-zero = blank out the data. Note: CDF_UINT4 data was converted to HAPI double.",
         "fill": "4294967295",
         "units": "0=Good",
         "x_label": "mms3_fgm_flag_srvy_l2",

@@ -1,0 +1,1287 @@
+{
+  "CDFFileInfo": {
+    "File": "solo_l2_swa-his-pha_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/solo_l2_swa-his-pha_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Acknowledgement": "Please acknowledge Chris J. Owen (SWA PI -- UCL MSSL) & Stefano Livi (HIS PI -- SwRI). NASA Contract NNG10EK25C.",
+    "Data_product": "pha>Pulse Height Analysis data for HIS instrument",
+    "Data_type": "L2>Level 2 Data",
+    "Data_version": " ",
+    "Descriptor": "SWA-HIS-PHA>Solar Wind Analyzer, Heavy Ion Sensor, Pulse Height Analyzed",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "File_naming_convention": "source_datatype_descriptor_yyyyMMdd",
+    "Generated_by": " ",
+    "Generation_date": " ",
+    "Instrument": "SWA-HIS>Solar Wind Analyzer-Heavy Ion Sensor",
+    "Instrument_type": "Particles (space)",
+    "LEVEL": "L2>Level 2 Data",
+    "Logical_file_id": " ",
+    "Logical_source": "solo_L2_swa-his-pha",
+    "Logical_source_description": "Solar Orbiter Level 2 Solar Wind Analyser Heavy Ion Sensor Pulse Height Analyzed",
+    "Mission_group": "Solar Orbiter",
+    "MODS": " ",
+    "OBS_ID": "SSWA_060A_000_000_WtCp_117",
+    "Parents": " ",
+    "PI_affiliation": "SWRI",
+    "PI_name": "S. Livi",
+    "Project": "SOLO>Solar Orbiter",
+    "Rules_of_use": "These Level 2 data require substantial processing for most applications.  Users are encouraged to use Level 3 data, which provide the most relevant data products for scientific research.  See Data Product Description Document for more information.  Contact SWA/HIS team for more information as needed.",
+    "Software_version": "01.01.00",
+    "SOOP_TYPE": "117",
+    "Source_name": "SOLO>Solar Orbiter",
+    "TARGET_CLASS": "Sun",
+    "TARGET_NAME": "interplanetary_medium",
+    "TARGET_REGION": "Solar Wind",
+    "TEXT": "Pulse Height Analysis data for HIS instrument in physical units. Some corrections for instrument characteristics and measurement techniques have been applied. Per Data Product Description Document, efficiency corrections have not been applied.\nIon Event (PHA) words. Individual ion event data, containing full information on incident angles (elevation and azimuth), E/q, TOF and SSD energy in digital and physical units. The resolution of this data product can be 30s or 300s. In Burst mode the resolution can be 4s but this can only be run on average 1% of the time due to telemetry constraints.\nUsage notes can be found via the SWA DOI at https://doi.org/10.5270/esa-ahypgn6.",
+    "TIME_MAX": "2022-01-01T23:59:59Z",
+    "TIME_MIN": "2022-01-01T00:00:27Z",
+    "Time_resolution": "4 sec, 30 sec, or 300 sec"
+  },
+  "CDFVariables": {
+    "EPOCH": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Default time",
+        "FIELDNAM": "EPOCH",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "EPOCH",
+        "MONOTON": "INCREASE",
+        "REFERENCE_POSITION": "Rotating Earth Geoid",
+        "SCALETYP": "linear",
+        "TIME_BASE": "J2000",
+        "TIME_SCALE": "Terrestrial Time",
+        "UNITS": "ns",
+        "VALIDMAX": "2049-12-31T23:59:59.999000000",
+        "VALIDMIN": "1990-01-01T00:00:00.000000000",
+        "VAR_NOTES": "Time in nanoseconds since January 1, 2000, 12:00:00.000. Converted using time correlation SCET via SPICE time kernel provided by the mission. Currently set to start of accumulation interval.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "EPOCH"
+      }
+    },
+    "SCET": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SCET",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "SCET",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "SCET",
+        "SCALEMAX": 8000000000000.0,
+        "SCALEMIN": 5000000000000.0,
+        "SCALETYP": "linear",
+        "UNITS": "milliseconds",
+        "VALIDMAX": 100000000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Mission elapsed time in spacecraft clock ticks.  Note:  These are effected by environmental conditions and do not match Earth-based seconds. Beginning of accumulation.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "milliseconds",
+        "x_LABLAXIS": "SCET"
+      }
+    },
+    "ACCUM_SECONDS": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Accumulation time",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "ACCUM_SECONDS",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E12.2",
+        "LABLAXIS": "ACCUM_SECONDS",
+        "SCALEMAX": 0.3,
+        "SCALEMIN": 0.003,
+        "SCALETYP": "linear",
+        "UNITS": "seconds",
+        "VALIDMAX": 0.3,
+        "VALIDMIN": 0.003,
+        "VAR_NOTES": "Accumulation time in seconds for each E/q and elevation step",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "seconds",
+        "x_LABLAXIS": "ACCUM_SECONDS"
+      }
+    },
+    "QUALITY_FLAG": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Quality flag",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "QUALITY_FLAG",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "QUALITY_FLAG",
+        "SCALEMAX": 3,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 2,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "0=good, 1=caution, 2=bad",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "QUALITY_FLAG"
+      }
+    },
+    "QUALITY_BITMASK": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Quality bitmask",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "QUALITY_BITMASK",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "QUALITY_BITMASK",
+        "SCALEMAX": 1100,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1023,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Not yet fully implemented. 0:No Issue, 1:Multi-SSD flag set, 2:No matching priority rate, 4:PHA outside priority rate range, 8:No matching count for PHA in priority range, 16:Bad Start MCP, 32:Uncalibrated TOF, 64:Priority Table Invalid, 128:Low Quality SSD Trim Callibration, 256:Peak on Edge of Priority Range, 512:Bad SSD Assignment.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "QUALITY_BITMASK"
+      }
+    },
+    "MODE": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Mode. 0: Normal Science, 1: Burst 1, 2: Burst 2, 3: Low Cadence.",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "MODE",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "MODE",
+        "SCALEMAX": 4,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 3,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Normal: Full E/q range in nominal 30 sec scan, Burst1: E/q range optimized for slower solar wind in nominal 4 sec scan, Burst2: E/q range optimized for faster solar wind in nominal 4 sec scan, Low Cadence: Full E/q range in nominal 300 sec scan.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "MODE"
+      }
+    },
+    "NUM_PHA": {
+      "VarDescription": {
+        "DataType": "CDF_UINT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 65534,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Number of PHA telemetered",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "NUM_PHA",
+        "FILLVAL": 65535,
+        "FORMAT": "I5",
+        "LABLAXIS": "NUM_PHA",
+        "SCALEMAX": 33000,
+        "SCALEMIN": 0,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 32767,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Number of PHA telemetered in this scan",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "NUM_PHA"
+      }
+    },
+    "PROTON_DECIMATION_LEVEL": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Proton decimation level",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "PROTON_DECIMATION_LEVEL",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "PROTON_DEC_LVL",
+        "SCALEMAX": 18,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 15,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Proton Decimation Level. One in 2^N protons are retained when decimation is enabled, where N is the proton decimation level.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "PROTON_DEC_LVL"
+      }
+    },
+    "ALPHA_DECIMATION_LEVEL": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Alpha decimation level",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "ALPHA_DECIMATION_LEVEL",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "ALPHA_DEC_LVL",
+        "SCALEMAX": 18,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 15,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Alpha Decimation Level. One in 2^N alphas are retained when decimation is enabled, where N is the alpha decimation level.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "ALPHA_DEC_LVL"
+      }
+    },
+    "PHA_EOQ_STEP": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "E/q index of each PHA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_EOQ_STEP",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "PHA_EOQ_STEP",
+        "SCALEMAX": 64,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 63,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "E/q index corresponding to the E/q - elevation pair in the HV Step table",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "PHA_EOQ_STEP"
+      }
+    },
+    "PHA_EOQ": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "E/q of each PHA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_EOQ",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "PHA_EOQ",
+        "SCALEMAX": 80.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV/e",
+        "VALIDMAX": 75.0,
+        "VALIDMIN": 0.5,
+        "VAR_NOTES": "E/q corresponding to the E/q - elevation pair in the HV Step table",
+        "VAR_TYPE": "data",
+        "x_UNITS": "keV/e",
+        "x_LABLAXIS": "PHA_EOQ"
+      }
+    },
+    "PHA_AZIMUTH_BIN": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Azimuth bin for each PHA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_AZIMUTH_BIN",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "PHA_AZIMUTH_BIN",
+        "SCALEMAX": 64,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 63,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Azimuth bin derived from the Start MCP position",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "PHA_AZIMUTH_BIN"
+      }
+    },
+    "PHA_AZIMUTH": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Azimuth for each PHA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_AZIMUTH",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "PHA_AZIMUTH",
+        "SCALEMAX": 70.0,
+        "SCALEMIN": -35.0,
+        "SCALETYP": "linear",
+        "UNITS": "Degrees",
+        "VALIDMAX": 88.0,
+        "VALIDMIN": -39.26,
+        "VAR_NOTES": "Azimuth angle derived from the Start MCP position",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "PHA_AZIMUTH"
+      }
+    },
+    "PHA_ELEVATION_BIN": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Elevation angle bin for each PHA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_ELEVATION_BIN",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "PHA_ELEVATION_BIN",
+        "SCALEMAX": 18,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 15,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Elevation angle bin corresponding to the E/q - elevation pair in the HV Step table. The elevation bins here reflect science order rather than the order the instrument collects data.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "PHA_ELEVATION_BIN"
+      }
+    },
+    "PHA_ELEVATION": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Elevation angle for each PHA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_ELEVATION",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "PHA_ELEVATION",
+        "SCALEMAX": 20.0,
+        "SCALEMIN": -25.0,
+        "SCALETYP": "linear",
+        "UNITS": "Degrees",
+        "VALIDMAX": 14.86,
+        "VALIDMIN": -27.62,
+        "VAR_NOTES": "Elevation angle corresponding to the E/q - elevation pair in the HV Step table. The elevation bins here reflect science order rather than the order the instrument collects data.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "PHA_ELEVATION"
+      }
+    },
+    "PHA_TOF_BIN": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF bin for each PHA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_TOF_BIN",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "PHA_TOF_BIN",
+        "SCALEMAX": 512,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 511,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Time-Of-Flight bin",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "PHA_TOF_BIN"
+      }
+    },
+    "PHA_TOF": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TOF for each PHA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_TOF",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "PHA_TOF",
+        "SCALEMAX": 350.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": "ns",
+        "VALIDMAX": 323.7,
+        "VALIDMIN": 1.764,
+        "VAR_NOTES": "Time-Of-Flight",
+        "VAR_TYPE": "data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "PHA_TOF"
+      }
+    },
+    "PHA_SSD_ENERGY_BIN": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SSD energy bin for each PHA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_SSD_ENERGY_BIN",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "PHA_SSD_ENERGY_BIN",
+        "SCALEMAX": 512,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 511,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Solid State Detector Energy Bin. Represents total ion energy after post-acceleration.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "PHA_SSD_ENERGY_BIN"
+      }
+    },
+    "PHA_SSD_ENERGY": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SSD energy for each PHA",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_SSD_ENERGY",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "PHA_SSD_ENERGY",
+        "SCALEMAX": 1000.0,
+        "SCALEMIN": -110.0,
+        "SCALETYP": "linear",
+        "UNITS": "keV",
+        "VALIDMAX": 977.9,
+        "VALIDMIN": -102.4,
+        "VAR_NOTES": "Solid State Detector Energy. Represents total ion energy after post-acceleration.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "keV",
+        "x_LABLAXIS": "PHA_SSD_ENERGY"
+      }
+    },
+    "PHA_DETECTOR_ID": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SSD ID",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_DETECTOR_ID",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "PHA_DETECTOR_ID",
+        "SCALEMAX": 32,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 31,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "ID of Solid State Detector on which ion was measured. Also contains azimuthal angle information, complementing that which is derived from the Start MCP.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "PHA_DETECTOR_ID"
+      }
+    },
+    "PHA_DETECTOR_ANGLE": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SSD angle",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_DETECTOR_ANGLE",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "PHA_DETECTOR_ANGLE",
+        "SCALEMAX": 70.0,
+        "SCALEMIN": -35.0,
+        "SCALETYP": "linear",
+        "UNITS": "Degrees",
+        "VALIDMAX": 66.6,
+        "VALIDMIN": -34.15,
+        "VAR_NOTES": "Angle of Solid State Detector on which ion was measured. Also contains azimuthal angle information, complementing that which is derived from the Start MCP.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "PHA_DETECTOR_ANGLE"
+      }
+    },
+    "PHA_DECIMATION_CLASSIFICATION": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Decimation classification",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_DECIMATION_CLASSIFICATION",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "PHA_DECIMATION_CLASSIFICATION",
+        "SCALEMAX": 4,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 3,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Decimation range, if any, into which ion TOF is classified",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "PHA_DECIMATION_CLASSIFICATION"
+      }
+    },
+    "PHA_PRIORITIZATION_RANGE": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Prioritization range",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_PRIORITIZATION_RANGE",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "PHA_PRIORITIZATION_RANGE",
+        "SCALEMAX": 8,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 7,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "The prioritization range that the ion is classified into according to its E/q, SSD energy and TOF bins. 0: double coincidence PHAs (pickup ions), 1: Fe, 2: Mg, Si, S, 3: O6+, 4: CNO  (except O6+), 5: Alphas, 6: Protons, 7: Error (low or unrealistically long TOFs)",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "PHA_PRIORITIZATION_RANGE"
+      }
+    },
+    "PHA_MULTI_SSD": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Multi-SSD flag",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_MULTI_SSD",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "PHA_MULTI_SSD",
+        "SCALEMAX": 2,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 1,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Indicates signal on multiple SSDs during ion measurement",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "PHA_MULTI_SSD"
+      }
+    },
+    "PHA_PRIORITY_WEIGHT": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PHA priority weight",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_PRI_WEIGHT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "PHA_PRI_WEIGHT",
+        "SCALEMAX": 8500000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 8126000.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "The weight of this PHA word after correcting for the effects of sampling for inclusion in telemetry. Should be used for all instead of 1 whenever PHA words are histogrammed. 0 = There are no counts in the associated priority rate. -1 = The priority weight cannot be determined due to inadequate information in the priority rate data.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "PHA_PRI_WEIGHT"
+      }
+    },
+    "PHA_PRIORITY_WEIGHT_DELTA": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PHA priority weight delta",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PHA_PRI_WEIGHT_DELTA",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "PHA_PRI_WEIGHT_DELTA",
+        "SCALEMAX": 300000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 262100.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "The uncertainty of the priority weight as a result of compression in telemetry, where the lower bound in the weight is the priority weight minus the delta and the upper bound in the weight is the priority weight plus the delta.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "PHA_PRI_WEIGHT_DELTA"
+      }
+    },
+    "PRIORITY_VERSION": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Priority Version",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "PRIORITY_VERSION",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "PRIORITY_VERSION",
+        "SCALEMAX": 128,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 127,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Version number of the priority boundaries.  These define the 8 priorities, numbered 1-7, used to prioritize which PHAs are downlinked.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "PRIORITY_VERSION"
+      }
+    },
+    "SPECIES_BOX_VERSION": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Species Box Version",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "SPECIES_BOX_VERSION",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "SPECIES_VERSION",
+        "SCALEMAX": 128,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 127,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Version number of the species boxes.  These define 32 boxes in E/Q - TOF - E space which are set to the locations of counts for individual ion species.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "SPECIES_VERSION"
+      }
+    },
+    "SSD_THRESHOLD_VERSION": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 254,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "SSD Threshold Version",
+        "DEPEND_0": "EPOCH",
+        "FIELDNAM": "SSD_THRESHOLD_VERSION",
+        "FILLVAL": -32768,
+        "FORMAT": "I6",
+        "LABLAXIS": "SSD_THRESHOLD_VERSION",
+        "SCALEMAX": 128,
+        "SCALEMIN": -1,
+        "SCALETYP": "linear",
+        "UNITS": " ",
+        "VALIDMAX": 127,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "Version number of the set of SSD thresholds (1 master and 30 trim) used to collect the data. These settings affect the sensitivity of HIS and the noise allowed into the onboard event processing through the SSD subsystem.  Version numbers are given only to sets of values used for science data collection, not for testing.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "SSD_THRESHOLD_VERSION"
+      }
+    },
+    "PA_HVPS_SET_POINT": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "PA HVPS set point",
+        "DEPEND_0": "EPOCH",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "PA_HVPS_SET_POINT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "PA_HVPS_SET_POINT",
+        "SCALEMAX": 0.0,
+        "SCALEMIN": -32.0,
+        "SCALETYP": "linear",
+        "UNITS": "kV",
+        "VALIDMAX": 0.0,
+        "VALIDMIN": -31.0,
+        "VAR_NOTES": "This is the voltage setting for the PA HVPS, e.g. -10 kV, -25 kV.  Note:  It is not the reading of the on-board voltage monitor for this supply. Valid [0, -30 kV].",
+        "VAR_TYPE": "data",
+        "x_UNITS": "kV",
+        "x_LABLAXIS": "PA_HVPS_SET_POINT"
+      }
+    },
+    "EOQ_DELTA": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          64
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "E/q step delta",
+        "FIELDNAM": "EOQ",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "EOQ_DELTA",
+        "SCALEMAX": 80.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "keV/e",
+        "VALIDMAX": 80.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Delta is from the midpoint in EOQ variable. Lower bound is EOQ value minus EOQ_DELTA, and upper bound is EOQ value plus EOQ_DELTA.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "keV/e",
+        "x_LABLAXIS": "EOQ_DELTA"
+      },
+      "VarData": [
+        0.02,
+        0.02166,
+        0.02345,
+        0.02539,
+        0.02749,
+        0.02977,
+        0.03223,
+        0.0349,
+        0.03779,
+        0.04092,
+        0.0443,
+        0.04797,
+        0.05194,
+        0.05624,
+        0.0609,
+        0.06594,
+        0.0714,
+        0.07731,
+        0.08371,
+        0.09064,
+        0.09814,
+        0.1063,
+        0.1151,
+        0.1246,
+        0.1349,
+        0.1461,
+        0.1582,
+        0.1713,
+        0.1854,
+        0.2008,
+        0.2174,
+        0.2354,
+        0.2549,
+        0.276,
+        0.2988,
+        0.3236,
+        0.3504,
+        0.3794,
+        0.4108,
+        0.4448,
+        0.4816,
+        0.5215,
+        0.5646,
+        0.6114,
+        0.662,
+        0.7168,
+        0.7761,
+        0.8404,
+        0.9099,
+        0.9852,
+        1.067,
+        1.155,
+        1.251,
+        1.354,
+        1.466,
+        1.588,
+        1.719,
+        1.862,
+        2.016,
+        2.183,
+        2.363,
+        2.559,
+        2.771,
+        3.0
+      ]
+    },
+    "EOQ_DELTA_LABELS": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          64
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 10,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "E/q Delta labels",
+        "FIELDNAM": "EOQ_DELTA_LABELS",
+        "FORMAT": "A10",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        " 2.000E-02",
+        " 2.166E-02",
+        " 2.345E-02",
+        " 2.539E-02",
+        " 2.749E-02",
+        " 2.977E-02",
+        " 3.223E-02",
+        " 3.490E-02",
+        " 3.779E-02",
+        " 4.092E-02",
+        " 4.430E-02",
+        " 4.797E-02",
+        " 5.194E-02",
+        " 5.624E-02",
+        " 6.090E-02",
+        " 6.594E-02",
+        " 7.140E-02",
+        " 7.731E-02",
+        " 8.371E-02",
+        " 9.064E-02",
+        " 9.814E-02",
+        " 1.063E-01",
+        " 1.151E-01",
+        " 1.246E-01",
+        " 1.349E-01",
+        " 1.461E-01",
+        " 1.582E-01",
+        " 1.713E-01",
+        " 1.854E-01",
+        " 2.008E-01",
+        " 2.174E-01",
+        " 2.354E-01",
+        " 2.549E-01",
+        " 2.760E-01",
+        " 2.988E-01",
+        " 3.236E-01",
+        " 3.504E-01",
+        " 3.794E-01",
+        " 4.108E-01",
+        " 4.448E-01",
+        " 4.816E-01",
+        " 5.215E-01",
+        " 5.646E-01",
+        " 6.114E-01",
+        " 6.620E-01",
+        " 7.168E-01",
+        " 7.761E-01",
+        " 8.404E-01",
+        " 9.099E-01",
+        " 9.852E-01",
+        " 1.067E+00",
+        " 1.155E+00",
+        " 1.251E+00",
+        " 1.354E+00",
+        " 1.466E+00",
+        " 1.588E+00",
+        " 1.719E+00",
+        " 1.862E+00",
+        " 2.016E+00",
+        " 2.183E+00",
+        " 2.363E+00",
+        " 2.559E+00",
+        " 2.771E+00",
+        " 3.000E+00"
+      ]
+    },
+    "ELEVATION_DELTA": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Elevation step delta",
+        "FIELDNAM": "ELEVATION_DELTA",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "ELEVATION_DELTA",
+        "SCALEMAX": 20.0,
+        "SCALEMIN": -25.0,
+        "SCALETYP": "linear",
+        "UNITS": "Degrees",
+        "VALIDMAX": 20.0,
+        "VALIDMIN": -25.0,
+        "VAR_NOTES": "Delta is from the midpoint in ELEVATION variable. Lower bound is ELEVATION value minus ELEVATION_DELTA, and upper bound is ELEVATION value plus ELEVATION_DELTA. These values are only valid over a limited E/q range, 0-TBD keV/e. These are based on current calibration, which may be updated in the future.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "ELEVATION_DELTA"
+      },
+      "VarData": [
+        0.47,
+        1.725,
+        1.639,
+        1.32,
+        1.159,
+        1.126,
+        1.135,
+        1.121,
+        1.15,
+        1.139,
+        1.1,
+        1.106,
+        1.298,
+        1.474,
+        1.617,
+        1.844
+      ]
+    },
+    "ELEVATION_DELTA_LABELS": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          16
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 10,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Elevation delta labels",
+        "FIELDNAM": "ELEVATION_DELTA_LABELS",
+        "FORMAT": "A10",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        " 4.700E-01",
+        " 1.725E+00",
+        " 1.639E+00",
+        " 1.320E+00",
+        " 1.159E+00",
+        " 1.126E+00",
+        " 1.135E+00",
+        " 1.121E+00",
+        " 1.150E+00",
+        " 1.139E+00",
+        " 1.100E+00",
+        " 1.106E+00",
+        " 1.298E+00",
+        " 1.474E+00",
+        " 1.617E+00",
+        " 1.844E+00"
+      ]
+    },
+    "AZIMUTH_DELTA": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_FLOAT",
+        "DimSizes": [
+          32
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "NumWrittenRecords": 1,
+        "PadValue": 254.0,
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Azimuth delta",
+        "FIELDNAM": "AZIMUTH_DELTA",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.3",
+        "LABLAXIS": "AZIMUTH_DELTA",
+        "SCALEMAX": 70.0,
+        "SCALEMIN": -35.0,
+        "SCALETYP": "linear",
+        "UNITS": "Degrees",
+        "VALIDMAX": 67.0,
+        "VALIDMIN": -33.0,
+        "VAR_NOTES": "Delta is from the midpoint in the AZIMUTH variable. Lower bound is AZIMUTH value minus AZIMUTH_DELTA, and upper bound is AZIMUTH value plus AZIMUTH_DELTA.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Degrees",
+        "x_LABLAXIS": "AZIMUTH_DELTA"
+      },
+      "VarData": [
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5
+      ]
+    },
+    "AZIMUTH_DELTA_LABELS": {
+      "VarDescription": {
+        "BlockingFactor": 1,
+        "DataType": "CDF_CHAR",
+        "DimSizes": [
+          32
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 10,
+        "NumWrittenRecords": 1,
+        "PadValue": " ",
+        "RecVariance": "NOVARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Azimuth delta labels",
+        "FIELDNAM": "AZIMUTH_DELTA_LABELS",
+        "FORMAT": "A10",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null
+      },
+      "VarData": [
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00",
+        " 1.500E+00"
+      ]
+    }
+  }
+}

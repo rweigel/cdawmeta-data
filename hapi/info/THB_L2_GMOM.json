@@ -4,9 +4,9 @@
     "title": "THEMIS-B:  Solid State Telescope (ESA+SST): Energy Flux spectrogram:  Data includes: Electron/Ion Ground-Calculated Fluxes (ions: 5 eV - 4 MeV,electrons: 6 eV - 700 keV) - V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
       "startDate": "2007-03-09T00:00:00Z",
-      "stopDate": "2025-04-30T00:00:00Z",
-      "sampleStartDate": "2025-04-28T00:00:00Z",
-      "sampleStopDate": "2025-04-29T00:00:00Z",
+      "stopDate": "2025-09-15T00:00:00Z",
+      "sampleStartDate": "2025-09-12T00:00:00Z",
+      "sampleStopDate": "2025-09-13T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THB_L2_GMOM",
       "contact": "V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -19,7 +19,13 @@
           "fill": null,
           "x_description": "thb_ptiff_epoch",
           "x_cdf_NAME": "thb_ptiff_epoch",
-          "x_cdf_DataType": "CDF_EPOCH"
+          "x_cdf_DataType": "CDF_EPOCH",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "comp_themis_epoch",
+          "x_cdf_COMPONENTS": [
+            "thb_ptiff_epoch0",
+            "thb_ptiff_time"
+          ]
         },
         {
           "name": "thb_ptiff_data_quality",
@@ -39,7 +45,7 @@
           "name": "thb_ptiff_densityQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "(Good data only) ESA+SST Full+Full Mode, Ion Density. This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_density', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "(Good data only) ESA+SST Full+Full Mode, Ion Density ",
           "fill": "NaN",
           "units": "cm^-3",
           "x_label": "N_ion Full-Full ESA-SST-B",
@@ -60,7 +66,7 @@
           "name": "thb_ptiff_avgtempQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----(Good Data Only)Ion Average Temperature. This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_avgtemp', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----(Good Data Only)Ion Average Temperature ",
           "fill": "NaN",
           "units": "eV",
           "x_label": "T_ion Full ESA-SST-B",
@@ -81,7 +87,7 @@
           "name": "thb_ptiff_vthermalQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----(Good Data Only)Ion Thermal Velocity. This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_vthermal', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----(Good Data Only)Ion Thermal Velocity",
           "fill": "NaN",
           "units": "km/s",
           "x_label": "Vth_ion Full ESA-SST-B",
@@ -102,7 +108,7 @@
           "name": "thb_ptiff_sc_potQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----SC Potential (Same time array as Full Ion ESA-SST data) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_sc_pot', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----SC Potential (Same time array as Full Ion ESA-SST data) (Good Data Only)",
           "fill": "NaN",
           "units": "V",
           "x_label": "Scpot_ion Full ESA-SST-B",
@@ -123,7 +129,7 @@
           "name": "thb_ptiff_en_efluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Energy Flux spectrogram(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_en_eflux', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Energy Flux spectrogram(Good Data Only)",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV)",
           "x_label": "Eflux_ion Full ESA-SST-B",
@@ -147,7 +153,7 @@
           "name": "thb_ptiff_t3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_t3', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -192,7 +198,7 @@
           "name": "thb_ptiff_magt3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_magt3', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA) (Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -237,7 +243,7 @@
           "name": "thb_ptiff_ptensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Pressure Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_ptens', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Pressure Tensor(Good Data Only)",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -291,7 +297,7 @@
           "name": "thb_ptiff_mftensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Momentum Flux Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_mftens', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Momentum Flux Tensor(Good Data Only)",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -345,7 +351,7 @@
           "name": "thb_ptiff_fluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Particle Flux Vector(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_flux', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Particle Flux Vector(Good Data Only)",
           "fill": "NaN",
           "units": "#/(cm^2-s)",
           "x_label": [
@@ -390,7 +396,7 @@
           "name": "thb_ptiff_symmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL)) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_symm', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL)) (Good Data Only)",
           "fill": "NaN",
           "units": "None",
           "x_label": [
@@ -435,7 +441,7 @@
           "name": "thb_ptiff_symm_angQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Symmetry Angle (between symmetry direction and B)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_symm_ang', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Symmetry Angle (between symmetry direction and B)(Good Data Only)",
           "fill": "NaN",
           "units": "degrees",
           "x_label": "symm_ang_ion Full ESA-SST-B",
@@ -456,7 +462,7 @@
           "name": "thb_ptiff_magfQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Magnetic Field Vector in DSL (Same time array as Full Ion ESA-SST data) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_magf', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Magnetic Field Vector in DSL (Same time array as Full Ion ESA-SST data) (Good Data Only)",
           "fill": "NaN",
           "units": "nT",
           "x_label": [
@@ -501,7 +507,7 @@
           "name": "thb_ptiff_velocity_dslQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in DSL(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_velocity_dsl', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in DSL(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -546,7 +552,7 @@
           "name": "thb_ptiff_velocity_gseQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in GSE(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_velocity_gse', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in GSE(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -591,7 +597,7 @@
           "name": "thb_ptiff_velocity_gsmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in GSM(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptiff_velocity_gsm', 'thb_ptiff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in GSM(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -1157,9 +1163,9 @@
     "title": "THEMIS-B:  Solid State Telescope (ESA+SST): Energy Flux spectrogram:  Data includes: Electron/Ion Ground-Calculated Fluxes (ions: 5 eV - 4 MeV,electrons: 6 eV - 700 keV) - V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
       "startDate": "2007-03-09T00:00:00Z",
-      "stopDate": "2025-04-30T00:00:00Z",
-      "sampleStartDate": "2025-04-28T00:00:00Z",
-      "sampleStopDate": "2025-04-29T00:00:00Z",
+      "stopDate": "2025-09-15T00:00:00Z",
+      "sampleStartDate": "2025-09-12T00:00:00Z",
+      "sampleStopDate": "2025-09-13T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THB_L2_GMOM",
       "contact": "V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -1172,7 +1178,13 @@
           "fill": null,
           "x_description": "thb_pteff_epoch",
           "x_cdf_NAME": "thb_pteff_epoch",
-          "x_cdf_DataType": "CDF_EPOCH"
+          "x_cdf_DataType": "CDF_EPOCH",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "comp_themis_epoch",
+          "x_cdf_COMPONENTS": [
+            "thb_pteff_epoch0",
+            "thb_pteff_time"
+          ]
         },
         {
           "name": "thb_pteff_data_quality",
@@ -1192,7 +1204,7 @@
           "name": "thb_pteff_densityQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "(Good data only) ESA+SST Full+Full Mode, Elec Density. This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_density', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "(Good data only) ESA+SST Full+Full Mode, Elec Density ",
           "fill": "NaN",
           "units": "cm^-3",
           "x_label": "N_elec Full-Full ESA-SST-B",
@@ -1213,7 +1225,7 @@
           "name": "thb_pteff_avgtempQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----(Good Data Only)Elec Average Temperature. This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_avgtemp', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----(Good Data Only)Elec Average Temperature ",
           "fill": "NaN",
           "units": "eV",
           "x_label": "T_elec Full ESA-SST-B",
@@ -1234,7 +1246,7 @@
           "name": "thb_pteff_vthermalQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----(Good Data Only)Elec Thermal Velocity. This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_vthermal', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----(Good Data Only)Elec Thermal Velocity",
           "fill": "NaN",
           "units": "km/s",
           "x_label": "Vth_elec Full ESA-SST-B",
@@ -1255,7 +1267,7 @@
           "name": "thb_pteff_sc_potQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----SC Potential (Same time array as Full Elec ESA-SST data) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_sc_pot', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----SC Potential (Same time array as Full Elec ESA-SST data) (Good Data Only)",
           "fill": "NaN",
           "units": "V",
           "x_label": "Scpot_elec Full ESA-SST-B",
@@ -1276,7 +1288,7 @@
           "name": "thb_pteff_en_efluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Energy Flux spectrogram(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_en_eflux', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Energy Flux spectrogram(Good Data Only)",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV)",
           "x_label": "Eflux_elec Full ESA-SST-B",
@@ -1300,7 +1312,7 @@
           "name": "thb_pteff_t3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_t3', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -1345,7 +1357,7 @@
           "name": "thb_pteff_magt3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_magt3', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA) (Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -1390,7 +1402,7 @@
           "name": "thb_pteff_ptensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Pressure Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_ptens', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Pressure Tensor(Good Data Only)",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -1444,7 +1456,7 @@
           "name": "thb_pteff_mftensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Momentum Flux Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_mftens', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Momentum Flux Tensor(Good Data Only)",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -1498,7 +1510,7 @@
           "name": "thb_pteff_fluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Particle Flux Vector(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_flux', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Particle Flux Vector(Good Data Only)",
           "fill": "NaN",
           "units": "#/(cm^2-s)",
           "x_label": [
@@ -1543,7 +1555,7 @@
           "name": "thb_pteff_symmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Symmetry Vector (direction of pressure tensor symmetry (DSL)) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_symm', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Symmetry Vector (direction of pressure tensor symmetry (DSL)) (Good Data Only)",
           "fill": "NaN",
           "units": "None",
           "x_label": [
@@ -1588,7 +1600,7 @@
           "name": "thb_pteff_symm_angQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Symmetry Angle (between symmetry direction and B)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_symm_ang', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Symmetry Angle (between symmetry direction and B)(Good Data Only)",
           "fill": "NaN",
           "units": "degrees",
           "x_label": "symm_ang_elec Full ESA-SST-B",
@@ -1609,7 +1621,7 @@
           "name": "thb_pteff_magfQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Magnetic Field Vector in DSL (Same time array as Full Elec ESA-SST data) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_magf', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Magnetic Field Vector in DSL (Same time array as Full Elec ESA-SST data) (Good Data Only)",
           "fill": "NaN",
           "units": "nT",
           "x_label": [
@@ -1654,7 +1666,7 @@
           "name": "thb_pteff_velocity_dslQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Velocity Vector in DSL(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_velocity_dsl', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Velocity Vector in DSL(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -1699,7 +1711,7 @@
           "name": "thb_pteff_velocity_gseQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Velocity Vector in GSE(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_velocity_gse', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Velocity Vector in GSE(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -1744,7 +1756,7 @@
           "name": "thb_pteff_velocity_gsmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Velocity Vector in GSM(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pteff_velocity_gsm', 'thb_pteff_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Velocity Vector in GSM(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -2310,9 +2322,9 @@
     "title": "THEMIS-B:  Solid State Telescope (ESA+SST): Energy Flux spectrogram:  Data includes: Electron/Ion Ground-Calculated Fluxes (ions: 5 eV - 4 MeV,electrons: 6 eV - 700 keV) - V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
       "startDate": "2007-03-09T00:00:00Z",
-      "stopDate": "2025-04-30T00:00:00Z",
-      "sampleStartDate": "2025-04-28T00:00:00Z",
-      "sampleStopDate": "2025-04-29T00:00:00Z",
+      "stopDate": "2025-09-15T00:00:00Z",
+      "sampleStartDate": "2025-09-12T00:00:00Z",
+      "sampleStopDate": "2025-09-13T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THB_L2_GMOM",
       "contact": "V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -2325,7 +2337,13 @@
           "fill": null,
           "x_description": "thb_ptirf_epoch",
           "x_cdf_NAME": "thb_ptirf_epoch",
-          "x_cdf_DataType": "CDF_EPOCH"
+          "x_cdf_DataType": "CDF_EPOCH",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "comp_themis_epoch",
+          "x_cdf_COMPONENTS": [
+            "thb_ptirf_epoch0",
+            "thb_ptirf_time"
+          ]
         },
         {
           "name": "thb_ptirf_data_quality",
@@ -2345,7 +2363,7 @@
           "name": "thb_ptirf_densityQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "(Good Data Only) ESA Reduced (Low Angular Res., 3-s Time Res.) SST Full(High Angular Res, Variable Time Res) Mode, Ion Density. This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_density', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "(Good Data Only) ESA Reduced (Low Angular Res., 3-s Time Res.) SST Full(High Angular Res, Variable Time Res) Mode, Ion Density",
           "fill": "NaN",
           "units": "cm^-3",
           "x_label": "N_ion Rdcd-Full ESA-SST-B",
@@ -2366,7 +2384,7 @@
           "name": "thb_ptirf_avgtempQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Average Temperature(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_avgtemp', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Average Temperature(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": "T_ion Rdcd-Full ESA-SST-B",
@@ -2387,7 +2405,7 @@
           "name": "thb_ptirf_vthermalQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Thermal Velocity(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_vthermal', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Thermal Velocity(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": "Vth_ion Rdcd-Full ESA-SST-B",
@@ -2408,7 +2426,7 @@
           "name": "thb_ptirf_sc_potQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----SC Potential (Same time array as Reduced-Full Ion ESA-SST data) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_sc_pot', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----SC Potential (Same time array as Reduced-Full Ion ESA-SST data) (Good Data Only)",
           "fill": "NaN",
           "units": "V",
           "x_label": "Scpot_ion Rdcd-Full ESA-SST-B",
@@ -2429,7 +2447,7 @@
           "name": "thb_ptirf_en_efluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Energy Flux spectrogram(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_en_eflux', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Energy Flux spectrogram(Good Data Only)",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV)",
           "x_label": "Eflux_ion Rdcd-Full ESA-SST-B",
@@ -2453,7 +2471,7 @@
           "name": "thb_ptirf_t3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_t3', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -2498,7 +2516,7 @@
           "name": "thb_ptirf_magt3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_magt3', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -2543,7 +2561,7 @@
           "name": "thb_ptirf_ptensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Pressure Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_ptens', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Pressure Tensor(Good Data Only)",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -2597,7 +2615,7 @@
           "name": "thb_ptirf_mftensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Momentum Flux Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_mftens', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Momentum Flux Tensor(Good Data Only)",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -2651,7 +2669,7 @@
           "name": "thb_ptirf_fluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Particle Flux Vector(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_flux', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Particle Flux Vector(Good Data Only)",
           "fill": "NaN",
           "units": "#/(cm^2-s)",
           "x_label": [
@@ -2696,7 +2714,7 @@
           "name": "thb_ptirf_symmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_symm', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))(Good Data Only) ",
           "fill": "NaN",
           "units": "None",
           "x_label": [
@@ -2741,7 +2759,7 @@
           "name": "thb_ptirf_symm_angQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Symmetry Angle (between symmetry direction and B)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_symm_ang', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Symmetry Angle (between symmetry direction and B)(Good Data Only)",
           "fill": "NaN",
           "units": "degrees",
           "x_label": "symm_ang_ion Rdcd-Full ESA-SST-B",
@@ -2762,7 +2780,7 @@
           "name": "thb_ptirf_magfQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced-Full Ion ESA-SST data)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_magf', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced-Full Ion ESA-SST data)(Good Data Only)",
           "fill": "NaN",
           "units": "nT",
           "x_label": [
@@ -2807,7 +2825,7 @@
           "name": "thb_ptirf_velocity_dslQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in DSL(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_velocity_dsl', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in DSL(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -2852,7 +2870,7 @@
           "name": "thb_ptirf_velocity_gseQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in GSE(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_velocity_gse', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in GSE(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -2897,7 +2915,7 @@
           "name": "thb_ptirf_velocity_gsmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in GSM(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptirf_velocity_gsm', 'thb_ptirf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in GSM(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -3463,9 +3481,9 @@
     "title": "THEMIS-B:  Solid State Telescope (ESA+SST): Energy Flux spectrogram:  Data includes: Electron/Ion Ground-Calculated Fluxes (ions: 5 eV - 4 MeV,electrons: 6 eV - 700 keV) - V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
       "startDate": "2007-03-09T00:00:00Z",
-      "stopDate": "2025-04-30T00:00:00Z",
-      "sampleStartDate": "2025-04-28T00:00:00Z",
-      "sampleStopDate": "2025-04-29T00:00:00Z",
+      "stopDate": "2025-09-15T00:00:00Z",
+      "sampleStartDate": "2025-09-12T00:00:00Z",
+      "sampleStopDate": "2025-09-13T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THB_L2_GMOM",
       "contact": "V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -3478,7 +3496,13 @@
           "fill": null,
           "x_description": "thb_pterf_epoch",
           "x_cdf_NAME": "thb_pterf_epoch",
-          "x_cdf_DataType": "CDF_EPOCH"
+          "x_cdf_DataType": "CDF_EPOCH",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "comp_themis_epoch",
+          "x_cdf_COMPONENTS": [
+            "thb_pterf_epoch0",
+            "thb_pterf_time"
+          ]
         },
         {
           "name": "thb_pterf_data_quality",
@@ -3498,7 +3522,7 @@
           "name": "thb_pterf_densityQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "(Good Data Only) ESA Reduced (Low Angular Res., 3-s Time Res.) SST Full(High Angular Res, Variable Time Res) Mode, Elec Density. This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_density', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "(Good Data Only) ESA Reduced (Low Angular Res., 3-s Time Res.) SST Full(High Angular Res, Variable Time Res) Mode, Elec Density",
           "fill": "NaN",
           "units": "cm^-3",
           "x_label": "N_elec Rdcd-Full ESA-SST-B",
@@ -3519,7 +3543,7 @@
           "name": "thb_pterf_avgtempQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Average Temperature(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_avgtemp', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Average Temperature(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": "T_elec Rdcd-Full ESA-SST-B",
@@ -3540,7 +3564,7 @@
           "name": "thb_pterf_vthermalQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Thermal Velocity(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_vthermal', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Thermal Velocity(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": "Vth_elec Rdcd-Full ESA-SST-B",
@@ -3561,7 +3585,7 @@
           "name": "thb_pterf_sc_potQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----SC Potential (Same time array as Reduced-Full Elec ESA-SST data) (Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_sc_pot', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----SC Potential (Same time array as Reduced-Full Elec ESA-SST data) (Good Data Only)",
           "fill": "NaN",
           "units": "V",
           "x_label": "Scpot_elec Rdcd-Full ESA-SST-B",
@@ -3582,7 +3606,7 @@
           "name": "thb_pterf_en_efluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Energy Flux spectrogram(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_en_eflux', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Energy Flux spectrogram(Good Data Only)",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV) ",
           "x_label": "Eflux_elec Rdcd-Full ESA-SST-B",
@@ -3606,7 +3630,7 @@
           "name": "thb_pterf_t3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_t3', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -3651,7 +3675,7 @@
           "name": "thb_pterf_magt3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_magt3', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -3696,7 +3720,7 @@
           "name": "thb_pterf_ptensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Pressure Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_ptens', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Pressure Tensor(Good Data Only)",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -3750,7 +3774,7 @@
           "name": "thb_pterf_mftensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Momentum Flux Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_mftens', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Momentum Flux Tensor(Good Data Only)",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -3804,7 +3828,7 @@
           "name": "thb_pterf_fluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Particle Flux Vector(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_flux', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Particle Flux Vector(Good Data Only)",
           "fill": "NaN",
           "units": "#/(cm^2-s)",
           "x_label": [
@@ -3849,7 +3873,7 @@
           "name": "thb_pterf_symmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Symmetry Vector (direction of pressure tensor symmetry (DSL))(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_symm', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Symmetry Vector (direction of pressure tensor symmetry (DSL))(Good Data Only) ",
           "fill": "NaN",
           "units": "None",
           "x_label": [
@@ -3894,7 +3918,7 @@
           "name": "thb_pterf_symm_angQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Symmetry Angle (between symmetry direction and B)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_symm_ang', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Symmetry Angle (between symmetry direction and B)(Good Data Only)",
           "fill": "NaN",
           "units": "degrees",
           "x_label": "symm_ang_elec Rdcd-Full ESA-SST-B",
@@ -3915,7 +3939,7 @@
           "name": "thb_pterf_magfQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced-Full Elec ESA-SST data)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_magf', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced-Full Elec ESA-SST data)(Good Data Only)",
           "fill": "NaN",
           "units": "nT",
           "x_label": [
@@ -3960,7 +3984,7 @@
           "name": "thb_pterf_velocity_dslQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Velocity Vector in DSL(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_velocity_dsl', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Velocity Vector in DSL(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -4005,7 +4029,7 @@
           "name": "thb_pterf_velocity_gseQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Velocity Vector in GSE(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_velocity_gse', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Velocity Vector in GSE(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -4050,7 +4074,7 @@
           "name": "thb_pterf_velocity_gsmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Velocity Vector in GSM(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_pterf_velocity_gsm', 'thb_pterf_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Velocity Vector in GSM(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -4616,9 +4640,9 @@
     "title": "THEMIS-B:  Solid State Telescope (ESA+SST): Energy Flux spectrogram:  Data includes: Electron/Ion Ground-Calculated Fluxes (ions: 5 eV - 4 MeV,electrons: 6 eV - 700 keV) - V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
       "startDate": "2007-03-09T00:00:00Z",
-      "stopDate": "2025-04-30T00:00:00Z",
-      "sampleStartDate": "2025-04-28T00:00:00Z",
-      "sampleStopDate": "2025-04-29T00:00:00Z",
+      "stopDate": "2025-09-15T00:00:00Z",
+      "sampleStartDate": "2025-09-12T00:00:00Z",
+      "sampleStopDate": "2025-09-13T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THB_L2_GMOM",
       "contact": "V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -4631,7 +4655,13 @@
           "fill": null,
           "x_description": "thb_ptibb_epoch",
           "x_cdf_NAME": "thb_ptibb_epoch",
-          "x_cdf_DataType": "CDF_EPOCH"
+          "x_cdf_DataType": "CDF_EPOCH",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "comp_themis_epoch",
+          "x_cdf_COMPONENTS": [
+            "thb_ptibb_epoch0",
+            "thb_ptibb_time"
+          ]
         },
         {
           "name": "thb_ptibb_data_quality",
@@ -4651,7 +4681,7 @@
           "name": "thb_ptibb_densityQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "(Good Data Only) ESA-SST Burst (High Time and Angular Resolution) Mode, Ion Density. This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_density', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "(Good Data Only) ESA-SST Burst (High Time and Angular Resolution) Mode, Ion Density",
           "fill": "NaN",
           "units": "cm^-3",
           "x_label": "N_ion Brst ESA-SST-B",
@@ -4672,7 +4702,7 @@
           "name": "thb_ptibb_avgtempQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Average Temperature(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_avgtemp', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Average Temperature(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": "T_ion Brst ESA-SST-B",
@@ -4693,7 +4723,7 @@
           "name": "thb_ptibb_vthermalQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Thermal Velocity(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_vthermal', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Thermal Velocity(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": "Vth_ion Brst ESA-SST-B",
@@ -4714,7 +4744,7 @@
           "name": "thb_ptibb_sc_potQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----SC Potential (Same time array as Burst Ion ESA-SST data)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_sc_pot', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----SC Potential (Same time array as Burst Ion ESA-SST data)(Good Data Only)",
           "fill": "NaN",
           "units": "V",
           "x_label": "Scpot_ion Brst ESA-SST-B",
@@ -4735,7 +4765,7 @@
           "name": "thb_ptibb_en_efluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Energy Flux spectrogram(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_en_eflux', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Energy Flux spectrogram(Good Data Only)",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV)",
           "x_label": "Eflux_ion Brst ESA-SST-B",
@@ -4759,7 +4789,7 @@
           "name": "thb_ptibb_t3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_t3', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -4804,7 +4834,7 @@
           "name": "thb_ptibb_magt3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_magt3', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -4849,7 +4879,7 @@
           "name": "thb_ptibb_ptensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Pressure Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_ptens', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Pressure Tensor(Good Data Only)",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -4903,7 +4933,7 @@
           "name": "thb_ptibb_mftensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Momentum Flux Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_mftens', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Momentum Flux Tensor(Good Data Only)",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -4957,7 +4987,7 @@
           "name": "thb_ptibb_fluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Particle Flux Vector(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_flux', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Particle Flux Vector(Good Data Only)",
           "fill": "NaN",
           "units": "#/(cm^2-s)",
           "x_label": [
@@ -5002,7 +5032,7 @@
           "name": "thb_ptibb_symmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_symm', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))(Good Data Only) ",
           "fill": "NaN",
           "units": "None",
           "x_label": [
@@ -5047,7 +5077,7 @@
           "name": "thb_ptibb_symm_angQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Symmetry Angle (between symmetry direction and B)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_symm_ang', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Symmetry Angle (between symmetry direction and B)(Good Data Only)",
           "fill": "NaN",
           "units": "degrees",
           "x_label": "symm_ang_ion Brst ESA-SST-B",
@@ -5068,7 +5098,7 @@
           "name": "thb_ptibb_magfQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Ion ESA-SST data)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_magf', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Ion ESA-SST data)(Good Data Only)",
           "fill": "NaN",
           "units": "nT",
           "x_label": [
@@ -5113,7 +5143,7 @@
           "name": "thb_ptibb_velocity_dslQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in DSL(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_velocity_dsl', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in DSL(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -5158,7 +5188,7 @@
           "name": "thb_ptibb_velocity_gseQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in GSE(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_velocity_gse', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in GSE(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -5203,7 +5233,7 @@
           "name": "thb_ptibb_velocity_gsmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Ion Velocity Vector in GSM(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptibb_velocity_gsm', 'thb_ptibb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Ion Velocity Vector in GSM(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -5769,9 +5799,9 @@
     "title": "THEMIS-B:  Solid State Telescope (ESA+SST): Energy Flux spectrogram:  Data includes: Electron/Ion Ground-Calculated Fluxes (ions: 5 eV - 4 MeV,electrons: 6 eV - 700 keV) - V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
       "startDate": "2007-03-09T00:00:00Z",
-      "stopDate": "2025-04-30T00:00:00Z",
-      "sampleStartDate": "2025-04-28T00:00:00Z",
-      "sampleStopDate": "2025-04-29T00:00:00Z",
+      "stopDate": "2025-09-15T00:00:00Z",
+      "sampleStartDate": "2025-09-12T00:00:00Z",
+      "sampleStopDate": "2025-09-13T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THB_L2_GMOM",
       "contact": "V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -5784,7 +5814,13 @@
           "fill": null,
           "x_description": "thb_ptebb_epoch",
           "x_cdf_NAME": "thb_ptebb_epoch",
-          "x_cdf_DataType": "CDF_EPOCH"
+          "x_cdf_DataType": "CDF_EPOCH",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "comp_themis_epoch",
+          "x_cdf_COMPONENTS": [
+            "thb_ptebb_epoch0",
+            "thb_ptebb_time"
+          ]
         },
         {
           "name": "thb_ptebb_data_quality",
@@ -5804,7 +5840,7 @@
           "name": "thb_ptebb_densityQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "(Good Data Only) ESA-SST Burst (High Time and Angular Resolution) Mode, Elec Density. This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_density', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "(Good Data Only) ESA-SST Burst (High Time and Angular Resolution) Mode, Elec Density",
           "fill": "NaN",
           "units": "cm^-3",
           "x_label": "N_elec Brst ESA-SST-B",
@@ -5825,7 +5861,7 @@
           "name": "thb_ptebb_avgtempQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Average Temperature(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_avgtemp', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Average Temperature(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": "T_elec Brst ESA-SST-B",
@@ -5846,7 +5882,7 @@
           "name": "thb_ptebb_vthermalQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Thermal Velocity(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_vthermal', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Thermal Velocity(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": "Vth_elec Brst ESA-SST-B",
@@ -5867,7 +5903,7 @@
           "name": "thb_ptebb_sc_potQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----SC Potential (Same time array as Burst Elec ESA-SST data)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_sc_pot', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----SC Potential (Same time array as Burst Elec ESA-SST data)(Good Data Only)",
           "fill": "NaN",
           "units": "V",
           "x_label": "Scpot_elec Brst ESA-SST-B",
@@ -5888,7 +5924,7 @@
           "name": "thb_ptebb_en_efluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Energy Flux spectrogram(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_en_eflux', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Energy Flux spectrogram(Good Data Only)",
           "fill": "NaN",
           "units": "eV/(cm^2-s-sr-eV) ",
           "x_label": "Eflux_elec Brst ESA-SST-B",
@@ -5912,7 +5948,7 @@
           "name": "thb_ptebb_t3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_t3', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -5957,7 +5993,7 @@
           "name": "thb_ptebb_magt3Q",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_magt3', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(Good Data Only)",
           "fill": "NaN",
           "units": "eV",
           "x_label": [
@@ -6002,7 +6038,7 @@
           "name": "thb_ptebb_ptensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Pressure Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_ptens', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Pressure Tensor(Good Data Only)",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -6056,7 +6092,7 @@
           "name": "thb_ptebb_mftensQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Momentum Flux Tensor(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_mftens', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Momentum Flux Tensor(Good Data Only)",
           "fill": "NaN",
           "units": "eV/cm^3",
           "x_label": [
@@ -6110,7 +6146,7 @@
           "name": "thb_ptebb_fluxQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Particle Flux Vector(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_flux', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Particle Flux Vector(Good Data Only)",
           "fill": "NaN",
           "units": "#/(cm^2-s)",
           "x_label": [
@@ -6155,7 +6191,7 @@
           "name": "thb_ptebb_symmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Symmetry Vector (direction of pressure tensor symmetry (DSL))(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_symm', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Symmetry Vector (direction of pressure tensor symmetry (DSL))(Good Data Only) ",
           "fill": "NaN",
           "units": "None",
           "x_label": [
@@ -6200,7 +6236,7 @@
           "name": "thb_ptebb_symm_angQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Symmetry Angle (between symmetry direction and B)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_symm_ang', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Symmetry Angle (between symmetry direction and B)(Good Data Only)",
           "fill": "NaN",
           "units": "degrees",
           "x_label": "symm_ang_elec Brst ESA-SST-B",
@@ -6221,7 +6257,7 @@
           "name": "thb_ptebb_magfQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Elec ESA-SST data)(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_magf', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Elec ESA-SST data)(Good Data Only)",
           "fill": "NaN",
           "units": "nT",
           "x_label": [
@@ -6266,7 +6302,7 @@
           "name": "thb_ptebb_velocity_dslQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Velocity Vector in DSL(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_velocity_dsl', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Velocity Vector in DSL(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -6311,7 +6347,7 @@
           "name": "thb_ptebb_velocity_gseQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Velocity Vector in GSE(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_velocity_gse', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Velocity Vector in GSE(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -6356,7 +6392,7 @@
           "name": "thb_ptebb_velocity_gsmQ",
           "type": "double",
           "x_cdf_DataType": "CDF_DOUBLE",
-          "description": "-----Elec Velocity Vector in GSM(Good Data Only). This variable is a 'virtual' variable that is computed using the function apply_gmom_qflag (see https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/source/virtual_funcs.pro) on the with inputs of the variables ['thb_ptebb_velocity_gsm', 'thb_ptebb_data_quality']. Note that some COMPONENTS may not be available from the HAPI interface. They are accessible from the raw CDF files, however.",
+          "description": "-----Elec Velocity Vector in GSM(Good Data Only)",
           "fill": "NaN",
           "units": "km/s",
           "x_label": [
@@ -6922,9 +6958,9 @@
     "title": "THEMIS-B:  Solid State Telescope (ESA+SST): Energy Flux spectrogram:  Data includes: Electron/Ion Ground-Calculated Fluxes (ions: 5 eV - 4 MeV,electrons: 6 eV - 700 keV) - V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
       "startDate": "2007-03-09T00:00:00Z",
-      "stopDate": "2025-04-30T00:00:00Z",
-      "sampleStartDate": "2025-04-28T00:00:00Z",
-      "sampleStopDate": "2025-04-29T00:00:00Z",
+      "stopDate": "2025-09-15T00:00:00Z",
+      "sampleStartDate": "2025-09-12T00:00:00Z",
+      "sampleStopDate": "2025-09-13T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THB_L2_GMOM",
       "contact": "V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -6937,7 +6973,13 @@
           "fill": null,
           "x_description": "thb_eesa_solarwind_flag_epoch",
           "x_cdf_NAME": "thb_eesa_solarwind_flag_epoch",
-          "x_cdf_DataType": "CDF_EPOCH"
+          "x_cdf_DataType": "CDF_EPOCH",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "comp_themis_epoch",
+          "x_cdf_COMPONENTS": [
+            "thb_eesa_solarwind_flag_epoch0",
+            "thb_eesa_solarwind_flag_time"
+          ]
         },
         {
           "name": "thb_eesa_solarwind_flag",
@@ -6961,9 +7003,9 @@
     "title": "THEMIS-B:  Solid State Telescope (ESA+SST): Energy Flux spectrogram:  Data includes: Electron/Ion Ground-Calculated Fluxes (ions: 5 eV - 4 MeV,electrons: 6 eV - 700 keV) - V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden (UCB, NASA NAS5-02099)",
     "info": {
       "startDate": "2007-03-09T00:00:00Z",
-      "stopDate": "2025-04-30T00:00:00Z",
-      "sampleStartDate": "2025-04-28T00:00:00Z",
-      "sampleStopDate": "2025-04-29T00:00:00Z",
+      "stopDate": "2025-09-15T00:00:00Z",
+      "sampleStartDate": "2025-09-12T00:00:00Z",
+      "sampleStopDate": "2025-09-13T00:00:00Z",
       "maxRequestDuration": "P50D",
       "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#THB_L2_GMOM",
       "contact": "V. Angelopoulos, D. Larson & R.P. Lin, C.W. Carlson & J. McFadden @ UCB, NASA NAS5-02099",
@@ -6976,7 +7018,13 @@
           "fill": null,
           "x_description": "thb_iesa_solarwind_flag_epoch",
           "x_cdf_NAME": "thb_iesa_solarwind_flag_epoch",
-          "x_cdf_DataType": "CDF_EPOCH"
+          "x_cdf_DataType": "CDF_EPOCH",
+          "x_cdf_VIRTUAL": true,
+          "x_cdf_FUNCT": "comp_themis_epoch",
+          "x_cdf_COMPONENTS": [
+            "thb_iesa_solarwind_flag_epoch0",
+            "thb_iesa_solarwind_flag_time"
+          ]
         },
         {
           "name": "thb_iesa_solarwind_flag",

@@ -21,8 +21,8 @@
     "Logical_source": "psp_swp_spi_sf00_L2_8Dx32Ex8A",
     "Logical_source_description": "Proton Differential Energy Flux at each measured energy/deflector step and anode of the SPAN-Ion instrument",
     "Sensor": "spi",
-    "PI_name": "J. Kasper",
-    "PI_affiliation": "Univ. of Michigan",
+    "PI_name": "Michael L. Stevens",
+    "PI_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
     "IPI_name": "D. Larson (davin@ssl.berkeley.edu)",
     "IPI_affiliation": "U.C. Berkeley Space Sciences Laboratory",
     "IPI_email": "davin@ssl.berkeley.edu",
@@ -85,8 +85,8 @@
         "MONOTON": "INCREASE",
         "SCALETYP": "linear",
         "UNITS": "s",
-        "VALIDMAX": 4102444800.0,
-        "VALIDMIN": 1262304000.0,
+        "VALIDMAX": 4102440000.0,
+        "VALIDMIN": 1262300000.0,
         "VAR_TYPE": "support_data",
         "x_UNITS": "s",
         "x_LABLAXIS": "Unix Time"
@@ -607,17 +607,20 @@
         "RecVariance": "VARY"
       },
       "VarAttributes": {
-        "CATDESC": "CNTS",
+        "CATDESC": "Counts",
         "DEPEND_0": "Epoch",
         "DISPLAY_TYPE": "default_dimension",
-        "FIELDNAM": "CNTS",
-        "FORMAT": "I20",
-        "LABLAXIS": "CNTS",
-        "SCALETYP": "linear",
+        "FIELDNAM": "Counts",
+        "FILLVAL": "NaN",
+        "FORMAT": "E20.4",
+        "LABLAXIS": "Counts",
+        "SCALETYP": "log",
         "UNITS": " ",
-        "VAR_TYPE": "ignore_data",
+        "VALIDMAX": 1000000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
         "x_UNITS": " ",
-        "x_LABLAXIS": "CNTS"
+        "x_LABLAXIS": "Counts"
       }
     },
     "DATA": {
@@ -635,17 +638,24 @@
         "RecVariance": "VARY"
       },
       "VarAttributes": {
-        "CATDESC": "DATA",
+        "CATDESC": "Data",
         "DEPEND_0": "Epoch",
+        "DEPEND_1": "ENERGY",
         "DISPLAY_TYPE": "default_dimension",
-        "FIELDNAM": "DATA",
-        "FORMAT": "I20",
-        "LABLAXIS": "DATA",
-        "SCALETYP": "linear",
+        "FIELDNAM": "Data",
+        "FILLVAL": "NaN",
+        "FORMAT": "E20.4",
+        "LABLAXIS": "Data",
+        "SCALETYP": "log",
         "UNITS": " ",
-        "VAR_TYPE": "ignore_data",
+        "VALIDMAX": 1e+20,
+        "VALIDMIN": 1e-12,
+        "VAR_TYPE": "data",
         "x_UNITS": " ",
-        "x_LABLAXIS": "DATA"
+        "x_LABLAXIS": "Data",
+        "x_DEPEND": [
+          "ENERGY"
+        ]
       }
     },
     "GAP": {

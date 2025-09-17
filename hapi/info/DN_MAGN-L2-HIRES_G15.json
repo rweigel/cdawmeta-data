@@ -18,7 +18,13 @@
         "fill": null,
         "x_description": "time_inboard",
         "x_cdf_NAME": "Epoch",
-        "x_cdf_DataType": "CDF_EPOCH"
+        "x_cdf_DataType": "CDF_EPOCH",
+        "x_cdf_VIRTUAL": true,
+        "x_cdf_FUNCT": "comp_themis_epoch",
+        "x_cdf_COMPONENTS": [
+          "time_base",
+          "time"
+        ]
       },
       {
         "name": "b_total",
@@ -226,9 +232,9 @@
       },
       {
         "name": "b_quality",
-        "type": "integer",
+        "type": "double",
         "x_cdf_DataType": "CDF_UINT4",
-        "description": "Data quality flag (0 = good quality data)",
+        "description": "Data quality flag (0 = good quality data). Note: CDF_UINT4 data was converted to HAPI double.",
         "fill": "4294967295",
         "units": "0=good",
         "x_label": "Quality Flag",

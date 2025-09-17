@@ -2,27 +2,26 @@
   "CDFFileInfo": {
     "File": "new_horizons_swap_pickup-ions_00000000_v01.cdf",
     "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/new_horizons_swap_pickup-ions_00000000_v01.json",
-    "FileVersion": "3.9.0",
+    "FileVersion": "3.9.1",
     "Format": "SINGLE",
     "Majority": "ROW",
-    "Encoding": "IBMPC"
+    "Encoding": "ARM_LITTLE"
   },
   "CDFglobalAttributes": {
     "Generated_by": "Heather Elliott and Joey Mukherjee",
-    "Generation_date": " ",
     "Project": "NF>New Frontiers",
     "Source_name": "NH>SWAP",
     "Descriptor": "SWAP>Solar Wind Around Pluto",
     "Data_type": "VS>Validated Summary Data",
     "PI_name": "David J. McComas",
     "PI_affiliation": "Princeton",
-    "TEXT": "Data from New Horizons Solar Wind Around Pluto instrument.\nElliott, H. A., D. J. McComas, P. Valek, G. Nicolaou, S. Weidner, and G. Livadiotis (2016), ApJS, 223(2), 1-21, doi:10.3847/0067-0049/223/2/19.\nMcComas, D. et al. (2008), The Solar Wind Around Pluto (SWAP) Instrument Aboard New Horizons, Space Sci Rev, 140(1), 261-313, doi:10.1007/s11214-007-9205-3.",
+    "TEXT": "Data from New Horizons Solar Wind Around Pluto instrument.\nElliott, H. A., D. J. McComas, Zirnstein, E. J., Randol, B. M., Delamere, P. A., Livadiotis, G., et al. (2019). Slowing of the Solar Wind in the Outer Heliosphere. Astrophysical Journal, 885(2). DOI 10.3847/1538-4357/ab3e49.Elliott, H. A., D. J. McComas, P. Valek, G. Nicolaou, S. Weidner, and G. Livadiotis (2016), ApJS, 223(2), 1-21, doi:10.3847/0067-0049/223/2/19.\nMcComas, D. et al. (2008), The Solar Wind Around Pluto (SWAP) Instrument Aboard New Horizons, Space Sci Rev, 140(1), 261-313, doi:10.1007/s11214-007-9205-3.",
     "Discipline": "Solar Physics>Heliospheric Physics",
     "Mission_group": "New Horizons",
     "Instrument_type": "Plasma and Solar Wind\nParticles (space)",
     "Logical_source_description": "Data from New Horizons SWAP instrument",
     "Logical_source": "new_horizons_swap_pickup-ions",
-    "Logical_file_id": "new_horizons_swap",
+    "Logical_file_id": "new_horizons_swap_pickup-ions",
     "spase_DatasetResourceID": "spase://NASA/NumericalData/NewHorizons/SWAP/PickupIon/ValidatedSummary/P1D",
     "DOI": "https://doi.org/10.48322/d4g8-sm25"
   },
@@ -36,10 +35,10 @@
         "RecVariance": "VARY"
       },
       "VarAttributes": {
-        "CATDESC": "Start Date/Time of the measurement",
+        "CATDESC": "The middle of the UTC time of the coarse-fine energy sweep used to determine the solar wind parameters.",
         "DELTA_MINUS_VAR": "Epoch_MINUS",
         "DELTA_PLUS_VAR": "Epoch_PLUS",
-        "FIELDNAM": "Start Time",
+        "FIELDNAM": "NH SWAP: Middle Time (UTC)",
         "FILLVAL": "2000-01-01T00:00:00.000000000",
         "MONOTON": "INCREASING",
         "SI_CONVERSION": "1.0e-9>s",
@@ -53,28 +52,24 @@
     },
     "Epoch_MINUS": {
       "VarDescription": {
-        "BlockingFactor": 1,
         "DataType": "CDF_INT8",
         "NumDims": 0,
         "NumElements": 1,
-        "NumWrittenRecords": 1,
         "PadValue": -9223372036854775807,
-        "RecVariance": "NOVARY"
+        "RecVariance": "VARY"
       },
       "VarAttributes": {
         "CATDESC": "Delta offset to compute the start time for the record",
         "FIELDNAM": "Delta_time_start",
+        "FILLVAL": -9223372036854775808,
         "FORMAT": "I",
         "SI_CONVERSION": "1.0e-9>s",
         "UNITS": "ns",
-        "VALIDMAX": 1,
+        "VALIDMAX": 999999999,
         "VALIDMIN": 0,
         "VAR_TYPE": "support_data",
         "x_UNITS": "ns"
-      },
-      "VarData": [
-        0
-      ]
+      }
     },
     "Epoch_PLUS": {
       "VarDescription": {
@@ -97,6 +92,48 @@
         "x_UNITS": "ns"
       }
     },
+    "START_TIME": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 19,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Start Date/Time of the measurement (No Plot)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "NH SWAP: Start Time (UTC)",
+        "FILLVAL": "2000-01-01T00:00:00.000000000",
+        "FORMAT": "A26",
+        "VALIDMAX": "2100-01-01T00:00:00.000000000",
+        "VALIDMIN": "2001-01-01T00:00:00.000000000",
+        "VAR_TYPE": "data",
+        "x_UNITS": null
+      }
+    },
+    "STOP_TIME": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 19,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Stop Date/Time of the measurement (No Plot)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "NH SWAP: Stop Time (UTC)",
+        "FILLVAL": "2000-01-01T00:00:00.000000000",
+        "FORMAT": "A26",
+        "VALIDMAX": "2100-01-01T00:00:00.000000000",
+        "VALIDMIN": "2001-01-01T00:00:00.000000000",
+        "VAR_TYPE": "data",
+        "x_UNITS": null
+      }
+    },
     "DISTANCE": {
       "VarDescription": {
         "DataType": "CDF_REAL4",
@@ -106,7 +143,7 @@
         "RecVariance": "VARY"
       },
       "VarAttributes": {
-        "CATDESC": "Distance",
+        "CATDESC": "Distance from Sun in AU",
         "DEPEND_0": "Epoch",
         "DISPLAY_TYPE": "default_dimension",
         "FIELDNAM": "NH SWAP: Distance from the Sun to spacecraft in AU",
@@ -130,16 +167,16 @@
         "RecVariance": "VARY"
       },
       "VarAttributes": {
-        "CATDESC": "Density",
+        "CATDESC": "Pickup Ion Density in cm**-3",
         "DEPEND_0": "Epoch",
         "DISPLAY_TYPE": "default_dimension",
         "FIELDNAM": "NH SWAP: Pickup Ion Density",
         "FILLVAL": -1e+31,
-        "FORMAT": "E19.5",
+        "FORMAT": "E8.2",
         "LABLAXIS": "DENSITY",
         "UNITS": "cm**-3",
-        "VALIDMAX": 100.0,
-        "VALIDMIN": 0.0,
+        "VALIDMAX": 0.1,
+        "VALIDMIN": 1e-06,
         "VAR_TYPE": "data",
         "x_UNITS": "cm**-3",
         "x_LABLAXIS": "DENSITY"
@@ -154,22 +191,22 @@
         "RecVariance": "VARY"
       },
       "VarAttributes": {
-        "CATDESC": "Temperature",
+        "CATDESC": "Temperature in K",
         "DEPEND_0": "Epoch",
         "DISPLAY_TYPE": "default_dimension",
         "FIELDNAM": "NH SWAP: Pickup Ion Temperature",
         "FILLVAL": -1e+31,
-        "FORMAT": "E19.5",
+        "FORMAT": "E8.2",
         "LABLAXIS": "TEMPERATURE",
         "UNITS": "K",
-        "VALIDMAX": 10000000.0,
-        "VALIDMIN": 0.0,
+        "VALIDMAX": 100000000000.0,
+        "VALIDMIN": 100000.0,
         "VAR_TYPE": "data",
         "x_UNITS": "K",
         "x_LABLAXIS": "TEMPERATURE"
       }
     },
-    "PRESSURE": {
+    "THERMAL_PRESSURE": {
       "VarDescription": {
         "DataType": "CDF_REAL4",
         "NumDims": 0,
@@ -178,19 +215,115 @@
         "RecVariance": "VARY"
       },
       "VarAttributes": {
-        "CATDESC": "Pressure",
+        "CATDESC": "Thermal Pressure in pPa",
         "DEPEND_0": "Epoch",
         "DISPLAY_TYPE": "default_dimension",
-        "FIELDNAM": "NH SWAP: Pickup Ion Pressure",
+        "FIELDNAM": "NH SWAP: Pickup Ion Thermal Pressure",
         "FILLVAL": -1e+31,
-        "FORMAT": "E19.5",
-        "LABLAXIS": "PRESSURE",
+        "FORMAT": "E8.2",
+        "LABLAXIS": "THERMAL_PRESSURE",
         "UNITS": "pPa",
-        "VALIDMAX": 5.0,
+        "VALIDMAX": 1.0,
         "VALIDMIN": 1e-05,
         "VAR_TYPE": "data",
         "x_UNITS": "pPa",
-        "x_LABLAXIS": "PRESSURE"
+        "x_LABLAXIS": "THERMAL_PRESSURE"
+      }
+    },
+    "IONIZATION_RATE": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Ionization Rate in s^-1",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "NH SWAP: Rate that incoming interstellar neutrals are ionized",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E8.2",
+        "LABLAXIS": "IONIZATION_RATE",
+        "UNITS": "s^-1",
+        "VALIDMAX": 0.0001,
+        "VALIDMIN": 1e-09,
+        "VAR_TYPE": "data",
+        "x_UNITS": "s^-1",
+        "x_LABLAXIS": "IONIZATION_RATE"
+      }
+    },
+    "FIT_COOLING_INDEX": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "An index that characterizes non-adiabatic cooling of interstellar pickup ions",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "NH SWAP: Index that characterizes non-adiabatic cooling of interstellar pickup ions",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E8.2",
+        "LABLAXIS": "FIT_COOLING_INDEX",
+        "UNITS": "index",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "index",
+        "x_LABLAXIS": "FIT_COOLING_INDEX"
+      }
+    },
+    "FIT_INJECTION_SPEED": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pickup ion injection speed into the solar wind",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "NH SWAP: Pickup ion injection speed into the solar wind",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E8.2",
+        "LABLAXIS": "FIT_INJECTION_SPEED",
+        "UNITS": "km s^-1",
+        "VALIDMAX": 1000.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "km s^-1",
+        "x_LABLAXIS": "FIT_INJECTION_SPEED"
+      }
+    },
+    "BACKGROUND_RATE": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Noise background rate subtracted from distribution",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "NH SWAP: Noise background rate subtracted from distribution",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E8.2",
+        "LABLAXIS": "BACKGROUND_RATE",
+        "UNITS": "Hz",
+        "VALIDMAX": 10.0,
+        "VALIDMIN": 0.0,
+        "VAR_TYPE": "data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "BACKGROUND_RATE"
       }
     }
   }

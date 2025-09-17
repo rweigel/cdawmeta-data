@@ -1,0 +1,614 @@
+{
+  "CDFFileInfo": {
+    "File": "wind_waves_qtnfit_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/wind_waves_qtnfit_00000000_v01.json",
+    "FileVersion": "3.9.1",
+    "Format": "SINGLE",
+    "Majority": "ROW",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Project": "ISTP>International Solar-Terrestrial Physics",
+    "Discipline": "Space Physics>Interplanetary Studies",
+    "Source_name": "WIND>WIND Interplanetary Plasma Laboratory",
+    "Descriptor": "WAVES>Radio/Plasma Wave",
+    "PI_name": "Keith Goetz",
+    "PI_affiliation": "University of Minnesota",
+    "TEXT": "SSR WAVES: The Radio and Plasma Wave Investigation on the WIND Spacecraft, Vol 71, pg 231-263, 1995.\nJGRA: Solar Wind Electron Parameters Determination on Wind Spacecraft Using Quasi Thermal Noise Spectroscopy, Vol 125, JA028113\nVariable note:  suprathermal parameters (fit_a, delta_a, coarse_a, fit_t, delta_t, coarse_t), have large uncertainties due to instruemntal limitations. Commonly, for science purposes, medians on a scale of 1-5 minutes should be used. ",
+    "Mission_group": "Wind",
+    "Instrument_type": "Radio and Plasma Waves (space)",
+    "Data_version": " ",
+    "Logical_file_id": "wind_waves_qtnfit",
+    "Data_type": "QTNFIT>Quasi-Thermal Noise Key Parameters",
+    "Logical_source": "wind_waves_qtnfit",
+    "Logical_source_description": "WIND Radio/Plasma Wave, (WAVES) Quasi-Thermal Noise Key Parameters"
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "TT2000Epoch in nanoseconds",
+        "FIELDNAM": "TT2000_Epoch",
+        "FILLVAL": "1990-01-01T00:00:00.000000000",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "UNITS": "ns",
+        "VALIDMAX": "2060-01-01T00:00:00.000000000",
+        "VALIDMIN": "1990-01-01T00:00:00.000000000",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "time": {
+      "VarDescription": {
+        "DataType": "CDF_CHAR",
+        "NumDims": 0,
+        "NumElements": 26,
+        "PadValue": " ",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "UTC Timestamps",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "time",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Timestamp",
+        "FILLVAL": -1e+31,
+        "FORMAT": "A26",
+        "LABLAXIS": "time",
+        "VAR_NOTES": "Timestamps in UTC time. ",
+        "VAR_TYPE": "metadata",
+        "x_UNITS": null,
+        "x_LABLAXIS": "time"
+      }
+    },
+    "fit_n_e": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 18.385805,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron number density from fits of selected QTN data",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Electron Density (fits)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "Ne (fit)",
+        "SCALETYP": "log",
+        "UNITS": "1/cm**3",
+        "VALIDMAX": 512.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "High resolution plasma densities: resolution depends on instrument mode and may vary. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/cm**3",
+        "x_LABLAXIS": "Ne (fit)"
+      }
+    },
+    "delta_n_e": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 1.168277,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron number density uncertainty from fits of selected QTN data",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Delta Electron Density (fits)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "Delta Ne (fit)",
+        "SCALETYP": "log",
+        "UNITS": "1/cm**3",
+        "VALIDMAX": 512.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "High resolution plasma densities: resolution depends on instrument mode and may vary. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/cm**3",
+        "x_LABLAXIS": "Delta Ne (fit)"
+      }
+    },
+    "coarse_n_e": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 18.858892,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron number density from plasma resonance peak",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "density>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Electron Density (coarse)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "Ne (coarse)",
+        "SCALETYP": "log",
+        "UNITS": "1/cm**3",
+        "VALIDMAX": 512.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "High resolution plasma densities: resolution depends on instrument mode and may vary. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "1/cm**3",
+        "x_LABLAXIS": "Ne (coarse)"
+      }
+    },
+    "fit_T_c": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 7.258095,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron core temperature from fits of selected QTN data",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Electron core temperature (fits)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "Tc (fit)",
+        "UNITS": "eV",
+        "VALIDMAX": 264.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "High resolution plasma temperatures: resolution depends on instrument mode and may vary. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "Tc (fit)"
+      }
+    },
+    "delta_T_c": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.520552,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron core temperature uncertainty from fits of selected QTN data",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Delta Electron Core Temperature (fits)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "Delta Tc (fit)",
+        "UNITS": "eV",
+        "VALIDMAX": 264.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "High resolution plasma temperatures: resolution depends on instrument mode and may vary. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "Delta Tc (fit)"
+      }
+    },
+    "coarse_T_c": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 7.5,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Electron core temperature from thermal plateau levels",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "temperature>electron",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Electron core temperature (coarse)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "Tc (coarse)",
+        "UNITS": "eV",
+        "VALIDMAX": 264.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "High resolution plasma temperatures: resolution depends on instrument mode and may vary. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": "eV",
+        "x_LABLAXIS": "Tc (coarse)"
+      }
+    },
+    "fit_a": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.032113,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Halo to core electron density ratio from fits of selected QTN data",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "n_ratio",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Halo to core electron density ratio (fits)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "Neh/Nec (fit)",
+        "UNITS": "\u0000",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "High resolution halo to core electron densities: resolution depends on instrument mode and may vary. For science purposes, using median values on a scale of 1-5 minutes is recommended. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Neh/Nec (fit)"
+      }
+    },
+    "delta_a": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.025685,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Halo to core electron density ratio uncertainty from fits of selected QTN data",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "n_ratio",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Delta electron density Ratio (fits)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "Delta Neh/Nec (fit)",
+        "UNITS": "\u0000",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "High resolution halo to core electron densities: resolution depends on instrument mode and may vary. For science purposes, using median values on a scale of 1-5 minutes is recommended. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Delta Neh/Nec (fit)"
+      }
+    },
+    "coarse_a": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.02,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Halo to core electron density ratio from fit initial guess",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "n_ratio",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Halo to core electron density ratio (coarse)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f9.6",
+        "LABLAXIS": "Neh/Nec (coarse)",
+        "UNITS": "\u0000",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "High resolution halo to core electron densities: resolution depends on instrument mode and may vary. For science purposes, using median values on a scale of 1-5 minutes is recommended. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Neh/Nec (coarse)"
+      }
+    },
+    "fit_t": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 6.659858,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Halo to core electron temperature ratio from fits of selected QTN data",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "t_ratio",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Halo to core electron temperature ratio (fits)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "Teh/Tec (fit)",
+        "UNITS": "\u0000",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "High resolution halo to core electron temperatures: resolution depends on instrument mode and may vary. For science purposes, using median values on a scale of 1-5 minutes is recommended. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Teh/Tec (fit)"
+      }
+    },
+    "delta_t": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.477743,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Halo to core electron temperature ratio uncertainty from fits of selected QTN data",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "t_ratio",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Delta halo to core electron temperatire ratio (fits)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "Delta Teh/Tec (fit)",
+        "UNITS": "\u0000",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "High resolution halo to core electron temperatures: resolution depends on instrument mode and may vary. For science purposes, using median values on a scale of 1-5 minutes is recommended. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Delta Teh/Tec (fit)"
+      }
+    },
+    "coarse_t": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 6.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Halo to core electron temperature ratio from fit initial guess",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "t_ratio",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Halo to core electron temperature ratio (coarse)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "Teh/Tec (coarse)",
+        "UNITS": "\u0000",
+        "VALIDMAX": 100.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "High resolution halo to core electron temperatures: resolution depends on instrument mode and may vary. For science purposes, using median values on a scale of 1-5 minutes is recommended. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Teh/Tec (coarse)"
+      }
+    },
+    "QF": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 2.406148,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Quality Flag of QTN fits of selected QTN data",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "quality_flag",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Quality Flag (overall)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "QF",
+        "UNITS": "\u0000",
+        "VALIDMAX": 13.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Quality flags for fits of high resolution data: resolution depends on instrument mode and may vary.    This variable is a weighted sum of other QF, calculated as QF = 5*QF_points + 3*QF_peak + QF_shift + QF_low_level, with maximum realistic value of 10. QF > 2 is considered good quality. QF > 5 is considered highly reliable. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "QF"
+      }
+    },
+    "QF_points": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.3125,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Quality Flag of QTN fits of selected QTN data; from number of selected QTN channels",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "quality_flag",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Quality Flag (points)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "QF_points",
+        "UNITS": "\u0000",
+        "VALIDMAX": 2.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Quality flags for fits of high resolution data: resolution depends on instrument mode and may vary. Normalized between 0 and 1. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "QF_points"
+      }
+    },
+    "QF_peak": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.35,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Quality Flag of QTN fits of selected QTN data; from fitting the plasma peak",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "quality_flag",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Quality Flag (peak)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "QF_peak",
+        "UNITS": "\u0000",
+        "VALIDMAX": 4.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Quality flags for fits of high resolution data: resolution depends on instrument mode and may vary. Normalized between 0 and 1, although can rarely take values above 1. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "QF_peak"
+      }
+    },
+    "QF_shift": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.150791,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Quality Flag of QTN fits of selected QTN data; from shifts between fit and data",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "quality_flag",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Quality Flag (shift)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "QF_shift",
+        "UNITS": "\u0000",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Quality flags for fits of high resolution data: resolution depends on instrument mode and may vary. Normalized between 0 and 1. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "QF_shift"
+      }
+    },
+    "QF_low_level": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 0.642857,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Quality Flag of QTN fits of selected QTN data; from data levels lower then the fit",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "quality_flag",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Quality Flag (low level)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "QF_low_level",
+        "UNITS": "\u0000",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Quality flags for fits of high resolution data: resolution depends on instrument mode and may vary. Normalized between 0 and 1. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "QF_low_level"
+      }
+    },
+    "freq": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          96
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "sampling frequencies",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "freq",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "TNR frequency channels",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f13.6",
+        "LABLAXIS": "Frequency",
+        "SCALETYP": "log",
+        "UNITS": "Hz",
+        "VALIDMAX": 512000.0,
+        "VALIDMIN": 1000.0,
+        "VAR_NOTES": "TNR sampling frequencies, log spaced between 4 kHz and 256 kHz.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "Hz",
+        "x_LABLAXIS": "Frequency"
+      }
+    },
+    "fc": {
+      "VarDescription": {
+        "DataType": "CDF_DOUBLE",
+        "DimSizes": [
+          96
+        ],
+        "DimVariances": [
+          "VARY"
+        ],
+        "NumDims": 1,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Selected TNR frequency channels for data fitting",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "freq",
+        "DICT_KEY": "selected_channels",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Selected Channels",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "Selected TNR channels for QTN fitting",
+        "LABL_PTR_1": "frequency channel",
+        "UNITS": "\u0000",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Selected TNR frequency channels for data fitting high resolution data: resolution depends on instrument mode and may vary. ",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "Selected TNR channels for QTN fitting",
+        "x_DEPEND": [
+          "freq"
+        ]
+      }
+    },
+    "filtered": {
+      "VarDescription": {
+        "DataType": "CDF_FLOAT",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": 1.0,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Filtered data for quick survey use (outliers labeled). ",
+        "DEPEND_0": "Epoch",
+        "DICT_KEY": "survey_filter",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "filtered intervals",
+        "FILLVAL": -1e+31,
+        "FORMAT": "f11.6",
+        "LABLAXIS": "survey_filter",
+        "UNITS": "\u0000",
+        "VALIDMAX": 1.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Intervals seleceted for quick statistical survey usage (0 - filtered out; 1 - good for survey use). User is recomended to ignore the filter and use QFs for detailed examination of particular events. ",
+        "VAR_TYPE": "data",
+        "x_UNITS": null,
+        "x_LABLAXIS": "survey_filter"
+      }
+    }
+  }
+}

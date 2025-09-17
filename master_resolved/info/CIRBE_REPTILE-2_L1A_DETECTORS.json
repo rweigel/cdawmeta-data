@@ -1,0 +1,835 @@
+{
+  "CDFFileInfo": {
+    "File": "cirbe_reptile-2_l1a_detectors_00000000_v01.cdf",
+    "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/cirbe_reptile-2_l1a_detectors_00000000_v01.json",
+    "FileVersion": "3.9.0",
+    "Format": "SINGLE",
+    "Majority": "COLUMN",
+    "Encoding": "IBMPC"
+  },
+  "CDFglobalAttributes": {
+    "Project": "H-FORT>Heliophysics-Flight Opportunities in Research and Technology",
+    "Source_name": "CIRBE>Colorado Inner Radiation Belt Experiment",
+    "Discipline": "Space Physics>Magnetospheric Science\nSolar Physics>Heliospheric Physics",
+    "Data_type": "L1A>Level 1A Data Product>Detectors",
+    "Descriptor": "REPTile-2>Relativistic Electron Proton Telescope integrated little experiment-2",
+    "Data_version": " ",
+    "Logical_file_id": " ",
+    "PI_name": "Xinlin Li",
+    "PI_affiliation": "University of Colorado at Boulder",
+    "TEXT": "CIRBE is a 3U-CubeSat designed and developed by students and engineers at the Laboratory for Atmospheric and Space Physics.\nThe primary objective of the science mission is to understand the formation of the inner belt (L<2) electrons (100s of keV to multiple MeV), and to determine the source, the intensity and dynamic variations of these electrons.\nThe goal is to make accurate measurements with fine energy resolution (>40 channels) for electrons of 0.3-3 MeV throughout the slot region and inner belt, with secondary measurements of 6.7-35 MeV protons.\nSuch measurements are required to address the following science questions:\n1) Where is the break point in terms of energy of electrons for a given event, below which electrons can be transported into the inner belt from the outer belt but above which electrons cannot, and what is the injection mechanism?\n2) What is the CRAND contribution to inner belt electrons, and what is the low energy neutron density near Earth?\n3) What is the role of wave-particle interactions in shaping inner-belt electron energy spectra?\nA detailed description of the instrument can be found at https://doi.org/10.1029/2021JA030249.\nWe acknowledge the use of the IRBEM library (4.4.0) to process the data, the latest version of which can be found at https://doi.org/10.5281/zenodo.6867552.",
+    "Rules_of_use": "The CIRBE/REPTile-2 data are available for science research. Users should contact the PI, professor Xinlin Li, to discuss the possible issues and appropriate applications of these data. Users publishing results should provide appropriate acknowledgement and should provide the version number of the data being used.",
+    "Acknowledgment": "The REPTile-2 data are provided by the University of Colorado. The following references can be cited for the REPTile-2 data products.\nMission Overview Paper > Li, X., Kohnert, R., Palo, S., Selesnick, R., Khoo, L.-Y., Schiller, Q., et al. (2022). Two Generations of CubeSat Missions (CSSWE and CIRBE) to Take on the Challenges of Measuring Relativistic Electrons in the Earth’s Magnetosphere. Proceedings of the Small Satellite Conference, SSC22-III-03. https://digitalcommons.usu.edu/smallsat/2022/all2022/152\nInstrument Calibration Paper > Khoo, L.-Y., Li, X., Selesnick, R. S., Schiller, Q., Zhang, K., Zhao, H., et al. (2022). On the challenges of measuring energetic particles in the inner belt: A Geant4 simulation of an energetic particle detector instrument, REPTile-2. Journal of Geophysical Research: Space Physics, 127, e2021JA030249. https://doi.org/10.1029/2021JA030249.\nFirst Results Paper > Li, X., Selesnick, R., Mei, Y., O''Brien, D., Hogan, B., Xiang, Z., et al. (2024). First results from REPTile-2 measurements onboard CIRBE. Geophysical Research Letters, 51, e2023GL107521. https://doi.org/10.1029/2023GL107521.",
+    "Instrument_type": "Particles (space)",
+    "Mission_group": "Smallsats/Cubesats",
+    "Logical_source": "cirbe_reptile-2_l1a_detectors",
+    "Logical_source_description": "Colorado Inner Radiation Belt Experiment, Relativistic Electron Proton Telescope integrated little experiment-2, Level 1A Data Product, Detectors",
+    "Generated_by": " "
+  },
+  "CDFVariables": {
+    "Epoch": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "BIN_LOCATION": 1.0,
+        "CATDESC": "Default Epoch in UTC",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "RESOLUTION": "1s",
+        "TIME_SCALE": "UTC",
+        "UNITS": "ms",
+        "VALIDMAX": "2024-09-28T07:14:35.132",
+        "VALIDMIN": "2023-04-19T16:28:52.702",
+        "VAR_NOTES": "This time variable corresponds to the location, counts and integration period, spacecraft pointing mode, and flag variables.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "Altitude": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geodetic Altitude of CIRBE in km",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Altitude (Geodetic)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.4",
+        "LABLAXIS": "Altitude",
+        "UNITS": "km",
+        "VALIDMAX": 550.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Geodetic altitude was computed from TLEs using SPG4 and WGS84 from the Skyfield Python package. TLEs can have an initial error of up to approximately 1 km and the error can increase by 1-2 km per day depending on factors such as drag and geomagnetic activity. For more details, please see the CIRBE Data User's Guide.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "km",
+        "x_LABLAXIS": "Altitude"
+      }
+    },
+    "Latitude": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geodetic Latitude of CIRBE in Degrees (-90 to 90)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Latitude (Geodetic)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.4",
+        "LABLAXIS": "Latitude",
+        "UNITS": "degrees",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": "Geodetic latitude was computed from TLEs using SPG4 and WGS84 from the Skyfield Python package. TLEs can have an initial error of up to approximately 1 km and the error can increase by 1-2 km per day depending on factors such as drag and geomagnetic activity. For more details, please see the CIRBE Data User's Guide.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "Latitude"
+      }
+    },
+    "Longitude": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Geodetic Longitude of CIRBE in Degrees (-180 to 180)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Longitude (Geodetic)",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F9.4",
+        "LABLAXIS": "Longitude",
+        "UNITS": "degrees",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": -180.0,
+        "VAR_NOTES": "Geodetic longitude was computed from TLEs using SPG4 and WGS84 from the Skyfield Python package. TLEs can have an initial error of up to approximately 1 km and the error can increase by 1-2 km per day depending on factors such as drag and geomagnetic activity. For more details, please see the CIRBE Data User's Guide.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "Longitude"
+      }
+    },
+    "L_McIlwain": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "McIlwain's L Parameter at CIRBE's Position",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "L",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.4",
+        "LABLAXIS": "L",
+        "SCALEMAX": 15.0,
+        "SCALEMIN": 1.0,
+        "UNITS": " ",
+        "VALIDMAX": 30.0,
+        "VALIDMIN": 1.0,
+        "VAR_NOTES": "Calculated via IRBEM (4.4.0) using the IGRF model for Earth's magnetic field and assuming no external magnetic field, using position values from the position variables.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "L"
+      }
+    },
+    "MLT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic Local Time at CIRBE's Position (0 to 24)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MLT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F7.4",
+        "LABLAXIS": "MLT",
+        "UNITS": "hrs",
+        "VALIDMAX": 24.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "Calculated via IRBEM (4.4.0) using the IGRF model for Earth's magnetic field and assuming no external magnetic field, using position values from the position variables.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "hrs",
+        "x_LABLAXIS": "MLT"
+      }
+    },
+    "MLAT": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Magnetic Latitude at CIRBE's Position (-90 to 90)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "MLAT",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.4",
+        "LABLAXIS": "MLAT",
+        "UNITS": "degrees",
+        "VALIDMAX": 90.0,
+        "VALIDMIN": -90.0,
+        "VAR_NOTES": "Calculated via IRBEM (4.4.0) using the IGRF model for Earth's magnetic field and assuming no external magnetic field, using position values from the position variables.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "MLAT"
+      }
+    },
+    "D1_Count_Rates": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Countrate of Events that Trigger the First Detector",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D1 Count Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D1 Countrate",
+        "SCALEMAX": 10000000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "#/s",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "This variable is the D1 countrate in counts per second. For a D1 event to be counted, at least 0.1 MeV must be deposited on the first detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/s",
+        "x_LABLAXIS": "D1 Countrate"
+      }
+    },
+    "D1_Counts": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count of Events that Trigger the First Detector",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D1 Counts",
+        "FILLVAL": -2147483648,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D1 Counts",
+        "SCALEMAX": 10000000,
+        "SCALEMIN": 0,
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 1000000000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "This variable is the total counts of D1 events during the integration period. For a D1 event to be counted, at least 0.1 MeV must be deposited on the first detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "D1 Counts"
+      }
+    },
+    "D2_Count_Rates": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Countrate of Events that Trigger the Second Detector",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D2 Count Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D2 Countrate",
+        "SCALEMAX": 10000000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "#/s",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "This variable is the D2 countrate in counts per second. For a D2 event to be counted, at least 0.1 MeV must be deposited on the second detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/s",
+        "x_LABLAXIS": "D2 Countrate"
+      }
+    },
+    "D2_Counts": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count of Events that Trigger the Second Detector",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D2 Counts",
+        "FILLVAL": -2147483648,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D2 Counts",
+        "SCALEMAX": 10000000,
+        "SCALEMIN": 0,
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 1000000000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "This variable is the total counts of D2 events during the integration period. For a D2 event to be counted, at least 0.1 MeV must be deposited on the second detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "D2 Counts"
+      }
+    },
+    "D3_Count_Rates": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Countrate of Events that Trigger the Third Detector",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D3 Count Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D3 Countrate",
+        "SCALEMAX": 10000000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "#/s",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "This variable is the D3 countrate in counts per second. For a D3 event to be counted, at least 0.1 MeV must be deposited on the third detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/s",
+        "x_LABLAXIS": "D3 Countrate"
+      }
+    },
+    "D3_Counts": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count of Events that Trigger the Third Detector",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D3 Counts",
+        "FILLVAL": -2147483648,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D3 Counts",
+        "SCALEMAX": 10000000,
+        "SCALEMIN": 0,
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 1000000000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "This variable is the total counts of D3 events during the integration period. For a D3 event to be counted, at least 0.1 MeV must be deposited on the third detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "D3 Counts"
+      }
+    },
+    "D4_Count_Rates": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Countrate of Events that Trigger the Fourth Detector",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D4 Count Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D4 Countrate",
+        "SCALEMAX": 10000000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "#/s",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "This variable is the D4 countrate in counts per second. For a D4 event to be counted, at least 0.1 MeV must be deposited on the fourth detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/s",
+        "x_LABLAXIS": "D4 Countrate"
+      }
+    },
+    "D4_Counts": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count of Events that Trigger the Fourth Detector",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D4 Counts",
+        "FILLVAL": -2147483648,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D4 Counts",
+        "SCALEMAX": 10000000,
+        "SCALEMIN": 0,
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 1000000000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "This variable is the total counts of D4 events during the integration period. For a D4 event to be counted, at least 0.1 MeV must be deposited on the fourth detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "D4 Counts"
+      }
+    },
+    "G_Count_Rates": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Countrate of Events that Trigger the Guard Rings",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "G Count Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "G Countrate",
+        "SCALEMAX": 10000000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "#/s",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "This variable is the G countrate in counts per second. For a G event to be counted, at least 1 MeV must be deposited on the guard rings. The guard rings are used to remove events caused by very energetic protons from outside the field of view penetrating the active shielding.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/s",
+        "x_LABLAXIS": "G Countrate"
+      }
+    },
+    "G_Counts": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count of Events that Trigger the Guard Rings",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "G Counts",
+        "FILLVAL": -2147483648,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "G Counts",
+        "SCALEMAX": 10000000,
+        "SCALEMIN": 0,
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 1000000000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "This variable is the total counts of G events during the integration period. For a G event to be counted, at least 1 MeV must be deposited on the guard rings. The guard rings are used to remove events caused by very energetic protons from outside the field of view penetrating the active shielding.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "G Counts"
+      }
+    },
+    "D12n_Count_Rates": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Countrate of Events that Trigger the First Detector but Not the Second",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D12n Count Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D12n Countrate",
+        "SCALEMAX": 10000000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "#/s",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "This variable is the D12n countrate in counts per second. For a D12n event to be counted, at least 0.1 MeV must be deposited on the first detector but not on the second detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/s",
+        "x_LABLAXIS": "D12n Countrate"
+      }
+    },
+    "D12n_Counts": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count of Events that Trigger the First Detector but Not the Second",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D12n Counts",
+        "FILLVAL": -2147483648,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D12n Counts",
+        "SCALEMAX": 10000000,
+        "SCALEMIN": 0,
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 1000000000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "This variable is the total counts of D12n events during the integration period. For a D12n event to be counted, at least 0.1 MeV must be deposited on the first detector but not on the second detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "D12n Counts"
+      }
+    },
+    "D123n_Count_Rates": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Countrate of Events that Trigger the First Two Detectors but Not the Third",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D123n Count Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D123n Countrate",
+        "SCALEMAX": 10000000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "#/s",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "This variable is the D123n countrate in counts per second. For a D123n event to be counted, at least 0.1 MeV must be deposited on the first two detectors but not on the third detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/s",
+        "x_LABLAXIS": "D123n Countrate"
+      }
+    },
+    "D123n_Counts": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count of Events that Trigger the First Two Detectors but Not the Third",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D123n Counts",
+        "FILLVAL": -2147483648,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D123n Counts",
+        "SCALEMAX": 10000000,
+        "SCALEMIN": 0,
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 1000000000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "This variable is the total counts of D123n events during the integration period. For a D123n event to be counted, at least 0.1 MeV must be deposited on the first two detectors but not on the third detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "D123n Counts"
+      }
+    },
+    "D1234n_Count_Rates": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Countrate of Events that Trigger the First Three Detectors but Not the Fourth",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D1234n Count Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D1234n Countrate",
+        "SCALEMAX": 10000000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "#/s",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "This variable is the D1234n countrate in counts per second. For a D1234n event to be counted, at least 0.1 MeV must be deposited on the first three detectors but not on the fourth detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/s",
+        "x_LABLAXIS": "D1234n Countrate"
+      }
+    },
+    "D1234n_Counts": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count of Events that Trigger the First Three Detectors but Not the Fourth",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D1234n Counts",
+        "FILLVAL": -2147483648,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D1234n Counts",
+        "SCALEMAX": 10000000,
+        "SCALEMIN": 0,
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 1000000000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "This variable is the total counts of D1234n events during the integration period. For a D1234n event to be counted, at least 0.1 MeV must be deposited on the first three detectors but not on the fourth detector.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "D1234n Counts"
+      }
+    },
+    "D1234_Count_Rates": {
+      "VarDescription": {
+        "DataType": "CDF_REAL8",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Countrate of Events that Trigger All Four Detectors",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D1234n Count Rates",
+        "FILLVAL": -1e+31,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D1234 Countrate",
+        "SCALEMAX": 10000000.0,
+        "SCALEMIN": 0.0,
+        "SCALETYP": "log",
+        "UNITS": "#/s",
+        "VALIDMAX": 1000000000.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "This variable is the D1234 countrate in counts per second. For a D1234 event to be counted, at least 0.1 MeV must be deposited on all four detectors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "#/s",
+        "x_LABLAXIS": "D1234 Countrate"
+      }
+    },
+    "D1234_Counts": {
+      "VarDescription": {
+        "DataType": "CDF_INT4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -2147483647,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Count of Events that Trigger All Four Detectors",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "D1234 Counts",
+        "FILLVAL": -2147483648,
+        "FORMAT": "E10.4",
+        "LABLAXIS": "D1234 Counts",
+        "SCALEMAX": 10000000,
+        "SCALEMIN": 0,
+        "SCALETYP": "log",
+        "UNITS": " ",
+        "VALIDMAX": 1000000000,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "This variable is the total counts of D1234 events during the integration period. For a D1234 event to be counted, at least 0.1 MeV must be deposited on all four detectors.",
+        "VAR_TYPE": "data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "D1234 Counts"
+      }
+    },
+    "Integration_Period": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Integration Period Length of This Datapoint in ms",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Integration Period",
+        "FILLVAL": -32768,
+        "FORMAT": "I4",
+        "LABLAXIS": "Integration Period",
+        "UNITS": "ms",
+        "VALIDMAX": 5000,
+        "VALIDMIN": 100,
+        "VAR_NOTES": "Near the South Atlantic Anomaly region (SAA) there is a one second integration period. Outside of the SAA there is a five second integration period.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Integration Period"
+      }
+    },
+    "Spacecraft_Pointing_Mode": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Pointing Mode of the Spacecraft",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Pointing Mode",
+        "FILLVAL": -32768,
+        "FORMAT": "I1",
+        "LABLAXIS": "Pointing Mode",
+        "UNITS": " ",
+        "VALIDMAX": 3,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "0 is nominal science mode where the spacecraft is pointed perpendicular to the local magnetic field at all times except for periods of downlink and uplink, 1 is sun-point static mode where the primary pointing direction is towards the sun and angle relative to local magnetic field is neglected, 2 is sun-point star-tracker mode where the primary pointing direction is towards the sun and the secondary pointing direction is perpendicular to the local magnetic field, 3 is low-drag mode.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": " ",
+        "x_LABLAXIS": "Pointing Mode"
+      }
+    },
+    "Data_Quality_Flag": {
+      "VarDescription": {
+        "DataType": "CDF_INT2",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -32767,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Data Quality Flag",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "Data Quality Flag",
+        "FILLVAL": -32768,
+        "FORMAT": "I1",
+        "LABLAXIS": "Data Quality Flag",
+        "UNITS": "0=Valid Data ",
+        "VALIDMAX": 2,
+        "VALIDMIN": 0,
+        "VAR_NOTES": "0 means the data is valid. 1 means the timestamp is inaccurate by a magnitude of up to 10 seconds, but the counts data is accurate. 2 means that the counts data is flawed, and the data should be used with extreme caution or omitted entirely.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "0=Valid Data ",
+        "x_LABLAXIS": "Data Quality Flag"
+      }
+    },
+    "Epoch_2": {
+      "VarDescription": {
+        "DataType": "CDF_EPOCH",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Secondary Epoch in UTC",
+        "FIELDNAM": "Epoch",
+        "FILLVAL": "9999-12-31T23:59:59.999",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "TIME_SCALE": "UTC",
+        "UNITS": "ms",
+        "VALIDMAX": "2024-09-28T21:48:18.999",
+        "VALIDMIN": "2023-04-19T01:53:38.000",
+        "VAR_NOTES": "This time variable corresponds to the Pointing_Angle variable only. These data were taken at an irregular time cadence different from the rest of the variables.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ms",
+        "x_LABLAXIS": "Epoch"
+      }
+    },
+    "Pointing_Angle": {
+      "VarDescription": {
+        "DataType": "CDF_REAL4",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": -1e+30,
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Instrument Pointing Angle Relative to the Local Magnetic Field",
+        "DEPEND_0": "Epoch_2",
+        "DISPLAY_TYPE": "default_dimension",
+        "FIELDNAM": "Pointing Angle",
+        "FILLVAL": -1e+31,
+        "FORMAT": "F8.4",
+        "LABLAXIS": "Pointing Angle",
+        "UNITS": "degrees",
+        "VALIDMAX": 180.0,
+        "VALIDMIN": 0.0,
+        "VAR_NOTES": "The pointing angle is the angle between the instrument's pointing direction and the local magnetic field. Data points are usually only recorded when there is deviation from 90 degrees, so during gaps between recorded pointing angles the pointing angle can be assumed to be 90 degrees. If there is a data point with a missing value, use caution as the pointing angle may not be at 90 degrees.",
+        "VAR_TYPE": "data",
+        "x_UNITS": "degrees",
+        "x_LABLAXIS": "Pointing Angle"
+      }
+    }
+  }
+}

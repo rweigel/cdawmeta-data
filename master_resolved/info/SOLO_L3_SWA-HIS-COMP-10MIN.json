@@ -2,21 +2,21 @@
   "CDFFileInfo": {
     "File": "solo_l3_swa-his-comp-10min_00000000_v01.cdf",
     "FileURL": "https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0JSONS/solo_l3_swa-his-comp-10min_00000000_v01.json",
-    "FileVersion": "3.9.0",
+    "FileVersion": "3.9.1",
     "Format": "SINGLE",
     "Majority": "COLUMN",
     "Encoding": "IBMPC"
   },
   "CDFglobalAttributes": {
     "Acknowledgement": "Please acknowledge Chris J. Owen (SWA PI -- UCL MSSL) & Stefano Livi (HIS PI -- SwRI). NASA Contract NNG10EK25C.",
-    "Data_product": "L3>Level 3 data for HIS instrument",
+    "Data_product": "comp-10min>10-minutes solar wind heavy ion composition and kinematics",
     "Data_type": "L3>Level 3 Data",
     "Data_version": " ",
     "Descriptor": "SWA-HIS-COMP-10MIN>Solar Wind Analyzer, Heavy Ion Sensor, Composition 10 Minute Resolution",
     "Discipline": "Space Physics>Interplanetary Studies",
-    "File_naming_convention": "source_descriptor_datatype_yyyyMMdd",
+    "File_naming_convention": "source_datatype_descriptor_yyyyMMdd",
     "Generated_by": "SO-HIS SOC, University of Michigan",
-    "Generation_date": " ",
+    "Generation_date": "2024-12-18T19:55:00",
     "Instrument": "SWA-HIS>Solar Wind Analyser Heavy Ion Sensor",
     "Instrument_type": "Particles (space)",
     "LEVEL": "L3>Level 3 Data",
@@ -24,21 +24,23 @@
     "Logical_source": "solo_L3_swa-his-comp-10min",
     "Logical_source_description": "Solar Orbiter, Level 3 Data, Solar Wind Analyser, Heavy Ion Sensor Composition 10 Minute Resolution",
     "Mission_group": "Solar Orbiter",
-    "MODS": " ",
-    "Parents": " ",
+    "MODS": "Initial Release September 1, 2022. \nV02: This version of the data (updated 16 December 2024) includes: expanded Fe charge state distribution and average Fe charge state; improved species separation, particularly for He versus C and Ca versus Fe; improved uncertainty estimation from applying Monte Carlo perturbations to the species separation; improved instrument artifact identification and correction; improved density ratios by only integrating constituent VDFs over common valid velocity ranges; improved quality filtering and quality flagging.",
+    "OBS_ID": "SSWA_060A_000_000_WtCp_11D",
     "PI_affiliation": "SWRI",
     "PI_name": "S. Livi",
     "Project": "SOLO>Solar Orbiter",
     "Rules_of_use": "This data is appropriate for general scientific use.  Users are encouraged to read the Data Product Description Document and pay attention to the quality flag.  Contact the SWA/HIS team for more information and questions about the data.",
     "Software_version": " ",
+    "SOOP_NAME": "NONE",
+    "SOOP_TYPE": "NONE",
     "Source_name": "SOLO>Solar Orbiter",
-    "spase_DatasetResourceID": " ",
-    "TARGET_CLASS": "In-Situ",
-    "TARGET_NAME": "Solar Wind",
-    "TARGET_REGION": "Heliosphere",
-    "TEXT": "Level 3 data for HIS instrument\nTime series measurements of the elemental abundance, charge state composition, and kinetic properties of heavy ions in the solar wind.",
-    "Time_resolution": "10min",
-    "DOI": " "
+    "TARGET_CLASS": "Sun",
+    "TARGET_NAME": "interplanetary_medium",
+    "TARGET_REGION": "Solar Wind",
+    "TEXT": "Level 3 data for HIS instrument\nTime series measurements of the elemental abundance, charge state composition, and kinetic properties of heavy ions in the solar wind.\nUsage notes can be found via the SWA DOI at https://doi.org/10.5270/esa-ahypgn6.",
+    "TIME_MAX": " ",
+    "TIME_MIN": " ",
+    "Time_resolution": "10min"
   },
   "CDFVariables": {
     "EPOCH": {
@@ -59,7 +61,7 @@
         "SCALEMAX": "2040-01-01T00:00:00.000000000",
         "SCALEMIN": "2020-02-10T00:00:00.000000000",
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-9>Second",
+        "SI_CONVERSION": "1.0E-9>s",
         "TIME_BASE": "J2000",
         "TIME_SCALE": "Terrestrial Time",
         "UNITS": "ns",
@@ -71,8 +73,40 @@
         "x_LABLAXIS": "EPOCH"
       }
     },
+    "EPOCH_STOP": {
+      "VarDescription": {
+        "DataType": "CDF_TIME_TT2000",
+        "NumDims": 0,
+        "NumElements": 1,
+        "PadValue": "0000-01-01T00:00:00.000000000",
+        "RecVariance": "VARY"
+      },
+      "VarAttributes": {
+        "CATDESC": "Default time",
+        "FIELDNAM": "EPOCH_STOP",
+        "FILLVAL": "9999-12-31T23:59:59.999999999",
+        "LABLAXIS": "EPOCH_STOP",
+        "MONOTON": "INCREASE",
+        "REFERENCE_POSITION": "Rotating Earth Geoid",
+        "SCALEMAX": "2040-01-01T00:00:00.000000000",
+        "SCALEMIN": "2020-02-10T00:00:00.000000000",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.0E-9>s",
+        "TIME_BASE": "J2000",
+        "TIME_SCALE": "Terrestrial Time",
+        "UNITS": "ns",
+        "VALIDMAX": "2049-12-31T23:59:59.999000000",
+        "VALIDMIN": "1990-01-01T00:00:00.000000000",
+        "VAR_NOTES": "Time in nanoseconds since January 1, 2000, 12:00:00.000. Converted using time correlation SCET via SPICE time kernel provided by the mission. Currently set to stop of accumulation interval.",
+        "VAR_TYPE": "support_data",
+        "x_UNITS": "ns",
+        "x_LABLAXIS": "EPOCH_STOP"
+      }
+    },
     "ACCUM_SECONDS": {
       "VarDescription": {
+        "BlockingFactor": 8192,
+        "Compression": "GZIP.6",
         "DataType": "CDF_REAL8",
         "NumDims": 0,
         "NumElements": 1,
@@ -90,18 +124,20 @@
         "SCALEMAX": 7000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0>Second",
-        "UNITS": "seconds",
-        "VALIDMAX": 512.0,
+        "SI_CONVERSION": "1.0>s",
+        "UNITS": "s",
+        "VALIDMAX": 520.0,
         "VALIDMIN": 0.025,
         "VAR_NOTES": "The summed accumulation time for this time step, equal to the total measurement time for each elevation step throughout the accumulated scans, less measurement time from elevation steps that have not passed quality filtering.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": "seconds",
+        "x_UNITS": "s",
         "x_LABLAXIS": "ACCUM_SECONDS"
       }
     },
     "QUALITY_FLAG": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -119,18 +155,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "0=good, 1=caution, 2=bad.",
+        "VAR_NOTES": "0=good, 1=caution (nonzero Quality Bitmask), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "QUALITY_FLAG"
       }
     },
     "QUALITY_BITMASK": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_UINT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -148,18 +186,20 @@
         "SCALEMAX": 32,
         "SCALEMIN": 0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 65534,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Not yet implemented",
+        "VAR_NOTES": "Bit 1 = substantially shorter time accumulation, bit 2 = unavailable or highly varying PAS proton solar wind speed, bit 3 = unavailable or inaccurate SSD filtering",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "QUALITY_BITMASK"
       }
     },
     "AZIMUTH_SOURCE": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -177,18 +217,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 1,
         "VALIDMIN": 0,
         "VAR_NOTES": "0 = Azimuth from SSD Detector; 1 = Azimuth from the position on the Start MCP",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "AZIMUTH_SOURCE"
       }
     },
     "SW_TYPE": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -206,18 +248,20 @@
         "SCALEMAX": 5,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 3,
         "VALIDMIN": 0,
         "VAR_NOTES": "Solar wind type. 0:Streamer, 1:Coronal hole, 2:CME, 3:Unidentified",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "SW_TYPE"
       }
     },
     "NUMBER_OF_SCANS": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -235,18 +279,20 @@
         "SCALEMAX": 250,
         "SCALEMIN": 0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 20,
         "VALIDMIN": 1,
         "VAR_NOTES": "Number of scans accumulated for data products.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "NUMBER_OF_SCANS"
       }
     },
     "HE2_DENS": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -264,7 +310,7 @@
         "SCALEMAX": 100.0,
         "SCALEMIN": 0.0001,
         "SCALETYP": "log",
-        "SI_CONVERSION": "1.0E-6>1/Meter^3",
+        "SI_CONVERSION": "1.0E+6>1/m^3",
         "UNITS": "1/cm^3",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
@@ -276,6 +322,8 @@
     },
     "HE2_DENS_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -293,11 +341,11 @@
         "SCALEMAX": 100.0,
         "SCALEMIN": 0.0001,
         "SCALETYP": "log",
-        "SI_CONVERSION": "1.0E-6>1/Meter^3",
+        "SI_CONVERSION": "1.0E+6>1/m^3",
         "UNITS": "1/cm^3",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
         "x_UNITS": "1/cm^3",
         "x_LABLAXIS": "HE2_DENS_ERR"
@@ -305,6 +353,8 @@
     },
     "HE2_DENS_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -322,18 +372,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "HE2_DENS_QF"
       }
     },
     "HE2_TH_SPEED": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -351,7 +403,7 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
@@ -363,6 +415,8 @@
     },
     "HE2_TH_SPEED_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -380,11 +434,11 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
         "x_UNITS": "km/s",
         "x_LABLAXIS": "HE2_TH_SPEED_ERR"
@@ -392,6 +446,8 @@
     },
     "HE2_TH_SPEED_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -409,18 +465,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "HE2_TH_SPEED_QF"
       }
     },
     "HE2_SPEED": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -438,11 +496,11 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "He++ speed",
+        "VAR_NOTES": "He++ speed. These are in the spacecraft frame of reference",
         "VAR_TYPE": "data",
         "x_UNITS": "km/s",
         "x_LABLAXIS": "HE2_SPEED"
@@ -450,6 +508,8 @@
     },
     "HE2_SPEED_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -467,11 +527,11 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
         "x_UNITS": "km/s",
         "x_LABLAXIS": "HE2_SPEED_ERR"
@@ -479,6 +539,8 @@
     },
     "HE2_SPEED_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -496,18 +558,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "HE2_SPEED_QF"
       }
     },
     "C5_DENS": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -525,7 +589,7 @@
         "SCALEMAX": 100.0,
         "SCALEMIN": 0.0001,
         "SCALETYP": "log",
-        "SI_CONVERSION": "1.0E-6>1/Meter^3",
+        "SI_CONVERSION": "1.0E+6>1/m^3",
         "UNITS": "1/cm^3",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
@@ -537,6 +601,8 @@
     },
     "C5_DENS_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -554,11 +620,11 @@
         "SCALEMAX": 100.0,
         "SCALEMIN": 0.0001,
         "SCALETYP": "log",
-        "SI_CONVERSION": "1.0E-6>1/Meter^3",
+        "SI_CONVERSION": "1.0E+6>1/m^3",
         "UNITS": "1/cm^3",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
         "x_UNITS": "1/cm^3",
         "x_LABLAXIS": "C5_DENS_ERR"
@@ -566,6 +632,8 @@
     },
     "C5_DENS_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -583,18 +651,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C5_DENS_QF"
       }
     },
     "C5_TH_SPEED": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -612,7 +682,7 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
@@ -624,6 +694,8 @@
     },
     "C5_TH_SPEED_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -641,11 +713,11 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
         "x_UNITS": "km/s",
         "x_LABLAXIS": "C5_TH_SPEED_ERR"
@@ -653,6 +725,8 @@
     },
     "C5_TH_SPEED_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -670,18 +744,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C5_TH_SPEED_QF"
       }
     },
     "C5_SPEED": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -699,7 +775,7 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
@@ -711,6 +787,8 @@
     },
     "C5_SPEED_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -728,11 +806,11 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
         "x_UNITS": "km/s",
         "x_LABLAXIS": "C5_SPEED_ERR"
@@ -740,6 +818,8 @@
     },
     "C5_SPEED_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -757,18 +837,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C5_SPEED_QF"
       }
     },
     "O6_DENS": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -786,7 +868,7 @@
         "SCALEMAX": 100.0,
         "SCALEMIN": 0.0001,
         "SCALETYP": "log",
-        "SI_CONVERSION": "1.0E-6>1/Meter^3",
+        "SI_CONVERSION": "1.0E+6>1/m^3",
         "UNITS": "1/cm^3",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
@@ -798,6 +880,8 @@
     },
     "O6_DENS_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -815,11 +899,11 @@
         "SCALEMAX": 100.0,
         "SCALEMIN": 0.0001,
         "SCALETYP": "log",
-        "SI_CONVERSION": "1.0E-6>1/Meter^3",
+        "SI_CONVERSION": "1.0E+6>1/m^3",
         "UNITS": "1/cm^3",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
         "x_UNITS": "1/cm^3",
         "x_LABLAXIS": "O6_DENS_ERR"
@@ -827,6 +911,8 @@
     },
     "O6_DENS_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -844,18 +930,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "O6_DENS_QF"
       }
     },
     "O6_TH_SPEED": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -873,7 +961,7 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
@@ -885,6 +973,8 @@
     },
     "O6_TH_SPEED_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -902,11 +992,11 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
         "x_UNITS": "km/s",
         "x_LABLAXIS": "O6_TH_SPEED_ERR"
@@ -914,6 +1004,8 @@
     },
     "O6_TH_SPEED_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -931,18 +1023,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "O6_TH_SPEED_QF"
       }
     },
     "O6_SPEED": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -960,11 +1054,11 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Oxygen 6 speed",
+        "VAR_NOTES": "Oxygen 6 speed. These are in the spacecraft frame of reference.",
         "VAR_TYPE": "data",
         "x_UNITS": "km/s",
         "x_LABLAXIS": "O6_SPEED"
@@ -972,6 +1066,8 @@
     },
     "O6_SPEED_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -989,11 +1085,11 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
         "x_UNITS": "km/s",
         "x_LABLAXIS": "O6_SPEED_ERR"
@@ -1001,6 +1097,8 @@
     },
     "O6_SPEED_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -1018,18 +1116,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "O6_SPEED_QF"
       }
     },
     "FE10_DENS": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -1047,7 +1147,7 @@
         "SCALEMAX": 100.0,
         "SCALEMIN": 0.0001,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-6>1/Meter^3",
+        "SI_CONVERSION": "1.0E+6>1/m^3",
         "UNITS": "1/cm^3",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
@@ -1059,6 +1159,8 @@
     },
     "FE10_DENS_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -1076,11 +1178,11 @@
         "SCALEMAX": 100.0,
         "SCALEMIN": 0.0001,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-6>1/Meter^3",
+        "SI_CONVERSION": "1.0E+6>1/m^3",
         "UNITS": "1/cm^3",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
         "x_UNITS": "1/cm^3",
         "x_LABLAXIS": "FE10_DENS_ERR"
@@ -1088,6 +1190,8 @@
     },
     "FE10_DENS_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -1105,18 +1209,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "FE10_DENS_QF"
       }
     },
     "FE10_TH_SPEED": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -1134,7 +1240,7 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
@@ -1146,6 +1252,8 @@
     },
     "FE10_TH_SPEED_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -1163,11 +1271,11 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
         "x_UNITS": "km/s",
         "x_LABLAXIS": "FE10_TH_SPEED_ERR"
@@ -1175,6 +1283,8 @@
     },
     "FE10_TH_SPEED_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -1192,18 +1302,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "FE10_TH_SPEED_QF"
       }
     },
     "FE10_SPEED": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -1221,11 +1333,11 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Iron 10 speed",
+        "VAR_NOTES": "Iron 10 speed. These are in the spacecraft frame of reference.",
         "VAR_TYPE": "data",
         "x_UNITS": "km/s",
         "x_LABLAXIS": "FE10_SPEED"
@@ -1233,6 +1345,8 @@
     },
     "FE10_SPEED_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -1250,11 +1364,11 @@
         "SCALEMAX": 2000.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": "1.0E-3>m/s",
+        "SI_CONVERSION": "1.0E+3>m/s",
         "UNITS": "km/s",
         "VALIDMAX": 99990.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
         "x_UNITS": "km/s",
         "x_LABLAXIS": "FE10_SPEED_ERR"
@@ -1262,6 +1376,8 @@
     },
     "FE10_SPEED_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -1279,18 +1395,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "FE10_SPEED_QF"
       }
     },
     "O_CHARGE_DIST": {
       "VarDescription": {
+        "BlockingFactor": 4096,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           4
@@ -1315,13 +1433,13 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Oxygen charge distribution for charges 5, 6, 7, 8",
+        "VAR_NOTES": "Oxygen charge distribution for charges 5, 6, 7, 8. The individual, unitless, relative abundances reflect the fraction of the total oxygen 5-8+ abundance.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXES": [
           [
             "O5",
@@ -1337,6 +1455,8 @@
     },
     "O_CHARGE_DIST_ERR": {
       "VarDescription": {
+        "BlockingFactor": 4096,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           4
@@ -1360,18 +1480,20 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error. For charges 5, 6, 7, 8.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics. For charges 5, 6, 7, 8.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "O_CHARGE_DIST_ERR"
       }
     },
     "O_CHARGE_DIST_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -1389,18 +1511,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "O_CHARGE_DIST_QF"
       }
     },
     "C_CHARGE_DIST": {
       "VarDescription": {
+        "BlockingFactor": 5462,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           3
@@ -1425,13 +1549,13 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Carbon charge distribution for charges 4, 5, 6",
+        "VAR_NOTES": "Carbon charge distribution for charges 4, 5, 6. The individual, unitless, relative abundances reflect the fraction of the total carbon 4-6+ abundance.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXES": [
           [
             "C4",
@@ -1446,6 +1570,8 @@
     },
     "C_CHARGE_DIST_ERR": {
       "VarDescription": {
+        "BlockingFactor": 5462,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           3
@@ -1469,18 +1595,20 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error. For charges 4, 5, 6.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics. For charges 4, 5, 6.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C_CHARGE_DIST_ERR"
       }
     },
     "C_CHARGE_DIST_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -1498,18 +1626,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C_CHARGE_DIST_QF"
       }
     },
     "FE_CHARGE_DIST": {
       "VarDescription": {
+        "BlockingFactor": 1093,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           15
@@ -1534,13 +1664,13 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Iron charge distribution for charges 6 through 20",
+        "VAR_NOTES": "Iron charge distribution for charges 6 through 20. The individual, unitless, relative abundances reflect the fraction of the total iron 6-20+ abundance.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXES": [
           [
             "Fe6",
@@ -1567,6 +1697,8 @@
     },
     "FE_CHARGE_DIST_ERR": {
       "VarDescription": {
+        "BlockingFactor": 1093,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           15
@@ -1590,18 +1722,20 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error. For charges 6 through 20.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics. For charges 6 through 20.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "FE_CHARGE_DIST_ERR"
       }
     },
     "FE_CHARGE_DIST_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -1619,18 +1753,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "FE_CHARGE_DIST_QF"
       }
     },
     "SI_CHARGE_DIST": {
       "VarDescription": {
+        "BlockingFactor": 2341,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           7
@@ -1655,13 +1791,13 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Silicon charge distribution for charges 6 through 12",
+        "VAR_NOTES": "Silicon charge distribution for charges 6 through 12. The individual, unitless, relative abundances reflect the fraction of the total silicon 6-12+ abundance.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXES": [
           [
             "Si6",
@@ -1680,6 +1816,8 @@
     },
     "SI_CHARGE_DIST_ERR": {
       "VarDescription": {
+        "BlockingFactor": 2341,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           7
@@ -1703,18 +1841,20 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error. For charges 6 through 12.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics. For charges 6 through 12.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "SI_CHARGE_DIST_ERR"
       }
     },
     "SI_CHARGE_DIST_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -1732,18 +1872,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "SI_CHARGE_DIST_QF"
       }
     },
     "NE_CHARGE_DIST": {
       "VarDescription": {
+        "BlockingFactor": 4096,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           4
@@ -1768,13 +1910,13 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Neon charge distribution for charges 6 through 9",
+        "VAR_NOTES": "Neon charge distribution for charges 6 through 9. The individual, unitless, relative abundances reflect the fraction of the total neon 6-9+ abundance.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXES": [
           [
             "Ne6",
@@ -1790,6 +1932,8 @@
     },
     "NE_CHARGE_DIST_ERR": {
       "VarDescription": {
+        "BlockingFactor": 4096,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           4
@@ -1813,18 +1957,20 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error. For charges 6 through 9.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics. For charges 6 through 9.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "NE_CHARGE_DIST_ERR"
       }
     },
     "NE_CHARGE_DIST_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -1842,18 +1988,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "NE_CHARGE_DIST_QF"
       }
     },
     "MG_CHARGE_DIST": {
       "VarDescription": {
+        "BlockingFactor": 2341,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           7
@@ -1878,13 +2026,13 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Magnesium charge distribution for charges 6 through 12",
+        "VAR_NOTES": "Magnesium charge distribution for charges 6 through 12. The individual, unitless, relative abundances reflect the fraction of the total magnesium 6-12+ abundance.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXES": [
           [
             "Mg6",
@@ -1903,6 +2051,8 @@
     },
     "MG_CHARGE_DIST_ERR": {
       "VarDescription": {
+        "BlockingFactor": 2341,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           7
@@ -1926,18 +2076,20 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error. For charges 6 through 12.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics. For charges 6 through 12.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "MG_CHARGE_DIST_ERR"
       }
     },
     "MG_CHARGE_DIST_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -1955,18 +2107,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "MG_CHARGE_DIST_QF"
       }
     },
     "N_CHARGE_DIST": {
       "VarDescription": {
+        "BlockingFactor": 8192,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           2
@@ -1991,13 +2145,13 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Nitrogen charge distribution for charges 5 and 6",
+        "VAR_NOTES": "Nitrogen charge distribution for charges 5 and 6. The individual, unitless, relative abundances reflect the fraction of the total nitrogen 5-6+ abundance.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXES": [
           [
             "N5",
@@ -2011,6 +2165,8 @@
     },
     "N_CHARGE_DIST_ERR": {
       "VarDescription": {
+        "BlockingFactor": 8192,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           2
@@ -2034,18 +2190,20 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error. For charges 5 and 6.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics. For charges 5 and 6.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "N_CHARGE_DIST_ERR"
       }
     },
     "N_CHARGE_DIST_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -2063,18 +2221,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "N_CHARGE_DIST_QF"
       }
     },
     "S_CHARGE_DIST": {
       "VarDescription": {
+        "BlockingFactor": 1821,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           9
@@ -2099,13 +2259,13 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Sulpher charge distribution for charges 6 through 14",
+        "VAR_NOTES": "Sulpher charge distribution for charges 6 through 14. The individual, unitless, relative abundances reflect the fraction of the total sulpher 6-14+ abundance.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXES": [
           [
             "S6",
@@ -2126,6 +2286,8 @@
     },
     "S_CHARGE_DIST_ERR": {
       "VarDescription": {
+        "BlockingFactor": 1821,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "DimSizes": [
           9
@@ -2149,18 +2311,20 @@
         "SCALEMAX": 1.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error. For charges 6 through 14.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics. For charges 6 through 14.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "S_CHARGE_DIST_ERR"
       }
     },
     "S_CHARGE_DIST_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -2178,18 +2342,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "S_CHARGE_DIST_QF"
       }
     },
     "O7_O6_RATIO": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2207,18 +2373,20 @@
         "SCALEMAX": 1000.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
         "VAR_NOTES": "O7/O6 Element Ratio",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "O7_O6_RATIO"
       }
     },
     "O7_O6_RATIO_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2236,18 +2404,20 @@
         "SCALEMAX": 1000.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "O7_O6_RATIO_ERR"
       }
     },
     "O7_O6_RATIO_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -2265,18 +2435,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "O7_O6_RATIO_QF"
       }
     },
     "C6_C4_RATIO": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2294,18 +2466,20 @@
         "SCALEMAX": 1000.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
         "VAR_NOTES": "C6/C4 Element Ratio",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C6_C4_RATIO"
       }
     },
     "C6_C4_RATIO_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2323,18 +2497,20 @@
         "SCALEMAX": 1000.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C6_C4_RATIO_ERR"
       }
     },
     "C6_C4_RATIO_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -2352,18 +2528,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C6_C4_RATIO_QF"
       }
     },
     "C6_C5_RATIO": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2381,18 +2559,20 @@
         "SCALEMAX": 1000.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
         "VAR_NOTES": "C6/C5 Element Ratio",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C6_C5_RATIO"
       }
     },
     "C6_C5_RATIO_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2410,18 +2590,20 @@
         "SCALEMAX": 1000.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C6_C5_RATIO_ERR"
       }
     },
     "C6_C5_RATIO_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -2439,18 +2621,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C6_C5_RATIO_QF"
       }
     },
     "O_AVE_CHARGE": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2468,18 +2652,20 @@
         "SCALEMAX": 20.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
         "VAR_NOTES": "Oxygen average charge",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "O_AVE_CHARGE"
       }
     },
     "O_AVE_CHARGE_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2497,18 +2683,20 @@
         "SCALEMAX": 20.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "O_AVE_CHARGE_ERR"
       }
     },
     "O_AVE_CHARGE_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -2526,18 +2714,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "O_AVE_CHARGE_QF"
       }
     },
     "C_AVE_CHARGE": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2555,18 +2745,20 @@
         "SCALEMAX": 20.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
         "VAR_NOTES": "Carbon average charge",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C_AVE_CHARGE"
       }
     },
     "C_AVE_CHARGE_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2584,18 +2776,20 @@
         "SCALEMAX": 20.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C_AVE_CHARGE_ERR"
       }
     },
     "C_AVE_CHARGE_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -2613,18 +2807,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C_AVE_CHARGE_QF"
       }
     },
     "FE_AVE_CHARGE": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2642,18 +2838,20 @@
         "SCALEMAX": 20.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
         "VAR_NOTES": "Iron average charge",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "FE_AVE_CHARGE"
       }
     },
     "FE_AVE_CHARGE_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2671,18 +2869,20 @@
         "SCALEMAX": 20.0,
         "SCALEMIN": 0.0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "FE_AVE_CHARGE_ERR"
       }
     },
     "FE_AVE_CHARGE_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -2700,18 +2900,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "FE_AVE_CHARGE_QF"
       }
     },
     "FE_O_ABUN": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2729,18 +2931,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Relative elemental abundance of iron with respect to oxygen computed over iron charge states 6-20 to oxygen charge states 5-8.",
+        "VAR_NOTES": "Relative elemental abundance of iron with respect to oxygen computed from the total densities of iron charge states 6-20 and oxygen charge states 5-8.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "FE_O_ABUN"
       }
     },
     "FE_O_ABUN_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2758,18 +2962,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "FE_O_ABUN_ERR"
       }
     },
     "FE_O_ABUN_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -2787,18 +2993,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "FE_O_ABUN_QF"
       }
     },
     "C_O_ABUN": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2816,18 +3024,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Relative elemental abundance of carbon with respect to oxygen computed over carbon charge states 4-6 to oxygen charge states 5-8.",
+        "VAR_NOTES": "Relative elemental abundance of carbon with respect to oxygen computed from the total densities of carbon charge states 4-6 and oxygen charge states 5-8.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C_O_ABUN"
       }
     },
     "C_O_ABUN_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2845,18 +3055,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C_O_ABUN_ERR"
       }
     },
     "C_O_ABUN_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -2874,18 +3086,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C_O_ABUN_QF"
       }
     },
     "HE_O_ABUN": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2903,18 +3117,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Relative elemental abundance of helium with respect to oxygen computed over oxygen charge states 5-8.",
+        "VAR_NOTES": "Relative elemental abundance of helium with respect to oxygen computed from the total densities of helium and of oxygen charge states 5-8.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "HE_O_ABUN"
       }
     },
     "HE_O_ABUN_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2932,18 +3148,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "HE_O_ABUN_ERR"
       }
     },
     "HE_O_ABUN_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -2961,18 +3179,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "HE_O_ABUN_QF"
       }
     },
     "MG_O_ABUN": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -2990,18 +3210,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Relative elemental abundance of magnesium with respect to oxygen computed over magnesium charge states 5-12 to oxygen charge states 5-8.",
+        "VAR_NOTES": "Relative elemental abundance of magnesium with respect to oxygen computed from the total densities of magnesium charge states 5-12 and oxygen charge states 5-8.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "MG_O_ABUN"
       }
     },
     "MG_O_ABUN_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -3019,18 +3241,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "MG_O_ABUN_ERR"
       }
     },
     "MG_O_ABUN_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -3048,18 +3272,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "MG_O_ABUN_QF"
       }
     },
     "SI_O_ABUN": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -3077,18 +3303,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Relative elemental abundance of silicon with respect to oxygen computed over silicon charge states 6-14 to oxygen charge states 5-8.",
+        "VAR_NOTES": "Relative elemental abundance of silicon with respect to oxygen computed from the total densities of silicon charge states 6-14 and oxygen charge states 5-8.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "SI_O_ABUN"
       }
     },
     "SI_O_ABUN_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -3106,18 +3334,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "SI_O_ABUN_ERR"
       }
     },
     "SI_O_ABUN_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -3135,18 +3365,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "SI_O_ABUN_QF"
       }
     },
     "NE_O_ABUN": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -3164,18 +3396,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Relative elemental abundance of neon with respect to oxygen computed over neon charge states 6-9 to oxygen charge states 5-8.",
+        "VAR_NOTES": "Relative elemental abundance of neon with respect to oxygen computed from the total densities of neon charge states 6-9 and oxygen charge states 5-8.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "NE_O_ABUN"
       }
     },
     "NE_O_ABUN_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -3193,18 +3427,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "NE_O_ABUN_ERR"
       }
     },
     "NE_O_ABUN_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -3222,18 +3458,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "NE_O_ABUN_QF"
       }
     },
     "S_O_ABUN": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -3251,18 +3489,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 100.0,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Relative elemental abundance of sulpher with respect to oxygen computed over sulpher charge states 6-14 to oxygen charge states 5-8.",
+        "VAR_NOTES": "Relative elemental abundance of sulpher with respect to oxygen computed from the total densities of sulpher charge states 6-14 and oxygen charge states 5-8.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "S_O_ABUN"
       }
     },
     "S_O_ABUN_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -3280,18 +3520,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "S_O_ABUN_ERR"
       }
     },
     "S_O_ABUN_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -3309,18 +3551,20 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "S_O_ABUN_QF"
       }
     },
     "N_O_ABUN": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -3338,18 +3582,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Relative elemental abundance of nitrogen with respect to oxygen computed over nitrogen charge states 5-6 to oxygen charge states 5-8.",
+        "VAR_NOTES": "Relative elemental abundance of nitrogen with respect to oxygen computed from the total densities of nitrogen charge states 5-6 and oxygen charge states 5-8.",
         "VAR_TYPE": "data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "N_O_ABUN"
       }
     },
     "N_O_ABUN_ERR": {
       "VarDescription": {
+        "BlockingFactor": 16384,
+        "Compression": "GZIP.6",
         "DataType": "CDF_FLOAT",
         "NumDims": 0,
         "NumElements": 1,
@@ -3367,18 +3613,20 @@
         "SCALEMAX": 10.0,
         "SCALEMIN": 0.01,
         "SCALETYP": "log",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9999.0,
         "VALIDMIN": 0.0,
-        "VAR_NOTES": "Estimate of statistical uncertainty due to limited count statistics. Note that these estimates do NOT include systematic error.",
+        "VAR_NOTES": "Estimate of uncertainty associated with species separation and counting statistics.",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "N_O_ABUN_ERR"
       }
     },
     "N_O_ABUN_QF": {
       "VarDescription": {
+        "BlockingFactor": 32768,
+        "Compression": "GZIP.6",
         "DataType": "CDF_INT2",
         "NumDims": 0,
         "NumElements": 1,
@@ -3396,13 +3644,13 @@
         "SCALEMAX": 3,
         "SCALEMIN": -2,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 2,
         "VALIDMIN": 0,
-        "VAR_NOTES": "Quality Flag: 0=good, 1=caution, 2=bad. Not yet implemented",
+        "VAR_NOTES": "Quality Flag: 0=good, 1=caution (due to high uncertainty and/or record-level quality flag), 2=bad (data may be available, contact instrument team)",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "N_O_ABUN_QF"
       }
     },
@@ -3431,13 +3679,13 @@
         "SCALEMAX": 10,
         "SCALEMIN": 0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 8,
         "VALIDMIN": 5,
         "VAR_NOTES": "Oxygen Charge States",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "O_CHARGES"
       },
       "VarData": [
@@ -3472,13 +3720,13 @@
         "SCALEMAX": 10,
         "SCALEMIN": 0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 6,
         "VALIDMIN": 4,
         "VAR_NOTES": "Carbon Charge States",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "C_CHARGES"
       },
       "VarData": [
@@ -3512,13 +3760,13 @@
         "SCALEMAX": 25,
         "SCALEMIN": 0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 20,
         "VALIDMIN": 6,
         "VAR_NOTES": "Iron Charge States",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "FE_CHARGES"
       },
       "VarData": [
@@ -3564,13 +3812,13 @@
         "SCALEMAX": 15,
         "SCALEMIN": 0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 12,
         "VALIDMIN": 6,
         "VAR_NOTES": "Silicon Charge States",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "SI_CHARGES"
       },
       "VarData": [
@@ -3608,13 +3856,13 @@
         "SCALEMAX": 10,
         "SCALEMIN": 5,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 9,
         "VALIDMIN": 6,
         "VAR_NOTES": "Neon Charge States",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "NE_CHARGES"
       },
       "VarData": [
@@ -3649,13 +3897,13 @@
         "SCALEMAX": 15,
         "SCALEMIN": 0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 12,
         "VALIDMIN": 6,
         "VAR_NOTES": "Magnesium Charge States",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "MG_CHARGES"
       },
       "VarData": [
@@ -3693,13 +3941,13 @@
         "SCALEMAX": 10,
         "SCALEMIN": 0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 6,
         "VALIDMIN": 5,
         "VAR_NOTES": "Nitrogen Charge States",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "N_CHARGES"
       },
       "VarData": [
@@ -3732,13 +3980,13 @@
         "SCALEMAX": 15,
         "SCALEMIN": 0,
         "SCALETYP": "linear",
-        "SI_CONVERSION": " ",
-        "UNITS": " ",
+        "SI_CONVERSION": "1>unitless",
+        "UNITS": "unitless",
         "VALIDMAX": 14,
         "VALIDMIN": 6,
         "VAR_NOTES": "Sulpher Charge States",
         "VAR_TYPE": "support_data",
-        "x_UNITS": " ",
+        "x_UNITS": "unitless",
         "x_LABLAXIS": "S_CHARGES"
       },
       "VarData": [
@@ -3802,7 +4050,7 @@
       "VarAttributes": {
         "CATDESC": "Carbon charge state labels",
         "FIELDNAM": "C_CHARGE_LABELS",
-        "FORMAT": "A2",
+        "FORMAT": "A3",
         "VAR_TYPE": "metadata",
         "x_UNITS": null
       },
@@ -3829,8 +4077,8 @@
         "RecVariance": "NOVARY"
       },
       "VarAttributes": {
-        "CATDESC": "Iron charge state labels",
-        "FIELDNAM": "Fe_CHARGE_LABELS",
+        "CATDESC": "Oxygen charge state labels",
+        "FIELDNAM": "O_CHARGE_LABELS",
         "FORMAT": "A4",
         "VAR_TYPE": "metadata",
         "x_UNITS": null
